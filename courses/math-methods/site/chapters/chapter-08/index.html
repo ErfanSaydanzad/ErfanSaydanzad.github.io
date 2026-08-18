@@ -1,0 +1,963 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 8: Ordinary Differential Equations | Mathematical Methods in the Physical Sciences</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+  <link rel="preload" href="../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../assets/css/site.css?v=4c167578">
+  <script>
+    window.MathJax = {
+      // tagformat is an optional TeX extension, not part of the combined
+      // tex-chtml build. Without these two lines the tagformat block below is
+      // read and silently ignored, and every equation numbers from 1 with no
+      // chapter in front of it.
+      loader: { load: ['[tex]/tagformat'] },
+      tex: {
+        packages: { '[+]': ['tagformat'] },
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        processEnvironments: true,
+        tags: 'ams',
+        // The PDF numbers equations within the chapter (\numberwithin
+        // {equation}{chapter}), so "1.8" is the eighth equation of
+        // chapter 1. MathJax counts from 1 on every page, which would have
+        // shown that same equation as "8". Prefixing the chapter number
+        // keeps a reference valid against either version.
+        tagformat: {
+          number: function (n) { return '8.' + n; }
+        },
+        macros: {
+          pdv: ['{\\frac{\\partial #1}{\\partial #2}}', 2],
+          dv: ['{\\frac{d #1}{d #2}}', 2],
+          abs: ['{\\left|#1\\right|}', 1],
+          norm: ['{\\left\\|#1\\right\\|}', 1],
+          curl: '{\\vec{\\nabla}\\times}',
+          div: '{\\vec{\\nabla}\\cdot}',
+          grad: '{\\vec{\\nabla}}',
+          sech: '{\\operatorname{sech}}',
+          csch: '{\\operatorname{csch}}',
+          coth: '{\\operatorname{coth}}',
+          circnum: ['{\\boxed{#1}}', 1],
+          vb: ['{\\mathbf{#1}}', 1],
+          eval: ['{\\left.#1\\right|}', 1],
+          dd: '{\\,d}'
+        }
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <script defer src="../../assets/js/main.js?v=4c167578"></script>
+
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="../../index.html">
+    <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M9 6.5V25.5M9 6.5H24M9 25.5H24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 16Q10.5 9.5 15.5 16T25.5 16" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/></svg>
+    <span>Mathematical Methods in the Physical Sciences</span>
+  </a>
+  <nav class="top-nav" aria-label="Primary">
+    <a href="../../index.html">Home</a>
+    <a href="../../toc.html">Contents</a>
+    <a href="../../projects.html">Projects</a>
+  </nav>
+</header>
+<main class="layout" id="main">
+  <aside class="sidebar">
+  <div class="sidebar-inner">
+    <p class="sidebar-kicker">Chapter 8</p>
+    <h2>Ordinary Differential Equations</h2>
+    <nav class="chapter-toc" aria-label="Chapter contents">
+      <a class="toc-level-2" href="#sec-8-introduction-and-general-form">8.1 Introduction and General Form</a>
+<a class="toc-level-2" href="#sec-8-classification-of-odes">8.2 Classification of ODEs</a>
+<a class="toc-level-3" href="#sec-8-linear-vs-nonlinear-odes">Linear vs. Nonlinear ODEs</a>
+<a class="toc-level-3" href="#sec-8-classification-of-linear-odes">Classification of Linear ODEs</a>
+<a class="toc-level-2" href="#sec-8-first-order-odes">8.3 First-Order ODEs</a>
+<a class="toc-level-3" href="#sec-8-separable-equations">8.3.1 Separable Equations</a>
+<a class="toc-level-3" href="#sec-8-linear-first-order-equations">8.3.2 Linear First-Order Equations</a>
+<a class="toc-level-3" href="#sec-8-integrating-factor-method">Integrating Factor Method:</a>
+<a class="toc-level-3" href="#sec-8-the-bernoulli-equation">8.3.4 The Bernoulli Equation</a>
+<a class="toc-level-3" href="#sec-8-exact-differential-equations">8.3.5 Exact Differential Equations</a>
+<a class="toc-level-3" href="#sec-8-integrating-factors">8.3.6 Integrating Factors</a>
+<a class="toc-level-2" href="#sec-8-second-order-ordinary-differential-equations">8.4 Second-Order Ordinary Differential Equations</a>
+<a class="toc-level-3" href="#sec-8-homogeneous-equations-with-constant-coefficients">8.4.1 Homogeneous Equations with Constant Coefficients</a>
+<a class="toc-level-3" href="#sec-8-nonhomogeneous-equations">8.4.2 Nonhomogeneous Equations</a>
+<a class="toc-level-3" href="#sec-8-example-forced-and-damped-harmonic-oscillator">8.4.3 Example: Forced and Damped Harmonic Oscillator</a>
+<a class="toc-level-2" href="#sec-8-where-differential-equations-are-used">8.5 Where Differential Equations Are Used</a>
+<a class="toc-level-2" href="#sec-8-summary-table">Summary Table</a>
+<a class="toc-level-2" href="#sec-8-for-the-interested-reader">For the Interested Reader</a>
+<a class="toc-level-3" href="#sec-8-the-idea-seen">The idea, seen</a>
+<a class="toc-level-3" href="#sec-8-worked-technique-and-practice">Worked technique and practice</a>
+    </nav>
+  </div>
+</aside>
+
+  <article class="content">
+    <header class="chapter-hero">
+      <p>Chapter 8</p>
+      <h1>Ordinary Differential Equations</h1>
+    </header>
+    <h2 id="sec-8-introduction-and-general-form"><span class="sec-number">8.1</span>Introduction and General Form</h2>
+<p>An <strong>ordinary differential equation (ODE)</strong> is an equation that relates a function <span class="math-inline">\(y(x)\)</span> to its derivatives with respect to a single independent variable <span class="math-inline">\(x\)</span>:</p>
+<div class="math-block">\begin{equation}
+F\!\left(x, y, \frac{dy}{dx}, \frac{d^2y}{dx^2}, \ldots, \frac{d^n y}{dx^n}\right) = 0.
+\end{equation}</div>
+<section class="callout example"><header>Example - Second-order ordinary differential equation</header><div class="math-block">\begin{equation}
+x^2 \frac{d^2y}{dx^2} + 3x \frac{dy}{dx} + y = 0.
+\end{equation}</div></section>
+<section class="callout definition"><header>Definition - Basic Terminology for ODEs</header><ul><li><p><strong>Order of an ODE:</strong> The <strong>order</strong> of a differential equation is the highest derivative that appears in the equation.</p>
+<div class="math-block">\begin{equation}
+		\frac{d^3y}{dx^3} + 2\frac{dy}{dx} = 0
+		\quad \Rightarrow \quad \text{Order} = 3
+		\end{equation}</div></li><li><p><strong>Degree of an ODE:</strong> The <strong>degree</strong> of a differential equation is the exponent of the highest-order derivative, <strong>provided the equation is polynomial in derivatives</strong>.</p>
+<div class="math-block">\begin{equation}
+		\left(\frac{d^2y}{dx^2}\right)^3 + \frac{dy}{dx} = 0
+		\quad \Rightarrow \quad \text{Degree} = 3
+		\end{equation}</div></li><li><p><strong>Solution of an ODE:</strong> A function <span class="math-inline">\(y(x)\)</span> that satisfies the differential equation for all <span class="math-inline">\(x\)</span> in a given interval.</p>
+<div class="math-block">\begin{equation}
+		\frac{dy}{dx} = 2x
+		\quad \Rightarrow \quad y = x^2 + C
+		\end{equation}</div></li></ul></section>
+<h2 id="sec-8-classification-of-odes"><span class="sec-number">8.2</span>Classification of ODEs</h2>
+<p>Ordinary differential equations (ODEs) can be classified according to several characteristics. The most fundamental distinction is between <strong>linear</strong> and <strong>nonlinear</strong> equations.</p>
+<h3 id="sec-8-linear-vs-nonlinear-odes">Linear vs. Nonlinear ODEs</h3>
+<p>An ODE is called <strong>linear</strong> if the dependent variable <span class="math-inline">\(y\)</span> and all its derivatives appear only to the first power and are not multiplied or composed with each other. The general <span class="math-inline">\(n^{\text{th}}\)</span>-order linear ODE can be written as</p>
+<div class="math-block">\begin{equation}
+a_n(x)\,y^{(n)} + a_{n-1}(x)\,y^{(n-1)} + \cdots + a_1(x)\,y&#x27; + a_0(x)\,y = f(x),
+\end{equation}</div>
+<p>where <span class="math-inline">\(a_i(x)\)</span> and <span class="math-inline">\(f(x)\)</span> are known functions of the independent variable <span class="math-inline">\(x\)</span>.</p>
+<p>If any term involves products or nonlinear functions of <span class="math-inline">\(y\)</span> or its derivatives (such as <span class="math-inline">\(y^2\)</span>, <span class="math-inline">\(y\,y&#x27;\)</span>, or <span class="math-inline">\(\sin y\)</span>), the equation is said to be <strong>nonlinear</strong>.</p>
+<section class="callout example"><header>Example</header><div class="math-block">\begin{align*}
+		\text{Linear:} \quad &amp; y&#x27;&#x27; + 3y&#x27; + 2y = \sin x, \\[4pt]
+		\text{Nonlinear:} \quad &amp; y&#x27;&#x27; + y\,y&#x27; = 0.
+	\end{align*}</div></section>
+<section class="callout remark"><header>Remark</header><p>Linear ODEs are generally easier to solve because they obey the <strong>principle of superposition</strong>, if <span class="math-inline">\(y_1\)</span> and <span class="math-inline">\(y_2\)</span> are solutions, then any linear combination <span class="math-inline">\(C_1 y_1 + C_2 y_2\)</span> is also a solution. Nonlinear ODEs, on the other hand, can exhibit far richer behavior, such as limited analytic solvability, sensitivity to initial conditions, or even chaotic motion. However, certain first-order nonlinear equations, such as <strong>separable</strong> or <strong>Bernoulli</strong> equations, can still be solved analytically.</p></section>
+<h3 id="sec-8-classification-of-linear-odes">Classification of Linear ODEs</h3>
+<p>Once an equation is identified as linear, we can further classify it based on its right-hand side and coefficients.</p>
+<ul><li><p><strong>Homogeneous Linear ODE:</strong> The right-hand side equals zero,</p>
+<div class="math-block">\begin{equation}
+	a_n(x)\,y^{(n)} + a_{n-1}(x)\,y^{(n-1)} + \cdots + a_0(x)\,y = 0.
+	\end{equation}</div>
+<p>In this case, every term involves <span class="math-inline">\(y\)</span> or its derivatives, and the trivial solution <span class="math-inline">\(y=0\)</span> always satisfies the equation. The general solution typically involves <span class="math-inline">\(n\)</span> arbitrary constants determined by initial or boundary conditions.</p></li><li><p><strong>Nonhomogeneous Linear ODE:</strong> The right-hand side is a nonzero function <span class="math-inline">\(f(x)\)</span>,</p>
+<div class="math-block">\begin{equation}
+	a_n(x)\,y^{(n)} + a_{n-1}(x)\,y^{(n-1)} + \cdots + a_0(x)\,y = f(x).
+	\end{equation}</div>
+<p>The general solution is the sum of two parts:</p>
+<div class="math-block">\begin{equation}
+	\boxed{y(x) = y_h(x) + y_p(x)},
+	\end{equation}</div>
+<p>where <span class="math-inline">\(y_h\)</span> is the general solution of the corresponding homogeneous equation and <span class="math-inline">\(y_p\)</span> is a particular solution to the full nonhomogeneous equation.</p></li><li><p><strong>Linear ODEs with Constant Coefficients:</strong> When the coefficients <span class="math-inline">\(a_i\)</span> are constants rather than functions of <span class="math-inline">\(x\)</span>,</p>
+<div class="math-block">\begin{equation}
+	a_n\,y^{(n)} + a_{n-1}\,y^{(n-1)} + \cdots + a_1\,y&#x27; + a_0\,y = f(x),
+	\end{equation}</div>
+<p>the equation becomes especially important in physics and engineering. Such forms describe systems like simple harmonic oscillators, RC and RL circuits, and exponential decay processes.</p></li></ul>
+<h2 id="sec-8-first-order-odes"><span class="sec-number">8.3</span>First-Order ODEs</h2>
+<p>A <strong>first-order ODE</strong> involves only the first derivative of the unknown function:</p>
+<div class="math-block">\begin{equation}
+\frac{dy}{dx} = f(x, y).
+\end{equation}</div>
+<p>This general form can represent both linear and nonlinear cases, depending on how <span class="math-inline">\(f(x, y)\)</span> depends on <span class="math-inline">\(y\)</span>. Such equations appear widely in physics—for example, in modeling exponential decay, population growth, or motion with velocity-dependent forces.</p>
+<h3 id="sec-8-separable-equations"><span class="sec-number">8.3.1</span>Separable Equations</h3>
+<p>A first-order ODE is called <strong>separable</strong> if it can be expressed as</p>
+<div class="math-block">\begin{equation}
+\frac{dy}{dx} = g(x)\,h(y),
+\end{equation}</div>
+<p>where the function on the right-hand side is the product of a function of <span class="math-inline">\(x\)</span> and a function of <span class="math-inline">\(y\)</span>. Although separable equations are often <strong>nonlinear</strong>, they are still <strong>analytically solvable</strong> because the variables can be separated.</p>
+<p>Rearranging terms gives</p>
+<div class="math-block">\begin{equation}
+\frac{dy}{h(y)} = g(x)\,dx,
+\end{equation}</div>
+<p>and integrating both sides yields</p>
+<div class="math-block">\begin{equation}
+\int \frac{dy}{h(y)} = \int g(x)\,dx.
+\end{equation}</div>
+<section class="callout example"><header>Example - Solve the differential equation</header><div class="math-block">\begin{equation}
+	\frac{dy}{dx} = x\,y.
+	\end{equation}</div>
+<p class="solution-head">Solution.</p>
+<p><strong>Step 1. Recognize the type of equation.</strong> This is a <strong>first-order separable</strong> (and also linear) differential equation.</p>
+<p><strong>Step 2. Separate the variables.</strong></p>
+<div class="math-block">\begin{equation}
+	\frac{dy}{y} = x\,dx.
+	\end{equation}</div>
+<p><strong>Step 3. Integrate both sides.</strong></p>
+<div class="math-block">\begin{equation}
+	\int \frac{1}{y}\,dy = \int x\,dx
+	\quad\Longrightarrow\quad
+	\ln|y| = \frac{x^{2}}{2} + C.
+	\end{equation}</div>
+<p><strong>Step 4. Simplify the result.</strong> Exponentiate both sides:</p>
+<div class="math-block">\begin{equation}
+	y = e^{C}\,e^{x^{2}/2}.
+	\end{equation}</div>
+<p>Let <span class="math-inline">\(C_1 = e^{C}\)</span> (a new arbitrary constant). Then</p>
+<div class="math-block">\begin{equation}
+	\boxed{y(x) = C_1 e^{x^{2}/2}}.
+	\end{equation}</div>
+<p><strong>Step 5. Verification.</strong> Differentiate <span class="math-inline">\(y = C_1 e^{x^{2}/2}\)</span>:</p>
+<div class="math-block">\begin{equation}
+	\frac{dy}{dx} = C_1\,x\,e^{x^{2}/2} = x\,y,
+	\end{equation}</div>
+<p>confirming that the solution satisfies the ODE.</p></section>
+<section class="callout example"><header>Example - Solve the differential equation</header><div class="math-block">\begin{equation}
+	x\,\frac{dy}{dx} = y + 1.
+	\end{equation}</div>
+<p class="solution-head">Solution.</p>
+<p><strong>Step 1. Separate the variables.</strong> Divide both sides by <span class="math-inline">\(x(y+1)\)</span>:</p>
+<div class="math-block">\begin{equation}
+	\frac{1}{y+1}\frac{dy}{dx} = \frac{1}{x}
+	\quad\Longrightarrow\quad
+	\frac{dy}{y+1} = \frac{dx}{x}.
+	\end{equation}</div>
+<p><strong>Step 2. Integrate both sides.</strong></p>
+<div class="math-block">\begin{equation}
+	\int \frac{dy}{y+1} = \int \frac{dx}{x}
+	\quad\Longrightarrow\quad
+	\ln|y+1| = \ln|x| + C.
+	\end{equation}</div>
+<p><strong>Step 3. Simplify the constant.</strong> Let <span class="math-inline">\(C = \ln a\)</span> (for <span class="math-inline">\(a&gt;0\)</span>) to combine logarithms conveniently:</p>
+<div class="math-block">\begin{equation}
+	\ln|y+1| = \ln|a x|.
+	\end{equation}</div>
+<p><strong>Step 4. Remove the logarithms.</strong></p>
+<div class="math-block">\begin{equation}
+	|y+1| = a|x|.
+	\end{equation}</div>
+<p>Because <span class="math-inline">\(a\)</span> can absorb the sign, we write simply</p>
+<div class="math-block">\begin{equation}
+	\boxed{\,y + 1 = a x\,}, \qquad a \text{ constant}.
+	\end{equation}</div>
+<p><strong>Step 5. Interpretation.</strong> The general solution</p>
+<div class="math-block">\begin{equation}
+	y = a x - 1
+	\end{equation}</div>
+<p>represents a <strong>family of straight lines</strong> in the <span class="math-inline">\((x,y)\)</span>-plane, one line for each value of the constant <span class="math-inline">\(a\)</span>. Selecting a particular value of <span class="math-inline">\(a\)</span> determines a single specific curve from this family.</p></section>
+<section class="callout example"><header>Example - Solve the differential equation</header><div class="math-block">\begin{equation}
+	\frac{dy}{dx} = \sqrt{\,1 - y^2\,}.
+	\end{equation}</div>
+<p>Find the particular solutions satisfying <strong>(a)</strong> <span class="math-inline">\(x=0, y=0\)</span> and <strong>(b)</strong> <span class="math-inline">\(x=0, y=1\)</span>, and discuss any solutions not obtained by separation.</p>
+<p class="solution-head">Solution.</p>
+<p><strong>Step 1. Separation of variables and integration.</strong> For <span class="math-inline">\(|y| &lt; 1\)</span>, the equation can be written in separable form:</p>
+<div class="math-block">\begin{equation}
+	\frac{dy}{\sqrt{1 - y^2}} = dx.
+	\end{equation}</div>
+<p>Integrating both sides gives</p>
+<div class="math-block">\begin{equation}
+	\arcsin(y) = x + \alpha,
+	\end{equation}</div>
+<p>so the general solution (valid where <span class="math-inline">\(|y|&lt;1\)</span>) is</p>
+<div class="math-block">\begin{equation}
+	\boxed{y(x) = \sin(x + \alpha)}.
+	\end{equation}</div>
+<p><strong>Step 2. Monotonicity and physical interpretation.</strong> Since <span class="math-inline">\(y&#x27; = \sqrt{1 - y^2} \ge 0\)</span>, the slope of the curve is always nonnegative. Hence, only the <em>increasing portions</em> of the sine curve correspond to valid solution segments. That is, we must restrict to intervals where</p>
+<div class="math-block">\begin{equation}
+	\cos(x + \alpha) \ge 0.
+	\end{equation}</div>
+<p>The figure below shows the slope field and the increasing sine segments that satisfy this condition.</p>
+<div class="centered"><figure id="chapter-08-fig-1" class="figure"><img src="assets/img/Fig8_1.jpeg" alt="The slope field with the increasing segments of the sine curve, which are the parts that satisfy (x+) 0." loading="lazy" style="--figure-width: 80%;"><figcaption>Figure 8.1. The slope field with the increasing segments of the sine curve, which are the parts that satisfy <span class="math-inline">\(\cos(x+\alpha)\ge 0\)</span>.</figcaption></figure></div>
+<p><strong>Step 3. Singular (boundary) solutions.</strong> In separating variables, we divided by <span class="math-inline">\(\sqrt{1 - y^2}\)</span>, which is not defined when <span class="math-inline">\(|y| = 1\)</span>. However, substituting directly into the differential equation shows that</p>
+<div class="math-block">\begin{equation}
+	y \equiv 1, \qquad y \equiv -1
+	\end{equation}</div>
+<p>are valid constant solutions since <span class="math-inline">\(y&#x27; = 0 = \sqrt{1 - y^2}\)</span>. These are <strong>singular solutions</strong> that cannot be obtained from the separated form.</p>
+<p><strong>Step 4. Particular solutions.</strong></p>
+<p><span class="underline">(a) <span class="math-inline">\(y(0)=0\)</span>:</span> From <span class="math-inline">\(\arcsin y = x + \alpha\)</span>, substituting <span class="math-inline">\(x=0,\, y=0\)</span> gives <span class="math-inline">\(\alpha=0\)</span> or <span class="math-inline">\(\pi\)</span>. Because <span class="math-inline">\(y&#x27;\ge 0\)</span>, we take the increasing branch:</p>
+<div class="math-block">\begin{equation}
+	\boxed{y(x) = \sin x, \qquad -\frac{\pi}{2} \le x \le \frac{\pi}{2}.}
+	\end{equation}</div>
+<p>To extend this continuously for all <span class="math-inline">\(x\)</span>, attach the constant segments <span class="math-inline">\(y = \pm 1\)</span>:</p>
+<div class="math-block">\begin{equation}
+	y(x) =
+	\begin{cases}
+		-1, &amp; x \le -\dfrac{\pi}{2},\\[4pt]
+		\sin x, &amp; -\dfrac{\pi}{2} \le x \le \dfrac{\pi}{2},\\[4pt]
+		1, &amp; x \ge \dfrac{\pi}{2}.
+	\end{cases}
+	\end{equation}</div>
+<p>This gives a single continuous nondecreasing solution over the entire real line.</p>
+<p><span class="underline">(b) <span class="math-inline">\(y(0)=1\)</span>:</span> The constant function <span class="math-inline">\(y(x)\equiv1\)</span> is an obvious solution. Alternatively, using <span class="math-inline">\(\sin(x+\alpha)=1\)</span> at <span class="math-inline">\(x=0\)</span> gives <span class="math-inline">\(\alpha=\dfrac{\pi}{2}+2k\pi\)</span>. Choosing the increasing branch near <span class="math-inline">\(x=0\)</span>,</p>
+<div class="math-block">\begin{equation}
+	\boxed{y(x) = \sin\!\Big(x + \frac{\pi}{2}\Big) = \cos x, \qquad -\pi \le x \le 0.}
+	\end{equation}</div>
+<p>To extend for all <span class="math-inline">\(x\)</span>:</p>
+<div class="math-block">\begin{equation}
+	y(x) =
+	\begin{cases}
+		-1, &amp; x \le -\pi,\\[4pt]
+		\cos x, &amp; -\pi \le x \le 0,\\[4pt]
+		1, &amp; x \ge 0.
+	\end{cases}
+	\end{equation}</div>
+<p>There exist infinitely many such piecewise continuous solutions, obtained by shifting these arcs horizontally.</p>
+<p><strong>Step 5. Interpretation and summary.</strong></p>
+<ul><li><p>The general solution <span class="math-inline">\(y = \sin(x+\alpha)\)</span> applies where <span class="math-inline">\(|y|&lt;1\)</span> and <span class="math-inline">\(y&#x27; = \sqrt{1-y^2} \ge 0\)</span>.</p></li><li><p>The singular solutions <span class="math-inline">\(y = \pm1\)</span> correspond to the flat portions of the slope field where <span class="math-inline">\(y&#x27;=0\)</span>.</p></li><li><p>The complete solution set consists of rising sine arcs smoothly connected to horizontal segments at <span class="math-inline">\(y=\pm1\)</span>.</p></li></ul>
+<p><strong>All solutions.</strong></p>
+<div class="centered"><p> y(x) = (x+)  on intervals where  (x+)0,  together with  y1. </p></div></section>
+<h3 id="sec-8-linear-first-order-equations"><span class="sec-number">8.3.2</span>Linear First-Order Equations</h3>
+<p>A linear first-order equation has the form</p>
+<div class="math-block">\begin{equation}
+\frac{dy}{dx} + P(x)y = Q(x).
+\end{equation}</div>
+<h3 id="sec-8-integrating-factor-method">Integrating Factor Method:</h3>
+<ol><li><p>Compute the integrating factor:</p>
+<div class="math-block">\begin{equation}
+	\mu(x) = e^{\int P(x)\,dx}.
+	\end{equation}</div></li><li><p>Multiply through by <span class="math-inline">\(\mu(x)\)</span>:</p>
+<div class="math-block">\begin{equation}
+	\frac{d}{dx}\!\left(\mu(x)y\right) = \mu(x)Q(x).
+	\end{equation}</div></li><li><p>Integrate:</p>
+<div class="math-block">\begin{equation}
+	\mu(x)y = \int \mu(x)Q(x)\,dx.
+	\end{equation}</div></li><li><p>Solve for <span class="math-inline">\(y(x)\)</span>:</p>
+<div class="math-block">\begin{equation}
+	\boxed{y = [\mu(x)]^{-1} \int \mu(x) Q(x)\,dx}.
+	\end{equation}</div></li></ol>
+<section class="callout example"><header>Example - Solve the first-order linear ODE</header><div class="math-block">\begin{equation}
+	y&#x27; + 2y = e^{-x}.
+	\end{equation}</div>
+<p class="solution-head">Solution.</p>
+<p><strong>Step 1. Identify <span class="math-inline">\(P(x)\)</span> and <span class="math-inline">\(Q(x)\)</span>.</strong> The equation is in the standard linear form</p>
+<div class="math-block">\begin{equation}
+	y&#x27; + P(x)y = Q(x),
+	\end{equation}</div>
+<p>where</p>
+<div class="math-block">\begin{equation}
+	P(x) = 2, \qquad Q(x) = e^{-x}.
+	\end{equation}</div>
+<p><strong>Step 2. Compute the integrating factor.</strong> The integrating factor is</p>
+<div class="math-block">\begin{equation}
+	\mu(x) = e^{\int P(x)\,dx} = e^{\int 2\,dx} = e^{2x}.
+	\end{equation}</div>
+<p><strong>Step 3. Apply the general solution formula.</strong></p>
+<div class="math-block">\begin{equation}
+	\boxed{
+		y = [\mu(x)]^{-1} \int \mu(x) Q(x)\,dx.
+	}
+	\end{equation}</div>
+<p>Substitute <span class="math-inline">\(\mu(x) = e^{2x}\)</span> and <span class="math-inline">\(Q(x) = e^{-x}\)</span>:</p>
+<div class="math-block">\begin{equation}
+	y = e^{-2x}\int e^{2x} e^{-x}\,dx
+	= e^{-2x}\int e^{x}\,dx.
+	\end{equation}</div>
+<p><strong>Step 4. Evaluate the integral.</strong></p>
+<div class="math-block">\begin{equation}
+	y = e^{-2x}(e^{x} + C)
+	= e^{-x} + C e^{-2x}.
+	\end{equation}</div>
+<p><strong>Final Answer:</strong></p>
+<div class="math-block">\begin{equation}
+	\boxed{y = e^{-x} + C e^{-2x}.}
+	\end{equation}</div>
+<p><strong>Verification.</strong> Substitute <span class="math-inline">\(y = e^{-x} + C e^{-2x}\)</span> into the original equation:</p>
+<div class="math-block">\begin{equation}
+	y&#x27; = -e^{-x} - 2C e^{-2x},
+	\quad\Rightarrow\quad
+	y&#x27; + 2y = (-e^{-x} - 2C e^{-2x}) + 2(e^{-x} + C e^{-2x}) = e^{-x},
+	\end{equation}</div>
+<p>which satisfies the ODE.</p></section>
+<p>Separable equations and linear equations are the two types of first-order equations most commonly encountered in basic applications. However, there exist several other important forms of first-order equations that can be transformed into solvable types. In this section, we briefly introduce two such forms: the <strong>Bernoulli equation</strong> and <strong>exact equations</strong>. More details and applications are found in advanced differential equations texts.</p>
+<h3 id="sec-8-the-bernoulli-equation"><span class="sec-number">8.3.4</span>The Bernoulli Equation</h3>
+<p>The differential equation</p>
+<div class="math-block">\begin{equation}
+y&#x27; + P(x)y = Q(x)y^n,
+\end{equation}</div>
+<p>where <span class="math-inline">\(P(x)\)</span> and <span class="math-inline">\(Q(x)\)</span> are known functions of <span class="math-inline">\(x\)</span>, is called the <strong>Bernoulli equation</strong>. It is nonlinear for <span class="math-inline">\(n \neq 0, 1\)</span>, but it can be transformed into a linear equation through an appropriate substitution.</p>
+<p><strong>Step 1. Multiply by <span class="math-inline">\(y^{-n}\)</span>.</strong></p>
+<div class="math-block">\begin{equation}
+y^{-n}y&#x27; + P(x)y^{1-n} = Q(x).
+\end{equation}</div>
+<p><strong>Step 2. Simplify using the substitution <span class="math-inline">\(z = y^{1-n}\)</span>.</strong></p>
+<div class="math-block">\begin{equation}
+\frac{dz}{dx} = (1-n)y^{-n}y&#x27;.
+\end{equation}</div>
+<p>Hence, <span class="math-inline">\(y^{-n}y&#x27; = \dfrac{1}{1-n}\,z&#x27;\)</span>. Substitute this into the previous equation:</p>
+<div class="math-block">\begin{equation}
+\dfrac{1}{1-n}z&#x27; + P(x)z = Q(x).
+\end{equation}</div>
+<p><strong>Step 3. Multiply through by <span class="math-inline">\((1-n)\)</span> to simplify.</strong></p>
+<div class="math-block">\begin{equation}
+z&#x27; + (1-n)P(x)z = (1-n)Q(x).
+\end{equation}</div>
+<p>This is now a <strong>first-order linear ODE</strong> in <span class="math-inline">\(z(x)\)</span>, which can be solved using the integrating factor method.</p>
+<div class="centered"><p> <strong>Reduced linear form:</strong>   z' + (1-n)P(x)z = (1-n)Q(x). </p></div>
+<p>After solving for <span class="math-inline">\(z(x)\)</span>, the original dependent variable is recovered via</p>
+<div class="math-block">\begin{equation}
+y = z^{\frac{1}{1-n}}.
+\end{equation}</div>
+<section class="callout remark"><header>Remark</header><p>The Bernoulli equation provides an important link between nonlinear and linear first-order ODEs. By multiplying through by <span class="math-inline">\(y^{-n}\)</span> and substituting <span class="math-inline">\(z = y^{1-n}\)</span>, we convert a nonlinear equation into a solvable linear form. This transformation frequently appears in problems involving population dynamics, exponential growth and decay, and fluid motion.</p></section>
+<section class="callout example"><header>Example - Reduce to linear form and solve</header><div class="math-block">\begin{equation}
+	y&#x27; + y = x\,y^{2/3}.
+	\end{equation}</div>
+<p class="solution-head">Solution.</p>
+<p><strong>Step 1. Multiply by </strong> <span class="math-inline">\(y^{-n}\)</span> <strong> with </strong> <span class="math-inline">\(n=\tfrac{2}{3}\)</span>.</p>
+<div class="math-block">\begin{equation}
+	y^{-2/3}y&#x27; + y^{1/3} = x.
+	\end{equation}</div>
+<p><strong>Step 2. Let </strong> <span class="math-inline">\(z = y^{1-n}=y^{1/3}\)</span>. Then <span class="math-inline">\(z&#x27;=\tfrac{1}{3}y^{-2/3}y&#x27;\)</span>, so <span class="math-inline">\(y^{-2/3}y&#x27;=3z&#x27;\)</span>. Substitute:</p>
+<div class="math-block">\begin{equation}
+	3z&#x27; + z = x \quad\Longrightarrow\quad z&#x27; + \tfrac{1}{3}z = \tfrac{1}{3}x.
+	\end{equation}</div>
+<p><strong>Step 3. Solve the linear equation using the integrating-factor <em>formula</em>.</strong> For</p>
+<div class="math-block">\begin{equation}
+	z&#x27; + p(x)z = q(x), \qquad p(x)=\tfrac{1}{3},\; q(x)=\tfrac{1}{3}x,
+	\end{equation}</div>
+<p>the integrating factor is <span class="math-inline">\(\mu(x)=e^{\int p(x)\,dx}=e^{x/3}\)</span>. Apply</p>
+<div class="math-block">\begin{equation}
+	\boxed{\,z = [\mu(x)]^{-1}\int \mu(x)\,q(x)\,dx\,}:
+	\end{equation}</div>
+<div class="math-block">\begin{equation}
+	z = e^{-x/3}\left[\int e^{x/3}\cdot \tfrac{1}{3}x\,dx + C\right]
+	= e^{-x/3}\big[e^{x/3}(x-3)+C\big]
+	= x-3 + C e^{-x/3}.
+	\end{equation}</div>
+<p><strong>Step 4. Back–substitute to <span class="math-inline">\(y\)</span>.</strong> Since <span class="math-inline">\(z=y^{1/3}\)</span>,</p>
+<div class="math-block">\begin{equation}
+	\boxed{\,y(x)=\big(x-3 + C e^{-x/3}\big)^{3}\,}.
+	\end{equation}</div>
+<p><strong>Step 5. Singular solution.</strong> Because <span class="math-inline">\(y^{2/3}\ge 0\)</span> for all real <span class="math-inline">\(y\)</span>, the constant function</p>
+<div class="math-block">\begin{equation}
+	\boxed{\,y(x)\equiv 0\,}
+	\end{equation}</div>
+<p>also satisfies the original ODE. Thus the complete set consists of the one-parameter family above together with <span class="math-inline">\(y\equiv 0\)</span>.</p></section>
+<h3 id="sec-8-exact-differential-equations"><span class="sec-number">8.3.5</span>Exact Differential Equations</h3>
+<p>A general first-order differential equation can often be written in the form</p>
+<div class="math-block">\begin{equation}
+M(x,y)\,dx + N(x,y)\,dy = 0,
+\end{equation}</div>
+<p>where <span class="math-inline">\(M\)</span> and <span class="math-inline">\(N\)</span> are functions of two variables <span class="math-inline">\(x\)</span> and <span class="math-inline">\(y\)</span>.</p>
+<section class="callout definition"><header>Definition - Exact Differential Equation</header><p>The first–order differential equation</p>
+<div class="math-block">\begin{equation}
+	M(x,y)\,dx + N(x,y)\,dy = 0
+	\end{equation}</div>
+<p>is called <strong>exact</strong> if there exists a scalar function <span class="math-inline">\(U(x,y)\)</span> (called a <strong>potential function</strong>) such that</p>
+<div class="math-block">\begin{equation}
+	dU(x,y) = M(x,y)\,dx + N(x,y)\,dy,
+	\qquad
+	\text{where } M = \frac{\partial U}{\partial x}, \quad N = \frac{\partial U}{\partial y}.
+	\end{equation}</div>
+<p>In this case, the general solution can be written implicitly as</p>
+<div class="math-block">\begin{equation}
+	U(x,y) = C.
+	\end{equation}</div>
+<p>A necessary and sufficient condition for exactness (assuming continuous partial derivatives) is</p>
+<div class="math-block">\begin{equation}
+	\boxed{\frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}}.
+	\end{equation}</div></section>
+<section class="callout remark"><header>Remark</header><p>The condition above ensures that the mixed second derivatives of <span class="math-inline">\(U(x,y)\)</span> are equal:</p>
+<div class="math-block">\begin{equation}
+	\frac{\partial^2 U}{\partial x \partial y} = \frac{\partial^2 U}{\partial y \partial x}.
+	\end{equation}</div>
+<p>This is guaranteed by Clairaut’s theorem when <span class="math-inline">\(M\)</span> and <span class="math-inline">\(N\)</span> have continuous partial derivatives.</p></section>
+<p><strong>Solution Procedure:</strong></p>
+<ol><li><p>Check whether <span class="math-inline">\( \dfrac{\partial M}{\partial y} = \dfrac{\partial N}{\partial x} \)</span>. If true, the equation is exact.</p></li><li><p>Integrate <span class="math-inline">\(M(x,y)\)</span> with respect to <span class="math-inline">\(x\)</span>, treating <span class="math-inline">\(y\)</span> as constant:</p>
+<div class="math-block">\begin{equation}
+	U(x,y) = \int M(x,y)\,dx + F(y),
+	\end{equation}</div>
+<p>where <span class="math-inline">\(F(y)\)</span> is an arbitrary function of <span class="math-inline">\(y\)</span>.</p></li><li><p>Since <span class="math-inline">\(U(x,y)\)</span> must satisfy</p>
+<div class="math-block">\begin{equation}
+	\boxed{\,N(x,y) = \frac{\partial U}{\partial y}\,},
+	\end{equation}</div>
+<p>we differentiate the above expression for <span class="math-inline">\(U(x,y)\)</span> with respect to <span class="math-inline">\(y\)</span>:</p>
+<div class="math-block">\begin{equation}
+	\frac{\partial U}{\partial y}
+	= \frac{\partial}{\partial y}\!\left(\int M(x,y)\,dx\right) + F&#x27;(y).
+	\end{equation}</div>
+<p>Now substitute the known expression for <span class="math-inline">\(N(x,y)\)</span> from the original equation and equate:</p>
+<div class="math-block">\begin{equation}
+	N(x,y)
+	= \frac{\partial}{\partial y}\!\left(\int M(x,y)\,dx\right) + F&#x27;(y).
+	\end{equation}</div>
+<p>From this, we can solve for <span class="math-inline">\(F&#x27;(y)\)</span>:</p>
+<div class="math-block">\begin{equation}
+	F&#x27;(y)
+	= N(x,y) - \frac{\partial}{\partial y}\!\left(\int M(x,y)\,dx\right).
+	\end{equation}</div>
+<p>Integrate with respect to <span class="math-inline">\(y\)</span> to find <span class="math-inline">\(F(y)\)</span>, and then write the final expression for <span class="math-inline">\(U(x,y)\)</span>. The general solution is obtained from</p>
+<div class="math-block">\begin{equation}
+	\boxed{\,U(x,y) = \text{constant.}\,}
+	\end{equation}</div></li><li><p>Integrate <span class="math-inline">\(F&#x27;(y)\)</span> to find <span class="math-inline">\(F(y)\)</span>, substitute back, and write the final solution <span class="math-inline">\(U(x,y) = C\)</span>.</p></li></ol>
+<section class="callout example"><header>Example - Solving an Exact Differential Equation</header><p>Solve</p>
+<div class="math-block">\begin{equation}
+	(2xy + y^3)\,dx + (x^2 + 3xy^2)\,dy = 0.
+	\end{equation}</div>
+<p class="solution-head">Solution.</p>
+<p><strong>Step 1.</strong> Identify</p>
+<div class="math-block">\begin{equation}
+	M(x,y) = 2xy + y^3, \qquad N(x,y) = x^2 + 3xy^2.
+	\end{equation}</div>
+<p><strong>Step 2.</strong> Check the exactness condition:</p>
+<div class="math-block">\begin{equation}
+	\frac{\partial M}{\partial y} = 2x + 3y^2,
+	\qquad
+	\frac{\partial N}{\partial x} = 2x + 3y^2.
+	\end{equation}</div>
+<p>They are equal, so the equation is <em>exact</em>.</p>
+<p><strong>Step 3.</strong> Integrate <span class="math-inline">\(M(x,y)\)</span> with respect to <span class="math-inline">\(x\)</span>:</p>
+<div class="math-block">\begin{equation}
+	U(x,y) = \int (2xy + y^3)\,dx = x^2y + x y^3 + F(y).
+	\end{equation}</div>
+<p><strong>Step 4.</strong> Differentiate with respect to <span class="math-inline">\(y\)</span>:</p>
+<div class="math-block">\begin{equation}
+	\frac{\partial U}{\partial y} = x^2 + 3x y^2 + F&#x27;(y).
+	\end{equation}</div>
+<p>Compare with <span class="math-inline">\(N(x,y) = x^2 + 3x y^2\)</span>, which implies <span class="math-inline">\(F&#x27;(y)=0\)</span>.</p>
+<p><strong>Step 5.</strong> Hence <span class="math-inline">\(F(y)=\text{constant}\)</span>. The potential function is</p>
+<div class="math-block">\begin{equation}
+	U(x,y) = x^2y + x y^3.
+	\end{equation}</div>
+<p><strong>Step 6.</strong> The general solution is</p>
+<div class="math-block">\begin{equation}
+	\boxed{x^2y + xy^3 = C.}
+	\end{equation}</div></section>
+<h3 id="sec-8-integrating-factors"><span class="sec-number">8.3.6</span>Integrating Factors</h3>
+<p>If the equation <span class="math-inline">\(M(x,y)\,dx + N(x,y)\,dy = 0\)</span> is not exact, it may sometimes be made exact by multiplying by a function <span class="math-inline">\(\mu(x,y)\)</span> called an <strong>integrating factor</strong>:</p>
+<div class="math-block">\begin{equation}
+\mu(x,y)\,M(x,y)\,dx + \mu(x,y)\,N(x,y)\,dy = 0.
+\end{equation}</div>
+<p>The new equation is exact if</p>
+<div class="math-block">\begin{equation}
+\frac{\partial (\mu M)}{\partial y} = \frac{\partial (\mu N)}{\partial x}.
+\end{equation}</div>
+<p>Unfortunately, there is no universal method for finding <span class="math-inline">\(\mu(x,y)\)</span>. However, there are two common and important special cases.</p>
+<p><strong>Case 1: Integrating factor depends on <span class="math-inline">\(x\)</span> only.</strong></p>
+<p>If <span class="math-inline">\(\mu = \mu(x)\)</span>, then the equation becomes exact provided that</p>
+<div class="math-block">\begin{equation}
+\frac{1}{\mu}\frac{d\mu}{dx}
+= \frac{\frac{\partial M}{\partial y} - \frac{\partial N}{\partial x}}{N}.
+\end{equation}</div>
+<p>Hence,</p>
+<div class="math-block">\begin{equation}
+\mu(x) = \exp\!\left(\int \frac{1}{N}\Big(\frac{\partial M}{\partial y} - \frac{\partial N}{\partial x}\Big)\,dx\right).
+\end{equation}</div>
+<p><strong>Case 2: Integrating factor depends on <span class="math-inline">\(y\)</span> only.</strong></p>
+<p>If <span class="math-inline">\(\mu = \mu(y)\)</span>, then the equation becomes exact provided that</p>
+<div class="math-block">\begin{equation}
+\frac{1}{\mu}\frac{d\mu}{dy}
+= \frac{\frac{\partial N}{\partial x} - \frac{\partial M}{\partial y}}{M}.
+\end{equation}</div>
+<p>Hence,</p>
+<div class="math-block">\begin{equation}
+\mu(y) = \exp\!\left(\int \frac{1}{M}\Big(\frac{\partial N}{\partial x} - \frac{\partial M}{\partial y}\Big)\,dy\right).
+\end{equation}</div>
+<section class="callout example"><header>Example - Integrating factor <span class="math-inline">\(\mu=\mu(x)\)</span>, not separable</header><p>Solve</p>
+<div class="math-block">\begin{equation}
+	\bigl[(x+1)\,y + x\bigr]\,dx + x\,dy = 0.
+	\end{equation}</div>
+<p class="solution-head">Solution.</p>
+<p><strong>Step 1. Identify <span class="math-inline">\(M,N\)</span> and test exactness.</strong></p>
+<div class="math-block">\begin{equation}
+	M(x,y)=(x+1)\,y + x,\qquad N(x,y)=x.
+	\end{equation}</div>
+<p>Compute</p>
+<div class="math-block">\begin{equation}
+	M_y = x+1,\qquad N_x=1.
+	\end{equation}</div>
+<p>Since <span class="math-inline">\(M_y\neq N_x\)</span>, the equation is <em>not exact</em>.</p>
+<p><strong>Step 2. Seek an integrating factor <span class="math-inline">\(\mu=\mu(x)\)</span>.</strong> Use</p>
+<div class="math-block">\begin{equation}
+	\frac{1}{\mu}\frac{d\mu}{dx}=\frac{M_y-N_x}{N}
+	=\frac{(x+1)-1}{x}=\frac{x}{x}=1.
+	\end{equation}</div>
+<p>Hence</p>
+<div class="math-block">\begin{equation}
+	\ln\mu(x)=\int 1\,dx=x
+	\quad\Rightarrow\quad
+	\boxed{\mu(x)=e^{x}}.
+	\end{equation}</div>
+<p><strong>Step 3. Multiply the equation by <span class="math-inline">\(\mu(x)=e^x\)</span>.</strong></p>
+<div class="math-block">\begin{equation}
+	e^x\bigl[(x+1)\,y + x\bigr]\,dx + e^x x\,dy=0.
+	\end{equation}</div>
+<p>Define</p>
+<div class="math-block">\begin{equation}
+	\tilde M=e^x\bigl[(x+1)\,y + x\bigr],\qquad \tilde N=e^x x.
+	\end{equation}</div>
+<p><strong>Step 4. Check exactness \&amp; find a potential <span class="math-inline">\(U(x,y)\)</span>.</strong></p>
+<div class="math-block">\begin{equation}
+	\frac{\partial \tilde M}{\partial y}=e^x(x+1),\qquad
+	\frac{\partial \tilde N}{\partial x}=e^x(x+1)\;\Rightarrow\;\text{exact}.
+	\end{equation}</div>
+<p>Integrate <span class="math-inline">\(\tilde M\)</span> w.r.t. <span class="math-inline">\(x\)</span> (treating <span class="math-inline">\(y\)</span> constant):</p>
+<div class="math-block">\begin{equation}
+	U(x,y)=\int e^x\bigl[(x+1)\,y + x\bigr]\,dx
+	= y\!\int e^x(x+1)\,dx + \int x e^x\,dx.
+	\end{equation}</div>
+<p>Using <span class="math-inline">\(\int e^x(x+1)\,dx = x e^x\)</span> and <span class="math-inline">\(\int x e^x\,dx=(x-1)e^x\)</span>,</p>
+<div class="math-block">\begin{equation}
+	U(x,y)=y\,x e^x + (x-1)e^x + F(y).
+	\end{equation}</div>
+<p>Now</p>
+<div class="math-block">\begin{equation}
+	U_y = x e^x + F&#x27;(y) \stackrel{!}{=} \tilde N = x e^x
+	\;\Rightarrow\; F&#x27;(y)=0 \Rightarrow F(y)=\text{const}.
+	\end{equation}</div>
+<p><strong>Step 5. Implicit solution.</strong></p>
+<div class="math-block">\begin{equation}
+	\boxed{\,e^x\bigl(xy + x - 1\bigr)=C.\,}
+	\end{equation}</div></section>
+<section class="callout example"><header>Example - Integrating factor <span class="math-inline">\(\mu=\mu(y)\)</span>, not separable</header><p>Solve</p>
+<div class="math-block">\begin{equation}
+	y\,dx + (3x + y)\,dy = 0.
+	\end{equation}</div>
+<p class="solution-head">Solution.</p>
+<p><strong>Step 1. Identify <span class="math-inline">\(M,N\)</span> and test exactness.</strong></p>
+<div class="math-block">\begin{equation}
+	M(x,y)=y,\qquad N(x,y)=3x + y.
+	\end{equation}</div>
+<p>Compute</p>
+<div class="math-block">\begin{equation}
+	M_y=1,\qquad N_x=3.
+	\end{equation}</div>
+<p>Since <span class="math-inline">\(M_y\neq N_x\)</span>, the equation is <em>not exact</em>.</p>
+<p><strong>Step 2. Seek an integrating factor <span class="math-inline">\(\mu=\mu(y)\)</span>.</strong> Use</p>
+<div class="math-block">\begin{equation}
+	\frac{1}{\mu}\frac{d\mu}{dy}=\frac{N_x - M_y}{M}
+	=\frac{3-1}{y}=\frac{2}{y}.
+	\end{equation}</div>
+<p>Hence</p>
+<div class="math-block">\begin{equation}
+	\ln\mu(y)=\int \frac{2}{y}\,dy = 2\ln|y|
+	\quad\Rightarrow\quad
+	\boxed{\mu(y)=y^{2}}\quad (y\neq 0).
+	\end{equation}</div>
+<p><strong>Step 3. Multiply the equation by <span class="math-inline">\(\mu(y)=y^2\)</span>.</strong></p>
+<div class="math-block">\begin{equation}
+	y^3\,dx + \bigl(3x y^2 + y^3\bigr)\,dy = 0.
+	\end{equation}</div>
+<p>Define</p>
+<div class="math-block">\begin{equation}
+	\tilde M = y^3,\qquad \tilde N = 3x y^2 + y^3.
+	\end{equation}</div>
+<p><strong>Step 4. Check exactness \&amp; find a potential <span class="math-inline">\(U(x,y)\)</span>.</strong></p>
+<div class="math-block">\begin{equation}
+	\frac{\partial \tilde M}{\partial y} = 3y^2,\qquad
+	\frac{\partial \tilde N}{\partial x} = 3y^2
+	\;\Rightarrow\;\text{exact}.
+	\end{equation}</div>
+<p>Integrate <span class="math-inline">\(\tilde M\)</span> w.r.t. <span class="math-inline">\(x\)</span> (treating <span class="math-inline">\(y\)</span> constant):</p>
+<div class="math-block">\begin{equation}
+	U(x,y) = \int y^3\,dx = x y^3 + F(y).
+	\end{equation}</div>
+<p>Now</p>
+<div class="math-block">\begin{equation}
+	U_y = 3x y^2 + F&#x27;(y) \stackrel{!}{=} \tilde N = 3x y^2 + y^3
+	\;\Rightarrow\; F&#x27;(y)=y^3 \Rightarrow F(y)=\frac{y^4}{4}.
+	\end{equation}</div>
+<p><strong>Step 5. Implicit solution.</strong></p>
+<div class="math-block">\begin{equation}
+	\boxed{\,x\,y^{3} + \frac{y^{4}}{4} = C.\,}
+	\end{equation}</div></section>
+<section class="callout remark"><header>Remark</header><p>Many physical systems—such as thermodynamics, potential flow, and electrostatics—lead to exact differential equations, where <span class="math-inline">\(U(x,y)\)</span> represents a potential energy, enthalpy, or potential function. When the equation is not exact, an integrating factor often restores this structure.</p></section>
+<h2 id="sec-8-second-order-ordinary-differential-equations"><span class="sec-number">8.4</span>Second-Order Ordinary Differential Equations</h2>
+<p>A <strong>second-order linear ordinary differential equation (ODE)</strong> has the general form</p>
+<div class="math-block">\begin{equation}
+a_2(x)\,y&#x27;&#x27; + a_1(x)\,y&#x27; + a_0(x)\,y = f(x),
+\end{equation}</div>
+<p>where <span class="math-inline">\(a_2(x), a_1(x), a_0(x)\)</span>, and <span class="math-inline">\(f(x)\)</span> are known functions of <span class="math-inline">\(x\)</span>, and <span class="math-inline">\(y(x)\)</span> is the unknown function to be determined.</p>
+<p>When <span class="math-inline">\(a_2,a_1,a_0\)</span> are constants, the equation simplifies to</p>
+<div class="math-block">\begin{equation}
+a\,y&#x27;&#x27; + b\,y&#x27; + c\,y = f(x),
+\qquad a,b,c\in\mathbb{R}, \ a\neq0.
+\end{equation}</div>
+<p>We will first study the <strong>homogeneous case</strong> (<span class="math-inline">\(f(x)=0\)</span>) and then the <strong>nonhomogeneous case</strong> (<span class="math-inline">\(f(x)\neq0\)</span>).</p>
+<h3 id="sec-8-homogeneous-equations-with-constant-coefficients"><span class="sec-number">8.4.1</span>Homogeneous Equations with Constant Coefficients</h3>
+<section class="callout definition"><header>Definition - Homogeneous Linear ODE (Second Order)</header><p>A second–order <strong>homogeneous linear differential equation with constant coefficients</strong> has the form</p>
+<div class="math-block">\begin{equation}
+	a\,y&#x27;&#x27; + b\,y&#x27; + c\,y = 0,
+	\qquad a, b, c \in \mathbb{R}, \ a \ne 0.
+	\end{equation}</div></section>
+<section class="callout theorem"><header>Theorem - General Solution of a Constant–Coefficient ODE</header><p>Consider the homogeneous linear differential equation</p>
+<div class="math-block">\begin{equation}
+	a\,y&#x27;&#x27; + b\,y&#x27; + c\,y = 0,
+	\qquad a \neq 0.
+	\end{equation}</div>
+<p>Its solutions are determined by the <strong>characteristic (auxiliary) equation</strong></p>
+<div class="math-block">\begin{equation}
+	a r^{2} + b r + c = 0.
+	\end{equation}</div>
+<p>If <span class="math-inline">\(r_1\)</span> and <span class="math-inline">\(r_2\)</span> are the roots of this quadratic, then the general solution is:</p>
+<div class="math-block">\begin{equation}
+	\boxed{
+		\begin{aligned}
+			\text{(i) Distinct real roots } r_1 \neq r_2:
+			&amp;\quad y(x) = C_1 e^{r_1 x} + C_2 e^{r_2 x}, \\[6pt]
+			\text{(ii) Repeated root } r_1 = r_2 = r:
+			&amp;\quad y(x) = (C_1 + C_2 x)\,e^{r x}, \\[6pt]
+			\text{(iii) Complex roots } r = \alpha \pm i\beta:
+			&amp;\quad y(x) = e^{\alpha x}\!\left(C_1 \cos(\beta x) + C_2 \sin(\beta x)\right),
+	\end{aligned}}
+	\end{equation}</div>
+<p>where <span class="math-inline">\(C_1, C_2\)</span> are arbitrary constants.</p></section>
+<div class="proof" data-lead="Proof."><p>Consider the homogeneous constant–coefficient ODE</p>
+<div class="math-block">\begin{equation}
+	a\,y&#x27;&#x27;+b\,y&#x27;+c\,y=0,\qquad a\neq 0.
+	\end{equation}</div>
+<p><strong>Step 1: Exponential trial and substitution.</strong> Assume a trial solution <span class="math-inline">\(y=e^{r x}\)</span> with constant <span class="math-inline">\(r\)</span>. Then</p>
+<div class="math-block">\begin{equation}
+	y&#x27; = r e^{r x},\qquad y&#x27;&#x27; = r^2 e^{r x}.
+	\end{equation}</div>
+<p>Substituting into the ODE gives</p>
+<div class="math-block">\begin{equation}
+	a (r^2 e^{r x}) + b (r e^{r x}) + c (e^{r x}) \;=\; e^{r x}\big(a r^2 + b r + c\big)\;=\;0.
+	\end{equation}</div>
+<p>Since <span class="math-inline">\(e^{r x}\neq 0\)</span> for all <span class="math-inline">\(x\)</span>, we must have the <em>characteristic equation</em></p>
+<div class="math-block">\begin{equation}
+	\boxed{\,a r^2 + b r + c = 0.\,}
+	\end{equation}</div>
+<p><strong>Step 2: Distinct real roots <span class="math-inline">\(r_1\neq r_2\)</span>.</strong> If the characteristic polynomial has two distinct real roots <span class="math-inline">\(r_1\)</span> and <span class="math-inline">\(r_2\)</span>, then</p>
+<div class="math-block">\begin{equation}
+	y_1=e^{r_1 x}, \qquad y_2=e^{r_2 x}
+	\end{equation}</div>
+<p>are both solutions. Their Wronskian is</p>
+<div class="math-block">\begin{equation}
+	W[y_1,y_2](x)=
+	\begin{vmatrix}
+		e^{r_1 x} &amp; e^{r_2 x}\\
+		r_1 e^{r_1 x} &amp; r_2 e^{r_2 x}
+	\end{vmatrix}
+	= (r_2-r_1)\,e^{(r_1+r_2)x}\neq 0,
+	\end{equation}</div>
+<p>so <span class="math-inline">\(y_1,y_2\)</span> are linearly independent. Hence the general solution is</p>
+<div class="math-block">\begin{equation}
+	y(x)=C_1 e^{r_1 x}+C_2 e^{r_2 x}.
+	\end{equation}</div>
+<p><strong>Step 3: Repeated real root <span class="math-inline">\(r_1=r_2=r\)</span>. (Construction of the <span class="math-inline">\(x e^{r x}\)</span> term.)</strong> If the characteristic polynomial has a <em>double root</em> <span class="math-inline">\(r\)</span>, then we already have one solution <span class="math-inline">\(y_1=e^{r x}\)</span>. To find a second, linearly independent solution, set</p>
+<div class="math-block">\begin{equation}
+	y_2(x)=v(x)\,e^{r x},
+	\end{equation}</div>
+<p>where <span class="math-inline">\(v\)</span> is to be determined. Compute derivatives:</p>
+<div class="math-block">\begin{equation}
+	y_2&#x27; = v&#x27; e^{r x} + r v e^{r x},\qquad
+	y_2&#x27;&#x27; = v&#x27;&#x27; e^{r x} + 2 r v&#x27; e^{r x} + r^2 v e^{r x}.
+	\end{equation}</div>
+<p>Substitute <span class="math-inline">\(y_2,y_2&#x27;,y_2&#x27;&#x27;\)</span> into the ODE:</p>
+<div class="math-block">\begin{equation}
+	a\big(v&#x27;&#x27; + 2 r v&#x27; + r^2 v\big)e^{r x}
+	+ b\big(v&#x27; + r v\big)e^{r x}
+	+ c\big(v\big)e^{r x} = 0.
+	\end{equation}</div>
+<p>Divide by <span class="math-inline">\(e^{r x}\neq 0\)</span> and group terms by <span class="math-inline">\(v&#x27;&#x27;, v&#x27;, v\)</span>:</p>
+<div class="math-block">\begin{equation}
+	a v&#x27;&#x27; + (2 a r + b) v&#x27; + (a r^2 + b r + c)\,v = 0.
+	\end{equation}</div>
+<p>Because <span class="math-inline">\(r\)</span> is a <em>root</em> of the characteristic polynomial, we have</p>
+<div class="math-block">\begin{equation}
+	a r^2 + b r + c = 0.
+	\end{equation}</div>
+<p>Moreover, because the root is <em>repeated</em>, the derivative of the characteristic polynomial also vanishes at <span class="math-inline">\(r\)</span>:</p>
+<div class="math-block">\begin{equation}
+	\frac{d}{dr}(a r^2+br+c)\Big|_{r}
+	= 2 a r + b = 0.
+	\end{equation}</div>
+<p>Hence the equation for <span class="math-inline">\(v\)</span> reduces to</p>
+<div class="math-block">\begin{equation}
+	a\,v&#x27;&#x27; = 0 \quad\Rightarrow\quad v&#x27;&#x27;=0 \quad\Rightarrow\quad v(x)=A x + B.
+	\end{equation}</div>
+<p>Discarding the multiple of the first solution (the <span class="math-inline">\(B e^{r x}\)</span> part), we take <span class="math-inline">\(v(x)=x\)</span> and obtain</p>
+<div class="math-block">\begin{equation}
+	\boxed{\,y_2(x)=x e^{r x}\,}.
+	\end{equation}</div>
+<p>Therefore, the general solution in the repeated-root case is</p>
+<div class="math-block">\begin{equation}
+	y(x)=(C_1 + C_2 x)e^{r x}.
+	\end{equation}</div>
+<p><strong>Step 4: Complex conjugate roots <span class="math-inline">\(r=\alpha\pm i\beta\)</span> with <span class="math-inline">\(\beta\neq 0\)</span>.</strong> If <span class="math-inline">\(r=\alpha\pm i\beta\)</span>, then <span class="math-inline">\(e^{(\alpha\pm i\beta)x}\)</span> are solutions. Taking real and imaginary parts,</p>
+<div class="math-block">\begin{equation}
+	e^{\alpha x}\cos(\beta x),\qquad e^{\alpha x}\sin(\beta x)
+	\end{equation}</div>
+<p>are real solutions. Their Wronskian is</p>
+<div class="math-block">\begin{equation}
+	W\big[e^{\alpha x}\cos\beta x,\, e^{\alpha x}\sin\beta x\big]
+	= \beta\,e^{2\alpha x}\neq 0,
+	\end{equation}</div>
+<p>so they are linearly independent. Thus the general real solution is</p>
+<div class="math-block">\begin{equation}
+	y(x)=e^{\alpha x}\big(C_1\cos\beta x + C_2\sin\beta x\big).
+	\end{equation}</div>
+<p>Combining the three cases completes the proof.</p></div>
+<section class="callout remark"><header>Remark</header><ul><li><p>The step <span class="math-inline">\(2ar+b=0\)</span> in the repeated-root case is precisely the condition <span class="math-inline">\(p&#x27;(r)=0\)</span> where <span class="math-inline">\(p(r)=ar^2+br+c\)</span>. This is why the reduction–of–order equation collapses to <span class="math-inline">\(v&#x27;&#x27;=0\)</span>, giving <span class="math-inline">\(v(x)=x\)</span> and hence <span class="math-inline">\(y_2=x e^{r x}\)</span>.</p></li><li><p>The Wronskians shown above explicitly verify linear independence in the distinct-root and complex-root cases.</p></li><li><p>The exponential ansatz works here because constant coefficients make the ODE invariant under differentiation of <span class="math-inline">\(e^{r x}\)</span>: derivatives only pull down factors of <span class="math-inline">\(r\)</span>, converting the differential equation to an algebraic one.</p></li></ul></section>
+<h3 id="sec-8-nonhomogeneous-equations"><span class="sec-number">8.4.2</span>Nonhomogeneous Equations</h3>
+<section class="callout definition"><header>Definition</header><p>A <strong>nonhomogeneous</strong> second-order linear ODE is</p>
+<div class="math-block">\begin{equation}
+	a\,y&#x27;&#x27; + b\,y&#x27; + c\,y = f(x),
+	\end{equation}</div>
+<p>where <span class="math-inline">\(f(x)\)</span> is a known forcing (nonzero) function.</p></section>
+<section class="callout theorem"><header>Theorem</header><p>The general solution of a nonhomogeneous linear ODE is</p>
+<div class="math-block">\begin{equation}
+	\boxed{y(x) = y_h(x) + y_p(x),}
+	\end{equation}</div>
+<p>where</p>
+<ul><li><p><span class="math-inline">\(y_h(x)\)</span> is the <strong>homogeneous (complementary)</strong> solution satisfying <span class="math-inline">\(a y&#x27;&#x27;+b y&#x27;+c y=0\)</span>,</p></li><li><p><span class="math-inline">\(y_p(x)\)</span> is a <strong>particular solution</strong> satisfying the full equation for the given <span class="math-inline">\(f(x)\)</span>.</p></li></ul></section>
+<section class="callout definition"><header>Definition - Method of Undetermined Coefficients</header><p>If <span class="math-inline">\(f(x)\)</span> is composed of elementary functions such as exponentials, polynomials, or sines and cosines, we assume a trial form for <span class="math-inline">\(y_p(x)\)</span> resembling <span class="math-inline">\(f(x)\)</span>, substitute into the ODE, and solve for the unknown coefficients.</p>
+<p>If any term of the assumed <span class="math-inline">\(y_p(x)\)</span> duplicates a part of <span class="math-inline">\(y_h(x)\)</span>, multiply by the smallest power of <span class="math-inline">\(x\)</span> necessary to ensure linear independence.</p></section>
+<h3 id="sec-8-example-forced-and-damped-harmonic-oscillator"><span class="sec-number">8.4.3</span>Example: Forced and Damped Harmonic Oscillator</h3>
+<section class="callout example"><header>Example - Forced and Damped Harmonic Oscillator (dot notation)</header><p>Consider the driven, damped oscillator</p>
+<div class="math-block">\begin{equation}
+	m\,\ddot{x} + b\,\dot{x} + k\,x = F_0\sin(\omega t),
+	\end{equation}</div>
+<p>where <span class="math-inline">\(m\)</span> is the mass, <span class="math-inline">\(b\)</span> the damping coefficient, <span class="math-inline">\(k\)</span> the spring constant, and <span class="math-inline">\(F_0\sin(\omega t)\)</span> the external driving force.</p>
+<p class="solution-head">Solution.</p>
+<p>Divide through by <span class="math-inline">\(m\)</span>:</p>
+<div class="math-block">\begin{equation}
+	\ddot{x} + 2\gamma\,\dot{x} + \omega_0^2 x = \frac{F_0}{m}\sin(\omega t),
+	\end{equation}</div>
+<p>where</p>
+<div class="math-block">\begin{equation}
+	\omega_0 = \sqrt{\frac{k}{m}}, \qquad 2\gamma = \frac{b}{m}.
+	\end{equation}</div>
+<p><strong>Step 2. Homogeneous solution.</strong></p>
+<p>For the unforced system,</p>
+<div class="math-block">\begin{equation}
+	\ddot{x}_h + 2\gamma\,\dot{x}_h + \omega_0^2 x_h = 0,
+	\end{equation}</div>
+<p>the characteristic equation is</p>
+<div class="math-block">\begin{equation}
+	r^2 + 2\gamma r + \omega_0^2 = 0, \qquad r = -\gamma \pm i\omega_d,
+	\end{equation}</div>
+<p>where</p>
+<div class="math-block">\begin{equation}
+	\boxed{\omega_d = \sqrt{\omega_0^2 - \gamma^2}}
+	\end{equation}</div>
+<p>is the <strong>damped natural frequency</strong>. Hence,</p>
+<div class="math-block">\begin{equation}
+	\boxed{x_h(t) = e^{-\gamma t}\!\big(C_1\cos\omega_d t + C_2\sin\omega_d t\big).}
+	\end{equation}</div>
+<p><strong>Step 3. Particular (steady–state) solution using complex amplitude.</strong></p>
+<p>We look for a steady–state oscillation at the same frequency as the driving force. To simplify the algebra, we use a complex trial solution.</p>
+<p> <strong>Step 3(a). Choose a complex trial solution.</strong></p>
+<p>Assume</p>
+<div class="math-block">\begin{equation}
+	x_p(t) = \operatorname{Im}\!\{ z_0 e^{i\omega t} \},
+	\end{equation}</div>
+<p>where <span class="math-inline">\(z_0\)</span> is a complex constant. We may write</p>
+<div class="math-block">\begin{equation}
+	z_0 = A e^{i\phi},
+	\end{equation}</div>
+<p>so that</p>
+<div class="math-block">\begin{equation}
+	x_p(t)
+	= \operatorname{Im}\{A e^{i(\omega t+\phi)}\}
+	= A \sin(\omega t + \phi).
+	\end{equation}</div>
+<p> <strong>Step 3(b). Substitute into the differential equation.</strong></p>
+<p>The driven damped oscillator equation (after dividing by <span class="math-inline">\(m\)</span>) is</p>
+<div class="math-block">\begin{equation}
+	\frac{d^2 x}{dt^2} + 2\gamma \frac{dx}{dt} + \omega_0^2 x
+	= \frac{F_0}{m}\sin(\omega t)
+	= \operatorname{Im}\!\left\{\frac{F_0}{m} e^{i\omega t}\right\}.
+	\end{equation}</div>
+<p>We substitute the full complex function <span class="math-inline">\(z_0 e^{i\omega t}\)</span>:</p>
+<div class="math-block">\begin{equation}
+	\frac{d}{dt}(z_0 e^{i\omega t}) = i\omega z_0 e^{i\omega t},\qquad
+	\frac{d^2}{dt^2}(z_0 e^{i\omega t}) = -\omega^2 z_0 e^{i\omega t}.
+	\end{equation}</div>
+<p>Substituting into the ODE gives</p>
+<div class="math-block">\begin{equation}
+	\left(-\omega^2 z_0 + 2\gamma\, i\omega z_0 + \omega_0^2 z_0\right)e^{i\omega t}
+	= \frac{F_0}{m} e^{i\omega t}.
+	\end{equation}</div>
+<p> <strong>Step 3(c). Cancel <span class="math-inline">\(e^{i\omega t}\)</span>.</strong></p>
+<div class="math-block">\begin{equation}
+	(-\omega^2 + i\,2\gamma\omega + \omega_0^2)\, z_0
+	= \frac{F_0}{m}.
+	\end{equation}</div>
+<p> <strong>Step 3(d). Solve for the complex amplitude <span class="math-inline">\(z_0\)</span>.</strong></p>
+<div class="math-block">\begin{equation}
+	z_0 =
+	\frac{F_0/m}{\omega_0^2 - \omega^2 + i\,2\gamma\omega}.
+	\end{equation}</div>
+<p>Write the denominator in polar form:</p>
+<div class="math-block">\begin{equation}
+	\omega_0^2 - \omega^2 + i\,2\gamma\omega
+	= R\, e^{i\phi},
+	\end{equation}</div>
+<p>where</p>
+<div class="math-block">\begin{equation}
+	R = \sqrt{(\omega_0^2 - \omega^2)^2 + (2\gamma\omega)^2},
+	\qquad
+	\boxed{\tan\phi = \frac{2\gamma\omega}{\omega_0^2 - \omega^2}}.
+	\end{equation}</div>
+<p>Thus,</p>
+<div class="math-block">\begin{equation}
+	z_0
+	= \frac{F_0/m}{R}\, e^{-i\phi}.
+	\end{equation}</div>
+<p> <strong>Step 3(e). Take the imaginary part.</strong></p>
+<div class="math-block">\begin{equation}
+	x_p(t)
+	= \operatorname{Im}\!\{z_0 e^{i\omega t}\}
+	= \frac{F_0/m}{R}\,\operatorname{Im}\!\{e^{i(\omega t - \phi)}\}
+	= \frac{F_0/m}{R}\,\sin(\omega t - \phi).
+	\end{equation}</div>
+<p> <strong>Final steady–state response:</strong></p>
+<div class="math-block">\begin{equation}
+	\boxed{
+		x_p(t)
+		=
+		\frac{F_0/m}{\sqrt{(\omega_0^2 - \omega^2)^2 + (2\gamma\omega)^2}}
+		\,\sin(\omega t - \phi)
+	}
+	\end{equation}</div>
+<p>with</p>
+<div class="math-block">\begin{equation}
+	\boxed{
+		\tan\phi = \frac{2\gamma\omega}{\omega_0^2 - \omega^2}.
+	}
+	\end{equation}</div>
+<p><strong>Step 4. Complete solution.</strong></p>
+<div class="math-block">\begin{equation}
+	\boxed{
+		x(t) = e^{-\gamma t}\!\big(C_1\cos\omega_d t + C_2\sin\omega_d t\big)
+		+ \frac{F_0/m}{\sqrt{(\omega_0^2 - \omega^2)^2 + (2\gamma\omega)^2}}\,
+		\sin(\omega t - \phi).
+	}
+	\end{equation}</div>
+<p><strong>Step 5. Physical interpretation.</strong></p>
+<ul><li><p><span class="math-inline">\(x_h(t)\)</span>: <strong>Transient response</strong>, which decays exponentially as <span class="math-inline">\(e^{-\gamma t}\)</span> and oscillates with the damped frequency <span class="math-inline">\(\omega_d\)</span>.</p></li><li><p><span class="math-inline">\(x_p(t)\)</span>: <strong>Steady–state response</strong>, which oscillates at the driving frequency <span class="math-inline">\(\omega\)</span>.</p></li><li><p>For weak damping (<span class="math-inline">\(\gamma \ll \omega_0\)</span>), the steady–state amplitude is</p>
+<div class="math-block">\begin{equation}
+		A(\omega) =
+		\frac{F_0/m}{\sqrt{(\omega_0^{\,2}-\omega^{2})^{2} + (2\gamma\omega)^{2}}}.
+		\end{equation}</div></li><li><p>The amplitude reaches a maximum (resonance) when the driving frequency is close to the <em>natural frequency</em> of oscillation,</p>
+<div class="math-block">\begin{equation}
+		\omega \approx \omega_0.
+		\end{equation}</div>
+<p>More precisely, minimising the denominator <span class="math-inline">\((\omega_0^2-\omega^2)^2+(2\gamma\omega)^2\)</span> gives the peak at <span class="math-inline">\(\omega_{\text{res}} = \sqrt{\omega_0^2 - 2\gamma^2}\)</span>, which reduces to <span class="math-inline">\(\omega_0\)</span> in the weak-damping limit <span class="math-inline">\(\gamma \ll \omega_0\)</span>. Evaluating the amplitude at <span class="math-inline">\(\omega=\omega_0\)</span>,</p>
+<div class="math-block">\begin{equation}
+		A(\omega_0)
+		= \frac{F_0/m}{2\gamma\omega_0}
+		= \frac{F_0}{2m\gamma\omega_0},
+		\end{equation}</div>
+<p>which is large when <span class="math-inline">\(\gamma\)</span> is small — the amplitude at resonance is limited only by the damping, and would diverge if <span class="math-inline">\(\gamma\to0\)</span>.</p></li></ul>
+<p>As <span class="math-inline">\(t \to \infty\)</span>, the transient term <span class="math-inline">\(x_h(t)\)</span> vanishes and only the steady oscillation <span class="math-inline">\(x_p(t)\)</span> remains.</p></section>
+<h2 id="sec-8-where-differential-equations-are-used"><span class="sec-number">8.5</span>Where Differential Equations Are Used</h2>
+<p>A differential equation is a statement about how a quantity changes, and change is what physics is about. The forced damped oscillator worked at the end of this chapter is not one example among many — it is the template. The <em>same</em> equation <span class="math-inline">\(m\ddot x + b\dot x + kx = F(t)\)</span>, with the symbols reinterpreted, governs a startling range of systems.</p>
+<ul><li><p><strong>Mechanical vibration.</strong> Mass on a spring, a pendulum, a building swaying in wind: all are <span class="math-inline">\(m\ddot x + b\dot x + kx = F(t)\)</span>, and the resonance condition <span class="math-inline">\(\omega\approx\omega_0\)</span> is why soldiers break step on bridges.</p></li><li><p><strong>Electrical circuits.</strong> The series RLC circuit obeys <span class="math-inline">\(L\ddot q + R\dot q + q/C = V(t)\)</span>, identical in form to the oscillator with <span class="math-inline">\(L\leftrightarrow m\)</span>, <span class="math-inline">\(R\leftrightarrow b\)</span>, <span class="math-inline">\(1/C\leftrightarrow k\)</span>. Resonance here is how a radio selects a station.</p></li><li><p><strong>Growth and decay.</strong> The first-order equation <span class="math-inline">\(\dot y = ky\)</span> describes radioactive decay, population growth, cooling, and the charging of a capacitor — the separable equations of this chapter.</p></li><li><p><strong>Chemical kinetics and mixing.</strong> Reaction rates and concentration in a stirred tank are first-order linear ODEs solved by the integrating factor.</p></li><li><p><strong>The starting point for everything later.</strong> Series solutions (Chapter 9) handle ODEs with variable coefficients that these elementary methods cannot; partial differential equations (Chapter 10) are solved by separating them into ordinary ones.</p></li></ul>
+<section class="callout remark"><header>Remark</header><p>Two ideas from this chapter carry the most weight later. First, for a <em>linear</em> equation the general solution is <span class="math-inline">\(y_h + y_p\)</span>: the full space of solutions is a particular solution plus the entire solution set of the homogeneous equation. Second, the exponential ansatz <span class="math-inline">\(y=e^{rx}\)</span> turns a constant-coefficient linear ODE into an algebraic equation, because differentiating <span class="math-inline">\(e^{rx}\)</span> only multiplies it by <span class="math-inline">\(r\)</span>. Almost every linear system in physics is attacked by some version of these two moves.</p></section>
+<h2 id="sec-8-summary-table">Summary Table</h2>
+<div class="table-wrap"><table><tr><td><strong>Type</strong></td><td><strong>Form</strong></td><td><strong>Method</strong></td></tr><tr><td>Separable</td><td><span class="math-inline">\(\dfrac{dy}{dx} = g(x)h(y)\)</span></td><td>Separate and integrate: <span class="math-inline">\(\int \dfrac{dy}{h} = \int g\,dx\)</span>.</td></tr><tr><td>Linear (1st order)</td><td><span class="math-inline">\(y&#x27; + P(x)y = Q(x)\)</span></td><td>Integrating factor <span class="math-inline">\(\mu = e^{\int P\,dx}\)</span>.</td></tr><tr><td>Bernoulli</td><td><span class="math-inline">\(y&#x27; + P y = Q\,y^n\)</span></td><td>Substitute <span class="math-inline">\(z = y^{1-n}\)</span> to linearise.</td></tr><tr><td>Exact</td><td><span class="math-inline">\(M\,dx + N\,dy = 0\)</span>, <span class="math-inline">\(M_y = N_x\)</span></td><td>Find <span class="math-inline">\(U\)</span> with <span class="math-inline">\(U_x=M\)</span>, <span class="math-inline">\(U_y=N\)</span>; solution <span class="math-inline">\(U=C\)</span>.</td></tr><tr><td>Non-exact</td><td><span class="math-inline">\(M\,dx + N\,dy = 0\)</span>, <span class="math-inline">\(M_y \neq N_x\)</span></td><td>Integrating factor <span class="math-inline">\(\mu(x)\)</span> or <span class="math-inline">\(\mu(y)\)</span>.</td></tr><tr><td>Homogeneous (2nd, const.)</td><td><span class="math-inline">\(ay&#x27;&#x27;+by&#x27;+cy = 0\)</span></td><td>Roots of <span class="math-inline">\(ar^2+br+c=0\)</span>; three cases.</td></tr><tr><td>  distinct real <span class="math-inline">\(r_1,r_2\)</span></td><td></td><td><span class="math-inline">\(y = C_1 e^{r_1 x} + C_2 e^{r_2 x}\)</span>.</td></tr><tr><td>  repeated root <span class="math-inline">\(r\)</span></td><td></td><td><span class="math-inline">\(y = (C_1 + C_2 x)e^{rx}\)</span>.</td></tr><tr><td>  complex <span class="math-inline">\(\alpha\pm i\beta\)</span></td><td></td><td><span class="math-inline">\(y = e^{\alpha x}(C_1\cos\beta x + C_2\sin\beta x)\)</span>.</td></tr><tr><td>Nonhomogeneous (2nd)</td><td><span class="math-inline">\(ay&#x27;&#x27;+by&#x27;+cy = f(x)\)</span></td><td><span class="math-inline">\(y = y_h + y_p\)</span>; undetermined coefficients for <span class="math-inline">\(y_p\)</span>.</td></tr></table></div>
+<h2 id="sec-8-for-the-interested-reader">For the Interested Reader</h2>
+<p>Differential equations is a subject where the mechanics of solving can hide the point, which is that an equation relating a quantity to its rate of change already contains the system's whole future. The first item below is the best short antidote to losing sight of that. Everything listed is free.</p>
+<h3 id="sec-8-the-idea-seen">The idea, seen</h3>
+<p>3Blue1Brown's opening film treats differential equations as a way of thinking about change, using the pendulum and the very oscillator of this chapter. It is worth watching before the techniques start to feel mechanical:</p>
+<section class="callout context"><header>Video</header><p><strong>Differential equations, a tourist's guide — 3Blue1Brown</strong></p>
+<a class="video-preview" href="https://www.youtube.com/watch?v=p_di4Zn4wz4" target="_blank" rel="noopener" aria-label="Watch Differential equations, a tourist&#x27;s guide — 3Blue1Brown on YouTube"><img src="https://img.youtube.com/vi/p_di4Zn4wz4/hqdefault.jpg" alt="Video thumbnail for Differential equations, a tourist&#x27;s guide — 3Blue1Brown" loading="lazy"><span class="video-preview-play" aria-hidden="true"></span><span class="video-preview-label">Watch on YouTube</span></a>
+<p><a href="https://www.youtube.com/watch?v=p_di4Zn4wz4" target="_blank" rel="noopener">Open video on YouTube</a></p></section>
+<h3 id="sec-8-worked-technique-and-practice">Worked technique and practice</h3>
+<ul><li><p><strong>Paul's Online Math Notes — Differential Equations.</strong> The closest match to this chapter and the best source of extra practice: <a href="https://tutorial.math.lamar.edu/Classes/DE/DE.aspx">the full set</a>, with <a href="https://tutorial.math.lamar.edu/Classes/DE/Linear.aspx">Linear Equations</a> and <a href="https://tutorial.math.lamar.edu/Classes/DE/SecondOrderConcepts.aspx">Second Order Equations</a> covering our first- and second-order material in more detail, including variation of parameters, which we did not treat.</p></li><li><p><strong>OpenStax, <em>Calculus Volume 2</em>, Chapter 4.</strong> <a href="https://openstax.org/books/calculus-volume-2/pages/4-3-separable-equations">4.3 Separable Equations</a> and <a href="https://openstax.org/books/calculus-volume-2/pages/4-5-first-order-linear-equations">4.5 First-Order Linear Equations</a> — a slower first pass with many worked examples and applications to growth, decay and mixing.</p></li></ul>
+<section class="callout remark"><header>Remark</header><p>One method this chapter did not cover is worth knowing exists: the <strong>Laplace transform</strong>, which turns a linear constant-coefficient ODE with given initial conditions into an algebraic equation, handles discontinuous and impulsive forcing cleanly, and is the standard tool in engineering. Paul's notes above develop it in full. It is, in spirit, the same trade we made with <span class="math-inline">\(e^{rx}\)</span> and with the complex amplitude in the oscillator example — replace calculus by algebra by moving to a transform.</p></section>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <a href="../chapter-07/index.html">Previous: Fourier Series and Transforms</a>
+      <a href="../../toc.html">Contents</a>
+      <a href="../chapter-09/index.html">Next: Series Solutions of Ordinary Differential Equations (Chapter 12)</a>
+    </nav>
+  </article>
+</main>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p>&copy; 2026 Erfan Saydanzad. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

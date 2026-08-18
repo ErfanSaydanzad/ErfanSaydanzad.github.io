@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 10: Rydberg and Continuum States; Fano Resonances | Direct Method</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+  <link rel="preload" href="../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../assets/css/site.css?v=db81423d">
+  <script>
+    window.MathJax = {
+      // tagformat is an optional TeX extension, not part of the combined
+      // tex-chtml build. Without these two lines the tagformat block below is
+      // read and silently ignored, and every equation numbers from 1 with no
+      // chapter in front of it.
+      loader: { load: ['[tex]/tagformat'] },
+      tex: {
+        packages: { '[+]': ['tagformat'] },
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        processEnvironments: true,
+        tags: 'ams',
+        // The PDF numbers equations within the chapter (\numberwithin
+        // {equation}{chapter}), so "1.8" is the eighth equation of
+        // chapter 1. MathJax counts from 1 on every page, which would have
+        // shown that same equation as "8". Prefixing the chapter number
+        // keeps a reference valid against either version.
+        tagformat: {
+          number: function (n) { return '10.' + n; }
+        },
+        macros: {
+          pdv: ['{\\frac{\\partial #1}{\\partial #2}}', 2],
+          dv: ['{\\frac{d #1}{d #2}}', 2],
+          abs: ['{\\left|#1\\right|}', 1],
+          norm: ['{\\left\\|#1\\right\\|}', 1],
+          curl: '{\\vec{\\nabla}\\times}',
+          div: '{\\vec{\\nabla}\\cdot}',
+          grad: '{\\vec{\\nabla}}',
+          sech: '{\\operatorname{sech}}',
+          csch: '{\\operatorname{csch}}',
+          coth: '{\\operatorname{coth}}',
+          circnum: ['{\\boxed{#1}}', 1],
+          vb: ['{\\mathbf{#1}}', 1],
+          eval: ['{\\left.#1\\right|}', 1],
+          dd: '{\\,d}',
+          // Dirac notation. The chapters are written with the physics
+          // package, which MathJax does not have, so every bra-ket command
+          // the notes use has to be defined here or it renders as red text.
+          // \braket is always given two arguments in these sources.
+          ket: ['{\\left|#1\\right\\rangle}', 1],
+          bra: ['{\\left\\langle#1\\right|}', 1],
+          braket: ['{\\left\\langle#1\\middle|#2\\right\\rangle}', 2],
+          ketbra: ['{\\left|#1\\right\\rangle\\!\\left\\langle#2\\right|}', 2],
+          dyad: ['{\\left|#1\\right\\rangle\\!\\left\\langle#2\\right|}', 2],
+          op: ['{\\left|#1\\right\\rangle\\!\\left\\langle#1\\right|}', 1],
+          mel: ['{\\left\\langle#1\\right|#2\\left|#3\\right\\rangle}', 3],
+          expval: ['{\\left\\langle#1\\right\\rangle}', 1],
+          ev: ['{\\left\\langle#1\\right\\rangle}', 1],
+          comm: ['{\\left[#1,#2\\right]}', 2],
+          acomm: ['{\\left\\{#1,#2\\right\\}}', 2],
+          anticommutator: ['{\\left\\{#1,#2\\right\\}}', 2],
+          Tr: '{\\operatorname{Tr}}',
+          tr: '{\\operatorname{tr}}',
+          bm: ['{\\boldsymbol{#1}}', 1]
+        }
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <script defer src="../../assets/js/main.js?v=db81423d"></script>
+
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="../../index.html">
+    <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M9 6.5V25.5M9 6.5H24M9 25.5H24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 16Q10.5 9.5 15.5 16T25.5 16" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/></svg>
+    <span>Direct Method</span>
+  </a>
+  <nav class="top-nav" aria-label="Primary">
+    <a href="../../index.html">Home</a>
+    <a href="../../toc.html">Contents</a>
+    <a href="../../projects.html">Projects</a>
+  </nav>
+</header>
+<main class="layout" id="main">
+  <aside class="sidebar">
+  <div class="sidebar-inner">
+    <p class="sidebar-kicker">Chapter 10</p>
+    <h2>Rydberg and Continuum States; Fano Resonances</h2>
+    <nav class="chapter-toc" aria-label="Chapter contents">
+      <a class="toc-level-2" href="#sec-10-introduction">10.1 Introduction</a>
+<a class="toc-level-2" href="#sec-10-continuum-normalization">10.2 Continuum Normalization</a>
+<a class="toc-level-2" href="#sec-10-a-discrete-state-coupled-to-a-continuum">10.3 A Discrete State Coupled to a Continuum</a>
+<a class="toc-level-2" href="#sec-10-fano-s-diagonalisation">10.4 Fano&#x27;s Diagonalisation</a>
+<a class="toc-level-2" href="#sec-10-the-fano-profile">10.5 The Fano Profile</a>
+<a class="toc-level-2" href="#sec-10-a-rydberg-series-of-autoionizing-states">10.6 A Rydberg Series of Autoionizing States</a>
+<a class="toc-level-3" href="#sec-10-how-q-varies-along-a-series">10.6.1 How q Varies Along a Series</a>
+<a class="toc-level-2" href="#sec-10-two-series-and-why-they-differ">10.7 Two Series, and Why They Differ</a>
+<a class="toc-level-2" href="#sec-10-summary">10.8 Summary</a>
+<a class="toc-level-2" href="#sec-10-exercises">10.9 Exercises</a>
+<a class="toc-level-2" href="#sec-10-project-fano-profiles-from-a-measured-series">10.10 Project: Fano Profiles from a Measured Series</a>
+    </nav>
+  </div>
+</aside>
+
+  <article class="content">
+    <header class="chapter-hero">
+      <p>Chapter 10</p>
+      <h1>Rydberg and Continuum States; Fano Resonances</h1>
+    </header>
+    <h2 id="sec-10-introduction"><span class="sec-number">10.1</span>Introduction</h2>
+<p>Every chapter so far has been preparation for this one.</p>
+<p>We have a molecule (Chapter 7) with several ionization thresholds (Chapter 9), supporting Rydberg series that converge to the higher ones and therefore lie above the lower ones. Such a state is bound to one ionic core and degenerate with the continuum of another, and the electron–electron repulsion connects them. The tools are in place: continuum normalization (Chapter 3), Fermi's golden rule (Chapter 6), and the <span class="math-inline">\((n^{*})^{-3}\)</span> scaling of amplitude near the core (Chapter 4).</p>
+<p>This chapter produces three things:</p>
+<ol><li><p>the <strong>width</strong> <span class="math-inline">\(\Gamma\)</span> of an autoionizing state and hence its lifetime;</p></li><li><p>the <strong>Fano profile</strong>, the asymmetric line shape produced when a resonant and a direct route lead to the same final state, together with the asymmetry parameter <span class="math-inline">\(q\)</span>;</p></li><li><p>the <strong>scaling laws</strong> that parameterise a whole Rydberg series from measured level positions and a single anchor.</p></li></ol>
+<p>By the end you will reproduce numbers from a published research table by hand. Chapter 11 then makes the whole thing time-dependent.</p>
+<h2 id="sec-10-continuum-normalization"><span class="sec-number">10.2</span>Continuum Normalization</h2>
+<p>A bound state is normalizable, <span class="math-inline">\(\braket{\psi}{\psi}=1\)</span>; a free electron is not. Something must replace normalization, and the choice matters because factors of <span class="math-inline">\(2\pi\)</span> and densities of states hide inside it.</p>
+<section class="callout definition" id="definition-def-fano-energy-norm"><header>Definition 10.2.1 - Energy normalization</header><p> Continuum states labelled by energy are normalized to a Dirac delta,</p>
+<div class="math-block" id="eq-eq-fano-energy-norm">\begin{equation}
+		\label{eq:FANO-energy-norm}
+		\braket{\varepsilon}{\varepsilon&#x27;}=\delta(\varepsilon-\varepsilon&#x27;).
+	\end{equation}</div></section>
+<p>Two consequences are used constantly.</p>
+<section class="callout theorem" id="theorem-thm-fano-completeness"><header>Theorem 10.2.1 - Mixed completeness</header><p> For a system with both bound and free states,</p>
+<div class="math-block" id="eq-eq-fano-completeness">\begin{equation}
+		\label{eq:FANO-completeness}
+		\ket{\Psi}=\sum_n c_n\ket{n}
+		+\int d\varepsilon\;c(\varepsilon)\ket{\varepsilon},
+		\qquad
+		\sum_n|c_n|^{2}+\int d\varepsilon\,|c(\varepsilon)|^{2}=1 .
+	\end{equation}</div></section>
+<p>Equation <a href="../chapter-10/index.html#eq-eq-fano-completeness">(10.2)</a> is the structure of the state vector in Chapter 11, and Def. <a href="../chapter-10/index.html#definition-def-fano-energy-norm">10.2.1</a> is what makes the two terms dimensionally compatible: <span class="math-inline">\(|c(\varepsilon)|^{2}\)</span> is a probability <em>density</em> per unit energy, while <span class="math-inline">\(|c_n|^{2}\)</span> is a probability.</p>
+<p>The second consequence is Remark <a href="../chapter-06/index.html#remark-rem-td-energy-norm">6.5.1</a> of Chapter 6: the density of states is absorbed into the states themselves, so in atomic units Fermi's golden rule reduces to</p>
+<div class="math-block" id="eq-eq-fano-golden-normalized">\begin{equation}
+	\label{eq:FANO-golden-normalized}
+	\Gamma=2\pi\bigl|\bra{\varepsilon}\hat V\ket{i}\bigr|^{2} .
+\end{equation}</div>
+<p>That is the reason for the convention: one fewer factor to get wrong.</p>
+<h2 id="sec-10-a-discrete-state-coupled-to-a-continuum"><span class="sec-number">10.3</span>A Discrete State Coupled to a Continuum</h2>
+<p>Here is the model, stripped to essentials. Two ingredients: a discrete state <span class="math-inline">\(\ket{a}\)</span> at energy <span class="math-inline">\(E_a\)</span> — an autoionizing Rydberg state — and a continuum <span class="math-inline">\(\ket{\varepsilon}\)</span> spanning <span class="math-inline">\(E_a\)</span>, normalized as in Def. <a href="../chapter-10/index.html#definition-def-fano-energy-norm">10.2.1</a>. Neither is an eigenstate of the full Hamiltonian, because a coupling connects them:</p>
+<div class="math-block" id="eq-eq-fano-coupling">\begin{equation}
+	\label{eq:FANO-coupling}
+	V_\varepsilon=\bra{\varepsilon}\hat H\ket{a} .
+\end{equation}</div>
+<p>Physically <span class="math-inline">\(\hat H\)</span> here is the electron–electron repulsion of Chapter 5, called <em>configuration interaction</em> in this context.</p>
+<p>The model Hamiltonian is therefore</p>
+<div class="math-block" id="eq-eq-fano-hamiltonian">\begin{equation}
+	\label{eq:FANO-hamiltonian}
+	\hat H=E_a\ket{a}\bra{a}
+	+\int d\varepsilon\;\varepsilon\ket{\varepsilon}\bra{\varepsilon}
+	+\int d\varepsilon\Bigl[V_\varepsilon\ket{\varepsilon}\bra{a}
+	+V_\varepsilon^{*}\ket{a}\bra{\varepsilon}\Bigr].
+\end{equation}</div>
+<section class="callout theorem" id="theorem-thm-fano-width"><header>Theorem 10.3.1 - Autoionization width</header><p> Because the coupling is to a <em>continuum</em> rather than to a single state, <span class="math-inline">\(\ket{a}\)</span> does not shift and split — it decays, with</p>
+<div class="math-block" id="eq-eq-fano-width">\begin{equation}
+		\label{eq:FANO-width}
+		\boxed{\;\Gamma=2\pi|V_\varepsilon|^{2}\Big|_{\varepsilon=E_a}\;}
+	\end{equation}</div>
+<p>and lifetime</p>
+<div class="math-block" id="eq-eq-fano-lifetime">\begin{equation}
+		\label{eq:FANO-lifetime}
+		\tau=\frac{\hbar}{\Gamma},
+		\qquad\text{i.e.}\qquad
+		\Gamma\tau=\hbar .
+	\end{equation}</div></section>
+<div class="proof" data-lead="Proof."><p>Apply Fermi's golden rule in the form Eq. <a href="../chapter-10/index.html#eq-eq-fano-golden-normalized">(10.3)</a>, with <span class="math-inline">\(\hat V\)</span> the coupling term of Eq. <a href="../chapter-10/index.html#eq-eq-fano-hamiltonian">(10.5)</a> and the final states the continuum at the same energy. Remark <a href="../chapter-06/index.html#remark-rem-td-not-light">6.5.2</a> of Chapter 6 established that the golden rule holds for any coupling, not only a radiative one.</p></div>
+<p>In practical units, Eq. <a href="../chapter-10/index.html#eq-eq-fano-lifetime">(10.7)</a> reads</p>
+<div class="math-block" id="eq-eq-fano-units">\begin{equation}
+	\label{eq:FANO-units}
+	\boxed{\;\Gamma\,[\mathrm{meV}]\times\tau\,[\mathrm{fs}]=658\;}
+\end{equation}</div>
+<p>so a state of width <span class="math-inline">\(37\)</span> meV lives <span class="math-inline">\(18\)</span> fs (helium's <span class="math-inline">\(2s2p\)</span> resonance from Chapter 5), and a state living a picosecond has a width under a microelectronvolt. Widths and lifetimes are the same information.</p>
+<p>It is often convenient to read Eq. <a href="../chapter-10/index.html#eq-eq-fano-width">(10.6)</a> <em>backwards</em>: the width is what experiments measure, the coupling is what a calculation needs. Taking the coupling real and constant across the narrow resonance,</p>
+<div class="math-block" id="eq-eq-fano-effective-coupling">\begin{equation}
+	\label{eq:FANO-effective-coupling}
+	\boxed{\;\bra{\varepsilon}\hat H\ket{a}=\sqrt{\frac{\Gamma}{2\pi}}\;}
+\end{equation}</div>
+<p>This expression appears verbatim in the research equations of Chapter 11.</p>
+<h2 id="sec-10-fano-s-diagonalisation"><span class="sec-number">10.4</span>Fano's Diagonalisation</h2>
+<p>Now solve Eq. <a href="../chapter-10/index.html#eq-eq-fano-hamiltonian">(10.5)</a> exactly. The eigenstates of the full Hamiltonian are not <span class="math-inline">\(\ket{a}\)</span> and <span class="math-inline">\(\ket{\varepsilon}\)</span> but mixtures of them. Write the eigenstate at energy <span class="math-inline">\(E\)</span> as</p>
+<div class="math-block" id="eq-eq-fano-ansatz">\begin{equation}
+	\label{eq:FANO-ansatz}
+	\ket{\Psi_E}=\alpha(E)\ket{a}
+	+\int d\varepsilon\;\beta_E(\varepsilon)\ket{\varepsilon},
+\end{equation}</div>
+<p>and impose <span class="math-inline">\(\hat H\ket{\Psi_E}=E\ket{\Psi_E}\)</span>.</p>
+<p>Projecting onto <span class="math-inline">\(\bra{a}\)</span> and onto <span class="math-inline">\(\bra{\varepsilon}\)</span> gives two equations:</p>
+<div class="math-block" id="eq-eq-fano-eq-a">\begin{align}
+	\label{eq:FANO-eq-a}
+	E_a\alpha+\int d\varepsilon\;V_\varepsilon^{*}\beta_E(\varepsilon)&amp;=E\alpha,\\
+	\label{eq:FANO-eq-eps}
+	\varepsilon\,\beta_E(\varepsilon)+V_\varepsilon\alpha
+	&amp;=E\,\beta_E(\varepsilon).
+\end{align}</div>
+<p>Equation <a href="../chapter-10/index.html#eq-eq-fano-eq-a">(10.12)</a> rearranges to <span class="math-inline">\((E-\varepsilon)\beta_E(\varepsilon)=V_\varepsilon\alpha\)</span>, which cannot simply be divided through because <span class="math-inline">\(E-\varepsilon\)</span> vanishes somewhere in the integration range. The correct general solution of such an equation adds a homogeneous piece proportional to <span class="math-inline">\(\delta(E-\varepsilon)\)</span> and interprets the quotient as a Cauchy principal value:</p>
+<div class="math-block" id="eq-eq-fano-beta">\begin{equation}
+	\label{eq:FANO-beta}
+	\beta_E(\varepsilon)
+	=\left[\mathcal{P}\frac{1}{E-\varepsilon}
+	+z(E)\,\delta(E-\varepsilon)\right]V_\varepsilon\,\alpha ,
+\end{equation}</div>
+<p>with <span class="math-inline">\(z(E)\)</span> fixed by substituting back into Eq. <a href="../chapter-10/index.html#eq-eq-fano-eq-a">(10.11)</a>:</p>
+<div class="math-block" id="eq-eq-fano-z">\begin{equation}
+	\label{eq:FANO-z}
+	z(E)=\frac{E-E_a-F(E)}{|V_E|^{2}},
+	\qquad
+	F(E)=\mathcal{P}\!\int d\varepsilon\,
+	\frac{|V_\varepsilon|^{2}}{E-\varepsilon} .
+\end{equation}</div>
+<p>The function <span class="math-inline">\(F(E)\)</span> is a <em>level shift</em>: it displaces the resonance from <span class="math-inline">\(E_a\)</span> to <span class="math-inline">\(E_a+F\)</span>, and in practice it is absorbed into the measured resonance position. What remains is the interesting part.</p>
+<section class="callout theorem" id="theorem-thm-fano-alpha"><header>Theorem 10.4.1 - The modified discrete state</header><p> The admixture of the discrete state in the exact eigenstate at energy <span class="math-inline">\(E\)</span> is</p>
+<div class="math-block" id="eq-eq-fano-alpha">\begin{equation}
+		\label{eq:FANO-alpha}
+		|\alpha(E)|^{2}
+		=\frac{|V_E|^{2}}
+		{\bigl[E-E_a-F(E)\bigr]^{2}+\pi^{2}|V_E|^{4}}
+		=\frac{\Gamma/2\pi}{(E-E_r)^{2}+\Gamma^{2}/4},
+	\end{equation}</div>
+<p>a Lorentzian of full width <span class="math-inline">\(\Gamma=2\pi|V_E|^{2}\)</span> centred on the shifted position <span class="math-inline">\(E_r=E_a+F\)</span>.</p></section>
+<p>So the discrete state is not destroyed — it is <em>spread</em> over a range of exact eigenstates of width <span class="math-inline">\(\Gamma\)</span>. That is the spectral statement of a finite lifetime, and Eq. <a href="../chapter-10/index.html#eq-eq-fano-alpha">(10.15)</a> is where Theorem <a href="../chapter-10/index.html#theorem-thm-fano-width">10.3.1</a> comes from in an exact treatment rather than a perturbative one.</p>
+<h2 id="sec-10-the-fano-profile"><span class="sec-number">10.5</span>The Fano Profile</h2>
+<p>Now add the laser. Light can reach the continuum from the ground state <span class="math-inline">\(\ket{g}\)</span> in <em>two</em> ways:</p>
+<ol><li><p><strong>directly</strong>, <span class="math-inline">\(\ket{g}\to\ket{\varepsilon}\)</span>, with amplitude <span class="math-inline">\(\bra{\varepsilon}\hat D\ket{g}\)</span>;</p></li><li><p><strong>resonantly</strong>, <span class="math-inline">\(\ket{g}\to\ket{a}\to\ket{\varepsilon}\)</span>, via the discrete state, which then autoionizes.</p></li></ol>
+<p>Both end in the same final state at the same energy, so they are <em>indistinguishable</em> and their amplitudes add before squaring. The cross term is the entire Fano effect.</p>
+<p>The transition rate is <span class="math-inline">\(|\bra{\Psi_E}\hat D\ket{g}|^{2}\)</span>, and from Eq. <a href="../chapter-10/index.html#eq-eq-fano-ansatz">(10.10)</a> the matrix element has one piece from each route. Carrying the algebra through with Eqs. <a href="../chapter-10/index.html#eq-eq-fano-beta">(10.13)</a> and <a href="../chapter-10/index.html#eq-eq-fano-z">(10.14)</a> gives Fano's 1961 result.</p>
+<section class="callout theorem" id="theorem-thm-fano-profile"><header>Theorem 10.5.1 - Fano profile</header><div class="math-block" id="eq-eq-fano-profile">\begin{equation}
+		\label{eq:FANO-profile}
+		\boxed{\;
+			\sigma(E)=\sigma_b\,\frac{(q+\epsilon)^{2}}{1+\epsilon^{2}}\;}
+	\end{equation}</div>
+<p>where <span class="math-inline">\(\sigma_b\)</span> is the background cross section from the direct route alone,</p>
+<div class="math-block" id="eq-eq-fano-reduced-energy">\begin{equation}
+		\label{eq:FANO-reduced-energy}
+		\epsilon=\frac{E-E_r}{\Gamma/2}=\frac{2(E-E_r)}{\Gamma}
+	\end{equation}</div>
+<p>is the detuning in units of the half-width, and</p>
+<div class="math-block" id="eq-eq-fano-q-def">\begin{equation}
+		\label{eq:FANO-q-def}
+		q=\frac{\bra{\tilde a}\hat D\ket{g}}
+		{\pi V_E^{*}\bra{\varepsilon}\hat D\ket{g}}
+	\end{equation}</div>
+<p>is the <em>asymmetry parameter</em>: the ratio of the amplitude for exciting the (shifted, “dressed”) discrete state <span class="math-inline">\(\ket{\tilde a}\)</span> to that for direct ionization.</p></section>
+<p>Read the formula by taking limits.</p>
+<ul><li><p><strong>Far from resonance</strong> (<span class="math-inline">\(\epsilon\to\pm\infty\)</span>), <span class="math-inline">\(\sigma\to\sigma_b\)</span>: the undisturbed background.</p></li><li><p><strong>There is an exact zero</strong> at <span class="math-inline">\(\epsilon=-q\)</span>. The two amplitudes cancel <em>completely</em> at one energy. Absorption does not merely dip — it vanishes. A Lorentzian has no such feature.</p></li><li><p><strong>At line centre</strong> (<span class="math-inline">\(\epsilon=0\)</span>) the ratio to background is <span class="math-inline">\(q^{2}\)</span>. This is the practical handle: a measured peak-to-background ratio at the resonance position gives <span class="math-inline">\(q^{2}\)</span> directly.</p></li><li><p><strong>The true maximum</strong> sits slightly off centre. Differentiating Eq. <a href="../chapter-10/index.html#eq-eq-fano-profile">(10.16)</a>,</p>
+<div class="math-block">\[
+	\frac{d}{d\epsilon}\frac{(q+\epsilon)^{2}}{1+\epsilon^{2}}
+	=\frac{2(q+\epsilon)(1-q\epsilon)}{(1+\epsilon^{2})^{2}},
+	\]</div>
+<p>which vanishes at <span class="math-inline">\(\epsilon=1/q\)</span>, where the ratio is <span class="math-inline">\(1+q^{2}\)</span>.</p></li></ul>
+<p>Two limits of <span class="math-inline">\(q\)</span> deserve names:</p>
+<ul><li><p><span class="math-inline">\(|q|\to\infty\)</span>: the resonant route dominates, the direct one is negligible, and Eq. <a href="../chapter-10/index.html#eq-eq-fano-profile">(10.16)</a> reduces to a Lorentzian peak. No interference, no asymmetry.</p></li><li><p><span class="math-inline">\(q=0\)</span>: the discrete state is not excited at all, yet it still autoionizes and so still interferes. The profile becomes <span class="math-inline">\(\epsilon^{2}/(1+\epsilon^{2})\)</span> — a <em>dip</em> to zero with no peak, a “window resonance”.</p></li></ul>
+<p>So <span class="math-inline">\(q\)</span> interpolates between a peak and a hole. Nothing about the state changes; only the balance of the two routes to it.</p>
+<section class="callout remark" id="remark-rem-fano-asymmetry"><header>Remark 10.5.1 - Asymmetry means interference</header><p> A symmetric line — Lorentzian or Gaussian — can always be read as a rate: something decays, and the spectrum is the Fourier transform of an exponential. An <em>asymmetric</em> line cannot. Asymmetry requires an amplitude whose phase varies across the resonance, interfering with something else. When you see an asymmetric profile in a spectrum, you are looking at interference, and the asymmetry measures a relative phase.</p></section>
+<section class="callout example" id="example-ex-fano-extract"><header>Example 10.5.1 - Extracting <span class="math-inline">\(\Gamma\)</span> and <span class="math-inline">\(q\)</span> from a measured line</header><p> A photoabsorption line shows a minimum at <span class="math-inline">\(59.9\)</span> eV and a maximum at <span class="math-inline">\(60.2\)</span> eV, with the peak four times the far-off background. Find <span class="math-inline">\(q\)</span>, <span class="math-inline">\(E_r\)</span> and <span class="math-inline">\(\Gamma\)</span>.</p>
+<p class="solution-head">Solution.</p>
+<p>The peak-to-background ratio is <span class="math-inline">\(1+q^{2}=4\)</span>, so <span class="math-inline">\(q^{2}=3\)</span> and <span class="math-inline">\(q=\pm\sqrt{3}=\pm1.73\)</span>. Take <span class="math-inline">\(q&gt;0\)</span> for now.</p>
+<p>The zero is at <span class="math-inline">\(\epsilon=-q\)</span> and the maximum at <span class="math-inline">\(\epsilon=1/q\)</span>, so in energy</p>
+<div class="math-block">\[
+	E_{\min}=E_r-\frac{q\Gamma}{2},
+	\qquad
+	E_{\max}=E_r+\frac{\Gamma}{2q} .
+	\]</div>
+<p>Subtracting,</p>
+<div class="math-block">\[
+	E_{\max}-E_{\min}=\frac{\Gamma}{2}\left(q+\frac{1}{q}\right)
+	=\frac{\Gamma}{2}\cdot\frac{q^{2}+1}{q}
+	=\frac{\Gamma}{2}\cdot\frac{4}{1.73}=1.156\,\Gamma .
+	\]</div>
+<p>With <span class="math-inline">\(E_{\max}-E_{\min}=0.3\)</span> eV,</p>
+<div class="math-block">\[
+	\Gamma=\frac{0.3}{1.156}=0.26~\mathrm{eV},
+	\]</div>
+<p>and by Eq. <a href="../chapter-10/index.html#eq-eq-fano-units">(10.8)</a> the lifetime is <span class="math-inline">\(\tau=658/260=2.5\)</span> fs. Then</p>
+<div class="math-block">\[
+	E_r=E_{\min}+\frac{q\Gamma}{2}=59.9+\frac{1.73\times0.26}{2}=60.1~\mathrm{eV}.
+	\]</div>
+<p>Note that the resonance position is at neither the peak nor the dip: it lies between them. Quoting the peak as the resonance energy is a common and avoidable error, and for small <span class="math-inline">\(q\)</span> it can be badly wrong.</p></section>
+<h2 id="sec-10-a-rydberg-series-of-autoionizing-states"><span class="sec-number">10.6</span>A Rydberg Series of Autoionizing States</h2>
+<p>Put the resonance into a Rydberg series and everything becomes predictable, because Chapter 4 already established how Rydberg quantities scale.</p>
+<p>Autoionization happens <em>at the core</em>: the Rydberg electron must be close in for <span class="math-inline">\(\hat V_{ee}\)</span> to transfer energy. Chapter 4's central result, Eq. <a href="../chapter-04/index.html#eq-eq-h-amplitude-scaling">(4.62)</a>, was that the probability of being near the core falls as <span class="math-inline">\((n^{*})^{-3}\)</span>. Combining with Theorem <a href="../chapter-10/index.html#theorem-thm-fano-width">10.3.1</a>:</p>
+<section class="callout theorem" id="theorem-thm-fano-scaling"><header>Theorem 10.6.1 - Rydberg scaling of widths and dipoles</header><div class="math-block" id="eq-eq-fano-gamma-scaling">\begin{equation}
+		\label{eq:FANO-gamma-scaling}
+		\Gamma_n\propto|V_\varepsilon|^{2}\propto (n^{*})^{-3},
+		\qquad
+		\tau_n\propto (n^{*})^{3},
+	\end{equation}</div>
+<p>and, since a dipole matrix element is linear in the wave function where the width is quadratic,</p>
+<div class="math-block" id="eq-eq-fano-dipole-scaling">\begin{equation}
+		\label{eq:FANO-dipole-scaling}
+		\bra{\mathcal R_n}\hat D\ket{\varepsilon}\propto (n^{*})^{-3/2}.
+	\end{equation}</div></section>
+<p>But <span class="math-inline">\(n^{*}\)</span> is not what an experiment measures — level <em>positions</em> are. Eliminate it using <span class="math-inline">\(n^{*}=[\mathcal{E}_{\mathrm{Ryd}}/(E_{\mathrm{th}}-E_n)]^{1/2}\)</span> from Chapter 5, Eq. <a href="../chapter-05/index.html#eq-eq-me-nstar-from-energy">(5.18)</a>. Since <span class="math-inline">\((n^{*})^{3}\propto(E_{\mathrm{th}}-E_n)^{-3/2}\)</span>,</p>
+<div class="math-block" id="eq-eq-fano-tau-working">\begin{equation}
+	\label{eq:FANO-tau-working}
+	\boxed{\;
+		\tau_n=\tau_{\mathrm{ref}}
+		\left(\frac{E_{\mathrm{th}}-E_{\mathrm{ref}}}
+		{E_{\mathrm{th}}-E_n}\right)^{3/2}\;}
+\end{equation}</div>
+<p>and since <span class="math-inline">\((n^{*})^{-3/2}\propto(E_{\mathrm{th}}-E_n)^{3/4}\)</span>,</p>
+<div class="math-block" id="eq-eq-fano-dipole-working">\begin{equation}
+	\label{eq:FANO-dipole-working}
+	\boxed{\;
+		\bra{\mathcal R_n}\hat D\ket{\varepsilon}
+		=\bra{\mathcal R_{\mathrm{ref}}}\hat D\ket{\varepsilon}
+		\left(\frac{E_{\mathrm{th}}-E_n}
+		{E_{\mathrm{th}}-E_{\mathrm{ref}}}\right)^{3/4}\;}
+\end{equation}</div>
+<p>Notice what has dropped out: the quantum defect. It cancels between the two applications of the <span class="math-inline">\(n^{*}\)</span> formula. Measured level positions plus one anchor give every other member's lifetime and coupling, with no structure calculation at all.</p>
+<section class="callout example" id="example-ex-fano-reproduce"><header>Example 10.6.1 - Reproducing a published parameter table</header><p> The CO<span class="math-inline">\(_2\)</span> Henning sharp series, <span class="math-inline">\((3\sigma_u)^{-1}nd\sigma_g\)</span>, converges to <span class="math-inline">\(E_B=18.08\)</span> eV. The <span class="math-inline">\(5d\)</span> member lies at <span class="math-inline">\(17.5395\)</span> eV with a measured lifetime <span class="math-inline">\(372.6\)</span> fs. Predict the lifetime and relative infrared dipole of the <span class="math-inline">\(4d\)</span> member at <span class="math-inline">\(17.2831\)</span> eV.</p>
+<p class="solution-head">Solution.</p>
+<p>Binding energies below threshold:</p>
+<div class="math-block">\[
+	E_B-E_{5d}=18.08-17.5395=0.5405~\mathrm{eV},
+	\qquad
+	E_B-E_{4d}=18.08-17.2831=0.7969~\mathrm{eV}.
+	\]</div>
+<p>Before computing, predict the direction. The <span class="math-inline">\(4d\)</span> state is more deeply bound, hence more compact, hence closer to the core — so it should autoionize <em>faster</em> and couple to the continuum <em>more strongly</em>.</p>
+<p>Lifetime, from Eq. <a href="../chapter-10/index.html#eq-eq-fano-tau-working">(10.21)</a>:</p>
+<div class="math-block">\[
+	\tau_{4d}=372.6\left(\frac{0.5405}{0.7969}\right)^{3/2}
+	=372.6\times(0.6782)^{3/2}
+	=372.6\times0.5585=208.1~\mathrm{fs}.
+	\]</div>
+<p>Dipole, from Eq. <a href="../chapter-10/index.html#eq-eq-fano-dipole-working">(10.22)</a>, taking the <span class="math-inline">\(5d\)</span> value as <span class="math-inline">\(1\)</span>:</p>
+<div class="math-block">\[
+	\bra{\mathcal R_{4d}}\hat D_{\mathrm{IR}}\ket{\varepsilon}
+	=\left(\frac{0.7969}{0.5405}\right)^{3/4}=(1.4744)^{3/4}=1.338 .
+	\]</div>
+<p>Both agree with the published values to every digit quoted. The lifetime fell and the dipole rose, as predicted.</p>
+<p>Two arithmetic warnings. The exponents <span class="math-inline">\(\tfrac32\)</span> and <span class="math-inline">\(\tfrac34\)</span> come with the ratio the <em>other way up</em> — invert one and you get a plausible but wrong answer, the commonest error here. And as a sanity check, neighbouring members near <span class="math-inline">\(n^{*}\approx5\)</span> should differ by factors of order <span class="math-inline">\((5/4)^{3}\approx2\)</span>, which <span class="math-inline">\(0.56\)</span> and <span class="math-inline">\(1.34\)</span> bracket.</p></section>
+<h3 id="sec-10-how-q-varies-along-a-series"><span class="sec-number">10.6.1</span>How <span class="math-inline">\(q\)</span> Varies Along a Series</h3>
+<p>From Eq. <a href="../chapter-10/index.html#eq-eq-fano-q-def">(10.18)</a>, <span class="math-inline">\(q\)</span> is the ratio of resonant to direct excitation amplitude. The denominator involves the continuum coupling, fixed by the width through Eq. <a href="../chapter-10/index.html#eq-eq-fano-effective-coupling">(10.9)</a>, so</p>
+<div class="math-block" id="eq-eq-fano-q-scaling">\begin{equation}
+	\label{eq:FANO-q-scaling}
+	q_n\simeq
+	\frac{\bra{g}\hat D_{\mathrm{XUV}}\ket{\mathcal R_n}}
+	{\sqrt{\pi\Gamma_n/2}\;\bra{g}\hat D_{\mathrm{XUV}}\ket{\varepsilon}}
+	\;\propto\;
+	\bra{g}\hat D_{\mathrm{XUV}}\ket{\mathcal R_n}\sqrt{\tau_n} .
+\end{equation}</div>
+<p>A longer-lived state — a narrower resonance — therefore has a larger <span class="math-inline">\(q\)</span>, hence a more peak-like, less asymmetric line. That is intuitive in hindsight: a narrow resonance concentrates the resonant amplitude into a small energy range where it dominates the smooth background.</p>
+<p>Notice which quantity obeys <em>no</em> scaling law: the bound–bound dipole <span class="math-inline">\(\bra{g}\hat D_{\mathrm{XUV}}\ket{\mathcal R_n}\)</span> in the numerator. It depends on overlap with the ground state and on core details that no <span class="math-inline">\(n^{*}\)</span> power captures, and in practice it is read off measured photoabsorption peak heights state by state. Knowing which quantities scale and which must be measured is most of the skill in using a model like this.</p>
+<h2 id="sec-10-two-series-and-why-they-differ"><span class="sec-number">10.7</span>Two Series, and Why They Differ</h2>
+<p>CO<span class="math-inline">\(_2\)</span> has two Rydberg series converging to <span class="math-inline">\(B^{2}\Sigma_u^{+}\)</span>: the <em>Henning sharp</em> series <span class="math-inline">\((3\sigma_u)^{-1}nd\sigma_g\)</span> and the <em>Henning diffuse</em> series <span class="math-inline">\((3\sigma_u)^{-1}ns\sigma_g\)</span>. They interleave in the same energy range, autoionize into the same coupled continuum (<span class="math-inline">\(\mathcal C\)</span>, here <span class="math-inline">\(X^{2}\Pi_g\)</span>), and have lifetimes differing by an order of magnitude — hundreds to thousands of femtoseconds for the sharp states, tens for the diffuse.</p>
+<p>Everything needed is already in hand. From Chapter 5, the quantum defects: <span class="math-inline">\(\delta_d\approx0\)</span> and <span class="math-inline">\(\delta_s\approx1.3\)</span>, because the centrifugal barrier of Chapter 3 keeps a <span class="math-inline">\(d\)</span> electron out of the core while an <span class="math-inline">\(s\)</span> electron dives through it. From this chapter, the width is proportional to the probability of being at the core. An <span class="math-inline">\(s\)</span> Rydberg electron is there far more often, so it autoionizes far faster.</p>
+<div class="centered"><p><em>One mechanism — penetration — fixes the quantum defects, the autoionization widths and the asymmetry parameters of both series.</em></p></div>
+<p>The names are historical and inverted: the <em>sharp</em> series is the <span class="math-inline">\(d\)</span> series, because a long-lived state gives a narrow line by <span class="math-inline">\(\Gamma\tau=\hbar\)</span>. Sharp means slow.</p>
+<h2 id="sec-10-summary"><span class="sec-number">10.8</span>Summary</h2>
+<ul><li><p>Continuum states are energy-normalized (Def. <a href="../chapter-10/index.html#definition-def-fano-energy-norm">10.2.1</a>), which lets a sum over bound states and an integral over the continuum appear in one expansion (Thm. <a href="../chapter-10/index.html#theorem-thm-fano-completeness">10.2.1</a>) and absorbs the density of states so that <span class="math-inline">\(\Gamma=2\pi|\bra{\varepsilon}\hat V\ket{a}|^{2}\)</span>.</p></li><li><p>A discrete state degenerate with a continuum and coupled to it acquires a width <span class="math-inline">\(\Gamma=2\pi|V_\varepsilon|^{2}\)</span> and decays with <span class="math-inline">\(\Gamma\tau=\hbar\)</span>; in practice <span class="math-inline">\(\Gamma[\mathrm{meV}]\times\tau[\mathrm{fs}]=658\)</span>. Read backwards, a measured width gives the coupling <span class="math-inline">\(\sqrt{\Gamma/2\pi}\)</span>.</p></li><li><p>Diagonalising the coupled system exactly (Sec. <a href="../chapter-10/index.html#sec-10-fano-s-diagonalisation">10.4</a>) shows the discrete state is not destroyed but spread over the exact eigenstates in a Lorentzian of width <span class="math-inline">\(\Gamma\)</span>, shifted by the principal-value integral <span class="math-inline">\(F(E)\)</span>.</p></li><li><p>When light reaches the same continuum both directly and resonantly, the amplitudes interfere and give the Fano profile <span class="math-inline">\(\sigma=\sigma_b(q+\epsilon)^{2}/(1+\epsilon^{2})\)</span> with <span class="math-inline">\(\epsilon=2(E-E_r)/\Gamma\)</span>. There is an exact zero at <span class="math-inline">\(\epsilon=-q\)</span>; the ratio to background at line centre is <span class="math-inline">\(q^{2}\)</span>; the maximum is <span class="math-inline">\(1+q^{2}\)</span> at <span class="math-inline">\(\epsilon=1/q\)</span>. <span class="math-inline">\(|q|\to\infty\)</span> gives a Lorentzian, <span class="math-inline">\(q=0\)</span> a window resonance.</p></li><li><p>An asymmetric line is evidence of interference; a symmetric one can be explained by a rate.</p></li><li><p>Along a Rydberg series <span class="math-inline">\(\Gamma_n\propto(n^{*})^{-3}\)</span> and bound–continuum dipoles <span class="math-inline">\(\propto(n^{*})^{-3/2}\)</span> (Thm. <a href="../chapter-10/index.html#theorem-thm-fano-scaling">10.6.1</a>); in terms of measured positions these become Eqs. <a href="../chapter-10/index.html#eq-eq-fano-tau-working">(10.21)</a> and <a href="../chapter-10/index.html#eq-eq-fano-dipole-working">(10.22)</a>, with the quantum defect cancelling. The asymmetry parameter follows, <span class="math-inline">\(q_n\propto\bra{g}\hat D\ket{\mathcal R_n}\sqrt{\tau_n}\)</span>.</p></li><li><p>CO<span class="math-inline">\(_2\)</span>'s sharp (<span class="math-inline">\(d\)</span>) and diffuse (<span class="math-inline">\(s\)</span>) series differ by an order of magnitude in lifetime for one reason: penetration of the core.</p></li></ul>
+<h2 id="sec-10-exercises"><span class="sec-number">10.9</span>Exercises</h2>
+<ol><li><p><strong>Widths and lifetimes.</strong> Verify Eq. <a href="../chapter-10/index.html#eq-eq-fano-units">(10.8)</a> from <span class="math-inline">\(\Gamma\tau=\hbar\)</span> with <span class="math-inline">\(\hbar=0.658\)</span> eV fs. Then: a state of width <span class="math-inline">\(1.8\)</span> meV lives how long? A state living <span class="math-inline">\(372.6\)</span> fs has what width, in meV and <span class="math-inline">\(\mu\)</span>eV?</p></li><li><p><strong>Anatomy of the profile.</strong> For Eq. <a href="../chapter-10/index.html#eq-eq-fano-profile">(10.16)</a>:</p>
+<ol><li><p>Confirm the zero at <span class="math-inline">\(\epsilon=-q\)</span> and the value <span class="math-inline">\(q^{2}\)</span> at <span class="math-inline">\(\epsilon=0\)</span>.</p></li><li><p>Carry out the differentiation in Sec. <a href="../chapter-10/index.html#sec-10-the-fano-profile">10.5</a> and confirm the maximum is at <span class="math-inline">\(\epsilon=1/q\)</span> with value <span class="math-inline">\(1+q^{2}\)</span>.</p></li><li><p>Sketch the profile for <span class="math-inline">\(q=0\)</span>, <span class="math-inline">\(1\)</span>, <span class="math-inline">\(3\)</span> and <span class="math-inline">\(q\to\infty\)</span> on one set of axes.</p></li></ol></li><li><p><strong>Extracting parameters.</strong> Repeat Example <a href="../chapter-10/index.html#example-ex-fano-extract">10.5.1</a> for a line whose minimum is at <span class="math-inline">\(60.05\)</span> eV, maximum at <span class="math-inline">\(60.20\)</span> eV, with peak-to-background <span class="math-inline">\(8\)</span>. Find <span class="math-inline">\(q\)</span>, <span class="math-inline">\(\Gamma\)</span>, <span class="math-inline">\(\tau\)</span> and <span class="math-inline">\(E_r\)</span>.</p></li><li><p><strong>Building a parameter table.</strong> Using <span class="math-inline">\(E_B=18.08\)</span> eV, the <span class="math-inline">\(5d\)</span> anchor (<span class="math-inline">\(E=17.5395\)</span> eV, <span class="math-inline">\(\tau=372.6\)</span> fs, dipole <span class="math-inline">\(\equiv1.000\)</span>) and Eqs. <a href="../chapter-10/index.html#eq-eq-fano-tau-working">(10.21)</a>–<a href="../chapter-10/index.html#eq-eq-fano-dipole-working">(10.22)</a>, compute <span class="math-inline">\(n^{*}\)</span>, <span class="math-inline">\(\tau_n\)</span> and the relative dipole for the sharp-series members at <span class="math-inline">\(17.8650\)</span> eV (<span class="math-inline">\(8d\)</span>) and <span class="math-inline">\(17.9407\)</span> eV (<span class="math-inline">\(10d\)</span>). Then, with <span class="math-inline">\(q_{5d}=2.00\)</span> and XUV dipoles <span class="math-inline">\(2.0196\times10^{-2}\)</span> (<span class="math-inline">\(5d\)</span>) and <span class="math-inline">\(1.3687\times10^{-2}\)</span> (<span class="math-inline">\(8d\)</span>), use Eq. <a href="../chapter-10/index.html#eq-eq-fano-q-scaling">(10.23)</a> to predict <span class="math-inline">\(q_{8d}\)</span>. The published value is <span class="math-inline">\(2.71\)</span>; if you disagree, find the arithmetic error rather than adjusting anything.</p></li><li><p><strong>The diffuse series.</strong> Repeat for the diffuse series anchored at <span class="math-inline">\(6s\)</span> (<span class="math-inline">\(E=17.4579\)</span> eV, <span class="math-inline">\(\tau=33.0\)</span> fs) for the <span class="math-inline">\(9s\)</span> state at <span class="math-inline">\(17.8457\)</span> eV. Then answer: <span class="math-inline">\(9s\)</span> and <span class="math-inline">\(9d\)</span> lie only <span class="math-inline">\(0.06\)</span> eV apart yet their lifetimes differ by more than tenfold. Which quantity in Eq. <a href="../chapter-10/index.html#eq-eq-fano-tau-working">(10.21)</a> carries the difference, and which does not? Explain the physical origin in two sentences.</p></li></ol>
+<h2 id="sec-10-project-fano-profiles-from-a-measured-series"><span class="sec-number">10.10</span>Project: Fano Profiles from a Measured Series</h2>
+<p><strong>The problem.</strong> Build the absorption spectrum of a whole Rydberg series of autoionizing states from measured level positions and one anchor, and watch the interference structure emerge.</p>
+<p>The data are the CO<span class="math-inline">\(_2\)</span> Henning sharp series converging to <span class="math-inline">\(E_B=18.08\)</span> eV:</p>
+<div class="centered"><div class="table-wrap"><table><tr><td>
+		State</td><td><span class="math-inline">\(4d\)</span></td><td><span class="math-inline">\(5d\)</span></td><td><span class="math-inline">\(6d\)</span></td><td><span class="math-inline">\(7d\)</span></td><td><span class="math-inline">\(8d\)</span></td><td><span class="math-inline">\(10d\)</span></td></tr><tr><td><span class="math-inline">\(E_n\)</span> (eV)</td><td>17.2831</td><td>17.5395</td><td>17.7018</td><td>17.8000</td><td>17.8650</td><td>17.9407</td></tr><tr><td></td></tr></table></div></div>
+<p>with <span class="math-inline">\(\tau_{5d}=372.6\)</span> fs measured and <span class="math-inline">\(q_{5d}=2.00\)</span> as anchor.</p>
+<ol><li><p><strong>On paper.</strong> Compute <span class="math-inline">\(n^{*}\)</span> for each state from Eq. <a href="../chapter-05/index.html#eq-eq-me-nstar-from-energy">(5.18)</a>, hence the quantum defect. Confirm <span class="math-inline">\(\delta_d\)</span> is small and roughly constant — that constancy is Chapter 5's claim, and this is the test of it.</p></li><li><p><strong>On paper.</strong> Using Eq. <a href="../chapter-10/index.html#eq-eq-fano-tau-working">(10.21)</a>, compute <span class="math-inline">\(\tau_n\)</span> for all six, then convert to widths <span class="math-inline">\(\Gamma_n\)</span> in meV using Eq. <a href="../chapter-10/index.html#eq-eq-fano-units">(10.8)</a>.</p></li><li><p><strong>On the computer.</strong> Plot <span class="math-inline">\(\Gamma_n\)</span> against <span class="math-inline">\(n^{*}\)</span> on log–log axes and fit a power law. Report the fitted exponent; it should be <span class="math-inline">\(-3\)</span>.</p></li><li><p><strong>On the computer.</strong> Take <span class="math-inline">\(q_n\)</span> from Eq. <a href="../chapter-10/index.html#eq-eq-fano-q-scaling">(10.23)</a>, assuming for simplicity a common XUV bound dipole — an approximation the real calculation avoids, and one you should comment on. Plot the total spectrum</p>
+<div class="math-block">\[
+	\sigma(E)=\sigma_b\sum_n\frac{(q_n+\epsilon_n)^{2}}{1+\epsilon_n^{2}},
+	\qquad
+	\epsilon_n=\frac{2(E-E_n)}{\Gamma_n},
+	\]</div>
+<p>over <span class="math-inline">\(17.2\)</span> to <span class="math-inline">\(18.0\)</span> eV. Work out how many energy points are needed to resolve the narrowest resonance <em>before</em> plotting.</p></li><li><p><strong>On the computer.</strong> Zoom in on one resonance and mark the zero at <span class="math-inline">\(\epsilon_n=-q_n\)</span>, the peak at <span class="math-inline">\(\epsilon_n=1/q_n\)</span> and the centre <span class="math-inline">\(E_n\)</span>. Then vary <span class="math-inline">\(q\)</span> for that resonance from <span class="math-inline">\(0\)</span> to <span class="math-inline">\(10\)</span> and show the shape morphing from a window to a peak.</p></li><li><p><strong>What has to move.</strong> One animation: sweep <span class="math-inline">\(q\)</span> upward from <span class="math-inline">\(0\)</span> for the whole series at once, so every line turns from a hole into a peak together. Caption it with what to watch — the zero crossing sliding through the resonance as <span class="math-inline">\(q\)</span> grows.</p></li></ol>
+<p><strong>The check.</strong> Part (c) is the real test, and it is a consistency check rather than a measurement: since (b) was derived <em>from</em> a <span class="math-inline">\((n^{*})^{-3}\)</span> law, recovering <span class="math-inline">\(-3\)</span> confirms the arithmetic, not the physics. Say so plainly in your write-up.</p>
+<p><strong>Be ready to answer.</strong> Your spectrum shows the higher members crowding together as they approach <span class="math-inline">\(18.08\)</span> eV while their widths shrink. Both trends are powers of <span class="math-inline">\(n^{*}\)</span>. Which power governs each — and what therefore happens to the <em>ratio</em> of width to spacing as <span class="math-inline">\(n\)</span> grows? What does that tell you about whether neighbouring resonances can be treated as independent, an assumption the research model makes explicitly?</p>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <a href="../chapter-09/index.html">Previous: Electronic Spectroscopy</a>
+      <a href="../../toc.html">Contents</a>
+      <a href="../chapter-11/index.html">Next: Time-Dependent Rydberg–Fano Dynamics in CO<span class="math-inline">\(_2\)</span></a>
+    </nav>
+  </article>
+</main>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p>&copy; 2026 Erfan Saydanzad. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

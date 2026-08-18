@@ -1,0 +1,1030 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 1: Infinite Series and Power Series | Mathematical Methods in the Physical Sciences</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+  <link rel="preload" href="../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../assets/css/site.css?v=4c167578">
+  <script>
+    window.MathJax = {
+      // tagformat is an optional TeX extension, not part of the combined
+      // tex-chtml build. Without these two lines the tagformat block below is
+      // read and silently ignored, and every equation numbers from 1 with no
+      // chapter in front of it.
+      loader: { load: ['[tex]/tagformat'] },
+      tex: {
+        packages: { '[+]': ['tagformat'] },
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        processEnvironments: true,
+        tags: 'ams',
+        // The PDF numbers equations within the chapter (\numberwithin
+        // {equation}{chapter}), so "1.8" is the eighth equation of
+        // chapter 1. MathJax counts from 1 on every page, which would have
+        // shown that same equation as "8". Prefixing the chapter number
+        // keeps a reference valid against either version.
+        tagformat: {
+          number: function (n) { return '1.' + n; }
+        },
+        macros: {
+          pdv: ['{\\frac{\\partial #1}{\\partial #2}}', 2],
+          dv: ['{\\frac{d #1}{d #2}}', 2],
+          abs: ['{\\left|#1\\right|}', 1],
+          norm: ['{\\left\\|#1\\right\\|}', 1],
+          curl: '{\\vec{\\nabla}\\times}',
+          div: '{\\vec{\\nabla}\\cdot}',
+          grad: '{\\vec{\\nabla}}',
+          sech: '{\\operatorname{sech}}',
+          csch: '{\\operatorname{csch}}',
+          coth: '{\\operatorname{coth}}',
+          circnum: ['{\\boxed{#1}}', 1],
+          vb: ['{\\mathbf{#1}}', 1],
+          eval: ['{\\left.#1\\right|}', 1],
+          dd: '{\\,d}'
+        }
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <script defer src="../../assets/js/main.js?v=4c167578"></script>
+
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="../../index.html">
+    <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M9 6.5V25.5M9 6.5H24M9 25.5H24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 16Q10.5 9.5 15.5 16T25.5 16" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/></svg>
+    <span>Mathematical Methods in the Physical Sciences</span>
+  </a>
+  <nav class="top-nav" aria-label="Primary">
+    <a href="../../index.html">Home</a>
+    <a href="../../toc.html">Contents</a>
+    <a href="../../projects.html">Projects</a>
+  </nav>
+</header>
+<main class="layout" id="main">
+  <aside class="sidebar">
+  <div class="sidebar-inner">
+    <p class="sidebar-kicker">Chapter 1</p>
+    <h2>Infinite Series and Power Series</h2>
+    <nav class="chapter-toc" aria-label="Chapter contents">
+      <a class="toc-level-2" href="#sec-1-definitions-and-notation">1.1 Definitions and Notation</a>
+<a class="toc-level-2" href="#sec-1-geometric-sequences-and-series">1.2 Geometric Sequences and Series</a>
+<a class="toc-level-3" href="#sec-1-finite-geometric-series">1.2.1 Finite Geometric Series</a>
+<a class="toc-level-3" href="#sec-1-infinite-geometric-series">1.2.2 Infinite Geometric Series</a>
+<a class="toc-level-2" href="#sec-1-limit-of-the-general-term-as-n">1.3 Limit of the General Term as n</a>
+<a class="toc-level-2" href="#sec-1-testing-series-for-convergence">1.4 Testing Series for Convergence</a>
+<a class="toc-level-3" href="#sec-1-preliminary-test">1.4.1 Preliminary Test</a>
+<a class="toc-level-3" href="#sec-1-comparison-test">1.4.2 Comparison Test</a>
+<a class="toc-level-3" href="#sec-1-integral-test">1.4.3 Integral Test</a>
+<a class="toc-level-3" href="#sec-1-ratio-test">1.4.4 Ratio Test</a>
+<a class="toc-level-3" href="#sec-1-limit-comparison-test">1.4.5 Limit Comparison Test</a>
+<a class="toc-level-2" href="#sec-1-alternating-series">1.5 Alternating Series</a>
+<a class="toc-level-3" href="#sec-1-absolute-vs-conditional-convergence">1.5.1 Absolute vs. Conditional Convergence</a>
+<a class="toc-level-2" href="#sec-1-summary-convergence-tests">Summary: Convergence Tests</a>
+<a class="toc-level-2" href="#sec-1-power-series">1.7 Power Series</a>
+<a class="toc-level-3" href="#sec-1-radius-and-interval-of-convergence">1.7.1 Radius and Interval of Convergence</a>
+<a class="toc-level-2" href="#sec-1-theorems-about-power-series">1.8 Theorems About Power Series</a>
+<a class="toc-level-2" href="#sec-1-taylor-and-maclaurin-series">1.9 Taylor and Maclaurin Series</a>
+<a class="toc-level-3" href="#sec-1-finding-the-coefficients">Finding the Coefficients</a>
+<a class="toc-level-3" href="#sec-1-common-maclaurin-series">Common Maclaurin Series</a>
+<a class="toc-level-2" href="#sec-1-techniques-for-obtaining-power-series-expansions">1.10 Techniques for Obtaining Power Series Expansions</a>
+<a class="toc-level-3" href="#sec-1-using-differentiation-and-integration">1.10.1 Using Differentiation and Integration</a>
+<a class="toc-level-3" href="#sec-1-multiplying-a-series-by-a-polynomial-or-by-another-series">1.10.2 Multiplying a Series by a Polynomial or by Another Series</a>
+<a class="toc-level-3" href="#sec-1-division-of-two-series-or-of-a-series-by-a-polynomial">1.10.3 Division of Two Series or of a Series by a Polynomial</a>
+<a class="toc-level-3" href="#sec-1-using-the-binomial-series">1.10.4 Using the Binomial Series</a>
+<a class="toc-level-3" href="#sec-1-substitution-of-a-polynomial-or-a-series-into-another-series">1.10.5 Substitution of a Polynomial or a Series into Another Series</a>
+<a class="toc-level-3" href="#sec-1-combination-of-methods">1.10.6 Combination of Methods</a>
+<a class="toc-level-3" href="#sec-1-taylor-series-using-basic-maclaurin-series">1.10.7 Taylor Series Using Basic Maclaurin Series</a>
+<a class="toc-level-2" href="#sec-1-applications-of-series">1.11 Applications of Series</a>
+<a class="toc-level-3" href="#sec-1-approximating-functions">Approximating Functions</a>
+<a class="toc-level-3" href="#sec-1-recovering-simple-physical-laws">Recovering Simple Physical Laws</a>
+<a class="toc-level-2" href="#sec-1-summary-types-of-series">Summary: Types of Series</a>
+<a class="toc-level-2" href="#sec-1-for-the-interested-reader">For the Interested Reader</a>
+<a class="toc-level-3" href="#sec-1-convergence-of-series">Convergence of series</a>
+<a class="toc-level-3" href="#sec-1-power-series-taylor-and-maclaurin">Power series, Taylor and Maclaurin</a>
+    </nav>
+  </div>
+</aside>
+
+  <article class="content">
+    <header class="chapter-hero">
+      <p>Chapter 1</p>
+      <h1>Infinite Series and Power Series</h1>
+    </header>
+    <h2 id="sec-1-definitions-and-notation"><span class="sec-number">1.1</span>Definitions and Notation</h2>
+<section class="callout definition"><header>Definition - Sequence</header><p>A <strong>sequence</strong> is an ordered list of numbers:</p>
+<div class="math-block">\begin{equation}
+		a_1, a_2, \dots, a_n, \dots
+	\end{equation}</div>
+<p>Here <span class="math-inline">\(a_1\)</span> is the <strong>first term</strong> and <span class="math-inline">\(a_n\)</span> is the <strong>general term</strong>: the formula that tells us how to write down the <span class="math-inline">\(n\)</span>th entry for any <span class="math-inline">\(n\)</span>.</p></section>
+<p class="paragraph-title">Examples of Sequences</p>
+<ul><li><p><span class="math-inline">\(1, 2, 3, \dots, n, \dots \quad \Rightarrow a_1 = 1,\quad a_n = n\)</span></p></li><li><p><span class="math-inline">\(1^2, 2^2, 3^2, \dots, n^2, \dots \quad \Rightarrow a_1 = 1,\quad a_n = n^2\)</span></p></li></ul>
+<section class="callout definition"><header>Definition - Partial sum</header><p>The <strong>partial sum</strong> <span class="math-inline">\(S_N\)</span> is the sum of the first <span class="math-inline">\(N\)</span> terms of a sequence:</p>
+<div class="math-block">\begin{equation}
+		S_N = a_1 + a_2 + \cdots + a_N = \sum_{n=1}^{N} a_n
+	\end{equation}</div>
+<p>Each <span class="math-inline">\(S_N\)</span> is an ordinary finite sum, so the partial sums themselves form a new sequence <span class="math-inline">\(S_1, S_2, S_3, \dots\)</span></p></section>
+<p class="paragraph-title">Examples of Partial Sums</p>
+<ul><li><p><span class="math-inline">\(S_4 = \sum_{n=1}^{4} n = 1 + 2 + 3 + 4 = 10\)</span></p></li><li><p><span class="math-inline">\(S_3 = \sum_{n=1}^{3} n^2 = 1^2 + 2^2 + 3^2 = 14\)</span></p></li></ul>
+<section class="callout definition"><header>Definition - Infinite series</header><p>An <strong>infinite series</strong> is the sum of all terms in a sequence:</p>
+<div class="math-block">\begin{equation}
+		S_{\infty} = \sum_{n=1}^{\infty} a_n = a_1 + a_2 + a_3 + \cdots
+	\end{equation}</div>
+<p>We cannot literally add infinitely many numbers, so this symbol is <em>defined</em> as the limit of the partial sums:</p>
+<div class="math-block">\begin{equation}
+		\sum_{n=1}^{\infty} a_n = \lim_{N \to \infty} S_N .
+		\label{eq:series-as-limit}
+	\end{equation}</div>
+<p>If that limit exists and is finite, the series <strong>converges</strong> to it; otherwise the series <strong>diverges</strong>. Every convergence test in this chapter is ultimately a statement about the sequence <span class="math-inline">\(S_1, S_2, S_3, \dots\)</span></p></section>
+<p class="paragraph-title">Examples of Infinite Series</p>
+<ul><li><p><span class="math-inline">\(\sum_{n=1}^{\infty} n = 1 + 2 + 3 + \cdots\)</span></p></li><li><p><span class="math-inline">\(\sum_{n=1}^{\infty} n^2 = 1^2 + 2^2 + 3^2 + \cdots\)</span></p></li><li><p><span class="math-inline">\(\sum_{n=1}^{\infty} \dfrac{(-1)^{n-1} x^n}{(n - 1)!} = x - x^2 + \dfrac{x^3}{2} - \cdots\)</span></p></li></ul>
+<section class="callout remark"><header>Remark - Notation</header><p><span class="math-inline">\(n!\)</span> (read <em>"n factorial"</em>) is defined as:</p>
+<ul><li><p><span class="math-inline">\(n! = n \cdot (n - 1) \cdots 3 \cdot 2 \cdot 1\)</span></p></li><li><p><span class="math-inline">\(0! = 1\)</span></p></li><li><p>Example: <span class="math-inline">\(5! = 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 = 120\)</span></p></li></ul></section>
+<h2 id="sec-1-geometric-sequences-and-series"><span class="sec-number">1.2</span>Geometric Sequences and Series</h2>
+<section class="callout definition"><header>Definition - Geometric sequence</header><p>A <strong>geometric sequence</strong> is a sequence in which each term is obtained by multiplying the previous one by a fixed number <span class="math-inline">\(r\)</span>, called the <strong>common ratio</strong>:</p>
+<div class="math-block">\begin{equation}
+		a,\ ar,\ ar^2,\ ar^3,\ \dots
+	\end{equation}</div></section>
+<section class="callout remark"><header>Remark - Watch the indexing</header><p>Geometric series are conventionally indexed from <span class="math-inline">\(n = 0\)</span>, so that the general term is <span class="math-inline">\(a r^{n}\)</span> and the term <span class="math-inline">\(a\)</span> itself corresponds to <span class="math-inline">\(n = 0\)</span>. Elsewhere in this chapter sequences start at <span class="math-inline">\(n = 1\)</span>. Always check which convention a formula assumes: the first <span class="math-inline">\(N\)</span> terms of a geometric series run from <span class="math-inline">\(ar^{0}\)</span> up to <span class="math-inline">\(ar^{N-1}\)</span>, <em>not</em> up to <span class="math-inline">\(ar^{N}\)</span>.</p></section>
+<p class="paragraph-title">Examples</p>
+<ul><li><p><strong>Exponential Growth (e.g., Bacteria):</strong> <span class="math-inline">\(2,\ 4,\ 8,\ 16,\ \dots\)</span> with <span class="math-inline">\(r = 2\)</span></p></li><li><p><strong>Decay (e.g., Bouncing Ball):</strong> <span class="math-inline">\(1,\ \frac{2}{3},\ \frac{4}{9},\ \frac{8}{27},\ \dots\)</span> with <span class="math-inline">\(r = \frac{2}{3}\)</span></p></li></ul>
+<h3 id="sec-1-finite-geometric-series"><span class="sec-number">1.2.1</span>Finite Geometric Series</h3>
+<section class="callout theorem"><header>Theorem</header><p>The sum of the first <span class="math-inline">\(N\)</span> terms of a geometric series is:</p>
+<div class="math-block">\begin{equation}
+		S_N = a \cdot \frac{1 - r^N}{1 - r}, \quad r \ne 1
+	\end{equation}</div></section>
+<div class="proof" data-lead="Proof."><p>Consider the geometric series</p>
+<div class="math-block">\begin{equation}
+S_N = a + ar + ar^2 + \cdots + ar^{N-1}.
+\end{equation}</div>
+<p>Multiply both sides by <span class="math-inline">\(r\)</span>:</p>
+<div class="math-block">\begin{equation}
+rS_N = ar + ar^2 + ar^3 + \cdots + ar^N.
+\end{equation}</div>
+<p>Subtracting these two equations gives</p>
+<div class="math-block">\begin{equation}
+S_N - rS_N = a - ar^N.
+\end{equation}</div>
+<p>Factor the left-hand side:</p>
+<div class="math-block">\begin{equation}
+S_N(1 - r) = a(1 - r^N).
+\end{equation}</div>
+<p>Finally, dividing both sides by <span class="math-inline">\((1-r)\)</span> (valid when <span class="math-inline">\(r \neq 1\)</span>), we obtain</p>
+<div class="math-block">\begin{equation}
+S_N = a \cdot \frac{1 - r^N}{1 - r}.
+\end{equation}</div></div>
+<h3 id="sec-1-infinite-geometric-series"><span class="sec-number">1.2.2</span>Infinite Geometric Series</h3>
+<p>We do not need a new argument here: the infinite case follows from the finite formula we just proved by letting <span class="math-inline">\(N \to \infty\)</span>.</p>
+<section class="callout theorem"><header>Theorem - Infinite geometric series</header><p>The series <span class="math-inline">\(a + ar + ar^2 + \cdots\)</span> <strong>converges</strong> if and only if <span class="math-inline">\(|r| &lt; 1\)</span>, and in that case</p>
+<div class="math-block">\begin{equation}
+		\sum_{n=0}^{\infty} ar^n = \frac{a}{1 - r} .
+		\label{eq:geometric-infinite}
+	\end{equation}</div></section>
+<div class="proof" data-lead="Proof."><p>By definition <span class="math-inline">\(\eqref{eq:series-as-limit}\)</span> the sum is <span class="math-inline">\(\lim_{N\to\infty} S_N\)</span>, and by the previous theorem</p>
+<div class="math-block">\begin{equation}
+	S_N = a\,\frac{1 - r^N}{1 - r}, \qquad r \ne 1 .
+	\end{equation}</div>
+<p>The only <span class="math-inline">\(N\)</span>-dependent piece is <span class="math-inline">\(r^N\)</span>. If <span class="math-inline">\(|r| &lt; 1\)</span> then <span class="math-inline">\(r^N \to 0\)</span>, so</p>
+<div class="math-block">\begin{equation}
+	\lim_{N \to \infty} S_N = a \cdot \frac{1 - 0}{1 - r} = \frac{a}{1 - r}.
+	\end{equation}</div>
+<p>If <span class="math-inline">\(|r| &gt; 1\)</span> then <span class="math-inline">\(|r^N| \to \infty\)</span> and the limit does not exist; if <span class="math-inline">\(r = 1\)</span> then <span class="math-inline">\(S_N = Na \to \pm\infty\)</span>; and if <span class="math-inline">\(r = -1\)</span> the partial sums oscillate between <span class="math-inline">\(a\)</span> and <span class="math-inline">\(0\)</span>. In each of these cases the series diverges.</p></div>
+<section class="callout remark"><header>Remark</header><p>So for <span class="math-inline">\(|r| \geq 1\)</span> the series <strong>diverges</strong> — it does not approach any finite value. Note that divergence does not always mean “blows up”: for <span class="math-inline">\(r = -1\)</span> the partial sums stay bounded but never settle down, and that is enough to diverge.</p></section>
+<section class="callout example"><header>Example - Bouncing Ball</header><p>A ball is dropped from a height of <span class="math-inline">\(1\)</span> yard and rebounds to <span class="math-inline">\(\frac{2}{3}\)</span> of its previous height on each bounce. Find the total distance it travels.</p>
+<p class="solution-head">Solution.</p>
+<p>The initial drop covers <span class="math-inline">\(1\)</span> yard and is counted once. After that, the ball rises to height <span class="math-inline">\(\frac23\)</span> and falls back through the same height, then rises to <span class="math-inline">\(\frac49\)</span> and falls back, and so on. <em>Every bounce height is therefore traversed twice</em>, which is where the factor of <span class="math-inline">\(2\)</span> comes from:</p>
+<div class="math-block">\begin{align}
+	\text{Total distance}
+	&amp;= \underbrace{1}_{\text{initial drop}}
+	 + 2\underbrace{\left( \tfrac{2}{3} + \tfrac{4}{9} + \tfrac{8}{27} + \cdots \right)}_{\text{each height, up and down}} \notag \\
+	&amp;= 1 + 2 \sum_{k=1}^{\infty} \left(\frac{2}{3}\right)^{k} .
+\end{align}</div>
+<p>The sum is geometric with first term <span class="math-inline">\(a = \frac23\)</span> and ratio <span class="math-inline">\(r = \frac23\)</span>. Since <span class="math-inline">\(|r| &lt; 1\)</span> it converges, and by <span class="math-inline">\(\eqref{eq:geometric-infinite}\)</span></p>
+<div class="math-block">\begin{equation}
+	\sum_{k=1}^{\infty} \left(\frac{2}{3}\right)^{k}
+	= \frac{2/3}{1 - 2/3} = \frac{2/3}{1/3} = 2 .
+\end{equation}</div>
+<p>Therefore</p>
+<div class="math-block">\begin{equation}
+	\text{Total distance} = 1 + 2(2) = 5 \text{ yards}.
+\end{equation}</div>
+<p>Note that the ball bounces infinitely many times yet travels only a finite distance — infinitely many terms can still add up to a finite total.</p></section>
+<section class="callout example"><header>Example - Repeating Decimal <span class="math-inline">\(0.333\ldots\)</span></header><div class="math-block">\begin{equation}
+0.333\ldots = \frac{3}{10} + \frac{3}{100} + \frac{3}{1000} + \cdots = \sum_{n=1}^{\infty} \frac{3}{10^n}
+\end{equation}</div>
+<p>This is a geometric series with <span class="math-inline">\(a = \frac{3}{10},\ r = \frac{1}{10}\)</span>:</p>
+<div class="math-block">\begin{equation}
+\text{Sum} = \frac{3/10}{1 - 1/10} = \frac{3}{9} = \frac{1}{3}
+\end{equation}</div></section>
+<section class="callout example"><header>Example - Repeating Decimal <span class="math-inline">\(0.785714\ldots\)</span></header><div class="math-block">\begin{equation}
+0.785714285714\ldots = \frac{1}{2} + \frac{285714}{10^6} + \frac{285714}{10^{12}} + \cdots
+\end{equation}</div>
+<p>The repeating part is geometric with:</p>
+<ul><li><p><span class="math-inline">\(a = \frac{285714}{10^6}\)</span></p></li><li><p><span class="math-inline">\(r = \frac{1}{10^6}\)</span></p></li></ul>
+<div class="math-block">\begin{equation}
+\text{Repeating part sum} = \frac{a}{1 - r} = \frac{285714}{10^6 - 1} = \frac{285714}{999999} = \frac{2}{7}
+\end{equation}</div>
+<p>Thus:</p>
+<div class="math-block">\begin{equation}
+0.785714\ldots = \frac{1}{2} + \frac{2}{7} = \frac{11}{14}
+\end{equation}</div></section>
+<section class="callout example"><header>Example - Physics: multiple reflections in a glass plate</header><p>A beam of light of intensity <span class="math-inline">\(I_0\)</span> strikes a glass plate. At each surface a fraction <span class="math-inline">\(R\)</span> of the intensity is reflected and a fraction <span class="math-inline">\(T = 1 - R\)</span> is transmitted. Find the total intensity that emerges from the far side, accounting for light that bounces back and forth inside the plate.</p>
+<p class="solution-head">Solution.</p>
+<p>Follow the beam through the plate:</p>
+<ul><li><p>It crosses the front surface, keeping a fraction <span class="math-inline">\(T\)</span>, then crosses the back surface, keeping another <span class="math-inline">\(T\)</span>. Emerging intensity: <span class="math-inline">\(T^2 I_0\)</span>.</p></li><li><p>Alternatively it reflects off the back surface (<span class="math-inline">\(R\)</span>), reflects off the front surface (<span class="math-inline">\(R\)</span>), and then exits. Each such round trip costs a factor <span class="math-inline">\(R^2\)</span>.</p></li></ul>
+<p>So the emerging beams have intensities</p>
+<div class="math-block">\begin{equation}
+	T^2 I_0,\quad T^2 R^2 I_0,\quad T^2 R^4 I_0,\quad \dots
+\end{equation}</div>
+<p>which is geometric with first term <span class="math-inline">\(a = T^2 I_0\)</span> and ratio <span class="math-inline">\(r = R^2\)</span>. Because <span class="math-inline">\(0 \le R &lt; 1\)</span> we have <span class="math-inline">\(|r| &lt; 1\)</span>, so by <span class="math-inline">\(\eqref{eq:geometric-infinite}\)</span></p>
+<div class="math-block">\begin{equation}
+	I_{\text{total}}
+	= T^2 I_0 \sum_{n=0}^{\infty} R^{2n}
+	= \frac{T^2 I_0}{1 - R^2}
+	= \frac{(1-R)^2 I_0}{(1-R)(1+R)}
+	= \frac{1 - R}{1 + R}\, I_0 .
+\end{equation}</div>
+<p>As a check: if <span class="math-inline">\(R = 0\)</span> (no reflection) then <span class="math-inline">\(I_{\text{total}} = I_0\)</span>, as it must be. Note that the naive answer <span class="math-inline">\(T^2 I_0\)</span> is too small — the multiple reflections matter.</p></section>
+<h2 id="sec-1-limit-of-the-general-term-as-n"><span class="sec-number">1.3</span>Limit of the General Term as <span class="math-inline">\(n \to \infty\)</span></h2>
+<section class="callout definition"><header>Definition</header><p>The limit of the general term <span class="math-inline">\(a_n\)</span> of a sequence as <span class="math-inline">\(n \to \infty\)</span> is denoted by:</p>
+<div class="math-block">\begin{equation}
+			\lim_{n \to \infty} a_n
+		\end{equation}</div></section>
+<section class="callout example"><header>Example</header><p>Evaluate:</p>
+<div class="math-block">\begin{equation}
+	\lim_{n \to \infty} \dfrac{(2n - 1)^4 + \sqrt{1 + 9n^8}}{1 - n^3 - 7n^4}
+	\end{equation}</div>
+<p class="solution-head">Solution.</p>
+<p>The highest power of <span class="math-inline">\(n\)</span> is <span class="math-inline">\(n^4\)</span> in both the numerator and the denominator (note that <span class="math-inline">\(\sqrt{9n^8} = 3n^4\)</span>), so divide both by <span class="math-inline">\(n^4\)</span>. Inside the square root this means dividing by <span class="math-inline">\(n^8\)</span>:</p>
+<div class="math-block">\begin{align}
+		\lim_{n \to \infty} \frac{(2n - 1)^4 + \sqrt{1 + 9n^8}}{1 - n^3 - 7n^4}
+		&amp;= \lim_{n \to \infty}
+		   \frac{\left(2 - \frac{1}{n}\right)^4 + \sqrt{\frac{1}{n^8} + 9}}
+		        {\frac{1}{n^4} - \frac{1}{n} - 7} .
+	\end{align}</div>
+<p>Now every term of the form <span class="math-inline">\(1/n^k\)</span> tends to <span class="math-inline">\(0\)</span> as <span class="math-inline">\(n \to \infty\)</span>, leaving</p>
+<div class="math-block">\begin{align}
+		= \frac{(2 - 0)^4 + \sqrt{0 + 9}}{0 - 0 - 7}
+		= \frac{16 + 3}{-7}
+		= -\frac{19}{7} .
+	\end{align}</div></section>
+<section class="callout example"><header>Example</header><p>Evaluate:</p>
+<div class="math-block">\begin{equation}
+	\lim_{n \to \infty} \frac{\ln n}{n}
+	\end{equation}</div>
+<p class="solution-head">Solution: Using L'Hôpital's Rule</p>
+<div class="math-block">\begin{align}
+		\lim_{n \to \infty} \frac{\ln n}{n} &amp;= \lim_{n \to \infty} \frac{1/n}{1} = 0
+	\end{align}</div>
+<p><strong>Note:</strong> Although <span class="math-inline">\(n\)</span> is discrete, the limit is evaluated using a continuous extension <span class="math-inline">\(f(x) = \frac{\ln x}{x}\)</span>.</p></section>
+<section class="callout example"><header>Example</header><p>Evaluate:</p>
+<div class="math-block">\begin{equation}
+	\lim_{n \to \infty} \left( \frac{1}{n} \right)^{1/n}
+	\end{equation}</div>
+<p class="solution-head">Solution.</p>
+<p>Take logarithm:</p>
+<div class="math-block">\begin{align}
+		\ln \left( \left( \frac{1}{n} \right)^{1/n} \right) &amp;= -\frac{\ln n}{n} \to 0 \quad \text{as } n \to \infty
+	\end{align}</div>
+<p>Hence:</p>
+<div class="math-block">\begin{equation}
+		\lim_{n \to \infty} \left( \frac{1}{n} \right)^{1/n} = e^0 = 1
+	\end{equation}</div></section>
+<h2 id="sec-1-testing-series-for-convergence"><span class="sec-number">1.4</span>Testing Series for Convergence</h2>
+<h3 id="sec-1-preliminary-test"><span class="sec-number">1.4.1</span>Preliminary Test</h3>
+<section class="callout theorem"><header>Theorem - Preliminary Test</header><p>If <span class="math-inline">\(\displaystyle \lim_{n\to\infty} a_n \neq 0\)</span>, the series <span class="math-inline">\(\displaystyle \sum a_n\)</span> <strong>diverges</strong>.</p>
+<p>If <span class="math-inline">\(\displaystyle \lim_{n\to\infty} a_n = 0\)</span>, further testing is required — the test says nothing either way.</p></section>
+<section class="callout example"><header>Example</header><p>Test the series</p>
+<div class="math-block">\begin{equation}
+	\frac12 + \frac23 + \frac34 + \cdots.
+	\end{equation}</div>
+<p class="solution-head">Solution.</p>
+<p>The general term is <span class="math-inline">\(a_n = \dfrac{n}{n+1}\)</span>. Dividing numerator and denominator by <span class="math-inline">\(n\)</span> gives <span class="math-inline">\(a_n = \dfrac{1}{1 + 1/n} \to 1\)</span> as <span class="math-inline">\(n \to \infty\)</span>. Since this limit is <span class="math-inline">\(1 \neq 0\)</span>, the series <strong>diverges</strong> by the Preliminary Test.</p></section>
+<h3 id="sec-1-comparison-test"><span class="sec-number">1.4.2</span>Comparison Test</h3>
+<section class="callout theorem"><header>Theorem - Comparison Test</header><p>Let <span class="math-inline">\(\sum a_n\)</span> be an unknown series with non-negative terms.</p>
+<p>If there exists a convergent series <span class="math-inline">\(\sum b_n\)</span> such that</p>
+<div class="math-block">\begin{equation}
+	0 \le a_n \le b_n
+	\quad \text{for all sufficiently large } n,
+	\end{equation}</div>
+<p>then <span class="math-inline">\(\sum a_n\)</span> <strong>converges</strong>.</p>
+<p>If there exists a divergent series <span class="math-inline">\(\sum d_n\)</span> such that</p>
+<div class="math-block">\begin{equation}
+	a_n \ge d_n &gt; 0
+	\quad \text{for all sufficiently large } n,
+	\end{equation}</div>
+<p>then <span class="math-inline">\(\sum a_n\)</span> <strong>diverges</strong>.</p></section>
+<section class="callout example"><header>Example</header><p>Test <span class="math-inline">\(\displaystyle\sum_{n=1}^\infty \frac{1}{n!}\)</span> for convergence.</p>
+<p class="solution-head">Solution.</p>
+<p>We compare against a geometric series. Both <span class="math-inline">\(n!\)</span> and <span class="math-inline">\(2^n\)</span> are products of <span class="math-inline">\(n\)</span> factors, but from the fourth factor onward every factor of <span class="math-inline">\(n!\)</span> is at least as large as the corresponding factor <span class="math-inline">\(2\)</span>. Concretely, for <span class="math-inline">\(n \ge 4\)</span>,</p>
+<div class="math-block">\begin{equation}
+	n! = \underbrace{1 \cdot 2 \cdot 3 \cdots n}_{n \text{ factors}} \ge 2^n ,
+	\end{equation}</div>
+<p>as one checks at <span class="math-inline">\(n = 4\)</span> (<span class="math-inline">\(24 \ge 16\)</span>) and which only improves as <span class="math-inline">\(n\)</span> grows. Taking reciprocals reverses the inequality:</p>
+<div class="math-block">\begin{equation}
+	0 &lt; \frac{1}{n!} \le \frac{1}{2^n}
+	\qquad \text{for } n \ge 4 .
+	\end{equation}</div>
+<p>The geometric series <span class="math-inline">\(\sum \tfrac{1}{2^n}\)</span> has <span class="math-inline">\(r = \tfrac12\)</span>, so <span class="math-inline">\(|r| &lt; 1\)</span> and it converges. Since the Comparison Test only requires the inequality to hold for all sufficiently large <span class="math-inline">\(n\)</span>, it applies here and <span class="math-inline">\(\sum \tfrac{1}{n!}\)</span> <strong>converges</strong>.</p></section>
+<h3 id="sec-1-integral-test"><span class="sec-number">1.4.3</span>Integral Test</h3>
+<section class="callout theorem"><header>Theorem - Integral Test</header><p>Let <span class="math-inline">\(a_n = f(n)\)</span> where <span class="math-inline">\(f(x)\)</span> is positive, continuous, and decreasing for <span class="math-inline">\(x &gt; M\)</span>.</p>
+<p>Then the infinite series</p>
+<div class="math-block">\begin{equation}
+	\sum_{n=M}^\infty a_n
+	\end{equation}</div>
+<p><strong>converges if and only if</strong> the improper integral</p>
+<div class="math-block">\begin{equation}
+	\int_M^\infty f(x)\,dx
+	\end{equation}</div>
+<p>is finite.</p></section>
+<section class="callout example"><header>Example</header><p>Test the <strong>harmonic series</strong> <span class="math-inline">\(\displaystyle\sum_{n=1}^\infty \frac{1}{n}\)</span>.</p>
+<p class="solution-head">Solution.</p>
+<p>Let <span class="math-inline">\(f(x) = 1/x\)</span>. On <span class="math-inline">\(x \ge 1\)</span> this function is positive, continuous, and decreasing, so the Integral Test applies. Evaluating the improper integral as a limit:</p>
+<div class="math-block">\begin{equation}
+		\int_1^\infty \frac{1}{x}\, dx
+		= \lim_{b\to\infty} \int_1^b \frac{1}{x}\, dx
+		= \lim_{b\to\infty} \Big[\ln x\Big]_1^b
+		= \lim_{b\to\infty} (\ln b - \ln 1)
+		= \lim_{b\to\infty} \ln b
+		= \infty .
+		\label{eq:harmonic-integral}
+	\end{equation}</div>
+<p>The integral is infinite, so by the Integral Test the harmonic series <strong>diverges</strong>.</p>
+<p>This result is worth remembering. The terms <span class="math-inline">\(1/n\)</span> tend to <span class="math-inline">\(0\)</span>, yet the series still diverges — proof that <span class="math-inline">\(\lim a_n = 0\)</span> alone is never enough to conclude convergence.</p></section>
+<section class="callout theorem"><header>Theorem - The <span class="math-inline">\(p\)</span>-series</header><p>For a constant <span class="math-inline">\(p\)</span>,</p>
+<div class="math-block">\begin{equation}
+		\sum_{n=1}^{\infty} \frac{1}{n^p}
+		\quad
+		\begin{cases}
+			\text{converges}, &amp; p &gt; 1,\\[2pt]
+			\text{diverges},  &amp; p \le 1 .
+		\end{cases}
+		\label{eq:p-series}
+	\end{equation}</div></section>
+<div class="proof" data-lead="Proof."><p>For <span class="math-inline">\(p \le 0\)</span> the terms do not tend to <span class="math-inline">\(0\)</span>, so the series diverges by the Preliminary Test. For <span class="math-inline">\(p &gt; 0\)</span> the function <span class="math-inline">\(f(x) = x^{-p}\)</span> is positive, continuous, and decreasing on <span class="math-inline">\(x \ge 1\)</span>, so the Integral Test applies. The case <span class="math-inline">\(p = 1\)</span> is the harmonic series just treated. For <span class="math-inline">\(p \ne 1\)</span>,</p>
+<div class="math-block">\begin{equation}
+	\int_1^\infty x^{-p}\, dx
+	= \lim_{b\to\infty} \left[\frac{x^{1-p}}{1-p}\right]_1^b
+	= \lim_{b\to\infty} \frac{b^{1-p} - 1}{1-p} .
+	\end{equation}</div>
+<p>If <span class="math-inline">\(p &gt; 1\)</span> the exponent <span class="math-inline">\(1-p\)</span> is negative, so <span class="math-inline">\(b^{1-p} \to 0\)</span> and the integral equals <span class="math-inline">\(\frac{1}{p-1}\)</span>, which is finite: the series converges. If <span class="math-inline">\(p &lt; 1\)</span> the exponent is positive, <span class="math-inline">\(b^{1-p} \to \infty\)</span>, and the series diverges.</p></div>
+<section class="callout remark"><header>Remark</header><p>The <span class="math-inline">\(p\)</span>-series and the geometric series are the two standard yardsticks against which unknown series are measured in the Comparison and Limit Comparison Tests. In particular <span class="math-inline">\(\sum 1/n^2\)</span> converges (<span class="math-inline">\(p = 2\)</span>) while <span class="math-inline">\(\sum 1/\sqrt{n}\)</span> diverges (<span class="math-inline">\(p = \tfrac12\)</span>).</p></section>
+<h3 id="sec-1-ratio-test"><span class="sec-number">1.4.4</span>Ratio Test</h3>
+<section class="callout theorem"><header>Theorem - Ratio Test</header><p>Let</p>
+<div class="math-block">\begin{equation}
+		\rho = \lim_{n\to\infty}
+		\left| \frac{a_{n+1}}{a_n} \right|.
+		\label{eq:ratio-rho}
+	\end{equation}</div>
+<p>Then</p>
+<div class="math-block">\begin{equation}
+	\begin{cases}
+		\rho &lt; 1 &amp;\Rightarrow \text{the series } \sum a_n \text{ converges},\\[4pt]
+		\rho &gt; 1 &amp;\Rightarrow \text{the series } \sum a_n \text{ diverges},\\[4pt]
+		\rho = 1 &amp;\Rightarrow \text{the test is inconclusive}.
+	\end{cases}
+	\end{equation}</div></section>
+<section class="callout example"><header>Example</header><p>Test <span class="math-inline">\(\displaystyle\sum_{n=1}^\infty \frac{n^2}{2^n}\)</span>, a sum of the kind that arises when computing average energies from a partition function.</p>
+<p class="solution-head">Solution.</p>
+<p>Here <span class="math-inline">\(a_n = n^2/2^n\)</span>. Form the ratio, remembering that dividing by <span class="math-inline">\(a_n\)</span> means multiplying by its reciprocal:</p>
+<div class="math-block">\begin{equation}
+		\frac{a_{n+1}}{a_n}
+		= \frac{(n+1)^2}{2^{\,n+1}} \cdot \frac{2^n}{n^2}
+		= \frac{(n+1)^2}{n^2} \cdot \frac{2^n}{2^{\,n+1}}
+		= \left(\frac{n+1}{n}\right)^{\!2} \cdot \frac{1}{2} .
+		\label{eq:ratio-n2-over-2n}
+	\end{equation}</div>
+<p>Since <span class="math-inline">\(\frac{n+1}{n} = 1 + \frac1n \to 1\)</span>, we get</p>
+<div class="math-block">\begin{equation}
+		\rho = \lim_{n\to\infty} \left(1 + \frac{1}{n}\right)^{\!2} \cdot \frac{1}{2}
+		     = 1 \cdot \frac{1}{2} = \frac{1}{2} &lt; 1,
+	\end{equation}</div>
+<p>so the series <strong>converges</strong> by the Ratio Test. Notice the general lesson: an exponential in the denominator beats any power of <span class="math-inline">\(n\)</span> in the numerator.</p></section>
+<section class="callout remark"><header>Remark</header><p>The Ratio Test is the natural first choice whenever <span class="math-inline">\(a_n\)</span> contains factorials or <span class="math-inline">\(n\)</span>th powers, because those are exactly the expressions that simplify when <span class="math-inline">\(a_{n+1}\)</span> is divided by <span class="math-inline">\(a_n\)</span>. It is of no use for <span class="math-inline">\(p\)</span>-series: for <span class="math-inline">\(a_n = 1/n^p\)</span> one finds <span class="math-inline">\(\rho = 1\)</span>, and the test is inconclusive.</p></section>
+<h3 id="sec-1-limit-comparison-test"><span class="sec-number">1.4.5</span>Limit Comparison Test</h3>
+<section class="callout theorem"><header>Theorem - Limit Comparison Test</header><p>If</p>
+<div class="math-block">\begin{equation}
+		\lim_{n\to\infty} \frac{a_n}{b_n} = L,
+		\qquad 0 &lt; L &lt; \infty,
+		\label{eq:limit-comparison}
+	\end{equation}</div>
+<p>then the two series <span class="math-inline">\(\sum a_n\)</span> and <span class="math-inline">\(\sum b_n\)</span> either both <strong>converge</strong> or both <strong>diverge</strong>.</p></section>
+<section class="callout example"><header>Example</header><p>Test</p>
+<div class="math-block">\begin{equation}
+	\sum_{n=3}^\infty
+	\frac{\sqrt{2n^2 - 5n + 1}}{4n^3 - 7n^2 + 2}
+	\end{equation}</div>
+<p>for convergence.</p>
+<p class="solution-head">Solution.</p>
+<p>Keep only the highest power of <span class="math-inline">\(n\)</span> in each part. In the numerator <span class="math-inline">\(\sqrt{2n^2 - 5n + 1} \approx \sqrt{2n^2} = \sqrt{2}\,n\)</span>, and in the denominator <span class="math-inline">\(4n^3 - 7n^2 + 2 \approx 4n^3\)</span>. So for large <span class="math-inline">\(n\)</span></p>
+<div class="math-block">\begin{equation}
+	a_n = \frac{\sqrt{2n^2 - 5n + 1}}{4n^3 - 7n^2 + 2}
+	\ \sim\
+	\frac{\sqrt{2}\,n}{4n^3}
+	= \frac{\sqrt{2}}{4n^2}.
+	\end{equation}</div>
+<p>This suggests comparing with <span class="math-inline">\(b_n = \dfrac{1}{n^2}\)</span>. Forming the required limit,</p>
+<div class="math-block">\begin{equation}
+		\lim_{n\to\infty} \frac{a_n}{b_n}
+		= \lim_{n\to\infty} \frac{n^2 \sqrt{2n^2 - 5n + 1}}{4n^3 - 7n^2 + 2}
+		= \frac{\sqrt{2}}{4},
+	\end{equation}</div>
+<p>which satisfies <span class="math-inline">\(0 &lt; L &lt; \infty\)</span>. Since <span class="math-inline">\(\sum \tfrac{1}{n^2}\)</span> is a <span class="math-inline">\(p\)</span>-series with <span class="math-inline">\(p = 2 &gt; 1\)</span> it converges, so the given series <strong>converges</strong> by the Limit Comparison Test.</p></section>
+<h2 id="sec-1-alternating-series"><span class="sec-number">1.5</span>Alternating Series</h2>
+<p>Many series we have studied so far have non-negative terms. We now consider an important class of series whose terms alternate in sign.</p>
+<section class="callout definition"><header>Definition - Alternating Series</header><p>A series is called <strong>alternating</strong> if the signs of its terms switch between positive and negative, for example</p>
+<div class="math-block">\begin{equation}
+	a_1 - a_2 + a_3 - a_4 + \cdots.
+	\end{equation}</div>
+<p>Equivalently, it may be written in the form</p>
+<div class="math-block">\begin{equation}
+		\sum_{n=1}^{\infty} (-1)^{n+1} a_n,
+		\qquad a_n &gt; 0.
+		\label{eq:alt-series-general}
+	\end{equation}</div></section>
+<section class="callout example"><header>Example - Alternating harmonic series</header><div class="math-block">\begin{equation}
+	1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \frac{1}{5}
+	- \cdots + \frac{(-1)^{n+1}}{n} + \cdots.
+	\label{eq:alt-harmonic}
+\end{equation}</div></section>
+<section class="callout theorem"><header>Theorem - Alternating Series Test (Leibniz Criterion)</header><p>An alternating series of the form <span class="math-inline">\(\eqref{eq:alt-series-general}\)</span></p>
+<div class="math-block">\begin{equation}
+	\sum_{n=1}^{\infty} (-1)^{\,n+1} a_n
+	\end{equation}</div>
+<p><strong>converges</strong> if</p>
+<div class="math-block">\begin{equation}
+		a_{n+1} \le a_n \quad \text{for all sufficiently large } n,
+		\qquad
+		\lim_{n \to \infty} a_n = 0.
+		\label{eq:leibniz}
+	\end{equation}</div></section>
+<h3 id="sec-1-absolute-vs-conditional-convergence"><span class="sec-number">1.5.1</span>Absolute vs. Conditional Convergence</h3>
+<section class="callout definition"><header>Definition - Absolute and conditional convergence</header><ul><li><p>If <span class="math-inline">\(\displaystyle\sum |a_n|\)</span> converges, the series <span class="math-inline">\(\displaystyle\sum a_n\)</span> is said to <strong>converge absolutely</strong>.</p></li><li><p>If <span class="math-inline">\(\displaystyle\sum a_n\)</span> converges but <span class="math-inline">\(\displaystyle\sum |a_n|\)</span> diverges, then <span class="math-inline">\(\displaystyle\sum a_n\)</span> is <strong>conditionally convergent</strong>.</p></li></ul></section>
+<section class="callout theorem"><header>Theorem - Absolute convergence implies convergence</header><p>If <span class="math-inline">\(\displaystyle\sum |a_n|\)</span> converges, then <span class="math-inline">\(\displaystyle\sum a_n\)</span> converges. </p></section>
+<p>This theorem is what makes the definition useful. All of the tests in Section <a href="../chapter-01/index.html#sec-1-testing-series-for-convergence">1.4</a> require non-negative terms, so they cannot be applied directly to a series with mixed signs. The theorem provides the way around this: apply the tests to <span class="math-inline">\(\sum |a_n|\)</span> instead, and if that converges, the original series converges too. In practice the Ratio Test is used this way constantly — note that it was already stated in terms of <span class="math-inline">\(|a_{n+1}/a_n|\)</span> for exactly this reason.</p>
+<section class="callout example"><header>Example</header><p>Test <span class="math-inline">\(\displaystyle\sum_{n=1}^\infty \frac{(-1)^{n+1}}{n^2}\)</span> for convergence.</p>
+<p class="solution-head">Solution.</p>
+<p>The terms alternate in sign, so no comparison or integral test applies directly. Take absolute values:</p>
+<div class="math-block">\begin{equation}
+		\sum_{n=1}^\infty \left| \frac{(-1)^{n+1}}{n^2} \right|
+		= \sum_{n=1}^\infty \frac{1}{n^2},
+	\end{equation}</div>
+<p>which is a <span class="math-inline">\(p\)</span>-series with <span class="math-inline">\(p = 2 &gt; 1\)</span> and therefore converges by <span class="math-inline">\(\eqref{eq:p-series}\)</span>. Since <span class="math-inline">\(\sum|a_n|\)</span> converges, the theorem above tells us the original series converges — and it converges <strong>absolutely</strong>.</p></section>
+<section class="callout example"><header>Example - The alternating harmonic series is only conditionally convergent</header><p>Consider <span class="math-inline">\(\displaystyle\sum_{n=1}^\infty \frac{(-1)^{n+1}}{n}\)</span> from <span class="math-inline">\(\eqref{eq:alt-harmonic}\)</span>.</p>
+<p class="solution-head">Solution.</p>
+<p>Set <span class="math-inline">\(a_n = 1/n\)</span>. Then <span class="math-inline">\(a_{n+1} = \frac{1}{n+1} \le \frac1n = a_n\)</span> for all <span class="math-inline">\(n\)</span>, and <span class="math-inline">\(\lim_{n\to\infty} 1/n = 0\)</span>, so both conditions in <span class="math-inline">\(\eqref{eq:leibniz}\)</span> hold and the series <strong>converges</strong> by the Alternating Series Test.</p>
+<p>However, taking absolute values gives <span class="math-inline">\(\sum 1/n\)</span>, the harmonic series, which diverges. The series therefore converges but not absolutely: it is <strong>conditionally convergent</strong>. Its sum is <span class="math-inline">\(\ln 2\)</span>.</p></section>
+<section class="callout remark"><header>Remark</header><p>The distinction is not merely bookkeeping. The terms of an absolutely convergent series may be rearranged freely without changing the sum, exactly as with a finite sum. This is <em>false</em> for a conditionally convergent series: by reordering the alternating harmonic series one can make it converge to any number at all. Whenever you reorder, split, or term-by-term combine infinite series, absolute convergence is the property that makes it legitimate.</p></section>
+<h2 id="sec-1-summary-convergence-tests">Summary: Convergence Tests</h2>
+<p>The tests of this section are collected below. A second table, covering every kind of series met in the chapter, appears at the end.</p>
+<div class="table-wrap"><table><tr><td><strong>Test</strong></td><td><strong>Key Idea</strong></td><td><strong>Best used when</strong></td></tr><tr><td>Preliminary Test</td><td>If <span class="math-inline">\(\lim a_n \neq 0\)</span>, the series diverges.</td><td>Always try this first.</td></tr><tr><td>Comparison Test</td><td>Compare <span class="math-inline">\(a_n\)</span> to a known convergent or divergent series.</td><td><span class="math-inline">\(a_n\)</span> resembles a <span class="math-inline">\(p\)</span>-series or geometric series.</td></tr><tr><td>Integral Test</td><td>Integrate <span class="math-inline">\(f(x)\)</span> corresponding to <span class="math-inline">\(a_n\)</span>.</td><td><span class="math-inline">\(f(x)\)</span> is easy to integrate.</td></tr><tr><td>Ratio Test</td><td>Use <span class="math-inline">\(\rho = \lim |a_{n+1}/a_n|\)</span>.</td><td><span class="math-inline">\(a_n\)</span> contains factorials or <span class="math-inline">\(n\)</span>th powers.</td></tr><tr><td>Limit Comparison Test</td><td>Compare using <span class="math-inline">\(\lim a_n / b_n\)</span>.</td><td><span class="math-inline">\(a_n\)</span> is a ratio of polynomials or roots.</td></tr><tr><td>Alternating Series Test</td><td><span class="math-inline">\(a_n\)</span> decreasing and <span class="math-inline">\(\lim a_n = 0\)</span>.</td><td>Terms alternate in sign.</td></tr><tr><td>Absolute Convergence</td><td>Apply the tests above to <span class="math-inline">\(\sum|a_n|\)</span>.</td><td>Terms have mixed signs.</td></tr></table></div>
+<section class="callout remark"><header>Remark - Two standard yardsticks</header><p>Nearly every comparison comes back to one of these:</p>
+<div class="math-block">\begin{equation}
+	\sum_{n=0}^{\infty} a r^{n} \ \text{ converges} \iff |r| &lt; 1,
+	\qquad
+	\sum_{n=1}^{\infty} \frac{1}{n^{p}} \ \text{ converges} \iff p &gt; 1 .
+	\end{equation}</div></section>
+<h2 id="sec-1-power-series"><span class="sec-number">1.7</span>Power Series</h2>
+<section class="callout definition"><header>Definition - Power Series</header><p>A <strong>power series</strong> centered at <span class="math-inline">\(a\)</span> is an infinite series of the form</p>
+<div class="math-block">\begin{equation}
+	\sum_{n=0}^\infty c_n (x-a)^n
+	= c_0 + c_1(x-a) + c_2(x-a)^2 + \cdots,
+	\end{equation}</div>
+<p>where:</p>
+<ul><li><p><span class="math-inline">\(c_n\)</span> are constants called the <strong>coefficients</strong>,</p></li><li><p><span class="math-inline">\(a\)</span> is the <strong>center</strong> of the series,</p></li><li><p><span class="math-inline">\(x\)</span> is the variable.</p></li></ul>
+<p>When the center is <span class="math-inline">\(a = 0\)</span> the series takes the simpler form <span class="math-inline">\(\sum_{n=0}^\infty c_n x^n\)</span>, called a <strong>power series in <span class="math-inline">\(x\)</span></strong>.</p></section>
+<section class="callout remark"><header>Remark</header><p>A power series is not a single number but a <em>function</em> of <span class="math-inline">\(x\)</span>: for each value of <span class="math-inline">\(x\)</span> we get a different series of constants, which may converge or diverge. The first question about any power series is therefore <em>for which <span class="math-inline">\(x\)</span> does it converge?</em> That is what the next subsection answers.</p></section>
+<h3 id="sec-1-radius-and-interval-of-convergence"><span class="sec-number">1.7.1</span>Radius and Interval of Convergence</h3>
+<section class="callout theorem"><header>Theorem - Radius of Convergence</header><p>For a power series <span class="math-inline">\(\displaystyle \sum_{n=0}^{\infty} c_n (x-a)^n\)</span>, there exists a real number <span class="math-inline">\(R \in [0,\infty]\)</span>, called the <strong>radius of convergence</strong>, such that:</p>
+<ol><li><p>The series <strong>converges absolutely</strong> when <span class="math-inline">\(|x-a| &lt; R\)</span>;</p></li><li><p>The series <strong>diverges</strong> when <span class="math-inline">\(|x-a| &gt; R\)</span>;</p></li><li><p>When <span class="math-inline">\(|x-a| = R\)</span>, <strong>convergence must be checked separately</strong>.</p></li></ol></section>
+<section class="callout remark"><header>Remark - Finding <span class="math-inline">\(R\)</span> using the Ratio Test</header><p>If</p>
+<div class="math-block">\begin{equation}
+	\rho = \lim_{n\to\infty} \left| \frac{c_{n+1}}{c_n} \right|
+	\quad\text{exists, then}\quad
+	R = \frac{1}{\rho},
+	\end{equation}</div>
+<p>with conventions: <span class="math-inline">\(\rho=0 \Rightarrow R=\infty\)</span> and <span class="math-inline">\(\rho=\infty \Rightarrow R=0\)</span>.</p></section>
+<section class="callout example"><header>Example</header><p>Find the radius and interval of convergence of</p>
+<div class="math-block">\begin{equation}
+	\sum_{n=1}^{\infty} \frac{(x+2)^n}{\sqrt{n+1}}.
+	\end{equation}</div>
+<p class="solution-head">Solution.</p>
+<p>The series is centred at <span class="math-inline">\(a=-2\)</span> with <span class="math-inline">\(c_n = \dfrac{1}{\sqrt{n+1}}\)</span>. Apply the ratio formula for <span class="math-inline">\(R\)</span>:</p>
+<div class="math-block">\begin{equation}
+	\left| \frac{c_{n+1}}{c_n} \right|
+	= \frac{1/\sqrt{n+2}}{1/\sqrt{n+1}}
+	= \sqrt{\frac{n+1}{n+2}} \xrightarrow[n\to\infty]{} 1 ,
+	\end{equation}</div>
+<p>so <span class="math-inline">\(\rho = 1\)</span> and <span class="math-inline">\(R = 1/\rho = 1\)</span>. The series therefore converges for <span class="math-inline">\(|x+2| &lt; 1\)</span>, that is <span class="math-inline">\(-3 &lt; x &lt; -1\)</span>.</p>
+<p>The endpoints must be checked one at a time, by substituting them into the <em>original</em> series:</p>
+<ul><li><p><strong>At <span class="math-inline">\(x=-3\)</span>:</strong> <span class="math-inline">\((x+2)^n = (-1)^n\)</span>, giving <span class="math-inline">\(\sum \dfrac{(-1)^n}{\sqrt{n+1}}\)</span>. This alternates, its terms decrease, and <span class="math-inline">\(1/\sqrt{n+1} \to 0\)</span>, so it converges by the Alternating Series Test. It does not converge absolutely (see the next endpoint), so convergence here is conditional.</p></li><li><p><strong>At <span class="math-inline">\(x=-1\)</span>:</strong> <span class="math-inline">\((x+2)^n = 1\)</span>, giving <span class="math-inline">\(\sum \dfrac{1}{\sqrt{n+1}}\)</span>. This behaves like a <span class="math-inline">\(p\)</span>-series with <span class="math-inline">\(p = \tfrac12 \le 1\)</span>, so it diverges.</p></li></ul>
+<p>One endpoint is included and the other is not:</p>
+<div class="math-block">\begin{equation}
+	\boxed{\text{Interval of convergence: } [-3,\,-1)}
+	\end{equation}</div></section>
+<section class="callout example"><header>Example</header><p>Find the radius and interval of convergence of</p>
+<div class="math-block">\begin{equation}
+	\sum_{n=1}^\infty \frac{(x-2)^n}{n\,3^n}.
+	\end{equation}</div>
+<p class="solution-head">Solution.</p>
+<p>Here <span class="math-inline">\(c_n = \dfrac{1}{n\,3^n}\)</span>, so</p>
+<div class="math-block">\begin{equation}
+	\left| \frac{c_{n+1}}{c_n} \right|
+	= \frac{1/\big[(n+1)3^{\,n+1}\big]}{1/\big[n\,3^{n}\big]}
+	= \frac{n}{n+1}\cdot\frac{1}{3} \longrightarrow \frac{1}{3},
+	\end{equation}</div>
+<p>so <span class="math-inline">\(\rho = \tfrac13\)</span> and <span class="math-inline">\(R = 1/\rho = 3\)</span>. Convergence therefore holds for <span class="math-inline">\(|x-2| &lt; 3\)</span>, that is <span class="math-inline">\(-1 &lt; x &lt; 5\)</span>.</p>
+<p>At the endpoints, substitute into the original series and let the <span class="math-inline">\(3^n\)</span> cancel:</p>
+<ul><li><p><strong>At <span class="math-inline">\(x=-1\)</span>:</strong> <span class="math-inline">\((x-2)^n = (-3)^n\)</span>, so the term is <span class="math-inline">\(\dfrac{(-3)^n}{n\,3^n} = \dfrac{(-1)^n}{n}\)</span>. This is the alternating harmonic series, which converges — but only <em>conditionally</em>, since taking absolute values gives the divergent harmonic series.</p></li><li><p><strong>At <span class="math-inline">\(x=5\)</span>:</strong> <span class="math-inline">\((x-2)^n = 3^n\)</span>, so the term is <span class="math-inline">\(\dfrac{3^n}{n\,3^n} = \dfrac{1}{n}\)</span>. This is the harmonic series, which <strong>diverges</strong>.</p></li></ul>
+<p>Hence the interval of convergence is</p>
+<div class="math-block">\begin{equation}
+	\boxed{[-1,\,5)}
+	\end{equation}</div></section>
+<section class="callout remark"><header>Remark - The commonest endpoint mistake</header><p>Notice what happened at the endpoints above. It is tempting to look only at <span class="math-inline">\(c_n = 1/(n3^n)\)</span>, see the <span class="math-inline">\(3^n\)</span> in the denominator, and conclude that both endpoints converge absolutely. That is wrong: at an endpoint the factor <span class="math-inline">\((x-a)^n\)</span> contributes <span class="math-inline">\((\pm R)^n = (\pm 3)^n\)</span>, which <em>cancels</em> the <span class="math-inline">\(3^n\)</span> and leaves the harmonic series behind. Always substitute the endpoint into the full term <span class="math-inline">\(c_n (x-a)^n\)</span>, never into <span class="math-inline">\(c_n\)</span> alone.</p></section>
+<section class="callout remark"><header>Remark</header><p>At the endpoints, you often use the <em>Alternating Series Test</em> or comparison with a <span class="math-inline">\(p\)</span>-series to decide convergence.</p></section>
+<h2 id="sec-1-theorems-about-power-series"><span class="sec-number">1.8</span>Theorems About Power Series</h2>
+<section class="callout theorem"><header>Theorem - Fundamental Properties of Power Series</header><p>Suppose</p>
+<div class="math-block">\begin{equation}
+	f(x) = \sum_{n=0}^\infty c_n (x-a)^n
+	\end{equation}</div>
+<p>has radius of convergence <span class="math-inline">\(R&gt;0\)</span>. Then for every <span class="math-inline">\(x\)</span> with <span class="math-inline">\(|x-a|&lt;R\)</span>, the following properties hold:</p>
+<ol><li><p><strong>Differentiation and Integration.</strong> The series for <span class="math-inline">\(f(x)\)</span> may be differentiated or integrated term by term:</p>
+<div class="math-block">\begin{equation}
+		f&#x27;(x) = \sum_{n=1}^\infty n\,c_n\,(x-a)^{n-1},
+		\qquad
+		\int f(x)\,dx
+		= \sum_{n=0}^\infty \frac{c_n}{n+1}(x-a)^{\,n+1} + C.
+		\end{equation}</div>
+<p>Both resulting power series have the same radius of convergence <span class="math-inline">\(R\)</span>.</p></li><li><p><strong>Algebra of Series.</strong> Power series may be added, subtracted, and multiplied term by term. The resulting series converges at least in the intersection of the original intervals of convergence. Division is valid provided the denominator does not vanish at the center <span class="math-inline">\(x=a\)</span>; if a factor cancels (e.g. <span class="math-inline">\(\frac{\sin x}{x}\)</span>), a power-series representation still exists.</p></li><li><p><strong>Substitution.</strong> If <span class="math-inline">\(g(x)\)</span> is a function such that <span class="math-inline">\(|g(x)-a| &lt; R\)</span>, then</p>
+<div class="math-block">\begin{equation}
+		f(g(x)) = \sum_{n=0}^\infty c_n\,(g(x)-a)^n.
+		\end{equation}</div></li><li><p><strong>Uniqueness.</strong> A power series represents a unique function on its interval of convergence, and the coefficients satisfy</p>
+<div class="math-block">\begin{equation}
+		c_n = \frac{f^{(n)}(a)}{n!}.
+		\end{equation}</div></li></ol></section>
+<h2 id="sec-1-taylor-and-maclaurin-series"><span class="sec-number">1.9</span>Taylor and Maclaurin Series</h2>
+<h3 id="sec-1-finding-the-coefficients">Finding the Coefficients</h3>
+<p>Suppose a function <span class="math-inline">\(f(x)\)</span> can be expressed as a power series about <span class="math-inline">\(x=a\)</span>:</p>
+<div class="math-block">\begin{equation}
+f(x) = c_0 + c_1(x-a) + c_2(x-a)^2 + \cdots.
+\end{equation}</div>
+<p>Differentiating term by term yields</p>
+<div class="math-block">\begin{equation}
+\begin{aligned}
+	f&#x27;(x) &amp;= c_1 + 2c_2(x-a) + 3c_3(x-a)^2 + \cdots, \\
+	f&#x27;&#x27;(x) &amp;= 2c_2 + 3\cdot 2\,c_3(x-a) + \cdots, \\
+	&amp;\;\;\vdots
+\end{aligned}
+\end{equation}</div>
+<p>Evaluating successively at <span class="math-inline">\(x=a\)</span> gives</p>
+<div class="math-block">\begin{equation}
+f(a) = c_0,\quad f&#x27;(a) = 1!\,c_1,\quad f&#x27;&#x27;(a)=2!\,c_2, \ \ldots
+\end{equation}</div>
+<p>Therefore, in general,</p>
+<div class="math-block">\begin{equation}
+\boxed{c_n = \frac{f^{(n)}(a)}{n!}}.
+\end{equation}</div>
+<section class="callout theorem"><header>Theorem - Taylor Series</header><p>If <span class="math-inline">\(f\)</span> has derivatives of all orders in an open interval containing <span class="math-inline">\(a\)</span>, then</p>
+<div class="math-block">\begin{equation}
+	f(x) = \sum_{n=0}^{\infty}
+	\frac{f^{(n)}(a)}{n!}(x-a)^n
+	\end{equation}</div>
+<p>for every <span class="math-inline">\(x\)</span> in the interval where the series converges. This is called the <strong>Taylor series of <span class="math-inline">\(f\)</span> about <span class="math-inline">\(x=a\)</span></strong>.</p></section>
+<div class="proof" data-lead="Proof."><p>Assume <span class="math-inline">\(f(x)\)</span> can be written as a power series about <span class="math-inline">\(x=a\)</span>. Term-by-term differentiation, as carried out above, forces</p>
+<div class="math-block">\begin{equation}
+	c_n = \frac{f^{(n)}(a)}{n!}.
+	\end{equation}</div>
+<p>Substituting these coefficients into the original power series yields</p>
+<div class="math-block">\begin{equation}
+	f(x) = \sum_{n=0}^{\infty} c_n (x-a)^n
+	= \sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!}(x-a)^n .
+	\end{equation}</div></div>
+<section class="callout remark"><header>Remark - What this argument does and does not show</header><p>Read the proof carefully: it <em>assumes</em> that <span class="math-inline">\(f\)</span> equals <em>some</em> power series, and then shows the coefficients could only be <span class="math-inline">\(f^{(n)}(a)/n!\)</span>. So it establishes uniqueness, not existence. It does not show that the Taylor series of an arbitrary <span class="math-inline">\(f\)</span> actually converges back to <span class="math-inline">\(f\)</span>.</p>
+<p>That distinction is real. The function</p>
+<div class="math-block">\begin{equation}
+	f(x) = \begin{cases} e^{-1/x^2}, &amp; x \neq 0,\\ 0, &amp; x = 0,\end{cases}
+	\end{equation}</div>
+<p>has derivatives of every order at <span class="math-inline">\(x=0\)</span>, and every one of them is zero. Its Maclaurin series is therefore <span class="math-inline">\(0 + 0x + 0x^2 + \cdots = 0\)</span>, which converges everywhere but equals <span class="math-inline">\(f\)</span> only at the single point <span class="math-inline">\(x=0\)</span>.</p>
+<p>A function that <em>does</em> equal its Taylor series on an interval is called <strong>analytic</strong>. Every function we expand in this chapter — <span class="math-inline">\(e^x\)</span>, <span class="math-inline">\(\sin x\)</span>, <span class="math-inline">\(\cos x\)</span>, <span class="math-inline">\(\ln(1+x)\)</span>, <span class="math-inline">\((1+x)^p\)</span> — is analytic on the interval stated, so in practice you may expand freely. Just do not mistake “infinitely differentiable” for “equal to its Taylor series”.</p></section>
+<section class="callout theorem"><header>Theorem - Maclaurin Series</header><p>A <strong>Maclaurin series</strong> is a Taylor series centered at <span class="math-inline">\(a=0\)</span>:</p>
+<div class="math-block">\begin{equation}
+	f(x)
+	= \sum_{n=0}^{\infty} \frac{f^{(n)}(0)}{n!}\,x^n.
+	\end{equation}</div></section>
+<section class="callout example"><header>Example</header><p>Find the Maclaurin series for <span class="math-inline">\(\sin x\)</span>.</p>
+<p class="solution-head">Solution.</p>
+<p>Differentiate repeatedly. The derivatives of <span class="math-inline">\(\sin x\)</span> repeat with period four, so we only ever need these four:</p>
+<div class="math-block">\begin{equation}
+	\begin{aligned}
+		f(x)      &amp;= \sin x,  &amp;\qquad f(0)      &amp;= 0,\\
+		f&#x27;(x)     &amp;= \cos x,  &amp;\qquad f&#x27;(0)     &amp;= 1,\\
+		f&#x27;&#x27;(x)    &amp;= -\sin x, &amp;\qquad f&#x27;&#x27;(0)    &amp;= 0,\\
+		f&#x27;&#x27;&#x27;(x)   &amp;= -\cos x, &amp;\qquad f&#x27;&#x27;&#x27;(0)   &amp;= -1,
+	\end{aligned}
+	\end{equation}</div>
+<p>and then the pattern <span class="math-inline">\(0, 1, 0, -1\)</span> repeats. Substituting into <span class="math-inline">\(f(x)=\sum f^{(n)}(0)x^n/n!\)</span>, every even power drops out because its coefficient is zero:</p>
+<div class="math-block">\begin{equation}
+	\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots.
+	\end{equation}</div>
+<p>Only odd powers survive, with alternating signs, so</p>
+<div class="math-block">\begin{equation}
+	\sin x = \sum_{n=0}^\infty \frac{(-1)^n x^{2n+1}}{(2n+1)!}, \qquad R=\infty.
+	\end{equation}</div>
+<p>The Ratio Test confirms <span class="math-inline">\(R = \infty\)</span>: the factorial in the denominator grows faster than any power of <span class="math-inline">\(x\)</span>, so the series converges for every <span class="math-inline">\(x\)</span>.</p></section>
+<section class="callout remark"><header>Remark</header><p>That <span class="math-inline">\(\sin x\)</span> contains only odd powers is no accident. <span class="math-inline">\(\sin(-x) = -\sin x\)</span> makes it an <em>odd</em> function, and only odd powers of <span class="math-inline">\(x\)</span> are odd functions. Likewise <span class="math-inline">\(\cos x\)</span> is even and its series below contains only even powers. This is a quick way to catch algebra errors: if an even power appears in a series for an odd function, something has gone wrong.</p></section>
+<section class="callout example"><header>Example - Physics: the small-angle pendulum</header><p>A pendulum of length <span class="math-inline">\(L\)</span> swinging through an angle <span class="math-inline">\(\theta\)</span> from the vertical obeys</p>
+<div class="math-block">\begin{equation}
+	\frac{d^2\theta}{dt^2} = -\frac{g}{L}\sin\theta ,
+	\label{eq:pendulum-exact}
+\end{equation}</div>
+<p>where <span class="math-inline">\(g\)</span> is the acceleration due to gravity. This equation cannot be solved in terms of elementary functions. Show how a series expansion rescues the situation for small swings.</p>
+<p class="solution-head">Solution.</p>
+<p>The obstacle is the <span class="math-inline">\(\sin\theta\)</span> on the right, which makes <span class="math-inline">\(\eqref{eq:pendulum-exact}\)</span> <em>nonlinear</em>. Replace it by its Maclaurin series:</p>
+<div class="math-block">\begin{equation}
+	\sin\theta = \theta - \frac{\theta^3}{3!} + \frac{\theta^5}{5!} - \cdots
+\end{equation}</div>
+<p>For a small swing, <span class="math-inline">\(\theta\)</span> is small and each successive term is far smaller than the one before. Keeping only the first term gives the <strong>small-angle approximation</strong> <span class="math-inline">\(\sin\theta \approx \theta\)</span>, and <span class="math-inline">\(\eqref{eq:pendulum-exact}\)</span> becomes</p>
+<div class="math-block">\begin{equation}
+	\frac{d^2\theta}{dt^2} = -\frac{g}{L}\,\theta ,
+\end{equation}</div>
+<p>which is linear and has the familiar oscillating solution <span class="math-inline">\(\theta(t) = \theta_0\cos(\omega t)\)</span> with <span class="math-inline">\(\omega = \sqrt{g/L}\)</span>. This is <strong>simple harmonic motion</strong>, and it is where the standard pendulum period <span class="math-inline">\(T = 2\pi\sqrt{L/g}\)</span> comes from.</p>
+<p>How good is the approximation? The first term we discarded is <span class="math-inline">\(\theta^3/6\)</span>, so the relative error is about <span class="math-inline">\(\theta^2/6\)</span>. For a swing of <span class="math-inline">\(10^\circ = 0.175\)</span> radians that is roughly <span class="math-inline">\(0.5\%\)</span>. Note that <span class="math-inline">\(\theta\)</span> must be in <strong>radians</strong> — the series is only valid in radians, which is the real reason radians are the natural unit for angles in physics.</p></section>
+<h3 id="sec-1-common-maclaurin-series">Common Maclaurin Series</h3>
+<div class="math-block">\begin{equation}
+e^x = \sum_{n=0}^\infty \frac{x^n}{n!}
+= 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \cdots,
+\qquad R = \infty
+\end{equation}</div>
+<div class="math-block">\begin{equation}
+\sin x = \sum_{n=0}^\infty \frac{(-1)^n x^{2n+1}}{(2n+1)!}
+= x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots,
+\qquad R = \infty
+\end{equation}</div>
+<div class="math-block">\begin{equation}
+\cos x = \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!}
+= 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots,
+\qquad R = \infty
+\end{equation}</div>
+<div class="math-block">\begin{equation}
+\ln(1+x) = \sum_{n=1}^\infty \frac{(-1)^{n+1} x^n}{n}
+= x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \cdots,
+\qquad -1 &lt; x \le 1
+\end{equation}</div>
+<div class="math-block">\begin{equation}
+(1+x)^p = \sum_{n=0}^\infty \binom{p}{n} x^n
+= 1 + px + \frac{p(p-1)}{2!}x^2 + \cdots,
+\qquad |x| &lt; 1
+\end{equation}</div>
+<section class="callout remark"><header>Remark</header><p>Memorise these five. Almost every series in this chapter, and most you will meet later, is obtained from one of them by substitution, differentiation, integration, or multiplication — the techniques of the next section — rather than by computing derivatives from scratch.</p>
+<p>Note the endpoint in <span class="math-inline">\(\ln(1+x)\)</span>: the series does converge at <span class="math-inline">\(x=1\)</span>, where it gives the alternating harmonic series and hence <span class="math-inline">\(\ln 2\)</span>, as promised in Section <a href="../chapter-01/index.html#sec-1-testing-series-for-convergence">1.4</a>. It diverges at <span class="math-inline">\(x=-1\)</span>, where it becomes the harmonic series. The interval is genuinely lopsided, which is why it is written <span class="math-inline">\(-1 &lt; x \le 1\)</span> rather than <span class="math-inline">\(|x| &lt; 1\)</span>.</p></section>
+<h2 id="sec-1-techniques-for-obtaining-power-series-expansions"><span class="sec-number">1.10</span>Techniques for Obtaining Power Series Expansions</h2>
+<p>Power series expansions can be generated or modified using several systematic techniques. These allow you to construct new series from known ones without starting from scratch.</p>
+<h3 id="sec-1-using-differentiation-and-integration"><span class="sec-number">1.10.1</span>Using Differentiation and Integration</h3>
+<section class="callout example"><header>Example</header><p>Start with the geometric series for <span class="math-inline">\(|x|&lt;1\)</span>:</p>
+<div class="math-block">\begin{equation}
+	\frac{1}{1-x} = \sum_{n=0}^\infty x^n.
+	\end{equation}</div>
+<p>Differentiate term-by-term:</p>
+<div class="math-block">\begin{equation}
+	\frac{1}{(1-x)^2} = \sum_{n=1}^\infty n\,x^{n-1}.
+	\end{equation}</div>
+<p>Integrate term-by-term:</p>
+<div class="math-block">\begin{equation}
+	-\ln(1-x) = \sum_{n=1}^\infty \frac{x^n}{n}.
+	\end{equation}</div>
+<p>Both series have radius <span class="math-inline">\(R=1\)</span>.</p></section>
+<section class="callout remark"><header>Remark</header><p>At <span class="math-inline">\(|x-a|=R\)</span>, the differentiated or integrated series may behave differently from the original. Endpoint behavior must be checked separately.</p></section>
+<h3 id="sec-1-multiplying-a-series-by-a-polynomial-or-by-another-series"><span class="sec-number">1.10.2</span>Multiplying a Series by a Polynomial or by Another Series</h3>
+<p>If</p>
+<div class="math-block">\begin{equation}
+f(x) = \sum_{n=0}^\infty c_n (x-a)^n
+\end{equation}</div>
+<p>and <span class="math-inline">\(P(x)\)</span> is a polynomial, then <span class="math-inline">\(P(x)f(x)\)</span> is obtained by multiplying <span class="math-inline">\(P(x)\)</span> through the series term-by-term and combining like powers. Similarly, two infinite series can be multiplied by forming their Cauchy product and collecting like powers of <span class="math-inline">\(x\)</span>.</p>
+<section class="callout example"><header>Example</header><p>To find the series for <span class="math-inline">\((x+1)\sin x\)</span>, we multiply the Maclaurin series for <span class="math-inline">\(\sin x\)</span> by <span class="math-inline">\((x+1)\)</span>:</p>
+<div class="math-block">\begin{equation}
+	(x+1)\sin x = (x+1)\left(x - \frac{x^3}{3!} + \frac{x^5}{5!} - \cdots\right).
+	\end{equation}</div>
+<p>Expanding and combining like terms:</p>
+<div class="math-block">\begin{equation}
+	(x+1)\sin x = x + x^2 - \frac{x^3}{3!} - \frac{x^4}{3!} + \cdots.
+	\end{equation}</div>
+<p>Thus, the series begins</p>
+<div class="math-block">\begin{equation}
+	(x+1)\sin x = x + x^2 - \frac{x^3}{6} - \frac{x^4}{6} + \cdots.
+	\end{equation}</div>
+<p>This illustrates how multiplying a series by a polynomial simply shifts and rescales its terms. Notice that this method is easier than computing successive derivatives of <span class="math-inline">\((x+1)\sin x\)</span> to form its Taylor series directly.</p></section>
+<section class="callout example"><header>Example</header><p>To find the series for <span class="math-inline">\(e^x \cos x\)</span>, multiply the Maclaurin series for <span class="math-inline">\(e^x\)</span> and <span class="math-inline">\(\cos x\)</span>:</p>
+<div class="math-block">\begin{equation}
+	e^x \cos x
+	= \left( 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \cdots \right)
+	\left( 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \cdots \right).
+	\end{equation}</div>
+<p>Work power by power. For each power of <span class="math-inline">\(x\)</span>, collect every way of forming it as (term from <span class="math-inline">\(e^x\)</span>) <span class="math-inline">\(\times\)</span> (term from <span class="math-inline">\(\cos x\)</span>):</p>
+<div class="math-block">\begin{equation}
+	\begin{aligned}
+		x^0:&amp;\quad 1 \cdot 1 = 1,\\[2pt]
+		x^1:&amp;\quad x \cdot 1 = x,\\[2pt]
+		x^2:&amp;\quad \frac{x^2}{2}\cdot 1 \;+\; 1\cdot\left(-\frac{x^2}{2}\right)
+		= 0,\\[2pt]
+		x^3:&amp;\quad \frac{x^3}{6}\cdot 1 \;+\; x\cdot\left(-\frac{x^2}{2}\right)
+		= \left(\frac16 - \frac12\right)x^3 = -\frac{x^3}{3},\\[2pt]
+		x^4:&amp;\quad \frac{x^4}{24}\cdot 1
+		\;+\; \frac{x^2}{2}\cdot\left(-\frac{x^2}{2}\right)
+		\;+\; 1\cdot\frac{x^4}{24}
+		= \left(\frac1{24} - \frac14 + \frac1{24}\right)x^4 = -\frac{x^4}{6}.
+	\end{aligned}
+	\end{equation}</div>
+<p>Thus the series begins</p>
+<div class="math-block">\begin{equation}
+	e^x \cos x = 1 + x - \frac{x^3}{3} - \frac{x^4}{6} + \cdots.
+	\end{equation}</div>
+<p>Note that the <span class="math-inline">\(x^2\)</span> term cancels exactly. Two warnings: include <em>every</em> product contributing to a given power (the <span class="math-inline">\(x^4\)</span> row has three), and do not carry higher-order terms you will only discard — to reach <span class="math-inline">\(x^4\)</span> you never need a term beyond <span class="math-inline">\(x^4\)</span> from either factor.</p></section>
+<h3 id="sec-1-division-of-two-series-or-of-a-series-by-a-polynomial"><span class="sec-number">1.10.3</span>Division of Two Series or of a Series by a Polynomial</h3>
+<p>If <span class="math-inline">\(f(x) = g(x)/h(x)\)</span> and <span class="math-inline">\(h(a) \neq 0\)</span>, you can perform long division or solve for coefficients by matching powers. The second method is usually less error-prone: write the unknown quotient with undetermined coefficients, multiply back up, and match powers of <span class="math-inline">\(x\)</span> one at a time.</p>
+<section class="callout example"><header>Example</header><p>Find the Maclaurin series for <span class="math-inline">\(\tan x\)</span> up to <span class="math-inline">\(x^5\)</span>.</p>
+<p class="solution-head">Solution.</p>
+<p>Rather than differentiate <span class="math-inline">\(\tan x\)</span> five times, divide the known series</p>
+<div class="math-block">\begin{equation}
+	\sin x = x - \frac{x^3}{6} + \frac{x^5}{120} - \cdots,
+	\qquad
+	\cos x = 1 - \frac{x^2}{2} + \frac{x^4}{24} - \cdots.
+	\end{equation}</div>
+<p>Since <span class="math-inline">\(\tan x\)</span> is odd and <span class="math-inline">\(\tan 0 = 0\)</span>, only odd powers can appear. Write</p>
+<div class="math-block">\begin{equation}
+	\tan x = a_1 x + a_3 x^3 + a_5 x^5 + \cdots
+	\end{equation}</div>
+<p>and clear the denominator using <span class="math-inline">\(\sin x = \tan x \cdot \cos x\)</span>:</p>
+<div class="math-block">\begin{equation}
+	x - \frac{x^3}{6} + \frac{x^5}{120} - \cdots
+	= \left(a_1 x + a_3 x^3 + a_5 x^5\right)
+	  \left(1 - \frac{x^2}{2} + \frac{x^4}{24}\right).
+	\end{equation}</div>
+<p>Now match coefficients power by power:</p>
+<div class="math-block">\begin{equation}
+	\begin{aligned}
+		x^1:&amp;\quad a_1 = 1
+		&amp;&amp;\Rightarrow\ a_1 = 1,\\[2pt]
+		x^3:&amp;\quad a_3 - \tfrac{a_1}{2} = -\tfrac16
+		&amp;&amp;\Rightarrow\ a_3 = -\tfrac16 + \tfrac12 = \tfrac13,\\[2pt]
+		x^5:&amp;\quad a_5 - \tfrac{a_3}{2} + \tfrac{a_1}{24} = \tfrac{1}{120}
+		&amp;&amp;\Rightarrow\ a_5 = \tfrac{1}{120} + \tfrac16 - \tfrac1{24} = \tfrac{2}{15}.
+	\end{aligned}
+	\end{equation}</div>
+<p>Therefore</p>
+<div class="math-block">\begin{equation}
+	\boxed{\ \tan x = x + \frac{x^3}{3} + \frac{2x^5}{15} + \cdots\ }
+	\end{equation}</div>
+<p>Unlike <span class="math-inline">\(\sin x\)</span> and <span class="math-inline">\(\cos x\)</span>, this series does <em>not</em> converge for all <span class="math-inline">\(x\)</span>: <span class="math-inline">\(\cos x\)</span> vanishes at <span class="math-inline">\(x = \pm\pi/2\)</span>, where <span class="math-inline">\(\tan x\)</span> blows up, so <span class="math-inline">\(R = \pi/2\)</span>. Dividing by a series always risks a smaller radius of convergence than either series started with.</p></section>
+<h3 id="sec-1-using-the-binomial-series"><span class="sec-number">1.10.4</span>Using the Binomial Series</h3>
+<section class="callout theorem"><header>Theorem - General Binomial Series</header><p>For any real or complex exponent <span class="math-inline">\(p\)</span>,</p>
+<div class="math-block">\begin{equation}
+	(1+x)^p = \sum_{n=0}^\infty \binom{p}{n}\,x^n,
+	\qquad |x| &lt; 1,
+	\end{equation}</div>
+<p>where the generalized binomial coefficients are given by</p>
+<div class="math-block">\begin{equation}
+	\binom{p}{n}
+	= \frac{p(p-1)(p-2)\cdots(p-n+1)}{n!},
+	\qquad
+	\binom{p}{0} = 1.
+	\end{equation}</div>
+<p>The series converges for <span class="math-inline">\(|x| &lt; 1\)</span>, and may converge at <span class="math-inline">\(|x| = 1\)</span> depending on the value of <span class="math-inline">\(p\)</span>.</p></section>
+<section class="callout remark"><header>Remark - The exponent <span class="math-inline">\(p\)</span></header><p>The letter <span class="math-inline">\(p\)</span> here is the binomial exponent and has nothing to do with the <span class="math-inline">\(p\)</span> of the <span class="math-inline">\(p\)</span>-series in Section <a href="../chapter-01/index.html#sec-1-testing-series-for-convergence">1.4</a>. The clash is unfortunate but standard; the meaning is always clear from context.</p></section>
+<section class="callout example"><header>Example</header><p>Find the series for <span class="math-inline">\(\dfrac{1}{1+x}\)</span>.</p>
+<p class="solution-head">Solution.</p>
+<p>Here <span class="math-inline">\(p=-1\)</span>, so the coefficients are</p>
+<div class="math-block">\begin{equation}
+	\binom{-1}{n} = \frac{(-1)(-2)(-3)\cdots(-n)}{n!} = \frac{(-1)^n\,n!}{n!} = (-1)^n .
+	\end{equation}</div>
+<p>Substituting into the binomial series — note that the signs are already carried by the coefficients, so we do <em>not</em> insert extra alternating signs by hand:</p>
+<div class="math-block">\begin{equation}
+	\frac{1}{1+x} = (1+x)^{-1}
+	= \sum_{n=0}^\infty (-1)^n x^n
+	= 1 - x + x^2 - x^3 + \cdots,
+	\qquad |x|&lt;1.
+	\end{equation}</div>
+<p>This is a useful check on the whole binomial machinery: the answer is just the geometric series with ratio <span class="math-inline">\(-x\)</span>, which we already knew from Section <a href="../chapter-01/index.html#sec-1-testing-series-for-convergence">1.4</a>.</p></section>
+<section class="callout example"><header>Example</header><p>Expand <span class="math-inline">\(\sqrt{1+x} = (1+x)^{1/2}\)</span>.</p>
+<p class="solution-head">Solution.</p>
+<p>Here <span class="math-inline">\(p=\tfrac12\)</span>, so <span class="math-inline">\(\sqrt{1+x} = \sum_{n=0}^\infty \binom{1/2}{n} x^n\)</span>. Compute the first few coefficients directly from the definition, each being a product of <span class="math-inline">\(n\)</span> factors divided by <span class="math-inline">\(n!\)</span>:</p>
+<div class="math-block">\begin{equation}
+	\begin{aligned}
+		\binom{1/2}{1} &amp;= \frac{1/2}{1!} = \frac12, &amp;\qquad
+		\binom{1/2}{2} &amp;= \frac{(1/2)(-1/2)}{2!} = -\frac18,\\[4pt]
+		\binom{1/2}{3} &amp;= \frac{(1/2)(-1/2)(-3/2)}{3!} = \frac{1}{16}, &amp;\qquad
+		\binom{1/2}{4} &amp;= \frac{(1/2)(-1/2)(-3/2)(-5/2)}{4!} = -\frac{5}{128}.
+	\end{aligned}
+	\end{equation}</div>
+<p>Hence</p>
+<div class="math-block">\begin{equation}
+	\sqrt{1+x} = 1 + \frac{1}{2}x - \frac{1}{8}x^2 + \frac{1}{16}x^3
+	- \frac{5}{128}x^4 + \cdots, \qquad |x| &lt; 1 .
+	\end{equation}</div>
+<p>Only the first two terms are needed in most applications: for small <span class="math-inline">\(x\)</span>, <span class="math-inline">\(\sqrt{1+x} \approx 1 + \tfrac12 x\)</span>.</p></section>
+<section class="callout example"><header>Example - Physics: why gravitational potential energy is <span class="math-inline">\(mgh\)</span></header><p>The exact potential energy of a mass <span class="math-inline">\(m\)</span> at height <span class="math-inline">\(h\)</span> above the surface of the Earth (radius <span class="math-inline">\(R\)</span>, mass <span class="math-inline">\(M\)</span>) is</p>
+<div class="math-block">\begin{equation}
+	U = -\frac{GMm}{R+h},
+\end{equation}</div>
+<p>where <span class="math-inline">\(G\)</span> is the gravitational constant. The familiar classroom formula is <span class="math-inline">\(U = mgh\)</span>. Reconcile the two.</p>
+<p class="solution-head">Solution.</p>
+<p>The exact expression depends on <span class="math-inline">\(h\)</span> in an awkward way. Factor out <span class="math-inline">\(R\)</span> so that the <span class="math-inline">\(h\)</span>-dependence sits in a small quantity:</p>
+<div class="math-block">\begin{equation}
+	U = -\frac{GMm}{R\left(1 + h/R\right)}
+	  = -\frac{GMm}{R}\left(1 + \frac{h}{R}\right)^{-1}.
+\end{equation}</div>
+<p>Near the Earth's surface <span class="math-inline">\(h \ll R\)</span> — even a tall mountain has <span class="math-inline">\(h/R \approx 0.001\)</span> — so <span class="math-inline">\(x = h/R\)</span> is small and the binomial series with <span class="math-inline">\(p = -1\)</span> applies:</p>
+<div class="math-block">\begin{equation}
+	\left(1 + \frac{h}{R}\right)^{-1} = 1 - \frac{h}{R} + \frac{h^2}{R^2} - \cdots
+\end{equation}</div>
+<p>Therefore</p>
+<div class="math-block">\begin{equation}
+	U = -\frac{GMm}{R} + \frac{GMm}{R^2}h - \cdots
+	  = \underbrace{-\frac{GMm}{R}}_{\text{constant}}
+	  + \underbrace{\left(\frac{GM}{R^2}\right)}_{\;=\;g} m h - \cdots
+\end{equation}</div>
+<p>The first term does not depend on <span class="math-inline">\(h\)</span>; since only <em>changes</em> in potential energy are physically meaningful, it can be discarded by choosing where to put the zero of energy. The second term is exactly <span class="math-inline">\(mgh\)</span>, and it identifies <span class="math-inline">\(g = GM/R^2 \approx 9.8\ \text{m/s}^2\)</span> — the surface gravity is not an independent constant of nature but the first series coefficient of the true <span class="math-inline">\(1/r\)</span> potential.</p>
+<p>The next term is smaller by a factor <span class="math-inline">\(h/R\)</span>, so for <span class="math-inline">\(h = 1\)</span> km the error in using <span class="math-inline">\(mgh\)</span> is about <span class="math-inline">\(0.02\%\)</span>. This is the same pattern as the relativistic kinetic energy of Section <a href="../chapter-01/index.html#sec-1-applications-of-series">1.11</a>: the simple formula is the first term of a series, accurate whenever the neglected ratio is small.</p></section>
+<section class="callout remark"><header>Remark</header><p>For nonnegative integers <span class="math-inline">\(p\)</span>, the binomial expansion terminates after <span class="math-inline">\(n=p\)</span>, giving the usual finite binomial theorem. For non-integers <span class="math-inline">\(p\)</span>, the series is infinite and converges for <span class="math-inline">\(|x|&lt;1\)</span>.</p></section>
+<h3 id="sec-1-substitution-of-a-polynomial-or-a-series-into-another-series"><span class="sec-number">1.10.5</span>Substitution of a Polynomial or a Series into Another Series</h3>
+<section class="callout example"><header>Example</header><p>From <span class="math-inline">\(\frac{1}{1-t} = \sum_{n=0}^\infty t^n\)</span>, substitute <span class="math-inline">\(t = x^2\)</span>:</p>
+<div class="math-block">\begin{equation}
+	\frac{1}{1-x^2} = \sum_{n=0}^\infty x^{2n}.
+	\end{equation}</div></section>
+<section class="callout example"><header>Example</header><p>Find the Maclaurin series of <span class="math-inline">\(e^{\tan x}\)</span> up to <span class="math-inline">\(x^4\)</span>.</p>
+<p>First, use</p>
+<div class="math-block">\begin{equation}
+	\tan x = x + \frac{x^{3}}{3} + O(x^{5}).
+	\end{equation}</div>
+<p>Let <span class="math-inline">\(u=\tan x\)</span>. Then</p>
+<div class="math-block">\begin{equation}
+	e^{u}=1+u+\frac{u^{2}}{2!}+\frac{u^{3}}{3!}+\frac{u^{4}}{4!}+O(u^{5}).
+	\end{equation}</div>
+<p>Compute powers of <span class="math-inline">\(u\)</span> to the needed order:</p>
+<div class="math-block">\begin{equation}
+	\begin{aligned}
+		u &amp;= x + \frac{x^3}{3} + O(x^5),\\
+		u^2 &amp;= x^2 + \frac{2}{3}x^4 + O(x^6),\\
+		u^3 &amp;= x^3 + O(x^5),\\
+		u^4 &amp;= x^4 + O(x^6).
+	\end{aligned}
+	\end{equation}</div>
+<p>Substitute:</p>
+<div class="math-block">\begin{equation}
+	\begin{aligned}
+		e^{\tan x}
+		&amp;= 1 + \Big(x + \tfrac{x^3}{3}\Big)
+		+ \tfrac12\Big(x^2 + \tfrac{2}{3}x^4\Big)
+		+ \tfrac16\Big(x^3\Big)
+		+ \tfrac1{24}\Big(x^4\Big) + O(x^5)\\[4pt]
+		&amp;= 1 + x + \tfrac12 x^2 + \underbrace{\Big(\tfrac13+\tfrac16\Big)}_{=\,\tfrac12} x^3
+		+ \underbrace{\Big(\tfrac13+\tfrac1{24}\Big)}_{=\,\tfrac{3}{8}} x^4
+		+ O(x^5).
+	\end{aligned}
+	\end{equation}</div>
+<div class="math-block">\begin{equation}
+	\boxed{\,e^{\tan x} = 1 + x + \tfrac{x^2}{2} + \tfrac{x^3}{2} + \tfrac{3x^4}{8} + O(x^5)\,}
+	\end{equation}</div>
+<p>(The radius of convergence is limited by the nearest pole of <span class="math-inline">\(\tan x\)</span>, so <span class="math-inline">\(R=\pi/2\)</span>.)</p></section>
+<section class="callout remark"><header>Remark</header><p>Any manipulation such as multiplication, differentiation, integration, or substitution can alter the radius of convergence. Always verify the new convergence interval after such operations.</p></section>
+<h3 id="sec-1-combination-of-methods"><span class="sec-number">1.10.6</span>Combination of Methods</h3>
+<p>You can combine multiplication, division, substitution, differentiation, and integration.</p>
+<section class="callout example"><header>Example</header><p>Find the Maclaurin series for <span class="math-inline">\(\arctan x\)</span>.</p>
+<p>We use the identity</p>
+<div class="math-block">\begin{equation}
+	\arctan x = \int_0^x \frac{dt}{1+t^2}.
+	\end{equation}</div>
+<p>First, expand the denominator as a binomial series:</p>
+<div class="math-block">\begin{equation}
+	\frac{1}{1+t^2} = (1+t^2)^{-1} = 1 - t^2 + t^4 - t^6 + \cdots, \qquad |t|&lt;1.
+	\end{equation}</div>
+<p>Now integrate term by term:</p>
+<div class="math-block">\begin{equation}
+	\int_0^x \frac{dt}{1+t^2}
+	= \int_0^x \big(1 - t^2 + t^4 - t^6 + \cdots \big)\,dt
+	= \left[t - \frac{t^3}{3} + \frac{t^5}{5} - \frac{t^7}{7} + \cdots \right]_0^x.
+	\end{equation}</div>
+<p>Thus,</p>
+<div class="math-block">\begin{equation}
+	\arctan x = x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \cdots,
+	\qquad |x| \le 1 .
+	\end{equation}</div>
+<p>The expansion of <span class="math-inline">\(1/(1+t^2)\)</span> is valid only for <span class="math-inline">\(|t|&lt;1\)</span>, so integration gives <span class="math-inline">\(|x|&lt;1\)</span>; the endpoints <span class="math-inline">\(x = \pm 1\)</span> survive because there the series becomes alternating with terms decreasing to zero. Setting <span class="math-inline">\(x=1\)</span> gives the celebrated</p>
+<div class="math-block">\begin{equation}
+	\frac{\pi}{4} = 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \cdots,
+	\end{equation}</div>
+<p>a beautiful formula but a hopeless way to compute <span class="math-inline">\(\pi\)</span>: it converges so slowly that several hundred terms are needed for two decimal places.</p></section>
+<h3 id="sec-1-taylor-series-using-basic-maclaurin-series"><span class="sec-number">1.10.7</span>Taylor Series Using Basic Maclaurin Series</h3>
+<p>Taylor’s theorem:</p>
+<div class="math-block">\begin{equation}
+f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!}(x-a)^n
+\end{equation}</div>
+<p>gives the coefficients directly from derivatives at <span class="math-inline">\(x=a\)</span>.</p>
+<section class="callout example"><header>Example</header><p>Expand <span class="math-inline">\(\ln x\)</span> about <span class="math-inline">\(x=1\)</span>:</p>
+<p>Let <span class="math-inline">\(h = x-1\)</span>, so <span class="math-inline">\(x = 1+h\)</span>:</p>
+<div class="math-block">\begin{equation}
+	\ln(1+h) = h - \frac{h^2}{2} + \frac{h^3}{3} - \cdots, \quad |h|&lt;1.
+	\end{equation}</div>
+<p>Thus:</p>
+<div class="math-block">\begin{equation}
+	\ln x = (x-1) - \frac{(x-1)^2}{2} + \frac{(x-1)^3}{3} - \cdots.
+	\end{equation}</div></section>
+<h2 id="sec-1-applications-of-series"><span class="sec-number">1.11</span>Applications of Series</h2>
+<p>In the example of the bouncing ball, we saw that the <strong>sum of an infinite series</strong> can often be very close to the sum of a <strong>finite number of initial terms</strong>. This principle underlies many applications:</p>
+<ul><li><p>Many real-world problems cannot be solved exactly but can be expressed as an infinite series.</p></li><li><p>In practice, only as many terms as needed to achieve the desired accuracy are computed.</p></li><li><p>Series solutions are commonly used in solving:</p>
+<ul><li><p>ordinary differential equations (Chapters 8 and 12),</p></li><li><p>partial differential equations (Chapter 13).</p></li></ul></li></ul>
+<h3 id="sec-1-approximating-functions">Approximating Functions</h3>
+<p>If a function is analytic, cutting its Taylor series off after a few terms gives a polynomial approximation whose accuracy improves with each term kept.</p>
+<section class="callout example"><header>Example</header><p>Approximate <span class="math-inline">\(\sqrt{1.1}\)</span> using the binomial series.</p>
+<p class="solution-head">Solution.</p>
+<p>Write <span class="math-inline">\(\sqrt{1.1} = \sqrt{1+x}\)</span> with <span class="math-inline">\(x = 0.1\)</span>, and use the expansion found above (the binomial series with <span class="math-inline">\(p = \tfrac12\)</span>):</p>
+<div class="math-block">\begin{equation}
+	\sqrt{1+x} = 1 + \frac12 x - \frac18 x^2 + \frac{1}{16} x^3 - \cdots.
+	\end{equation}</div>
+<p>Substituting <span class="math-inline">\(x = 0.1\)</span> term by term:</p>
+<div class="math-block">\begin{equation}
+	\sqrt{1.1} \approx 1 + \underbrace{0.05}_{\frac12 x}
+	- \underbrace{0.00125}_{\frac18 x^2}
+	+ \underbrace{0.0000625}_{\frac1{16}x^3}
+	= 1.0488125 .
+	\end{equation}</div>
+<p>The true value is <span class="math-inline">\(1.0488088\ldots\)</span>, so three terms already give an error of about <span class="math-inline">\(4\times10^{-6}\)</span>. Observe how fast the terms shrink: each is roughly <span class="math-inline">\(x/2\)</span> times the one before. This is typical — when the expansion variable is small, a couple of terms suffice.</p></section>
+<h3 id="sec-1-recovering-simple-physical-laws">Recovering Simple Physical Laws</h3>
+<p>The examples below show the pattern that recurs throughout physics: an exact formula is awkward, but its first few series terms are both simple and accurate in the regime of interest. We have already seen two instances — the small-angle pendulum in Section <a href="../chapter-01/index.html#sec-1-taylor-and-maclaurin-series">1.9</a> and gravitational potential energy in Section <a href="../chapter-01/index.html#sec-1-techniques-for-obtaining-power-series-expansions">1.10</a>.</p>
+<section class="callout example"><header>Example - Physics: why <span class="math-inline">\(K = \tfrac12 m v^2\)</span> works</header><p>The exact relativistic kinetic energy of a particle of mass <span class="math-inline">\(m\)</span> moving at speed <span class="math-inline">\(v\)</span> is</p>
+<div class="math-block">\begin{equation}
+	K = \frac{mc^2}{\sqrt{1 - v^2/c^2}} - mc^2 .
+\end{equation}</div>
+<p>Show that at everyday speeds this reduces to the familiar <span class="math-inline">\(\tfrac12 m v^2\)</span>.</p>
+<p class="solution-head">Solution.</p>
+<p>Write <span class="math-inline">\(x = v^2/c^2\)</span>, so that <span class="math-inline">\(K = mc^2\left[(1-x)^{-1/2} - 1\right]\)</span>. For small <span class="math-inline">\(x\)</span>,</p>
+<div class="math-block">\begin{equation}
+	(1 - x)^{-1/2} = 1 + \tfrac{1}{2}x + \tfrac{3}{8}x^2 + \cdots
+	\label{eq:binomial-half}
+\end{equation}</div>
+<p>Substituting and cancelling the <span class="math-inline">\(1\)</span>:</p>
+<div class="math-block">\begin{equation}
+	K = mc^2\left( \tfrac{1}{2}\frac{v^2}{c^2} + \tfrac{3}{8}\frac{v^4}{c^4} + \cdots \right)
+	  = \tfrac{1}{2} m v^2 + \tfrac{3}{8}\,\frac{m v^4}{c^2} + \cdots
+\end{equation}</div>
+<p>The leading term is exactly the Newtonian kinetic energy. The first correction is smaller than it by a factor <span class="math-inline">\(\tfrac34 v^2/c^2\)</span>, which for a jet aircraft (<span class="math-inline">\(v \approx 300\)</span> m/s) is about <span class="math-inline">\(10^{-12}\)</span> — utterly negligible. Newtonian mechanics is not a different theory here; it is the first term of a series.</p></section>
+<section class="callout example"><header>Example - Physics: the classical limit of Planck's radiation law</header><p>A hot object emits light across a range of frequencies. Planck's law gives the energy radiated at frequency <span class="math-inline">\(\nu\)</span> by a body at absolute temperature <span class="math-inline">\(T\)</span> as</p>
+<div class="math-block">\begin{equation}
+	u(\nu) = \frac{8\pi h \nu^3}{c^3}\,\frac{1}{e^{h\nu/k T} - 1},
+	\label{eq:planck}
+\end{equation}</div>
+<p>where <span class="math-inline">\(h\)</span> is Planck's constant and <span class="math-inline">\(k\)</span> is Boltzmann's constant. Before Planck, the accepted classical result was the Rayleigh–Jeans law <span class="math-inline">\(u(\nu) \propto \nu^2 kT\)</span>. Show that Planck's law reduces to it at low frequencies.</p>
+<p class="solution-head">Solution.</p>
+<p>The physically meaningful comparison is between the photon energy <span class="math-inline">\(h\nu\)</span> and the thermal energy <span class="math-inline">\(kT\)</span>. “Low frequency” means <span class="math-inline">\(h\nu \ll kT\)</span>, so set</p>
+<div class="math-block">\begin{equation}
+x = \frac{h\nu}{kT}, \qquad x \ll 1,
+\end{equation}</div>
+<p>and expand the exponential in the denominator using the Maclaurin series for <span class="math-inline">\(e^x\)</span>:</p>
+<div class="math-block">\begin{equation}
+	e^{x} - 1 = \left(1 + x + \frac{x^2}{2!} + \cdots\right) - 1
+	= x + \frac{x^2}{2} + \cdots \approx x .
+\end{equation}</div>
+<p>Note that the leading <span class="math-inline">\(1\)</span> cancels exactly; this is why the expansion is needed rather than simply setting <span class="math-inline">\(e^x \approx 1\)</span>, which would give a useless <span class="math-inline">\(0\)</span> in the denominator. Substituting <span class="math-inline">\(e^{h\nu/kT} - 1 \approx h\nu/kT\)</span> into <span class="math-inline">\(\eqref{eq:planck}\)</span>:</p>
+<div class="math-block">\begin{equation}
+	u(\nu) \approx \frac{8\pi h \nu^3}{c^3}\cdot\frac{kT}{h\nu}
+	= \frac{8\pi \nu^2}{c^3}\,kT ,
+\end{equation}</div>
+<p>which is exactly the Rayleigh–Jeans law. So the classical result was never wrong, only incomplete: it is the leading term of Planck's law when <span class="math-inline">\(h\nu \ll kT\)</span>. At high frequencies the neglected terms dominate, the exponential suppresses <span class="math-inline">\(u(\nu)\)</span>, and Planck's law avoids the “ultraviolet catastrophe” — the classical prediction that a hot body radiates infinite total energy.</p></section>
+<section class="callout remark"><header>Remark</header><p>Series such as <span class="math-inline">\(\eqref{eq:binomial-half}\)</span>, written in powers of <span class="math-inline">\(x\)</span>, are the <strong>power series</strong> of Section <a href="../chapter-01/index.html#sec-1-power-series">1.7</a>. Beyond the approximations above, they are used to define:</p>
+<ul><li><p>Functions of complex numbers (Chapter 2, Section 8),</p></li><li><p>Functions of matrices (Chapter 3, Section 6),</p></li><li><p>Fourier series (Chapter 7),</p></li><li><p>Special functions like Legendre and Bessel functions (Chapters 12 and 13).</p></li></ul></section>
+<h2 id="sec-1-summary-types-of-series">Summary: Types of Series</h2>
+<p>The table below collects every kind of series met in this chapter, together with Fourier series, which are taken up in Chapter 7.</p>
+<figure id="tab-series-categories" class="table-figure"><div class="table-wrap"><table><tr><td><strong>Category</strong></td><td><strong>Example Formula</strong></td><td><strong>Main Feature / Description</strong></td></tr><tr><td><strong>Arithmetic</strong></td><td><span class="math-inline">\(a + (a+d) + (a+2d) + \cdots\)</span></td><td>Constant difference <span class="math-inline">\(d\)</span> between terms.</td></tr><tr><td><strong>Geometric</strong></td><td><span class="math-inline">\(a + ar + ar^2 + \cdots\)</span></td><td>Constant ratio <span class="math-inline">\(r\)</span>; converges iff <span class="math-inline">\(|r|&lt;1\)</span>.</td></tr><tr><td><strong>Harmonic</strong></td><td><span class="math-inline">\(1 + \tfrac12 + \tfrac13 + \cdots\)</span></td><td>Reciprocals of the positive integers; the <span class="math-inline">\(p=1\)</span> case of a <span class="math-inline">\(p\)</span>-series. Diverges.</td></tr><tr><td><strong><span class="math-inline">\(p\)</span>-Series</strong></td><td><span class="math-inline">\(\displaystyle \sum_{n=1}^\infty \frac{1}{n^p}\)</span></td><td>Converges for <span class="math-inline">\(p&gt;1\)</span>, diverges for <span class="math-inline">\(p\le 1\)</span>.</td></tr><tr><td><strong>Alternating</strong></td><td><span class="math-inline">\(1 - \tfrac12 + \tfrac13 - \cdots\)</span></td><td>Signs alternate; may converge conditionally.</td></tr><tr><td><strong>Power Series</strong></td><td><span class="math-inline">\(\displaystyle \sum_{n=0}^\infty c_n (x-a)^n\)</span></td><td>Converges on an interval around <span class="math-inline">\(x=a\)</span>.</td></tr><tr><td><strong>Taylor Series</strong></td><td><span class="math-inline">\(\displaystyle \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!}(x-a)^n\)</span></td><td>Power-series representation of an analytic function.</td></tr><tr><td><strong>Maclaurin Series</strong></td><td><span class="math-inline">\(\displaystyle \sum_{n=0}^\infty \frac{f^{(n)}(0)}{n!}x^n\)</span></td><td>Taylor series centred at <span class="math-inline">\(a=0\)</span>.</td></tr><tr><td><strong>Binomial Series</strong></td><td><span class="math-inline">\(\displaystyle (1+x)^p = \sum_{n=0}^\infty \binom{p}{n}x^n\)</span></td><td>Valid for any real or complex <span class="math-inline">\(p\)</span>, with <span class="math-inline">\(|x|&lt;1\)</span>.</td></tr><tr><td><strong>Fourier Series</strong></td><td><span class="math-inline">\(\displaystyle a_0 + \sum_{n=1}^\infty \left[ a_n\cos(nx) + b_n\sin(nx) \right]\)</span></td><td>Represents periodic functions using sines and cosines.</td></tr></table></div><figcaption>Table 1.1. Major types of infinite series and their defining properties.</figcaption></figure>
+<h2 id="sec-1-for-the-interested-reader">For the Interested Reader</h2>
+<p>Everything in this chapter is standard first-year material, so if a topic did not settle the first time, a second presentation of it often helps. Everything listed below is free to read or watch. The material is grouped the way the chapter is: first convergence, then power series.</p>
+<h3 id="sec-1-convergence-of-series">Convergence of series</h3>
+<p><em>Sections <a href="../chapter-01/index.html#sec-1-testing-series-for-convergence">1.4</a> and the alternating-series material that follows it.</em></p>
+<ul><li><p><strong>OpenStax, <em>Calculus Volume 2</em>, Chapter 5.</strong> A full textbook treatment in almost our order — <a href="https://openstax.org/books/calculus-volume-2/pages/5-1-sequences">5.1 Sequences</a>, <a href="https://openstax.org/books/calculus-volume-2/pages/5-2-infinite-series">5.2 Infinite Series</a>, <a href="https://openstax.org/books/calculus-volume-2/pages/5-3-the-divergence-and-integral-tests">5.3 Divergence and Integral Tests</a>, <a href="https://openstax.org/books/calculus-volume-2/pages/5-4-comparison-tests">5.4 Comparison Tests</a>, <a href="https://openstax.org/books/calculus-volume-2/pages/5-5-alternating-series">5.5 Alternating Series</a>, <a href="https://openstax.org/books/calculus-volume-2/pages/5-6-ratio-and-root-tests">5.6 Ratio and Root Tests</a> — the last of which also covers the Root Test, which we did not.</p></li><li><p><strong>Paul's Online Math Notes.</strong> The fastest place to see a test applied several times in a row: <a href="https://tutorial.math.lamar.edu/Classes/CalcII/SeriesIntro.aspx">Series \&amp; Sequences</a> and, especially, <a href="https://tutorial.math.lamar.edu/Classes/CalcII/SeriesStrategy.aspx">Strategy for Series</a> — a decision procedure for choosing a test, and a good companion to our summary table.</p></li><li><p><strong>Khan Academy.</strong> <a href="https://www.khanacademy.org/math/ap-calculus-bc/bc-series-new">Series (AP Calculus BC)</a> — short videos, each followed by practice questions. Best for drilling the convergence tests until they are automatic.</p></li></ul>
+<p>On what it actually means for an infinite sum to have a value:</p>
+<section class="callout context"><header>Video</header><p><strong>Defining Convergent and Divergent Infinite Series</strong></p>
+<a class="video-preview" href="https://www.youtube.com/watch?v=cr8QcflluF0" target="_blank" rel="noopener" aria-label="Watch Defining Convergent and Divergent Infinite Series on YouTube"><img src="https://img.youtube.com/vi/cr8QcflluF0/hqdefault.jpg" alt="Video thumbnail for Defining Convergent and Divergent Infinite Series" loading="lazy"><span class="video-preview-play" aria-hidden="true"></span><span class="video-preview-label">Watch on YouTube</span></a>
+<p><a href="https://www.youtube.com/watch?v=cr8QcflluF0" target="_blank" rel="noopener">Open video on YouTube</a></p></section>
+<h3 id="sec-1-power-series-taylor-and-maclaurin">Power series, Taylor and Maclaurin</h3>
+<p><em>Sections <a href="../chapter-01/index.html#sec-1-power-series">1.7</a> to <a href="../chapter-01/index.html#sec-1-techniques-for-obtaining-power-series-expansions">1.10</a>.</em></p>
+<ul><li><p><strong>OpenStax, <em>Calculus Volume 2</em>, Chapter 6.</strong> <a href="https://openstax.org/books/calculus-volume-2/pages/6-1-power-series-and-functions">6.1 Power Series and Functions</a> and <a href="https://openstax.org/books/calculus-volume-2/pages/6-2-properties-of-power-series">6.2 Properties of Power Series</a> cover Sections <a href="../chapter-01/index.html#sec-1-power-series">1.7</a> and <a href="../chapter-01/index.html#sec-1-theorems-about-power-series">1.8</a>; <a href="https://openstax.org/books/calculus-volume-2/pages/6-3-taylor-and-maclaurin-series">6.3 Taylor and Maclaurin Series</a> covers Section <a href="../chapter-01/index.html#sec-1-taylor-and-maclaurin-series">1.9</a> and, unlike us, treats the remainder term properly; <a href="https://openstax.org/books/calculus-volume-2/pages/6-4-working-with-taylor-series">6.4 Working with Taylor Series</a> has the binomial series and further approximations.</p></li><li><p><strong>Paul's Online Math Notes.</strong> <a href="https://tutorial.math.lamar.edu/Classes/CalcII/PowerSeries.aspx">Power Series</a> — many more interval-of-convergence problems, including the endpoint checks that catch people out — and <a href="https://tutorial.math.lamar.edu/Classes/CalcII/TaylorSeries.aspx">Taylor Series</a>.</p></li></ul>
+<p>A visual account of why the coefficients involve derivatives and factorials. Worth twenty minutes if <span class="math-inline">\(c_n = f^{(n)}(a)/n!\)</span> felt like something you memorised rather than understood:</p>
+<section class="callout context"><header>Video</header><p><strong>Taylor Series — 3Blue1Brown, <em>Essence of Calculus</em>, Chapter 11</strong></p>
+<a class="video-preview" href="https://www.youtube.com/watch?v=3d6DsjIBzJ4" target="_blank" rel="noopener" aria-label="Watch Taylor Series — 3Blue1Brown, Essence of Calculus, Chapter 11 on YouTube"><img src="https://img.youtube.com/vi/3d6DsjIBzJ4/hqdefault.jpg" alt="Video thumbnail for Taylor Series — 3Blue1Brown, Essence of Calculus, Chapter 11" loading="lazy"><span class="video-preview-play" aria-hidden="true"></span><span class="video-preview-label">Watch on YouTube</span></a>
+<p><a href="https://www.youtube.com/watch?v=3d6DsjIBzJ4" target="_blank" rel="noopener">Open video on YouTube</a></p></section>
+<section class="callout remark"><header>Remark</header><p>One caution when reading elsewhere. These are calculus sources, so they emphasise proving <em>whether</em> a series converges. In this course convergence is usually the easy part: what we actually want is the <em>value</em> of the sum, or a few terms of it accurate enough to use, as in the relativistic kinetic energy example of Section <a href="../chapter-01/index.html#sec-1-applications-of-series">1.11</a>. Read them for the machinery, but keep our purpose in mind.</p></section>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <a href="../chapter-00/index.html">Previous: Math Review for Calculus-Based Physics</a>
+      <a href="../../toc.html">Contents</a>
+      <a href="../chapter-02/index.html">Next: Complex Numbers</a>
+    </nav>
+  </article>
+</main>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p>&copy; 2026 Erfan Saydanzad. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

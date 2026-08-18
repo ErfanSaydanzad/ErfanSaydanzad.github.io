@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Strong-field physics of nanoparticles | Saydanzad Group</title>
+  <meta name="description" content="Theoretical and computational ultrafast and strong-field physics at Kennesaw State University: strong-field ionization and photoelectron emission from nanoparticles, attosecond plasmonic near-field imaging, and molecular Rydberg-state dynamics.">
+  <meta name="author" content="Erfan Saydanzad">
+  <meta property="og:title" content="Strong-field physics of nanoparticles | Saydanzad Group">
+  <meta property="og:description" content="Theoretical and computational ultrafast and strong-field physics at Kennesaw State University: strong-field ionization and photoelectron emission from nanoparticles, attosecond plasmonic near-field imaging, and molecular Rydberg-state dynamics.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://saydanzad.com/research/strong-field-nanoparticles/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+  <link rel="preload" href="../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../assets/css/site.css?v=b0e05998">
+  <script defer src="../../assets/js/main.js?v=b0e05998"></script>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="../../index.html">
+    <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M9 6.5V25.5M9 6.5H24M9 25.5H24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 16Q10.5 9.5 15.5 16T25.5 16" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/></svg>
+    <span>Saydanzad Group</span>
+  </a>
+  <nav class="top-nav" aria-label="Primary">
+    <a href="../../index.html">Home</a>
+    <a href="../../research.html" aria-current="page">Research</a>
+    <a href="../../courses.html">Courses</a>
+    <a href="../../group.html">Group</a>
+    <a href="../../publications.html">Publications</a>
+    <a href="../../cv.html">CV</a>
+  </nav>
+</header>
+<main id="main">
+<header class="page-head">
+  <p class="kicker">Active · 2016 –</p>
+  <h1>Strong-field physics of nanoparticles</h1>
+  <p class="lede">Photoelectron emission from nanoparticles in intense laser fields, where the atomic three-step picture stops predicting the measured cutoff energies.</p>
+</header>
+<figure class="figure hero-figure"><img src="../../figures/research/strong-field-nanoparticles/vmi-experiment.png" alt="Schematic of the velocity-map imaging experiment: nanoparticles delivered by an aerodynamic lens meet an infrared laser pulse between a repeller and an extractor, and the emitted photoelectrons are projected onto a microchannel-plate and phosphor detector, which records a ring-shaped momentum image." loading="lazy" decoding="async"><figcaption>The measurement the models have to reproduce. Nanoparticles are delivered into the laser focus by an aerodynamic lens, an infrared pulse ionizes them, and a velocity-map imaging spectrometer projects the emitted electrons onto the detector, so one image carries the full momentum distribution.</figcaption></figure>
+<div class="tags tags-lg"><span>Strong-field ionization</span><span>Photoelectron spectroscopy</span><span>Nanoplasmonics</span><span>Rescattering</span></div>
+<div class="prose"><h2 id="the-question">The question</h2>
+<p>Above roughly \(10^{13}\) W/cm², a laser field distorts the binding potential
+enough that electron motion is no longer a small correction. In atoms this
+regime is well described by the semiclassical three-step model: an electron
+tunnels out, is accelerated by the field, and can be driven back to rescatter
+from the parent ion. That model fixes the rescattering cutoff at about ten
+times the ponderomotive energy, which is what makes it testable.</p>
+<p>Nanoparticles break each step. Emission occurs from an extended curved surface
+rather than a point. The field an electron experiences is the driving field
+plus the plasmonic field the particle itself radiates, which is stronger,
+differently shaped, and shifted in phase. And because many electrons are
+released at once, they interact with each other and with the charge left
+behind.</p>
+<p>The question is which features of a measured photoelectron spectrum still
+report on single-electron dynamics, and which are collective.</p>
+<h2 id="approach">Approach</h2>
+<p>We extend the three-step model rather than replace it. Electrons are released
+by quantum-mechanical tunneling, propagated from the surface to the detector by
+sampling classical trajectories, and allowed to rescatter and recombine at the
+surface. The induced field is obtained from Mie theory for the particle's own
+geometry and optical constants.</p>
+<p>Each step is more involved than in the atomic case, and the model has to carry
+three effects that gas-phase targets do not have: Coulomb repulsion between
+emitted photoelectrons, the residual charge accumulating on the nanoparticle,
+and the interaction of each electron with the induced plasmonic field.</p>
+<h2 id="results">Results</h2>
+<p>We simulated momentum distributions from gold nanoparticles of 5 to 70 nm
+diameter, driven by short pulses at peak intensities of \(8.0\times10^{12}\) and
+\(1.2\times10^{13}\) W/cm², in support of experiments at the James R. Macdonald
+Laboratory.</p>
+<p>Two findings stand out. Measured and simulated cutoff energies exceed the
+gas-phase atomic result by about two orders of magnitude. And the balance
+between the two emission pathways is inverted: direct photoelectrons reach up
+to 93% of the rescattered cutoff energy, compared with roughly 20% in atomic
+targets.</p>
+<p>That combination — high energies produced predominantly by direct emission —
+suggests nanoparticles as compact, tunable tabletop sources of fast electrons,
+which would be useful for high-harmonic generation, electron impact
+spectroscopy, and femtosecond time-resolved scanning tunneling microscopy.</p>
+<h2 id="open-problems">Open problems</h2>
+<p><strong>Dielectrics and semiconductors.</strong> The model was built for metals. Extending
+it means replacing Fowler–Nordheim tunneling with Ammosov–Delone–Krainov
+ionization rates, which are appropriate for these materials, and eventually
+using time-dependent density functional theory for more accurate rates at the
+surface. This work is in progress with a former REU student, and a manuscript
+on the breakdown of ponderomotive cutoff scaling in dielectric nanoparticles is
+in preparation.</p>
+<p><strong>Plasmonic dynamics under strong fields.</strong> Our simulations predict that heavy
+photoemission weakens the plasmonic field enhancement. That prediction is
+testable using the imaging method developed in the
+<a href="../attosecond-plasmonic-imaging/index.html">near-field imaging project</a>, which
+would let the weakening be followed in real time.</p>
+<p><strong>For a student.</strong> The trajectory calculation is the accessible entry point. It
+is classical mechanics in a field that can be written down, it runs on a laptop
+before it needs the server, and deciding whether a spectrum is converged —
+enough trajectories, enough emission phases, enough of the surface sampled —
+teaches numerical analysis that a course does not.</p></div>
+<section class="prose"><h2>Links</h2><ul class="linklist">
+<li><a href="https://doi.org/10.1515/nanoph-2024-0719" rel="noopener">Generation of fast photoelectrons in strong-field emission from metal nanoparticles — Nanophotonics 14, 1355 (2025)</a></li>
+<li><a href="https://doi.org/10.1515/nanoph-2023-0120" rel="noopener">Enhanced cutoff energies for direct and rescattered strong-field photoelectron emission of plasmonic nanoparticles — Nanophotonics 12, 1931 (2023)</a></li>
+<li><a href="https://doi.org/10.1103/PhysRevA.106.033103" rel="noopener">Strong-field ionization of plasmonic nanoparticles — Phys. Rev. A 106, 033103 (2022)</a></li>
+<li><a href="https://doi.org/10.1021/acsphotonics.2c00663" rel="noopener">Strong-field control of plasmonic properties in core–shell nanoparticles — ACS Photonics 9, 3515 (2022)</a></li>
+</ul></section>
+<p class="back"><a href="../../research.html">← All research</a></p>
+</main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-identity">
+      <p class="footer-name">Erfan Saydanzad</p>
+      <p class="footer-org">Kennesaw State University · Department of Physics</p>
+      <p class="footer-address">Crawford Laboratory (Bldg. 846), Room 127 · Marietta Campus · Kennesaw State University, 1100 South Marietta Pkwy, Marietta, GA 30060</p>
+    </div>
+    <nav class="footer-links" aria-label="Elsewhere">
+      <a href="mailto:esaydanz@kennesaw.edu" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6.5h18v11H3z"/><path d="m3 7 9 6.5L21 7"/></svg><span>esaydanz@kennesaw.edu</span></a>
+      <a href="https://scholar.google.com/citations?user=4B5xKk0AAAAJ&amp;hl=en" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 1.5 9 12 15l10.5-6z"/><path d="M6 11.5V17c0 1.7 2.7 3 6 3s6-1.3 6-3v-5.5"/></svg><span>Google Scholar</span></a>
+      <a href="https://orcid.org/0000-0002-1472-5593" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9.2"/><path d="M9 9.5v7"/><circle cx="9" cy="7" r=".9" fill="currentColor" stroke="none"/><path d="M12.8 16.5v-7h2.4a3.5 3.5 0 0 1 0 7z"/></svg><span>ORCID 0000-0002-1472-5593</span></a>
+      <a href="https://www.linkedin.com/in/erfan-saydanzad-1b6293b8/" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4h16v16H4z"/><path d="M8 10.5v6"/><path d="M12 16.5v-3.2a1.8 1.8 0 0 1 3.6 0v3.2"/><circle cx="8" cy="7.6" r=".9" fill="currentColor" stroke="none"/></svg><span>LinkedIn</span></a>
+      <a href="https://facultyweb.kennesaw.edu/esaydanz/" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18-2.5-2.7-2.5-15.3 0-18z"/></svg><span>KSU faculty page</span></a>
+    </nav>
+  </div>
+  <p class="footer-legal">© 2026 Erfan Saydanzad. Course material on this site is free to read and reuse with attribution.</p>
+</footer>
+</body>
+</html>

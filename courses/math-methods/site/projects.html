@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects | Mathematical Methods in the Physical Sciences</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+  <link rel="preload" href="assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/site.css?v=4c167578">
+  <script>
+    window.MathJax = {
+      // tagformat is an optional TeX extension, not part of the combined
+      // tex-chtml build. Without these two lines the tagformat block below is
+      // read and silently ignored, and every equation numbers from 1 with no
+      // chapter in front of it.
+      loader: { load: ['[tex]/tagformat'] },
+      tex: {
+        packages: { '[+]': ['tagformat'] },
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        processEnvironments: true,
+        tags: 'ams',
+        // The PDF numbers equations within the chapter (\numberwithin
+        // {equation}{chapter}), so "1.8" is the eighth equation of
+        // chapter 1. MathJax counts from 1 on every page, which would have
+        // shown that same equation as "8". Prefixing the chapter number
+        // keeps a reference valid against either version.
+        tagformat: {
+          number: function (n) { return ''  + n; }
+        },
+        macros: {
+          pdv: ['{\\frac{\\partial #1}{\\partial #2}}', 2],
+          dv: ['{\\frac{d #1}{d #2}}', 2],
+          abs: ['{\\left|#1\\right|}', 1],
+          norm: ['{\\left\\|#1\\right\\|}', 1],
+          curl: '{\\vec{\\nabla}\\times}',
+          div: '{\\vec{\\nabla}\\cdot}',
+          grad: '{\\vec{\\nabla}}',
+          sech: '{\\operatorname{sech}}',
+          csch: '{\\operatorname{csch}}',
+          coth: '{\\operatorname{coth}}',
+          circnum: ['{\\boxed{#1}}', 1],
+          vb: ['{\\mathbf{#1}}', 1],
+          eval: ['{\\left.#1\\right|}', 1],
+          dd: '{\\,d}'
+        }
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <script defer src="assets/js/main.js?v=4c167578"></script>
+
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M9 6.5V25.5M9 6.5H24M9 25.5H24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 16Q10.5 9.5 15.5 16T25.5 16" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/></svg>
+    <span>Mathematical Methods in the Physical Sciences</span>
+  </a>
+  <nav class="top-nav" aria-label="Primary">
+    <a href="index.html">Home</a>
+    <a href="toc.html">Contents</a>
+    <a href="projects.html">Projects</a>
+  </nav>
+</header>
+<main class="projects-page content" id="main">
+  <header class="simple-header">
+    <p>PHYS 3260</p>
+    <h1>Projects</h1>
+  </header>
+  <section class="content">
+  <h2>Worked examples</h2>
+  <p><a class="download-link" href="projects/project-template.zip">Download the project template (.zip)</a> &mdash; the exact bundle to model yours on.</p>
+</section>
+  <section class="home-grid project-grid" aria-label="Worked examples">
+<a class="project-card" href="projects/examples/Drum/index.html">
+  <img class="project-card-preview" src="projects/examples/Drum/assets/img/anim.gif" alt="" loading="lazy">
+  <strong>Why a Drum Has No Pitch: Modes of a Circular Membrane</strong>
+  <span class="project-card-author">PHYS 3260, Mathematical Methods — worked example</span>
+</a>
+<a class="project-card" href="projects/examples/Maxwell/index.html">
+  <img class="project-card-preview" src="projects/examples/Maxwell/assets/img/anim.gif" alt="" loading="lazy">
+  <strong>A Standing Electromagnetic Wave in a Square Cavity</strong>
+  <span class="project-card-author">PHYS 3260, Mathematical Methods — worked example</span>
+</a>
+<a class="project-card" href="projects/examples/schrodinger-barrier/index.html">
+  <img class="project-card-preview" src="projects/examples/schrodinger-barrier/assets/img/anim.gif" alt="" loading="lazy">
+  <strong>Quantum Tunnelling of a Wave Packet through a Rectangular Barrier (Numerical)</strong>
+  <span class="project-card-author">PHYS 3260, Mathematical Methods — worked example</span>
+</a>
+<a class="project-card" href="projects/examples/tunnelling-exact/index.html">
+  <img class="project-card-preview" src="projects/examples/tunnelling-exact/assets/img/anim.gif" alt="" loading="lazy">
+  <strong>Quantum Tunnelling of a Wave Packet through a Rectangular Barrier (Analytical)</strong>
+  <span class="project-card-author">PHYS 3260, Mathematical Methods — worked example</span>
+</a>
+</section>
+  <section class="content">
+  <h2>The assignment</h2>
+  <p>Choose a problem in physics or engineering that interests you, solve it using
+  the mathematical methods from this course, and visualise the result. Then write it
+  up as a short report. The strongest reports are published here, on the course site,
+  for future students to learn from.</p>
+
+  <p>You each have <a href="#choose">a problem of your own below</a>. Bring me a
+  different one if you would rather &mdash; something from your major, your research
+  group, or your job &mdash; but clear it with me first, in a paragraph saying what the
+  question is and which methods from this course will answer it. The test a proposal
+  has to pass is the same one the problems below pass: the mathematics of this course
+  has to be doing the real work, not decorating a simulation.</p>
+
+  <h2>What it is worth</h2>
+  <p>The project is worth <strong>5%</strong>, added on top of the 100% of the
+  course. It is extra credit: not doing it costs you nothing, and doing it well is
+  the cheapest 5% you will ever earn.</p>
+
+  <p>You may use AI on any part of this. I would rather you did, and said so &mdash;
+  it is how the work is done now. But it means the artefact cannot be what is
+  graded, so the grade lives in the <strong>ten-minute presentation</strong>. Each
+  problem below carries a question you should expect to be asked while you are
+  standing there, and each one is chosen so that it cannot be answered by anyone
+  who has not personally followed the derivation. Use whatever tools you like to
+  build the thing; be able to defend every line of it.</p>
+</section>
+  <section class="content" id="choose">
+  <h2>The problems</h2>
+  <p>One each, and no two of you have the same one. Each is stated the way the
+  worked examples above state theirs: what you are given, and what you are to
+  find, in parts. They are problems in mathematics &mdash; the physics behind
+  each one is background, and you are told everything you need about it, so a
+  problem from a field you have never studied is not a problem you cannot
+  do.</p>
+  <p>Every one of them can be solved with this course, calculus and algebra.
+  Where some step genuinely has no closed form, the problem says so and says
+  exactly what the computer is allowed to do instead; everything else is meant
+  to come out of a pencil. Take yours as it stands, or take it and push it
+  somewhere I have not suggested.</p>
+  <ol class="suggestions">
+  <li class="suggestion">
+    <h3>Resonant tunnelling: a wave packet through two barriers</h3>
+    <p class="suggestion-meta">Quantum mechanics &middot; Chapters 2, 3, 7, 8 and 10</p>
+    <section class="project-problem" aria-label="The problem">
+      <p class="project-problem-kicker">The problem</p>
+      <p>A particle of mass \(m\) moves in one dimension along a line carrying two identical rectangular barriers, each of height \(V_0\) and width \(a\), separated by a gap of width \(d\):</p>
+      <p>\[ V(x) = \begin{cases} V_0, & -\tfrac{d}{2}-a < x < -\tfrac{d}{2} \ \text{ or }\ \tfrac{d}{2} < x < \tfrac{d}{2}+a, \\[2pt] 0, & \text{everywhere else.} \end{cases} \]</p>
+      <p>Work in units with \(\hbar = m = 1\), and take \(V_0 = 2\), \(a = 1\), \(d = 6\). The particle is described by a complex function \(\psi(x,t)\) obeying the Schr&ouml;dinger equation</p>
+      <p>\[ i\hbar\,\frac{\partial \psi}{\partial t} = -\frac{\hbar^{2}}{2m}\,\frac{\partial^{2}\psi}{\partial x^{2}} + V(x)\,\psi , \]</p>
+      <p>and \(|\psi(x,t)|^{2}\) is the probability density for finding it at \(x\). Separating the variables (Chapter&nbsp;10) with \(\psi = \varphi(x)\,e^{-iEt/\hbar}\) leaves an ordinary differential equation for \(\varphi\),</p>
+      <p>\[ \frac{d^{2}\varphi}{dx^{2}} + \frac{2m}{\hbar^{2}}\bigl(E - V(x)\bigr)\varphi = 0 , \]</p>
+      <p>which has constant coefficients in each of the five regions where \(V\) is constant. No quantum mechanics is needed past this point: everything below is solving that equation, matching the pieces, and adding them up.</p>
+      <ol class="problem-parts">
+        <li>Solve the equation in each of the five regions. For an energy \(E < V_0\) the solution outside the barriers is a pair of complex exponentials \(e^{\pm ikx}\) and inside them a pair of real ones \(e^{\pm\kappa x}\) (Chapter&nbsp;8); give \(k\) and \(\kappa\) in terms of \(E\). Write down the conditions that \(\varphi\) and \(\varphi'\) are continuous at each of the four interfaces, and count your equations against your unknowns.</li>
+        <li>Rewrite each interface, and each stretch between interfaces, as a \(2\times2\) matrix acting on the pair of amplitudes in a region. Multiply the five of them into one transfer matrix \(M(E)\) for the whole structure (Chapter&nbsp;3), and read the transmission probability \(T(E)\) off it in closed form. Check the formula by setting \(d \to 0\): the two barriers merge into one of width \(2a\), and your \(T(E)\) must collapse to the single-barrier result.</li>
+        <li>Show that \(T(E) = 1\) exactly &mdash; perfect transmission, with nothing reflected &mdash; at a handful of energies below the barrier top, and find the equation that fixes them. Say what those energies have to do with the gap between the barriers. Then plot \(T(E)\) for \(0 < E < V_0\) and, on the same axes, the transmission of a <em>single</em> barrier of width \(2a\): at a resonance the pair of barriers is transparent where the one solid barrier of the same thickness is not. Quote both numbers.</li>
+        <li>Now the packet. Take a Gaussian, starting well to the left of the structure and moving right, \(\psi(x,0) = (2\pi\sigma^{2})^{-1/4} e^{-(x-x_0)^{2}/4\sigma^{2}}\,e^{ik_0x}\). Expand it in the stationary solutions of&nbsp;(b) &mdash; that expansion is a Fourier transform (Chapter&nbsp;7), and for a Gaussian it is one you can do by hand &mdash; and write the exact evolution \(\psi(x,t) = \int \frac{dk}{\sqrt{2\pi}}\,A(k)\,\varphi_k(x)\,e^{-iE_kt/\hbar}\). Pick \(k_0\) to sit on one of the resonances you found, and \(\sigma\) big enough that the packet's spread in energy is narrower than that resonance is wide. Say what you chose and why.</li>
+      </ol>
+    </section>
+    <p><strong>Solve it on paper.</strong> Parts (a)&ndash;(c) are pencil work from end to end: a constant-coefficient ordinary differential equation solved in five regions, eight matching equations, five \(2\times2\) matrices multiplied, and algebra. Nothing is put on a grid and no differential equation is ever stepped forward in time &mdash; if you find yourself discretising the Schr&ouml;dinger equation, you have left the assignment. Part&nbsp;(d) is exact too, but the \(k\)-integral in it has no closed form for this potential, so evaluating that one integral is the only thing your program does. That is the same act as summing a Fourier series to draw a square wave.</p>
+    <p><strong>What has to move.</strong> <strong>The packet.</strong> \(|\psi(x,t)|^{2}\) through the collision, with the two barriers marked on the axis: the packet arrives, part of it is thrown straight back, and part of it fills the gap between the barriers and stays there, leaking out both sides long after the reflected piece has gone. Underneath, three running curves &mdash; the probability to the left of the structure, between the barriers, and to the right &mdash; so that the filling and the draining are numbers and not an impression. Run a free packet (no barriers, and that one <em>does</em> have a closed form) alongside as a ghost, so the delay can be seen. <br><strong>And the cheap one.</strong> No packet at all: sweep \(E\) slowly through a resonance and show \(|\varphi_E(x)|^{2}\). Off resonance the gap is dark; on it the amplitude between the barriers stands up by orders of magnitude. Every frame of this second animation is a formula from&nbsp;(b) evaluated at one energy.</p>
+    <p class="suggestion-defend"><strong>Be ready to answer, live.</strong> &ldquo;One of your barriers on its own reflects almost everything at that energy. Two of them, with a gap, let all of it through. Where in the matrix product does the reflection cancel, and what decides how long the packet is held before it leaves?&rdquo;</p>
+  </li>
+  </ol>
+</section>
+  <section class="content">
+  <h2>What to submit</h2>
+  <p>Send a single <code>.zip</code> of one folder named after your project. Inside it:</p>
+  <ul>
+    <li><strong>&lt;Project&gt;.tex</strong> &mdash; your write-up in LaTeX, named after
+    the folder (<code>Maxwell/Maxwell.tex</code>). It should have a title, open with
+    the problem itself, work out the mathematics, and present your results.</li>
+    <li><strong>code/</strong> &mdash; the Python that produces every figure and the
+    animation, writing them into <code>figures/</code>.</li>
+    <li><strong>figures/</strong> &mdash; the plots (PNG) plus an animation (GIF) and a
+    still frame of it for the PDF.</li>
+  </ul>
+  <p>Separately, hand in a <strong>ten-minute presentation</strong> &mdash; PowerPoint,
+  Keynote or Beamer &mdash; covering the question, the mathematics, the figures and the
+  conclusion; roughly one slide per minute. Put the equations in it as they appear
+  in your report, and if your tool cannot set mathematics well, screenshot them
+  from your PDF. The presentation is not part of the project folder and is not
+  published here.</p>
+
+  <p>Make the animation the best thing you build. It is the preview on this page,
+  and it is what decides whether anyone opens your project at all. Give it a
+  caption that says what to watch for.</p>
+  <p>Open with the problem. Under the title, before anything you wrote about it,
+  put a <code>problemstatement</code> block giving what is known and what is to be
+  found, in parts &mdash; the way the worked examples above open. It is what
+  tells a reader what you set out to do before they read how you did it, and
+  writing it first is the cheapest way to find out whether your project is one
+  problem or three. Your abstract goes under it, printed by
+  <code>\projectabstract</code>, and everything from there down is your report.</p>
+  <p>Your <code>.tex</code> must compile to a PDF on its own, and it should use only
+  standard constructs (sections, equations, figures, lists) plus the helper
+  commands <code>\projectinfo</code>, <code>problemstatement</code>,
+  <code>\projectabstract</code> and <code>\webanimation</code> shown in the
+  template, so it also renders correctly on this website. The report is for the
+  physics and the mathematics: keep source code out of it, and let the figures
+  carry the results.</p>
+
+  <p>Say which methods from this course you used, <em>where you use them</em> &mdash;
+  "separating the variables (Chapter 10)", "the Fourier transform (Chapter 7)" &mdash;
+  not only in a list at the end. Half of the point of the project is recognising
+  the course inside a problem it was not written for.</p>
+</section>
+  <section class="content project-group">
+  <h2>Student projects</h2>
+  <p class="muted">No student projects have been published yet. The first accepted projects will appear here.</p>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p>&copy; 2026 Erfan Saydanzad. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

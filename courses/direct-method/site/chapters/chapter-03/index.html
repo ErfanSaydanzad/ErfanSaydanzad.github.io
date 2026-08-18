@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 3: Angular Momentum and Central Potentials | Direct Method</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+  <link rel="preload" href="../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../assets/css/site.css?v=db81423d">
+  <script>
+    window.MathJax = {
+      // tagformat is an optional TeX extension, not part of the combined
+      // tex-chtml build. Without these two lines the tagformat block below is
+      // read and silently ignored, and every equation numbers from 1 with no
+      // chapter in front of it.
+      loader: { load: ['[tex]/tagformat'] },
+      tex: {
+        packages: { '[+]': ['tagformat'] },
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        processEnvironments: true,
+        tags: 'ams',
+        // The PDF numbers equations within the chapter (\numberwithin
+        // {equation}{chapter}), so "1.8" is the eighth equation of
+        // chapter 1. MathJax counts from 1 on every page, which would have
+        // shown that same equation as "8". Prefixing the chapter number
+        // keeps a reference valid against either version.
+        tagformat: {
+          number: function (n) { return '3.' + n; }
+        },
+        macros: {
+          pdv: ['{\\frac{\\partial #1}{\\partial #2}}', 2],
+          dv: ['{\\frac{d #1}{d #2}}', 2],
+          abs: ['{\\left|#1\\right|}', 1],
+          norm: ['{\\left\\|#1\\right\\|}', 1],
+          curl: '{\\vec{\\nabla}\\times}',
+          div: '{\\vec{\\nabla}\\cdot}',
+          grad: '{\\vec{\\nabla}}',
+          sech: '{\\operatorname{sech}}',
+          csch: '{\\operatorname{csch}}',
+          coth: '{\\operatorname{coth}}',
+          circnum: ['{\\boxed{#1}}', 1],
+          vb: ['{\\mathbf{#1}}', 1],
+          eval: ['{\\left.#1\\right|}', 1],
+          dd: '{\\,d}',
+          // Dirac notation. The chapters are written with the physics
+          // package, which MathJax does not have, so every bra-ket command
+          // the notes use has to be defined here or it renders as red text.
+          // \braket is always given two arguments in these sources.
+          ket: ['{\\left|#1\\right\\rangle}', 1],
+          bra: ['{\\left\\langle#1\\right|}', 1],
+          braket: ['{\\left\\langle#1\\middle|#2\\right\\rangle}', 2],
+          ketbra: ['{\\left|#1\\right\\rangle\\!\\left\\langle#2\\right|}', 2],
+          dyad: ['{\\left|#1\\right\\rangle\\!\\left\\langle#2\\right|}', 2],
+          op: ['{\\left|#1\\right\\rangle\\!\\left\\langle#1\\right|}', 1],
+          mel: ['{\\left\\langle#1\\right|#2\\left|#3\\right\\rangle}', 3],
+          expval: ['{\\left\\langle#1\\right\\rangle}', 1],
+          ev: ['{\\left\\langle#1\\right\\rangle}', 1],
+          comm: ['{\\left[#1,#2\\right]}', 2],
+          acomm: ['{\\left\\{#1,#2\\right\\}}', 2],
+          anticommutator: ['{\\left\\{#1,#2\\right\\}}', 2],
+          Tr: '{\\operatorname{Tr}}',
+          tr: '{\\operatorname{tr}}',
+          bm: ['{\\boldsymbol{#1}}', 1]
+        }
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <script defer src="../../assets/js/main.js?v=db81423d"></script>
+
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="../../index.html">
+    <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M9 6.5V25.5M9 6.5H24M9 25.5H24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 16Q10.5 9.5 15.5 16T25.5 16" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/></svg>
+    <span>Direct Method</span>
+  </a>
+  <nav class="top-nav" aria-label="Primary">
+    <a href="../../index.html">Home</a>
+    <a href="../../toc.html">Contents</a>
+    <a href="../../projects.html">Projects</a>
+  </nav>
+</header>
+<main class="layout" id="main">
+  <aside class="sidebar">
+  <div class="sidebar-inner">
+    <p class="sidebar-kicker">Chapter 3</p>
+    <h2>Angular Momentum and Central Potentials</h2>
+    <nav class="chapter-toc" aria-label="Chapter contents">
+      <a class="toc-level-2" href="#sec-3-introduction">3.1 Introduction</a>
+<a class="toc-level-2" href="#sec-3-the-angular-momentum-operators">3.2 The Angular Momentum Operators</a>
+<a class="toc-level-2" href="#sec-3-ladder-operators">3.3 Ladder Operators</a>
+<a class="toc-level-3" href="#sec-3-why-j-steps-m">3.3.1 Why J Steps m</a>
+<a class="toc-level-3" href="#sec-3-the-ladder-must-terminate">3.3.2 The Ladder Must Terminate</a>
+<a class="toc-level-2" href="#sec-3-matrix-representations">3.4 Matrix Representations</a>
+<a class="toc-level-2" href="#sec-3-orbital-angular-momentum-in-spherical-coordinates">3.5 Orbital Angular Momentum in Spherical Coordinates</a>
+<a class="toc-level-2" href="#sec-3-parity-and-selection-rules">3.6 Parity and Selection Rules</a>
+<a class="toc-level-2" href="#sec-3-spin">3.7 Spin</a>
+<a class="toc-level-2" href="#sec-3-central-potentials">3.8 Central Potentials</a>
+<a class="toc-level-2" href="#sec-3-summary">3.9 Summary</a>
+<a class="toc-level-2" href="#sec-3-exercises">3.10 Exercises</a>
+<a class="toc-level-2" href="#sec-3-project-the-centrifugal-barrier">3.11 Project: The Centrifugal Barrier</a>
+    </nav>
+  </div>
+</aside>
+
+  <article class="content">
+    <header class="chapter-hero">
+      <p>Chapter 3</p>
+      <h1>Angular Momentum and Central Potentials</h1>
+    </header>
+    <h2 id="sec-3-introduction"><span class="sec-number">3.1</span>Introduction</h2>
+<p>Chapter 2 solved the Schrödinger equation in one dimension. Atoms are three-dimensional, and the force binding them points at a centre. This chapter develops the machinery that difference requires.</p>
+<p>The gain is large enough to state in advance. A general three-dimensional problem is a partial differential equation in three variables. A problem with a <em>central</em> potential — one depending only on the distance <span class="math-inline">\(r\)</span> from a fixed point — reduces to an ordinary differential equation in <span class="math-inline">\(r\)</span> alone, with the angular part solved once and for all, for every central potential there will ever be. Chapter 4 then solves the radial part exactly for the Coulomb potential.</p>
+<p>We proceed in two independent ways, which is worth noticing because they illuminate each other. Sections <a href="../chapter-03/index.html#sec-3-the-angular-momentum-operators">3.2</a>–<a href="../chapter-03/index.html#sec-3-matrix-representations">3.4</a> obtain the entire spectrum of angular momentum from <em>commutators alone</em>, with no differential equations and no wave functions. Sections <a href="../chapter-03/index.html#sec-3-orbital-angular-momentum-in-spherical-coordinates">3.5</a>–<a href="../chapter-03/index.html#sec-3-parity-and-selection-rules">3.6</a> then find the eigenfunctions explicitly in spherical coordinates. The two routes give the same answer, and the algebraic one gives slightly more — it admits half-integer values that the differential route excludes, and nature uses them for spin.</p>
+<h2 id="sec-3-the-angular-momentum-operators"><span class="sec-number">3.2</span>The Angular Momentum Operators</h2>
+<p>Classically <span class="math-inline">\(\vec L=\vec r\times\vec p\)</span>, with components</p>
+<div class="math-block" id="eq-eq-am-components">\begin{equation}
+	\label{eq:AM-components}
+	L_x=yp_z-zp_y,
+	\qquad
+	L_y=zp_x-xp_z,
+	\qquad
+	L_z=xp_y-yp_x .
+\end{equation}</div>
+<p>Promote <span class="math-inline">\(\vec r\)</span> and <span class="math-inline">\(\vec p\)</span> to operators obeying the canonical commutation relations of Chapter 1,</p>
+<div class="math-block" id="eq-eq-am-canonical">\begin{equation}
+	\label{eq:AM-canonical}
+	[\hat x_i,\hat p_j]=i\hbar\delta_{ij},
+	\qquad
+	[\hat x_i,\hat x_j]=[\hat p_i,\hat p_j]=0 .
+\end{equation}</div>
+<p>The three components of <span class="math-inline">\(\hat{\vec L}\)</span> do not commute. Let us compute <span class="math-inline">\([\hat L_x,\hat L_y]\)</span> in full, since this single calculation is the foundation of the chapter.</p>
+<div class="math-block" id="eq-eq-am-comm-derivation">\begin{equation}
+	\label{eq:AM-comm-derivation}
+	\begin{aligned}
+		[\hat L_x,\hat L_y]
+		&amp;=[\hat y\hat p_z-\hat z\hat p_y,\;\hat z\hat p_x-\hat x\hat p_z]\\
+		&amp;=[\hat y\hat p_z,\hat z\hat p_x]
+		-[\hat y\hat p_z,\hat x\hat p_z]
+		-[\hat z\hat p_y,\hat z\hat p_x]
+		+[\hat z\hat p_y,\hat x\hat p_z] .
+	\end{aligned}
+\end{equation}</div>
+<p>Take the four terms in turn. In the second, every operator involved (<span class="math-inline">\(\hat y,\hat p_z,\hat x\)</span>) commutes with every other, so the term vanishes; the same is true of the third. The first and fourth survive:</p>
+<div class="math-block" id="eq-eq-am-comm-term1">\begin{equation}
+	\label{eq:AM-comm-term1}
+	[\hat y\hat p_z,\hat z\hat p_x]
+	=\hat y\,[\hat p_z,\hat z]\,\hat p_x
+	=\hat y(-i\hbar)\hat p_x
+	=-i\hbar\,\hat y\hat p_x ,
+\end{equation}</div>
+<div class="math-block" id="eq-eq-am-comm-term4">\begin{equation}
+	\label{eq:AM-comm-term4}
+	[\hat z\hat p_y,\hat x\hat p_z]
+	=\hat x\hat p_y\,[\hat z,\hat p_z]
+	=i\hbar\,\hat x\hat p_y .
+\end{equation}</div>
+<p>Adding,</p>
+<div class="math-block" id="eq-eq-am-comm-result">\begin{equation}
+	\label{eq:AM-comm-result}
+	[\hat L_x,\hat L_y]
+	=i\hbar(\hat x\hat p_y-\hat y\hat p_x)
+	=i\hbar\hat L_z .
+\end{equation}</div>
+<p>By cyclic permutation of <span class="math-inline">\(x\to y\to z\to x\)</span>,</p>
+<div class="math-block" id="eq-eq-am-commutators">\begin{equation}
+	\label{eq:AM-commutators}
+	\boxed{\;
+		[\hat L_x,\hat L_y]=i\hbar\hat L_z,
+		\qquad
+		[\hat L_y,\hat L_z]=i\hbar\hat L_x,
+		\qquad
+		[\hat L_z,\hat L_x]=i\hbar\hat L_y \;}
+\end{equation}</div>
+<p>Because no two components commute, Chapter 1's uncertainty relation forbids any state from having definite values of all three at once. But the total does commute with each.</p>
+<section class="callout definition" id="definition-def-am"><header>Definition 3.2.1 - Angular momentum</header><p> An <em>angular momentum</em> is any triple of Hermitian operators <span class="math-inline">\(\hat J_x,\hat J_y,\hat J_z\)</span> satisfying</p>
+<div class="math-block" id="eq-eq-am-general">\begin{equation}
+		\label{eq:AM-general}
+		[\hat J_i,\hat J_j]=i\hbar\,\epsilon_{ijk}\hat J_k ,
+	\end{equation}</div>
+<p>with <span class="math-inline">\(\epsilon_{ijk}\)</span> the Levi-Civita symbol. We write</p>
+<div class="math-block" id="eq-eq-am-j2">\begin{equation}
+		\label{eq:AM-J2}
+		\hat J^{2}=\hat J_x^{2}+\hat J_y^{2}+\hat J_z^{2} .
+	\end{equation}</div></section>
+<p>Everything below uses only Eq. <a href="../chapter-03/index.html#eq-eq-am-general">(3.8)</a>, so it applies equally to orbital angular momentum <span class="math-inline">\(\hat{\vec L}\)</span>, to spin <span class="math-inline">\(\hat{\vec S}\)</span> (Sec. <a href="../chapter-03/index.html#sec-3-spin">3.7</a>), and to any sum of them.</p>
+<section class="callout theorem" id="theorem-thm-am-j2-commutes"><header>Theorem 3.2.1 - <span class="math-inline">\(\hat J^{2}\)</span> commutes with every component</header><div class="math-block" id="eq-eq-am-j2-commutes">\begin{equation}
+		\label{eq:AM-J2-commutes}
+		[\hat J^{2},\hat J_i]=0,\qquad i=x,y,z .
+	\end{equation}</div></section>
+<div class="proof" data-lead="Proof."><p>Take <span class="math-inline">\(i=z\)</span>; the others follow by symmetry. Since <span class="math-inline">\(\hat J_z\)</span> commutes with itself, <span class="math-inline">\([\hat J_z^{2},\hat J_z]=0\)</span> and only two terms survive. Using the identity <span class="math-inline">\([\hat A^{2},\hat B]=\hat A[\hat A,\hat B]+[\hat A,\hat B]\hat A\)</span>,</p>
+<div class="math-block">\[
+	[\hat J_x^{2},\hat J_z]
+	=\hat J_x[\hat J_x,\hat J_z]+[\hat J_x,\hat J_z]\hat J_x
+	=-i\hbar\bigl(\hat J_x\hat J_y+\hat J_y\hat J_x\bigr),
+	\]</div>
+<div class="math-block">\[
+	[\hat J_y^{2},\hat J_z]
+	=\hat J_y[\hat J_y,\hat J_z]+[\hat J_y,\hat J_z]\hat J_y
+	=+i\hbar\bigl(\hat J_y\hat J_x+\hat J_x\hat J_y\bigr),
+	\]</div>
+<p>where <span class="math-inline">\([\hat J_x,\hat J_z]=-i\hbar\hat J_y\)</span> and <span class="math-inline">\([\hat J_y,\hat J_z]=i\hbar\hat J_x\)</span> from Eq. <a href="../chapter-03/index.html#eq-eq-am-general">(3.8)</a>. The two lines are equal and opposite, so their sum vanishes.</p></div>
+<p>So <span class="math-inline">\(\hat J^{2}\)</span> and <em>one</em> component — conventionally <span class="math-inline">\(\hat J_z\)</span> — are compatible observables and possess simultaneous eigenkets. Write them <span class="math-inline">\(\ket{j,m}\)</span>, with</p>
+<div class="math-block" id="eq-eq-am-eigen-def">\begin{equation}
+	\label{eq:AM-eigen-def}
+	\hat J^{2}\ket{j,m}=\lambda\hbar^{2}\ket{j,m},
+	\qquad
+	\hat J_z\ket{j,m}=m\hbar\ket{j,m},
+\end{equation}</div>
+<p>where <span class="math-inline">\(\lambda\)</span> and <span class="math-inline">\(m\)</span> are dimensionless and to be determined.</p>
+<h2 id="sec-3-ladder-operators"><span class="sec-number">3.3</span>Ladder Operators</h2>
+<p>Define</p>
+<div class="math-block" id="eq-eq-am-ladder-def">\begin{equation}
+	\label{eq:AM-ladder-def}
+	\hat J_{\pm}=\hat J_x\pm i\hat J_y ,
+\end{equation}</div>
+<p>which are not Hermitian; instead <span class="math-inline">\(\hat J_{+}^{\dagger}=\hat J_{-}\)</span>.</p>
+<p>Their commutator with <span class="math-inline">\(\hat J_z\)</span> is the engine of the whole construction:</p>
+<div class="math-block" id="eq-eq-am-ladder-comm-derivation">\begin{equation}
+	\label{eq:AM-ladder-comm-derivation}
+	[\hat J_z,\hat J_{\pm}]
+	=[\hat J_z,\hat J_x]\pm i[\hat J_z,\hat J_y]
+	=i\hbar\hat J_y\pm i(-i\hbar\hat J_x)
+	=\pm\hbar\bigl(\hat J_x\pm i\hat J_y\bigr),
+\end{equation}</div>
+<p>that is</p>
+<div class="math-block" id="eq-eq-am-ladder-comm">\begin{equation}
+	\label{eq:AM-ladder-comm}
+	\boxed{\;[\hat J_z,\hat J_{\pm}]=\pm\hbar\hat J_{\pm}\;}
+	\qquad\text{and}\qquad
+	[\hat J^{2},\hat J_{\pm}]=0 ,
+\end{equation}</div>
+<p>the second following from Theorem <a href="../chapter-03/index.html#theorem-thm-am-j2-commutes">3.2.1</a>.</p>
+<p>We also need the products <span class="math-inline">\(\hat J_{\mp}\hat J_{\pm}\)</span>. Expanding,</p>
+<div class="math-block" id="eq-eq-am-jmjp">\begin{equation}
+	\label{eq:AM-JmJp}
+	\begin{aligned}
+		\hat J_{\mp}\hat J_{\pm}
+		&amp;=(\hat J_x\mp i\hat J_y)(\hat J_x\pm i\hat J_y)\\
+		&amp;=\hat J_x^{2}+\hat J_y^{2}\pm i[\hat J_x,\hat J_y]\\
+		&amp;=\hat J^{2}-\hat J_z^{2}\pm i(i\hbar\hat J_z)\\
+		&amp;=\hat J^{2}-\hat J_z^{2}\mp\hbar\hat J_z ,
+	\end{aligned}
+\end{equation}</div>
+<p>which rearranges to the identity used repeatedly below:</p>
+<div class="math-block" id="eq-eq-am-j2-identity">\begin{equation}
+	\label{eq:AM-J2-identity}
+	\boxed{\;\hat J^{2}=\hat J_{\mp}\hat J_{\pm}+\hat J_z^{2}\pm\hbar\hat J_z\;}
+\end{equation}</div>
+<h3 id="sec-3-why-j-steps-m"><span class="sec-number">3.3.1</span>Why <span class="math-inline">\(\hat J_{\pm}\)</span> Steps <span class="math-inline">\(m\)</span></h3>
+<p>Apply <span class="math-inline">\(\hat J_z\)</span> to the state <span class="math-inline">\(\hat J_{\pm}\ket{j,m}\)</span> and use Eq. <a href="../chapter-03/index.html#eq-eq-am-ladder-comm">(3.14)</a>:</p>
+<div class="math-block" id="eq-eq-am-step">\begin{equation}
+	\label{eq:AM-step}
+	\begin{aligned}
+		\hat J_z\bigl(\hat J_{\pm}\ket{j,m}\bigr)
+		&amp;=\bigl(\hat J_{\pm}\hat J_z+[\hat J_z,\hat J_{\pm}]\bigr)\ket{j,m}\\
+		&amp;=\bigl(\hat J_{\pm}\hat J_z\pm\hbar\hat J_{\pm}\bigr)\ket{j,m}\\
+		&amp;=(m\pm1)\hbar\,\bigl(\hat J_{\pm}\ket{j,m}\bigr).
+	\end{aligned}
+\end{equation}</div>
+<p>So <span class="math-inline">\(\hat J_{\pm}\ket{j,m}\)</span> is an eigenket of <span class="math-inline">\(\hat J_z\)</span> with eigenvalue raised or lowered by one unit of <span class="math-inline">\(\hbar\)</span>. And because <span class="math-inline">\([\hat J^{2},\hat J_{\pm}]=0\)</span>, it still has the same <span class="math-inline">\(\hat J^{2}\)</span> eigenvalue <span class="math-inline">\(\lambda\hbar^{2}\)</span>. The operators move states along a ladder of fixed <span class="math-inline">\(\lambda\)</span>.</p>
+<h3 id="sec-3-the-ladder-must-terminate"><span class="sec-number">3.3.2</span>The Ladder Must Terminate</h3>
+<p>The ladder cannot run forever, because <span class="math-inline">\(\hat J_z^{2}\)</span> cannot exceed <span class="math-inline">\(\hat J^{2}\)</span>. To make that precise, note that for any state</p>
+<div class="math-block" id="eq-eq-am-positivity">\begin{equation}
+	\label{eq:AM-positivity}
+	\bigl\|\hat J_{\pm}\ket{j,m}\bigr\|^{2}
+	=\bra{j,m}\hat J_{\pm}^{\dagger}\hat J_{\pm}\ket{j,m}
+	=\bra{j,m}\hat J_{\mp}\hat J_{\pm}\ket{j,m}\ge0 ,
+\end{equation}</div>
+<p>since a norm is non-negative. Evaluating the middle expression with Eq. <a href="../chapter-03/index.html#eq-eq-am-jmjp">(3.15)</a>,</p>
+<div class="math-block" id="eq-eq-am-norm-value">\begin{equation}
+	\label{eq:AM-norm-value}
+	\bigl\|\hat J_{\pm}\ket{j,m}\bigr\|^{2}
+	=\hbar^{2}\bigl[\lambda-m^{2}\mp m\bigr]\ge0 .
+\end{equation}</div>
+<p>For fixed <span class="math-inline">\(\lambda\)</span> this bounds <span class="math-inline">\(m\)</span> both above and below. Let <span class="math-inline">\(m_{\max}\)</span> be the largest value on the ladder. Since <span class="math-inline">\(\hat J_{+}\ket{j,m_{\max}}\)</span> would have <span class="math-inline">\(m_{\max}+1\)</span>, which does not exist, it must be the zero vector, and by Eq. <a href="../chapter-03/index.html#eq-eq-am-norm-value">(3.19)</a></p>
+<div class="math-block" id="eq-eq-am-top">\begin{equation}
+	\label{eq:AM-top}
+	\lambda-m_{\max}^{2}-m_{\max}=0
+	\qquad\Longrightarrow\qquad
+	\lambda=m_{\max}(m_{\max}+1).
+\end{equation}</div>
+<p>Similarly for the smallest value <span class="math-inline">\(m_{\min}\)</span>, with <span class="math-inline">\(\hat J_{-}\ket{j,m_{\min}}=0\)</span>,</p>
+<div class="math-block" id="eq-eq-am-bottom">\begin{equation}
+	\label{eq:AM-bottom}
+	\lambda-m_{\min}^{2}+m_{\min}=0
+	\qquad\Longrightarrow\qquad
+	\lambda=m_{\min}(m_{\min}-1).
+\end{equation}</div>
+<p>Equating Eqs. <a href="../chapter-03/index.html#eq-eq-am-top">(3.20)</a> and <a href="../chapter-03/index.html#eq-eq-am-bottom">(3.21)</a> gives <span class="math-inline">\(m_{\min}=-m_{\max}\)</span> (the other root, <span class="math-inline">\(m_{\min}=m_{\max}+1\)</span>, contradicts <span class="math-inline">\(m_{\min}\le m_{\max}\)</span>).</p>
+<p>Finally, <span class="math-inline">\(\hat J_{+}\)</span> climbs from <span class="math-inline">\(m_{\min}\)</span> to <span class="math-inline">\(m_{\max}\)</span> in integer steps, so <span class="math-inline">\(m_{\max}-m_{\min}=2m_{\max}\)</span> must be a non-negative integer. Writing <span class="math-inline">\(j\equiv m_{\max}\)</span>, we have proved:</p>
+<section class="callout theorem" id="theorem-thm-am-spectrum"><header>Theorem 3.3.1 - Angular momentum spectrum</header><div class="math-block" id="eq-eq-am-eigen">\begin{equation}
+		\label{eq:AM-eigen}
+		\hat J^{2}\ket{j,m}=\hbar^{2}j(j+1)\ket{j,m},
+		\qquad
+		\hat J_z\ket{j,m}=\hbar m\ket{j,m},
+	\end{equation}</div>
+<p>with</p>
+<div class="math-block" id="eq-eq-am-jm-values">\begin{equation}
+		\label{eq:AM-jm-values}
+		j=0,\tfrac12,1,\tfrac32,2,\dots,
+		\qquad
+		m=-j,-j+1,\dots,j-1,j ,
+	\end{equation}</div>
+<p>so each <span class="math-inline">\(j\)</span> carries exactly <span class="math-inline">\(2j+1\)</span> values of <span class="math-inline">\(m\)</span>. Substituting <span class="math-inline">\(\lambda=j(j+1)\)</span> into Eq. <a href="../chapter-03/index.html#eq-eq-am-norm-value">(3.19)</a> and fixing the phase by convention,</p>
+<div class="math-block" id="eq-eq-am-ladder-action">\begin{equation}
+		\label{eq:AM-ladder-action}
+		\boxed{\;\hat J_{\pm}\ket{j,m}
+			=\hbar\sqrt{j(j+1)-m(m\pm1)}\;\ket{j,m\pm1}\;}
+	\end{equation}</div></section>
+<section class="callout remark"><header>Remark</header><p>Note that <span class="math-inline">\(\hat J^{2}\)</span> has eigenvalue <span class="math-inline">\(\hbar^{2}j(j+1)\)</span>, not <span class="math-inline">\(\hbar^{2}j^{2}\)</span>, so the length of the vector always exceeds its largest projection: <span class="math-inline">\(\sqrt{j(j+1)}&gt;j\)</span>. The angular momentum can never point exactly along <span class="math-inline">\(z\)</span>. If it could, <span class="math-inline">\(\hat J_x\)</span> and <span class="math-inline">\(\hat J_y\)</span> would both be zero and all three components would be simultaneously known, contradicting Eq. <a href="../chapter-03/index.html#eq-eq-am-commutators">(3.7)</a>.</p></section>
+<section class="callout remark"><header>Remark</header><p>The derivation permitted half-integer <span class="math-inline">\(j\)</span>: nothing in Eq. <a href="../chapter-03/index.html#eq-eq-am-general">(3.8)</a> excludes it. Section <a href="../chapter-03/index.html#sec-3-orbital-angular-momentum-in-spherical-coordinates">3.5</a> shows that <em>orbital</em> angular momentum must have integer <span class="math-inline">\(l\)</span>, because its eigenfunctions must be single-valued functions of angle. Half-integer values are realised instead by spin, which has no position-space wave function to be single-valued. The algebra is more permissive than the differential equation, and nature uses both.</p></section>
+<h2 id="sec-3-matrix-representations"><span class="sec-number">3.4</span>Matrix Representations</h2>
+<p>For a given <span class="math-inline">\(j\)</span> the states <span class="math-inline">\(\ket{j,m}\)</span> span a <span class="math-inline">\((2j+1)\)</span>-dimensional space, and the operators become finite matrices. Two cases are worth writing out.</p>
+<p><strong><span class="math-inline">\(j=\tfrac12\)</span>.</strong> With basis <span class="math-inline">\(\ket{\tfrac12,\tfrac12}\equiv\ket{\uparrow}\)</span>, <span class="math-inline">\(\ket{\tfrac12,-\tfrac12}\equiv\ket{\downarrow}\)</span>, Eq. <a href="../chapter-03/index.html#eq-eq-am-ladder-action">(3.24)</a> gives <span class="math-inline">\(\hat J_{+}\ket{\downarrow}=\hbar\ket{\uparrow}\)</span> and <span class="math-inline">\(\hat J_{+}\ket{\uparrow}=0\)</span>, so</p>
+<div class="math-block" id="eq-eq-am-half-matrices">\begin{equation}
+	\label{eq:AM-half-matrices}
+	\hat J_{+}=\hbar\begin{pmatrix}0&amp;1\\0&amp;0\end{pmatrix},
+	\qquad
+	\hat J_{-}=\hbar\begin{pmatrix}0&amp;0\\1&amp;0\end{pmatrix},
+	\qquad
+	\hat J_z=\frac{\hbar}{2}\begin{pmatrix}1&amp;0\\0&amp;-1\end{pmatrix}.
+\end{equation}</div>
+<p>Recovering <span class="math-inline">\(\hat J_x=\tfrac12(\hat J_{+}+\hat J_{-})\)</span> and <span class="math-inline">\(\hat J_y=\tfrac{1}{2i}(\hat J_{+}-\hat J_{-})\)</span> gives <span class="math-inline">\(\hat{\vec J}=\tfrac{\hbar}{2}\vec\sigma\)</span> with the <em>Pauli matrices</em></p>
+<div class="math-block" id="eq-eq-am-pauli">\begin{equation}
+	\label{eq:AM-pauli}
+	\sigma_x=\begin{pmatrix}0&amp;1\\1&amp;0\end{pmatrix},
+	\qquad
+	\sigma_y=\begin{pmatrix}0&amp;-i\\i&amp;0\end{pmatrix},
+	\qquad
+	\sigma_z=\begin{pmatrix}1&amp;0\\0&amp;-1\end{pmatrix}.
+\end{equation}</div>
+<p><strong><span class="math-inline">\(j=1\)</span>.</strong> With basis <span class="math-inline">\(\ket{1,1},\ket{1,0},\ket{1,-1}\)</span> and Eq. <a href="../chapter-03/index.html#eq-eq-am-ladder-action">(3.24)</a> giving <span class="math-inline">\(\hat J_{+}\ket{1,0}=\hbar\sqrt{2}\ket{1,1}\)</span> and <span class="math-inline">\(\hat J_{+}\ket{1,-1}=\hbar\sqrt{2}\ket{1,0}\)</span>,</p>
+<div class="math-block" id="eq-eq-am-one-matrices">\begin{equation}
+	\label{eq:AM-one-matrices}
+	\hat J_{+}=\hbar\sqrt{2}
+	\begin{pmatrix}0&amp;1&amp;0\\0&amp;0&amp;1\\0&amp;0&amp;0\end{pmatrix},
+	\qquad
+	\hat J_z=\hbar
+	\begin{pmatrix}1&amp;0&amp;0\\0&amp;0&amp;0\\0&amp;0&amp;-1\end{pmatrix}.
+\end{equation}</div>
+<section class="callout example" id="example-ex-am-matrix-check"><header>Example 3.4.1 - Checking the algebra in matrices</header><p> Verify <span class="math-inline">\([\hat J_x,\hat J_y]=i\hbar\hat J_z\)</span> for <span class="math-inline">\(j=\tfrac12\)</span>.</p>
+<p class="solution-head">Solution.</p>
+<p>With <span class="math-inline">\(\hat J_x=\tfrac{\hbar}{2}\sigma_x\)</span> and <span class="math-inline">\(\hat J_y=\tfrac{\hbar}{2}\sigma_y\)</span>,</p>
+<div class="math-block">\[
+	\sigma_x\sigma_y=
+	\begin{pmatrix}0&amp;1\\1&amp;0\end{pmatrix}
+	\begin{pmatrix}0&amp;-i\\i&amp;0\end{pmatrix}
+	=\begin{pmatrix}i&amp;0\\0&amp;-i\end{pmatrix}=i\sigma_z ,
+	\]</div>
+<div class="math-block">\[
+	\sigma_y\sigma_x=
+	\begin{pmatrix}0&amp;-i\\i&amp;0\end{pmatrix}
+	\begin{pmatrix}0&amp;1\\1&amp;0\end{pmatrix}
+	=\begin{pmatrix}-i&amp;0\\0&amp;i\end{pmatrix}=-i\sigma_z .
+	\]</div>
+<p>Hence <span class="math-inline">\([\sigma_x,\sigma_y]=2i\sigma_z\)</span>, and</p>
+<div class="math-block">\[
+	[\hat J_x,\hat J_y]=\frac{\hbar^{2}}{4}(2i\sigma_z)
+	=i\hbar\cdot\frac{\hbar}{2}\sigma_z=i\hbar\hat J_z .
+	\]</div>
+<p>Also <span class="math-inline">\(\hat J^{2}=\tfrac{\hbar^{2}}{4}(\sigma_x^{2}+\sigma_y^{2}+\sigma_z^{2})
+	=\tfrac{3\hbar^{2}}{4}\hat I\)</span>, which is <span class="math-inline">\(\hbar^{2}j(j+1)=\hbar^{2}\cdot\tfrac12\cdot\tfrac32\)</span> as Theorem <a href="../chapter-03/index.html#theorem-thm-am-spectrum">3.3.1</a> requires.</p></section>
+<h2 id="sec-3-orbital-angular-momentum-in-spherical-coordinates"><span class="sec-number">3.5</span>Orbital Angular Momentum in Spherical Coordinates</h2>
+<p>For orbital angular momentum we can go further and find the eigenfunctions. Use</p>
+<div class="math-block" id="eq-eq-am-spherical-coords">\begin{equation}
+	\label{eq:AM-spherical-coords}
+	x=r\sin\theta\cos\varphi,
+	\qquad
+	y=r\sin\theta\sin\varphi,
+	\qquad
+	z=r\cos\theta .
+\end{equation}</div>
+<p>Consider <span class="math-inline">\(\hat L_z=-i\hbar(x\partial_y-y\partial_x)\)</span> and apply the chain rule to <span class="math-inline">\(\partial/\partial\varphi\)</span> at fixed <span class="math-inline">\(r\)</span> and <span class="math-inline">\(\theta\)</span>:</p>
+<div class="math-block" id="eq-eq-am-lz-derivation">\begin{equation}
+	\label{eq:AM-Lz-derivation}
+	\frac{\partial}{\partial\varphi}
+	=\frac{\partial x}{\partial\varphi}\frac{\partial}{\partial x}
+	+\frac{\partial y}{\partial\varphi}\frac{\partial}{\partial y}
+	=-r\sin\theta\sin\varphi\,\partial_x+r\sin\theta\cos\varphi\,\partial_y
+	=-y\,\partial_x+x\,\partial_y .
+\end{equation}</div>
+<p>The right-hand side is exactly <span class="math-inline">\(\hat L_z/(-i\hbar)\)</span>, so</p>
+<div class="math-block" id="eq-eq-am-lz-spherical">\begin{equation}
+	\label{eq:AM-Lz-spherical}
+	\boxed{\;\hat L_z=-i\hbar\frac{\partial}{\partial\varphi}\;}
+\end{equation}</div>
+<p>a strikingly simple result: <span class="math-inline">\(\hat L_z\)</span> generates rotations about <span class="math-inline">\(z\)</span>, and <span class="math-inline">\(\varphi\)</span> is the angle of such a rotation. The same procedure applied to <span class="math-inline">\(\hat L^{2}\)</span> (a longer calculation, left to Exercise <strong>E2</strong>) gives</p>
+<div class="math-block" id="eq-eq-am-l2-spherical">\begin{equation}
+	\label{eq:AM-L2-spherical}
+	\boxed{\;
+		\hat L^{2}=-\hbar^{2}
+		\left[
+		\frac{1}{\sin\theta}\frac{\partial}{\partial\theta}
+		\!\left(\sin\theta\frac{\partial}{\partial\theta}\right)
+		+\frac{1}{\sin^{2}\theta}\frac{\partial^{2}}{\partial\varphi^{2}}
+		\right]\;}
+\end{equation}</div>
+<p>Neither operator contains <span class="math-inline">\(r\)</span>. Angular momentum is a statement about angles only, which is exactly why it will separate from the radial problem in Sec. <a href="../chapter-03/index.html#sec-3-central-potentials">3.8</a>.</p>
+<p>The eigenvalue equations</p>
+<div class="math-block" id="eq-eq-am-ylm-eigen">\begin{equation}
+	\label{eq:AM-Ylm-eigen}
+	\hat L^{2}Y_l^{m}=\hbar^{2}l(l+1)Y_l^{m},
+	\qquad
+	\hat L_zY_l^{m}=\hbar m\,Y_l^{m}
+\end{equation}</div>
+<p>are solved in Chapter 4, Sec. <a href="../chapter-04/index.html#sec-4-solving-the-angular-equation">4.5</a>, by separating <span class="math-inline">\(Y=\Theta(\theta)\Phi(\varphi)\)</span>: the <span class="math-inline">\(\varphi\)</span> equation gives <span class="math-inline">\(\Phi\propto e^{im\varphi}\)</span> with <span class="math-inline">\(m\)</span> an integer by single-valuedness, and the <span class="math-inline">\(\theta\)</span> equation is the associated Legendre equation, finite at the poles only for integer <span class="math-inline">\(l\ge|m|\)</span>. The normalized solutions are the <em>spherical harmonics</em></p>
+<div class="math-block" id="eq-eq-am-ylm">\begin{equation}
+	\label{eq:AM-Ylm}
+	Y_l^{m}(\theta,\varphi)
+	=\sqrt{\frac{(2l+1)}{4\pi}\frac{(l-|m|)!}{(l+|m|)!}}\;
+	P_l^{m}(\cos\theta)\,e^{im\varphi},
+\end{equation}</div>
+<p>orthonormal on the sphere,</p>
+<div class="math-block" id="eq-eq-am-ylm-ortho">\begin{equation}
+	\label{eq:AM-Ylm-ortho}
+	\int_{0}^{2\pi}\!\!\int_{0}^{\pi}
+	Y_{l&#x27;}^{m&#x27;*}Y_{l}^{m}\sin\theta\,d\theta\,d\varphi
+	=\delta_{ll&#x27;}\delta_{mm&#x27;} .
+\end{equation}</div>
+<p>The lowest few are listed in Eq. <a href="../chapter-04/index.html#eq-eq-h-ylm-table">(4.31)</a>.</p>
+<p>Note the agreement between the two routes: the differential equation gives <span class="math-inline">\(l=0,1,2,\dots\)</span> with <span class="math-inline">\(|m|\le l\)</span>, which is Theorem <a href="../chapter-03/index.html#theorem-thm-am-spectrum">3.3.1</a> restricted to integers. The spectroscopic letters are</p>
+<div class="centered"><div class="table-wrap"><table><tr><td>
+		<span class="math-inline">\(l\)</span></td><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td></td></tr><tr><td>letter</td><td><span class="math-inline">\(s\)</span></td><td><span class="math-inline">\(p\)</span></td><td><span class="math-inline">\(d\)</span></td><td><span class="math-inline">\(f\)</span></td><td><span class="math-inline">\(g\)</span></td><td></td></tr><tr><td></td></tr></table></div></div>
+<p>from the historical names <em>sharp</em>, <em>principal</em>, <em>diffuse</em>, <em>fundamental</em>; they carry no meaning beyond the value of <span class="math-inline">\(l\)</span>.</p>
+<section class="callout example" id="example-ex-am-ladder-ylm"><header>Example 3.5.1 - Applying a ladder operator to a spherical harmonic</header><p> In spherical coordinates <span class="math-inline">\(\hat L_{\pm}=\hbar e^{\pm i\varphi}
+	\bigl(\pm\partial_\theta+i\cot\theta\,\partial_\varphi\bigr)\)</span>. Use it to obtain <span class="math-inline">\(Y_1^{1}\)</span> from <span class="math-inline">\(Y_1^{0}\)</span>, and check against Theorem <a href="../chapter-03/index.html#theorem-thm-am-spectrum">3.3.1</a>.</p>
+<p class="solution-head">Solution.</p>
+<p>From Eq. <a href="../chapter-04/index.html#eq-eq-h-ylm-table">(4.31)</a>, <span class="math-inline">\(Y_1^{0}=\sqrt{3/4\pi}\cos\theta\)</span>, which has no <span class="math-inline">\(\varphi\)</span> dependence, so the <span class="math-inline">\(\partial_\varphi\)</span> term drops:</p>
+<div class="math-block">\[
+	\hat L_{+}Y_1^{0}
+	=\hbar e^{i\varphi}\frac{\partial}{\partial\theta}
+	\left(\sqrt{\frac{3}{4\pi}}\cos\theta\right)
+	=-\hbar\sqrt{\frac{3}{4\pi}}\,\sin\theta\,e^{i\varphi}.
+	\]</div>
+<p>Theorem <a href="../chapter-03/index.html#theorem-thm-am-spectrum">3.3.1</a> predicts <span class="math-inline">\(\hat L_{+}Y_1^{0}=\hbar\sqrt{1(2)-0(1)}\,Y_1^{1}
+	=\hbar\sqrt{2}\,Y_1^{1}\)</span>, so</p>
+<div class="math-block">\[
+	Y_1^{1}=-\frac{1}{\sqrt{2}}\sqrt{\frac{3}{4\pi}}\sin\theta\,e^{i\varphi}
+	=-\sqrt{\frac{3}{8\pi}}\sin\theta\,e^{i\varphi},
+	\]</div>
+<p>which is exactly the entry in Eq. <a href="../chapter-04/index.html#eq-eq-h-ylm-table">(4.31)</a>, including the minus sign. The algebraic and differential descriptions agree in detail, not merely in outline.</p></section>
+<h2 id="sec-3-parity-and-selection-rules"><span class="sec-number">3.6</span>Parity and Selection Rules</h2>
+<p>The <em>parity operator</em> <span class="math-inline">\(\hat\Pi\)</span> inverts space through the origin,</p>
+<div class="math-block" id="eq-eq-am-parity-def">\begin{equation}
+	\label{eq:AM-parity-def}
+	\hat\Pi\,\psi(\vec r)=\psi(-\vec r).
+\end{equation}</div>
+<p>Since <span class="math-inline">\(\hat\Pi^{2}=\hat I\)</span>, its eigenvalues are <span class="math-inline">\(+1\)</span> (<em>even</em>) and <span class="math-inline">\(-1\)</span> (<em>odd</em>) and nothing else. For a central potential <span class="math-inline">\([\hat H,\hat\Pi]=0\)</span>, so energy eigenstates may be taken to have definite parity.</p>
+<p>In spherical coordinates <span class="math-inline">\(\vec r\to-\vec r\)</span> means <span class="math-inline">\(r\to r\)</span>, <span class="math-inline">\(\theta\to\pi-\theta\)</span>, <span class="math-inline">\(\varphi\to\varphi+\pi\)</span>. Under these, <span class="math-inline">\(\cos\theta\to-\cos\theta\)</span>, so <span class="math-inline">\(P_l^{m}(\cos\theta)\to(-1)^{l-|m|}P_l^{m}(\cos\theta)\)</span>, while <span class="math-inline">\(e^{im\varphi}\to e^{im\pi}e^{im\varphi}=(-1)^{m}e^{im\varphi}\)</span>. The product of the two factors is <span class="math-inline">\((-1)^{l-|m|}(-1)^{m}=(-1)^{l}\)</span> for either sign of <span class="math-inline">\(m\)</span>, so</p>
+<div class="math-block" id="eq-eq-am-parity-ylm">\begin{equation}
+	\label{eq:AM-parity-Ylm}
+	\boxed{\;\hat\Pi\,Y_l^{m}(\theta,\varphi)=(-1)^{l}\,Y_l^{m}(\theta,\varphi)\;}
+\end{equation}</div>
+<p><span class="math-inline">\(s\)</span> and <span class="math-inline">\(d\)</span> states are even; <span class="math-inline">\(p\)</span> and <span class="math-inline">\(f\)</span> states are odd. Parity alternates with <span class="math-inline">\(l\)</span>.</p>
+<p>This matters because light acts through the electric dipole operator, proportional to <span class="math-inline">\(\hat{\vec r}\)</span>, which is odd:</p>
+<div class="math-block" id="eq-eq-am-dipole-odd">\begin{equation}
+	\label{eq:AM-dipole-odd}
+	\hat\Pi\,\hat{\vec r}\,\hat\Pi^{\dagger}=-\hat{\vec r} .
+\end{equation}</div>
+<section class="callout theorem" id="theorem-thm-am-laporte"><header>Theorem 3.6.1 - Laporte's rule</header><p> If <span class="math-inline">\(\ket{a}\)</span> and <span class="math-inline">\(\ket{b}\)</span> are parity eigenstates of the <em>same</em> parity, then <span class="math-inline">\(\bra{a}\hat{\vec r}\ket{b}=0\)</span>: a one-photon electric-dipole transition must change parity.</p></section>
+<div class="proof" data-lead="Proof."><p>Insert <span class="math-inline">\(\hat\Pi^{\dagger}\hat\Pi=\hat I\)</span> twice and use Eq. <a href="../chapter-03/index.html#eq-eq-am-dipole-odd">(3.37)</a>:</p>
+<div class="math-block">\[
+	\bra{a}\hat{\vec r}\ket{b}
+	=\bra{a}\hat\Pi^{\dagger}\bigl(\hat\Pi\hat{\vec r}\hat\Pi^{\dagger}\bigr)\hat\Pi\ket{b}
+	=(\pm1)(-1)(\pm1)\bra{a}\hat{\vec r}\ket{b} .
+	\]</div>
+<p>If the two parities are equal their product is <span class="math-inline">\(+1\)</span>, so the matrix element equals minus itself and must vanish.</p></div>
+<p>Evaluating the angular integral in full sharpens this into the rules quoted in every spectroscopy text:</p>
+<div class="math-block" id="eq-eq-am-selection">\begin{equation}
+	\label{eq:AM-selection}
+	\boxed{\;\Delta l=\pm1,\qquad \Delta m=0,\pm1\;}
+\end{equation}</div>
+<p>The <span class="math-inline">\(\Delta l=\pm1\)</span> rule is Laporte's rule made quantitative: the photon carries one unit of angular momentum, so <span class="math-inline">\(l\)</span> must change by exactly one, which also flips the parity. The <span class="math-inline">\(\Delta m\)</span> rule records the polarization: <span class="math-inline">\(\Delta m=0\)</span> for light polarized along <span class="math-inline">\(z\)</span> (whose operator is <span class="math-inline">\(z=r\cos\theta\)</span>, carrying no <span class="math-inline">\(\varphi\)</span> dependence), and <span class="math-inline">\(\Delta m=\pm1\)</span> for <span class="math-inline">\(x\pm iy=r\sin\theta\,e^{\pm i\varphi}\)</span>.</p>
+<section class="callout example" id="example-ex-am-integral"><header>Example 3.6.1 - Evaluating a selection-rule integral</header><p> Compute <span class="math-inline">\(\bra{1s}z\ket{2s}\)</span> and <span class="math-inline">\(\bra{1s}z\ket{2p_0}\)</span> for hydrogen, as far as the angular part, and interpret.</p>
+<p class="solution-head">Solution.</p>
+<p>Write <span class="math-inline">\(z=r\cos\theta\)</span> and use <span class="math-inline">\(\psi_{nlm}=R_{nl}Y_l^{m}\)</span>. The integral factorises into a radial part and an angular part; only the angular part can vanish by symmetry, so evaluate it.</p>
+<p>For <span class="math-inline">\(1s\to2s\)</span>, both states have <span class="math-inline">\(l=0\)</span>, <span class="math-inline">\(m=0\)</span>, so the angular integral is</p>
+<div class="math-block">\[
+	\int Y_0^{0*}\cos\theta\,Y_0^{0}\,d\Omega
+	=\frac{1}{4\pi}\int_0^{2\pi}\!\!\int_0^{\pi}\cos\theta\sin\theta\,d\theta\,d\varphi
+	=\frac{2\pi}{4\pi}\left[\frac{\sin^{2}\theta}{2}\right]_0^{\pi}=0 .
+	\]</div>
+<p>Zero, as Laporte's rule requires: both states are even.</p>
+<p>For <span class="math-inline">\(1s\to2p_0\)</span>, we need <span class="math-inline">\(\int Y_0^{0*}\cos\theta\,Y_1^{0}\,d\Omega\)</span>. Since <span class="math-inline">\(\cos\theta=\sqrt{4\pi/3}\,Y_1^{0}\)</span>, this is</p>
+<div class="math-block">\[
+	\sqrt{\frac{4\pi}{3}}\cdot\frac{1}{\sqrt{4\pi}}
+	\int |Y_1^{0}|^{2}\,d\Omega
+	=\sqrt{\frac{4\pi}{3}}\cdot\frac{1}{\sqrt{4\pi}}\cdot1
+	=\frac{1}{\sqrt{3}} ,
+	\]</div>
+<p>using orthonormality, Eq. <a href="../chapter-03/index.html#eq-eq-am-ylm-ortho">(3.34)</a>. Nonzero: allowed.</p>
+<p>The physical consequence is dramatic. Hydrogen's <span class="math-inline">\(2s\)</span> state lies <span class="math-inline">\(10.2\)</span> eV above the ground state and cannot reach it by emitting one photon. It must use a slower route — two photons at once — and consequently lives about <span class="math-inline">\(0.12\)</span> s, against <span class="math-inline">\(1.6\)</span> ns for the <span class="math-inline">\(2p\)</span> state at essentially the same energy: eight orders of magnitude, from one vanishing integral. States that cannot decay by the obvious route are called <em>metastable</em>, and they matter out of proportion to their number, because a state that lives a long time has time to do something else.</p></section>
+<h2 id="sec-3-spin"><span class="sec-number">3.7</span>Spin</h2>
+<p>Electrons carry an intrinsic angular momentum <span class="math-inline">\(\hat{\vec S}\)</span> obeying Eq. <a href="../chapter-03/index.html#eq-eq-am-general">(3.8)</a> with <span class="math-inline">\(s=\tfrac12\)</span>. It is not associated with motion through space and has no position-space wave function; it is an extra two-dimensional factor in the state space, attached by the tensor product of Chapter 1.</p>
+<p>Theorem <a href="../chapter-03/index.html#theorem-thm-am-spectrum">3.3.1</a> with <span class="math-inline">\(j=\tfrac12\)</span> gives everything:</p>
+<div class="math-block" id="eq-eq-am-spin-half">\begin{equation}
+	\label{eq:AM-spin-half}
+	\hat S^{2}\ket{s,m_s}=\frac{3}{4}\hbar^{2}\ket{s,m_s},
+	\qquad
+	\hat S_z\ket{\uparrow}=+\frac{\hbar}{2}\ket{\uparrow},
+	\qquad
+	\hat S_z\ket{\downarrow}=-\frac{\hbar}{2}\ket{\downarrow},
+\end{equation}</div>
+<p>with the matrices of Eq. <a href="../chapter-03/index.html#eq-eq-am-pauli">(3.26)</a>, <span class="math-inline">\(\hat{\vec S}=\tfrac{\hbar}{2}\vec\sigma\)</span>.</p>
+<p>Two facts carry forward. Spin doubles the number of available states, which is what makes the Pauli principle of Chapter 5 restrictive. And the electric dipole operator does not act on spin, so spin is a spectator in every transition computed in this book — but a spectator that must still be counted.</p>
+<h2 id="sec-3-central-potentials"><span class="sec-number">3.8</span>Central Potentials</h2>
+<p>A central potential satisfies <span class="math-inline">\(V(\vec r)=V(r)\)</span>. Then</p>
+<div class="math-block" id="eq-eq-am-h-commutes">\begin{equation}
+	\label{eq:AM-H-commutes}
+	[\hat H,\hat L^{2}]=[\hat H,\hat L_z]=0 ,
+\end{equation}</div>
+<p>because <span class="math-inline">\(\hat L^{2}\)</span> and <span class="math-inline">\(\hat L_z\)</span> contain no <span class="math-inline">\(r\)</span> (Sec. <a href="../chapter-03/index.html#sec-3-orbital-angular-momentum-in-spherical-coordinates">3.5</a>) and therefore commute with both <span class="math-inline">\(V(r)\)</span> and the radial kinetic energy. So energy eigenstates can be labelled by <span class="math-inline">\(l\)</span> and <span class="math-inline">\(m\)</span> as well as by energy — the single most useful structural fact in atomic physics.</p>
+<p>Because <span class="math-inline">\(\hat L^{2}\)</span> collects all the angular derivatives, the Laplacian splits as</p>
+<div class="math-block" id="eq-eq-am-laplacian">\begin{equation}
+	\label{eq:AM-laplacian}
+	\nabla^{2}=\frac{1}{r^{2}}\frac{\partial}{\partial r}
+	\!\left(r^{2}\frac{\partial}{\partial r}\right)
+	-\frac{\hat L^{2}}{\hbar^{2}r^{2}} ,
+\end{equation}</div>
+<p>and the separable form</p>
+<div class="math-block" id="eq-eq-am-separation">\begin{equation}
+	\label{eq:AM-separation}
+	\psi_{nlm}(r,\theta,\varphi)=R_{nl}(r)\,Y_l^{m}(\theta,\varphi)
+\end{equation}</div>
+<p>reduces the three-dimensional problem to one dimension. Chapter 4 carries this out in full, Eqs. <a href="../chapter-04/index.html#eq-eq-h-sep-step1">(4.12)</a>–<a href="../chapter-04/index.html#eq-eq-h-radial-1d">(4.20)</a>; the result, after the substitution <span class="math-inline">\(U=rR\)</span>, is the following. Here <span class="math-inline">\(\mu\)</span> is the mass of the orbiting particle — written <span class="math-inline">\(\mu\)</span> rather than <span class="math-inline">\(m\)</span> because in every application it is a <em>reduced</em> mass, the two-body separation being carried out in Sec. <a href="../chapter-04/index.html#sec-4-the-two-body-problem-and-the-reduced-mass">4.2</a>.</p>
+<div class="math-block" id="eq-eq-am-radial">\begin{equation}
+	\label{eq:AM-radial}
+	\boxed{\;
+		-\frac{\hbar^{2}}{2\mu}\frac{d^{2}U_{nl}}{dr^{2}}
+		+\underbrace{\left[V(r)
+			+\frac{\hbar^{2}l(l+1)}{2\mu r^{2}}\right]}_{V_{\mathrm{eff}}(r)}
+		U_{nl}=E\,U_{nl},
+		\qquad U_{nl}(0)=0 \;}
+\end{equation}</div>
+<p>Three features are used throughout the rest of the book.</p>
+<p><strong>It is a one-dimensional problem.</strong> Every technique of Chapter 2 — matching across regions, counting nodes, reading off bound states — applies unchanged on the half-line.</p>
+<p><strong>The centrifugal barrier excludes high <span class="math-inline">\(l\)</span> from the centre.</strong> The term <span class="math-inline">\(\hbar^{2}l(l+1)/2\mu r^{2}\)</span> is repulsive and diverges as <span class="math-inline">\(r\to0\)</span> for every <span class="math-inline">\(l&gt;0\)</span>. An <span class="math-inline">\(s\)</span> electron (<span class="math-inline">\(l=0\)</span>) has no barrier and reaches the origin; a <span class="math-inline">\(d\)</span> electron is held out. This becomes the explanation of the quantum defect in Chapter 5 and of autoionization widths in Chapter 10.</p>
+<p><strong>Bound and continuum states.</strong> For <span class="math-inline">\(V\to0\)</span> at large <span class="math-inline">\(r\)</span>: if <span class="math-inline">\(E&lt;0\)</span>, <span class="math-inline">\(U\)</span> decays exponentially and solutions exist only at discrete energies, normalizable as <span class="math-inline">\(\int_0^\infty|U|^{2}dr=1\)</span>. If <span class="math-inline">\(E&gt;0\)</span>, <span class="math-inline">\(U\)</span> oscillates to infinity, solutions exist at <em>every</em> energy, and normalization is replaced by</p>
+<div class="math-block" id="eq-eq-am-energy-normalization">\begin{equation}
+	\label{eq:AM-energy-normalization}
+	\braket{\varepsilon}{\varepsilon&#x27;}=\delta(\varepsilon-\varepsilon&#x27;).
+\end{equation}</div>
+<p>Equation <a href="../chapter-03/index.html#eq-eq-am-energy-normalization">(3.44)</a> is unfamiliar now and becomes central in Chapter 10; for the moment only the qualitative picture is needed — a countable ladder below threshold, a continuum above it.</p>
+<h2 id="sec-3-summary"><span class="sec-number">3.9</span>Summary</h2>
+<ul><li><p>From <span class="math-inline">\([\hat x_i,\hat p_j]=i\hbar\delta_{ij}\)</span> follows <span class="math-inline">\([\hat L_x,\hat L_y]=i\hbar\hat L_z\)</span> and cyclic; hence <span class="math-inline">\([\hat J^{2},\hat J_i]=0\)</span>, so <span class="math-inline">\(\hat J^{2}\)</span> and <span class="math-inline">\(\hat J_z\)</span> have simultaneous eigenkets <span class="math-inline">\(\ket{j,m}\)</span>.</p></li><li><p>The ladder operators <span class="math-inline">\(\hat J_{\pm}=\hat J_x\pm i\hat J_y\)</span> satisfy <span class="math-inline">\([\hat J_z,\hat J_{\pm}]=\pm\hbar\hat J_{\pm}\)</span> and step <span class="math-inline">\(m\)</span> by one. Requiring the ladder to close at both ends gives <span class="math-inline">\(\hat J^{2}=\hbar^{2}j(j+1)\)</span>, <span class="math-inline">\(\hat J_z=\hbar m\)</span> with <span class="math-inline">\(|m|\le j\)</span> and <span class="math-inline">\(2j+1\)</span> values, and <span class="math-inline">\(\hat J_{\pm}\ket{j,m}=\hbar\sqrt{j(j+1)-m(m\pm1)}\ket{j,m\pm1}\)</span>.</p></li><li><p>Half-integer <span class="math-inline">\(j\)</span> is allowed by the algebra and realised by spin, <span class="math-inline">\(s=\tfrac12\)</span>, with <span class="math-inline">\(\hat{\vec S}=\tfrac{\hbar}{2}\vec\sigma\)</span>.</p></li><li><p>In spherical coordinates <span class="math-inline">\(\hat L_z=-i\hbar\partial_\varphi\)</span> and <span class="math-inline">\(\hat L^{2}\)</span> is Eq. <a href="../chapter-03/index.html#eq-eq-am-l2-spherical">(3.31)</a>; neither contains <span class="math-inline">\(r\)</span>. The eigenfunctions are the spherical harmonics <span class="math-inline">\(Y_l^{m}\)</span>, with integer <span class="math-inline">\(l\)</span> forced by single-valuedness in <span class="math-inline">\(\varphi\)</span> and finiteness at the poles.</p></li><li><p>Parity: <span class="math-inline">\(\hat\Pi Y_l^{m}=(-1)^{l}Y_l^{m}\)</span>. The dipole operator is odd, so one-photon transitions must change parity: <span class="math-inline">\(\Delta l=\pm1\)</span>, <span class="math-inline">\(\Delta m=0,\pm1\)</span>. A forbidden route makes a state metastable — hydrogen's <span class="math-inline">\(2s\)</span> outlives its <span class="math-inline">\(2p\)</span> by eight orders of magnitude.</p></li><li><p>A central potential separates as <span class="math-inline">\(\psi=R_{nl}Y_l^{m}\)</span>, giving the radial equation <a href="../chapter-03/index.html#eq-eq-am-radial">(3.43)</a> for <span class="math-inline">\(U=rR\)</span> with the centrifugal barrier added to <span class="math-inline">\(V\)</span>. <span class="math-inline">\(E&lt;0\)</span> gives discrete states; <span class="math-inline">\(E&gt;0\)</span> a continuum normalized to <span class="math-inline">\(\delta(\varepsilon-\varepsilon&#x27;)\)</span>.</p></li></ul>
+<h2 id="sec-3-exercises"><span class="sec-number">3.10</span>Exercises</h2>
+<ol><li><p><strong>The commutators, by hand.</strong> Reproduce the calculation of Eqs. <a href="../chapter-03/index.html#eq-eq-am-comm-derivation">(3.3)</a>–<a href="../chapter-03/index.html#eq-eq-am-comm-result">(3.6)</a> for <span class="math-inline">\([\hat L_y,\hat L_z]\)</span>, showing which of the four terms vanish and why. Then prove <span class="math-inline">\([\hat L^{2},\hat L_x]=0\)</span> by the method of Theorem <a href="../chapter-03/index.html#theorem-thm-am-j2-commutes">3.2.1</a>.</p></li><li><p><strong><span class="math-inline">\(\hat L^{2}\)</span> in spherical coordinates.</strong> Starting from <span class="math-inline">\(\hat L^{2}=\hat L_{-}\hat L_{+}+\hat L_z^{2}+\hbar\hat L_z\)</span> and the spherical form <span class="math-inline">\(\hat L_{\pm}=\hbar e^{\pm i\varphi}(\pm\partial_\theta+i\cot\theta\,\partial_\varphi)\)</span>, derive Eq. <a href="../chapter-03/index.html#eq-eq-am-l2-spherical">(3.31)</a>.</p></li><li><p><strong>Ladder normalization.</strong> Derive Eq. <a href="../chapter-03/index.html#eq-eq-am-ladder-action">(3.24)</a> from Eqs. <a href="../chapter-03/index.html#eq-eq-am-positivity">(3.18)</a> and <a href="../chapter-03/index.html#eq-eq-am-norm-value">(3.19)</a>. Then verify it for <span class="math-inline">\(j=1\)</span> by applying the matrix of Eq. <a href="../chapter-03/index.html#eq-eq-am-one-matrices">(3.27)</a> to each basis vector.</p></li><li><p><strong>Parity and a selection rule.</strong></p>
+<ol><li><p>Verify Eq. <a href="../chapter-03/index.html#eq-eq-am-parity-ylm">(3.36)</a> explicitly for <span class="math-inline">\(Y_0^{0}\)</span>, <span class="math-inline">\(Y_1^{0}\)</span> and <span class="math-inline">\(Y_1^{\pm1}\)</span> using Eq. <a href="../chapter-04/index.html#eq-eq-h-ylm-table">(4.31)</a>.</p></li><li><p>Evaluate <span class="math-inline">\(\int Y_1^{0*}\cos\theta\,Y_2^{0}\,d\Omega\)</span> using <span class="math-inline">\(\cos\theta=\sqrt{4\pi/3}\,Y_1^{0}\)</span> and the fact that the integral of three spherical harmonics is nonzero only when their <span class="math-inline">\(l\)</span> values can form a triangle. Is <span class="math-inline">\(2p\to3d\)</span> allowed?</p></li></ol></li><li><p><strong>Spin matrices.</strong> Verify that <span class="math-inline">\(\sigma_i^{2}=\hat I\)</span> for each <span class="math-inline">\(i\)</span>, that <span class="math-inline">\(\{\sigma_x,\sigma_y\}\equiv\sigma_x\sigma_y+\sigma_y\sigma_x=0\)</span>, and hence that <span class="math-inline">\(\hat S^{2}=\tfrac34\hbar^{2}\hat I\)</span>. Find the eigenvectors of <span class="math-inline">\(\sigma_x\)</span> and express them in the <span class="math-inline">\(\{\ket{\uparrow},\ket{\downarrow}\}\)</span> basis.</p></li></ol>
+<h2 id="sec-3-project-the-centrifugal-barrier"><span class="sec-number">3.11</span>Project: The Centrifugal Barrier</h2>
+<p><strong>The problem.</strong> A particle moves in the attractive Coulomb potential <span class="math-inline">\(V(r)=-1/r\)</span> in atomic units, so that the effective potential of Eq. <a href="../chapter-03/index.html#eq-eq-am-radial">(3.43)</a> is</p>
+<div class="math-block">\[
+V_{\mathrm{eff}}(r)=-\frac{1}{r}+\frac{l(l+1)}{2r^{2}} .
+\]</div>
+<ol><li><p><strong>On paper.</strong> For <span class="math-inline">\(l&gt;0\)</span>, find the position and depth of the minimum of <span class="math-inline">\(V_{\mathrm{eff}}\)</span>. Show that <span class="math-inline">\(r_{\min}=l(l+1)\)</span> and that the depth is <span class="math-inline">\(-1/2l(l+1)\)</span>.</p></li><li><p><strong>On paper.</strong> For energy <span class="math-inline">\(E&lt;0\)</span> the classically allowed region is <span class="math-inline">\(V_{\mathrm{eff}}(r)&lt;E\)</span>. Find the two turning points as functions of <span class="math-inline">\(E\)</span> and <span class="math-inline">\(l\)</span> by solving the resulting quadratic, and show that for <span class="math-inline">\(l&gt;0\)</span> the particle is excluded from a region around the origin whose size grows with <span class="math-inline">\(l\)</span>.</p></li><li><p><strong>On the computer.</strong> Plot <span class="math-inline">\(V_{\mathrm{eff}}(r)\)</span> for <span class="math-inline">\(l=0,1,2,3\)</span> on one set of axes. Mark the energy <span class="math-inline">\(E=-1/2n^{2}\)</span> for <span class="math-inline">\(n=3\)</span> as a horizontal line and mark the turning points from (b).</p></li><li><p><strong>On the computer.</strong> Discretise Eq. <a href="../chapter-03/index.html#eq-eq-am-radial">(3.43)</a> on a grid and find the lowest bound-state energy for <span class="math-inline">\(l=0,1,2\)</span>. Compare with <span class="math-inline">\(-1/2n^{2}\)</span> for the appropriate <span class="math-inline">\(n\)</span> — Chapter 4 explains which.</p></li><li><p><strong>On the computer.</strong> For each <span class="math-inline">\(l\)</span>, compute the fraction of the probability lying inside <span class="math-inline">\(r&lt;2\,a_0\)</span>. Tabulate it against <span class="math-inline">\(l\)</span> and comment.</p></li><li><p><strong>What has to move.</strong> One animation: sweep <span class="math-inline">\(l\)</span> continuously from <span class="math-inline">\(0\)</span> to <span class="math-inline">\(3\)</span> and show the barrier rising out of the well near the origin, with the lowest bound state moving with it. Caption it with what to watch.</p></li></ol>
+<p><strong>The check.</strong> Your energies in (d) must come out equal to <span class="math-inline">\(-1/2n^{2}\)</span> for integer <span class="math-inline">\(n\)</span>, and the lowest <span class="math-inline">\(l=1\)</span> state must coincide with the second <span class="math-inline">\(l=0\)</span> state. That coincidence is the accidental degeneracy of Chapter 4, and reproducing it is the sign your solver is right.</p>
+<p><strong>Be ready to answer.</strong> An <span class="math-inline">\(s\)</span> electron and a <span class="math-inline">\(d\)</span> electron in the same atom can have nearly the same energy, yet only one comes close to the nucleus. Which one, which term in <span class="math-inline">\(V_{\mathrm{eff}}\)</span> decides it, and why will that matter as soon as the atom has more than one electron?</p>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <a href="../chapter-02/index.html">Previous: Simple Model Systems: Solving the Schrödinger Equation</a>
+      <a href="../../toc.html">Contents</a>
+      <a href="../chapter-04/index.html">Next: The Hydrogen Atom</a>
+    </nav>
+  </article>
+</main>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p>&copy; 2026 Erfan Saydanzad. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

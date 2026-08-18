@@ -1,0 +1,869 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 1: Mathematical Tools of Quantum Mechanics | Direct Method</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+  <link rel="preload" href="../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../assets/css/site.css?v=db81423d">
+  <script>
+    window.MathJax = {
+      // tagformat is an optional TeX extension, not part of the combined
+      // tex-chtml build. Without these two lines the tagformat block below is
+      // read and silently ignored, and every equation numbers from 1 with no
+      // chapter in front of it.
+      loader: { load: ['[tex]/tagformat'] },
+      tex: {
+        packages: { '[+]': ['tagformat'] },
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        processEnvironments: true,
+        tags: 'ams',
+        // The PDF numbers equations within the chapter (\numberwithin
+        // {equation}{chapter}), so "1.8" is the eighth equation of
+        // chapter 1. MathJax counts from 1 on every page, which would have
+        // shown that same equation as "8". Prefixing the chapter number
+        // keeps a reference valid against either version.
+        tagformat: {
+          number: function (n) { return '1.' + n; }
+        },
+        macros: {
+          pdv: ['{\\frac{\\partial #1}{\\partial #2}}', 2],
+          dv: ['{\\frac{d #1}{d #2}}', 2],
+          abs: ['{\\left|#1\\right|}', 1],
+          norm: ['{\\left\\|#1\\right\\|}', 1],
+          curl: '{\\vec{\\nabla}\\times}',
+          div: '{\\vec{\\nabla}\\cdot}',
+          grad: '{\\vec{\\nabla}}',
+          sech: '{\\operatorname{sech}}',
+          csch: '{\\operatorname{csch}}',
+          coth: '{\\operatorname{coth}}',
+          circnum: ['{\\boxed{#1}}', 1],
+          vb: ['{\\mathbf{#1}}', 1],
+          eval: ['{\\left.#1\\right|}', 1],
+          dd: '{\\,d}',
+          // Dirac notation. The chapters are written with the physics
+          // package, which MathJax does not have, so every bra-ket command
+          // the notes use has to be defined here or it renders as red text.
+          // \braket is always given two arguments in these sources.
+          ket: ['{\\left|#1\\right\\rangle}', 1],
+          bra: ['{\\left\\langle#1\\right|}', 1],
+          braket: ['{\\left\\langle#1\\middle|#2\\right\\rangle}', 2],
+          ketbra: ['{\\left|#1\\right\\rangle\\!\\left\\langle#2\\right|}', 2],
+          dyad: ['{\\left|#1\\right\\rangle\\!\\left\\langle#2\\right|}', 2],
+          op: ['{\\left|#1\\right\\rangle\\!\\left\\langle#1\\right|}', 1],
+          mel: ['{\\left\\langle#1\\right|#2\\left|#3\\right\\rangle}', 3],
+          expval: ['{\\left\\langle#1\\right\\rangle}', 1],
+          ev: ['{\\left\\langle#1\\right\\rangle}', 1],
+          comm: ['{\\left[#1,#2\\right]}', 2],
+          acomm: ['{\\left\\{#1,#2\\right\\}}', 2],
+          anticommutator: ['{\\left\\{#1,#2\\right\\}}', 2],
+          Tr: '{\\operatorname{Tr}}',
+          tr: '{\\operatorname{tr}}',
+          bm: ['{\\boldsymbol{#1}}', 1]
+        }
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <script defer src="../../assets/js/main.js?v=db81423d"></script>
+
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="../../index.html">
+    <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M9 6.5V25.5M9 6.5H24M9 25.5H24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 16Q10.5 9.5 15.5 16T25.5 16" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/></svg>
+    <span>Direct Method</span>
+  </a>
+  <nav class="top-nav" aria-label="Primary">
+    <a href="../../index.html">Home</a>
+    <a href="../../toc.html">Contents</a>
+    <a href="../../projects.html">Projects</a>
+  </nav>
+</header>
+<main class="layout" id="main">
+  <aside class="sidebar">
+  <div class="sidebar-inner">
+    <p class="sidebar-kicker">Chapter 1</p>
+    <h2>Mathematical Tools of Quantum Mechanics</h2>
+    <nav class="chapter-toc" aria-label="Chapter contents">
+      <a class="toc-level-2" href="#sec-1-introduction">1.1 Introduction</a>
+<a class="toc-level-2" href="#sec-1-postulate-i-states-and-hilbert-space">1.2 Postulate I: States and Hilbert Space</a>
+<a class="toc-level-3" href="#sec-1-statement-of-the-postulate">1.2.1 Statement of the Postulate</a>
+<a class="toc-level-3" href="#sec-1-hilbert-space-and-inner-product">1.2.2 Hilbert Space and Inner Product</a>
+<a class="toc-level-3" href="#sec-1-bases-orthonormality-and-completeness">1.2.3 Bases, Orthonormality, and Completeness</a>
+<a class="toc-level-3" href="#sec-1-dirac-notation-and-state-representations">1.2.4 Dirac Notation and State Representations</a>
+<a class="toc-level-2" href="#sec-1-postulate-ii-observables-as-operators">1.3 Postulate II: Observables as Operators</a>
+<a class="toc-level-3" href="#sec-1-statement-of-the-postulate-8">1.3.1 Statement of the Postulate</a>
+<a class="toc-level-3" href="#sec-1-linear-operators-and-the-adjoint">1.3.2 Linear Operators and the Adjoint</a>
+<a class="toc-level-3" href="#sec-1-hermitian-operators-observables">1.3.3 Hermitian Operators (Observables)</a>
+<a class="toc-level-3" href="#sec-1-identity-and-projection-operators">1.3.4 Identity and Projection Operators</a>
+<a class="toc-level-3" href="#sec-1-unitary-operators">1.3.5 Unitary Operators</a>
+<a class="toc-level-3" href="#sec-1-representations-of-operators">1.3.6 Representations of Operators</a>
+<a class="toc-level-3" href="#sec-1-functions-of-operators">1.3.7 Functions of Operators</a>
+<a class="toc-level-2" href="#sec-1-commutators-and-the-heisenberg-uncertainty-principle">1.4 Commutators and the Heisenberg Uncertainty Principle</a>
+<a class="toc-level-3" href="#sec-1-commutators-and-compatible-observables">1.4.1 Commutators and Compatible Observables</a>
+<a class="toc-level-3" href="#sec-1-uncertainties-and-standard-deviations">1.4.2 Uncertainties and Standard Deviations</a>
+<a class="toc-level-3" href="#sec-1-heisenberg-robertson-uncertainty-relation">1.4.3 Heisenberg (Robertson) Uncertainty Relation</a>
+<a class="toc-level-2" href="#sec-1-postulate-iii-and-iv-measurement-and-state-reduction">1.5 Postulate III and IV: Measurement and State Reduction</a>
+<a class="toc-level-3" href="#sec-1-measurement-outcomes-and-probabilities">1.5.1 Measurement Outcomes and Probabilities</a>
+<a class="toc-level-3" href="#sec-1-state-reduction-collapse">1.5.2 State Reduction (Collapse)</a>
+<a class="toc-level-2" href="#sec-1-postulate-v-time-evolution">1.6 Postulate V: Time Evolution</a>
+<a class="toc-level-3" href="#sec-1-schr-odinger-equation-and-unitary-evolution">1.6.1 Schrödinger Equation and Unitary Evolution</a>
+<a class="toc-level-2" href="#sec-1-postulate-vi-composite-systems">1.7 Postulate VI: Composite Systems</a>
+<a class="toc-level-3" href="#sec-1-tensor-product-and-product-basis">1.7.1 Tensor Product and Product Basis</a>
+<a class="toc-level-3" href="#sec-1-product-states-vs-entangled-states">1.7.2 Product States vs. Entangled States</a>
+<a class="toc-level-3" href="#sec-1-operators-on-composite-systems">1.7.3 Operators on Composite Systems</a>
+<a class="toc-level-3" href="#sec-1-reduced-descriptions-and-partial-trace-minimal-use">1.7.4 Reduced Descriptions and Partial Trace (Minimal Use)</a>
+<a class="toc-level-2" href="#sec-1-homework">1.8 Homework</a>
+<a class="toc-level-3" href="#sec-1-hilbert-space-inner-products-and-bases">Hilbert Space, Inner Products, and Bases</a>
+    </nav>
+  </div>
+</aside>
+
+  <article class="content">
+    <header class="chapter-hero">
+      <p>Chapter 1</p>
+      <h1>Mathematical Tools of Quantum Mechanics</h1>
+    </header>
+    <h2 id="sec-1-introduction"><span class="sec-number">1.1</span>Introduction</h2>
+<p>In classical mechanics the state of a particle is specified by its position <span class="math-inline">\(\vec r(t)\)</span> and momentum <span class="math-inline">\(\vec p(t)\)</span> as functions of time. These quantities are real numbers that can, in principle, be measured simultaneously with arbitrary precision. Equations of motion, such as Newton's second law or Hamilton's equations, are ordinary differential equations for these real variables.</p>
+<p>In quantum mechanics the situation is fundamentally different:</p>
+<ul><li><p>A physical state is described by a <em>state vector</em> <span class="math-inline">\(\ket{\psi}\)</span> in an abstract complex Hilbert space <span class="math-inline">\(\mathcal{H}\)</span>.</p></li><li><p>Observable quantities such as position, momentum, and energy are represented by <em>linear operators</em> acting on <span class="math-inline">\(\mathcal{H}\)</span>.</p></li><li><p>The time evolution of a state is governed by the (linear) Schrödinger equation.</p></li></ul>
+<p>Because of this linear structure, the language of <em>Hilbert spaces</em>, <em>Dirac bra–ket notation</em>, and <em>linear operators</em> is the natural mathematical framework of quantum mechanics.</p>
+<p>The goals of this chapter are:</p>
+<ol><li><p>to formulate the basic postulates of quantum mechanics;</p></li><li><p>to introduce the Hilbert–space structures that realize each postulate (states, operators, and representations);</p></li><li><p>to organize the material so that different representations (matrix, position, momentum) are seen as <em>the same physics</em> in different bases.</p></li></ol>
+<h2 id="sec-1-postulate-i-states-and-hilbert-space"><span class="sec-number">1.2</span>Postulate I: States and Hilbert Space</h2>
+<h3 id="sec-1-statement-of-the-postulate"><span class="sec-number">1.2.1</span>Statement of the Postulate</h3>
+<p><strong>Postulate I (State Postulate).</strong> Every isolated physical system is associated with a complex Hilbert space <span class="math-inline">\(\mathcal{H}\)</span>. The physical state of the system at a given time is represented by a normalized ket <span class="math-inline">\(\ket{\psi}\in\mathcal{H}\)</span>:</p>
+<div class="math-block">\begin{equation}
+\braket{\psi}{\psi} = 1.
+\end{equation}</div>
+<p>The ket <span class="math-inline">\(\ket{\psi}\)</span> encodes all physically accessible information about the system. It is not directly observable; only probabilities and expectation values derived from it are measurable.</p>
+<h3 id="sec-1-hilbert-space-and-inner-product"><span class="sec-number">1.2.2</span>Hilbert Space and Inner Product</h3>
+<section class="callout definition"><header>Definition - Complex vector space</header><p>A (complex) <em>vector space</em> <span class="math-inline">\(V\)</span> is a set whose elements are kets <span class="math-inline">\(\ket{v},\ket{w},\dots\)</span>, equipped with vector addition and multiplication by complex scalars <span class="math-inline">\(\alpha\in\mathbb{C}\)</span> satisfying the usual linear algebra axioms (closure, associativity, commutativity of addition, distributivity, and existence of <span class="math-inline">\(0\)</span> and <span class="math-inline">\(-\ket{v}\)</span>).</p></section>
+<section class="callout definition"><header>Definition - Inner product</header><p>An <em>inner product</em> on <span class="math-inline">\(V\)</span> is a map</p>
+<div class="math-block">\begin{equation}
+	(\ket{u},\ket{v}) \;\longmapsto\; \braket{u}{v}\in\mathbb{C}
+	\end{equation}</div>
+<p>such that, for all kets <span class="math-inline">\(\ket{u},\ket{v},\ket{w}\)</span> and all <span class="math-inline">\(\alpha,\beta\in\mathbb{C}\)</span>:</p>
+<ol><li><p><strong>Conjugate symmetry:</strong> <span class="math-inline">\(\braket{u}{v} = \braket{v}{u}^{\ast}\)</span>.</p></li><li><p><strong>Linearity in the second argument:</strong> <span class="math-inline">\(\braket{u}{\alpha v+\beta w}
+		= \alpha\braket{u}{v}+\beta\braket{u}{w}\)</span>.</p></li><li><p><strong>Positive definiteness:</strong> <span class="math-inline">\(\braket{v}{v} \ge 0\)</span> and <span class="math-inline">\(\braket{v}{v}=0\)</span> implies <span class="math-inline">\(\ket{v}=0\)</span>.</p></li></ol></section>
+<p>The inner product defines the norm</p>
+<div class="math-block">\begin{equation}
+\|\ket{v}\| = \sqrt{\braket{v}{v}},
+\end{equation}</div>
+<p>and two kets are <em>orthogonal</em> if <span class="math-inline">\(\braket{u}{v}=0\)</span>.</p>
+<section class="callout definition"><header>Definition - Hilbert space</header><p>A <em>Hilbert space</em> is a complex vector space <span class="math-inline">\(H\)</span> with an inner product <span class="math-inline">\(\braket{\cdot}{\cdot}\)</span> which is <em>complete</em> with respect to the norm <span class="math-inline">\(\|\ket{v}\| = \sqrt{\braket{v}{v}}\)</span>; i.e., every Cauchy sequence of kets in <span class="math-inline">\(H\)</span> converges to a ket in <span class="math-inline">\(H\)</span>.</p></section>
+<section class="callout example"><header>Example - Typical Hilbert spaces</header><ol><li><p><span class="math-inline">\(\mathbb{C}^n\)</span> with <span class="math-inline">\(\braket{\vec u}{\vec v}=\sum_{j=1}^{n}u_j^{\ast}v_j\)</span> is a finite-dimensional Hilbert space (spin systems, few-level atoms).</p></li><li><p><span class="math-inline">\(L^2(\mathbb{R}^3)\)</span>, the space of square-integrable functions <span class="math-inline">\(\psi(\vec r)\)</span> with</p>
+<div class="math-block">\begin{equation}
+		\int_{\mathbb{R}^3}|\psi(\vec r)|^2 d^3r &lt; \infty,
+		\end{equation}</div>
+<p>and inner product</p>
+<div class="math-block">\begin{equation}
+		\braket{\phi}{\psi}
+		= \int_{\mathbb{R}^3}\phi^{\ast}(\vec r)\,\psi(\vec r)\,d^3r,
+		\end{equation}</div>
+<p>describes nonrelativistic wave functions in position space.</p></li></ol></section>
+<h3 id="sec-1-bases-orthonormality-and-completeness"><span class="sec-number">1.2.3</span>Bases, Orthonormality, and Completeness</h3>
+<section class="callout definition"><header>Definition - Basis</header><p>A set of kets <span class="math-inline">\(\{\ket{e_n}\}\)</span> in <span class="math-inline">\(H\)</span> is a <em>basis</em> if:</p>
+<ol><li><p>the kets are linearly independent;</p></li><li><p>every <span class="math-inline">\(\ket{\psi}\in H\)</span> can be written uniquely as</p>
+<div class="math-block">\begin{equation}
+		\ket{\psi} = \sum_n c_n \ket{e_n}.
+		\end{equation}</div></li></ol>
+<p>If a basis has <span class="math-inline">\(N\)</span> elements, <span class="math-inline">\(H\)</span> is <span class="math-inline">\(N\)</span>–dimensional; otherwise <span class="math-inline">\(H\)</span> is infinite–dimensional.</p></section>
+<section class="callout definition"><header>Definition - Orthonormal basis</header><p>A set of kets <span class="math-inline">\(\{\ket{n}\}\)</span> is <em>orthonormal</em> if</p>
+<div class="math-block">\begin{equation}
+	\braket{m}{n} = \delta_{mn},
+	\end{equation}</div>
+<p>and <em>complete</em> if any <span class="math-inline">\(\ket{\psi}\in H\)</span> can be expanded as</p>
+<div class="math-block">\begin{equation}
+	\ket{\psi} = \sum_n c_n \ket{n},\qquad
+	c_n = \braket{n}{\psi}.
+	\end{equation}</div>
+<p>A complete orthonormal set <span class="math-inline">\(\{\ket{n}\}\)</span> is called an <em>orthonormal basis</em>.</p></section>
+<p>Completeness can be written in operator form as</p>
+<div class="math-block">\begin{equation}
+\sum_n \ket{n}\bra{n} = \hat I,
+\end{equation}</div>
+<p>where <span class="math-inline">\(\hat I\)</span> is the identity operator on <span class="math-inline">\(H\)</span>.</p>
+<p>For a continuum of labels <span class="math-inline">\(\alpha\)</span> we instead have</p>
+<div class="math-block">\begin{equation}
+\braket{\alpha}{\alpha&#x27;} = \delta(\alpha-\alpha&#x27;),
+\qquad
+\int d\alpha\,\ket{\alpha}\bra{\alpha} = \hat I.
+\end{equation}</div>
+<h3 id="sec-1-dirac-notation-and-state-representations"><span class="sec-number">1.2.4</span>Dirac Notation and State Representations</h3>
+<p>A physical state is represented by a ket <span class="math-inline">\(\ket{\psi}\in\mathcal{H}\)</span>. To each ket we associate a bra <span class="math-inline">\(\bra{\psi}\)</span> via Hermitian conjugation:</p>
+<div class="math-block">\begin{equation}
+\ket{\psi} \longleftrightarrow \bra{\psi} = (\ket{\psi})^{\dagger}.
+\end{equation}</div>
+<p>The inner product is written as</p>
+<div class="math-block">\begin{equation}
+\braket{\phi}{\psi} = \bra{\phi}\ket{\psi}.
+\end{equation}</div>
+<p><strong>Course notation convention.</strong> From this point onward (including atomic and molecular chapters), the abstract state vector is always written as a ket. Coordinate-space objects such as <span class="math-inline">\(\psi(\vec r)\)</span>, <span class="math-inline">\(\phi(\vec p)\)</span>, or molecular forms like <span class="math-inline">\(\Psi(\vec r,\vec R)\)</span> are treated as <em>representations</em> of kets, never as a separate formalism:</p>
+<div class="math-block">\begin{equation}
+\psi(\vec r)=\braket{\vec r}{\psi},
+\qquad
+\phi(\vec p)=\braket{\vec p}{\psi},
+\qquad
+\Psi(\vec r,\vec R)=\braket{\vec r,\vec R}{\Psi}.
+\end{equation}</div>
+<p>We will switch representations when useful, but the state itself remains <span class="math-inline">\(\ket{\psi}\)</span> or <span class="math-inline">\(\ket{\Psi}\)</span>.</p>
+<h4 id="sec-1-matrix-abstract-representation">Matrix (abstract) representation</h4>
+<p>In a discrete orthonormal basis <span class="math-inline">\(\{\ket{n}\}\)</span>, we define the components</p>
+<div class="math-block">\begin{equation}
+c_n = \braket{n}{\psi}.
+\end{equation}</div>
+<p>We can represent the state <span class="math-inline">\(\ket{\psi}\)</span> as a column vector</p>
+<div class="math-block">\begin{equation}
+\ket{\psi}
+\;\widehat{=}\;
+\begin{pmatrix}
+	c_1 \\ c_2 \\ \vdots
+\end{pmatrix},
+\end{equation}</div>
+<p>and bras as row vectors (complex conjugate transpose)</p>
+<div class="math-block">\begin{equation}
+\bra{\psi}
+\;\widehat{=}\;
+\bigl(c_1^{\ast},\,c_2^{\ast},\,\dots\bigr).
+\end{equation}</div>
+<p>This is the usual matrix representation used in finite-dimensional quantum systems (two-level atoms, spin-<span class="math-inline">\(\tfrac12\)</span>, etc.).</p>
+<h4 id="sec-1-position-representation">Position representation</h4>
+<p>The <em>position basis</em> <span class="math-inline">\(\{\ket{\vec r}\}\)</span> satisfies</p>
+<div class="math-block" id="eq-eq-pos-ortho">\begin{align}
+	\braket{\vec r}{\vec r&#x27;} &amp;= \delta(\vec r-\vec r&#x27;),
+	\label{eq:pos-ortho}\\
+	\int d^3r\,\ket{\vec r}\bra{\vec r} &amp;= \hat I.
+	\label{eq:pos-complete}
+\end{align}</div>
+<p>The position-space wave function of <span class="math-inline">\(\ket{\psi}\)</span> is</p>
+<div class="math-block">\begin{equation}
+\psi(\vec r) = \braket{\vec r}{\psi},
+\end{equation}</div>
+<p>and</p>
+<div class="math-block">\begin{equation}
+\ket{\psi} = \int d^3r\,\ket{\vec r}\,\psi(\vec r).
+\end{equation}</div>
+<p>Normalization <span class="math-inline">\(\braket{\psi}{\psi}=1\)</span> becomes</p>
+<div class="math-block">\begin{equation}
+\int d^3r\,|\psi(\vec r)|^2 = 1,
+\end{equation}</div>
+<p>so <span class="math-inline">\(|\psi(\vec r)|^2 d^3r\)</span> is the probability to find the particle near <span class="math-inline">\(\vec r\)</span>.</p>
+<h4 id="sec-1-momentum-representation">Momentum representation</h4>
+<p>Similarly, the <em>momentum basis</em> <span class="math-inline">\(\{\ket{\vec p}\}\)</span> satisfies</p>
+<div class="math-block" id="eq-eq-mom-ortho">\begin{align}
+	\braket{\vec p}{\vec p&#x27;} &amp;= \delta(\vec p-\vec p&#x27;),
+	\label{eq:mom-ortho}\\
+	\int d^3p\,\ket{\vec p}\bra{\vec p} &amp;= \hat I.
+	\label{eq:mom-complete}
+\end{align}</div>
+<p>The momentum-space wave function is</p>
+<div class="math-block">\begin{equation}
+\phi(\vec p) = \braket{\vec p}{\psi},
+\qquad
+\ket{\psi} = \int d^3p\,\ket{\vec p}\,\phi(\vec p),
+\end{equation}</div>
+<p>with normalization</p>
+<div class="math-block">\begin{equation}
+\int d^3p\,|\phi(\vec p)|^2 = 1.
+\end{equation}</div>
+<h4 id="sec-1-connection-between-representations">Connection between representations</h4>
+<p>The position and momentum bases are related by</p>
+<div class="math-block">\begin{equation}
+\braket{\vec r}{\vec p}
+= \frac{1}{(2\pi\hbar)^{3/2}}
+\exp\!\left(\frac{i}{\hbar}\,\vec p\cdot\vec r\right),
+\end{equation}</div>
+<p>so that</p>
+<div class="math-block" id="eq-eq-fourier-x-from-p">\begin{align}
+	\psi(\vec r)
+	&amp;= \braket{\vec r}{\psi}
+	= \frac{1}{(2\pi\hbar)^{3/2}}
+	\int d^3p\,e^{\frac{i}{\hbar}\vec p\cdot\vec r}\,\phi(\vec p),
+	\label{eq:fourier-x-from-p}\\
+	\phi(\vec p)
+	&amp;= \braket{\vec p}{\psi}
+	= \frac{1}{(2\pi\hbar)^{3/2}}
+	\int d^3r\,e^{-\frac{i}{\hbar}\vec p\cdot\vec r}\,\psi(\vec r).
+	\label{eq:fourier-p-from-x}
+\end{align}</div>
+<p>Thus:</p>
+<ul><li><p><strong>Matrix representation:</strong> column vector of coefficients <span class="math-inline">\(c_n\)</span>.</p></li><li><p><strong>Position representation:</strong> wave function <span class="math-inline">\(\psi(\vec r)\)</span>.</p></li><li><p><strong>Momentum representation:</strong> wave function <span class="math-inline">\(\phi(\vec p)\)</span>.</p></li></ul>
+<p>They are simply different representations of the <em>same</em> abstract state <span class="math-inline">\(\ket{\psi}\)</span>.</p>
+<h2 id="sec-1-postulate-ii-observables-as-operators"><span class="sec-number">1.3</span>Postulate II: Observables as Operators</h2>
+<h3 id="sec-1-statement-of-the-postulate-8"><span class="sec-number">1.3.1</span>Statement of the Postulate</h3>
+<p><strong>Postulate II (Observable Postulate).</strong> Every physical observable <span class="math-inline">\(A\)</span> is represented by a linear Hermitian operator <span class="math-inline">\(\hat{A}\)</span> acting on the Hilbert space <span class="math-inline">\(\mathcal{H}\)</span>.</p>
+<p>The mathematical objects we need here are:</p>
+<ul><li><p>linear operators on <span class="math-inline">\(\mathcal{H}\)</span>;</p></li><li><p>adjoint (Hermitian conjugate) of an operator;</p></li><li><p>special classes of operators: Hermitian, unitary, projection, identity;</p></li><li><p>eigenvalues and eigenkets, and the spectral decomposition.</p></li></ul>
+<h3 id="sec-1-linear-operators-and-the-adjoint"><span class="sec-number">1.3.2</span>Linear Operators and the Adjoint</h3>
+<p>An operator <span class="math-inline">\(\hat{A}\)</span> is a map that sends kets to kets:</p>
+<div class="math-block">\begin{equation}
+\ket{\psi} \mapsto \hat{A}\ket{\psi}.
+\end{equation}</div>
+<p>It is <em>linear</em> if, for all complex numbers <span class="math-inline">\(\alpha,\beta\)</span> and kets <span class="math-inline">\(\ket{\psi_1},\ket{\psi_2}\)</span>,</p>
+<div class="math-block">\begin{equation}
+\hat{A}\bigl(\alpha\ket{\psi_1}+\beta\ket{\psi_2}\bigr)
+= \alpha\,\hat{A}\ket{\psi_1}
++ \beta\,\hat{A}\ket{\psi_2}.
+\end{equation}</div>
+<section class="callout definition"><header>Definition - Adjoint operator</header><p>Given an operator <span class="math-inline">\(\hat{A}\)</span>, its <em>adjoint</em> <span class="math-inline">\(\hat{A}^{\dagger}\)</span> is defined by</p>
+<div class="math-block">\begin{equation}
+	\bra{\phi}\hat{A}\ket{\psi}
+	= \bigl(\bra{\psi}\hat{A}^{\dagger}\ket{\phi}\bigr)^{\ast}
+	\qquad\text{for all } \ket{\phi},\ket{\psi}\in\mathcal{H}.
+	\end{equation}</div></section>
+<p>In a discrete orthonormal basis <span class="math-inline">\(\{\ket{n}\}\)</span> with matrix elements <span class="math-inline">\(A_{mn}=\bra{m}\hat{A}\ket{n}\)</span>, the adjoint corresponds to the conjugate transpose:</p>
+<div class="math-block">\begin{equation}
+(\hat{A}^{\dagger})_{mn} = A_{nm}^{\ast}.
+\end{equation}</div>
+<h3 id="sec-1-hermitian-operators-observables"><span class="sec-number">1.3.3</span>Hermitian Operators (Observables)</h3>
+<section class="callout definition"><header>Definition - Hermitian operator</header><p>An operator <span class="math-inline">\(\hat{A}\)</span> is <em>Hermitian</em> (or self–adjoint) if</p>
+<div class="math-block">\begin{equation}
+	\hat{A}^{\dagger} = \hat{A}.
+	\end{equation}</div></section>
+<p>For Hermitian operators:</p>
+<ul><li><p>all eigenvalues are real;</p></li><li><p>eigenkets with different eigenvalues are orthogonal;</p></li><li><p>(under suitable conditions) eigenkets form a complete basis.</p></li></ul>
+<section class="callout theorem"><header>Theorem - Spectral decomposition (discrete case)</header><p>If <span class="math-inline">\(\hat{A}\)</span> has a discrete, nondegenerate spectrum <span class="math-inline">\(\{a_n\}\)</span> with orthonormal eigenkets <span class="math-inline">\(\{\ket{a_n}\}\)</span>, then</p>
+<div class="math-block">\begin{equation}
+	\hat{A} = \sum_n a_n \ket{a_n}\bra{a_n},
+	\qquad
+	\sum_n \ket{a_n}\bra{a_n} = \hat{I}.
+	\end{equation}</div></section>
+<p>In the presence of a continuous spectrum <span class="math-inline">\(\{a\}\)</span> we write instead</p>
+<div class="math-block">\begin{equation}
+\hat{A}
+= \sum_n a_n\ket{a_n}\bra{a_n}
++ \int da\,a\,\ket{a}\bra{a},
+\end{equation}</div>
+<p>with the corresponding completeness relation</p>
+<div class="math-block">\begin{equation}
+\sum_n \ket{a_n}\bra{a_n}
++ \int da\,\ket{a}\bra{a}
+= \hat{I}.
+\end{equation}</div>
+<p>The Hamiltonian <span class="math-inline">\(\hat{H}\)</span>, which governs time evolution, is one of the most important Hermitian operators.</p>
+<h3 id="sec-1-identity-and-projection-operators"><span class="sec-number">1.3.4</span>Identity and Projection Operators</h3>
+<section class="callout definition"><header>Definition - Identity operator</header><p>The <em>identity operator</em> <span class="math-inline">\(\hat{I}\)</span> is defined by</p>
+<div class="math-block">\begin{equation}
+	\hat{I}\ket{\psi} = \ket{\psi}
+	\qquad\text{for all } \ket{\psi}\in\mathcal{H}.
+	\end{equation}</div></section>
+<p>In an orthonormal basis <span class="math-inline">\(\{\ket{n}\}\)</span> we have</p>
+<div class="math-block">\begin{equation}
+\hat{I} = \sum_n \ket{n}\bra{n},
+\end{equation}</div>
+<p>and in a continuous basis <span class="math-inline">\(\{\ket{\alpha}\}\)</span>,</p>
+<div class="math-block">\begin{equation}
+\hat{I} = \int d\alpha\,\ket{\alpha}\bra{\alpha}.
+\end{equation}</div>
+<section class="callout definition"><header>Definition - Projection operator</header><p>An operator <span class="math-inline">\(\hat{P}\)</span> is a <em>projection operator</em> (projector) if</p>
+<div class="math-block">\begin{equation}
+	\hat{P}^2 = \hat{P},
+	\qquad
+	\hat{P}^{\dagger} = \hat{P}.
+	\end{equation}</div></section>
+<p>Projectors represent “yes/no’’ questions. For example, if <span class="math-inline">\(\hat{P}\)</span> projects onto a subspace <span class="math-inline">\(S\subset\mathcal{H}\)</span>, then</p>
+<ul><li><p><span class="math-inline">\(\hat{P}\ket{\psi}\)</span> is the component of <span class="math-inline">\(\ket{\psi}\)</span> inside <span class="math-inline">\(S\)</span>;</p></li><li><p><span class="math-inline">\(\hat{I}-\hat{P}\)</span> projects onto the orthogonal complement.</p></li></ul>
+<p>For a nondegenerate eigenvalue <span class="math-inline">\(a_n\)</span> of <span class="math-inline">\(\hat{A}\)</span>, the projector onto the eigenspace spanned by <span class="math-inline">\(\ket{a_n}\)</span> is</p>
+<div class="math-block">\begin{equation}
+\hat{P}_n = \ket{a_n}\bra{a_n}.
+\end{equation}</div>
+<p>The spectral decomposition can be written in terms of projectors:</p>
+<div class="math-block">\begin{equation}
+\hat{A} = \sum_n a_n \hat{P}_n.
+\end{equation}</div>
+<p>Projectors will appear naturally in the measurement postulate (state reduction) and in decomposing dynamics into discrete and continuum contributions (Rydberg vs. ionization channels).</p>
+<h3 id="sec-1-unitary-operators"><span class="sec-number">1.3.5</span>Unitary Operators</h3>
+<section class="callout definition"><header>Definition - Unitary operator</header><p>An operator <span class="math-inline">\(\hat{U}\)</span> is <em>unitary</em> if</p>
+<div class="math-block">\begin{equation}
+	\hat{U}^{\dagger}\hat{U} = \hat{U}\hat{U}^{\dagger} = \hat{I}.
+	\end{equation}</div></section>
+<p>Properties:</p>
+<ul><li><p>Unitary operators preserve inner products:</p>
+<div class="math-block">\begin{equation}
+	\braket{\phi}{\psi}
+	= \braket{\phi}{\hat{U}^{\dagger}\hat{U}\psi}
+	= \braket{\phi&#x27;}{\psi&#x27;},
+	\quad
+	\ket{\phi&#x27;} = \hat{U}\ket{\phi},\,
+	\ket{\psi&#x27;} = \hat{U}\ket{\psi}.
+	\end{equation}</div></li><li><p>They preserve norms and probabilities: <span class="math-inline">\(\|\hat{U}\ket{\psi}\| = \|\ket{\psi}\|\)</span>.</p></li><li><p>They represent <em>reversible</em> transformations: change of basis, time evolution of closed systems, symmetry transformations (rotations, translations).</p></li></ul>
+<p>Important examples:</p>
+<ul><li><p>Time-evolution operator <span class="math-inline">\(\hat{U}(t,t_0)\)</span> generated by the Hamiltonian (Sec. <a href="../chapter-01/index.html#sec-1-postulate-v-time-evolution">1.6</a>);</p></li><li><p>Rotation operators <span class="math-inline">\(e^{-i\theta\hat{J}_z/\hbar}\)</span> generated by angular momentum;</p></li><li><p>Change-of-basis operators between different orthonormal bases.</p></li></ul>
+<h3 id="sec-1-representations-of-operators"><span class="sec-number">1.3.6</span>Representations of Operators</h3>
+<p>Just like states, the same abstract operator <span class="math-inline">\(\hat{A}\)</span> can be represented in different bases.</p>
+<h4 id="sec-1-matrix-representation-in-a-discrete-basis">Matrix representation in a discrete basis</h4>
+<p>In an orthonormal basis <span class="math-inline">\(\{\ket{n}\}\)</span>, the <em>matrix elements</em> of <span class="math-inline">\(\hat{A}\)</span> are</p>
+<div class="math-block">\begin{equation}
+A_{mn} = \bra{m}\hat{A}\ket{n}.
+\end{equation}</div>
+<p>If <span class="math-inline">\(\ket{\psi}=\sum_n c_n\ket{n}\)</span>, then</p>
+<div class="math-block">\begin{equation}
+\bigl(\hat{A}\ket{\psi}\bigr)_m
+= \bra{m}\hat{A}\ket{\psi}
+= \sum_n A_{mn}c_n.
+\end{equation}</div>
+<p>In matrix form,</p>
+<div class="math-block">\begin{equation}
+\vec{c}&#x27; = A\,\vec{c},
+\end{equation}</div>
+<p>where <span class="math-inline">\(\vec{c}\)</span> and <span class="math-inline">\(\vec{c}&#x27;\)</span> are column vectors of components and <span class="math-inline">\(A\)</span> is the matrix representing <span class="math-inline">\(\hat{A}\)</span>.</p>
+<h4 id="sec-1-kernels-in-continuous-bases">Kernels in continuous bases</h4>
+<p>In the position basis <span class="math-inline">\(\{\ket{\vec r}\}\)</span>, the kernel of <span class="math-inline">\(\hat{A}\)</span> is</p>
+<div class="math-block">\begin{equation}
+A(\vec r,\vec r&#x27;) = \braket{\vec r}{\hat{A}\vec r&#x27;},
+\end{equation}</div>
+<p>and</p>
+<div class="math-block">\begin{equation}
+(\hat{A}\psi)(\vec r)
+= \braket{\vec r}{\hat{A}\psi}
+= \int d^3r&#x27;\,A(\vec r,\vec r&#x27;)\,\psi(\vec r&#x27;).
+\end{equation}</div>
+<p>Examples:</p>
+<ul><li><p>Potential operator <span class="math-inline">\(\hat{V}=V(\hat{\vec r})\)</span>:</p>
+<div class="math-block">\begin{equation}
+	A(\vec r,\vec r&#x27;)
+	= V(\vec r)\,\delta(\vec r-\vec r&#x27;),
+	\quad
+	(\hat{V}\psi)(\vec r) = V(\vec r)\psi(\vec r).
+	\end{equation}</div></li><li><p>Momentum operator <span class="math-inline">\(\hat{p}_x=-i\hbar\,\tfrac{d}{dx}\)</span>:</p>
+<div class="math-block">\begin{equation}
+	(\hat{p}_x\psi)(x)
+	= -i\hbar\,\frac{d}{dx}\psi(x).
+	\end{equation}</div></li></ul>
+<p>In the momentum basis <span class="math-inline">\(\{\ket{\vec p}\}\)</span> we similarly define</p>
+<div class="math-block">\begin{equation}
+A(\vec p,\vec p&#x27;) = \braket{\vec p}{\hat{A}\vec p&#x27;},
+\qquad
+(\hat{A}\phi)(\vec p)
+= \int d^3p&#x27;\,A(\vec p,\vec p&#x27;)\,\phi(\vec p&#x27;).
+\end{equation}</div>
+<p>Thus:</p>
+<ul><li><p><strong>Matrix representation</strong>: <span class="math-inline">\(A_{mn}\)</span> in a discrete basis;</p></li><li><p><strong>Position representation</strong>: kernel <span class="math-inline">\(A(\vec r,\vec r&#x27;)\)</span>;</p></li><li><p><strong>Momentum representation</strong>: kernel <span class="math-inline">\(A(\vec p,\vec p&#x27;)\)</span>.</p></li></ul>
+<h3 id="sec-1-functions-of-operators"><span class="sec-number">1.3.7</span>Functions of Operators</h3>
+<p>We often encounter functions of operators, such as <span class="math-inline">\(f(\hat{H})\)</span> or <span class="math-inline">\(e^{-i\hat{H}t/\hbar}\)</span>. For a Hermitian operator with spectral decomposition</p>
+<div class="math-block">\begin{equation}
+\hat{A} = \sum_n a_n\ket{a_n}\bra{a_n}
++ \int da\,a\,\ket{a}\bra{a},
+\end{equation}</div>
+<p>we define</p>
+<div class="math-block">\begin{equation}
+f(\hat{A})
+= \sum_n f(a_n)\ket{a_n}\bra{a_n}
++ \int da\,f(a)\ket{a}\bra{a}.
+\end{equation}</div>
+<p>Important special case:</p>
+<div class="math-block">\begin{equation}
+e^{-i\hat{H}t/\hbar}
+= \sum_n e^{-iE_n t/\hbar}\,\ket{E_n}\bra{E_n}
++ \int dE\, e^{-iE t/\hbar}\,\ket{E}\bra{E},
+\end{equation}</div>
+<p>which is the time-evolution operator for a time-independent Hamiltonian.</p>
+<p>This spectral calculus is crucial later when we work with mixed discrete (“Rydberg’’) and continuum (“ionization’’) states.</p>
+<h2 id="sec-1-commutators-and-the-heisenberg-uncertainty-principle"><span class="sec-number">1.4</span>Commutators and the Heisenberg Uncertainty Principle</h2>
+<h3 id="sec-1-commutators-and-compatible-observables"><span class="sec-number">1.4.1</span>Commutators and Compatible Observables</h3>
+<p>Given two operators <span class="math-inline">\(\hat{A}\)</span> and <span class="math-inline">\(\hat{B}\)</span>, their <em>commutator</em> is</p>
+<div class="math-block">\begin{equation}
+[\hat{A},\hat{B}] = \hat{A}\hat{B} - \hat{B}\hat{A}.
+\end{equation}</div>
+<p>If <span class="math-inline">\([\hat{A},\hat{B}]=0\)</span>, we say that <span class="math-inline">\(\hat{A}\)</span> and <span class="math-inline">\(\hat{B}\)</span> are <em>compatible</em>: there exists a basis of common eigenkets <span class="math-inline">\(\{\ket{a,b}\}\)</span> such that</p>
+<div class="math-block">\begin{equation}
+\hat{A}\ket{a,b} = a\ket{a,b},
+\qquad
+\hat{B}\ket{a,b} = b\ket{a,b}.
+\end{equation}</div>
+<p>Then <span class="math-inline">\(A\)</span> and <span class="math-inline">\(B\)</span> can be simultaneously measured with arbitrary precision.</p>
+<p>If <span class="math-inline">\([\hat{A},\hat{B}]\neq 0\)</span>, no such complete common eigenbasis exists. The corresponding observables cannot, in general, be simultaneously sharp; this is quantified by the uncertainty principle.</p>
+<p>Important example in one dimension:</p>
+<div class="math-block">\begin{equation}
+[\hat{x},\hat{p}_x] = i\hbar\,\hat{I}.
+\end{equation}</div>
+<h3 id="sec-1-uncertainties-and-standard-deviations"><span class="sec-number">1.4.2</span>Uncertainties and Standard Deviations</h3>
+<p>For a normalized state <span class="math-inline">\(\ket{\psi}\)</span> and Hermitian operator <span class="math-inline">\(\hat{A}\)</span>, define</p>
+<div class="math-block">\begin{align*}
+	\langle A \rangle
+	&amp;= \bra{\psi}\hat{A}\ket{\psi},\\[4pt]
+	(\Delta A)^2
+	&amp;= \bra{\psi}(\hat{A}-\langle A\rangle)^2\ket{\psi}
+	= \langle A^2 \rangle - \langle A \rangle^2.
+\end{align*}</div>
+<p><span class="math-inline">\(\Delta A\)</span> is the standard deviation of measurement outcomes of <span class="math-inline">\(A\)</span> in state <span class="math-inline">\(\ket{\psi}\)</span>.</p>
+<p>Similarly for <span class="math-inline">\(\hat{B}\)</span>:</p>
+<div class="math-block">\begin{equation}
+(\Delta B)^2
+= \bra{\psi}(\hat{B}-\langle B\rangle)^2\ket{\psi}.
+\end{equation}</div>
+<h3 id="sec-1-heisenberg-robertson-uncertainty-relation"><span class="sec-number">1.4.3</span>Heisenberg (Robertson) Uncertainty Relation</h3>
+<section class="callout theorem"><header>Theorem - Heisenberg–Robertson uncertainty relation</header><p>For any Hermitian operators <span class="math-inline">\(\hat{A}\)</span> and <span class="math-inline">\(\hat{B}\)</span> and any normalized state <span class="math-inline">\(\ket{\psi}\)</span>,</p>
+<div class="math-block">\begin{equation}
+	\Delta A\,\Delta B
+	\;\ge\;
+	\frac{1}{2}\,\bigl|\bra{\psi}[\hat{A},\hat{B}]\ket{\psi}\bigr|.
+	\end{equation}</div></section>
+<p>Thus, the commutator <span class="math-inline">\([\hat{A},\hat{B}]\)</span> sets a fundamental lower bound on the product of uncertainties in <span class="math-inline">\(A\)</span> and <span class="math-inline">\(B\)</span>.</p>
+<p>For position and momentum in one dimension:</p>
+<div class="math-block">\begin{equation}
+[\hat{x},\hat{p}_x] = i\hbar\,\hat{I}
+\quad\Rightarrow\quad
+\Delta x\,\Delta p_x \;\ge\; \frac{\hbar}{2}.
+\end{equation}</div>
+<p>This is the standard Heisenberg uncertainty relation. It is a direct consequence of:</p>
+<ul><li><p>the Hilbert–space structure (inner products and norms),</p></li><li><p>non-commutativity of the corresponding operators.</p></li></ul>
+<p>Later, similar commutator structures appear in:</p>
+<ul><li><p>angular momentum algebra,</p></li><li><p>ladder operators for the harmonic oscillator,</p></li><li><p>generators of rotations and other symmetry transformations.</p></li></ul>
+<p>These will be built on top of the operator concepts introduced here.</p>
+<h2 id="sec-1-postulate-iii-and-iv-measurement-and-state-reduction"><span class="sec-number">1.5</span>Postulate III and IV: Measurement and State Reduction</h2>
+<h3 id="sec-1-measurement-outcomes-and-probabilities"><span class="sec-number">1.5.1</span>Measurement Outcomes and Probabilities</h3>
+<p><strong>Postulate III (Measurement Postulate).</strong> Let <span class="math-inline">\(\hat{A}\)</span> be the Hermitian operator associated with an observable <span class="math-inline">\(A\)</span>, with spectral decomposition</p>
+<div class="math-block">\begin{equation}
+\hat{A} = \sum_n a_n\ket{a_n}\bra{a_n}
+\quad\text{or}\quad
+\hat{A} = \int da\,a\,\ket{a}\bra{a}.
+\end{equation}</div>
+<p>If the system is in state <span class="math-inline">\(\ket{\psi}\)</span>, then a measurement of <span class="math-inline">\(A\)</span> yields:</p>
+<ul><li><p>in the discrete case, outcome <span class="math-inline">\(a_n\)</span> with probability <span class="math-inline">\(P(a_n)=|\braket{a_n}{\psi}|^2\)</span>;</p></li><li><p>in the continuous case, outcome in <span class="math-inline">\((a,a+da)\)</span> with probability <span class="math-inline">\(P(a)\,da = |\braket{a}{\psi}|^2\,da\)</span>.</p></li></ul>
+<h3 id="sec-1-state-reduction-collapse"><span class="sec-number">1.5.2</span>State Reduction (Collapse)</h3>
+<p><strong>Postulate IV (State Reduction).</strong> Immediately after an ideal measurement of <span class="math-inline">\(A\)</span> yielding the value <span class="math-inline">\(a_n\)</span>, the state of the system becomes the corresponding normalized eigenstate <span class="math-inline">\(\ket{a_n}\)</span> (or, more generally, the projection onto the eigensubspace for a degenerate eigenvalue).</p>
+<p>This postulate introduces intrinsically probabilistic, non-unitary evolution associated with measurement, in contrast to the unitary evolution governed by the Schrödinger equation.</p>
+<h2 id="sec-1-postulate-v-time-evolution"><span class="sec-number">1.6</span>Postulate V: Time Evolution</h2>
+<h3 id="sec-1-schr-odinger-equation-and-unitary-evolution"><span class="sec-number">1.6.1</span>Schrödinger Equation and Unitary Evolution</h3>
+<p><strong>Postulate V (Time Evolution).</strong> The time evolution of a closed quantum system is governed by the time-dependent Schrödinger equation</p>
+<div class="math-block">\begin{equation}
+i\hbar\,\frac{\partial}{\partial t}\ket{\psi(t)}
+= \hat{H}(t)\ket{\psi(t)},
+\end{equation}</div>
+<p>where <span class="math-inline">\(\hat{H}(t)\)</span> is the Hermitian Hamiltonian of the system.</p>
+<p>The formal solution can be written as</p>
+<div class="math-block">\begin{equation}
+\ket{\psi(t)}
+= \hat{U}(t,t_0)\ket{\psi(t_0)},
+\end{equation}</div>
+<p>where <span class="math-inline">\(\hat{U}(t,t_0)\)</span> is a unitary operator satisfying</p>
+<div class="math-block">\begin{equation}
+i\hbar\,\frac{\partial}{\partial t}\hat{U}(t,t_0)
+= \hat{H}(t)\,\hat{U}(t,t_0),
+\qquad
+\hat{U}(t_0,t_0) = \hat{I},
+\end{equation}</div>
+<p>and</p>
+<div class="math-block">\begin{equation}
+\hat{U}^{\dagger}(t,t_0)\hat{U}(t,t_0) = \hat{I}.
+\end{equation}</div>
+<p>For time-independent <span class="math-inline">\(\hat{H}\)</span>,</p>
+<div class="math-block">\begin{equation}
+\hat{U}(t,t_0)
+= \exp\!\left[-\frac{i}{\hbar}\hat{H}(t-t_0)\right].
+\end{equation}</div>
+<p>In the energy eigenbasis <span class="math-inline">\(\hat{H}\ket{E_n}=E_n\ket{E_n}\)</span>,</p>
+<div class="math-block">\begin{equation}
+\ket{\psi(t)}
+= \sum_n c_n e^{-\tfrac{i}{\hbar}E_n(t-t_0)}\ket{E_n},
+\end{equation}</div>
+<p>so each energy component acquires only a phase factor.</p>
+<p>Expectation values become time-dependent through</p>
+<div class="math-block">\begin{equation}
+\langle A \rangle(t) = \bra{\psi(t)}\hat{A}\ket{\psi(t)}.
+\end{equation}</div>
+<h2 id="sec-1-postulate-vi-composite-systems"><span class="sec-number">1.7</span>Postulate VI: Composite Systems</h2>
+<p><strong>Postulate VI (Composite Systems).</strong> For a composite system with subsystems <span class="math-inline">\(1\)</span> and <span class="math-inline">\(2\)</span>, whose state spaces are <span class="math-inline">\(\mathcal{H}_1\)</span> and <span class="math-inline">\(\mathcal{H}_2\)</span>, the state space of the total system is the tensor product</p>
+<div class="math-block">\begin{equation}
+\mathcal{H}_{\text{tot}} = \mathcal{H}_1 \otimes \mathcal{H}_2.
+\end{equation}</div>
+<p>A general state of the composite system is a ket <span class="math-inline">\(\ket{\Psi}\)</span> in <span class="math-inline">\(\mathcal{H}_{\text{tot}}\)</span>. Only a subset of such states can be written as simple products of subsystem states.</p>
+<h3 id="sec-1-tensor-product-and-product-basis"><span class="sec-number">1.7.1</span>Tensor Product and Product Basis</h3>
+<p>Let <span class="math-inline">\(\{\ket{i}\}\)</span> be an orthonormal basis for <span class="math-inline">\(\mathcal{H}_1\)</span> and <span class="math-inline">\(\{\ket{\alpha}\}\)</span> an orthonormal basis for <span class="math-inline">\(\mathcal{H}_2\)</span>. The tensor product space</p>
+<div class="math-block">\begin{equation}
+\mathcal{H}_{\text{tot}} = \mathcal{H}_1 \otimes \mathcal{H}_2
+\end{equation}</div>
+<p>has a natural <em>product basis</em></p>
+<div class="math-block">\begin{equation}
+\{\ket{i}\otimes\ket{\alpha}\},
+\end{equation}</div>
+<p>which we often abbreviate as</p>
+<div class="math-block">\begin{equation}
+\ket{i}\otimes\ket{\alpha} \equiv \ket{i,\alpha}
+\equiv \ket{i}\ket{\alpha}.
+\end{equation}</div>
+<p>If <span class="math-inline">\(\dim\mathcal{H}_1 = d_1\)</span> and <span class="math-inline">\(\dim\mathcal{H}_2 = d_2\)</span>, then</p>
+<div class="math-block">\begin{equation}
+\dim\mathcal{H}_{\text{tot}} = d_1 d_2.
+\end{equation}</div>
+<p>For example, two spin-<span class="math-inline">\(\tfrac{1}{2}\)</span> particles each have a two-dimensional state space; the composite system has dimension <span class="math-inline">\(2\times 2 = 4\)</span>.</p>
+<p>The inner product on <span class="math-inline">\(\mathcal{H}_{\text{tot}}\)</span> is defined by</p>
+<div class="math-block">\begin{equation}
+\braket{i,\alpha}{j,\beta}
+= \braket{i}{j}\,\braket{\alpha}{\beta}
+= \delta_{ij}\,\delta_{\alpha\beta},
+\end{equation}</div>
+<p>and extended by linearity to arbitrary superpositions.</p>
+<p>Any state <span class="math-inline">\(\ket{\Psi}\in\mathcal{H}_{\text{tot}}\)</span> can be expanded as</p>
+<div class="math-block">\begin{equation}
+\ket{\Psi}
+= \sum_{i,\alpha} C_{i\alpha}\,\ket{i,\alpha},
+\end{equation}</div>
+<p>with complex coefficients <span class="math-inline">\(C_{i\alpha}\)</span> satisfying</p>
+<div class="math-block">\begin{equation}
+\sum_{i,\alpha}|C_{i\alpha}|^2 = 1
+\end{equation}</div>
+<p>for a normalized state.</p>
+<h3 id="sec-1-product-states-vs-entangled-states"><span class="sec-number">1.7.2</span>Product States vs. Entangled States</h3>
+<p>A state of the composite system is called a <em>product state</em> (separable state) if it can be written as</p>
+<div class="math-block">\begin{equation}
+\ket{\Psi}
+= \ket{\psi_1}\otimes\ket{\psi_2},
+\end{equation}</div>
+<p>where <span class="math-inline">\(\ket{\psi_1}\in\mathcal{H}_1\)</span> and <span class="math-inline">\(\ket{\psi_2}\in\mathcal{H}_2\)</span> are normalized subsystem kets.</p>
+<p>Writing</p>
+<div class="math-block">\begin{equation}
+\ket{\psi_1} = \sum_i a_i\ket{i},
+\qquad
+\ket{\psi_2} = \sum_{\alpha} b_{\alpha}\ket{\alpha},
+\end{equation}</div>
+<p>we obtain</p>
+<div class="math-block">\begin{equation}
+\ket{\Psi}
+= \left(\sum_i a_i\ket{i}\right)\otimes
+\left(\sum_{\alpha} b_{\alpha}\ket{\alpha}\right)
+= \sum_{i,\alpha} a_i b_{\alpha}\,\ket{i,\alpha}.
+\end{equation}</div>
+<p>Thus, for a product state, the coefficient matrix <span class="math-inline">\(C_{i\alpha}\)</span> factorizes as</p>
+<div class="math-block">\begin{equation}
+C_{i\alpha} = a_i\,b_{\alpha}.
+\end{equation}</div>
+<p>A state that <em>cannot</em> be written in this form is called <em>entangled</em>. For such states the coefficients <span class="math-inline">\(C_{i\alpha}\)</span> do not factorize into a product of a purely <span class="math-inline">\(i\)</span>-dependent piece and a purely <span class="math-inline">\(\alpha\)</span>-dependent piece.</p>
+<section class="callout example"><header>Example - Two spin-<span class="math-inline">\(\tfrac{1}{2}\)</span> particles</header><p>Let subsystem <span class="math-inline">\(1\)</span> and <span class="math-inline">\(2\)</span> each have basis <span class="math-inline">\(\{\ket{\uparrow},\ket{\downarrow}\}\)</span>. A product basis for the composite system is</p>
+<div class="math-block">\begin{equation}
+	\{\ket{\uparrow\uparrow},
+	\ket{\uparrow\downarrow},
+	\ket{\downarrow\uparrow},
+	\ket{\downarrow\downarrow}\},
+	\end{equation}</div>
+<p>with the shorthand <span class="math-inline">\(\ket{\uparrow\downarrow}=\ket{\uparrow}\otimes\ket{\downarrow}\)</span>, etc.</p>
+<ul><li><p>The state</p>
+<div class="math-block">\begin{equation}
+		\ket{\Psi_{\text{prod}}}
+		= \ket{\uparrow}\otimes
+		\Bigl(\tfrac{1}{\sqrt{2}}
+		(\ket{\uparrow}+\ket{\downarrow})\Bigr)
+		= \tfrac{1}{\sqrt{2}}\ket{\uparrow\uparrow}
+		+ \tfrac{1}{\sqrt{2}}\ket{\uparrow\downarrow}
+		\end{equation}</div>
+<p>is a product state.</p></li><li><p>The state</p>
+<div class="math-block">\begin{equation}
+		\ket{\Psi_{\text{ent}}}
+		= \tfrac{1}{\sqrt{2}}
+		\bigl(\ket{\uparrow\downarrow}
+		+ \ket{\downarrow\uparrow}\bigr)
+		\end{equation}</div>
+<p><em>cannot</em> be written as <span class="math-inline">\(\ket{\psi_1}\otimes\ket{\psi_2}\)</span>: it is an entangled state.</p></li></ul></section>
+<p>In later chapters, tensor-product structures appear when we treat:</p>
+<ul><li><p>multi-electron atoms (electrons <span class="math-inline">\(1,2,\dots\)</span>);</p></li><li><p>molecule + radiation field (molecular states <span class="math-inline">\(\otimes\)</span> photon modes);</p></li><li><p>nuclear motion + electronic motion (Born–Oppenheimer separation).</p></li></ul>
+<h3 id="sec-1-operators-on-composite-systems"><span class="sec-number">1.7.3</span>Operators on Composite Systems</h3>
+<p>If <span class="math-inline">\(\hat{A}_1\)</span> is an operator on <span class="math-inline">\(\mathcal{H}_1\)</span> and <span class="math-inline">\(\hat{B}_2\)</span> an operator on <span class="math-inline">\(\mathcal{H}_2\)</span>, we can define an operator on <span class="math-inline">\(\mathcal{H}_{\text{tot}}=\mathcal{H}_1\otimes\mathcal{H}_2\)</span> by</p>
+<div class="math-block">\begin{equation}
+\hat{A}_1\otimes\hat{B}_2.
+\end{equation}</div>
+<p>Its action on a product state is</p>
+<div class="math-block">\begin{equation}
+(\hat{A}_1\otimes\hat{B}_2)
+\bigl(\ket{\psi_1}\otimes\ket{\psi_2}\bigr)
+= (\hat{A}_1\ket{\psi_1})\otimes(\hat{B}_2\ket{\psi_2}),
+\end{equation}</div>
+<p>and extended by linearity to superpositions.</p>
+<p>Important special cases:</p>
+<ul><li><p>An observable acting only on subsystem <span class="math-inline">\(1\)</span>:</p>
+<div class="math-block">\begin{equation}
+	\hat{A}_1 \otimes \hat{I}_2,
+	\end{equation}</div>
+<p>where <span class="math-inline">\(\hat{I}_2\)</span> is the identity on <span class="math-inline">\(\mathcal{H}_2\)</span>.</p></li><li><p>An observable acting only on subsystem <span class="math-inline">\(2\)</span>:</p>
+<div class="math-block">\begin{equation}
+	\hat{I}_1 \otimes \hat{B}_2.
+	\end{equation}</div></li></ul>
+<p>In the product basis <span class="math-inline">\(\{\ket{i,\alpha}\}\)</span>,</p>
+<div class="math-block">\begin{equation}
+\bigl(\hat{A}_1\otimes\hat{B}_2\bigr)_{(i,\alpha),(j,\beta)}
+= \bra{i,\alpha}\hat{A}_1\otimes\hat{B}_2\ket{j,\beta}
+= \bra{i}\hat{A}_1\ket{j}\,\bra{\alpha}\hat{B}_2\ket{\beta}.
+\end{equation}</div>
+<p>At the matrix level, this corresponds to a Kronecker product of matrices.</p>
+<p>Expectation values of composite observables are computed as</p>
+<div class="math-block">\begin{equation}
+\langle A_1\otimes B_2 \rangle
+= \bra{\Psi}\hat{A}_1\otimes\hat{B}_2\ket{\Psi}.
+\end{equation}</div>
+<h3 id="sec-1-reduced-descriptions-and-partial-trace-minimal-use"><span class="sec-number">1.7.4</span>Reduced Descriptions and Partial Trace (Minimal Use)</h3>
+<p>In many situations we are interested only in one part of a composite system (e.g. electron vs. ionized core, molecule vs. radiation field). To describe subsystem <span class="math-inline">\(1\)</span> alone, we use a <em>reduced state</em> obtained by tracing over the unobserved subsystem <span class="math-inline">\(2\)</span>.</p>
+<p>A convenient language for this is the <em>density operator</em>. For a normalized pure state <span class="math-inline">\(\ket{\Psi}\)</span> of the composite system,</p>
+<div class="math-block">\begin{equation}
+\hat{\rho}_{\text{tot}} = \ket{\Psi}\bra{\Psi}.
+\end{equation}</div>
+<p>The <em>reduced density operator</em> of subsystem <span class="math-inline">\(1\)</span> is defined as the <em>partial trace</em> over subsystem <span class="math-inline">\(2\)</span>:</p>
+<div class="math-block">\begin{equation}
+\hat{\rho}_1 = \mathrm{Tr}_2\bigl(\hat{\rho}_{\text{tot}}\bigr).
+\end{equation}</div>
+<p>In a product basis <span class="math-inline">\(\{\ket{i,\alpha}\}\)</span> this can be written as</p>
+<div class="math-block">\begin{equation}
+\hat{\rho}_1
+= \sum_{\alpha}
+\bra{\alpha}\hat{\rho}_{\text{tot}}\ket{\alpha},
+\end{equation}</div>
+<p>where the bra and ket refer only to subsystem <span class="math-inline">\(2\)</span>.</p>
+<section class="callout example"><header>Example - Partial trace for a two-qubit state</header><p>Let</p>
+<div class="math-block">\begin{equation}
+	\ket{\Psi}
+	= \tfrac{1}{\sqrt{2}}
+	\bigl(\ket{\uparrow\downarrow}
+	+ \ket{\downarrow\uparrow}\bigr),
+	\end{equation}</div>
+<p>and <span class="math-inline">\(\hat{\rho}_{\text{tot}}=\ket{\Psi}\bra{\Psi}\)</span>. Using the basis <span class="math-inline">\(\{\ket{\uparrow},\ket{\downarrow}\}\)</span> for each subsystem, show that</p>
+<div class="math-block">\begin{equation}
+	\hat{\rho}_1
+	= \frac{1}{2}\ket{\uparrow}\bra{\uparrow}
+	+ \frac{1}{2}\ket{\downarrow}\bra{\downarrow}.
+	\end{equation}</div>
+<p>Thus, although the total state is pure, the reduced state of subsystem <span class="math-inline">\(1\)</span> is a statistical mixture.</p></section>
+<p>For the present notes, we will use these concepts mainly in simple finite-dimensional examples (e.g. two-level systems, two spin-<span class="math-inline">\(\tfrac12\)</span> particles) to:</p>
+<ul><li><p>construct product bases,</p></li><li><p>distinguish product and entangled states,</p></li><li><p>interpret measurements on one part of a composite system.</p></li></ul>
+<p>A more systematic treatment of density operators and mixed states appears in advanced courses on quantum information or open quantum systems.</p>
+<p>minimally in the present notes.</p>
+<h2 id="sec-1-homework"><span class="sec-number">1.8</span>Homework</h2>
+<p>The following problems are designed to test your understanding of the material in this chapter. They range from basic exercises to more conceptual questions. Unless stated otherwise, work in Dirac notation.</p>
+<h3 id="sec-1-hilbert-space-inner-products-and-bases">Hilbert Space, Inner Products, and Bases</h3>
+<ol><li><p>Let <span class="math-inline">\(\mathcal{H}\)</span> be a complex vector space with inner product <span class="math-inline">\(\braket{\cdot}{\cdot}\)</span>.</p>
+<ol><li><p>Show that for any kets <span class="math-inline">\(\ket{\phi}\)</span> and <span class="math-inline">\(\ket{\psi}\)</span> and any <span class="math-inline">\(\alpha\in\mathbb{C}\)</span>,</p>
+<div class="math-block">\begin{equation}
+		\braket{\phi}{\alpha\psi}
+		= \alpha\,\braket{\phi}{\psi}.
+		\end{equation}</div></li><li><p>Prove the Cauchy–Schwarz inequality:</p>
+<div class="math-block">\begin{equation}
+		|\braket{\phi}{\psi}|
+		\le \|\ket{\phi}\|\,\|\ket{\psi}\|.
+		\end{equation}</div></li><li><p>Use the Cauchy–Schwarz inequality to show the triangle inequality for the norm:</p>
+<div class="math-block">\begin{equation}
+		\|\ket{\phi} + \ket{\psi}\|
+		\le \|\ket{\phi}\| + \|\ket{\psi}\|.
+		\end{equation}</div></li></ol></li><li><p>Let <span class="math-inline">\(\{\ket{n}\}\)</span> be an orthonormal basis of a Hilbert space <span class="math-inline">\(\mathcal{H}\)</span>.</p>
+<ol><li><p>Show that any normalized state <span class="math-inline">\(\ket{\psi}\)</span> can be written as</p>
+<div class="math-block">\begin{equation}
+		\ket{\psi} = \sum_n c_n \ket{n},
+		\qquad \sum_n |c_n|^2 = 1,
+		\end{equation}</div>
+<p>and identify <span class="math-inline">\(c_n\)</span> in terms of <span class="math-inline">\(\ket{\psi}\)</span> and <span class="math-inline">\(\ket{n}\)</span>.</p></li><li><p>Prove the completeness relation</p>
+<div class="math-block">\begin{equation}
+		\sum_n \ket{n}\bra{n} = \hat{I}
+		\end{equation}</div>
+<p>by acting on an arbitrary state <span class="math-inline">\(\ket{\psi}\)</span>.</p></li><li><p>Suppose <span class="math-inline">\(\ket{\phi} = \sum_n d_n \ket{n}\)</span> is orthogonal to <span class="math-inline">\(\ket{\psi}\)</span>. Express the orthogonality condition <span class="math-inline">\(\braket{\phi}{\psi}=0\)</span> in terms of the coefficients <span class="math-inline">\(c_n\)</span> and <span class="math-inline">\(d_n\)</span>.</p></li></ol></li><li><p>Consider a normalized state <span class="math-inline">\(\ket{\psi}\)</span> in <span class="math-inline">\(L^2(\mathbb{R})\)</span> with wave functions</p>
+<div class="math-block">\begin{equation}
+	\psi(x) = \braket{x}{\psi},
+	\qquad
+	\phi(p) = \braket{p}{\psi}.
+	\end{equation}</div>
+<ol><li><p>Write explicitly the Fourier transforms relating <span class="math-inline">\(\psi(x)\)</span> and <span class="math-inline">\(\phi(p)\)</span> using <span class="math-inline">\(\braket{x}{p}\)</span>.</p></li><li><p>Show that normalization is preserved under the Fourier transform, i.e.,</p>
+<div class="math-block">\begin{equation}
+		\int_{-\infty}^{\infty} | \psi(x) |^2 dx
+		= \int_{-\infty}^{\infty} | \phi(p) |^2 dp = 1.
+		\end{equation}</div></li><li><p>For the Gaussian wave function</p>
+<div class="math-block">\begin{equation}
+		\psi(x) = \frac{1}{(\pi a^2)^{1/4}}
+		\exp\!\left(-\frac{x^2}{2a^2}\right),
+		\end{equation}</div>
+<p>compute <span class="math-inline">\(\phi(p)\)</span> up to an overall phase and check normalization.</p></li></ol></li><li><p>Let <span class="math-inline">\(\{\ket{1},\ket{2},\ket{3}\}\)</span> be an orthonormal basis of a three-dimensional Hilbert space.</p>
+<ol><li><p>Write the column-vector representation of a general state</p>
+<div class="math-block">\begin{equation}
+		\ket{\psi} = \alpha\ket{1} + \beta\ket{2} + \gamma\ket{3},
+		\end{equation}</div>
+<p>in this basis.</p></li><li><p>Suppose another orthonormal basis <span class="math-inline">\(\{\ket{a},\ket{b},\ket{c}\}\)</span> is related by</p>
+<div class="math-block">\begin{equation}
+		\ket{a} = \tfrac{1}{\sqrt{2}}(\ket{1}+\ket{2}),\quad
+		\ket{b} = \tfrac{1}{\sqrt{2}}(\ket{1}-\ket{2}),\quad
+		\ket{c} = \ket{3}.
+		\end{equation}</div>
+<p>Find the unitary matrix <span class="math-inline">\(U\)</span> that transforms components from the <span class="math-inline">\(\{\ket{1},\ket{2},\ket{3}\}\)</span> basis to the <span class="math-inline">\(\{\ket{a},\ket{b},\ket{c}\}\)</span> basis.</p></li><li><p>Express the components of <span class="math-inline">\(\ket{\psi}\)</span> in the <span class="math-inline">\(\{\ket{a},\ket{b},\ket{c}\}\)</span> basis using <span class="math-inline">\(U\)</span>.</p></li></ol>
+<h3 id="sec-1-operators-hermitian-unitary-projectors-and-functions">Operators: Hermitian, Unitary, Projectors, and Functions</h3></li><li><p>Let <span class="math-inline">\(\hat{A}\)</span> be a Hermitian operator and <span class="math-inline">\(\ket{\psi}\)</span> a normalized state.</p>
+<ol><li><p>Show that the expectation value <span class="math-inline">\(\langle A \rangle = \bra{\psi}\hat{A}\ket{\psi}\)</span> is always real.</p></li><li><p>Suppose <span class="math-inline">\(\ket{\psi}\)</span> is an eigenket of <span class="math-inline">\(\hat{A}\)</span> with eigenvalue <span class="math-inline">\(a\)</span>. Show that</p>
+<div class="math-block">\begin{equation}
+		\Delta A = 0,
+		\end{equation}</div>
+<p>where <span class="math-inline">\((\Delta A)^2 = \langle A^2\rangle - \langle A\rangle^2\)</span>.</p></li><li><p>Conversely, show that if <span class="math-inline">\(\Delta A = 0\)</span> in a normalized state <span class="math-inline">\(\ket{\psi}\)</span>, then <span class="math-inline">\(\ket{\psi}\)</span> must be an eigenket of <span class="math-inline">\(\hat{A}\)</span>.</p></li></ol></li><li><p>In the basis <span class="math-inline">\(\{\ket{1},\ket{2},\ket{3}\}\)</span>, an operator <span class="math-inline">\(\hat{A}\)</span> is represented by the matrix</p>
+<div class="math-block">\begin{equation}
+	A =
+	\begin{pmatrix}
+		1 &amp; i &amp; 0 \\
+		-i &amp; 2 &amp; 0 \\
+		0 &amp; 0 &amp; 3
+	\end{pmatrix}.
+	\end{equation}</div>
+<ol><li><p>Check whether <span class="math-inline">\(\hat{A}\)</span> is Hermitian.</p></li><li><p>Find its eigenvalues.</p></li><li><p>For each distinct eigenvalue, find a corresponding normalized eigenket in the given basis.</p></li></ol></li><li><p>Let <span class="math-inline">\(\ket{\phi}\)</span> be a normalized state in <span class="math-inline">\(\mathcal{H}\)</span> and define the operator</p>
+<div class="math-block">\begin{equation}
+	\hat{P} = \ket{\phi}\bra{\phi}.
+	\end{equation}</div>
+<ol><li><p>Show that <span class="math-inline">\(\hat{P}\)</span> is Hermitian and that <span class="math-inline">\(\hat{P}^2 = \hat{P}\)</span>.</p></li><li><p>For an arbitrary normalized state <span class="math-inline">\(\ket{\psi}\)</span>, interpret <span class="math-inline">\(\hat{P}\ket{\psi}\)</span> physically, and compute <span class="math-inline">\(\|\hat{P}\ket{\psi}\|^2\)</span>.</p></li><li><p>Show that <span class="math-inline">\(\hat{I}-\hat{P}\)</span> is also a projector and interpret the subspace onto which it projects.</p></li></ol></li><li><p>Let <span class="math-inline">\(\hat{U}\)</span> be a unitary operator, <span class="math-inline">\(\hat{U}^\dagger\hat{U}=\hat{I}\)</span>.</p>
+<ol><li><p>Show that <span class="math-inline">\(\hat{U}\)</span> preserves inner products, i.e.,</p>
+<div class="math-block">\begin{equation}
+		\braket{\phi}{\psi}
+		= \braket{\phi&#x27;}{\psi&#x27;},
+		\quad
+		\ket{\phi&#x27;}=\hat{U}\ket{\phi},\;
+		\ket{\psi&#x27;}=\hat{U}\ket{\psi}.
+		\end{equation}</div></li><li><p>Prove that if <span class="math-inline">\(\ket{a}\)</span> is an eigenket of a Hermitian operator <span class="math-inline">\(\hat{A}\)</span> with eigenvalue <span class="math-inline">\(a\)</span>, then <span class="math-inline">\(\hat{U}\ket{a}\)</span> is an eigenket of <span class="math-inline">\(\hat{A}&#x27; = \hat{U}\hat{A}\hat{U}^\dagger\)</span> with the <em>same</em> eigenvalue <span class="math-inline">\(a\)</span>.</p></li><li><p>Explain how this shows that unitary transformations correspond to changes of representation that preserve the spectrum of observables.</p></li></ol></li><li><p>Let <span class="math-inline">\(\hat{A}\)</span> be a Hermitian operator with discrete spectrum <span class="math-inline">\(\hat{A}=\sum_n a_n\ket{a_n}\bra{a_n}\)</span>.</p>
+<ol><li><p>Define <span class="math-inline">\(f(\hat{A})\)</span> for a real-valued function <span class="math-inline">\(f(x)\)</span>.</p></li><li><p>Show that if <span class="math-inline">\(f\)</span> is real-valued on the spectrum <span class="math-inline">\(\{a_n\}\)</span>, then <span class="math-inline">\(f(\hat{A})\)</span> is Hermitian.</p></li><li><p>For the Hamiltonian <span class="math-inline">\(\hat{H}\)</span> with eigenvalues <span class="math-inline">\(E_n\)</span>, write the spectral decomposition of the time-evolution operator <span class="math-inline">\(\hat{U}(t) = e^{-i\hat{H}t/\hbar}\)</span>.</p></li></ol>
+<h3 id="sec-1-commutators-and-the-heisenberg-uncertainty-principle">Commutators and the Heisenberg Uncertainty Principle</h3></li><li><p>For operators <span class="math-inline">\(\hat{A}\)</span>, <span class="math-inline">\(\hat{B}\)</span> and scalar <span class="math-inline">\(\lambda\in\mathbb{C}\)</span>, show:</p>
+<ol><li><p><span class="math-inline">\([\hat{A},\hat{B}] = -[\hat{B},\hat{A}]\)</span>.</p></li><li><p><span class="math-inline">\([\hat{A},\lambda\hat{B}] = \lambda[\hat{A},\hat{B}]\)</span>.</p></li><li><p><span class="math-inline">\([\hat{A},\hat{B}+\hat{C}] = [\hat{A},\hat{B}]+[\hat{A},\hat{C}]\)</span>.</p></li><li><p><span class="math-inline">\([\hat{A},\hat{B}\hat{C}]
+		= [\hat{A},\hat{B}]\,\hat{C} + \hat{B}[\hat{A},\hat{C}]\)</span>.</p></li></ol></li><li><p>In one dimension, the position and momentum operators act in the position representation as</p>
+<div class="math-block">\begin{equation}
+	(\hat{x}\psi)(x) = x\psi(x),
+	\qquad
+	(\hat{p}\psi)(x) = -i\hbar\frac{d}{dx}\psi(x).
+	\end{equation}</div>
+<ol><li><p>Compute <span class="math-inline">\((\hat{x}\hat{p}\,\psi)(x)\)</span> and <span class="math-inline">\((\hat{p}\hat{x}\,\psi)(x)\)</span> explicitly.</p></li><li><p>Use the results to show that</p>
+<div class="math-block">\begin{equation}
+		[\hat{x},\hat{p}] = i\hbar\,\hat{I}.
+		\end{equation}</div></li></ol></li><li><p>Let <span class="math-inline">\(\hat{A}\)</span> and <span class="math-inline">\(\hat{B}\)</span> be Hermitian operators and <span class="math-inline">\(\ket{\psi}\)</span> a normalized state.</p>
+<ol><li><p>Define <span class="math-inline">\(\Delta A\)</span> and <span class="math-inline">\(\Delta B\)</span> and show that <span class="math-inline">\(\Delta A\ge 0\)</span>, <span class="math-inline">\(\Delta B\ge 0\)</span>.</p></li><li><p>Consider the kets</p>
+<div class="math-block">\begin{equation}
+		\ket{\alpha} = (\hat{A}-\langle A\rangle)\ket{\psi},
+		\quad
+		\ket{\beta}  = (\hat{B}-\langle B\rangle)\ket{\psi}.
+		\end{equation}</div>
+<p>Use the Cauchy–Schwarz inequality to derive the Robertson inequality</p>
+<div class="math-block">\begin{equation}
+		\Delta A\,\Delta B
+		\ge \frac{1}{2}\bigl|\bra{\psi}[\hat{A},\hat{B}]\ket{\psi}\bigr|.
+		\end{equation}</div></li><li><p>Apply this to <span class="math-inline">\(\hat{A}=\hat{x}\)</span> and <span class="math-inline">\(\hat{B}=\hat{p}_x\)</span> to obtain the standard Heisenberg uncertainty relation.</p></li></ol>
+<h3 id="sec-1-measurement-time-evolution-and-composite-systems">Measurement, Time Evolution, and Composite Systems</h3></li><li><p>Let <span class="math-inline">\(\hat{A}\)</span> be an observable with nondegenerate discrete spectrum <span class="math-inline">\(\hat{A}=\sum_n a_n\ket{a_n}\bra{a_n}\)</span> and normalized state <span class="math-inline">\(\ket{\psi}=\sum_n c_n\ket{a_n}\)</span>.</p>
+<ol><li><p>Show that the probability to obtain the result <span class="math-inline">\(a_n\)</span> in a measurement of <span class="math-inline">\(A\)</span> is <span class="math-inline">\(P(a_n)=|c_n|^2\)</span>.</p></li><li><p>Show that immediately after obtaining the result <span class="math-inline">\(a_n\)</span>, the state becomes <span class="math-inline">\(\ket{a_n}\)</span> (up to an overall phase).</p></li><li><p>Suppose instead that <span class="math-inline">\(\hat{A}\)</span> has a twofold degenerate eigenvalue <span class="math-inline">\(a\)</span> with orthonormal eigenkets <span class="math-inline">\(\{\ket{u_1},\ket{u_2}\}\)</span>. Write the projector onto the degenerate eigenspace and describe the post-measurement state after observing <span class="math-inline">\(a\)</span>.</p></li></ol></li><li><p>Assume a time-independent Hamiltonian <span class="math-inline">\(\hat{H}\)</span> with discrete eigenvalues <span class="math-inline">\(E_n\)</span> and eigenkets <span class="math-inline">\(\ket{E_n}\)</span>:</p>
+<div class="math-block">\begin{equation}
+	\hat{H}\ket{E_n} = E_n\ket{E_n}.
+	\end{equation}</div>
+<p>A normalized initial state at <span class="math-inline">\(t=0\)</span> is</p>
+<div class="math-block">\begin{equation}
+	\ket{\psi(0)} = \sum_n c_n \ket{E_n}.
+	\end{equation}</div>
+<ol><li><p>Find <span class="math-inline">\(\ket{\psi(t)}\)</span> for <span class="math-inline">\(t&gt;0\)</span> using the time-evolution operator.</p></li><li><p>Show that <span class="math-inline">\(|c_n|^2\)</span> is time-independent and interpret this physically.</p></li><li><p>Write the expectation value <span class="math-inline">\(\langle H\rangle(t)\)</span> and verify that it is constant in time.</p></li></ol></li><li><p>Consider a composite system made of two spin-<span class="math-inline">\(\tfrac12\)</span> particles. The single-particle Hilbert space is spanned by <span class="math-inline">\(\{\ket{\uparrow},\ket{\downarrow}\}\)</span>.</p>
+<ol><li><p>Write an orthonormal product basis for the two-particle Hilbert space <span class="math-inline">\(\mathcal{H}_1\otimes\mathcal{H}_2\)</span>.</p></li><li><p>Consider the state</p>
+<div class="math-block">\begin{equation}
+		\ket{\Psi}
+		= \tfrac{1}{\sqrt{2}}
+		\bigl(\ket{\uparrow}\otimes\ket{\downarrow}
+		+ \ket{\downarrow}\otimes\ket{\uparrow}\bigr).
+		\end{equation}</div>
+<p>Show that <span class="math-inline">\(\ket{\Psi}\)</span> cannot be written as a product <span class="math-inline">\(\ket{\psi_1}\otimes\ket{\psi_2}\)</span> of single-particle states.</p></li><li><p>Interpret the physical meaning of such a state in terms of quantum correlations (entanglement).</p></li></ol></li></ol>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <span></span>
+      <a href="../../toc.html">Contents</a>
+      <a href="../chapter-02/index.html">Next: Simple Model Systems: Solving the Schrödinger Equation</a>
+    </nav>
+  </article>
+</main>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p>&copy; 2026 Erfan Saydanzad. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

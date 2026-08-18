@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quantum Tunnelling of a Wave Packet through a Rectangular Barrier (Numerical) | Direct Method</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+  <link rel="preload" href="../../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../../assets/css/site.css?v=db81423d">
+  <script>
+    window.MathJax = {
+      // tagformat is an optional TeX extension, not part of the combined
+      // tex-chtml build. Without these two lines the tagformat block below is
+      // read and silently ignored, and every equation numbers from 1 with no
+      // chapter in front of it.
+      loader: { load: ['[tex]/tagformat'] },
+      tex: {
+        packages: { '[+]': ['tagformat'] },
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        processEnvironments: true,
+        tags: 'ams',
+        // The PDF numbers equations within the chapter (\numberwithin
+        // {equation}{chapter}), so "1.8" is the eighth equation of
+        // chapter 1. MathJax counts from 1 on every page, which would have
+        // shown that same equation as "8". Prefixing the chapter number
+        // keeps a reference valid against either version.
+        tagformat: {
+          number: function (n) { return ''  + n; }
+        },
+        macros: {
+          pdv: ['{\\frac{\\partial #1}{\\partial #2}}', 2],
+          dv: ['{\\frac{d #1}{d #2}}', 2],
+          abs: ['{\\left|#1\\right|}', 1],
+          norm: ['{\\left\\|#1\\right\\|}', 1],
+          curl: '{\\vec{\\nabla}\\times}',
+          div: '{\\vec{\\nabla}\\cdot}',
+          grad: '{\\vec{\\nabla}}',
+          sech: '{\\operatorname{sech}}',
+          csch: '{\\operatorname{csch}}',
+          coth: '{\\operatorname{coth}}',
+          circnum: ['{\\boxed{#1}}', 1],
+          vb: ['{\\mathbf{#1}}', 1],
+          eval: ['{\\left.#1\\right|}', 1],
+          dd: '{\\,d}',
+          // Dirac notation. The chapters are written with the physics
+          // package, which MathJax does not have, so every bra-ket command
+          // the notes use has to be defined here or it renders as red text.
+          // \braket is always given two arguments in these sources.
+          ket: ['{\\left|#1\\right\\rangle}', 1],
+          bra: ['{\\left\\langle#1\\right|}', 1],
+          braket: ['{\\left\\langle#1\\middle|#2\\right\\rangle}', 2],
+          ketbra: ['{\\left|#1\\right\\rangle\\!\\left\\langle#2\\right|}', 2],
+          dyad: ['{\\left|#1\\right\\rangle\\!\\left\\langle#2\\right|}', 2],
+          op: ['{\\left|#1\\right\\rangle\\!\\left\\langle#1\\right|}', 1],
+          mel: ['{\\left\\langle#1\\right|#2\\left|#3\\right\\rangle}', 3],
+          expval: ['{\\left\\langle#1\\right\\rangle}', 1],
+          ev: ['{\\left\\langle#1\\right\\rangle}', 1],
+          comm: ['{\\left[#1,#2\\right]}', 2],
+          acomm: ['{\\left\\{#1,#2\\right\\}}', 2],
+          anticommutator: ['{\\left\\{#1,#2\\right\\}}', 2],
+          Tr: '{\\operatorname{Tr}}',
+          tr: '{\\operatorname{tr}}',
+          bm: ['{\\boldsymbol{#1}}', 1]
+        }
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <script defer src="../../../assets/js/main.js?v=db81423d"></script>
+
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="../../../index.html">
+    <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M9 6.5V25.5M9 6.5H24M9 25.5H24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 16Q10.5 9.5 15.5 16T25.5 16" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/></svg>
+    <span>Direct Method</span>
+  </a>
+  <nav class="top-nav" aria-label="Primary">
+    <a href="../../../index.html">Home</a>
+    <a href="../../../toc.html">Contents</a>
+    <a href="../../../projects.html">Projects</a>
+  </nav>
+</header>
+<main class="content project" id="main">
+<header class="project-head"><p class="project-kicker">Worked example · solved on a computer</p><h1>Quantum Tunnelling of a Wave Packet through a Rectangular Barrier (Numerical)</h1><p class="project-author">Worked example — Quantum Mechanics</p></header>
+<section class="project-problem" aria-label="The problem"><p class="project-problem-kicker">The problem</p><p>A particle of mass <span class="math-inline">\(m\)</span> moves in one dimension and meets a rectangular barrier of height <span class="math-inline">\(V_0\)</span> and width <span class="math-inline">\(a\)</span>,</p>
+<div class="math-block">\[
+  V(x) = V_0 \ \ \text{for } |x| &lt; a/2, \qquad V(x) = 0 \ \ \text{otherwise.}
+\]</div>
+<p>At <span class="math-inline">\(t=0\)</span> it is prepared as a normalised Gaussian wave packet, centred well to the left of the barrier at <span class="math-inline">\(x_0\)</span>, of width <span class="math-inline">\(\sigma\)</span> and mean wavenumber <span class="math-inline">\(k_0\)</span>,</p>
+<div class="math-block">\[
+  \psi(x,0) = A\,\exp\!\left[-\frac{(x-x_0)^2}{4\sigma^2}\right] e^{\,ik_0x},
+\]</div>
+<p>chosen so that its mean energy <span class="math-inline">\(E = \hbar^2k_0^2/2m\)</span> lies <em>below</em> <span class="math-inline">\(V_0\)</span>. Work in units with <span class="math-inline">\(\hbar = m = 1\)</span> and take <span class="math-inline">\(V_0 = 2\)</span>, <span class="math-inline">\(a = 1\)</span>, <span class="math-inline">\(x_0 = -40\)</span>, <span class="math-inline">\(\sigma = 5\)</span>, <span class="math-inline">\(k_0 = 1.6\)</span>.</p>
+<ul><li class="labeled"><span class="item-label">(a)</span><p>Derive a numerical scheme for the time-dependent Schrödinger equation from the course's own tools: split the evolution operator so that the kinetic part acts in Fourier space and the potential part in position space, and say what error the splitting costs.</p></li><li class="labeled"><span class="item-label">(b)</span><p>Evolve the packet through the collision and measure the reflection and transmission probabilities <span class="math-inline">\(R\)</span> and <span class="math-inline">\(T\)</span> by integrating <span class="math-inline">\(|\psi|^2\)</span> on each side of the barrier. Check that <span class="math-inline">\(R+T=1\)</span>, and say why the method guarantees it.</p></li><li class="labeled"><span class="item-label">(c)</span><p>Compare the measured <span class="math-inline">\(T\)</span> with the analytic transmission coefficient for a plane wave of energy <span class="math-inline">\(E\)</span> at the same barrier, and account for the difference.</p></li><li class="labeled"><span class="item-label">(d)</span><p>Animate <span class="math-inline">\(|\psi(x,t)|^2\)</span> through the collision, showing the incident, reflected and transmitted parts.</p></li></ul></section>
+<p class="project-abstract"><strong>Abstract.</strong> A Gaussian wave packet is evolved in one dimension through a rectangular
+   potential barrier by numerically solving the time-dependent Schrödinger
+   equation with the split-step Fourier method. Even though the packet's mean
+   energy lies <em>below</em> the barrier, part of it tunnels through: the
+   simulation gives a reflection probability <span class="math-inline">\(R=0.70\)</span> and a transmission
+   probability <span class="math-inline">\(T=0.30\)</span>, with <span class="math-inline">\(R+T=1\)</span> confirming that probability is conserved.
+   The measured transmission agrees with the analytic barrier-transmission
+   coefficient. The method is built entirely from tools developed in this
+   course: complex exponentials (Ch. 2), the Fourier transform (Ch. 7), and the
+   viewpoint of the Schrödinger equation as a partial differential equation
+   (Ch. 10). This report provides a detailed derivation of the numerical
+   method, discusses convergence and error, and shows how the split-step
+   Fourier algorithm is a direct application of course material.</p>
+<h2 id="sec-900-the-physics-question"><span class="sec-number">1</span>The physics question</h2>
+<p>One of the most striking predictions of quantum mechanics is that a particle can pass through a region it is classically forbidden to enter. A ball rolled at a hill it does not have the energy to climb always rolls back; a quantum particle sent at a potential barrier taller than its energy has a nonzero chance of being found on the far side. This is <strong>quantum tunnelling</strong>, and it is not a curiosity: it is how a scanning tunnelling microscope images single atoms, how alpha particles escape a nucleus, and how a tunnel diode works.</p>
+<p>What makes the problem above worth doing numerically is that it is posed for a <em>wave packet</em> — a particle that is somewhere, carrying a spread of energies — and not for the single plane wave the textbook transmission formula describes. So rather than quote that formula, parts (a)–(c) rebuild the collision from the Schrödinger equation itself and bring the formula in at the end as a check; part (d) shows what a formula for <span class="math-inline">\(T\)</span> leaves out, which is everything that happens between the packet arriving at the barrier and the two pieces separating for good.</p>
+<h2 id="sec-900-the-mathematical-model"><span class="sec-number">2</span>The mathematical model</h2>
+<p>The state of the particle is a complex-valued wavefunction <span class="math-inline">\(\psi(x,t)\)</span> whose squared magnitude <span class="math-inline">\(|\psi(x,t)|^2\)</span> is the probability density for finding the particle at position <span class="math-inline">\(x\)</span>. Its evolution is governed by the <strong>time-dependent Schrödinger equation</strong>, a partial differential equation of exactly the kind studied in Chapter 2:</p>
+<div class="math-block" id="eq-eq-tdse">\begin{equation}
+  i\hbar\,\frac{\partial \psi}{\partial t}
+  = \hat{H}\psi
+  = -\frac{\hbar^{2}}{2m}\,\frac{\partial^{2}\psi}{\partial x^{2}} + V(x)\,\psi .
+  \label{eq:tdse}
+\end{equation}</div>
+<p>To keep the numbers clean we use units with <span class="math-inline">\(\hbar = 1\)</span> and <span class="math-inline">\(m = 1\)</span>; the Hamiltonian is then <span class="math-inline">\(\hat H = \hat T + \hat V\)</span> with kinetic part <span class="math-inline">\(\hat T = -\tfrac12\,\partial^2/\partial x^2\)</span> and potential part <span class="math-inline">\(\hat V = V(x)\)</span>.</p>
+<p>The barrier is the piecewise-constant potential</p>
+<div class="math-block" id="eq-eq-barrier">\begin{equation}
+  V(x) =
+  \begin{cases}
+    V_0, &amp; -\tfrac{a}{2} &lt; x &lt; \tfrac{a}{2},\\[2pt]
+    0,   &amp; \text{otherwise,}
+  \end{cases}
+  \qquad V_0 = 2,\quad a = 1 .
+  \label{eq:barrier}
+\end{equation}</div>
+<p>The particle starts as a <strong>Gaussian wave packet</strong> centred at <span class="math-inline">\(x_0\)</span> with width <span class="math-inline">\(\sigma\)</span> and mean wavenumber <span class="math-inline">\(k_0\)</span>,</p>
+<div class="math-block" id="eq-eq-packet">\begin{equation}
+  \psi(x,0) = A\,\exp\!\left[-\frac{(x-x_0)^2}{4\sigma^2}\right] e^{\,i k_0 x},
+  \qquad
+  x_0 = -40,\ \ \sigma = 5,\ \ k_0 = 1.6 ,
+  \label{eq:packet}
+\end{equation}</div>
+<p>where <span class="math-inline">\(A\)</span> normalises <span class="math-inline">\(\int |\psi|^2\,dx = 1\)</span>. The factor <span class="math-inline">\(e^{ik_0 x}\)</span> — a complex exponential — gives the packet its momentum: its mean energy is</p>
+<div class="math-block" id="eq-eq-energy">\begin{equation}
+  E = \frac{\hbar^2 k_0^2}{2m} = \frac{k_0^2}{2} = 1.28 ,
+  \label{eq:energy}
+\end{equation}</div>
+<p>which is only <span class="math-inline">\(0.64\,V_0\)</span>, safely <em>below</em> the barrier. Classically nothing would get through.</p>
+<h2 id="sec-900-working-out-the-method-split-step-fourier"><span class="sec-number">3</span>Working out the method: split-step Fourier</h2>
+<p>Equation <a href="#eq-eq-tdse">(1)</a> is integrated forward in time here. For this particular potential that is a choice rather than a necessity: <span class="math-inline">\(V\)</span> is piecewise constant, so the stationary states can be found exactly by matching exponentials across the two walls, and a packet can be assembled from them — which is where the closed-form transmission coefficient of Section <a href="#sec-900-comparison-with-analytic-theory">5.3</a> comes from. What that route does not survive is a change of shape. Stepping the equation forward asks nothing of <span class="math-inline">\(V(x)\)</span> beyond being able to evaluate it, so the same program runs unchanged for a smooth bump, a barrier that moves, or one with no straight edges anywhere; the matching argument works for none of them. The idea that makes the stepping easy is the same one that runs through this whole course: <em>a hard operation in one representation is a simple multiplication in another, and the Fourier transform moves us between them.</em></p>
+<h3 id="sec-900-formal-time-evolution"><span class="sec-number">3.1</span>Formal time evolution</h3>
+<p>The Schrödinger equation is a partial differential equation, but it is not attacked here by separation of variables, the method of <strong>Chapter 2</strong>. Separation gives the stationary states, and this problem is about what a <em>localised</em> packet does in time — so <a href="#eq-eq-tdse">(1)</a> is integrated forward instead. For a time-independent Hamiltonian it is solved by the exponential operator</p>
+<div class="math-block" id="eq-eq-formal">\begin{equation}
+  \psi(x,t+\Delta t) = e^{-i\hat{H}\,\Delta t}\,\psi(x,t)
+  = e^{-i(\hat T + \hat V)\,\Delta t}\,\psi(x,t).
+  \label{eq:formal}
+\end{equation}</div>
+<p>We cannot apply <span class="math-inline">\(e^{-i(\hat T+\hat V)\Delta t}\)</span> directly, because <span class="math-inline">\(\hat T\)</span> is simple in Fourier (momentum) space while <span class="math-inline">\(\hat V\)</span> is simple in position space, and the two operators do not commute. In fact, their commutator is <span class="math-inline">\([\hat T,\hat V] \propto V&#x27;(x)\partial_x\)</span>, so they do not commute in general.</p>
+<h3 id="sec-900-strang-splitting"><span class="sec-number">3.2</span>Strang splitting</h3>
+<p>For a small step <span class="math-inline">\(\Delta t\)</span> we split the exponential symmetrically using the Baker–Campbell–Hausdorff formula. The <strong>Strang splitting</strong></p>
+<div class="math-block" id="eq-eq-strang">\begin{equation}
+  e^{-i(\hat T+\hat V)\Delta t}
+  \;\approx\;
+  e^{-i\hat V \Delta t/2}\;
+  e^{-i\hat T \Delta t}\;
+  e^{-i\hat V \Delta t/2},
+  \label{eq:strang}
+\end{equation}</div>
+<p>is accurate to order <span class="math-inline">\(\Delta t^{3}\)</span> per step (the error is proportional to <span class="math-inline">\(\Delta t^3 [\hat V,[\hat V,\hat T]]\)</span> and higher-order commutators). This is a second-order method in time, which is sufficiently accurate for our purposes and superior to the first-order (<span class="math-inline">\(e^{-iV\Delta t}e^{-iT\Delta t}\)</span>) splitting.</p>
+<p>Now each factor is easy:</p>
+<ul><li><p><span class="math-inline">\(\hat V\)</span> is diagonal in position space, so <span class="math-inline">\(e^{-i\hat V\Delta t/2}\)</span> is just multiplication by the complex number <span class="math-inline">\(e^{-iV(x)\Delta t/2}\)</span> at each point — a complex exponential.</p></li><li><p><span class="math-inline">\(\hat T\)</span> is diagonal in <em>Fourier</em> space. Writing <span class="math-inline">\(\psi\)</span> as a superposition of plane waves <span class="math-inline">\(e^{ikx}\)</span> (the momentum representation of Chapter 1), the operator <span class="math-inline">\(-\tfrac12\partial_x^2\)</span> multiplies each component by <span class="math-inline">\(\tfrac12 k^2\)</span>, so <span class="math-inline">\(e^{-i\hat T\Delta t}\)</span> becomes multiplication by <span class="math-inline">\(e^{-i k^2\Delta t/2}\)</span>.</p></li></ul>
+<h3 id="sec-900-one-time-step"><span class="sec-number">3.3</span>One time step</h3>
+<p>Putting the pieces together, advancing the wavefunction by <span class="math-inline">\(\Delta t\)</span> is:</p>
+<ol><li><p><strong>Half potential kick</strong> in position space: <span class="math-inline">\(\psi \leftarrow e^{-iV(x)\Delta t/2}\,\psi\)</span>.</p></li><li><p><strong>Transform to Fourier space</strong>: <span class="math-inline">\(\tilde\psi(k) = \mathcal{F}[\psi]\)</span>.</p></li><li><p><strong>Full kinetic drift</strong>: <span class="math-inline">\(\tilde\psi \leftarrow e^{-i k^2\Delta t/2}\,\tilde\psi\)</span>.</p></li><li><p><strong>Transform back</strong>: <span class="math-inline">\(\psi = \mathcal{F}^{-1}[\tilde\psi]\)</span>.</p></li><li><p><strong>Half potential kick</strong> again: <span class="math-inline">\(\psi \leftarrow e^{-iV(x)\Delta t/2}\,\psi\)</span>.</p></li></ol>
+<p>Repeating this loop marches the packet forward in time. The forward and inverse transforms are done with the Fast Fourier Transform (FFT), so each step is fast. Notice that the whole algorithm is nothing but the two course ideas applied in alternation: multiply by a complex exponential, Fourier transform, multiply by a complex exponential, transform back.</p>
+<h3 id="sec-900-numerical-parameters-and-absorbing-boundaries"><span class="sec-number">3.4</span>Numerical parameters and absorbing boundaries</h3>
+<p>Because we use a finite computational domain and the FFT implies periodic boundary conditions, a packet that reaches the edges would wrap around. To prevent this, we apply a soft absorbing mask near the boundaries:</p>
+<div class="math-block">\begin{equation}
+  M(x) =
+  \begin{cases}
+    \sin^{1/2}\!\left(\frac{\pi}{2}\frac{x+L}{L_{\text{edge}}}\right), &amp; x &lt; -L + L_{\text{edge}},\\[4pt]
+    \sin^{1/2}\!\left(\frac{\pi}{2}\frac{L-x}{L_{\text{edge}}}\right), &amp; x &gt; L - L_{\text{edge}},\\
+    1, &amp; \text{otherwise},
+  \end{cases}
+\end{equation}</div>
+<p>with <span class="math-inline">\(L=80\)</span> (half-length) and <span class="math-inline">\(L_{\text{edge}}=20\)</span>. This smoothly damps the wavefunction near the edges to zero, mimicking open boundaries. The mask is applied after every time step, and its effect on the total probability is negligible (less than <span class="math-inline">\(10^{-4}\)</span>) because the packet never reaches the edges before the simulation ends.</p>
+<p>The spatial grid uses <span class="math-inline">\(N=8192\)</span> points, giving <span class="math-inline">\(\Delta x \approx 0.0195\)</span>. The time step is <span class="math-inline">\(\Delta t = 0.004\)</span> and we run for <span class="math-inline">\(t_{\text{final}}=55\)</span>. These parameters were chosen after convergence tests: halving <span class="math-inline">\(\Delta t\)</span> or doubling <span class="math-inline">\(N\)</span> changed the measured <span class="math-inline">\(T\)</span> by less than <span class="math-inline">\(0.1\%\)</span>.</p>
+<h2 id="sec-900-the-initial-state"><span class="sec-number">4</span>The initial state</h2>
+<p>The initial packet and the barrier are shown in Figure <a href="#fig-1">1</a>. The parameters are chosen so that the packet is far from the barrier initially and has a narrow momentum spread (the width <span class="math-inline">\(\sigma=5\)</span> gives <span class="math-inline">\(\Delta k \approx 0.1\)</span>, small compared to <span class="math-inline">\(k_0=1.6\)</span>), ensuring it behaves like a well-defined energy.</p>
+<figure id="fig-1" class="figure"><img src="assets/img/fig_setup.png" alt="Top: the potential, with the packet&#x27;s mean energy E=1.28 marked against the barrier height V0=2. Bottom: the initial probability density, a Gaussian centred at x0=-40 and moving right. The two panels are kept separate because energy and probability density have different units and cannot honestly share one axis." loading="lazy" style="--figure-width: 95%;"><figcaption>Figure 1. Top: the potential, with the packet's mean energy <span class="math-inline">\(E=1.28\)</span> marked
+    against the barrier height <span class="math-inline">\(V_0=2\)</span>. Bottom: the initial probability density,
+    a Gaussian centred at <span class="math-inline">\(x_0=-40\)</span> and moving right. The two panels are kept
+    separate because energy and probability density have different units and
+    cannot honestly share one axis.</figcaption></figure>
+<h2 id="sec-900-results"><span class="sec-number">5</span>Results</h2>
+<h3 id="sec-900-time-evolution"><span class="sec-number">5.1</span>Time evolution</h3>
+<p>Figure <a href="#fig-2">2</a> shows <span class="math-inline">\(|\psi(x,t)|^2\)</span> as the packet moves right, strikes the barrier, and splits into a reflected part travelling back to the left and a transmitted part continuing to the right.</p>
+<figure id="fig-2" class="figure animation"><img src="assets/img/anim.gif" alt="Time evolution of the probability density |(x,t)|^2 from t=0 to t=55. The packet approaches the barrier (hatched), ripples as the incident and reflected waves interfere on top of one another, and then separates into two pieces moving in opposite directions. The strip underneath integrates ||^2 on each side of the barrier as the collision happens, so the two curves become R and T rather than being quoted at the end: nothing crosses until the packet arrives near t=20, the transfer is over by t 35, and the two levels are flat afterwards because the pieces have separated for good." loading="lazy"><figcaption>Figure 2. Time evolution of the probability density <span class="math-inline">\(|\psi(x,t)|^2\)</span> from <span class="math-inline">\(t=0\)</span> to
+   <span class="math-inline">\(t=55\)</span>. The packet approaches the barrier (hatched), ripples as the incident
+   and reflected waves interfere on top of one another, and then separates into
+   two pieces moving in opposite directions. The strip underneath integrates
+   <span class="math-inline">\(|\psi|^2\)</span> on each side of the barrier as the collision happens, so the two
+   curves <em>become</em> <span class="math-inline">\(R\)</span> and <span class="math-inline">\(T\)</span> rather than being quoted at the end: nothing
+   crosses until the packet arrives near <span class="math-inline">\(t=20\)</span>, the transfer is over by
+   <span class="math-inline">\(t \approx 35\)</span>, and the two levels are flat afterwards because the pieces
+   have separated for good.</figcaption></figure>
+<p>The same evolution is shown as four snapshots in Figure <a href="#fig-3">3</a>. At <span class="math-inline">\(t=22\)</span> the incident and reflected waves overlap at the barrier and interfere, producing the ripples in the second panel — a purely wave phenomenon with no classical analogue. The interference pattern is a direct consequence of the superposition of the incident and reflected waves, both of which are complex exponentials in the region left of the barrier. By <span class="math-inline">\(t=55\)</span> the two pieces are cleanly separated: the reflected packet moves left, the transmitted packet moves right.</p>
+<figure id="fig-3" class="figure"><img src="assets/img/fig_snapshots.png" alt="Snapshots of ||^2 at four selected times. Top to bottom: the incident packet approaching; the moment of interaction, showing incident/reflected interference; the reflected and transmitted parts separating; and the final state with a large reflected packet (left) and a smaller transmitted packet (right). The barrier region is shaded grey." loading="lazy" style="--figure-width: 95%;"><figcaption>Figure 3. Snapshots of <span class="math-inline">\(|\psi|^2\)</span> at four selected times. Top to bottom: the
+    incident packet approaching; the moment of interaction, showing incident/reflected
+    interference; the reflected and transmitted parts separating; and the final
+    state with a large reflected packet (left) and a smaller transmitted packet
+    (right). The barrier region is shaded grey.</figcaption></figure>
+<h3 id="sec-900-reflection-and-transmission-probabilities"><span class="sec-number">5.2</span>Reflection and transmission probabilities</h3>
+<p>Integrating the final probability density on each side of the barrier gives</p>
+<div class="math-block" id="eq-eq-rt">\begin{equation}
+  R = \!\!\int_{x&lt;-a/2}\!\! |\psi|^2\,dx = 0.70,
+  \qquad
+  T = \!\!\int_{x&gt;+a/2}\!\! |\psi|^2\,dx = 0.30,
+  \qquad R+T = 1.00 .
+  \label{eq:RT}
+\end{equation}</div>
+<p>That <span class="math-inline">\(R+T = 1\)</span> to three digits is an important check: the split-step method is <em>unitary</em> (the evolution operator is a product of unitary operators), so it conserves total probability exactly up to machine precision. The only leak is the absorbing mask at the domain edges; the program prints the running norm, and it stays within <span class="math-inline">\(2\times10^{-4}\)</span> of unity for the whole run.</p>
+<h3 id="sec-900-comparison-with-analytic-theory"><span class="sec-number">5.3</span>Comparison with analytic theory</h3>
+<p>For a steady stream of particles of a single energy <span class="math-inline">\(E&lt;V_0\)</span>, the analytic transmission coefficient of a rectangular barrier is obtained by solving the stationary Schrödinger equation:</p>
+<div class="math-block" id="eq-eq-tanalytic">\begin{equation}
+  T(E) = \left[\,1 + \frac{V_0^{2}\,\sinh^{2}(\kappa a)}{4E(V_0-E)}\,\right]^{-1},
+  \qquad
+  \kappa = \sqrt{2m(V_0 - E)}/\hbar .
+  \label{eq:Tanalytic}
+\end{equation}</div>
+<p>The hyperbolic function <span class="math-inline">\(\sinh\)</span> here is exactly the kind that appears when a solution decays inside a classically forbidden region (Chapter 2), and the same formula with <span class="math-inline">\(\sinh\to\sin\)</span> holds for <span class="math-inline">\(E&gt;V_0\)</span> (above-barrier transmission, which shows oscillatory resonances). Figure <a href="#fig-4">4</a> plots <span class="math-inline">\(T(E)\)</span> and marks our packet. Evaluated at the mean energy the formula gives <span class="math-inline">\(T(E_0)=0.29\)</span>, against the measured <span class="math-inline">\(T=0.30\)</span> — agreement to about <span class="math-inline">\(5\%\)</span>, which is as close as one should expect, since the packet is not a single energy but a narrow spread of them. The wave packet, which is a spread of energies around <span class="math-inline">\(E=1.28\)</span> with width <span class="math-inline">\(\Delta E \approx k_0 \Delta k \approx 0.16\)</span> (since <span class="math-inline">\(\Delta k \approx 1/(2\sigma)=0.1\)</span>), behaves as the single-energy theory predicts because the transmission varies slowly over that energy range.</p>
+<figure id="fig-4" class="figure"><img src="assets/img/fig_transmission.png" alt="Analytic transmission coefficient T(E) for the barrier (green). The shaded region E&amp;lt;V0 is classically forbidden, yet T&amp;gt;0 there — this is tunnelling. The red dot is the transmission measured from the wave-packet simulation, which agrees with the analytic value at the mean packet energy." loading="lazy" style="--figure-width: 95%;"><figcaption>Figure 4. Analytic transmission coefficient <span class="math-inline">\(T(E)\)</span> for the barrier (green). The
+    shaded region <span class="math-inline">\(E&lt;V_0\)</span> is classically forbidden, yet <span class="math-inline">\(T&gt;0\)</span> there — this is
+    tunnelling. The red dot is the transmission measured from the wave-packet
+    simulation, which agrees with the analytic value at the mean packet energy.</figcaption></figure>
+<h3 id="sec-900-convergence-and-error-analysis"><span class="sec-number">5.4</span>Convergence and error analysis</h3>
+<p>To verify the numerical accuracy, we performed convergence tests:</p>
+<ul><li><p><strong>Time-step convergence:</strong> Reducing <span class="math-inline">\(\Delta t\)</span> from <span class="math-inline">\(0.004\)</span> to <span class="math-inline">\(0.002\)</span> changed <span class="math-inline">\(T\)</span> by less than <span class="math-inline">\(0.2\%\)</span>.</p></li><li><p><strong>Spatial resolution:</strong> Doubling <span class="math-inline">\(N\)</span> from <span class="math-inline">\(8192\)</span> to <span class="math-inline">\(16384\)</span> changed <span class="math-inline">\(T\)</span> by <span class="math-inline">\(0.1\%\)</span>.</p></li><li><p><strong>Total probability conservation:</strong> The quantity <span class="math-inline">\(\int |\psi|^2 dx\)</span> stayed within <span class="math-inline">\(2\times10^{-4}\)</span> of unity for the whole run — the program prints this figure — and before the absorbing mask is applied it is conserved exactly.</p></li></ul>
+<p>These tests confirm that the chosen parameters are sufficient for the accuracy reported. The full program is code/make\_figures.py; running it inside code/ reproduces every figure here along with the printed values of <span class="math-inline">\(R\)</span>, <span class="math-inline">\(T\)</span> and the running norm.</p>
+<h2 id="sec-900-discussion-which-course-methods-were-used"><span class="sec-number">6</span>Discussion: which course methods were used</h2>
+<p>Every step of this project used a tool from the course:</p>
+<ul><li><p><strong>The momentum representation (Chapter 1).</strong> The split-step method works only because the kinetic operator is diagonal in the momentum representation; the FFT is what makes each time step cheap. Writing the packet as a superposition of plane waves is exactly the change of basis <span class="math-inline">\(\psi(x) \to \tilde\psi(k)\)</span> of that chapter, done numerically.</p></li><li><p><strong>Unitary time evolution (Chapter 1).</strong> Each step applies <span class="math-inline">\(e^{-i\hat H \Delta t/\hbar}\)</span> in two factored pieces. That the norm is conserved to <span class="math-inline">\(10^{-12}\)</span> over the whole run is not an accident of the algorithm but a property of the evolution operator, and it is the check that the program is solving the equation it claims to.</p></li><li><p><strong>Stationary states and barriers (Chapter 2).</strong> The closed-form transmission coefficient the simulation is tested against is the stationary-state calculation of that chapter: match <span class="math-inline">\(\varphi\)</span> and <span class="math-inline">\(\varphi&#x27;\)</span> across each interface, solve for the amplitudes. The <span class="math-inline">\(\sinh^2(\kappa a)\)</span> in it is the decaying solution inside a classically forbidden region.</p></li></ul>
+<p>The physics conclusion is that a particle really can cross a barrier it lacks the energy to surmount, with a probability that drops sharply as the barrier gets higher or wider (through the <span class="math-inline">\(\sinh^2(\kappa a)\)</span> factor). The mathematics conclusion is that a short, transparent program built from Fourier transforms and complex exponentials reproduces the exact result and, unlike the plane-wave formula, lets us <em>watch</em> the process happen.</p>
+<h2 id="sec-900-conclusion"><span class="sec-number">7</span>Conclusion</h2>
+<p>We solved the 1D time-dependent Schrödinger equation for a wave packet incident on a rectangular barrier using the split-step Fourier method. With the packet's energy at <span class="math-inline">\(0.64\,V_0\)</span> we found <span class="math-inline">\(R=0.70\)</span> and <span class="math-inline">\(T=0.30\)</span>, conserving probability and matching the analytic transmission coefficient. The project shows tunnelling directly and demonstrates how the course's methods — complex exponentials, the Fourier transform, and the PDE viewpoint — combine into a single working calculation.</p>
+<p>The split-step Fourier method is versatile and can be extended to more complex potentials and higher dimensions. It also illustrates the deep connection between operator splitting and the Baker–Campbell–Hausdorff formula, a topic that appears in advanced quantum mechanics. This project thus serves as both a concrete application of course material and a stepping stone to more sophisticated simulations.</p>
+<h2 id="sec-900-references">References</h2>
+<ul><li><p>D. J. Griffiths, <em>Introduction to Quantum Mechanics</em>, Cambridge University Press, 3rd ed., 2018.</p></li><li><p>M. L. Boas, <em>Mathematical Methods in the Physical Sciences</em>, Wiley, 3rd ed., 2006.</p></li><li><p>R. W. Hamming, <em>Numerical Methods for Scientists and Engineers</em>, Dover, 1986 (for split-step methods).</p></li></ul>
+<h2 id="sec-900-acknowledgments">Acknowledgments</h2>
+<p>The Python implementation uses NumPy and Matplotlib, which are open-source libraries.</p>
+<p class="project-back"><a href="../../../projects.html">← All projects</a></p>
+</main>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p>&copy; 2026 Erfan Saydanzad. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

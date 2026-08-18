@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 7: Molecular Structure, Vibration and Rotation | Direct Method</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+  <link rel="preload" href="../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../assets/css/site.css?v=db81423d">
+  <script>
+    window.MathJax = {
+      // tagformat is an optional TeX extension, not part of the combined
+      // tex-chtml build. Without these two lines the tagformat block below is
+      // read and silently ignored, and every equation numbers from 1 with no
+      // chapter in front of it.
+      loader: { load: ['[tex]/tagformat'] },
+      tex: {
+        packages: { '[+]': ['tagformat'] },
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        processEnvironments: true,
+        tags: 'ams',
+        // The PDF numbers equations within the chapter (\numberwithin
+        // {equation}{chapter}), so "1.8" is the eighth equation of
+        // chapter 1. MathJax counts from 1 on every page, which would have
+        // shown that same equation as "8". Prefixing the chapter number
+        // keeps a reference valid against either version.
+        tagformat: {
+          number: function (n) { return '7.' + n; }
+        },
+        macros: {
+          pdv: ['{\\frac{\\partial #1}{\\partial #2}}', 2],
+          dv: ['{\\frac{d #1}{d #2}}', 2],
+          abs: ['{\\left|#1\\right|}', 1],
+          norm: ['{\\left\\|#1\\right\\|}', 1],
+          curl: '{\\vec{\\nabla}\\times}',
+          div: '{\\vec{\\nabla}\\cdot}',
+          grad: '{\\vec{\\nabla}}',
+          sech: '{\\operatorname{sech}}',
+          csch: '{\\operatorname{csch}}',
+          coth: '{\\operatorname{coth}}',
+          circnum: ['{\\boxed{#1}}', 1],
+          vb: ['{\\mathbf{#1}}', 1],
+          eval: ['{\\left.#1\\right|}', 1],
+          dd: '{\\,d}',
+          // Dirac notation. The chapters are written with the physics
+          // package, which MathJax does not have, so every bra-ket command
+          // the notes use has to be defined here or it renders as red text.
+          // \braket is always given two arguments in these sources.
+          ket: ['{\\left|#1\\right\\rangle}', 1],
+          bra: ['{\\left\\langle#1\\right|}', 1],
+          braket: ['{\\left\\langle#1\\middle|#2\\right\\rangle}', 2],
+          ketbra: ['{\\left|#1\\right\\rangle\\!\\left\\langle#2\\right|}', 2],
+          dyad: ['{\\left|#1\\right\\rangle\\!\\left\\langle#2\\right|}', 2],
+          op: ['{\\left|#1\\right\\rangle\\!\\left\\langle#1\\right|}', 1],
+          mel: ['{\\left\\langle#1\\right|#2\\left|#3\\right\\rangle}', 3],
+          expval: ['{\\left\\langle#1\\right\\rangle}', 1],
+          ev: ['{\\left\\langle#1\\right\\rangle}', 1],
+          comm: ['{\\left[#1,#2\\right]}', 2],
+          acomm: ['{\\left\\{#1,#2\\right\\}}', 2],
+          anticommutator: ['{\\left\\{#1,#2\\right\\}}', 2],
+          Tr: '{\\operatorname{Tr}}',
+          tr: '{\\operatorname{tr}}',
+          bm: ['{\\boldsymbol{#1}}', 1]
+        }
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <script defer src="../../assets/js/main.js?v=db81423d"></script>
+
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="../../index.html">
+    <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M9 6.5V25.5M9 6.5H24M9 25.5H24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 16Q10.5 9.5 15.5 16T25.5 16" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/></svg>
+    <span>Direct Method</span>
+  </a>
+  <nav class="top-nav" aria-label="Primary">
+    <a href="../../index.html">Home</a>
+    <a href="../../toc.html">Contents</a>
+    <a href="../../projects.html">Projects</a>
+  </nav>
+</header>
+<main class="layout" id="main">
+  <aside class="sidebar">
+  <div class="sidebar-inner">
+    <p class="sidebar-kicker">Chapter 7</p>
+    <h2>Molecular Structure, Vibration and Rotation</h2>
+    <nav class="chapter-toc" aria-label="Chapter contents">
+      <a class="toc-level-2" href="#sec-7-introduction">7.1 Introduction</a>
+<a class="toc-level-2" href="#sec-7-the-molecular-hamiltonian">7.2 The Molecular Hamiltonian</a>
+<a class="toc-level-2" href="#sec-7-the-born-oppenheimer-separation">7.3 The Born–Oppenheimer Separation</a>
+<a class="toc-level-2" href="#sec-7-molecular-orbitals-the-lcao-method">7.4 Molecular Orbitals: the LCAO Method</a>
+<a class="toc-level-2" href="#sec-7-molecular-orbital-labels">7.5 Molecular Orbital Labels</a>
+<a class="toc-level-3" href="#sec-7-the-ground-state-of-co-2-2">7.5.1 The Ground State of CO2</a>
+<a class="toc-level-3" href="#sec-7-ionization-several-thresholds">7.5.2 Ionization: Several Thresholds</a>
+<a class="toc-level-2" href="#sec-7-vibration">7.6 Vibration</a>
+<a class="toc-level-3" href="#sec-7-spectroscopic-constants-and-units">7.6.1 Spectroscopic Constants and Units</a>
+<a class="toc-level-3" href="#sec-7-anharmonicity">7.6.2 Anharmonicity</a>
+<a class="toc-level-2" href="#sec-7-rotation">7.7 Rotation</a>
+<a class="toc-level-3" href="#sec-7-vibration-rotation-coupling">7.7.1 Vibration–Rotation Coupling</a>
+<a class="toc-level-2" href="#sec-7-polyatomic-molecules-normal-modes">7.8 Polyatomic Molecules: Normal Modes</a>
+<a class="toc-level-2" href="#sec-7-symmetry-workflow-for-molecular-spectroscopy">7.9 Symmetry Workflow for Molecular Spectroscopy</a>
+<a class="toc-level-2" href="#sec-7-the-three-energy-scales">7.10 The Three Energy Scales</a>
+<a class="toc-level-2" href="#sec-7-summary">7.11 Summary</a>
+<a class="toc-level-2" href="#sec-7-exercises">7.12 Exercises</a>
+<a class="toc-level-2" href="#sec-7-project-a-potential-energy-curve-and-its-levels">7.13 Project: A Potential Energy Curve and Its Levels</a>
+    </nav>
+  </div>
+</aside>
+
+  <article class="content">
+    <header class="chapter-hero">
+      <p>Chapter 7</p>
+      <h1>Molecular Structure, Vibration and Rotation</h1>
+    </header>
+    <h2 id="sec-7-introduction"><span class="sec-number">7.1</span>Introduction</h2>
+<p>A molecule is the first genuinely complicated system in this book. An atom has one heavy centre; a molecule has several that can move, and the electrons rearrange as they do.</p>
+<p>The subject is made tractable by one observation: nuclei are thousands of times heavier than electrons and therefore move thousands of times more slowly. The electrons see the nuclei as frozen; the nuclei see only an averaged electronic energy. Making that precise is the Born–Oppenheimer approximation of Sec. <a href="../chapter-07/index.html#sec-7-the-born-oppenheimer-separation">7.3</a>, and it converts one intractable problem into two solvable ones.</p>
+<p>Nothing in this chapter is new quantum mechanics. The electronic problem is the variational method of Chapter 5; molecular vibration is the harmonic oscillator of Chapter 2; molecular rotation is the angular momentum algebra of Chapter 3. That is precisely why those chapters came first.</p>
+<p>To keep notation consistent with Chapters 8–11, we use the following labels throughout:</p>
+<ul><li><p>electronic state: <span class="math-inline">\(a,b\)</span>;</p></li><li><p>vibrational quantum number: <span class="math-inline">\(v\)</span>;</p></li><li><p>rotational quantum number: <span class="math-inline">\(J\)</span> (with projection <span class="math-inline">\(M_J\)</span>);</p></li><li><p>spectroscopic wavenumber: <span class="math-inline">\(\tilde\nu\)</span> in cm<span class="math-inline">\(^{-1}\)</span>.</p></li></ul>
+<p>The chapter has one practical goal: start from molecular structure and end with a level scheme that can be read spectroscopically. The sequence is Hamiltonian <span class="math-inline">\(\to\)</span> Born–Oppenheimer surfaces <span class="math-inline">\(\to\)</span> orbitals and labels <span class="math-inline">\(\to\)</span> vibrational/rotational ladders <span class="math-inline">\(\to\)</span> mode symmetry.</p>
+<h2 id="sec-7-the-molecular-hamiltonian"><span class="sec-number">7.2</span>The Molecular Hamiltonian</h2>
+<p>For a molecule of <span class="math-inline">\(N\)</span> electrons at positions <span class="math-inline">\(\vec r=\{\vec r_i\}\)</span> and <span class="math-inline">\(M\)</span> nuclei of charge <span class="math-inline">\(Z_A\)</span> and mass <span class="math-inline">\(M_A\)</span> at <span class="math-inline">\(\vec R=\{\vec R_A\}\)</span>, the Hamiltonian in atomic units is</p>
+<div class="math-block" id="eq-eq-mol-full-h">\begin{equation}
+	\label{eq:MOL-full-H}
+	\boxed{\;
+		\hat H=\hat K_N+\hat V_{NN}+\hat H_e(\vec r;\vec R)\;}
+\end{equation}</div>
+<p>with</p>
+<div class="math-block" id="eq-eq-mol-h-parts">\begin{equation}
+	\label{eq:MOL-H-parts}
+	\begin{aligned}
+		\hat K_N&amp;=-\sum_A\frac{1}{2M_A}\nabla_A^{2}
+		&amp;&amp;\text{nuclear kinetic energy},\\
+		\hat V_{NN}&amp;=\sum_{A&lt;B}\frac{Z_AZ_B}{|\vec R_A-\vec R_B|}
+		&amp;&amp;\text{nucleus--nucleus repulsion},\\
+		\hat H_e&amp;=-\sum_i\frac{1}{2}\nabla_i^{2}
+		-\sum_{i,A}\frac{Z_A}{|\vec r_i-\vec R_A|}
+		+\sum_{i&lt;j}\frac{1}{|\vec r_i-\vec r_j|}
+		&amp;&amp;\text{electronic Hamiltonian}.
+	\end{aligned}
+\end{equation}</div>
+<p>The notation <span class="math-inline">\(\hat H_e(\vec r;\vec R)\)</span> means that the nuclear positions enter as <em>parameters</em>: move the nuclei and the electrons feel a different potential, but <span class="math-inline">\(\vec R\)</span> carries no derivative in <span class="math-inline">\(\hat H_e\)</span>.</p>
+<p>The small parameter is the mass ratio. A proton is <span class="math-inline">\(1836\)</span> times an electron, a carbon nucleus <span class="math-inline">\(22000\)</span> times, so <span class="math-inline">\(\hat K_N\)</span> is smaller than the electronic kinetic energy by roughly that factor. This suggests solving the electrons first and letting the nuclei follow.</p>
+<h2 id="sec-7-the-born-oppenheimer-separation"><span class="sec-number">7.3</span>The Born–Oppenheimer Separation</h2>
+<p><strong>Step one: fix the nuclei.</strong> For each geometry <span class="math-inline">\(\vec R\)</span>, solve the electronic problem</p>
+<div class="math-block" id="eq-eq-mol-electronic">\begin{equation}
+	\label{eq:MOL-electronic}
+	\hat H_e(\vec R)\ket{\psi_i(\vec R)}
+	=\mathcal{E}_i(\vec R)\ket{\psi_i(\vec R)}.
+\end{equation}</div>
+<p>Its coordinate representation is <span class="math-inline">\(\psi_i(\vec r;\vec R)=\braket{\vec r}{\psi_i(\vec R)}\)</span>. The eigenvalue is a <em>function of the geometry</em>, and the eigenfunctions at each <span class="math-inline">\(\vec R\)</span> form a complete orthonormal set in the electronic coordinates.</p>
+<section class="callout definition" id="definition-def-mol-pes"><header>Definition 7.3.1 - Potential energy surface</header><p> The <em>potential energy surface</em> of electronic state <span class="math-inline">\(i\)</span> is</p>
+<div class="math-block" id="eq-eq-mol-pes">\begin{equation}
+		\label{eq:MOL-PES}
+		V_i(\vec R)=\mathcal{E}_i(\vec R)+V_{NN}(\vec R),
+	\end{equation}</div>
+<p>the electronic energy plus the nuclear repulsion, as a function of nuclear geometry. For a diatomic, with one coordinate <span class="math-inline">\(R\)</span>, it is a <em>potential energy curve</em>.</p></section>
+<p><strong>Step two: expand and project.</strong> Write the exact total state in the electronic basis,</p>
+<div class="math-block" id="eq-eq-mol-exact-expansion">\begin{equation}
+	\label{eq:MOL-exact-expansion}
+	\ket{\Psi}=\sum_i\ket{\psi_i(\vec R)}\ket{\chi_i},
+\end{equation}</div>
+<p>which is exact because <span class="math-inline">\(\{\ket{\psi_i(\vec R)}\}\)</span> is complete at each <span class="math-inline">\(\vec R\)</span>. In coordinate space this is</p>
+<div class="math-block" id="eq-eq-mol-exact-expansion-coordinate">\begin{equation}
+	\label{eq:MOL-exact-expansion-coordinate}
+	\Psi(\vec r,\vec R)=\sum_i\psi_i(\vec r;\vec R)\,\chi_i(\vec R),
+	\qquad
+	\chi_i(\vec R)=\braket{\vec R}{\chi_i}.
+\end{equation}</div>
+<p>Now act with <span class="math-inline">\(\hat H\)</span> and see what the nuclear kinetic energy does.</p>
+<p>By the product rule, for each nucleus,</p>
+<div class="math-block" id="eq-eq-mol-kn-action">\begin{equation}
+	\label{eq:MOL-KN-action}
+	\nabla_A^{2}\bigl(\psi_i\chi_i\bigr)
+	=\psi_i\nabla_A^{2}\chi_i
+	+2\bigl(\nabla_A\psi_i\bigr)\!\cdot\!\bigl(\nabla_A\chi_i\bigr)
+	+\chi_i\nabla_A^{2}\psi_i .
+\end{equation}</div>
+<p>The first term is what we want. The second and third involve derivatives of the <em>electronic</em> wave function with respect to nuclear position — they measure how much the electronic state changes as the nuclei move.</p>
+<p>Projecting <span class="math-inline">\(\hat H\ket{\Psi}=E\ket{\Psi}\)</span> onto <span class="math-inline">\(\bra{\psi_j(\vec R)}\)</span> and using Eqs. <a href="../chapter-07/index.html#eq-eq-mol-electronic">(7.3)</a> and <a href="../chapter-07/index.html#eq-eq-mol-kn-action">(7.7)</a>,</p>
+<div class="math-block" id="eq-eq-mol-coupled-nuclear">\begin{equation}
+	\label{eq:MOL-coupled-nuclear}
+	\bigl[\hat K_N+V_j(\vec R)\bigr]\chi_j
+	+\sum_i\hat\Lambda_{ji}\chi_i=E\,\chi_j ,
+\end{equation}</div>
+<p>where the <em>non-adiabatic coupling</em> operator collects the unwanted terms:</p>
+<div class="math-block" id="eq-eq-mol-nonadiabatic">\begin{equation}
+	\label{eq:MOL-nonadiabatic}
+	\hat\Lambda_{ji}=-\sum_A\frac{1}{2M_A}
+	\left[2\bra{\psi_j}\nabla_A\ket{\psi_i}\!\cdot\!\nabla_A
+	+\bra{\psi_j}\nabla_A^{2}\ket{\psi_i}\right],
+\end{equation}</div>
+<p>the brackets denoting integration over electronic coordinates only.</p>
+<section class="callout definition" id="definition-def-mol-bo"><header>Definition 7.3.2 - Born–Oppenheimer approximation</header><p> The <em>Born–Oppenheimer approximation</em> sets <span class="math-inline">\(\hat\Lambda_{ji}=0\)</span>, decoupling the electronic states. The nuclei then move on a single surface,</p>
+<div class="math-block" id="eq-eq-mol-nuclear">\begin{equation}
+		\label{eq:MOL-nuclear}
+		\boxed{\;
+			\bigl[\hat K_N+V_i(\vec R)\bigr]\chi_{i,\nu_i}(\vec R)
+			=E_{i,\nu_i}\,\chi_{i,\nu_i}(\vec R)\;}
+	\end{equation}</div>
+<p>and the total state is the single product</p>
+<div class="math-block" id="eq-eq-mol-product">\begin{equation}
+		\label{eq:MOL-product}
+		\ket{\Psi_{i,\nu_i}}\simeq
+		\ket{\psi_i(\vec R)}\ket{\chi_{i,\nu_i}}.
+	\end{equation}</div>
+<p>In coordinate representation, <span class="math-inline">\(\Psi_{i,\nu_i}(\vec r,\vec R)\simeq
+\psi_i(\vec r;\vec R)\chi_{i,\nu_i}(\vec R)\)</span>.</p></section>
+<section class="callout remark" id="remark-rem-mol-bo-validity"><header>Remark 7.3.1 - Why it works, and when it fails</header><p> Equation <a href="../chapter-07/index.html#eq-eq-mol-nonadiabatic">(7.9)</a> carries an explicit <span class="math-inline">\(1/M_A\)</span>, which is why the approximation is good: the neglected terms are smaller than those retained by the mass ratio. The matrix elements <span class="math-inline">\(\bra{\psi_j}\nabla_A\ket{\psi_i}\)</span> can be shown to carry a denominator <span class="math-inline">\(\mathcal{E}_i-\mathcal{E}_j\)</span>, so the approximation fails where two surfaces approach each other. There the nuclei can drive a hop between electronic states — the mechanism of photochemistry, and of a molecule falling apart instead of emitting light. We will not need it, but you should know the approximation has a boundary and where it lies.</p></section>
+<p>A molecular state now carries <em>two</em> labels: an electronic one <span class="math-inline">\(i\)</span> and a nuclear one <span class="math-inline">\(\nu_i\)</span>. Energy can be stored in the electrons or in the motion of the nuclei, and the two ladders have very different rungs — the organising fact of molecular spectroscopy (Sec. <a href="../chapter-07/index.html#sec-7-the-three-energy-scales">7.10</a>).</p>
+<h2 id="sec-7-molecular-orbitals-the-lcao-method"><span class="sec-number">7.4</span>Molecular Orbitals: the LCAO Method</h2>
+<p>Solving Eq. <a href="../chapter-07/index.html#eq-eq-mol-electronic">(7.3)</a> in practice uses the independent-electron picture of Chapter 5, with orbitals now spread over the whole molecule. The standard construction builds them from atomic orbitals.</p>
+<p>Consider H<span class="math-inline">\(_2^{+}\)</span>: one electron, two protons a distance <span class="math-inline">\(R\)</span> apart. Take the trial function</p>
+<div class="math-block" id="eq-eq-mol-lcao-trial">\begin{equation}
+	\label{eq:MOL-lcao-trial}
+	\ket{\psi}=c_A\ket{\phi_A}+c_B\ket{\phi_B} ,
+\end{equation}</div>
+<p>with coordinate representation <span class="math-inline">\(\psi(\vec r)=c_A\phi_A(\vec r)+c_B\phi_B(\vec r)\)</span>, where <span class="math-inline">\(\phi_A\)</span> and <span class="math-inline">\(\phi_B\)</span> are hydrogen <span class="math-inline">\(1s\)</span> orbitals centred on the two nuclei. Three integrals appear:</p>
+<div class="math-block" id="eq-eq-mol-integrals">\begin{equation}
+	\label{eq:MOL-integrals}
+	S=\braket{\phi_A}{\phi_B},
+	\qquad
+	H_{AA}=\bra{\phi_A}\hat H_e\ket{\phi_A},
+	\qquad
+	H_{AB}=\bra{\phi_A}\hat H_e\ket{\phi_B},
+\end{equation}</div>
+<p>called the <em>overlap</em>, <em>Coulomb</em> and <em>resonance</em> integrals. By symmetry <span class="math-inline">\(H_{BB}=H_{AA}\)</span>.</p>
+<section class="callout theorem" id="theorem-thm-mol-lcao"><header>Theorem 7.4.1 - LCAO energies for a homonuclear diatomic</header><p> The variational method applied to Eq. <a href="../chapter-07/index.html#eq-eq-mol-lcao-trial">(7.12)</a> gives</p>
+<div class="math-block" id="eq-eq-mol-lcao-energies">\begin{equation}
+		\label{eq:MOL-lcao-energies}
+		\boxed{\;E_{\pm}=\frac{H_{AA}\pm H_{AB}}{1\pm S}\;}
+	\end{equation}</div>
+<p>with normalized orbitals</p>
+<div class="math-block" id="eq-eq-mol-lcao-orbitals">\begin{equation}
+		\label{eq:MOL-lcao-orbitals}
+		\psi_{\pm}=\frac{\phi_A\pm\phi_B}{\sqrt{2(1\pm S)}} .
+	\end{equation}</div>
+<p>Since <span class="math-inline">\(H_{AB}&lt;0\)</span>, the state <span class="math-inline">\(\psi_{+}\)</span> lies lower: it is <em>bonding</em>, and <span class="math-inline">\(\psi_{-}\)</span> is <em>antibonding</em>.</p></section>
+<div class="proof" data-lead="Proof."><p>Minimising <span class="math-inline">\(E=\bra{\psi}\hat H_e\ket{\psi}/\braket{\psi}{\psi}\)</span> with respect to <span class="math-inline">\(c_A\)</span> and <span class="math-inline">\(c_B\)</span> gives the secular equations</p>
+<div class="math-block">\[
+	\begin{aligned}
+		(H_{AA}-E)c_A+(H_{AB}-ES)c_B&amp;=0,\\
+		(H_{AB}-ES)c_A+(H_{AA}-E)c_B&amp;=0 .
+	\end{aligned}
+	\]</div>
+<p>A non-trivial solution requires the determinant to vanish,</p>
+<div class="math-block">\[
+	(H_{AA}-E)^{2}=(H_{AB}-ES)^{2}
+	\qquad\Longrightarrow\qquad
+	H_{AA}-E=\pm(H_{AB}-ES).
+	\]</div>
+<p>Collecting <span class="math-inline">\(E\)</span> on one side,</p>
+<div class="math-block">\[
+	H_{AA}\mp H_{AB}=E(1\mp S)
+	\qquad\Longrightarrow\qquad
+	E=\frac{H_{AA}\mp H_{AB}}{1\mp S},
+	\]</div>
+<p>which is Eq. <a href="../chapter-07/index.html#eq-eq-mol-lcao-energies">(7.14)</a>. Substituting each root back into a secular equation gives <span class="math-inline">\(c_B=\pm c_A\)</span>, and normalizing <span class="math-inline">\(\braket{\psi}{\psi}=c_A^{2}(2\pm2S)=1\)</span> gives Eq. <a href="../chapter-07/index.html#eq-eq-mol-lcao-orbitals">(7.15)</a>.</p></div>
+<section class="callout remark" id="remark-rem-mol-bonding"><header>Remark 7.4.1 - Where the bond comes from</header><p> The bonding combination <span class="math-inline">\(\phi_A+\phi_B\)</span> has no node between the nuclei and piles electron density there, where the electron is attracted to <em>both</em> protons at once and screens their mutual repulsion. The antibonding combination <span class="math-inline">\(\phi_A-\phi_B\)</span> has a node exactly at the midpoint, removing density from precisely the region that would help. A bond exists when the bonding orbital is occupied and the antibonding one is not; occupying both cancels the effect, which is why He<span class="math-inline">\(_2\)</span> does not exist.</p></section>
+<h2 id="sec-7-molecular-orbital-labels"><span class="sec-number">7.5</span>Molecular Orbital Labels</h2>
+<p>In an atom <span class="math-inline">\(\hat L^{2}\)</span> commutes with <span class="math-inline">\(\hat H\)</span> and <span class="math-inline">\(l\)</span> is a good quantum number. In a molecule it is not: the potential is not spherically symmetric, so <span class="math-inline">\([\hat H_e,\hat L^{2}]\neq0\)</span> and <span class="math-inline">\(l\)</span> labels nothing exactly.</p>
+<p>What survives depends on what symmetry remains. For a <em>linear</em> molecule, two things do.</p>
+<p><strong>Rotation about the internuclear axis.</strong> Taking that axis as <span class="math-inline">\(z\)</span>, the Hamiltonian is unchanged by rotation about it, so <span class="math-inline">\([\hat H_e,\hat L_z]=0\)</span> and the projection is conserved. Writing <span class="math-inline">\(\lambda\)</span> for one electron and <span class="math-inline">\(\Lambda=|\sum\lambda|\)</span> for the molecule, the letters are assigned by direct analogy with <span class="math-inline">\(s,p,d\)</span>:</p>
+<div class="centered"><div class="table-wrap"><table><tr><td>
+		<span class="math-inline">\(|\lambda|\)</span> or <span class="math-inline">\(\Lambda\)</span></td><td>0</td><td>1</td><td>2</td><td></td></tr><tr><td>one electron</td><td><span class="math-inline">\(\sigma\)</span></td><td><span class="math-inline">\(\pi\)</span></td><td><span class="math-inline">\(\delta\)</span></td><td></td></tr><tr><td>whole molecule</td><td><span class="math-inline">\(\Sigma\)</span></td><td><span class="math-inline">\(\Pi\)</span></td><td><span class="math-inline">\(\Delta\)</span></td><td></td></tr><tr><td></td></tr></table></div></div>
+<p>A <span class="math-inline">\(\sigma\)</span> orbital is cylindrically symmetric about the axis; a <span class="math-inline">\(\pi\)</span> orbital has one nodal plane containing it. Note that <span class="math-inline">\(\pi\)</span> orbitals come in pairs, <span class="math-inline">\(\lambda=\pm1\)</span>, so a filled <span class="math-inline">\(\pi\)</span> shell holds <em>four</em> electrons.</p>
+<p><strong>Inversion, when there is a centre.</strong> A molecule symmetric about its midpoint — H<span class="math-inline">\(_2\)</span>, CO<span class="math-inline">\(_2\)</span> — is unchanged by inverting every coordinate through that centre, so parity is a good quantum number exactly as in Chapter 3 and orbitals are labelled</p>
+<div class="math-block" id="eq-eq-mol-gu">\begin{equation}
+	\label{eq:MOL-gu}
+	g\ (\textit{gerade}, \text{even}),
+	\qquad
+	u\ (\textit{ungerade}, \text{odd}).
+\end{equation}</div>
+<p>Molecules with no inversion centre, such as CO or HCl, carry no <span class="math-inline">\(g/u\)</span> label at all — its presence tells you the molecule is centrosymmetric.</p>
+<section class="callout remark" id="remark-rem-mol-parity-product"><header>Remark 7.5.1 - Orbital parity versus state parity</header><p> A subscript <span class="math-inline">\(g\)</span> on an <em>orbital</em> says that orbital is even. The parity of the whole electronic <em>state</em> is the <em>product</em> over all occupied orbitals. This distinction is easy to lose and it matters: a state built from one odd orbital and one even orbital is odd overall. We use exactly this product rule in Sec. <a href="../chapter-07/index.html#sec-7-ionization-several-thresholds">7.5.2</a> and again in Chapter 9.</p></section>
+<p>Since the dipole operator is odd (Chapter 3, Eq. <a href="../chapter-03/index.html#eq-eq-am-dipole-odd">(3.37)</a>), Laporte's rule survives intact in centrosymmetric molecules: a one-photon transition must connect <span class="math-inline">\(g\)</span> to <span class="math-inline">\(u\)</span>. This is the most useful selection rule in the remainder of the book.</p>
+<section class="callout definition" id="definition-def-mol-term"><header>Definition 7.5.1 - Term symbol, linear molecule</header><div class="math-block" id="eq-eq-mol-term">\begin{equation}
+		\label{eq:MOL-term}
+		^{2S+1}\Lambda^{\pm}_{g/u}
+	\end{equation}</div>
+<p>with <span class="math-inline">\(S\)</span> the total spin, <span class="math-inline">\(\Lambda\)</span> as a capital Greek letter, the subscript the inversion parity where it exists, and the superscript <span class="math-inline">\(\pm\)</span> — for <span class="math-inline">\(\Sigma\)</span> states only — the behaviour under reflection in a plane containing the axis. A letter in front names the state by energy order: <span class="math-inline">\(X\)</span> for the ground state, then <span class="math-inline">\(A\)</span>, <span class="math-inline">\(B\)</span>, <span class="math-inline">\(C\)</span> for excited states of the same multiplicity.</p></section>
+<p>The leading letter carries no physics: <span class="math-inline">\(X\)</span> means lowest, <span class="math-inline">\(B\)</span> means the third of that multiplicity. It is a name, and it is how every state in the literature is referred to.</p>
+<p>Chapter 5's two shortcuts (Thm. <a href="../chapter-05/index.html#theorem-thm-me-closed-shell">5.9.1</a>) apply unchanged: a closed shell contributes <span class="math-inline">\(S=0\)</span>, <span class="math-inline">\(\Lambda=0\)</span> and even parity, and a single hole behaves like a single electron.</p>
+<h3 id="sec-7-the-ground-state-of-co-2-2"><span class="sec-number">7.5.1</span>The Ground State of CO<span class="math-inline">\(_2\)</span></h3>
+<section class="callout example" id="example-ex-mol-co2"><header>Example 7.5.1 - Term symbol of CO<span class="math-inline">\(_2\)</span></header><p> CO<span class="math-inline">\(_2\)</span> is linear and centrosymmetric, O=C=O with the inversion centre at the carbon. Of its <span class="math-inline">\(22\)</span> electrons, six occupy atomic-like core orbitals and sixteen fill the valence molecular orbitals</p>
+<div class="math-block" id="eq-eq-mol-co2-config">\begin{equation}
+		\label{eq:MOL-co2-config}
+		(3\sigma_g)^{2}\,(2\sigma_u)^{2}\,(4\sigma_g)^{2}\,(3\sigma_u)^{2}\,
+		(1\pi_u)^{4}\,(1\pi_g)^{4}.
+	\end{equation}</div>
+<p>Find the term symbol.</p>
+<p class="solution-head">Solution.</p>
+<p>First check the count: <span class="math-inline">\(2+2+2+2+4+4=16\)</span>. The <span class="math-inline">\(\sigma\)</span> orbitals hold two each and the <span class="math-inline">\(\pi\)</span> orbitals four each, as Sec. <a href="../chapter-07/index.html#sec-7-molecular-orbital-labels">7.5</a> explained — so every orbital listed is completely full.</p>
+<p><em>Spin.</em> Every orbital is doubly or quadruply occupied, so all spins are paired: <span class="math-inline">\(S=0\)</span>, multiplicity <span class="math-inline">\(2S+1=1\)</span>. A singlet.</p>
+<p><em>Axial projection.</em> Each filled <span class="math-inline">\(\sigma\)</span> contributes <span class="math-inline">\(\lambda=0\)</span>; each filled <span class="math-inline">\(\pi\)</span> contributes <span class="math-inline">\(\lambda=+1\)</span> and <span class="math-inline">\(\lambda=-1\)</span> twice over, summing to zero. Hence <span class="math-inline">\(\Lambda=0\)</span>: a <span class="math-inline">\(\Sigma\)</span> state.</p>
+<p><em>Parity.</em> By Remark <a href="../chapter-07/index.html#remark-rem-mol-parity-product">7.5.1</a>, take the product over occupied orbitals. Each orbital appears an even number of times (twice or four times), so each contributes its parity squared, which is <span class="math-inline">\(+1\)</span>. The product is <span class="math-inline">\(g\)</span>.</p>
+<p>Therefore</p>
+<div class="math-block" id="eq-eq-mol-co2-x">\begin{equation}
+		\label{eq:MOL-co2-X}
+		\boxed{\;X^{1}\Sigma_g^{+}\;}
+	\end{equation}</div>
+<p>A closed-shell ground state — the normal situation for a stable molecule, and convenient: singlet, zero axial angular momentum, even parity. Every transition out of it starts from a clean slate.</p></section>
+<h3 id="sec-7-ionization-several-thresholds"><span class="sec-number">7.5.2</span>Ionization: Several Thresholds</h3>
+<p>In an atom one speaks of “the” ionization energy. A molecule has one for <em>each</em> orbital an electron can be removed from, and each leaves the ion in a different electronic state.</p>
+<section class="callout example" id="example-ex-mol-co2-ions"><header>Example 7.5.2 - The ionic states of CO<span class="math-inline">\(_2^{+}\)</span></header><p> Derive the term symbol of the ion produced by removing one electron from each valence orbital in Eq. <a href="../chapter-07/index.html#eq-eq-mol-co2-config">(7.18)</a>.</p>
+<p class="solution-head">Solution.</p>
+<p>By Theorem <a href="../chapter-05/index.html#theorem-thm-me-closed-shell">5.9.1</a>, one hole behaves like one electron. So in every case <span class="math-inline">\(S=\tfrac12\)</span> and the multiplicity is <span class="math-inline">\(2\)</span> — a doublet, always.</p>
+<p>The Greek letter is that of the emptied orbital: a hole in a <span class="math-inline">\(\pi\)</span> orbital gives <span class="math-inline">\(\Lambda=1\)</span> (<span class="math-inline">\(\Pi\)</span>), a hole in a <span class="math-inline">\(\sigma\)</span> orbital gives <span class="math-inline">\(\Lambda=0\)</span> (<span class="math-inline">\(\Sigma\)</span>). The parity is that of the emptied orbital, since the remaining product loses one factor.</p>
+<div class="centered"><div class="table-wrap"><table><tr><td>
+			Orbital emptied</td><td>Ion state</td><td>Threshold (eV)</td><td>Role later</td></tr><tr><td>
+			<span class="math-inline">\(1\pi_g\)</span></td><td><span class="math-inline">\(X^{2}\Pi_g\)</span></td><td>13.78</td><td>the coupled continuum</td></tr><tr><td><span class="math-inline">\(1\pi_u\)</span></td><td><span class="math-inline">\(A^{2}\Pi_u\)</span></td><td><span class="math-inline">\(\approx17.3\)</span></td><td>not used</td></tr><tr><td><span class="math-inline">\(3\sigma_u\)</span></td><td><span class="math-inline">\(B^{2}\Sigma_u^{+}\)</span></td><td>18.08</td><td>the uncoupled continuum</td></tr><tr><td><span class="math-inline">\(4\sigma_g\)</span></td><td><span class="math-inline">\(C^{2}\Sigma_g^{+}\)</span></td><td><span class="math-inline">\(\approx19.4\)</span></td><td>not used</td></tr><tr><td></td></tr></table></div></div>
+<p>The first row: <span class="math-inline">\(1\pi_g\)</span> is the highest occupied orbital, so removing an electron from it costs least, <span class="math-inline">\(13.78\)</span> eV, and the letter is <span class="math-inline">\(X\)</span>. The hole is in a <span class="math-inline">\(\pi_g\)</span> orbital, hence <span class="math-inline">\(^{2}\Pi_g\)</span>.</p></section>
+<p>Two consequences shape Chapters 9 to 11.</p>
+<p><strong>Each threshold opens its own continuum.</strong> Above <span class="math-inline">\(13.78\)</span> eV, CO<span class="math-inline">\(_2\)</span> can exist as <span class="math-inline">\(X^{2}\Pi_g\)</span> plus a free electron of any energy. Above <span class="math-inline">\(18.08\)</span> eV there is a second, independent continuum built on <span class="math-inline">\(B^{2}\Sigma_u^{+}\)</span>. A measurement that records the photoelectron's energy can distinguish them.</p>
+<p><strong>Excited neutral states can lie above a threshold.</strong> Nothing prevents a bound state of the <em>neutral</em> molecule from sitting at <span class="math-inline">\(17.5\)</span> eV, far above the first threshold at <span class="math-inline">\(13.78\)</span> eV. Such a state is bound yet degenerate with a continuum — the autoionization of Chapter 5, which in a molecule is the normal situation rather than an exotic one.</p>
+<h2 id="sec-7-vibration"><span class="sec-number">7.6</span>Vibration</h2>
+<p>Now solve Eq. <a href="../chapter-07/index.html#eq-eq-mol-nuclear">(7.10)</a>. For a diatomic the geometry is one number <span class="math-inline">\(R\)</span>, and <span class="math-inline">\(V(R)\)</span> has a minimum at the equilibrium bond length <span class="math-inline">\(R_e\)</span> — that minimum <em>is</em> the chemical bond.</p>
+<p>Expand about it:</p>
+<div class="math-block" id="eq-eq-mol-taylor">\begin{equation}
+	\label{eq:MOL-taylor}
+	V(R)=V(R_e)
+	+\underbrace{\left.\frac{dV}{dR}\right|_{R_e}}_{=0}(R-R_e)
+	+\frac12\left.\frac{d^{2}V}{dR^{2}}\right|_{R_e}(R-R_e)^{2}
+	+\dots
+\end{equation}</div>
+<p>The linear term vanishes because <span class="math-inline">\(R_e\)</span> is a minimum — which is exactly why a harmonic approximation is the natural first step at <em>any</em> stable geometry. Defining the force constant <span class="math-inline">\(k=d^{2}V/dR^{2}|_{R_e}\)</span>, the nuclear equation becomes Chapter 2's harmonic oscillator with reduced mass <span class="math-inline">\(\mu=M_AM_B/(M_A+M_B)\)</span>, so Theorem <a href="../chapter-02/index.html#theorem-thm-ms-ho-spectrum">2.7.2</a> gives</p>
+<div class="math-block" id="eq-eq-mol-vib-levels">\begin{equation}
+	\label{eq:MOL-vib-levels}
+	\boxed{\;E_v=\hbar\omega_e\left(v+\tfrac12\right),
+		\qquad
+		\omega_e=\sqrt{\frac{k}{\mu}},
+		\qquad v=0,1,2,\dots\;}
+\end{equation}</div>
+<h3 id="sec-7-spectroscopic-constants-and-units"><span class="sec-number">7.6.1</span>Spectroscopic Constants and Units</h3>
+<p>Experiments usually report frequencies in wavenumbers rather than energies. Write</p>
+<div class="math-block" id="eq-eq-mol-vib-term-wavenumber">\begin{equation}
+	\label{eq:MOL-vib-term-wavenumber}
+	\tilde G(v)
+	\equiv\frac{E_v-E_0}{hc}
+	\simeq
+	\omega_e\left(v+\tfrac12\right)
+	-\omega_ex_e\left(v+\tfrac12\right)^2+\cdots,
+\end{equation}</div>
+<p>where <span class="math-inline">\(\omega_e\)</span> and <span class="math-inline">\(\omega_ex_e\)</span> are now in cm<span class="math-inline">\(^{-1}\)</span>.</p>
+<p>This compact form is useful because spectroscopy gives line positions directly in cm<span class="math-inline">\(^{-1}\)</span>. The first term sets the fundamental spacing; the second sets how fast that spacing shrinks with <span class="math-inline">\(v\)</span>.</p>
+<h3 id="sec-7-anharmonicity"><span class="sec-number">7.6.2</span>Anharmonicity</h3>
+<p>Equal spacing is an artefact of truncating Eq. <a href="../chapter-07/index.html#eq-eq-mol-taylor">(7.20)</a> at second order. A real curve flattens towards the dissociation limit, so the true levels crowd together as <span class="math-inline">\(v\)</span> grows and eventually stop.</p>
+<section class="callout definition" id="definition-def-mol-morse"><header>Definition 7.6.1 - Morse potential</header><div class="math-block" id="eq-eq-mol-morse">\begin{equation}
+		\label{eq:MOL-morse}
+		V(R)=D_e\left[1-e^{-a(R-R_e)}\right]^{2},
+	\end{equation}</div>
+<p>with <span class="math-inline">\(D_e\)</span> the well depth measured from the minimum and <span class="math-inline">\(a\)</span> setting the width.</p></section>
+<p>The Morse potential is one of the few anharmonic curves solvable in closed form, and its levels are</p>
+<div class="math-block" id="eq-eq-mol-morse-levels">\begin{equation}
+	\label{eq:MOL-morse-levels}
+	E_v=\hbar\omega_e\left(v+\tfrac12\right)
+	-\hbar\omega_ex_e\left(v+\tfrac12\right)^{2},
+	\qquad
+	\omega_e=a\sqrt{\frac{2D_e}{\mu}},
+	\qquad
+	x_e=\frac{\hbar\omega_e}{4D_e},
+\end{equation}</div>
+<p>with <span class="math-inline">\(x_e\)</span> the <em>anharmonicity constant</em>. The spacing <span class="math-inline">\(E_{v+1}-E_v=\hbar\omega_e[1-2x_e(v+1)]\)</span> shrinks linearly with <span class="math-inline">\(v\)</span> and reaches zero at <span class="math-inline">\(v_{\max}\simeq1/2x_e\)</span>, the last bound level.</p>
+<section class="callout example" id="example-ex-mol-h2-vibration"><header>Example 7.6.1 - Vibrational parameters of H<span class="math-inline">\(_2\)</span></header><p> For H<span class="math-inline">\(_2\)</span>, <span class="math-inline">\(D_e=4.75\)</span> eV, <span class="math-inline">\(R_e=0.741\)</span> Å and <span class="math-inline">\(a=1.94\)</span> Å<span class="math-inline">\(^{-1}\)</span>. Find <span class="math-inline">\(k\)</span>, <span class="math-inline">\(\hbar\omega_e\)</span> and <span class="math-inline">\(x_e\)</span>, and estimate how many bound vibrational levels there are.</p>
+<p class="solution-head">Solution.</p>
+<p>Expanding Eq. <a href="../chapter-07/index.html#eq-eq-mol-morse">(7.23)</a> about <span class="math-inline">\(R_e\)</span> gives <span class="math-inline">\(V\simeq D_ea^{2}(R-R_e)^{2}\)</span>, so <span class="math-inline">\(k=2D_ea^{2}\)</span>:</p>
+<div class="math-block">\[
+	k=2(4.75~\mathrm{eV})(1.94~\text{\AA}^{-1})^{2}
+	=35.8~\mathrm{eV/\text{\AA}^{2}}=573~\mathrm{N/m}.
+	\]</div>
+<p>With <span class="math-inline">\(\mu=m_p/2=8.36\times10^{-28}\)</span> kg,</p>
+<div class="math-block">\[
+	\omega_e=\sqrt{\frac{573}{8.36\times10^{-28}}}=8.28\times10^{14}~\mathrm{s^{-1}},
+	\qquad
+	\hbar\omega_e=0.545~\mathrm{eV},
+	\]</div>
+<p>in good agreement with the measured <span class="math-inline">\(4401\)</span> cm<span class="math-inline">\(^{-1}=0.546\)</span> eV.</p>
+<p>The anharmonicity constant is</p>
+<div class="math-block">\[
+	x_e=\frac{\hbar\omega_e}{4D_e}=\frac{0.545}{4(4.75)}=0.0287 ,
+	\]</div>
+<p>so the last level is near <span class="math-inline">\(v_{\max}\simeq1/(2\times0.0287)\approx17\)</span>. H<span class="math-inline">\(_2\)</span> has of order eighteen bound vibrational states — a finite ladder, unlike the harmonic oscillator's infinite one, and the difference is precisely that a real bond can break.</p></section>
+<h2 id="sec-7-rotation"><span class="sec-number">7.7</span>Rotation</h2>
+<p>Hold the bond length fixed at <span class="math-inline">\(R_e\)</span> and let the molecule tumble. The Hamiltonian is pure rotational kinetic energy,</p>
+<div class="math-block" id="eq-eq-mol-rotor-h">\begin{equation}
+	\label{eq:MOL-rotor-H}
+	\hat H_{\mathrm{rot}}=\frac{\hat J^{2}}{2I},
+	\qquad
+	I=\mu R_e^{2},
+\end{equation}</div>
+<p>with <span class="math-inline">\(I\)</span> the moment of inertia. But <span class="math-inline">\(\hat J^{2}\)</span> is the operator whose spectrum Chapter 3 obtained from commutators alone (Thm. <a href="../chapter-03/index.html#theorem-thm-am-spectrum">3.3.1</a>), so the answer requires no new work:</p>
+<section class="callout theorem" id="theorem-thm-mol-rotor"><header>Theorem 7.7.1 - Rigid rotor spectrum</header><div class="math-block" id="eq-eq-mol-rot-levels">\begin{equation}
+		\label{eq:MOL-rot-levels}
+		\boxed{\;E_J=\frac{\hbar^{2}}{2I}J(J+1)=B\,J(J+1),
+			\qquad
+			B\equiv\frac{\hbar^{2}}{2I},
+			\qquad J=0,1,2,\dots\;}
+	\end{equation}</div>
+<p>each level <span class="math-inline">\((2J+1)\)</span>-fold degenerate in the projection <span class="math-inline">\(M_J\)</span>.</p></section>
+<p><span class="math-inline">\(B\)</span> is the <em>rotational constant</em>. Unlike the vibrational ladder, the rotational one is not equally spaced: successive gaps are</p>
+<div class="math-block" id="eq-eq-mol-rot-spacing">\begin{equation}
+	\label{eq:MOL-rot-spacing}
+	E_{J+1}-E_J=2B(J+1),
+\end{equation}</div>
+<p>growing linearly with <span class="math-inline">\(J\)</span>. A rotational spectrum is therefore a sequence of lines evenly spaced by <span class="math-inline">\(2B\)</span> — one of the most recognisable patterns in spectroscopy, and the subject of Chapter 8.</p>
+<h3 id="sec-7-vibration-rotation-coupling"><span class="sec-number">7.7.1</span>Vibration–Rotation Coupling</h3>
+<p>The rigid-rotor constant is not exactly constant across vibrational levels: when <span class="math-inline">\(v\)</span> increases, the bond length increases slightly, so <span class="math-inline">\(I\)</span> increases and <span class="math-inline">\(B\)</span> decreases. A standard first correction is</p>
+<div class="math-block" id="eq-eq-mol-bv">\begin{equation}
+	\label{eq:MOL-Bv}
+	B_v=B_e-\alpha_e\left(v+\tfrac12\right),
+\end{equation}</div>
+<p>with <span class="math-inline">\(\alpha_e&gt;0\)</span> the vibration–rotation coupling constant.</p>
+<p>This single equation explains a common experimental feature: rovibrational lines are not perfectly symmetric around the band origin, because the upper and lower vibrational states have slightly different rotational constants.</p>
+<section class="callout example" id="example-ex-mol-bond-length"><header>Example 7.7.1 - Bond length from a rotational constant</header><p> The CO molecule has <span class="math-inline">\(B=1.931\)</span> cm<span class="math-inline">\(^{-1}\)</span> and reduced mass <span class="math-inline">\(\mu=1.139\times10^{-26}\)</span> kg. Find its bond length.</p>
+<p class="solution-head">Solution.</p>
+<p>Convert <span class="math-inline">\(B\)</span> to joules using <span class="math-inline">\(1\)</span> cm<span class="math-inline">\(^{-1}=1.986\times10^{-23}\)</span> J:</p>
+<div class="math-block">\[
+	B=1.931\times1.986\times10^{-23}=3.835\times10^{-23}~\mathrm{J}.
+	\]</div>
+<p>From Eq. <a href="../chapter-07/index.html#eq-eq-mol-rot-levels">(7.26)</a>,</p>
+<div class="math-block">\[
+	I=\frac{\hbar^{2}}{2B}
+	=\frac{(1.055\times10^{-34})^{2}}{2(3.835\times10^{-23})}
+	=1.451\times10^{-46}~\mathrm{kg\,m^{2}} .
+	\]</div>
+<p>Then from <span class="math-inline">\(I=\mu R_e^{2}\)</span>,</p>
+<div class="math-block">\[
+	R_e=\sqrt{\frac{1.451\times10^{-46}}{1.139\times10^{-26}}}
+	=1.129\times10^{-10}~\mathrm{m}=1.129~\text{\AA},
+	\]</div>
+<p>the accepted value. One measured line spacing gives the geometry of the molecule — among the cleanest inversions in physics.</p></section>
+<section class="callout remark" id="remark-rem-mol-distortion"><header>Remark 7.7.1 - Centrifugal distortion</header><p> A real bond stretches as the molecule spins faster, increasing <span class="math-inline">\(I\)</span> and lowering the levels below Eq. <a href="../chapter-07/index.html#eq-eq-mol-rot-levels">(7.26)</a>. The standard correction adds a term <span class="math-inline">\(-DJ^{2}(J+1)^{2}\)</span> with <span class="math-inline">\(D\ll B\)</span>. Note the structural similarity to the centrifugal barrier of Chapter 3: in both cases rotation pushes outward against a binding force, and the effect is the <span class="math-inline">\(J(J+1)/R^{2}\)</span> term added to the potential.</p></section>
+<h2 id="sec-7-polyatomic-molecules-normal-modes"><span class="sec-number">7.8</span>Polyatomic Molecules: Normal Modes</h2>
+<p>A molecule of <span class="math-inline">\(N\)</span> atoms has <span class="math-inline">\(3N\)</span> coordinates. Three describe translation of the whole molecule and two (linear) or three (nonlinear) describe rotation. What remains is vibration:</p>
+<div class="math-block" id="eq-eq-mol-mode-count">\begin{equation}
+	\label{eq:MOL-mode-count}
+	\text{vibrational modes}=
+	\begin{cases}
+		3N-5, &amp; \text{linear},\\
+		3N-6, &amp; \text{nonlinear}.
+	\end{cases}
+\end{equation}</div>
+<p>Expanding the potential to second order in all coordinates gives a quadratic form, and diagonalising it produces independent oscillators in collective coordinates — the <em>normal modes</em>, in which every atom moves in phase at one frequency. This is the eigenvalue problem of linear algebra, and it is set as the project.</p>
+<p>CO<span class="math-inline">\(_2\)</span> is linear with <span class="math-inline">\(N=3\)</span>, giving <span class="math-inline">\(3(3)-5=4\)</span> modes:</p>
+<div class="centered"><div class="table-wrap"><table><tr><td>
+		Mode</td><td>Motion</td><td>Wavenumber (cm<span class="math-inline">\(^{-1}\)</span>)</td><td>Degeneracy</td></tr><tr><td>
+		<span class="math-inline">\(\nu_1\)</span></td><td>symmetric stretch</td><td>1333</td><td>1</td></tr><tr><td><span class="math-inline">\(\nu_2\)</span></td><td>bend</td><td>667</td><td>2</td></tr><tr><td><span class="math-inline">\(\nu_3\)</span></td><td>antisymmetric stretch</td><td>2349</td><td>1</td></tr><tr><td></td></tr></table></div></div>
+<p>The bend counts twice — it can occur in either of two perpendicular planes — which is how three entries make four modes.</p>
+<h2 id="sec-7-symmetry-workflow-for-molecular-spectroscopy"><span class="sec-number">7.9</span>Symmetry Workflow for Molecular Spectroscopy</h2>
+<p>For learning spectroscopy, symmetry is most useful when used as a procedure. For a linear molecule:</p>
+<ol><li><p>Assign geometry and symmetry (for CO<span class="math-inline">\(_2\)</span>: linear, centrosymmetric).</p></li><li><p>Label each normal mode by its symmetry species.</p></li><li><p>Apply activity tests: IR active if the mode transforms like a dipole component; Raman active if it transforms like a quadratic form.</p></li></ol>
+<p>For CO<span class="math-inline">\(_2\)</span> in <span class="math-inline">\(D_{\infty h}\)</span>, the mode labels are:</p>
+<div class="centered"><div class="table-wrap"><table><tr><td>
+		Mode</td><td>Symmetry</td><td>Infrared</td><td>Raman</td></tr><tr><td>
+		<span class="math-inline">\(\nu_1\)</span> symmetric stretch</td><td><span class="math-inline">\(\Sigma_g^{+}\)</span></td><td>inactive</td><td>active</td></tr><tr><td><span class="math-inline">\(\nu_2\)</span> bend (doubly degenerate)</td><td><span class="math-inline">\(\Pi_u\)</span></td><td>active</td><td>inactive</td></tr><tr><td><span class="math-inline">\(\nu_3\)</span> antisymmetric stretch</td><td><span class="math-inline">\(\Sigma_u^{+}\)</span></td><td>active</td><td>inactive</td></tr><tr><td></td></tr></table></div></div>
+<p>This pattern is the practical content of the mutual-exclusion rule for centrosymmetric molecules, developed in detail in Chapter 8.</p>
+<h2 id="sec-7-the-three-energy-scales"><span class="sec-number">7.10</span>The Three Energy Scales</h2>
+<p>The most useful thing to carry out of this chapter is the hierarchy of the three ladders. Order-of-magnitude, for a small molecule:</p>
+<div class="centered"><div class="table-wrap"><table><tr><td>
+		Motion</td><td>Spacing</td><td>Photon</td><td>Timescale</td></tr><tr><td>
+		Electronic</td><td><span class="math-inline">\(1\)</span>–<span class="math-inline">\(20\)</span> eV</td><td>visible to XUV</td><td>attoseconds to fs</td></tr><tr><td>Vibrational</td><td><span class="math-inline">\(0.1\)</span> eV</td><td>infrared</td><td><span class="math-inline">\(10\)</span>–<span class="math-inline">\(100\)</span> fs</td></tr><tr><td>Rotational</td><td><span class="math-inline">\(10^{-3}\)</span> eV</td><td>microwave</td><td>picoseconds</td></tr><tr><td></td></tr></table></div></div>
+<p>The separations are factors of roughly a hundred, and they have two consequences. They make spectroscopy possible: each motion can be excited and observed nearly independently. And they justify Born–Oppenheimer itself — the electrons respond a hundred times faster than the nuclei, so they adjust essentially instantaneously.</p>
+<p>The timescale column matters in its own right. A pulse of a few femtoseconds — the XUV pulse of Chapter 6 — is <em>fast compared with nuclear motion</em>. During such a pulse the molecule has no time to change shape. That observation licenses the fixed-nuclei treatment used in Chapter 11, and it is why the vibrational structure developed here can be set aside there.</p>
+<h2 id="sec-7-summary"><span class="sec-number">7.11</span>Summary</h2>
+<ul><li><p>The molecular Hamiltonian is <span class="math-inline">\(\hat K_N+\hat V_{NN}+\hat H_e(\vec r;\vec R)\)</span>, with the nuclear positions entering <span class="math-inline">\(\hat H_e\)</span> as parameters.</p></li><li><p>Expanding in the electronic basis and projecting gives Eq. <a href="../chapter-07/index.html#eq-eq-mol-coupled-nuclear">(7.8)</a>; the Born–Oppenheimer approximation drops the non-adiabatic couplings Eq. <a href="../chapter-07/index.html#eq-eq-mol-nonadiabatic">(7.9)</a>, which carry an explicit <span class="math-inline">\(1/M_A\)</span>. The nuclei then move on a single potential energy surface.</p></li><li><p>LCAO for a homonuclear diatomic gives <span class="math-inline">\(E_{\pm}=(H_{AA}\pm H_{AB})/(1\pm S)\)</span> (Thm. <a href="../chapter-07/index.html#theorem-thm-mol-lcao">7.4.1</a>); the bonding combination has no node between the nuclei.</p></li><li><p><span class="math-inline">\(l\)</span> is not a good quantum number in a molecule. Linear molecules retain <span class="math-inline">\(\Lambda\)</span> (<span class="math-inline">\(\sigma,\pi,\delta\)</span> / <span class="math-inline">\(\Sigma,\Pi,\Delta\)</span>) and, with an inversion centre, parity <span class="math-inline">\(g/u\)</span>. A <span class="math-inline">\(\pi\)</span> shell holds four electrons. State parity is the <em>product</em> over occupied orbitals.</p></li><li><p>Term symbols are <span class="math-inline">\(^{2S+1}\Lambda^{\pm}_{g/u}\)</span> with a leading letter <span class="math-inline">\(X,A,B,C\)</span>. CO<span class="math-inline">\(_2\)</span> is <span class="math-inline">\(X^{1}\Sigma_g^{+}\)</span>; ionizing each valence orbital gives <span class="math-inline">\(X^{2}\Pi_g\)</span> (13.78 eV), <span class="math-inline">\(A^{2}\Pi_u\)</span>, <span class="math-inline">\(B^{2}\Sigma_u^{+}\)</span> (18.08 eV) and <span class="math-inline">\(C^{2}\Sigma_g^{+}\)</span>, each opening its own continuum.</p></li><li><p>Vibration is Chapter 2's oscillator, <span class="math-inline">\(E_v=\hbar\omega_e(v+\tfrac12)\)</span> with <span class="math-inline">\(\omega_e=\sqrt{k/\mu}\)</span>; anharmonicity (Morse) crowds the levels and makes the ladder finite. In spectroscopic units this becomes <span class="math-inline">\(\tilde G(v)=\omega_e(v+\tfrac12)-\omega_ex_e(v+\tfrac12)^2+\cdots\)</span>.</p></li><li><p>Rotation is Chapter 3's <span class="math-inline">\(\hat J^{2}\)</span>, <span class="math-inline">\(E_J=BJ(J+1)\)</span> with <span class="math-inline">\(B=\hbar^{2}/2I\)</span>, lines spaced by <span class="math-inline">\(2B\)</span>, giving the bond length directly. Vibration–rotation coupling shifts this to <span class="math-inline">\(B_v=B_e-\alpha_e(v+\tfrac12)\)</span>.</p></li><li><p>For spectroscopy, a symmetry workflow is essential: assign molecular symmetry, label each mode, then apply IR/Raman activity criteria. For CO<span class="math-inline">\(_2\)</span>, <span class="math-inline">\(\nu_1\)</span> is Raman-active and IR-inactive, while <span class="math-inline">\(\nu_2\)</span> and <span class="math-inline">\(\nu_3\)</span> are IR-active.</p></li><li><p>Electronic <span class="math-inline">\(\gg\)</span> vibrational <span class="math-inline">\(\gg\)</span> rotational by factors of about a hundred. A few-femtosecond pulse is fast compared with nuclear motion, which licenses fixed nuclei in Chapter 11.</p></li></ul>
+<h2 id="sec-7-exercises"><span class="sec-number">7.12</span>Exercises</h2>
+<ol><li><p><strong>The Born–Oppenheimer terms.</strong> Carry out Eq. <a href="../chapter-07/index.html#eq-eq-mol-kn-action">(7.7)</a> yourself and identify which term survives in Def. <a href="../chapter-07/index.html#definition-def-mol-bo">7.3.2</a>. Explain in two sentences why the neglected terms carry <span class="math-inline">\(1/M_A\)</span> and why that makes the approximation good.</p></li><li><p><strong>The LCAO secular problem.</strong> Reproduce the proof of Theorem <a href="../chapter-07/index.html#theorem-thm-mol-lcao">7.4.1</a>. Then, taking <span class="math-inline">\(H_{AA}=-13.6\)</span> eV, <span class="math-inline">\(H_{AB}=-12.0\)</span> eV and <span class="math-inline">\(S=0.5\)</span>, compute <span class="math-inline">\(E_{+}\)</span> and <span class="math-inline">\(E_{-}\)</span> and verify that the antibonding level is destabilised <em>more</em> than the bonding level is stabilised. Explain what that implies for He<span class="math-inline">\(_2\)</span>.</p></li><li><p><strong>Term symbols.</strong> Derive the term symbol of the ion formed by removing one electron from each of <span class="math-inline">\(1\pi_u\)</span>, <span class="math-inline">\(3\sigma_u\)</span> and <span class="math-inline">\(4\sigma_g\)</span> in Eq. <a href="../chapter-07/index.html#eq-eq-mol-co2-config">(7.18)</a>, giving the reasoning for multiplicity, Greek letter and <span class="math-inline">\(g/u\)</span> subscript separately. Check against Example <a href="../chapter-07/index.html#example-ex-mol-co2-ions">7.5.2</a>.</p></li><li><p><strong>Anharmonicity.</strong></p>
+<ol><li><p>Expand Eq. <a href="../chapter-07/index.html#eq-eq-mol-morse">(7.23)</a> about <span class="math-inline">\(R_e\)</span> and confirm <span class="math-inline">\(k=2D_ea^{2}\)</span>.</p></li><li><p>Using Eq. <a href="../chapter-07/index.html#eq-eq-mol-morse-levels">(7.24)</a>, find the spacing <span class="math-inline">\(E_{v+1}-E_v\)</span> and hence <span class="math-inline">\(v_{\max}\)</span>.</p></li><li><p>For HCl, <span class="math-inline">\(\hbar\omega_e=0.371\)</span> eV and <span class="math-inline">\(x_e=0.0174\)</span>. How many bound vibrational levels does it have, and what is the spacing between <span class="math-inline">\(v=0\)</span> and <span class="math-inline">\(v=1\)</span> compared with that between <span class="math-inline">\(v=10\)</span> and <span class="math-inline">\(v=11\)</span>?</p></li></ol></li><li><p><strong>Rotation.</strong> Repeat Example <a href="../chapter-07/index.html#example-ex-mol-bond-length">7.7.1</a> for HCl, which has <span class="math-inline">\(B=10.59\)</span> cm<span class="math-inline">\(^{-1}\)</span> and <span class="math-inline">\(\mu=1.627\times10^{-27}\)</span> kg. Then compute the wavenumber of the <span class="math-inline">\(J=0\to1\)</span> and <span class="math-inline">\(J=4\to5\)</span> transitions and confirm they are spaced by <span class="math-inline">\(2B\)</span>.</p></li><li><p><strong>Counting modes.</strong> Use Eq. <a href="../chapter-07/index.html#eq-eq-mol-mode-count">(7.29)</a> for CO<span class="math-inline">\(_2\)</span>, H<span class="math-inline">\(_2\)</span>O, NH<span class="math-inline">\(_3\)</span> (nonlinear, <span class="math-inline">\(N=4\)</span>) and benzene (nonlinear, <span class="math-inline">\(N=12\)</span>). For CO<span class="math-inline">\(_2\)</span>, explain why the count is four when the table lists three entries.</p></li><li><p><strong>Vibration–rotation coupling.</strong> A diatomic has <span class="math-inline">\(B_e=1.95\)</span> cm<span class="math-inline">\(^{-1}\)</span> and <span class="math-inline">\(\alpha_e=1.8\times10^{-2}\)</span> cm<span class="math-inline">\(^{-1}\)</span>.</p>
+<ol><li><p>Compute <span class="math-inline">\(B_0\)</span> and <span class="math-inline">\(B_1\)</span> from Eq. <a href="../chapter-07/index.html#eq-eq-mol-bv">(7.28)</a>.</p></li><li><p>Estimate how much the <span class="math-inline">\(J=5\to6\)</span> spacing changes between <span class="math-inline">\(v=0\)</span> and <span class="math-inline">\(v=1\)</span>.</p></li><li><p>Explain physically why the sign of the change is what it is.</p></li></ol></li><li><p><strong>Mode symmetry and activity in CO<span class="math-inline">\(_2\)</span>.</strong> Using the labels in Sec. <a href="../chapter-07/index.html#sec-7-symmetry-workflow-for-molecular-spectroscopy">7.9</a>, state for each mode whether it is IR-active, Raman-active, both, or neither, and give a one-line symmetry reason.</p></li></ol>
+<h2 id="sec-7-project-a-potential-energy-curve-and-its-levels"><span class="sec-number">7.13</span>Project: A Potential Energy Curve and Its Levels</h2>
+<p><strong>The problem.</strong> Take a realistic potential energy curve, find its vibrational and rotational levels numerically, and confront the harmonic and rigid-rotor approximations with what the real curve gives.</p>
+<p>Use the Morse potential of Def. <a href="../chapter-07/index.html#definition-def-mol-morse">7.6.1</a> with the H<span class="math-inline">\(_2\)</span> parameters of Example <a href="../chapter-07/index.html#example-ex-mol-h2-vibration">7.6.1</a>: <span class="math-inline">\(D_e=4.75\)</span> eV, <span class="math-inline">\(R_e=0.741\)</span> Å, <span class="math-inline">\(a=1.94\)</span> Å<span class="math-inline">\(^{-1}\)</span>, <span class="math-inline">\(\mu=m_p/2\)</span>. Convert everything to atomic units before starting.</p>
+<ol><li><p><strong>On paper.</strong> Verify that Eq. <a href="../chapter-07/index.html#eq-eq-mol-morse">(7.23)</a> has its minimum at <span class="math-inline">\(R_e\)</span> with <span class="math-inline">\(V=0\)</span>, that <span class="math-inline">\(V\to D_e\)</span> as <span class="math-inline">\(R\to\infty\)</span>, and that <span class="math-inline">\(k=2D_ea^{2}\)</span>. Predict <span class="math-inline">\(\hbar\omega_e\)</span> and <span class="math-inline">\(x_e\)</span>.</p></li><li><p><strong>On paper.</strong> Compute <span class="math-inline">\(B\)</span> from Eq. <a href="../chapter-07/index.html#eq-eq-mol-rot-levels">(7.26)</a> and confirm it is roughly a hundred times smaller than <span class="math-inline">\(\hbar\omega_e\)</span> — the hierarchy of Sec. <a href="../chapter-07/index.html#sec-7-the-three-energy-scales">7.10</a> for a real molecule.</p></li><li><p><strong>On the computer.</strong> Solve the nuclear radial equation with the solver from Chapter 2, changing only the potential and the mass. Report the lowest six vibrational energies.</p></li><li><p><strong>On the computer.</strong> Plot the six levels as horizontal lines inside the Morse curve. Fit <span class="math-inline">\(E_v=\hbar\omega_e(v+\tfrac12)-\hbar\omega_ex_e(v+\tfrac12)^{2}\)</span> to your numbers and compare <span class="math-inline">\(\omega_e\)</span> and <span class="math-inline">\(x_e\)</span> with the analytic values in Eq. <a href="../chapter-07/index.html#eq-eq-mol-morse-levels">(7.24)</a>.</p></li><li><p><strong>On the computer.</strong> Add rotation by putting <span class="math-inline">\(J(J+1)/2\mu R^{2}\)</span> into the potential — Chapter 3's centrifugal barrier in molecular dress. Compute levels for <span class="math-inline">\(J=0,10,20,30\)</span> and show the well becoming shallower. At what <span class="math-inline">\(J\)</span> does the last bound state disappear?</p></li><li><p><strong>What has to move.</strong> One animation: raise <span class="math-inline">\(J\)</span> from <span class="math-inline">\(0\)</span> and show the effective curve flattening while vibrational levels climb out of it and vanish one by one. That is centrifugal dissociation.</p></li></ol>
+<p><strong>The check.</strong> Your <span class="math-inline">\(v=0\)</span> energy should sit close to <span class="math-inline">\(\tfrac12\hbar\omega_e\)</span> from (a): the harmonic approximation is good at the bottom of the well, which is where it should be. A large discrepancy almost always means a unit error — mixing eV with Å and atomic mass units is the usual cause, and converting everything to atomic units first is the cure.</p>
+<p><strong>Be ready to answer.</strong> Your spacings in (d) shrink as <span class="math-inline">\(v\)</span> increases, while Eq. <a href="../chapter-07/index.html#eq-eq-mol-vib-levels">(7.21)</a> says they should be equal. Point at the step in Eq. <a href="../chapter-07/index.html#eq-eq-mol-taylor">(7.20)</a> responsible, and say what physical fact about a real bond the harmonic approximation throws away.</p>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <a href="../chapter-06/index.html">Previous: Time-Dependent Potentials and Light–Matter Interaction</a>
+      <a href="../../toc.html">Contents</a>
+      <a href="../chapter-08/index.html">Next: Rotational and Vibrational Spectroscopy</a>
+    </nav>
+  </article>
+</main>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p>&copy; 2026 Erfan Saydanzad. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

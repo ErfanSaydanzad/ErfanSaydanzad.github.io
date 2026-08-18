@@ -1,0 +1,991 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 0: Math Review for Calculus-Based Physics | Mathematical Methods in the Physical Sciences</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+  <link rel="preload" href="../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../assets/css/site.css?v=4c167578">
+  <script>
+    window.MathJax = {
+      // tagformat is an optional TeX extension, not part of the combined
+      // tex-chtml build. Without these two lines the tagformat block below is
+      // read and silently ignored, and every equation numbers from 1 with no
+      // chapter in front of it.
+      loader: { load: ['[tex]/tagformat'] },
+      tex: {
+        packages: { '[+]': ['tagformat'] },
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        processEnvironments: true,
+        tags: 'ams',
+        // The PDF numbers equations within the chapter (\numberwithin
+        // {equation}{chapter}), so "1.8" is the eighth equation of
+        // chapter 1. MathJax counts from 1 on every page, which would have
+        // shown that same equation as "8". Prefixing the chapter number
+        // keeps a reference valid against either version.
+        tagformat: {
+          number: function (n) { return ''  + n; }
+        },
+        macros: {
+          pdv: ['{\\frac{\\partial #1}{\\partial #2}}', 2],
+          dv: ['{\\frac{d #1}{d #2}}', 2],
+          abs: ['{\\left|#1\\right|}', 1],
+          norm: ['{\\left\\|#1\\right\\|}', 1],
+          curl: '{\\vec{\\nabla}\\times}',
+          div: '{\\vec{\\nabla}\\cdot}',
+          grad: '{\\vec{\\nabla}}',
+          sech: '{\\operatorname{sech}}',
+          csch: '{\\operatorname{csch}}',
+          coth: '{\\operatorname{coth}}',
+          circnum: ['{\\boxed{#1}}', 1],
+          vb: ['{\\mathbf{#1}}', 1],
+          eval: ['{\\left.#1\\right|}', 1],
+          dd: '{\\,d}'
+        }
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <script defer src="../../assets/js/main.js?v=4c167578"></script>
+
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="../../index.html">
+    <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M9 6.5V25.5M9 6.5H24M9 25.5H24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 16Q10.5 9.5 15.5 16T25.5 16" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/></svg>
+    <span>Mathematical Methods in the Physical Sciences</span>
+  </a>
+  <nav class="top-nav" aria-label="Primary">
+    <a href="../../index.html">Home</a>
+    <a href="../../toc.html">Contents</a>
+    <a href="../../projects.html">Projects</a>
+  </nav>
+</header>
+<main class="layout" id="main">
+  <aside class="sidebar">
+  <div class="sidebar-inner">
+    <p class="sidebar-kicker">Chapter 0</p>
+    <h2>Math Review for Calculus-Based Physics</h2>
+    <nav class="chapter-toc" aria-label="Chapter contents">
+      <a class="toc-level-2" href="#sec-0-real-number-system-and-intervals">0.1 Real Number System and Intervals</a>
+<a class="toc-level-3" href="#sec-0-standard-number-sets-and-notation">0.1.1 Standard number sets and notation</a>
+<a class="toc-level-3" href="#sec-0-venn-diagram-of-number-sets">0.1.2 Venn diagram of number sets</a>
+<a class="toc-level-3" href="#sec-0-intervals-and-number-lines">0.1.3 Intervals and number lines</a>
+<a class="toc-level-2" href="#sec-0-functions-domain-and-range">0.2 Functions, Domain, and Range</a>
+<a class="toc-level-2" href="#sec-0-linear-functions-and-linear-equations">0.3 Linear Functions and Linear Equations</a>
+<a class="toc-level-3" href="#sec-0-linear-functions">0.3.1 Linear functions</a>
+<a class="toc-level-3" href="#sec-0-example-f-x-2x-4-f-x-2x-4">0.3.2 Example: f(x)=2x+4</a>
+<a class="toc-level-3" href="#sec-0-slope-as-rise-over-run-and-as-an-angle">0.3.3 Slope as ``rise over run&#x27;&#x27; and as an angle</a>
+<a class="toc-level-3" href="#sec-0-solving-linear-equations-and-manipulating-formulas">0.3.4 Solving linear equations and manipulating formulas</a>
+<a class="toc-level-3" href="#sec-0-solving-a-system-of-two-linear-equations">0.3.5 Solving a system of two linear equations</a>
+<a class="toc-level-2" href="#sec-0-quadratic-functions-and-equations">0.4 Quadratic Functions and Equations</a>
+<a class="toc-level-3" href="#sec-0-the-basic-parabola-f-x-x-2-f-x-x">0.4.1 The basic parabola f(x)=x²</a>
+<a class="toc-level-3" href="#sec-0-example-f-x-x-2-x-2-f-x-x-x-2">0.4.2 Example: f(x)=x²−x−2</a>
+<a class="toc-level-3" href="#sec-0-quadratic-equations">0.4.3 Quadratic equations</a>
+<a class="toc-level-2" href="#sec-0-exponential-and-logarithmic-functions">0.5 Exponential and Logarithmic Functions</a>
+<a class="toc-level-3" href="#sec-0-why-physics-cares">0.5.1 Why physics cares</a>
+<a class="toc-level-3" href="#sec-0-laws-of-exponents-and-radicals">0.5.2 Laws of exponents and radicals</a>
+<a class="toc-level-3" href="#sec-0-logarithm-rules">0.5.3 Logarithm rules</a>
+<a class="toc-level-2" href="#sec-0-trigonometry-for-physics">0.6 Trigonometry for Physics</a>
+<a class="toc-level-3" href="#sec-0-right-triangle-definitions">0.6.1 Right-triangle definitions</a>
+<a class="toc-level-3" href="#sec-0-unit-circle-and-special-angles">0.6.2 Unit circle and special angles</a>
+<a class="toc-level-3" href="#sec-0-exact-values-at-common-angles">0.6.3 Exact values at common angles</a>
+<a class="toc-level-3" href="#sec-0-graphs-of-x-sin-x-and-x-cos-x">0.6.4 Graphs of sin x and cos x</a>
+<a class="toc-level-3" href="#sec-0-key-trigonometric-identities">0.6.5 Key trigonometric identities</a>
+<a class="toc-level-2" href="#sec-0-calculus-essentials">0.7 Calculus Essentials</a>
+<a class="toc-level-3" href="#sec-0-limits-and-continuity-informal-view">0.7.1 Limits and continuity (informal view)</a>
+<a class="toc-level-3" href="#sec-0-derivatives-as-rates-of-change">0.7.2 Derivatives as rates of change</a>
+<a class="toc-level-3" href="#sec-0-basic-derivative-rules">0.7.3 Basic derivative rules</a>
+<a class="toc-level-3" href="#sec-0-integrals-as-accumulated-change">0.7.4 Integrals as accumulated change</a>
+<a class="toc-level-3" href="#sec-0-indefinite-integrals-and-antiderivative-rules">0.7.5 Indefinite integrals and antiderivative rules</a>
+<a class="toc-level-2" href="#sec-0-for-the-interested-reader">For the Interested Reader</a>
+<a class="toc-level-3" href="#sec-0-videos">Videos</a>
+<a class="toc-level-3" href="#sec-0-websites">Websites</a>
+    </nav>
+  </div>
+</aside>
+
+  <article class="content">
+    <header class="chapter-hero">
+      <p>Chapter 0</p>
+      <h1>Math Review for Calculus-Based Physics</h1>
+    </header>
+    <p>This chapter reviews the core algebra and calculus tools that you will use throughout a calculus-based physics course. We begin with the real number system and interval notation, then review functions, domain, and range.</p>
+<h2 id="sec-0-real-number-system-and-intervals"><span class="sec-number">0.1</span>Real Number System and Intervals</h2>
+<p>In physics, we use the real numbers <span class="math-inline">\(\mathbb{R}\)</span> to describe measurable quantities such as position, time, mass, temperature, and energy. Within <span class="math-inline">\(\mathbb{R}\)</span> there are several important subsets that you should recognize.</p>
+<h3 id="sec-0-standard-number-sets-and-notation"><span class="sec-number">0.1.1</span>Standard number sets and notation</h3>
+<p>We use the following symbols for common number sets:</p>
+<ul><li><p><span class="math-inline">\(\mathbb{N}\)</span>: the <em>natural numbers</em></p>
+<div class="math-block">\begin{equation}
+	\mathbb{N} = \{0,1,2,3,\dots\}
+	\quad\text{(some authors start at $1$ instead of $0$)}.
+	\end{equation}</div></li><li><p><span class="math-inline">\(\mathbb{Z}\)</span>: the <em>integers</em></p>
+<div class="math-block">\begin{equation}
+	\mathbb{Z} = \{\dots,-3,-2,-1,0,1,2,3,\dots\}.
+	\end{equation}</div></li><li><p><span class="math-inline">\(\mathbb{Q}\)</span>: the <em>rational numbers</em>, that is, all numbers that can be written as a ratio of integers with nonzero denominator,</p>
+<div class="math-block">\begin{equation}
+	\mathbb{Q} = \left\{\frac{p}{q}\,\middle|\,
+	p,q\in\mathbb{Z},\ q\neq 0\right\}.
+	\end{equation}</div></li><li><p><span class="math-inline">\(\mathbb{R}\)</span>: the <em>real numbers</em>, obtained by adding all <em>irrational</em> numbers (such as <span class="math-inline">\(\sqrt{2}\)</span>, <span class="math-inline">\(\pi\)</span>, <span class="math-inline">\(e\)</span>) to the rationals.</p></li></ul>
+<p>These sets are nested as</p>
+<div class="math-block">\begin{equation}
+	\mathbb{N}\subset \mathbb{Z}\subset \mathbb{Q}\subset \mathbb{R},
+	\label{eq:number-sets-chain}
+\end{equation}</div>
+<p>and the set of irrational numbers is</p>
+<div class="math-block">\begin{equation}
+	\mathbb{R}\setminus\mathbb{Q}
+	= \{\text{real numbers that are not rational}\}.
+	\label{eq:irrationals-def}
+\end{equation}</div>
+<p>Sometimes we further distinguish:</p>
+<ul><li><p><em>Real algebraic numbers</em> <span class="math-inline">\(A_{\mathbb{R}}\)</span>: real numbers that are roots of a polynomial with integer coefficients (for example, <span class="math-inline">\(\sqrt{2}\)</span> and <span class="math-inline">\(\tfrac{1+\sqrt{5}}{2}\)</span>).</p></li><li><p><em>Transcendental numbers</em>: real numbers that are not algebraic, such as <span class="math-inline">\(\pi\)</span> and <span class="math-inline">\(e\)</span>.</p></li></ul>
+<p>Both algebraic and transcendental numbers are real; many of them are irrational.</p>
+<h3 id="sec-0-venn-diagram-of-number-sets"><span class="sec-number">0.1.2</span>Venn diagram of number sets</h3>
+<p>Figure <a href="../chapter-00/index.html#chapter-00-fig-1">0.1</a> shows how these sets fit together as nested regions.</p>
+<figure id="chapter-00-fig-1" class="figure"><img src="assets/img/Fig0_1.png" alt="Venn diagram illustrating the hierarchy of number sets used in physics. Natural numbers N are contained in the integers Z, which are contained in the rational numbers Q. Together with irrational numbers (both algebraic and transcendental), they form the real numbers R." loading="lazy" style="--figure-width: 70%;"><figcaption>Figure 0.1. Venn diagram illustrating the hierarchy of number sets used in
+		physics. Natural numbers <span class="math-inline">\(\mathbb{N}\)</span> are contained in the integers
+		<span class="math-inline">\(\mathbb{Z}\)</span>, which are contained in the rational numbers <span class="math-inline">\(\mathbb{Q}\)</span>.
+		Together with irrational numbers (both algebraic and transcendental),
+		they form the real numbers <span class="math-inline">\(\mathbb{R}\)</span>.</figcaption></figure>
+<h3 id="sec-0-intervals-and-number-lines"><span class="sec-number">0.1.3</span>Intervals and number lines</h3>
+<p>When we specify the possible values of a physical quantity, we often use <em>interval notation</em>. Some common examples are</p>
+<div class="math-block">\begin{equation}
+	(-\infty,\infty),\qquad
+	(-3,3),\qquad
+	[0,\infty),\qquad
+	(0,\infty).
+	\label{eq:interval-examples}
+\end{equation}</div>
+<p><strong>Key idea.</strong></p>
+<ul><li><p>Parentheses <span class="math-inline">\((\,\cdot\,)\)</span> mean the endpoint is <em>not included</em> (an open endpoint), for example</p>
+<div class="math-block">\begin{equation}
+	(0,3) = \{x\in\mathbb{R}\mid 0&lt;x&lt;3\}.
+	\end{equation}</div></li><li><p>Brackets <span class="math-inline">\([\,\cdot\,]\)</span> mean the endpoint <em>is included</em> (a closed endpoint), for example</p>
+<div class="math-block">\begin{equation}
+	[0,3] = \{x\in\mathbb{R}\mid 0\le x\le 3\}.
+	\end{equation}</div></li></ul>
+<p>We also use <em>half-open</em> intervals such as <span class="math-inline">\((0,3]\)</span> or <span class="math-inline">\([0,3)\)</span>, and we combine intervals with the union symbol <span class="math-inline">\(\cup\)</span> when a domain has more than one piece (for example, <span class="math-inline">\((-\infty,-1)\cup(1,\infty)\)</span>).</p>
+<p>Figure <a href="../chapter-00/index.html#chapter-00-fig-2">0.2</a> shows two common intervals on a number line.</p>
+<figure id="chapter-00-fig-2" class="figure"><img src="assets/img/tikz-01.svg" alt="Examples of open intervals on a number line." loading="lazy"><figcaption>Figure 0.2. Examples of open intervals on a number line.</figcaption></figure>
+<p>In later sections, we will use interval notation to describe the domain and range of functions arising in physics.</p>
+<h2 id="sec-0-functions-domain-and-range"><span class="sec-number">0.2</span>Functions, Domain, and Range</h2>
+<p>A <em>function</em> <span class="math-inline">\(f\)</span> from a set <span class="math-inline">\(A\)</span> to a set <span class="math-inline">\(B\)</span> is a rule that assigns to each input <span class="math-inline">\(x\in A\)</span> exactly one output <span class="math-inline">\(f(x)\in B\)</span>. We write</p>
+<div class="math-block">\begin{equation}
+	f\colon A\to B,\qquad x\mapsto f(x).
+	\label{eq:function-map}
+\end{equation}</div>
+<ul><li><p><strong>Independent variable:</strong> the input, usually denoted <span class="math-inline">\(x\)</span> or <span class="math-inline">\(t\)</span>.</p></li><li><p><strong>Dependent variable:</strong> the output, written <span class="math-inline">\(f(x)\)</span>.</p></li><li><p><strong>Domain:</strong> all allowed <span class="math-inline">\(x\)</span> values for which <span class="math-inline">\(f(x)\)</span> is defined.</p></li><li><p><strong>Range (or image):</strong> all values <span class="math-inline">\(f(x)\)</span> obtained as <span class="math-inline">\(x\)</span> runs through the domain.</p></li></ul>
+<p>In physics, the <em>physical</em> domain is often a subset of the mathematical domain. For example:</p>
+<ul><li><p>A position function <span class="math-inline">\(x(t)\)</span> might be defined mathematically for all real <span class="math-inline">\(t\)</span>, but physically we only care about <span class="math-inline">\(t\ge 0\)</span>.</p></li><li><p>A density <span class="math-inline">\(\rho(r)\)</span> in spherical coordinates may be defined only for <span class="math-inline">\(r\ge 0\)</span>.</p></li></ul>
+<p>Throughout this course, always ask:</p>
+<div class="centered"><p><em>Which values of the variables make sense in this physical situation?</em></p></div>
+<p>Those values determine the domain you should use when interpreting graphs, solving equations, or evaluating integrals in physics problems.</p>
+<h2 id="sec-0-linear-functions-and-linear-equations"><span class="sec-number">0.3</span>Linear Functions and Linear Equations</h2>
+<p>In this section we first review the algebra of linear functions and linear equations. After each mathematical idea, we point out typical physics situations where exactly the same mathematics appears.</p>
+<p>Linear ideas show up everywhere in physics: straight-line graphs, proportional relationships, and first-order (tangent-line) approximations to more complicated functions.</p>
+<h3 id="sec-0-linear-functions"><span class="sec-number">0.3.1</span>Linear functions</h3>
+<p>A <em>linear function</em> of a real variable <span class="math-inline">\(x\)</span> has the form</p>
+<div class="math-block">\begin{equation}
+	f(x) = m x + b,
+	\label{eq:linear-function}
+\end{equation}</div>
+<p>where</p>
+<div class="math-block">\begin{equation}
+	m = \text{slope},
+	\qquad
+	b = \text{$y$-intercept}.
+	\label{eq:slope-intercept}
+\end{equation}</div>
+<p>When we draw the graph of <span class="math-inline">\(f\)</span> in the <span class="math-inline">\(xy\)</span>–plane, we usually rename the dependent variable as</p>
+<div class="math-block">\begin{equation}
+	y = f(x) = m x + b.
+	\label{eq:linear-y-form}
+\end{equation}</div>
+<p>The slope <span class="math-inline">\(m\)</span> measures how much <span class="math-inline">\(y\)</span> changes when <span class="math-inline">\(x\)</span> increases by one unit; the intercept <span class="math-inline">\(b\)</span> is the value of <span class="math-inline">\(y\)</span> when <span class="math-inline">\(x=0\)</span>.</p>
+<p> <strong>Physics connection.</strong> In physics we often graph one measurable quantity as a function of another. When that graph is a straight line, the relationship between the variables is linear:</p>
+<ul><li><p><strong>Hooke's law (small stretches):</strong> <span class="math-inline">\(
+	F = -k x
+	\)</span> is linear in <span class="math-inline">\(x\)</span> with slope <span class="math-inline">\(-k\)</span> and intercept <span class="math-inline">\(0\)</span>.</p></li><li><p><strong>Ohm's law:</strong> <span class="math-inline">\(
+	V = IR
+	\)</span> is linear in the current <span class="math-inline">\(I\)</span> with slope <span class="math-inline">\(R\)</span> and intercept <span class="math-inline">\(0\)</span>.</p></li><li><p><strong>Motion at constant velocity:</strong> <span class="math-inline">\(
+	x(t) = x_0 + v t
+	\)</span> is linear in <span class="math-inline">\(t\)</span> with slope <span class="math-inline">\(v\)</span> and intercept <span class="math-inline">\(x_0\)</span>.</p></li></ul>
+<p>In each case one quantity plays the role of <span class="math-inline">\(x\)</span> (independent variable) and the other plays the role of <span class="math-inline">\(y\)</span> (dependent variable), and the graph is a straight line over the range where the linear model is valid.</p>
+<h3 id="sec-0-example-f-x-2x-4-f-x-2x-4"><span class="sec-number">0.3.2</span>Example: <span class="math-inline">\(f(x)=2x+4\)</span></h3>
+<section class="callout example"><header>Example - Linear function <span class="math-inline">\(f(x)=2x+4\)</span></header><p> Consider</p>
+<div class="math-block">\begin{equation}
+		f(x) = 2x + 4.
+		\label{eq:linear-example}
+	\end{equation}</div>
+<p>Comparing with Equation <span class="math-inline">\(\eqref{eq:linear-function}\)</span>, we identify</p>
+<div class="math-block">\begin{equation}
+		m = 2,
+		\qquad
+		b = 4.
+		\label{eq:linear-example-mb}
+	\end{equation}</div>
+<p>Thus the graph is a straight line of slope <span class="math-inline">\(2\)</span> that crosses the <span class="math-inline">\(y\)</span>-axis at <span class="math-inline">\(y=4\)</span>.</p>
+<p>Table <a href="../chapter-00/index.html#tab-linear-example-values">0.1</a> lists some points <span class="math-inline">\((x,f(x))\)</span> on the line, and Figure <a href="../chapter-00/index.html#chapter-00-fig-3">0.3</a> shows the corresponding graph. In the table, the step size in <span class="math-inline">\(x\)</span> is <span class="math-inline">\(1\)</span>; in problems you can choose any convenient set of <span class="math-inline">\(x\)</span> values in the domain.</p>
+<figure id="tab-linear-example-values" class="table-figure"><div class="table-wrap"><table><tr><td>
+			<span class="math-inline">\(x\)</span></td><td><span class="math-inline">\(-3\)</span></td><td><span class="math-inline">\(-2\)</span></td><td><span class="math-inline">\(-1\)</span></td><td><span class="math-inline">\(0\)</span></td><td><span class="math-inline">\(1\)</span></td><td><span class="math-inline">\(2\)</span></td><td><span class="math-inline">\(3\)</span></td></tr><tr><td>
+			<span class="math-inline">\(f(x)\)</span></td><td><span class="math-inline">\(-2\)</span></td><td><span class="math-inline">\( 0\)</span></td><td><span class="math-inline">\( 2\)</span></td><td><span class="math-inline">\(4\)</span></td><td><span class="math-inline">\(6\)</span></td><td><span class="math-inline">\(8\)</span></td><td><span class="math-inline">\(10\)</span></td></tr><tr><td></td></tr></table></div><figcaption>Table 0.1. Sample values for the linear function <span class="math-inline">\(f(x)=2x+4\)</span>.</figcaption></figure>
+<figure id="chapter-00-fig-3" class="figure"><img src="assets/img/tikz-02.svg" alt="Graph of the linear function f(x)=2x+4 with several plotted points (x,f(x))." loading="lazy"><figcaption>Figure 0.3. Graph of the linear function <span class="math-inline">\(f(x)=2x+4\)</span> with several plotted
+			points <span class="math-inline">\((x,f(x))\)</span>.</figcaption></figure>
+<p> <strong>Physics connection.</strong>  You can read this graph the same way you would read, for example, a graph of position <span class="math-inline">\(x(t)\)</span> versus time <span class="math-inline">\(t\)</span> for motion with constant velocity: the slope gives the rate of change, and the intercept gives the initial value.</p></section>
+<h3 id="sec-0-slope-as-rise-over-run-and-as-an-angle"><span class="sec-number">0.3.3</span>Slope as “rise over run” and as an angle</h3>
+<p>Now suppose we know two points <span class="math-inline">\((x_1,y_1)\)</span> and <span class="math-inline">\((x_2,y_2)\)</span> on a non-vertical line. The <em>slope</em> <span class="math-inline">\(m\)</span> of that line is</p>
+<div class="math-block">\begin{equation}
+	m
+	= \frac{\Delta y}{\Delta x}
+	= \frac{y_2 - y_1}{x_2 - x_1},
+	\qquad x_1 \neq x_2.
+	\label{eq:slope-delta}
+\end{equation}</div>
+<p>Here <span class="math-inline">\(\Delta y = y_2 - y_1\)</span> is the <em>rise</em> and <span class="math-inline">\(\Delta x = x_2 - x_1\)</span> is the <em>run</em>.</p>
+<p>If the line makes an angle <span class="math-inline">\(\theta\)</span> with the positive <span class="math-inline">\(x\)</span>-axis, then from basic trigonometry the slope is also</p>
+<div class="math-block">\begin{equation}
+	m = \tan\theta.
+	\label{eq:slope-tan}
+\end{equation}</div>
+<p>Thus algebra (slope) and trigonometry (tangent) describe the same geometric idea.</p>
+<p>Figure <a href="../chapter-00/index.html#chapter-00-fig-4">0.4</a> shows a <em>slope triangle</em> illustrating <span class="math-inline">\(\Delta x\)</span>, <span class="math-inline">\(\Delta y\)</span>, and the angle <span class="math-inline">\(\theta\)</span>.</p>
+<figure id="chapter-00-fig-4" class="figure"><img src="assets/img/tikz-03.svg" alt="Slope triangle for a linear function. The slope is m= y/ x=." loading="lazy"><figcaption>Figure 0.4. Slope triangle for a linear function. The slope is
+		<span class="math-inline">\(m=\Delta y/\Delta x=\tan\theta\)</span>.</figcaption></figure>
+<p> <strong>Physics connection.</strong> In physics graphs, the slope often has a direct physical meaning:</p>
+<ul><li><p>For a position-time graph <span class="math-inline">\(x(t)\)</span> vs. <span class="math-inline">\(t\)</span>, the slope <span class="math-inline">\(\Delta x / \Delta t\)</span> over a time interval gives the <em>average velocity</em> on that interval.</p></li><li><p>For a velocity-time graph <span class="math-inline">\(v(t)\)</span> vs. <span class="math-inline">\(t\)</span>, the slope <span class="math-inline">\(\Delta v / \Delta t\)</span> gives the <em>average acceleration</em>.</p></li></ul>
+<p>Later you will see many examples where reading the slope of a graph is the fastest way to extract a physical quantity.</p>
+<h3 id="sec-0-solving-linear-equations-and-manipulating-formulas"><span class="sec-number">0.3.4</span>Solving linear equations and manipulating formulas</h3>
+<p>A <em>linear equation</em> in one unknown <span class="math-inline">\(x\)</span> has the form</p>
+<div class="math-block">\begin{equation}
+	a x + b = 0,
+	\qquad a \neq 0.
+	\label{eq:linear-equation-standard}
+\end{equation}</div>
+<p>To solve for <span class="math-inline">\(x\)</span> we isolate it step by step:</p>
+<div class="math-block">\begin{equation}
+	a x + b = 0
+	\quad\Rightarrow\quad
+	a x = -b
+	\quad\Rightarrow\quad
+	x = -\frac{b}{a}.
+	\label{eq:linear-solve}
+\end{equation}</div>
+<p>More generally, for</p>
+<div class="math-block">\begin{equation}
+	a x + b = c,
+	\qquad a \neq 0,
+	\label{eq:linear-equation-general}
+\end{equation}</div>
+<p>we obtain</p>
+<div class="math-block">\begin{equation}
+	a x + b = c
+	\quad\Rightarrow\quad
+	a x = c - b
+	\quad\Rightarrow\quad
+	x = \frac{c - b}{a}.
+	\label{eq:linear-solve-general}
+\end{equation}</div>
+<p> <strong>Physics connection.</strong> In physics we constantly <em>rearrange formulas</em> to solve for a different variable. The algebra is the same as in Equations <span class="math-inline">\(\eqref{eq:linear-equation-standard}\)</span>–<span class="math-inline">\(\eqref{eq:linear-solve-general}\)</span>.</p>
+<p>For example, the constant-acceleration kinematic relation</p>
+<div class="math-block">\begin{equation}
+	x = x_0 + v_0 t + \frac{1}{2} a t^2
+	\label{eq:kinematic-formula}
+\end{equation}</div>
+<p>can be viewed as:</p>
+<ul><li><p>a quadratic equation in <span class="math-inline">\(t\)</span> (if <span class="math-inline">\(x\)</span>, <span class="math-inline">\(x_0\)</span>, <span class="math-inline">\(v_0\)</span>, and <span class="math-inline">\(a\)</span> are known);</p></li><li><p>a linear equation in <span class="math-inline">\(x\)</span> (if <span class="math-inline">\(t\)</span> is the independent variable);</p></li><li><p>a linear equation in <span class="math-inline">\(a\)</span> if we solve for the acceleration:</p>
+<div class="math-block">\begin{equation}
+		a = \frac{2\bigl(x - x_0 - v_0 t\bigr)}{t^2},
+		\qquad t \neq 0.
+		\label{eq:solve-for-a}
+	\end{equation}</div></li></ul>
+<p>The structure “coefficient <span class="math-inline">\(\times\)</span> unknown <span class="math-inline">\(+\)</span> constant” is the same as in Equation <span class="math-inline">\(\eqref{eq:linear-equation-general}\)</span>; only the names of the symbols change.</p>
+<h3 id="sec-0-solving-a-system-of-two-linear-equations"><span class="sec-number">0.3.5</span>Solving a system of two linear equations</h3>
+<p>Sometimes there are two unknown quantities that are tied together by two linear equations. A <em>system</em> of two linear equations in the variables <span class="math-inline">\(x\)</span> and <span class="math-inline">\(y\)</span> has the general form</p>
+<div class="math-block">\begin{align}
+	a_1 x + b_1 y &amp;= c_1,
+	\label{eq:two-eq-general-1} \\
+	a_2 x + b_2 y &amp;= c_2,
+	\label{eq:two-eq-general-2}
+\end{align}</div>
+<p>where <span class="math-inline">\(a_1, b_1, c_1, a_2, b_2, c_2\)</span> are known numbers. Geometrically, each equation represents a straight line in the <span class="math-inline">\(xy\)</span>-plane, and the solution <span class="math-inline">\((x,y)\)</span> is the point where the two lines intersect.</p>
+<p>There are several algebraic methods to solve such systems. Two of the most useful are <strong>substitution</strong> and <strong>elimination</strong>.</p>
+<h4 id="sec-0-method-1-substitution">Method 1: Substitution</h4>
+<ol><li><p>Solve one of the equations for one variable in terms of the other.</p></li><li><p>Substitute that expression into the second equation. This leaves a single equation for one unknown.</p></li><li><p>Solve for that unknown, then substitute back to find the other variable.</p></li><li><p>Check the solution in both original equations.</p></li></ol>
+<h4 id="sec-0-method-2-elimination">Method 2: Elimination</h4>
+<ol><li><p>Multiply one or both equations by suitable constants so that the coefficient of <span class="math-inline">\(x\)</span> or <span class="math-inline">\(y\)</span> is the same (or opposite) in both equations.</p></li><li><p>Add or subtract the two equations to <em>eliminate</em> one variable.</p></li><li><p>Solve the resulting single equation for the remaining variable.</p></li><li><p>Substitute back into either original equation to find the other variable, and check.</p></li></ol>
+<h4 id="sec-0-example-solving-a-2-2-system">Example: Solving a <span class="math-inline">\(2\times 2\)</span> system</h4>
+<p><strong>Problem.</strong> Solve the system</p>
+<div class="math-block">\begin{align}
+	3x + 2y &amp;= 4,
+	\label{eq:lin-system-ex-1} \\
+	-6x + y &amp;= 17.
+	\label{eq:lin-system-ex-2}
+\end{align}</div>
+<p> <strong>Solution (by substitution).</strong></p>
+<p>From Equation <span class="math-inline">\(\eqref{eq:lin-system-ex-2}\)</span> we solve for <span class="math-inline">\(y\)</span>:</p>
+<div class="math-block">\begin{equation}
+	-6x + y = 17
+	\quad\Rightarrow\quad
+	y = 17 + 6x.
+	\label{eq:lin-system-ex-y}
+\end{equation}</div>
+<p>Substitute this into Equation <span class="math-inline">\(\eqref{eq:lin-system-ex-1}\)</span>:</p>
+<div class="math-block">\begin{align}
+	3x + 2y &amp;= 4,
+	\nonumber\\
+	3x + 2\bigl(17 + 6x\bigr) &amp;= 4,
+	\nonumber\\
+	3x + 34 + 12x &amp;= 4,
+	\nonumber\\
+	15x + 34 &amp;= 4.
+	\label{eq:lin-system-ex-sub}
+\end{align}</div>
+<p>Now solve for <span class="math-inline">\(x\)</span>:</p>
+<div class="math-block">\begin{equation}
+	15x = 4 - 34 = -30
+	\quad\Rightarrow\quad
+	x = \frac{-30}{15} = -2.
+	\label{eq:lin-system-ex-x}
+\end{equation}</div>
+<p>Insert <span class="math-inline">\(x=-2\)</span> into Equation <span class="math-inline">\(\eqref{eq:lin-system-ex-y}\)</span>:</p>
+<div class="math-block">\begin{equation}
+	y = 17 + 6(-2) = 17 - 12 = 5.
+	\label{eq:lin-system-ex-y-final}
+\end{equation}</div>
+<p>So the solution is</p>
+<div class="math-block">\begin{equation}
+	(x,y) = (-2,\,5).
+\end{equation}</div>
+<p> <strong>Check.</strong> Substitute into both original equations:</p>
+<div class="math-block">\begin{align*}
+	3(-2) + 2(5) &amp;= -6 + 10 = 4, \\
+	-6(-2) + 5 &amp;= 12 + 5 = 17.
+\end{align*}</div>
+<p>Both equations are satisfied, so <span class="math-inline">\((x,y)=(-2,5)\)</span> is correct.</p>
+<p> <strong>Physics connection.</strong> Systems like <span class="math-inline">\(\eqref{eq:two-eq-general-1}\)</span>–<span class="math-inline">\(\eqref{eq:two-eq-general-2}\)</span> appear whenever two unknown quantities are linked by two independent relationships. For example:</p>
+<ul><li><p>Resolving a force of known magnitude into its <span class="math-inline">\(x\)</span>- and <span class="math-inline">\(y\)</span>-components when you also know how those components combine with other forces.</p></li><li><p>Finding two currents <span class="math-inline">\(I_1\)</span> and <span class="math-inline">\(I_2\)</span> in a simple circuit from two loop or junction equations.</p></li><li><p>Determining unknown initial velocity components <span class="math-inline">\(v_{0x}\)</span> and <span class="math-inline">\(v_{0y}\)</span> of a projectile from information about its position at two different times.</p></li></ul>
+<p>The algebra of solving a <span class="math-inline">\(2\times 2\)</span> system is the same in all of these situations; only the physical meaning of <span class="math-inline">\(x\)</span> and <span class="math-inline">\(y\)</span> changes.</p>
+<p><strong>Key algebra skills.</strong></p>
+<ul><li><p>Apply the same operation to both sides of an equation.</p></li><li><p>Isolate the desired variable step by step.</p></li><li><p>Interpret slopes and intercepts on graphs.</p></li><li><p>Solve simple systems of linear equations in two unknowns.</p></li><li><p>Check the result by substituting back into the original equation(s) and verifying that both sides match (including units).</p></li></ul>
+<h2 id="sec-0-quadratic-functions-and-equations"><span class="sec-number">0.4</span>Quadratic Functions and Equations</h2>
+<p>A <em>quadratic function</em> is any function that can be written in the form</p>
+<div class="math-block">\begin{equation}
+	f(x) = a x^2 + b x + c,
+	\qquad a \neq 0,
+	\label{eq:quadratic-general}
+\end{equation}</div>
+<p>where <span class="math-inline">\(a\)</span>, <span class="math-inline">\(b\)</span>, and <span class="math-inline">\(c\)</span> are real constants. Its graph is a parabola opening upward if <span class="math-inline">\(a&gt;0\)</span> and downward if <span class="math-inline">\(a&lt;0\)</span>.</p>
+<p><strong>Physics connection.</strong> Quadratic functions appear whenever there is <em>constant acceleration</em> or a similar second-order effect:</p>
+<ul><li><p><strong>Projectile motion (vertical position)</strong>:</p>
+<div class="math-block">\begin{equation}
+		y(t) = y_0 + v_{0y} t - \frac{1}{2} g t^2,
+		\label{eq:projectile-y}
+	\end{equation}</div>
+<p>where <span class="math-inline">\(g\)</span> is the gravitational acceleration.</p></li><li><p><strong>One-dimensional kinematics</strong>:</p>
+<div class="math-block">\begin{equation}
+		x(t) = x_0 + v_0 t + \frac{1}{2} a t^2,
+		\label{eq:kinematics-x}
+	\end{equation}</div>
+<p>where <span class="math-inline">\(a\)</span> is a constant acceleration.</p></li></ul>
+<p>In both examples, <span class="math-inline">\(x\)</span> or <span class="math-inline">\(y\)</span> is a quadratic function of <span class="math-inline">\(t\)</span>.</p>
+<h3 id="sec-0-the-basic-parabola-f-x-x-2-f-x-x"><span class="sec-number">0.4.1</span>The basic parabola <span class="math-inline">\(f(x)=x^2\)</span></h3>
+<section class="callout example"><header>Example - Basic parabola <span class="math-inline">\(f(x)=x^2\)</span></header><p> The simplest quadratic is</p>
+<div class="math-block">\begin{equation}
+		f(x) = x^2.
+		\label{eq:basic-parabola}
+	\end{equation}</div>
+<p>Its graph is a parabola opening upward with vertex at <span class="math-inline">\((0,0)\)</span> and axis of symmetry the <span class="math-inline">\(y\)</span>-axis.</p>
+<p>Table <a href="../chapter-00/index.html#tab-basic-parabola-values">0.2</a> lists several points <span class="math-inline">\((x,f(x))\)</span> with step size <span class="math-inline">\(1\)</span>. In problems you can choose any convenient set of points in the domain.</p>
+<figure id="tab-basic-parabola-values" class="table-figure"><div class="table-wrap"><table><tr><td>
+			<strong><span class="math-inline">\(x\)</span></strong></td><td><span class="math-inline">\(-3\)</span></td><td><span class="math-inline">\(-2\)</span></td><td><span class="math-inline">\(-1\)</span></td><td><span class="math-inline">\(0\)</span></td><td><span class="math-inline">\(1\)</span></td><td><span class="math-inline">\(2\)</span></td><td><span class="math-inline">\(3\)</span></td></tr><tr><td>
+			<strong><span class="math-inline">\(f(x)=x^2\)</span></strong></td><td><span class="math-inline">\(9\)</span></td><td><span class="math-inline">\(4\)</span></td><td><span class="math-inline">\(1\)</span></td><td><span class="math-inline">\(0\)</span></td><td><span class="math-inline">\(1\)</span></td><td><span class="math-inline">\(4\)</span></td><td><span class="math-inline">\(9\)</span></td></tr><tr><td></td></tr></table></div><figcaption>Table 0.2. Sample values of the quadratic function <span class="math-inline">\(f(x)=x^2\)</span>.  The table
+			makes the symmetry <span class="math-inline">\(f(-x)=f(x)\)</span> visible.</figcaption></figure>
+<figure id="chapter-00-fig-5" class="figure"><img src="assets/img/tikz-04.svg" alt="Parabola f(x)=x^2 with selected points (x,f(x)). The graph is symmetric about the y-axis." loading="lazy"><figcaption>Figure 0.5. Parabola <span class="math-inline">\(f(x)=x^2\)</span> with selected points <span class="math-inline">\((x,f(x))\)</span>.
+			The graph is symmetric about the <span class="math-inline">\(y\)</span>-axis.</figcaption></figure></section>
+<h3 id="sec-0-example-f-x-x-2-x-2-f-x-x-x-2"><span class="sec-number">0.4.2</span>Example: <span class="math-inline">\(f(x)=x^2-x-2\)</span></h3>
+<section class="callout example"><header>Example - Quadratic <span class="math-inline">\(f(x)=x^2-x-2\)</span></header><p> Consider</p>
+<div class="math-block">\begin{equation}
+		f(x) = x^2 - x - 2.
+		\label{eq:quadratic-example}
+	\end{equation}</div>
+<p>Here <span class="math-inline">\(a=1\)</span>, <span class="math-inline">\(b=-1\)</span>, and <span class="math-inline">\(c=-2\)</span>. Factoring gives</p>
+<div class="math-block">\begin{equation}
+		x^2 - x - 2 = (x-2)(x+1),
+		\label{eq:quadratic-factor}
+	\end{equation}</div>
+<p>so the zeros (roots) are</p>
+<div class="math-block">\begin{equation}
+		x = -1
+		\quad\text{and}\quad
+		x = 2.
+		\label{eq:quadratic-zeros}
+	\end{equation}</div>
+<p><strong>Vertex form (useful for sketching).</strong> Every quadratic can also be written as</p>
+<div class="math-block">\begin{equation}
+		f(x) = a(x-h)^2 + k,
+		\qquad
+		h = -\frac{b}{2a},\quad k = f(h),
+		\label{eq:vertex-form}
+	\end{equation}</div>
+<p>where <span class="math-inline">\((h,k)\)</span> is the vertex. For <span class="math-inline">\(f(x)=x^2-x-2\)</span>, we have</p>
+<div class="math-block">\begin{equation}
+		h = -\frac{b}{2a} = \frac{1}{2},
+		\qquad
+		k = f\!\left(\frac{1}{2}\right) = -\frac{9}{4},
+		\label{eq:example-vertex}
+	\end{equation}</div>
+<p>so the vertex is at <span class="math-inline">\(\bigl(\tfrac{1}{2}, -\tfrac{9}{4}\bigr)\)</span>.</p>
+<p>Figure <a href="../chapter-00/index.html#chapter-00-fig-6">0.6</a> shows the graph of <span class="math-inline">\(f(x)=x^2-x-2\)</span> with its zeros marked.</p>
+<figure id="chapter-00-fig-6" class="figure"><img src="assets/img/tikz-05.svg" alt="Quadratic function f(x)=x^2-x-2 with zeros at x=-1 and x=2. The parabola opens upward since a&amp;gt;0." loading="lazy"><figcaption>Figure 0.6. Quadratic function <span class="math-inline">\(f(x)=x^2-x-2\)</span> with zeros at <span class="math-inline">\(x=-1\)</span> and <span class="math-inline">\(x=2\)</span>.
+			The parabola opens upward since <span class="math-inline">\(a&gt;0\)</span>.</figcaption></figure></section>
+<h3 id="sec-0-quadratic-equations"><span class="sec-number">0.4.3</span>Quadratic equations</h3>
+<p>A <em>quadratic equation</em> in <span class="math-inline">\(x\)</span> has the standard form</p>
+<div class="math-block">\begin{equation}
+	a x^2 + b x + c = 0,
+	\qquad a \neq 0.
+	\label{eq:quadratic-standard}
+\end{equation}</div>
+<p><strong>Factoring (when possible).</strong> If the quadratic factors as</p>
+<div class="math-block">\begin{equation}
+	x^2 + p x + q = (x-r)(x-s),
+	\qquad
+	r+s = -p,\quad rs = q,
+	\label{eq:quad-factor-general}
+\end{equation}</div>
+<p>then the solutions are <span class="math-inline">\(x=r\)</span> and <span class="math-inline">\(x=s\)</span>. This is the fastest method when the factors are easy to see.</p>
+<p><strong>Quadratic formula (always works).</strong> In general, the solutions of <span class="math-inline">\(\eqref{eq:quadratic-standard}\)</span> are given by</p>
+<div class="math-block">\begin{equation}
+	x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.
+	\label{eq:quadratic-formula}
+\end{equation}</div>
+<p>The quantity</p>
+<div class="math-block">\begin{equation}
+	D = b^2 - 4ac
+	\label{eq:discriminant}
+\end{equation}</div>
+<p>is called the <em>discriminant</em> and determines the type of roots:</p>
+<ul><li><p><span class="math-inline">\(D&gt;0\)</span>: two distinct real roots;</p></li><li><p><span class="math-inline">\(D=0\)</span>: one repeated real root;</p></li><li><p><span class="math-inline">\(D&lt;0\)</span>: two complex (nonreal) conjugate roots.</p></li></ul>
+<p>In kinematics problems, equations like <span class="math-inline">\(\eqref{eq:projectile-y}\)</span> or <span class="math-inline">\(\eqref{eq:kinematics-x}\)</span> often lead to a quadratic equation for the time <span class="math-inline">\(t\)</span>. You should be comfortable choosing between factoring (when possible) and the quadratic formula, and interpreting which root is physically meaningful (for example, discarding negative times when <span class="math-inline">\(t\ge 0\)</span>).</p>
+<h2 id="sec-0-exponential-and-logarithmic-functions"><span class="sec-number">0.5</span>Exponential and Logarithmic Functions</h2>
+<p>In this book, <span class="math-inline">\(\ln x\)</span> denotes the <em>natural logarithm</em> (logarithm base <span class="math-inline">\(e\)</span>). We sometimes write <span class="math-inline">\(\log x\)</span> when the base is clear from context; unless stated otherwise, it always means <span class="math-inline">\(\ln x\)</span>.</p>
+<p>The basic exponential and logarithmic functions have</p>
+<div class="math-block">\begin{align}
+	f(x) &amp;= e^x:
+	&amp;&amp;\text{domain }(-\infty,\infty),\quad
+	\text{range }(0,\infty),
+	\label{eq:exp-domain-range} \\
+	f(x) &amp;= \ln(x):
+	&amp;&amp;\text{domain }(0,\infty),\quad
+	\text{range }(-\infty,\infty).
+	\label{eq:log-domain-range}
+\end{align}</div>
+<p>They are inverse functions:</p>
+<div class="math-block">\begin{equation}
+	e^{\ln x} = x \quad (x&gt;0),
+	\qquad
+	\ln(e^x) = x \quad (x\in\mathbb{R}).
+	\label{eq:exp-log-inverse}
+\end{equation}</div>
+<h3 id="sec-0-why-physics-cares"><span class="sec-number">0.5.1</span>Why physics cares</h3>
+<ul><li><p><strong>Exponential growth/decay.</strong> Many time–evolution laws in physics are exponential, for example</p>
+<div class="math-block">\begin{equation}
+		N(t) = N_0 e^{-t/\tau},
+		\label{eq:exp-decay}
+	\end{equation}</div>
+<p>which describes radioactive decay and the discharge of a capacitor in an RC circuit.</p></li><li><p><strong>Logarithmic scales.</strong> Logarithms appear in decibels (sound intensity), pH (acidity), the Richter scale (earthquakes), entropy formulas in statistical mechanics, and in semilog plots used to reveal exponential behavior as straight lines.</p></li></ul>
+<figure id="chapter-00-fig-7" class="figure"><img src="assets/img/tikz-06.svg" alt="Exponential function y=e^x and natural logarithm y= x, together with the line y=x. The two curves are reflections of each other across y=x, showing that they are inverse functions." loading="lazy"><figcaption>Figure 0.7. Exponential function <span class="math-inline">\(y=e^x\)</span> and natural logarithm <span class="math-inline">\(y=\ln x\)</span>,
+		together with the line <span class="math-inline">\(y=x\)</span>. The two curves are reflections of each
+		other across <span class="math-inline">\(y=x\)</span>, showing that they are inverse functions.</figcaption></figure>
+<h3 id="sec-0-laws-of-exponents-and-radicals"><span class="sec-number">0.5.2</span>Laws of exponents and radicals</h3>
+<p>For real numbers <span class="math-inline">\(x,y&gt;0\)</span> and integers <span class="math-inline">\(m,n\)</span>, the basic exponent rules are</p>
+<div class="math-block">\begin{align}
+	x^m x^n &amp;= x^{m+n}, &amp;
+	\frac{x^m}{x^n} &amp;= x^{m-n} \quad (x\ne 0),
+	\label{eq:exp-laws-1} \\
+	(x^m)^n &amp;= x^{mn}, &amp;
+	(xy)^n &amp;= x^n y^n,
+	\label{eq:exp-laws-2} \\
+	x^{-n} &amp;= \frac{1}{x^n}, &amp;
+	x^{1/n} &amp;= \sqrt[n]{x}.
+	\label{eq:exp-laws-3}
+\end{align}</div>
+<p>Fractional exponents correspond to roots and powers:</p>
+<div class="math-block">\begin{equation}
+	x^{m/n} = \bigl(\sqrt[n]{x}\bigr)^m = \sqrt[n]{x^m},
+	\qquad x&gt;0.
+	\label{eq:fractional-exponent}
+\end{equation}</div>
+<p>These rules are heavily used when simplifying expressions such as <span class="math-inline">\(e^{2kt} = (e^{kt})^2\)</span> or <span class="math-inline">\(\sqrt{ab} = a^{1/2} b^{1/2}\)</span>.</p>
+<h3 id="sec-0-logarithm-rules"><span class="sec-number">0.5.3</span>Logarithm rules</h3>
+<p>For <span class="math-inline">\(a&gt;0\)</span>, <span class="math-inline">\(a\neq 1\)</span>, and <span class="math-inline">\(x,y&gt;0\)</span>, logarithms satisfy</p>
+<div class="math-block">\begin{align}
+	\ln(xy) &amp;= \ln x + \ln y,
+	\label{eq:log-product} \\
+	\ln\!\left(\frac{x}{y}\right) &amp;= \ln x - \ln y,
+	\label{eq:log-quotient} \\
+	\ln(x^k) &amp;= k\,\ln x \quad (k\in\mathbb{R}).
+	\label{eq:log-power}
+\end{align}</div>
+<p>More generally, for a logarithm with base <span class="math-inline">\(a\)</span>,</p>
+<div class="math-block">\begin{equation}
+	\log_a x = \frac{\ln x}{\ln a},
+	\label{eq:change-of-base}
+\end{equation}</div>
+<p>which is the <em>change-of-base formula</em>. In practice we usually work with <span class="math-inline">\(\ln\)</span> and use <span class="math-inline">\(\eqref{eq:change-of-base}\)</span> if another base is needed.</p>
+<p>These rules let you turn products into sums and powers into factors, which is especially useful when solving exponential equations and working with logarithmic data in physics.</p>
+<h2 id="sec-0-trigonometry-for-physics"><span class="sec-number">0.6</span>Trigonometry for Physics</h2>
+<p>Trigonometry appears everywhere in calculus-based physics: resolving vectors into components, describing oscillations and waves, working with circular motion, and understanding phase in AC circuits. This section reviews the essentials you will use most often.</p>
+<h3 id="sec-0-right-triangle-definitions"><span class="sec-number">0.6.1</span>Right-triangle definitions</h3>
+<p>In a right triangle, let <span class="math-inline">\(\theta\)</span> be one of the acute angles. Then</p>
+<div class="math-block">\begin{equation}
+	\sin\theta=\frac{\text{opposite}}{\text{hypotenuse}},\qquad
+	\cos\theta=\frac{\text{adjacent}}{\text{hypotenuse}},\qquad
+	\tan\theta=\frac{\text{opposite}}{\text{adjacent}}.
+	\label{eq:right-trig-def}
+\end{equation}</div>
+<p>These definitions are ratios of side lengths.</p>
+<p>The Pythagorean theorem relates the three sides:</p>
+<div class="math-block">\begin{equation}
+	(\text{hypotenuse})^2
+	= (\text{adjacent})^2 + (\text{opposite})^2.
+	\label{eq:pythagorean-theorem}
+\end{equation}</div>
+<p>Figure <a href="../chapter-00/index.html#chapter-00-fig-8">0.8</a> shows how the sides are named relative to the angle <span class="math-inline">\(\theta\)</span>.</p>
+<figure id="chapter-00-fig-8" class="figure"><img src="assets/img/tikz-07.svg" alt="Naming the sides of a right triangle relative to the angle . These labels are used in the definitions of , , and in eq:right-trig-def." loading="lazy"><figcaption>Figure 0.8. Naming the sides of a right triangle relative to the angle
+		<span class="math-inline">\(\theta\)</span>.  These labels are used in the definitions of
+		<span class="math-inline">\(\sin\theta\)</span>, <span class="math-inline">\(\cos\theta\)</span>, and <span class="math-inline">\(\tan\theta\)</span>
+		in <span class="math-inline">\(\eqref{eq:right-trig-def}\)</span>.</figcaption></figure>
+<h3 id="sec-0-unit-circle-and-special-angles"><span class="sec-number">0.6.2</span>Unit circle and special angles</h3>
+<p>The unit circle (radius <span class="math-inline">\(1\)</span>) encodes all sine and cosine values. For an angle <span class="math-inline">\(\theta\)</span> measured from the positive <span class="math-inline">\(x\)</span>-axis, the point on the circle has coordinates</p>
+<div class="math-block">\begin{equation}
+	(\cos\theta,\sin\theta).
+	\label{eq:unit-circle-coordinates}
+\end{equation}</div>
+<p>Figure <a href="../chapter-00/index.html#chapter-00-fig-9">0.9</a> shows the standard special angles that occur frequently in physics and calculus.</p>
+<figure id="chapter-00-fig-9" class="figure"><img src="assets/img/Fig0_2.png" alt="Unit circle with commonly used angles in radians. For each angle the point on the circle has coordinates (,)." loading="lazy" style="--figure-width: 60%;"><figcaption>Figure 0.9. Unit circle with commonly used angles in radians. For each
+		angle <span class="math-inline">\(\theta\)</span> the point on the circle has coordinates
+		<span class="math-inline">\((\cos\theta,\sin\theta)\)</span>.</figcaption></figure>
+<h3 id="sec-0-exact-values-at-common-angles"><span class="sec-number">0.6.3</span>Exact values at common angles</h3>
+<p>Table <a href="../chapter-00/index.html#tab-trigvalues0">0.3</a> summarizes the exact values used frequently in physics and calculus.</p>
+<figure id="tab-trigvalues0" class="table-figure"><div class="table-wrap"><table><tr><td>
+		<strong><span class="math-inline">\(\theta\)</span> (deg)</strong></td><td><span class="math-inline">\(0^\circ\)</span></td><td><span class="math-inline">\(30^\circ\)</span></td><td><span class="math-inline">\(45^\circ\)</span></td><td><span class="math-inline">\(60^\circ\)</span></td><td><span class="math-inline">\(90^\circ\)</span></td><td><span class="math-inline">\(180^\circ\)</span></td><td><span class="math-inline">\(270^\circ\)</span></td><td><span class="math-inline">\(360^\circ\)</span></td></tr><tr><td>
+		<strong><span class="math-inline">\(\theta\)</span> (rad)</strong></td><td><span class="math-inline">\(0\)</span></td><td><span class="math-inline">\(\pi/6\)</span></td><td><span class="math-inline">\(\pi/4\)</span></td><td><span class="math-inline">\(\pi/3\)</span></td><td><span class="math-inline">\(\pi/2\)</span></td><td><span class="math-inline">\(\pi\)</span></td><td><span class="math-inline">\(3\pi/2\)</span></td><td><span class="math-inline">\(2\pi\)</span></td></tr><tr><td>
+		<span class="math-inline">\(\sin\theta\)</span></td><td><span class="math-inline">\(0\)</span></td><td><span class="math-inline">\(1/2\)</span></td><td><span class="math-inline">\(1/\sqrt{2}\)</span></td><td><span class="math-inline">\(\sqrt{3}/2\)</span></td><td><span class="math-inline">\(1\)</span></td><td><span class="math-inline">\(0\)</span></td><td><span class="math-inline">\(-1\)</span></td><td><span class="math-inline">\(0\)</span></td></tr><tr><td><span class="math-inline">\(\cos\theta\)</span></td><td><span class="math-inline">\(1\)</span></td><td><span class="math-inline">\(\sqrt{3}/2\)</span></td><td><span class="math-inline">\(1/\sqrt{2}\)</span></td><td><span class="math-inline">\(1/2\)</span></td><td><span class="math-inline">\(0\)</span></td><td><span class="math-inline">\(-1\)</span></td><td><span class="math-inline">\(0\)</span></td><td><span class="math-inline">\(1\)</span></td></tr><tr><td><span class="math-inline">\(\tan\theta\)</span></td><td><span class="math-inline">\(0\)</span></td><td><span class="math-inline">\(1/\sqrt{3}\)</span></td><td><span class="math-inline">\(1\)</span></td><td><span class="math-inline">\(\sqrt{3}\)</span></td><td>undefined</td><td><span class="math-inline">\(0\)</span></td><td>undefined</td><td><span class="math-inline">\(0\)</span></td></tr><tr><td></td></tr></table></div><figcaption>Table 0.3. Exact values of <span class="math-inline">\(\sin\theta\)</span>, <span class="math-inline">\(\cos\theta\)</span>, and <span class="math-inline">\(\tan\theta\)</span> at
+		commonly used angles. Angles must be in radians when used in calculus
+		formulas.</figcaption></figure>
+<h3 id="sec-0-graphs-of-x-sin-x-and-x-cos-x"><span class="sec-number">0.6.4</span>Graphs of <span class="math-inline">\(\sin x\)</span> and <span class="math-inline">\(\cos x\)</span></h3>
+<p>Figure <a href="../chapter-00/index.html#chapter-00-fig-10">0.10</a> shows the graphs of <span class="math-inline">\(f(x)=\sin x\)</span> and <span class="math-inline">\(g(x)=\cos x\)</span> over two periods. Both have domain <span class="math-inline">\((-\infty,\infty)\)</span> and range <span class="math-inline">\([-1,1]\)</span>.</p>
+<figure id="chapter-00-fig-10" class="figure"><img src="assets/img/tikz-08.svg" alt="Graphs of y= x (solid) and y= x (dashed) over two full periods. Both have amplitude 1 and period 2." loading="lazy"><figcaption>Figure 0.10. Graphs of <span class="math-inline">\(y=\sin x\)</span> (solid) and <span class="math-inline">\(y=\cos x\)</span> (dashed) over two
+		full periods. Both have amplitude <span class="math-inline">\(1\)</span> and period <span class="math-inline">\(2\pi\)</span>.</figcaption></figure>
+<p><strong>Physics connection.</strong> In simple harmonic motion and wave problems, you will repeatedly work with functions of the form</p>
+<div class="math-block">\begin{equation}
+	x(t) = A\cos(\omega t + \phi)
+	\quad\text{or}\quad
+	x(t) = A\sin(\omega t + \phi),
+	\label{eq:shm-trig}
+\end{equation}</div>
+<p>where <span class="math-inline">\(A\)</span> is the amplitude, <span class="math-inline">\(\omega\)</span> is the angular frequency, and <span class="math-inline">\(\phi\)</span> is the phase. Understanding the basic graphs of <span class="math-inline">\(\sin\)</span> and <span class="math-inline">\(\cos\)</span> makes these models much easier to interpret.</p>
+<h3 id="sec-0-key-trigonometric-identities"><span class="sec-number">0.6.5</span>Key trigonometric identities</h3>
+<p>Several identities show up repeatedly in physics, especially when simplifying expressions for waves, oscillations, and vector components.</p>
+<h4 id="sec-0-pythagorean-identities"><span class="sec-number">0.6.5.1</span>Pythagorean identities</h4>
+<p>The Pythagorean identity follows directly from the unit circle:</p>
+<div class="math-block">\begin{equation}
+	\sin^{2}\theta + \cos^{2}\theta = 1.
+	\label{eq:pythagorean-identity}
+\end{equation}</div>
+<p>From this, we obtain</p>
+<div class="math-block">\begin{align}
+	1 + \tan^{2}\theta &amp;= \sec^{2}\theta,
+	\label{eq:tan-sec-identity} \\
+	1 + \cot^{2}\theta &amp;= \csc^{2}\theta.
+	\label{eq:cot-csc-identity}
+\end{align}</div>
+<h4 id="sec-0-even-odd-and-symmetry-identities"><span class="sec-number">0.6.5.2</span>Even/odd and symmetry identities</h4>
+<p>Sine is an <em>odd</em> function and cosine is an <em>even</em> function:</p>
+<div class="math-block">\begin{equation}
+	\sin(-\theta) = -\sin\theta,\qquad
+	\cos(-\theta) = \cos\theta.
+	\label{eq:even-odd-identities}
+\end{equation}</div>
+<p>Physically, these symmetries are useful when analyzing motion or fields that are symmetric about the origin or the vertical axis.</p>
+<h4 id="sec-0-angle-addition-and-subtraction"><span class="sec-number">0.6.5.3</span>Angle addition and subtraction</h4>
+<p>The angle addition and subtraction formulas are</p>
+<div class="math-block">\begin{align}
+	\sin(\alpha \pm \beta)
+	&amp;= \sin\alpha\cos\beta \pm \cos\alpha\sin\beta,
+	\label{eq:sin-angle-addition} \\
+	\cos(\alpha \pm \beta)
+	&amp;= \cos\alpha\cos\beta \mp \sin\alpha\sin\beta.
+	\label{eq:cos-angle-addition}
+\end{align}</div>
+<p>These are especially important when combining waves with different phases, for example in interference and AC circuit analysis.</p>
+<h4 id="sec-0-double-angle-formulas"><span class="sec-number">0.6.5.4</span>Double-angle formulas</h4>
+<p>Setting <span class="math-inline">\(\beta=\alpha\)</span> in the angle addition formulas gives the double-angle identities:</p>
+<div class="math-block">\begin{align}
+	\sin(2\theta) &amp;= 2\sin\theta\cos\theta,
+	\label{eq:sin-double-angle} \\
+	\cos(2\theta) &amp;= \cos^{2}\theta - \sin^{2}\theta
+	= 2\cos^{2}\theta - 1
+	= 1 - 2\sin^{2}\theta.
+	\label{eq:cos-double-angle}
+\end{align}</div>
+<p>These forms are useful when rewriting expressions like <span class="math-inline">\(\sin^{2}\theta\)</span> or <span class="math-inline">\(\cos^{2}\theta\)</span> in terms of a single cosine with double angle, which appears often in power calculations and intensity formulas.</p>
+<h4 id="sec-0-phase-shift-identities"><span class="sec-number">0.6.5.5</span>Phase-shift identities</h4>
+<p>It is sometimes convenient to convert between sine and cosine using phase shifts:</p>
+<div class="math-block">\begin{align}
+	\sin\!\left(\theta + \frac{\pi}{2}\right) &amp;= \cos\theta,
+	&amp;
+	\cos\!\left(\theta - \frac{\pi}{2}\right) &amp;= \sin\theta,
+	\label{eq:phase-shift-sin-cos} \\
+	\sin\!\left(\theta - \frac{\pi}{2}\right) &amp;= -\cos\theta,
+	&amp;
+	\cos\!\left(\theta + \frac{\pi}{2}\right) &amp;= -\sin\theta.
+	\label{eq:phase-shift-sin-cos-negative}
+\end{align}</div>
+<p>In oscillation problems, this shows that any sinusoidal function can be written either as a sine or a cosine with an appropriate phase shift.</p>
+<h2 id="sec-0-calculus-essentials"><span class="sec-number">0.7</span>Calculus Essentials</h2>
+<h3 id="sec-0-limits-and-continuity-informal-view"><span class="sec-number">0.7.1</span>Limits and continuity (informal view)</h3>
+<p>A <em>limit</em> describes what values <span class="math-inline">\(f(x)\)</span> gets close to when <span class="math-inline">\(x\)</span> gets close to some number <span class="math-inline">\(a\)</span>.</p>
+<p> <strong>Left and right limits.</strong></p>
+<ul><li><p>The <em>left-hand limit</em> of <span class="math-inline">\(f\)</span> at <span class="math-inline">\(x=a\)</span>,</p>
+<div class="math-block">\begin{equation}
+	\lim_{x\to a^-} f(x),
+	\end{equation}</div>
+<p>is the value that <span class="math-inline">\(f(x)\)</span> approaches when <span class="math-inline">\(x\)</span> comes in toward <span class="math-inline">\(a\)</span> from the left (<span class="math-inline">\(x&lt;a\)</span>).</p></li><li><p>The <em>right-hand limit</em> of <span class="math-inline">\(f\)</span> at <span class="math-inline">\(x=a\)</span>,</p>
+<div class="math-block">\begin{equation}
+	\lim_{x\to a^+} f(x),
+	\end{equation}</div>
+<p>is the value that <span class="math-inline">\(f(x)\)</span> approaches when <span class="math-inline">\(x\)</span> comes in toward <span class="math-inline">\(a\)</span> from the right (<span class="math-inline">\(x&gt;a\)</span>).</p></li></ul>
+<p>If both one–sided limits exist and are equal, we say the (two–sided) limit <span class="math-inline">\(\displaystyle \lim_{x\to a} f(x)\)</span> exists and define</p>
+<div class="math-block">\begin{equation}
+	\lim_{x\to a} f(x) = L
+	\quad\text{to mean}\quad
+	\lim_{x\to a^-} f(x) = \lim_{x\to a^+} f(x) = L.
+	\label{eq:limit-definition-informal}
+\end{equation}</div>
+<section class="callout definition"><header>Definition - Continuity at a point</header><p> We say that a function <span class="math-inline">\(f\)</span> is <em>continuous at</em> <span class="math-inline">\(x=a\)</span> if all three of the following are true:</p>
+<ol><li><p><span class="math-inline">\(f(a)\)</span> is defined;</p></li><li><p>the left-hand and right-hand limits both exist and are equal:</p>
+<div class="math-block">\begin{equation}
+		\lim_{x\to a^-} f(x) = \lim_{x\to a^+} f(x) = L;
+		\end{equation}</div></li><li><p>this common limit equals the function value:</p>
+<div class="math-block">\begin{equation}
+			f(a) = L.
+			\label{eq:continuity-condition}
+		\end{equation}</div></li></ol>
+<p>In words: as you walk along the graph toward <span class="math-inline">\(x=a\)</span> from either side, you end up at the same height, and that height is exactly the value of the function at <span class="math-inline">\(x=a\)</span>.</p></section>
+<p>In this course, you mainly need to recognize simple situations where limits describe slopes, rates, or behavior very close to a point (for example, the instantaneous velocity of a moving object).</p>
+<section class="callout example"><header>Example - Continuous at a point</header><p> Consider</p>
+<div class="math-block">\begin{equation}
+		f(x) = 3x - 1.
+		\label{eq:limit-example-function}
+	\end{equation}</div>
+<p>For <span class="math-inline">\(x\)</span> near <span class="math-inline">\(2\)</span>, <span class="math-inline">\(f(x)\)</span> is near <span class="math-inline">\(5\)</span>. In fact</p>
+<div class="math-block">\begin{equation}
+		\lim_{x\to 2^-} f(x)
+		= \lim_{x\to 2^+} f(x)
+		= 3\cdot 2 - 1
+		= 5,
+	\end{equation}</div>
+<p>so <span class="math-inline">\(
+	\displaystyle \lim_{x\to 2} f(x) = 5.
+	\)</span> The function value is</p>
+<div class="math-block">\begin{equation}
+		f(2) = 3\cdot 2 - 1 = 5.
+	\end{equation}</div>
+<p>Here</p>
+<div class="math-block">\begin{equation}
+	\lim_{x\to 2^-} f(x) = \lim_{x\to 2^+} f(x) = f(2) = 5,
+	\end{equation}</div>
+<p>so <span class="math-inline">\(f\)</span> is continuous at <span class="math-inline">\(x=2\)</span>. The graph has no jump or hole at that point.</p></section>
+<figure id="chapter-00-fig-11" class="figure"><img src="assets/img/tikz-09.svg" alt="A continuous function: as x 2 from left or right, f(x) 5, and f(2)=5." loading="lazy"><figcaption>Figure 0.11. A continuous function: as <span class="math-inline">\(x\to 2\)</span> from left or right,
+		<span class="math-inline">\(f(x)\to 5\)</span>, and <span class="math-inline">\(f(2)=5\)</span>.</figcaption></figure>
+<section class="callout example"><header>Example - Limit exists but not continuous (removable hole)</header><p> Now consider the piecewise function</p>
+<div class="math-block">\begin{equation}
+		g(x)=
+		\begin{cases}
+			x^2, &amp; x\neq 1,\\[0.25em]
+			3,   &amp; x=1.
+		\end{cases}
+		\label{eq:piecewise-continuity-example}
+	\end{equation}</div>
+<p>For <span class="math-inline">\(x\)</span> close to <span class="math-inline">\(1\)</span> (from either side but not equal to <span class="math-inline">\(1\)</span>), <span class="math-inline">\(g(x)\)</span> behaves like <span class="math-inline">\(x^2\)</span>, so</p>
+<div class="math-block">\begin{equation}
+		\lim_{x\to 1^-} g(x)
+		= \lim_{x\to 1^+} g(x)
+		= \lim_{x\to 1} x^2
+		= 1.
+		\label{eq:limit-g-at-1}
+	\end{equation}</div>
+<p>Thus <span class="math-inline">\(
+	\displaystyle \lim_{x\to 1} g(x) = 1.
+	\)</span> However,</p>
+<div class="math-block">\begin{equation}
+		g(1) = 3.
+		\label{eq:g-of-1}
+	\end{equation}</div>
+<p>So the left and right limits agree, but they do <em>not</em> equal the function value:</p>
+<div class="math-block">\begin{equation}
+	\lim_{x\to 1} g(x) = 1 \neq g(1) = 3.
+	\end{equation}</div>
+<p>Therefore <span class="math-inline">\(g\)</span> is <em>not</em> continuous at <span class="math-inline">\(x=1\)</span>. The graph has a “hole” at <span class="math-inline">\((1,1)\)</span> and a filled point at <span class="math-inline">\((1,3)\)</span>.</p></section>
+<figure id="chapter-00-fig-12" class="figure"><img src="assets/img/tikz-10.svg" alt="A removable discontinuity: left and right limits at x=1 both equal 1, but g(1)=3, so g is not continuous at x=1." loading="lazy"><figcaption>Figure 0.12. A removable discontinuity: left and right limits at <span class="math-inline">\(x=1\)</span> both equal
+		<span class="math-inline">\(1\)</span>, but <span class="math-inline">\(g(1)=3\)</span>, so <span class="math-inline">\(g\)</span> is not continuous at <span class="math-inline">\(x=1\)</span>.</figcaption></figure>
+<p> <strong>Physics connection.</strong></p>
+<ul><li><p>If position <span class="math-inline">\(x(t)\)</span> is continuous in <span class="math-inline">\(t\)</span>, a particle does not “jump” from one place to another without passing through intermediate points.</p></li><li><p>Many fields in physics (temperature, electric potential, etc.) are modeled as continuous functions so that there are no sudden jumps in value at a point.</p></li><li><p>Later, derivatives (instantaneous rates of change) will be defined using limits where <span class="math-inline">\(x\to a\)</span>. Understanding left and right limits and continuity now makes those definitions much easier to follow.</p></li></ul>
+<h3 id="sec-0-derivatives-as-rates-of-change"><span class="sec-number">0.7.2</span>Derivatives as rates of change</h3>
+<p>In physics, we are often interested in how one quantity changes as another quantity changes. For example, how position changes with time, or how current changes with time. The mathematical tool that describes an <em>instantaneous</em> rate of change is the <em>derivative</em>.</p>
+<p> <strong>Average vs. instantaneous rate of change.</strong> For a function <span class="math-inline">\(f(x)\)</span>, the <em>average rate of change</em> of <span class="math-inline">\(f\)</span> between <span class="math-inline">\(x\)</span> and <span class="math-inline">\(x+h\)</span> (with <span class="math-inline">\(h\neq 0\)</span>) is</p>
+<div class="math-block">\begin{equation}
+	\frac{f(x+h) - f(x)}{h}.
+	\label{eq:average-rate-of-change}
+\end{equation}</div>
+<p>Geometrically, this is the slope of the <em>secant line</em> through the points <span class="math-inline">\(\bigl(x,f(x)\bigr)\)</span> and <span class="math-inline">\(\bigl(x+h,f(x+h)\bigr)\)</span>.</p>
+<p>If we let <span class="math-inline">\(h\)</span> get closer and closer to <span class="math-inline">\(0\)</span>, the secant line approaches the <em>tangent line</em> at <span class="math-inline">\(x\)</span>, and the average rate of change approaches the <em>instantaneous</em> rate of change.</p>
+<section class="callout definition"><header>Definition - Derivative</header><p> The <em>derivative</em> of <span class="math-inline">\(f\)</span> at <span class="math-inline">\(x\)</span> is defined by the limit</p>
+<div class="math-block">\begin{equation}
+		f&#x27;(x) = \lim_{h\to 0} \frac{f(x+h) - f(x)}{h},
+		\label{eq:derivative-definition}
+	\end{equation}</div>
+<p>when this limit exists. Geometrically, <span class="math-inline">\(f&#x27;(x)\)</span> is the slope of the <em>tangent line</em> to the graph of <span class="math-inline">\(f\)</span> at the point <span class="math-inline">\(\bigl(x,f(x)\bigr)\)</span>.</p></section>
+<figure id="chapter-00-fig-13" class="figure"><img src="assets/img/tikz-11.svg" alt="The derivative f&amp;#x27;(x) is the limit of the slopes of secant lines as the second point (open circle) moves toward the point of tangency (solid dot). The secant line (dashed) and tangent line (solid) intersect the curve y=f(x) at different points, making the geometry clear." loading="lazy"><figcaption>Figure 0.13. The derivative <span class="math-inline">\(f&#x27;(x)\)</span> is the limit of the slopes of secant lines as
+		the second point (open circle) moves toward the point of tangency (solid
+		dot). The secant line (dashed) and tangent line (solid) intersect the curve
+		<span class="math-inline">\(y=f(x)\)</span> at different points, making the geometry clear.</figcaption></figure>
+<p> <strong>Physical meaning: position, velocity, and acceleration.</strong> Let <span class="math-inline">\(x(t)\)</span> denote the position of a particle along a line as a function of time <span class="math-inline">\(t\)</span>.</p>
+<ul><li><p>The <em>average velocity</em> between times <span class="math-inline">\(t\)</span> and <span class="math-inline">\(t+\Delta t\)</span> is</p>
+<div class="math-block">\begin{equation}
+		v_{\text{avg}}
+		= \frac{\Delta x}{\Delta t}
+		= \frac{x(t+\Delta t) - x(t)}{\Delta t}.
+		\label{eq:average-velocity}
+	\end{equation}</div></li><li><p>The <em>instantaneous velocity</em> at time <span class="math-inline">\(t\)</span> is the derivative</p>
+<div class="math-block">\begin{equation}
+		v(t) = x&#x27;(t) = \frac{dx}{dt}
+		= \lim_{\Delta t\to 0}
+		\frac{x(t+\Delta t) - x(t)}{\Delta t}.
+		\label{eq:velocity-derivative}
+	\end{equation}</div></li><li><p>The <em>instantaneous acceleration</em> is the derivative of velocity:</p>
+<div class="math-block">\begin{equation}
+		a(t) = v&#x27;(t) = x&#x27;&#x27;(t) = \frac{d^2x}{dt^2}.
+		\label{eq:acceleration-derivative}
+	\end{equation}</div></li></ul>
+<p>Note that:</p>
+<ul><li><p>If <span class="math-inline">\(x(t)\)</span> is measured in meters and <span class="math-inline">\(t\)</span> in seconds, then <span class="math-inline">\(v(t)\)</span> has units of m/s and <span class="math-inline">\(a(t)\)</span> has units of m/s<span class="math-inline">\(^2\)</span>.</p></li><li><p>The derivative always carries “units of <span class="math-inline">\(f\)</span> divided by units of <span class="math-inline">\(x\)</span>” (output units divided by input units).</p></li></ul>
+<section class="callout example"><header>Example - Position, velocity, and acceleration</header><p> Suppose the position of a particle moving along a line is</p>
+<div class="math-block">\begin{equation}
+		x(t) = 2t^2 + 3t
+		\quad\text{(meters)},
+		\label{eq:derivative-example-position}
+	\end{equation}</div>
+<p>with time <span class="math-inline">\(t\)</span> measured in seconds. Then the velocity and acceleration are</p>
+<div class="math-block">\begin{align}
+		v(t) &amp;= \frac{dx}{dt} = 4t + 3
+		\quad\text{(m/s)},
+		\label{eq:derivative-example-velocity} \\
+		a(t) &amp;= \frac{dv}{dt} = 4
+		\quad\text{(m/s$^2$)}.
+		\label{eq:derivative-example-acceleration}
+	\end{align}</div>
+<p>At <span class="math-inline">\(t = 1\ \text{s}\)</span>,</p>
+<div class="math-block">\begin{equation}
+		v(1) = 7\ \text{m/s},
+		\qquad
+		a(1) = 4\ \text{m/s}^2.
+	\end{equation}</div>
+<p>So at <span class="math-inline">\(t=1\ \text{s}\)</span>, the particle is moving to the right at <span class="math-inline">\(7\ \text{m/s}\)</span> and speeding up at a constant rate of <span class="math-inline">\(4\ \text{m/s}^2\)</span>.</p></section>
+<h3 id="sec-0-basic-derivative-rules"><span class="sec-number">0.7.3</span>Basic derivative rules</h3>
+<p>Computing derivatives directly from the limit definition <span class="math-inline">\(\eqref{eq:derivative-definition}\)</span> is usually too slow for real problems. In practice, we use a small set of rules. If <span class="math-inline">\(f\)</span> and <span class="math-inline">\(g\)</span> are differentiable and <span class="math-inline">\(c\)</span> is a constant, then:</p>
+<p> <strong>Basic algebra and power rules</strong></p>
+<div class="math-block">\begin{align}
+	\frac{d}{dx}(c) &amp;= 0,
+	\label{eq:derivative-constant} \\
+	\frac{d}{dx}\bigl(x^n\bigr) &amp;= n x^{n-1}
+	\quad\text{(power rule)},
+	\label{eq:power-rule} \\
+	\frac{d}{dx}\bigl(f+g\bigr) &amp;= f&#x27; + g&#x27;,
+	\label{eq:derivative-sum} \\
+	\frac{d}{dx}\bigl(cf\bigr) &amp;= c f&#x27;,
+	\label{eq:derivative-constant-multiple}
+\end{align}</div>
+<p> <strong>Product and quotient rules</strong></p>
+<div class="math-block">\begin{align}
+	\frac{d}{dx}\bigl(fg\bigr) &amp;= f&#x27;g + fg&#x27;
+	\quad\text{(product rule)},
+	\label{eq:product-rule} \\
+	\frac{d}{dx}\left(\frac{f}{g}\right) &amp;= \frac{f&#x27;g - fg&#x27;}{g^2},
+	\quad g\ne 0
+	\quad\text{(quotient rule)}.
+	\label{eq:quotient-rule}
+\end{align}</div>
+<p> <strong>Chain rule (functions of functions)</strong> If <span class="math-inline">\(y=f(u)\)</span> and <span class="math-inline">\(u=g(x)\)</span>, then the <em>chain rule</em> says</p>
+<div class="math-block">\begin{equation}
+	\frac{dy}{dx} = \frac{dy}{du}\frac{du}{dx}
+	= f&#x27;\bigl(g(x)\bigr)\,g&#x27;(x).
+	\label{eq:chain-rule}
+\end{equation}</div>
+<p>This rule is essential whenever the variable <span class="math-inline">\(x\)</span> is “hidden inside” another function (for example, <span class="math-inline">\(\sin(3x)\)</span> or <span class="math-inline">\(e^{x^2}\)</span>).</p>
+<p> <strong>Standard derivatives (with <span class="math-inline">\(x\)</span> in radians)</strong></p>
+<div class="math-block">\begin{align}
+	\frac{d}{dx}(e^x) &amp;= e^x, &amp;
+	\frac{d}{dx}(\ln x) &amp;= \frac{1}{x} \quad (x&gt;0),
+	\label{eq:derivative-exp-log} \\
+	\frac{d}{dx}(\sin x) &amp;= \cos x, &amp;
+	\frac{d}{dx}(\cos x) &amp;= -\sin x,
+	\label{eq:derivative-sin-cos} \\
+	\frac{d}{dx}(\tan x) &amp;= \sec^2 x.
+	\label{eq:derivative-tan}
+\end{align}</div>
+<section class="callout example"><header>Example - Using product and chain rules</header><p> Let</p>
+<div class="math-block">\begin{equation}
+		f(x) = x^2 e^{3x}.
+		\label{eq:derivative-rules-example-f}
+	\end{equation}</div>
+<p>Treat <span class="math-inline">\(x^2\)</span> and <span class="math-inline">\(e^{3x}\)</span> as two factors and use the product rule:</p>
+<div class="math-block">\begin{align}
+		f&#x27;(x)
+		&amp;= \frac{d}{dx}\bigl(x^2\bigr) \, e^{3x}
+		+ x^2 \, \frac{d}{dx}\bigl(e^{3x}\bigr) \nonumber \\
+		&amp;= 2x\,e^{3x}
+		+ x^2 \bigl( 3e^{3x} \bigr)
+		\quad\text{(chain rule on $e^{3x}$)} \nonumber \\
+		&amp;= e^{3x}\bigl(2x + 3x^2\bigr).
+		\label{eq:derivative-rules-example-result}
+	\end{align}</div>
+<p>In physics, combinations like <span class="math-inline">\(x^2 e^{3x}\)</span> can appear in models of exponentially growing or decaying quantities with additional polynomial factors (for example, certain solutions of differential equations).</p></section>
+<h3 id="sec-0-integrals-as-accumulated-change"><span class="sec-number">0.7.4</span>Integrals as accumulated change</h3>
+<p>Derivatives measure <em>instantaneous</em> rates of change. Integrals do the opposite: they measure how much a quantity has <em>accumulated</em> as another variable changes.</p>
+<p>The <em>definite integral</em> of <span class="math-inline">\(f\)</span> from <span class="math-inline">\(a\)</span> to <span class="math-inline">\(b\)</span> is written</p>
+<div class="math-block">\begin{equation}
+	\int_a^b f(x)\,dx.
+	\label{eq:definite-integral}
+\end{equation}</div>
+<p>Informally, this represents the <em>signed area</em> between the graph <span class="math-inline">\(y=f(x)\)</span> and the <span class="math-inline">\(x\)</span>–axis from <span class="math-inline">\(x=a\)</span> to <span class="math-inline">\(x=b\)</span>:</p>
+<ul><li><p>regions where <span class="math-inline">\(f(x)\ge 0\)</span> contribute positive area,</p></li><li><p>regions where <span class="math-inline">\(f(x)&lt;0\)</span> contribute negative area.</p></li></ul>
+<p>From a physics point of view, the key idea is:</p>
+<p>quote If <span class="math-inline">\(f(x)\)</span> is a rate of change of some quantity <span class="math-inline">\(Q\)</span>, then the integral of <span class="math-inline">\(f\)</span> over an interval gives the net change in <span class="math-inline">\(Q\)</span> over that interval. quote</p>
+<p>Mathematically, if <span class="math-inline">\(F\)</span> is any antiderivative of <span class="math-inline">\(f\)</span> (so <span class="math-inline">\(F&#x27;(x)=f(x)\)</span>), then the <em>Fundamental Theorem of Calculus</em> says</p>
+<div class="math-block">\begin{equation}
+	\int_a^b f(x)\,dx = F(b) - F(a).
+	\label{eq:FTC}
+\end{equation}</div>
+<p> <strong>Example: displacement from velocity.</strong> Let <span class="math-inline">\(x(t)\)</span> be the position of a particle and <span class="math-inline">\(v(t)=dx/dt\)</span> its velocity. Then velocity is the rate of change of position, so the net <em>displacement</em> from time <span class="math-inline">\(t=a\)</span> to <span class="math-inline">\(t=b\)</span> is</p>
+<div class="math-block">\begin{equation}
+	x(b) - x(a) = \int_a^b v(t)\,dt.
+	\label{eq:displacement-integral}
+\end{equation}</div>
+<p>If <span class="math-inline">\(v(t)\ge 0\)</span> on <span class="math-inline">\([a,b]\)</span>, the particle is always moving in the positive direction and the integral is the (unsigned) area under the <span class="math-inline">\(v(t)\)</span> graph. If <span class="math-inline">\(v(t)\)</span> changes sign, the integral gives the <em>net</em> displacement (forward minus backward motion).</p>
+<figure id="chapter-00-fig-14" class="figure"><img src="assets/img/tikz-12.svg" alt="Velocity–time graph. The gray area under v(t) from t=0 to t=4 equals the displacement x(4)-x(0)." loading="lazy"><figcaption>Figure 0.14. Velocity–time graph. The gray area under <span class="math-inline">\(v(t)\)</span> from <span class="math-inline">\(t=0\)</span> to <span class="math-inline">\(t=4\)</span>
+		equals the displacement <span class="math-inline">\(x(4)-x(0)\)</span>.</figcaption></figure>
+<section class="callout example"><header>Example - Displacement from velocity</header><p> A particle moves along a line with velocity</p>
+<div class="math-block">\begin{equation}
+		v(t) = 3t \quad (\text{m/s}),
+		\label{eq:integral-example-velocity}
+	\end{equation}</div>
+<p>for <span class="math-inline">\(0 \le t \le 4\ \text{s}\)</span>. Its displacement from <span class="math-inline">\(t=0\)</span> to <span class="math-inline">\(t=4\)</span> is</p>
+<div class="math-block">\begin{align}
+		x(4) - x(0)
+		&amp;= \int_0^4 v(t)\,dt
+		= \int_0^4 3t\,dt \nonumber \\
+		&amp;= 3 \left[ \frac{t^2}{2} \right]_{0}^{4}
+		= 3 \cdot \frac{16}{2}
+		= 24\ \text{m}.
+		\label{eq:integral-example-displacement}
+	\end{align}</div>
+<p>If <span class="math-inline">\(x(0)=0\)</span>, then <span class="math-inline">\(x(4)=24\ \text{m}\)</span>. Notice that the units work out: (m/s)<span class="math-inline">\(\times\)</span> s <span class="math-inline">\(=\)</span> m.</p></section>
+<p> <strong>Other physics examples.</strong> The same “rate <span class="math-inline">\(\to\)</span> accumulated change” idea appears everywhere:</p>
+<ul><li><p>If <span class="math-inline">\(I(t)\)</span> is electric current (C/s), then <span class="math-inline">\(\displaystyle \int_{t_1}^{t_2} I(t)\,dt\)</span> is the total charge (C) that flows during <span class="math-inline">\([t_1,t_2]\)</span>.</p></li><li><p>If <span class="math-inline">\(F(x)\)</span> is force (N) along a line and <span class="math-inline">\(x\)</span> is position (m), then <span class="math-inline">\(\displaystyle \int_{x_1}^{x_2} F(x)\,dx\)</span> is the work done (J) in moving from <span class="math-inline">\(x_1\)</span> to <span class="math-inline">\(x_2\)</span>.</p></li></ul>
+<h3 id="sec-0-indefinite-integrals-and-antiderivative-rules"><span class="sec-number">0.7.5</span>Indefinite integrals and antiderivative rules</h3>
+<p>While a definite integral gives a <em>number</em>, an <em>indefinite integral</em> (or <em>antiderivative</em>) gives a <em>family of functions</em>.</p>
+<section class="callout definition"><header>Definition - Indefinite integral / antiderivative</header><p> A function <span class="math-inline">\(F\)</span> is called an <em>antiderivative</em> of <span class="math-inline">\(f\)</span> on an interval if</p>
+<div class="math-block">\begin{equation}
+		F&#x27;(x) = f(x)
+		\quad\text{for all }x\text{ in the interval}.
+	\end{equation}</div>
+<p>We write</p>
+<div class="math-block">\begin{equation}
+		\int f(x)\,dx = F(x) + C,
+		\label{eq:indefinite-integral}
+	\end{equation}</div>
+<p>where <span class="math-inline">\(C\)</span> is an arbitrary constant. Different choices of <span class="math-inline">\(C\)</span> give different antiderivatives with the same derivative <span class="math-inline">\(f\)</span>.</p></section>
+<p>For <span class="math-inline">\(n\ne -1\)</span>,</p>
+<div class="math-block">\begin{equation}
+	\int x^n\,dx = \frac{x^{n+1}}{n+1} + C.
+	\label{eq:antiderivative-power}
+\end{equation}</div>
+<p>Other standard examples (again with <span class="math-inline">\(x\)</span> in radians) are</p>
+<div class="math-block">\begin{align}
+	\int e^x\,dx &amp;= e^x + C, &amp;
+	\int \frac{1}{x}\,dx &amp;= \ln|x| + C,
+	\label{eq:antiderivative-exp-log} \\
+	\int \cos x\,dx &amp;= \sin x + C, &amp;
+	\int \sin x\,dx &amp;= -\cos x + C.
+	\label{eq:antiderivative-sin-cos}
+\end{align}</div>
+<p>In physics, indefinite integrals often appear when we solve differential equations. For example, if we know that acceleration <span class="math-inline">\(a\)</span> is constant, then</p>
+<div class="math-block">\begin{equation}
+\frac{dv}{dt} = a
+\quad\Rightarrow\quad
+v(t) = \int a\,dt = at + C,
+\end{equation}</div>
+<p>and the constant <span class="math-inline">\(C\)</span> is fixed by an initial condition like <span class="math-inline">\(v(0)=v_0\)</span>.</p>
+<p> <strong><span class="math-inline">\(u\)</span>–substitution (reverse chain rule).</strong> When a function has the form <span class="math-inline">\(f(g(x))g&#x27;(x)\)</span>, a simple substitution <span class="math-inline">\(u=g(x)\)</span> often reduces the integral to one of these basic forms. This is the integration version of the chain rule.</p>
+<section class="callout example"><header>Example - Basic antiderivatives</header><p> Compute</p>
+<div class="math-block">\begin{equation}
+		\int \left(3x^2 - \frac{4}{x} + 5\right) dx.
+		\label{eq:antiderivative-rules-example}
+	\end{equation}</div>
+<p>Rewrite <span class="math-inline">\(\dfrac{4}{x}\)</span> as <span class="math-inline">\(4x^{-1}\)</span> and integrate term by term:</p>
+<div class="math-block">\begin{align}
+		\int \left(3x^2 - 4x^{-1} + 5\right) dx
+		&amp;= 3 \int x^2 dx - 4 \int x^{-1} dx + 5 \int dx \nonumber \\
+		&amp;= 3 \cdot \frac{x^{3}}{3}
+		- 4 \ln|x|
+		+ 5x
+		+ C \nonumber \\
+		&amp;= x^{3} - 4\ln|x| + 5x + C.
+		\label{eq:antiderivative-rules-example-result}
+	\end{align}</div></section>
+<section class="callout example"><header>Example - Simple <span class="math-inline">\(u\)</span>–substitution</header><p> Compute</p>
+<div class="math-block">\begin{equation}
+		\int 2x \cos(x^2)\,dx.
+		\label{eq:usub-example}
+	\end{equation}</div>
+<p>Let <span class="math-inline">\(u=x^2\)</span>, so <span class="math-inline">\(du = 2x\,dx\)</span>. Then</p>
+<div class="math-block">\begin{align}
+		\int 2x \cos(x^2)\,dx
+		&amp;= \int \cos(u)\,du \nonumber \\
+		&amp;= \sin(u) + C \nonumber \\
+		&amp;= \sin(x^2) + C.
+		\label{eq:usub-example-result}
+	\end{align}</div>
+<p>This pattern (something like <span class="math-inline">\(\cos(\text{something})\)</span> times the derivative of that “something”) occurs frequently in physics, for example when integrating fields or potentials that have composite functional forms.</p></section>
+<h2 id="sec-0-for-the-interested-reader">For the Interested Reader</h2>
+<p>This chapter is a fast refresher, not a first course. If a topic here is genuinely new to you rather than just rusty, the resources below teach it properly, and they are the right place to build the fluency this course assumes. Everything listed is free.</p>
+<h3 id="sec-0-videos">Videos</h3>
+<p>3Blue1Brown's <em>Essence of Calculus</em> is the best visual introduction to the calculus half of this review. It builds the derivative and the integral from pictures, so the rules in the last section stop looking like something to memorise. Start with the overview, then watch the episode matching whatever you want to see:</p>
+<section class="callout context"><header>Video</header><p><strong>The essence of calculus — 3Blue1Brown</strong></p>
+<a class="video-preview" href="https://www.youtube.com/watch?v=WUvTyaaNkzM" target="_blank" rel="noopener" aria-label="Watch The essence of calculus — 3Blue1Brown on YouTube"><img src="https://img.youtube.com/vi/WUvTyaaNkzM/hqdefault.jpg" alt="Video thumbnail for The essence of calculus — 3Blue1Brown" loading="lazy"><span class="video-preview-play" aria-hidden="true"></span><span class="video-preview-label">Watch on YouTube</span></a>
+<p><a href="https://www.youtube.com/watch?v=WUvTyaaNkzM" target="_blank" rel="noopener">Open video on YouTube</a></p></section>
+<ul><li><p><a href="https://www.youtube.com/watch?v=9vKqVkMQHKk">The paradox of the derivative</a>  (our  Derivatives as rates of change)</p></li><li><p><a href="https://www.youtube.com/watch?v=S0_qX4VJhMQ">Derivative formulas through geometry</a>  (Basic derivative rules)</p></li><li><p><a href="https://www.youtube.com/watch?v=kfF40MiS7zA">Limits, L'Hôpital's rule, and epsilon-delta</a>  (Limits and continuity)</p></li><li><p><a href="https://www.youtube.com/watch?v=rfG8ce4nNh0">Integration and the fundamental theorem of calculus</a>  (Integrals as accumulated change)</p></li></ul>
+<p>For the algebra, trigonometry and precalculus material, Khan Academy's <a href="https://www.khanacademy.org/math/precalculus">Precalculus</a> track has short videos with immediate practice on exactly the functions, exponentials, logarithms and trigonometry reviewed above.</p>
+<h3 id="sec-0-websites">Websites</h3>
+<ul><li><p><strong>Paul's Online Math Notes.</strong> The most efficient written reference for everything in this chapter: <a href="https://tutorial.math.lamar.edu/Classes/Alg/Alg.aspx">Algebra</a>, <a href="https://tutorial.math.lamar.edu/Classes/CalcI/CalcI.aspx">Calculus I</a>, and a set of printable <a href="https://tutorial.math.lamar.edu/">cheat sheets</a> for algebra, trigonometry and calculus that are worth keeping beside you.</p></li><li><p><strong>OpenStax, free textbooks.</strong> <a href="https://openstax.org/details/books/precalculus-2e">Precalculus</a> covers the functions, exponentials, logarithms and trigonometry of this chapter; <a href="https://openstax.org/details/books/calculus-volume-1">Calculus Volume 1</a> covers the limits, derivatives and integrals. Both have many worked examples and exercises with answers.</p></li></ul>
+<section class="callout remark"><header>Remark</header><p>A word on how to use this chapter. Do not try to memorise it. Skim it once to see what is here, then come back to a specific section the moment a physics problem needs it — when you first have to differentiate a trajectory, integrate a velocity, or solve a quadratic for a time of flight. The mathematics sticks far better when a physical question makes you reach for it.</p></section>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <span></span>
+      <a href="../../toc.html">Contents</a>
+      <a href="../chapter-01/index.html">Next: Infinite Series and Power Series</a>
+    </nav>
+  </article>
+</main>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p>&copy; 2026 Erfan Saydanzad. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 5: Many-Electron Atoms | Direct Method</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+  <link rel="preload" href="../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../assets/css/site.css?v=db81423d">
+  <script>
+    window.MathJax = {
+      // tagformat is an optional TeX extension, not part of the combined
+      // tex-chtml build. Without these two lines the tagformat block below is
+      // read and silently ignored, and every equation numbers from 1 with no
+      // chapter in front of it.
+      loader: { load: ['[tex]/tagformat'] },
+      tex: {
+        packages: { '[+]': ['tagformat'] },
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        processEnvironments: true,
+        tags: 'ams',
+        // The PDF numbers equations within the chapter (\numberwithin
+        // {equation}{chapter}), so "1.8" is the eighth equation of
+        // chapter 1. MathJax counts from 1 on every page, which would have
+        // shown that same equation as "8". Prefixing the chapter number
+        // keeps a reference valid against either version.
+        tagformat: {
+          number: function (n) { return '5.' + n; }
+        },
+        macros: {
+          pdv: ['{\\frac{\\partial #1}{\\partial #2}}', 2],
+          dv: ['{\\frac{d #1}{d #2}}', 2],
+          abs: ['{\\left|#1\\right|}', 1],
+          norm: ['{\\left\\|#1\\right\\|}', 1],
+          curl: '{\\vec{\\nabla}\\times}',
+          div: '{\\vec{\\nabla}\\cdot}',
+          grad: '{\\vec{\\nabla}}',
+          sech: '{\\operatorname{sech}}',
+          csch: '{\\operatorname{csch}}',
+          coth: '{\\operatorname{coth}}',
+          circnum: ['{\\boxed{#1}}', 1],
+          vb: ['{\\mathbf{#1}}', 1],
+          eval: ['{\\left.#1\\right|}', 1],
+          dd: '{\\,d}',
+          // Dirac notation. The chapters are written with the physics
+          // package, which MathJax does not have, so every bra-ket command
+          // the notes use has to be defined here or it renders as red text.
+          // \braket is always given two arguments in these sources.
+          ket: ['{\\left|#1\\right\\rangle}', 1],
+          bra: ['{\\left\\langle#1\\right|}', 1],
+          braket: ['{\\left\\langle#1\\middle|#2\\right\\rangle}', 2],
+          ketbra: ['{\\left|#1\\right\\rangle\\!\\left\\langle#2\\right|}', 2],
+          dyad: ['{\\left|#1\\right\\rangle\\!\\left\\langle#2\\right|}', 2],
+          op: ['{\\left|#1\\right\\rangle\\!\\left\\langle#1\\right|}', 1],
+          mel: ['{\\left\\langle#1\\right|#2\\left|#3\\right\\rangle}', 3],
+          expval: ['{\\left\\langle#1\\right\\rangle}', 1],
+          ev: ['{\\left\\langle#1\\right\\rangle}', 1],
+          comm: ['{\\left[#1,#2\\right]}', 2],
+          acomm: ['{\\left\\{#1,#2\\right\\}}', 2],
+          anticommutator: ['{\\left\\{#1,#2\\right\\}}', 2],
+          Tr: '{\\operatorname{Tr}}',
+          tr: '{\\operatorname{tr}}',
+          bm: ['{\\boldsymbol{#1}}', 1]
+        }
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <script defer src="../../assets/js/main.js?v=db81423d"></script>
+
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="../../index.html">
+    <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M9 6.5V25.5M9 6.5H24M9 25.5H24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 16Q10.5 9.5 15.5 16T25.5 16" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/></svg>
+    <span>Direct Method</span>
+  </a>
+  <nav class="top-nav" aria-label="Primary">
+    <a href="../../index.html">Home</a>
+    <a href="../../toc.html">Contents</a>
+    <a href="../../projects.html">Projects</a>
+  </nav>
+</header>
+<main class="layout" id="main">
+  <aside class="sidebar">
+  <div class="sidebar-inner">
+    <p class="sidebar-kicker">Chapter 5</p>
+    <h2>Many-Electron Atoms</h2>
+    <nav class="chapter-toc" aria-label="Chapter contents">
+      <a class="toc-level-2" href="#sec-5-introduction">5.1 Introduction</a>
+<a class="toc-level-2" href="#sec-5-identical-particles-and-antisymmetry">5.2 Identical Particles and Antisymmetry</a>
+<a class="toc-level-2" href="#sec-5-helium-the-hamiltonian">5.3 Helium: The Hamiltonian</a>
+<a class="toc-level-2" href="#sec-5-first-approximation-independent-electrons">5.4 First Approximation: Independent Electrons</a>
+<a class="toc-level-2" href="#sec-5-second-approximation-first-order-perturbation-theory">5.5 Second Approximation: First-Order Perturbation Theory</a>
+<a class="toc-level-2" href="#sec-5-third-approximation-the-variational-method">5.6 Third Approximation: The Variational Method</a>
+<a class="toc-level-2" href="#sec-5-exchange-singlet-and-triplet-helium">5.7 Exchange: Singlet and Triplet Helium</a>
+<a class="toc-level-2" href="#sec-5-heavier-atoms-screening-and-the-quantum-defect">5.8 Heavier Atoms: Screening and the Quantum Defect</a>
+<a class="toc-level-2" href="#sec-5-term-symbols">5.9 Term Symbols</a>
+<a class="toc-level-2" href="#sec-5-states-inside-a-continuum">5.10 States Inside a Continuum</a>
+<a class="toc-level-2" href="#sec-5-summary">5.11 Summary</a>
+<a class="toc-level-2" href="#sec-5-exercises">5.12 Exercises</a>
+<a class="toc-level-2" href="#sec-5-project-screening-and-the-quantum-defect">5.13 Project: Screening and the Quantum Defect</a>
+    </nav>
+  </div>
+</aside>
+
+  <article class="content">
+    <header class="chapter-hero">
+      <p>Chapter 5</p>
+      <h1>Many-Electron Atoms</h1>
+    </header>
+    <h2 id="sec-5-introduction"><span class="sec-number">5.1</span>Introduction</h2>
+<p>Add one electron to hydrogen and the problem becomes unsolvable — not merely difficult, but unsolvable in closed form, in the same sense as the three-body problem of classical mechanics. There is no exact expression for the ground-state energy of helium.</p>
+<p>The character of the subject therefore changes here. From this point on we work with controlled approximations, and the skill to acquire is judging how good each one is. Fortunately helium is forgiving: three successively better treatments, each a page of algebra, bracket the true answer to within two per cent, and every one of them teaches something that carries forward.</p>
+<p>The chapter establishes four things:</p>
+<ol><li><p><strong>Antisymmetry</strong>, from which the Pauli principle follows as a theorem rather than a postulate;</p></li><li><p><strong>Screening</strong> — computed, not asserted — which breaks hydrogen's accidental <span class="math-inline">\(l\)</span>-degeneracy and produces the <em>quantum defect</em>;</p></li><li><p><strong>Exchange</strong>, an energy splitting of nearly an electron volt that arises from antisymmetry alone and has no classical analogue;</p></li><li><p><strong>Term symbols</strong>, the notation <span class="math-inline">\(^{2S+1}L_J\)</span> without which no table of atomic data can be read.</p></li></ol>
+<p>At the end we meet a state that can fall apart without absorbing anything — a bound state degenerate with a continuum. That situation is the destination of this book, and helium provides its simplest example.</p>
+<h2 id="sec-5-identical-particles-and-antisymmetry"><span class="sec-number">5.2</span>Identical Particles and Antisymmetry</h2>
+<p>Electrons are indistinguishable: no measurement can establish which is which. Formally, the exchange operator <span class="math-inline">\(\hat P_{12}\)</span> that swaps particles <span class="math-inline">\(1\)</span> and <span class="math-inline">\(2\)</span> must commute with the Hamiltonian, and since <span class="math-inline">\(\hat P_{12}^{2}=\hat I\)</span> its eigenvalues are <span class="math-inline">\(\pm1\)</span>. Nature assigns <span class="math-inline">\(-1\)</span> to all fermions, electrons among them.</p>
+<section class="callout definition" id="definition-def-me-antisymmetry"><header>Definition 5.2.1 - Antisymmetry postulate</header><p> The state of a system of identical fermions changes sign under exchange of any two of them:</p>
+<div class="math-block" id="eq-eq-me-antisymmetry">\begin{equation}
+		\label{eq:ME-antisymmetry}
+		\Psi(\dots,\xi_i,\dots,\xi_j,\dots)
+		=-\Psi(\dots,\xi_j,\dots,\xi_i,\dots),
+	\end{equation}</div>
+<p>where <span class="math-inline">\(\xi=(\vec r,m_s)\)</span> collects position and spin.</p></section>
+<section class="callout theorem" id="theorem-thm-me-pauli"><header>Theorem 5.2.1 - Pauli exclusion principle</header><p> No two identical fermions can occupy the same one-particle spin-orbital.</p></section>
+<div class="proof" data-lead="Proof."><p>Set <span class="math-inline">\(\xi_i=\xi_j\)</span> in Eq. <a href="../chapter-05/index.html#eq-eq-me-antisymmetry">(5.1)</a>. The left- and right-hand sides are then the same function, so <span class="math-inline">\(\Psi=-\Psi\)</span>, hence <span class="math-inline">\(\Psi=0\)</span>. A state with two electrons in the same spin-orbital does not exist.</p></div>
+<p>Exclusion is therefore not an extra rule bolted on to quantum mechanics; it is a two-line consequence of antisymmetry.</p>
+<section class="callout definition" id="definition-def-me-slater"><header>Definition 5.2.2 - Slater determinant</header><p> For <span class="math-inline">\(N\)</span> electrons occupying spin-orbitals <span class="math-inline">\(\phi_1,\dots,\phi_N\)</span>, the normalized antisymmetric state is</p>
+<div class="math-block" id="eq-eq-me-slater">\begin{equation}
+		\label{eq:ME-slater}
+		\Psi(\xi_1,\dots,\xi_N)
+		=\frac{1}{\sqrt{N!}}
+		\begin{vmatrix}
+			\phi_1(\xi_1) &amp; \phi_2(\xi_1) &amp; \cdots &amp; \phi_N(\xi_1)\\
+			\phi_1(\xi_2) &amp; \phi_2(\xi_2) &amp; \cdots &amp; \phi_N(\xi_2)\\
+			\vdots &amp; \vdots &amp; \ddots &amp; \vdots\\
+			\phi_1(\xi_N) &amp; \phi_2(\xi_N) &amp; \cdots &amp; \phi_N(\xi_N)
+		\end{vmatrix}.
+	\end{equation}</div></section>
+<p>The construction works because a determinant changes sign when two rows are interchanged — which is exactly Eq. <a href="../chapter-05/index.html#eq-eq-me-antisymmetry">(5.1)</a> — and vanishes when two columns are equal, which is Theorem <a href="../chapter-05/index.html#theorem-thm-me-pauli">5.2.1</a>.</p>
+<section class="callout example" id="example-ex-me-two-electron"><header>Example 5.2.1 - The two-electron determinant</header><p> Write out Eq. <a href="../chapter-05/index.html#eq-eq-me-slater">(5.2)</a> for <span class="math-inline">\(N=2\)</span> and verify both properties.</p>
+<p class="solution-head">Solution.</p>
+<p>For two electrons,</p>
+<div class="math-block">\[
+	\Psi(\xi_1,\xi_2)
+	=\frac{1}{\sqrt{2}}
+	\begin{vmatrix}
+		\phi_a(\xi_1) &amp; \phi_b(\xi_1)\\
+		\phi_a(\xi_2) &amp; \phi_b(\xi_2)
+	\end{vmatrix}
+	=\frac{1}{\sqrt{2}}
+	\bigl[\phi_a(\xi_1)\phi_b(\xi_2)-\phi_b(\xi_1)\phi_a(\xi_2)\bigr].
+	\]</div>
+<p><em>Antisymmetry.</em> Swapping <span class="math-inline">\(\xi_1\leftrightarrow\xi_2\)</span> gives</p>
+<div class="math-block">\[
+	\frac{1}{\sqrt{2}}\bigl[\phi_a(\xi_2)\phi_b(\xi_1)-\phi_b(\xi_2)\phi_a(\xi_1)\bigr]
+	=-\Psi(\xi_1,\xi_2). \checkmark
+	\]</div>
+<p><em>Exclusion.</em> Setting <span class="math-inline">\(\phi_b=\phi_a\)</span>,</p>
+<div class="math-block">\[
+	\Psi=\frac{1}{\sqrt{2}}\bigl[\phi_a(\xi_1)\phi_a(\xi_2)
+	-\phi_a(\xi_1)\phi_a(\xi_2)\bigr]=0. \checkmark
+	\]</div>
+<p><em>Normalization.</em> If <span class="math-inline">\(\phi_a\)</span> and <span class="math-inline">\(\phi_b\)</span> are orthonormal, then expanding <span class="math-inline">\(\int|\Psi|^{2}\)</span> gives four terms: two of the form <span class="math-inline">\(\int|\phi_a|^{2}\int|\phi_b|^{2}=1\)</span>, each with prefactor <span class="math-inline">\(\tfrac12\)</span>, and two cross terms proportional to <span class="math-inline">\(\braket{\phi_a}{\phi_b}=0\)</span>. Hence <span class="math-inline">\(\int|\Psi|^{2}=1\)</span>, which is why the prefactor is <span class="math-inline">\(1/\sqrt{N!}\)</span>.</p></section>
+<h2 id="sec-5-helium-the-hamiltonian"><span class="sec-number">5.3</span>Helium: The Hamiltonian</h2>
+<p>Helium is two electrons and a nucleus of charge <span class="math-inline">\(Ze\)</span> with <span class="math-inline">\(Z=2\)</span>. Working in atomic units (Chapter 4, Sec. <a href="../chapter-04/index.html#sec-4-atomic-units">4.8</a>), the Hamiltonian is</p>
+<div class="math-block" id="eq-eq-me-helium-hamiltonian">\begin{equation}
+	\label{eq:ME-helium-hamiltonian}
+	\boxed{\;
+		\hat H
+		=\underbrace{-\frac{1}{2}\nabla_1^{2}-\frac{Z}{r_1}}_{\hat h_1}
+		+\underbrace{-\frac{1}{2}\nabla_2^{2}-\frac{Z}{r_2}}_{\hat h_2}
+		+\underbrace{\frac{1}{r_{12}}}_{\hat V_{ee}} \;}
+\end{equation}</div>
+<p>with <span class="math-inline">\(r_{12}=|\vec r_1-\vec r_2|\)</span>. In SI units the last term is <span class="math-inline">\(e^{2}/4\pi\epsilon_0r_{12}\)</span>.</p>
+<section class="callout remark" id="remark-rem-me-not-separable"><header>Remark 5.3.1 - Why this cannot be separated</header><p> The operators <span class="math-inline">\(\hat h_1\)</span> and <span class="math-inline">\(\hat h_2\)</span> each involve one electron only, so if <span class="math-inline">\(\hat V_{ee}\)</span> were absent the equation would separate and the solution would be a product of two hydrogenic orbitals with <span class="math-inline">\(Z=2\)</span>. The term <span class="math-inline">\(1/r_{12}\)</span> couples the coordinates: it cannot be written as <span class="math-inline">\(f(\vec r_1)+g(\vec r_2)\)</span>, no change of variables removes it, and consequently no separable solution exists. That single term is the entire difficulty of many-electron atoms.</p></section>
+<p>The experimental facts to be reproduced are</p>
+<div class="math-block" id="eq-eq-me-helium-experiment">\begin{equation}
+	\label{eq:ME-helium-experiment}
+	E_{\mathrm{exact}}=-2.9037~\text{a.u.}=-79.01~\mathrm{eV},
+	\qquad
+	\text{first ionization energy}=24.59~\mathrm{eV}.
+\end{equation}</div>
+<h2 id="sec-5-first-approximation-independent-electrons"><span class="sec-number">5.4</span>First Approximation: Independent Electrons</h2>
+<p>Drop <span class="math-inline">\(\hat V_{ee}\)</span> entirely. The equation separates, and each electron occupies a hydrogenic <span class="math-inline">\(1s\)</span> orbital with <span class="math-inline">\(Z=2\)</span>,</p>
+<div class="math-block" id="eq-eq-me-1s-orbital">\begin{equation}
+	\label{eq:ME-1s-orbital}
+	\phi_{1s}(\vec r)=\sqrt{\frac{Z^{3}}{\pi}}\,e^{-Zr},
+\end{equation}</div>
+<p>which is <span class="math-inline">\(R_{10}Y_0^{0}\)</span> from Chapter 4, Eqs. <a href="../chapter-04/index.html#eq-eq-h-rnl-table">(4.51)</a> and <a href="../chapter-04/index.html#eq-eq-h-ylm-table">(4.31)</a>, collected into one expression.</p>
+<section class="callout example" id="example-ex-me-zeroth"><header>Example 5.4.1 - Zeroth-order energy of helium</header><p> Compute the ground-state energy of helium neglecting the electron–electron repulsion.</p>
+<p class="solution-head">Solution.</p>
+<p>Each electron has the hydrogenic energy of Eq. <a href="../chapter-04/index.html#eq-eq-h-energies-si">(4.47)</a> with <span class="math-inline">\(n=1\)</span>,</p>
+<div class="math-block">\[
+	\varepsilon_{1s}=-\frac{Z^{2}}{2}=-\frac{4}{2}=-2~\text{a.u.},
+	\]</div>
+<p>so for two independent electrons</p>
+<div class="math-block">\[
+	E^{(0)}=2\times(-2)=-4~\text{a.u.}=-108.8~\mathrm{eV}.
+	\]</div>
+<p>Against the true <span class="math-inline">\(-79.0\)</span> eV this is too low by <span class="math-inline">\(29.8\)</span> eV — an error of <span class="math-inline">\(38\%\)</span>. The sign is right and instructive: we omitted a <em>repulsion</em>, and repulsion raises energy, so neglecting it must give a value that is too negative. Any approximation whose error has the wrong sign contains a mistake.</p></section>
+<h2 id="sec-5-second-approximation-first-order-perturbation-theory"><span class="sec-number">5.5</span>Second Approximation: First-Order Perturbation Theory</h2>
+<p>Now treat <span class="math-inline">\(\hat V_{ee}=1/r_{12}\)</span> as a perturbation and add its expectation value in the zeroth-order state:</p>
+<div class="math-block" id="eq-eq-me-first-order-general">\begin{equation}
+	\label{eq:ME-first-order-general}
+	E^{(1)}=\bra{\phi_{1s}\phi_{1s}}\frac{1}{r_{12}}\ket{\phi_{1s}\phi_{1s}}
+	=\int\!\!\int
+	\frac{|\phi_{1s}(\vec r_1)|^{2}\,|\phi_{1s}(\vec r_2)|^{2}}{|\vec r_1-\vec r_2|}
+	\,d^{3}r_1\,d^{3}r_2 .
+\end{equation}</div>
+<p>This is a six-dimensional integral, but it can be done exactly, and the method is worth learning because the same trick recurs.</p>
+<section class="callout theorem" id="theorem-thm-me-5z8"><header>Theorem 5.5.1 - The Coulomb integral for <span class="math-inline">\(1s\)</span> orbitals</header><p> For the normalized hydrogenic <span class="math-inline">\(1s\)</span> orbital of Eq. <a href="../chapter-05/index.html#eq-eq-me-1s-orbital">(5.5)</a>,</p>
+<div class="math-block" id="eq-eq-me-5z8">\begin{equation}
+		\label{eq:ME-5Z8}
+		\boxed{\;\expval{\frac{1}{r_{12}}}=\frac{5Z}{8}\;}
+	\end{equation}</div></section>
+<div class="proof" data-lead="Proof."><p>The charge density of electron <span class="math-inline">\(2\)</span>, <span class="math-inline">\(\rho(r)=|\phi_{1s}(\vec r)|^{2}=(Z^{3}/\pi)e^{-2Zr}\)</span>, is spherically symmetric. By the classical shell theorem, the potential it produces at radius <span class="math-inline">\(R\)</span> splits into the charge inside, acting as if concentrated at the origin, and the shells outside, each contributing <span class="math-inline">\(1/r\)</span>:</p>
+<div class="math-block">\[
+	V(R)=\frac{1}{R}\int_0^{R}\rho(r)4\pi r^{2}dr
+	+\int_R^{\infty}\rho(r)4\pi r\,dr .
+	\]</div>
+<p><em>Inner integral.</em> With <span class="math-inline">\(\rho\,4\pi r^{2}=4Z^{3}r^{2}e^{-2Zr}\)</span> and the standard result <span class="math-inline">\(\int_0^{R}r^{2}e^{-ar}dr=\frac{2}{a^{3}}
+	-\left(\frac{R^{2}}{a}+\frac{2R}{a^{2}}+\frac{2}{a^{3}}\right)e^{-aR}\)</span> with <span class="math-inline">\(a=2Z\)</span>,</p>
+<div class="math-block">\[
+	\int_0^{R}\rho\,4\pi r^{2}dr
+	=1-\bigl(2Z^{2}R^{2}+2ZR+1\bigr)e^{-2ZR}.
+	\]</div>
+<p><em>Outer integral.</em> With <span class="math-inline">\(\int_R^{\infty}re^{-ar}dr=\left(\frac{R}{a}+\frac{1}{a^{2}}\right)e^{-aR}\)</span>,</p>
+<div class="math-block">\[
+	\int_R^{\infty}\rho\,4\pi r\,dr
+	=4Z^{3}\left(\frac{R}{2Z}+\frac{1}{4Z^{2}}\right)e^{-2ZR}
+	=\bigl(2Z^{2}R+Z\bigr)e^{-2ZR}.
+	\]</div>
+<p><em>Combining.</em> Dividing the first by <span class="math-inline">\(R\)</span> and adding,</p>
+<div class="math-block">\[
+	V(R)=\frac{1}{R}
+	-\left(2Z^{2}R+2Z+\frac{1}{R}\right)e^{-2ZR}
+	+\bigl(2Z^{2}R+Z\bigr)e^{-2ZR}
+	=\frac{1}{R}-\left(Z+\frac{1}{R}\right)e^{-2ZR}.
+	\]</div>
+<p>The <span class="math-inline">\(2Z^{2}R\)</span> terms cancel — a useful check.</p>
+<p><em>Averaging over electron 1.</em> Now</p>
+<div class="math-block">\[
+	\expval{\frac{1}{r_{12}}}
+	=\int\rho(R)\,V(R)\,4\pi R^{2}dR
+	=4Z^{3}\int_0^{\infty}R^{2}e^{-2ZR}
+	\left[\frac{1}{R}-\left(Z+\frac{1}{R}\right)e^{-2ZR}\right]dR .
+	\]</div>
+<p>Split into three elementary integrals, using <span class="math-inline">\(\int_0^\infty r^{n}e^{-ar}dr=n!/a^{n+1}\)</span>:</p>
+<div class="math-block">\[
+	\int_0^{\infty}Re^{-2ZR}dR=\frac{1}{4Z^{2}},
+	\quad
+	Z\!\int_0^{\infty}R^{2}e^{-4ZR}dR=\frac{2Z}{64Z^{3}}=\frac{1}{32Z^{2}},
+	\quad
+	\int_0^{\infty}Re^{-4ZR}dR=\frac{1}{16Z^{2}} .
+	\]</div>
+<p>Therefore</p>
+<div class="math-block">\[
+	\expval{\frac{1}{r_{12}}}
+	=4Z^{3}\left[\frac{1}{4Z^{2}}-\frac{1}{32Z^{2}}-\frac{1}{16Z^{2}}\right]
+	=4Z^{3}\cdot\frac{8-1-2}{32Z^{2}}
+	=4Z^{3}\cdot\frac{5}{32Z^{2}}
+	=\frac{5Z}{8}.
+	\]</div></div>
+<section class="callout example" id="example-ex-me-first-order"><header>Example 5.5.1 - First-order energy of helium</header><p> Use Theorem <a href="../chapter-05/index.html#theorem-thm-me-5z8">5.5.1</a> to correct Example <a href="../chapter-05/index.html#example-ex-me-zeroth">5.4.1</a>.</p>
+<p class="solution-head">Solution.</p>
+<p>For <span class="math-inline">\(Z=2\)</span>,</p>
+<div class="math-block">\[
+	E^{(1)}=\frac{5Z}{8}=\frac{10}{8}=1.25~\text{a.u.}=34.0~\mathrm{eV},
+	\]</div>
+<p>so</p>
+<div class="math-block">\[
+	E\simeq E^{(0)}+E^{(1)}=-4+1.25=-2.75~\text{a.u.}=-74.8~\mathrm{eV}.
+	\]</div>
+<p>We have moved from <span class="math-inline">\(38\%\)</span> too low to <span class="math-inline">\(5.3\%\)</span> too <em>high</em>. Overshooting is expected: the orbitals were not allowed to respond to the repulsion, so each electron is held closer to the nucleus than it really is and feels more repulsion than it really does. Letting the orbitals relax is the next approximation.</p></section>
+<h2 id="sec-5-third-approximation-the-variational-method"><span class="sec-number">5.6</span>Third Approximation: The Variational Method</h2>
+<section class="callout theorem" id="theorem-thm-me-variational"><header>Theorem 5.6.1 - Variational principle</header><p> For any normalized trial state <span class="math-inline">\(\ket{\Psi_t}\)</span> and any Hamiltonian <span class="math-inline">\(\hat H\)</span> with ground-state energy <span class="math-inline">\(E_0\)</span>,</p>
+<div class="math-block" id="eq-eq-me-variational">\begin{equation}
+		\label{eq:ME-variational}
+		\bra{\Psi_t}\hat H\ket{\Psi_t}\ge E_0 .
+	\end{equation}</div></section>
+<div class="proof" data-lead="Proof."><p>Expand <span class="math-inline">\(\ket{\Psi_t}=\sum_nc_n\ket{n}\)</span> in the exact eigenstates, with <span class="math-inline">\(\hat H\ket{n}=E_n\ket{n}\)</span> and <span class="math-inline">\(\sum_n|c_n|^{2}=1\)</span>. Then</p>
+<div class="math-block">\[
+	\bra{\Psi_t}\hat H\ket{\Psi_t}=\sum_n|c_n|^{2}E_n
+	\ge\sum_n|c_n|^{2}E_0=E_0 ,
+	\]</div>
+<p>since every <span class="math-inline">\(E_n\ge E_0\)</span>.</p></div>
+<p>The principle turns approximation into optimisation: choose a trial state with adjustable parameters, compute <span class="math-inline">\(\expval{\hat H}\)</span>, and minimise. The answer is guaranteed to be an upper bound, which is a valuable property — <em>a calculation returning an energy below the exact one has a bug</em>.</p>
+<p>The physical failing of Sec. <a href="../chapter-05/index.html#sec-5-second-approximation-first-order-perturbation-theory">5.5</a> was that each electron still saw the full nuclear charge <span class="math-inline">\(Z=2\)</span> when its partner partly shields it. So let the orbital exponent be a free parameter <span class="math-inline">\(Z&#x27;\)</span>:</p>
+<div class="math-block" id="eq-eq-me-trial">\begin{equation}
+	\label{eq:ME-trial}
+	\phi_{Z&#x27;}(\vec r)=\sqrt{\frac{Z&#x27;^{3}}{\pi}}\,e^{-Z&#x27;r},
+	\qquad
+	\Psi_t(\vec r_1,\vec r_2)=\phi_{Z&#x27;}(\vec r_1)\phi_{Z&#x27;}(\vec r_2).
+\end{equation}</div>
+<section class="callout example" id="example-ex-me-variational"><header>Example 5.6.1 - The variational energy of helium</header><p> Minimise <span class="math-inline">\(\expval{\hat H}\)</span> over <span class="math-inline">\(Z&#x27;\)</span> and evaluate for <span class="math-inline">\(Z=2\)</span>.</p>
+<p class="solution-head">Solution.</p>
+<p>Three expectation values are needed. For a hydrogenic orbital with exponent <span class="math-inline">\(Z&#x27;\)</span>, Chapter 4's results Eq. <a href="../chapter-04/index.html#eq-eq-h-expectation-values">(4.58)</a> give <span class="math-inline">\(\expval{1/r}=Z&#x27;\)</span>, and the virial relation for that orbital gives <span class="math-inline">\(\expval{-\tfrac12\nabla^{2}}=Z&#x27;^{2}/2\)</span>.</p>
+<p><em>Kinetic energy</em>, two electrons:</p>
+<div class="math-block">\[
+	\expval{\hat T}=2\times\frac{Z&#x27;^{2}}{2}=Z&#x27;^{2}.
+	\]</div>
+<p><em>Nuclear attraction</em>, two electrons, with the <em>true</em> charge <span class="math-inline">\(Z\)</span> in the operator but the trial exponent <span class="math-inline">\(Z&#x27;\)</span> in the state:</p>
+<div class="math-block">\[
+	\expval{\hat V_{Ne}}=2\times\left(-Z\expval{\frac{1}{r}}\right)=-2ZZ&#x27;.
+	\]</div>
+<p><em>Electron repulsion.</em> Theorem <a href="../chapter-05/index.html#theorem-thm-me-5z8">5.5.1</a> was derived for orbitals of exponent <span class="math-inline">\(Z\)</span>; here the exponent is <span class="math-inline">\(Z&#x27;\)</span>, so</p>
+<div class="math-block">\[
+	\expval{\hat V_{ee}}=\frac{5Z&#x27;}{8}.
+	\]</div>
+<p>Adding,</p>
+<div class="math-block" id="eq-eq-me-ezprime">\begin{equation}
+		\label{eq:ME-EZprime}
+		E(Z&#x27;)=Z&#x27;^{2}-2ZZ&#x27;+\frac{5Z&#x27;}{8}.
+	\end{equation}</div>
+<p>Minimise:</p>
+<div class="math-block">\[
+	\frac{dE}{dZ&#x27;}=2Z&#x27;-2Z+\frac{5}{8}=0
+	\qquad\Longrightarrow\qquad
+	\boxed{\;Z&#x27;=Z-\frac{5}{16}\;}
+	\]</div>
+<p>Substituting back, and noting that <span class="math-inline">\(2Z-\tfrac58=2Z&#x27;\)</span>,</p>
+<div class="math-block">\[
+	E_{\min}=Z&#x27;^{2}-Z&#x27;\left(2Z-\frac58\right)=Z&#x27;^{2}-2Z&#x27;^{2}=-Z&#x27;^{2}.
+	\]</div>
+<p>For helium, <span class="math-inline">\(Z=2\)</span>:</p>
+<div class="math-block">\[
+	Z&#x27;=2-\frac{5}{16}=\frac{27}{16}=1.6875,
+	\qquad
+	E_{\min}=-\left(\frac{27}{16}\right)^{2}=-\frac{729}{256}
+	=-2.8477~\text{a.u.}=-77.49~\mathrm{eV}.
+	\]</div>
+<p>The error is now <span class="math-inline">\(1.9\%\)</span>, and — as Theorem <a href="../chapter-05/index.html#theorem-thm-me-variational">5.6.1</a> requires — it lies <em>above</em> the exact <span class="math-inline">\(-79.01\)</span> eV.</p>
+<p>Read the middle number, because it is the physics. Each electron in helium does not experience charge <span class="math-inline">\(2\)</span>; it experiences <span class="math-inline">\(1.69\)</span>. Its partner has screened away about <span class="math-inline">\(0.31\)</span> of an elementary charge. That idea — the nuclear charge an electron actually feels is less than <span class="math-inline">\(Z\)</span> — organises the rest of this chapter.</p></section>
+<section class="callout remark"><header>Remark</header><p>The three treatments, in order: <span class="math-inline">\(-108.8\)</span>, <span class="math-inline">\(-74.8\)</span>, <span class="math-inline">\(-77.5\)</span> eV against the true <span class="math-inline">\(-79.0\)</span> eV. The pattern is characteristic. A crude model can be badly wrong; first-order perturbation theory usually overcorrects; and allowing the wave function itself to relax recovers most of the remainder. Going further requires trial functions that depend on <span class="math-inline">\(r_{12}\)</span> explicitly, which is where quantum chemistry proper begins and where this course stops.</p></section>
+<h2 id="sec-5-exchange-singlet-and-triplet-helium"><span class="sec-number">5.7</span>Exchange: Singlet and Triplet Helium</h2>
+<p>Now excite one electron, to the configuration <span class="math-inline">\(1s2s\)</span>, and call the two spatial orbitals <span class="math-inline">\(\phi_a=\phi_{1s}\)</span> and <span class="math-inline">\(\phi_b=\phi_{2s}\)</span>. Antisymmetry of the <em>total</em> state can be achieved in two ways, because the state factorises into a spatial part and a spin part: one of them must be antisymmetric, and either will do.</p>
+<div class="math-block" id="eq-eq-me-singlet-triplet">\begin{equation}
+	\label{eq:ME-singlet-triplet}
+	\begin{aligned}
+		\text{singlet } (S=0):&amp;\quad
+		\Psi_{+}=\underbrace{\tfrac{1}{\sqrt2}\bigl[\phi_a(1)\phi_b(2)+\phi_b(1)\phi_a(2)\bigr]}_{\text{spatially symmetric}}
+		\times\underbrace{\tfrac{1}{\sqrt2}\bigl[\ket{\uparrow\downarrow}-\ket{\downarrow\uparrow}\bigr]}_{\text{spin antisymmetric}},\\[6pt]
+		\text{triplet } (S=1):&amp;\quad
+		\Psi_{-}=\underbrace{\tfrac{1}{\sqrt2}\bigl[\phi_a(1)\phi_b(2)-\phi_b(1)\phi_a(2)\bigr]}_{\text{spatially antisymmetric}}
+		\times\underbrace{\ket{\uparrow\uparrow}\ \text{etc.}}_{\text{spin symmetric}} .
+	\end{aligned}
+\end{equation}</div>
+<p>Both are legitimate. Their energies differ, and the calculation shows exactly why.</p>
+<section class="callout definition" id="definition-def-me-jk"><header>Definition 5.7.1 - Direct and exchange integrals</header><div class="math-block" id="eq-eq-me-j">\begin{align}
+		\label{eq:ME-J}
+		J&amp;=\int\!\!\int
+		\frac{|\phi_a(\vec r_1)|^{2}\,|\phi_b(\vec r_2)|^{2}}{r_{12}}
+		\,d^{3}r_1\,d^{3}r_2
+		&amp;&amp;\text{(direct, or Coulomb, integral)},\\
+		\label{eq:ME-K}
+		K&amp;=\int\!\!\int
+		\frac{\phi_a^{*}(\vec r_1)\phi_b^{*}(\vec r_2)\,
+			\phi_b(\vec r_1)\phi_a(\vec r_2)}{r_{12}}
+		\,d^{3}r_1\,d^{3}r_2
+		&amp;&amp;\text{(exchange integral)}.
+	\end{align}</div></section>
+<p><span class="math-inline">\(J\)</span> has a classical reading: it is the electrostatic repulsion between two charge clouds <span class="math-inline">\(|\phi_a|^{2}\)</span> and <span class="math-inline">\(|\phi_b|^{2}\)</span>. <span class="math-inline">\(K\)</span> has none — the orbitals are swapped between the two factors, so no classical charge distribution corresponds to it. It exists only because the wave function must be (anti)symmetrised.</p>
+<section class="callout theorem" id="theorem-thm-me-splitting"><header>Theorem 5.7.1 - Singlet–triplet splitting</header><p> For the states of Eq. <a href="../chapter-05/index.html#eq-eq-me-singlet-triplet">(5.11)</a>,</p>
+<div class="math-block" id="eq-eq-me-splitting">\begin{equation}
+		\label{eq:ME-splitting}
+		E_{\pm}=\varepsilon_a+\varepsilon_b+J\pm K ,
+	\end{equation}</div>
+<p>with <span class="math-inline">\(+\)</span> for the singlet and <span class="math-inline">\(-\)</span> for the triplet. Since <span class="math-inline">\(K&gt;0\)</span> for orbitals with overlapping densities, the triplet lies lower.</p></section>
+<div class="proof" data-lead="Proof."><p>The one-electron parts give <span class="math-inline">\(\varepsilon_a+\varepsilon_b\)</span> regardless of symmetrisation. For the repulsion, insert Eq. <a href="../chapter-05/index.html#eq-eq-me-singlet-triplet">(5.11)</a> into <span class="math-inline">\(\bra{\Psi_{\pm}}1/r_{12}\ket{\Psi_{\pm}}\)</span> and expand the product of two brackets. Four terms appear. Two are of the form <span class="math-inline">\(\int\!\!\int|\phi_a(1)|^{2}|\phi_b(2)|^{2}/r_{12}\)</span>, each with prefactor <span class="math-inline">\(\tfrac12\)</span>, summing to <span class="math-inline">\(J\)</span>. The other two are the exchange terms, each with prefactor <span class="math-inline">\(\pm\tfrac12\)</span>, summing to <span class="math-inline">\(\pm K\)</span>.</p></div>
+<section class="callout remark" id="remark-rem-me-exchange-mechanism"><header>Remark 5.7.1 - What is doing the work</header><p> The Hamiltonian <a href="../chapter-05/index.html#eq-eq-me-helium-hamiltonian">(5.3)</a> contains <em>no spin operator whatsoever</em>, yet the two states differ in energy by <span class="math-inline">\(2K\)</span> and are distinguished only by their spin arrangement. The spin is not causing the splitting; antisymmetry is. Requiring the total state to change sign under exchange ties the spin arrangement to the spatial arrangement, and it is the spatial arrangement that the Coulomb repulsion sees.</p>
+<p>The mechanism is visible in Eq. <a href="../chapter-05/index.html#eq-eq-me-singlet-triplet">(5.11)</a>: setting <span class="math-inline">\(\vec r_1=\vec r_2\)</span> makes the antisymmetric spatial function vanish identically. The triplet electrons therefore avoid each other, are further apart on average, and repel less. This is the <em>exchange interaction</em>, and it has no classical counterpart of any kind.</p></section>
+<section class="callout example" id="example-ex-me-helium-splitting"><header>Example 5.7.1 - Helium's measured splitting</header><p> The <span class="math-inline">\(1s2s\)</span> levels of helium are observed at <span class="math-inline">\(19.820\)</span> eV (<span class="math-inline">\(^{3}S\)</span>) and <span class="math-inline">\(20.616\)</span> eV (<span class="math-inline">\(^{1}S\)</span>) above the ground state. Extract <span class="math-inline">\(K\)</span> and comment on its size.</p>
+<p class="solution-head">Solution.</p>
+<p>From Eq. <a href="../chapter-05/index.html#eq-eq-me-splitting">(5.14)</a> the separation is <span class="math-inline">\(2K\)</span>:</p>
+<div class="math-block">\[
+	2K=20.616-19.820=0.796~\mathrm{eV}
+	\qquad\Longrightarrow\qquad
+	K=0.398~\mathrm{eV}.
+	\]</div>
+<p>The triplet is lower, confirming <span class="math-inline">\(K&gt;0\)</span>.</p>
+<p>Compare this with a magnetic interaction between two electron spins, which at a separation of a few <span class="math-inline">\(a_0\)</span> is of order <span class="math-inline">\(10^{-4}\)</span> eV — four orders of magnitude smaller. Whatever splits these levels, it is not magnetism. It is electrostatics, routed through antisymmetry.</p>
+<p>The consequence is chemical as well as spectroscopic: the rule that electrons in different orbitals prefer parallel spins — Hund's first rule — is this same <span class="math-inline">\(-K\)</span>, and it is why oxygen's ground state is a triplet.</p></section>
+<section class="callout remark"><header>Remark</header><p>Historically the two families were thought to be different substances and named <em>parahelium</em> (singlet) and <em>orthohelium</em> (triplet); the names survive. Note also that <span class="math-inline">\(1s2s\ ^{3}S\)</span> cannot reach the <span class="math-inline">\(1s^{2}\ ^{1}S\)</span> ground state by one photon — the transition would have to change <span class="math-inline">\(S\)</span>, which the dipole operator of Chapter 3 cannot do — so it is metastable, with a lifetime of about two hours. Compare hydrogen's <span class="math-inline">\(2s\)</span> in Example <a href="../chapter-03/index.html#example-ex-am-integral">3.6.1</a>: a second instance of a forbidden route creating a long-lived state.</p></section>
+<h2 id="sec-5-heavier-atoms-screening-and-the-quantum-defect"><span class="sec-number">5.8</span>Heavier Atoms: Screening and the Quantum Defect</h2>
+<p>For more than two electrons the practical approach keeps the one-electron picture and repairs the potential. Each electron is taken to move in a central average field produced by the nucleus and all the others, so Chapter 3's machinery applies unchanged: states are labelled <span class="math-inline">\(nlm\)</span> and Eq. <a href="../chapter-03/index.html#eq-eq-am-radial">(3.43)</a> is solved with a modified <span class="math-inline">\(V(r)\)</span>.</p>
+<p>The essential feature is the behaviour at the two extremes:</p>
+<div class="math-block" id="eq-eq-me-screened">\begin{equation}
+	\label{eq:ME-screened}
+	V_{\mathrm{eff}}(r)\longrightarrow
+	\begin{cases}
+		-Z/r, &amp; r\to0
+		\quad\text{(inside the other electrons: full nuclear charge)},\\[4pt]
+		-1/r, &amp; r\to\infty
+		\quad\text{(outside them: nucleus screened to $+1$)} .
+	\end{cases}
+\end{equation}</div>
+<p>An electron far away sees net charge <span class="math-inline">\(+1\)</span> and is hydrogenic. One that penetrates sees much more and is bound much more tightly. And Chapter 3 already told us who penetrates: the centrifugal barrier <span class="math-inline">\(l(l+1)/2r^{2}\)</span> in Eq. <a href="../chapter-03/index.html#eq-eq-am-radial">(3.43)</a> excludes high <span class="math-inline">\(l\)</span> from the core entirely, while <span class="math-inline">\(l=0\)</span> has no barrier at all. Hence</p>
+<div class="math-block" id="eq-eq-me-defect-ordering">\begin{equation}
+	\label{eq:ME-defect-ordering}
+	\text{penetration: } s&gt;p&gt;d&gt;f
+	\quad\Longrightarrow\quad
+	\text{extra binding relative to hydrogen: } s&gt;p&gt;d&gt;f .
+\end{equation}</div>
+<p>The accidental <span class="math-inline">\(l\)</span>-degeneracy of Chapter 4 therefore breaks, and in a definite order. It is parameterised by one number per <span class="math-inline">\(l\)</span>.</p>
+<section class="callout definition" id="definition-def-me-defect"><header>Definition 5.8.1 - Quantum defect and effective quantum number</header><p> The energies of a series of states of the same <span class="math-inline">\(l\)</span> converging to an ionization threshold <span class="math-inline">\(E_{\mathrm{th}}\)</span> are written</p>
+<div class="math-block" id="eq-eq-me-rydberg-formula">\begin{equation}
+		\label{eq:ME-rydberg-formula}
+		E_n=E_{\mathrm{th}}
+		-\frac{\mathcal{E}_{\mathrm{Ryd}}}{(n-\delta_l)^{2}}
+		=E_{\mathrm{th}}-\frac{\mathcal{E}_{\mathrm{Ryd}}}{(n^{*})^{2}},
+	\end{equation}</div>
+<p>with <span class="math-inline">\(\mathcal{E}_{\mathrm{Ryd}}=13.606\)</span> eV. The number <span class="math-inline">\(\delta_l\)</span> is the <em>quantum defect</em> and <span class="math-inline">\(n^{*}\equiv n-\delta_l\)</span> the <em>effective quantum number</em>.</p></section>
+<p>Two properties make this useful. First, <span class="math-inline">\(\delta_l\)</span> is nearly independent of <span class="math-inline">\(n\)</span> within a series: it is a property of the <em>core</em>, sampled only during the small fraction of the orbit spent inside, so measuring it once predicts every member. Second, inverting Eq. <a href="../chapter-05/index.html#eq-eq-me-rydberg-formula">(5.17)</a> converts a measured binding energy directly into <span class="math-inline">\(n^{*}\)</span>:</p>
+<div class="math-block" id="eq-eq-me-nstar-from-energy">\begin{equation}
+	\label{eq:ME-nstar-from-energy}
+	\boxed{\;n^{*}=\sqrt{\frac{\mathcal{E}_{\mathrm{Ryd}}}
+			{E_{\mathrm{th}}-E_n}}\;}
+\end{equation}</div>
+<section class="callout example" id="example-ex-me-sodium"><header>Example 5.8.1 - The quantum defects of sodium</header><p> Sodium has one electron outside a closed-shell neon-like core, so it is hydrogen-like in structure and is the standard demonstration. Its ionization energy is <span class="math-inline">\(E_{\mathrm{th}}=5.139\)</span> eV above the ground state. The <span class="math-inline">\(3s\)</span> ground state is bound by <span class="math-inline">\(5.139\)</span> eV, the <span class="math-inline">\(3p\)</span> state by <span class="math-inline">\(3.035\)</span> eV, and the <span class="math-inline">\(3d\)</span> state by <span class="math-inline">\(1.522\)</span> eV. Find <span class="math-inline">\(n^{*}\)</span> and <span class="math-inline">\(\delta_l\)</span> for each.</p>
+<p class="solution-head">Solution.</p>
+<p>Apply Eq. <a href="../chapter-05/index.html#eq-eq-me-nstar-from-energy">(5.18)</a> three times.</p>
+<div class="math-block">\[
+	3s:\quad n^{*}=\sqrt{\frac{13.606}{5.139}}=\sqrt{2.648}=1.627,
+	\qquad \delta_s=3-1.627=1.373 ;
+	\]</div>
+<div class="math-block">\[
+	3p:\quad n^{*}=\sqrt{\frac{13.606}{3.035}}=\sqrt{4.483}=2.117,
+	\qquad \delta_p=3-2.117=0.883 ;
+	\]</div>
+<div class="math-block">\[
+	3d:\quad n^{*}=\sqrt{\frac{13.606}{1.522}}=\sqrt{8.940}=2.990,
+	\qquad \delta_d=3-2.990=0.010 .
+	\]</div>
+<p>The ordering is Eq. <a href="../chapter-05/index.html#eq-eq-me-defect-ordering">(5.16)</a>, and the magnitudes are striking. The <span class="math-inline">\(3d\)</span> electron is hydrogenic to a third of a per cent: its centrifugal barrier holds it so far outside the core that it cannot tell sodium from hydrogen. The <span class="math-inline">\(3s\)</span> electron has <span class="math-inline">\(n^{*}=1.63\)</span> — it behaves like a hydrogen state with <span class="math-inline">\(n\)</span> between <span class="math-inline">\(1\)</span> and <span class="math-inline">\(2\)</span>, because on every orbit it dives through the neon core and briefly feels a charge far larger than <span class="math-inline">\(1\)</span>.</p>
+<p>One number, <span class="math-inline">\(\delta_l\)</span>, and one mechanism, penetration, account for the entire structure of the alkali spectrum. Keep hold of this: every Rydberg series in this book, including the molecular ones of Chapter 9, is described the same way.</p></section>
+<h2 id="sec-5-term-symbols"><span class="sec-number">5.9</span>Term Symbols</h2>
+<p>A <em>configuration</em> lists which orbitals are occupied — carbon is <span class="math-inline">\(1s^{2}2s^{2}2p^{2}\)</span>. A configuration is not a state: the electrons' angular momenta can couple several ways, giving several energies. The resulting states are labelled by a term symbol.</p>
+<section class="callout definition" id="definition-def-me-term"><header>Definition 5.9.1 - Atomic term symbol</header><div class="math-block" id="eq-eq-me-term">\begin{equation}
+		\label{eq:ME-term}
+		^{2S+1}L_J
+	\end{equation}</div>
+<p>where <span class="math-inline">\(S\)</span> is the total spin, <span class="math-inline">\(L\)</span> the total orbital angular momentum written as a capital letter (<span class="math-inline">\(L=0,1,2,3\to S,P,D,F\)</span>), <span class="math-inline">\(J\)</span> the total angular momentum obtained by coupling <span class="math-inline">\(L\)</span> and <span class="math-inline">\(S\)</span>, and <span class="math-inline">\(2S+1\)</span> the <em>multiplicity</em> (<span class="math-inline">\(1\)</span> singlet, <span class="math-inline">\(2\)</span> doublet, <span class="math-inline">\(3\)</span> triplet).</p></section>
+<section class="callout theorem" id="theorem-thm-me-closed-shell"><header>Theorem 5.9.1 - Closed shells and single holes</header><p> A filled subshell has <span class="math-inline">\(S=0\)</span> and <span class="math-inline">\(L=0\)</span>, and therefore contributes <span class="math-inline">\(^{1}S\)</span> to a term symbol. A subshell containing one <em>hole</em> has the same <span class="math-inline">\(L\)</span> and <span class="math-inline">\(S\)</span> as one containing one <em>electron</em>.</p></section>
+<div class="proof" data-lead="Proof."><p>In a filled subshell every <span class="math-inline">\(m_l\)</span> from <span class="math-inline">\(-l\)</span> to <span class="math-inline">\(+l\)</span> is occupied twice, once with each spin. Hence <span class="math-inline">\(M_S=\sum m_s=0\)</span> and <span class="math-inline">\(M_L=\sum m_l=0\)</span>, and since this is the only state of the configuration, <span class="math-inline">\(S=L=0\)</span>. For the second claim, removing one electron leaves <span class="math-inline">\(M_L=-m_l\)</span> and <span class="math-inline">\(M_S=-m_s\)</span> of the removed electron, so the available <span class="math-inline">\((M_L,M_S)\)</span> values are those of a single electron with reversed signs — the same set, hence the same <span class="math-inline">\(L\)</span> and <span class="math-inline">\(S\)</span>.</p></div>
+<p>These two shortcuts remove almost all the labour. In particular, ionizing a closed-shell atom or molecule always leaves one hole and therefore always gives a doublet, <span class="math-inline">\(2S+1=2\)</span>.</p>
+<section class="callout example" id="example-ex-me-read-terms"><header>Example 5.9.1 - Reading three term symbols</header><p> Assign term symbols to helium's ground state, sodium's ground state, and sodium's first excited state.</p>
+<p class="solution-head">Solution.</p>
+<p><em>Helium, <span class="math-inline">\(1s^{2}\)</span>.</em> A closed shell, so by Theorem <a href="../chapter-05/index.html#theorem-thm-me-closed-shell">5.9.1</a> <span class="math-inline">\(S=0\)</span>, <span class="math-inline">\(L=0\)</span>, hence <span class="math-inline">\(J=0\)</span> and the term is <span class="math-inline">\(^{1}S_0\)</span> — a singlet, consistent with Sec. <a href="../chapter-05/index.html#sec-5-exchange-singlet-and-triplet-helium">5.7</a>, where the ground configuration admitted only the spin-antisymmetric combination.</p>
+<p><em>Sodium, <span class="math-inline">\(1s^{2}2s^{2}2p^{6}3s^{1}\)</span>.</em> All shells closed except one <span class="math-inline">\(3s\)</span> electron, so <span class="math-inline">\(S=\tfrac12\)</span>, <span class="math-inline">\(L=0\)</span>, <span class="math-inline">\(J=\tfrac12\)</span>: the term is <span class="math-inline">\(^{2}S_{1/2}\)</span>.</p>
+<p><em>Sodium, <span class="math-inline">\(\dots3p^{1}\)</span>.</em> Now <span class="math-inline">\(L=1\)</span> and <span class="math-inline">\(S=\tfrac12\)</span>, so <span class="math-inline">\(J\)</span> can be <span class="math-inline">\(L+S=\tfrac32\)</span> or <span class="math-inline">\(L-S=\tfrac12\)</span>, giving two terms <span class="math-inline">\(^{2}P_{3/2}\)</span> and <span class="math-inline">\(^{2}P_{1/2}\)</span>. These are split by the spin–orbit interaction, and the two transitions down to <span class="math-inline">\(^{2}S_{1/2}\)</span> are the sodium D lines at <span class="math-inline">\(589.0\)</span> and <span class="math-inline">\(589.6\)</span> nm — the yellow of a street lamp, resolved into a doublet by an effect that exists only because the electron has spin.</p></section>
+<h2 id="sec-5-states-inside-a-continuum"><span class="sec-number">5.10</span>States Inside a Continuum</h2>
+<p>One more feature of many-electron atoms must be introduced, because the last chapters of this book depend on it entirely. It cannot occur in hydrogen.</p>
+<p>Helium's ionization threshold is <span class="math-inline">\(24.59\)</span> eV: above that energy the system can exist as He<span class="math-inline">\(^{+}\)</span> plus a free electron of <em>any</em> kinetic energy — a continuum. Now excite <em>both</em> electrons, to the configuration <span class="math-inline">\(2s2p\)</span>. That state lies at <span class="math-inline">\(60.15\)</span> eV, well above the threshold. It is a perfectly good bound state of the two-electron system — both electrons are attached, and it has a definite energy — and it is simultaneously degenerate with the continuum.</p>
+<p>Such a state cannot survive. The repulsion <span class="math-inline">\(\hat V_{ee}\)</span> of Eq. <a href="../chapter-05/index.html#eq-eq-me-helium-hamiltonian">(5.3)</a> connects it to the continuum at the same energy: one electron drops to <span class="math-inline">\(1s\)</span> while the other takes up the released energy and leaves. No photon is absorbed or emitted.</p>
+<section class="callout definition" id="definition-def-me-autoionization"><header>Definition 5.10.1 - Autoionization</header><p> <em>Autoionization</em> is the decay of a bound state that is degenerate with a continuum, driven by an interaction internal to the system rather than by absorption of radiation.</p></section>
+<p>Because the state decays, it is not sharp: it has a width <span class="math-inline">\(\Gamma\)</span> related to its lifetime by <span class="math-inline">\(\Gamma\tau=\hbar\)</span>. For helium's <span class="math-inline">\(2s2p\)</span> resonance <span class="math-inline">\(\Gamma\approx37\)</span> meV, so</p>
+<div class="math-block" id="eq-eq-me-he-lifetime">\begin{equation}
+	\label{eq:ME-he-lifetime}
+	\tau=\frac{\hbar}{\Gamma}
+	=\frac{0.658~\mathrm{eV\,fs}}{0.037~\mathrm{eV}}
+	\approx18~\mathrm{fs}.
+\end{equation}</div>
+<p>This configuration — a discrete state embedded in and coupled to a continuum — produces the asymmetric spectral profiles that Fano explained in 1961, using precisely this helium resonance as his example. We lack the tools to treat it yet: it needs the continuum normalization mentioned at the end of Chapter 3 and the time-dependent methods of Chapter 6. Chapter 10 does it properly.</p>
+<p>For now, retain the picture and the number. A doubly excited atom is a bound state inside a continuum; it lives femtoseconds rather than nanoseconds; and the cause is the same <span class="math-inline">\(\hat V_{ee}\)</span> that made helium's ground state impossible to compute exactly. The term we could not handle in Remark <a href="../chapter-05/index.html#remark-rem-me-not-separable">5.3.1</a> turns out to drive the physics this course is aimed at.</p>
+<h2 id="sec-5-summary"><span class="sec-number">5.11</span>Summary</h2>
+<ul><li><p>Fermion states are antisymmetric under exchange (Def. <a href="../chapter-05/index.html#definition-def-me-antisymmetry">5.2.1</a>); Pauli exclusion (Thm. <a href="../chapter-05/index.html#theorem-thm-me-pauli">5.2.1</a>) and the Slater determinant (Def. <a href="../chapter-05/index.html#definition-def-me-slater">5.2.2</a>) follow.</p></li><li><p>Helium's Hamiltonian, Eq. <a href="../chapter-05/index.html#eq-eq-me-helium-hamiltonian">(5.3)</a>, is not separable because of the single term <span class="math-inline">\(1/r_{12}\)</span>.</p></li><li><p>Three treatments: independent electrons give <span class="math-inline">\(-108.8\)</span> eV; first-order perturbation theory, using <span class="math-inline">\(\expval{1/r_{12}}=5Z/8\)</span> (Thm. <a href="../chapter-05/index.html#theorem-thm-me-5z8">5.5.1</a>), gives <span class="math-inline">\(-74.8\)</span> eV; the variational method with a screened exponent gives <span class="math-inline">\(Z&#x27;=Z-\tfrac{5}{16}=1.6875\)</span> and <span class="math-inline">\(E=-Z&#x27;^{2}=-77.5\)</span> eV, against the exact <span class="math-inline">\(-79.0\)</span> eV.</p></li><li><p>The variational principle (Thm. <a href="../chapter-05/index.html#theorem-thm-me-variational">5.6.1</a>) guarantees an upper bound, so a result below the exact energy indicates an error.</p></li><li><p>Antisymmetry ties spin to spatial symmetry, giving <span class="math-inline">\(E_{\pm}=\varepsilon_a+\varepsilon_b+J\pm K\)</span> (Thm. <a href="../chapter-05/index.html#theorem-thm-me-splitting">5.7.1</a>). The triplet lies lower by <span class="math-inline">\(2K\)</span>; for helium's <span class="math-inline">\(1s2s\)</span>, <span class="math-inline">\(2K=0.796\)</span> eV — four orders of magnitude larger than any magnetic spin interaction. This is exchange, and it has no classical analogue.</p></li><li><p>In heavier atoms each electron moves in a screened central field running from <span class="math-inline">\(-Z/r\)</span> to <span class="math-inline">\(-1/r\)</span>. Penetration, controlled by the centrifugal barrier, breaks hydrogen's <span class="math-inline">\(l\)</span>-degeneracy in the order <span class="math-inline">\(s&gt;p&gt;d&gt;f\)</span>.</p></li><li><p>This is parameterised by the quantum defect, <span class="math-inline">\(E_n=E_{\mathrm{th}}-\mathcal{E}_{\mathrm{Ryd}}/(n-\delta_l)^{2}\)</span>. For sodium: <span class="math-inline">\(\delta_s=1.373\)</span>, <span class="math-inline">\(\delta_p=0.883\)</span>, <span class="math-inline">\(\delta_d=0.010\)</span>.</p></li><li><p>Term symbols are <span class="math-inline">\(^{2S+1}L_J\)</span>; closed shells contribute <span class="math-inline">\(^{1}S\)</span> and a single hole behaves like a single electron (Thm. <a href="../chapter-05/index.html#theorem-thm-me-closed-shell">5.9.1</a>), so ionizing a closed shell always gives a doublet.</p></li><li><p>A doubly excited state can be degenerate with a continuum and decay into it without radiating — autoionization. Helium's <span class="math-inline">\(2s2p\)</span> at <span class="math-inline">\(60.15\)</span> eV has <span class="math-inline">\(\Gamma\approx37\)</span> meV, hence <span class="math-inline">\(\tau\approx18\)</span> fs.</p></li></ul>
+<h2 id="sec-5-exercises"><span class="sec-number">5.12</span>Exercises</h2>
+<ol><li><p><strong>The determinant.</strong> Write out the Slater determinant for three electrons in orbitals <span class="math-inline">\(\phi_a,\phi_b,\phi_c\)</span>. Verify that interchanging <span class="math-inline">\(\xi_1\)</span> and <span class="math-inline">\(\xi_3\)</span> changes the sign, and that setting <span class="math-inline">\(\phi_c=\phi_a\)</span> gives zero.</p></li><li><p><strong>The Coulomb integral.</strong> Reproduce the proof of Theorem <a href="../chapter-05/index.html#theorem-thm-me-5z8">5.5.1</a>, filling in the two standard integrals used. Then evaluate <span class="math-inline">\(5Z/8\)</span> in eV for <span class="math-inline">\(Z=1\)</span>, <span class="math-inline">\(2\)</span> and <span class="math-inline">\(3\)</span>, and explain physically why the repulsion grows with <span class="math-inline">\(Z\)</span> even though the electrons are being pulled <em>closer</em> together.</p></li><li><p><strong>The variational calculation.</strong></p>
+<ol><li><p>Derive Eq. <a href="../chapter-05/index.html#eq-eq-me-ezprime">(5.10)</a>, stating where each of the three terms comes from.</p></li><li><p>Minimise it to obtain <span class="math-inline">\(Z&#x27;=Z-\tfrac{5}{16}\)</span> and <span class="math-inline">\(E_{\min}=-Z&#x27;^{2}\)</span>.</p></li><li><p>Apply the result to H<span class="math-inline">\(^{-}\)</span> (<span class="math-inline">\(Z=1\)</span>, two electrons). What <span class="math-inline">\(Z&#x27;\)</span> and what energy do you get? Compare with the energy of a hydrogen atom plus a free electron (<span class="math-inline">\(-0.5\)</span> a.u.) and comment on whether this trial function predicts H<span class="math-inline">\(^{-}\)</span> to be bound.</p></li></ol></li><li><p><strong>Exchange.</strong></p>
+<ol><li><p>Carry out the expansion in the proof of Theorem <a href="../chapter-05/index.html#theorem-thm-me-splitting">5.7.1</a>, showing all four terms explicitly.</p></li><li><p>Explain in three or four sentences why the spatially antisymmetric state has lower energy, referring to what happens at <span class="math-inline">\(\vec r_1=\vec r_2\)</span>.</p></li><li><p>The measured splitting of helium's <span class="math-inline">\(1s2p\)</span> levels is <span class="math-inline">\(0.25\)</span> eV, smaller than the <span class="math-inline">\(0.796\)</span> eV of the <span class="math-inline">\(1s2s\)</span> levels. Using Eq. <a href="../chapter-05/index.html#eq-eq-me-j">(5.13)</a>, explain why a <span class="math-inline">\(2p\)</span> orbital gives a smaller exchange integral with <span class="math-inline">\(1s\)</span> than a <span class="math-inline">\(2s\)</span> orbital does.</p></li></ol></li><li><p><strong>Quantum defects from data.</strong> Using <span class="math-inline">\(E_{\mathrm{th}}=5.139\)</span> eV for sodium and Eq. <a href="../chapter-05/index.html#eq-eq-me-nstar-from-energy">(5.18)</a>, compute <span class="math-inline">\(n^{*}\)</span> and <span class="math-inline">\(\delta\)</span> for the <span class="math-inline">\(4s\)</span> state (bound by <span class="math-inline">\(1.947\)</span> eV) and the <span class="math-inline">\(4d\)</span> state (bound by <span class="math-inline">\(0.851\)</span> eV). Compare with the <span class="math-inline">\(3s\)</span> and <span class="math-inline">\(3d\)</span> values of Example <a href="../chapter-05/index.html#example-ex-me-sodium">5.8.1</a> and state whether <span class="math-inline">\(\delta_l\)</span> is behaving as Def. <a href="../chapter-05/index.html#definition-def-me-defect">5.8.1</a> claims.</p></li><li><p><strong>Term symbols.</strong> Give the ground-state term symbol for He (<span class="math-inline">\(1s^{2}\)</span>), Li (<span class="math-inline">\(\dots2s^{1}\)</span>), Be (<span class="math-inline">\(\dots2s^{2}\)</span>) and F (<span class="math-inline">\(\dots2p^{5}\)</span>). For fluorine, use Theorem <a href="../chapter-05/index.html#theorem-thm-me-closed-shell">5.9.1</a> rather than coupling five electrons.</p></li></ol>
+<h2 id="sec-5-project-screening-and-the-quantum-defect"><span class="sec-number">5.13</span>Project: Screening and the Quantum Defect</h2>
+<p><strong>The problem.</strong> Take the numerical radial solver built in Chapter 4 and put a screened potential into it. Show that screening breaks the <span class="math-inline">\(l\)</span>-degeneracy, produce quantum defects from your own eigenvalues, and compare with sodium.</p>
+<p>A convenient model potential — crude but with the right limits — is</p>
+<div class="math-block" id="eq-eq-me-model-potential">\begin{equation}
+	\label{eq:ME-model-potential}
+	V(r)=-\frac{1}{r}-\frac{Z-1}{r}\,e^{-r/d},
+\end{equation}</div>
+<p>in atomic units, with <span class="math-inline">\(Z=11\)</span> for sodium and <span class="math-inline">\(d\)</span> a parameter setting the core size.</p>
+<ol><li><p><strong>On paper.</strong> Verify that Eq. <a href="../chapter-05/index.html#eq-eq-me-model-potential">(5.21)</a> satisfies both limits of Eq. <a href="../chapter-05/index.html#eq-eq-me-screened">(5.15)</a>. Sketch it against <span class="math-inline">\(-1/r\)</span> and <span class="math-inline">\(-Z/r\)</span>, and say where the crossover sits in terms of <span class="math-inline">\(d\)</span>.</p></li><li><p><strong>On paper.</strong> Before computing, predict the sign of the effect: will <span class="math-inline">\(3s\)</span> move up or down relative to hydrogen's <span class="math-inline">\(n=3\)</span>, and will <span class="math-inline">\(3d\)</span> move more or less? Justify with the centrifugal barrier in two sentences, and write the prediction down.</p></li><li><p><strong>On the computer.</strong> Solve Eq. <a href="../chapter-03/index.html#eq-eq-am-radial">(3.43)</a> with Eq. <a href="../chapter-05/index.html#eq-eq-me-model-potential">(5.21)</a> for <span class="math-inline">\(l=0,1,2\)</span>, starting from <span class="math-inline">\(d=0.6\,a_0\)</span>. Extract the eigenvalues near <span class="math-inline">\(n=3\)</span> and convert each to a quantum defect using Eq. <a href="../chapter-05/index.html#eq-eq-me-nstar-from-energy">(5.18)</a> with <span class="math-inline">\(E_{\mathrm{th}}=0\)</span>, so the binding energy is simply <span class="math-inline">\(|E|\)</span>.</p></li><li><p><strong>On the computer.</strong> Compare with sodium's measured <span class="math-inline">\(\delta_s=1.373\)</span>, <span class="math-inline">\(\delta_p=0.883\)</span>, <span class="math-inline">\(\delta_d=0.010\)</span>. Tune <span class="math-inline">\(d\)</span> to fit <span class="math-inline">\(\delta_s\)</span>, then report what the other two do. Does fitting one spoil the others? State which features of the real atom this one-parameter model captures and which it cannot.</p></li><li><p><strong>On the computer.</strong> Plot <span class="math-inline">\(|U_{3l}(r)|^{2}\)</span> for <span class="math-inline">\(l=0,1,2\)</span> in your fitted potential, with the core region <span class="math-inline">\(r&lt;d\)</span> shaded. The figure should make the mechanism visible at a glance: the <span class="math-inline">\(s\)</span> state has weight inside the shading and the <span class="math-inline">\(d\)</span> state almost none. Quantify it by computing <span class="math-inline">\(\int_0^{d}|U_{3l}|^{2}dr\)</span> for each <span class="math-inline">\(l\)</span>.</p></li><li><p><strong>What has to move.</strong> One animation: increase the screening smoothly from none (<span class="math-inline">\(Z=1\)</span>, pure hydrogen) to <span class="math-inline">\(Z=11\)</span>, showing the three <span class="math-inline">\(n=3\)</span> levels starting degenerate and fanning apart with the <span class="math-inline">\(s\)</span> level diving. That fanning is the breaking of the accidental degeneracy.</p></li></ol>
+<p><strong>The check.</strong> At <span class="math-inline">\(Z=1\)</span> your three levels must be degenerate at <span class="math-inline">\(-1/18\)</span> a.u. and all three defects must vanish. If not, the error is in the solver, not the physics — fix it there before switching the screening on.</p>
+<p><strong>Be ready to answer.</strong> Your model has one adjustable parameter and three defects to reproduce. Suppose you can fit all three by hand. What would that tell you — and what would it <em>not</em> tell you — about whether Eq. <a href="../chapter-05/index.html#eq-eq-me-model-potential">(5.21)</a> is a good description of the sodium core?</p>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <a href="../chapter-04/index.html">Previous: The Hydrogen Atom</a>
+      <a href="../../toc.html">Contents</a>
+      <a href="../chapter-06/index.html">Next: Time-Dependent Potentials and Light–Matter Interaction</a>
+    </nav>
+  </article>
+</main>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p>&copy; 2026 Erfan Saydanzad. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

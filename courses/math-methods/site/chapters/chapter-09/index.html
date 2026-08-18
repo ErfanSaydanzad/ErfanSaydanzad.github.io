@@ -1,0 +1,1237 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 9: Series Solutions of Ordinary Differential Equations (Chapter 12) | Mathematical Methods in the Physical Sciences</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+  <link rel="preload" href="../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../assets/css/site.css?v=4c167578">
+  <script>
+    window.MathJax = {
+      // tagformat is an optional TeX extension, not part of the combined
+      // tex-chtml build. Without these two lines the tagformat block below is
+      // read and silently ignored, and every equation numbers from 1 with no
+      // chapter in front of it.
+      loader: { load: ['[tex]/tagformat'] },
+      tex: {
+        packages: { '[+]': ['tagformat'] },
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        processEnvironments: true,
+        tags: 'ams',
+        // The PDF numbers equations within the chapter (\numberwithin
+        // {equation}{chapter}), so "1.8" is the eighth equation of
+        // chapter 1. MathJax counts from 1 on every page, which would have
+        // shown that same equation as "8". Prefixing the chapter number
+        // keeps a reference valid against either version.
+        tagformat: {
+          number: function (n) { return '9.' + n; }
+        },
+        macros: {
+          pdv: ['{\\frac{\\partial #1}{\\partial #2}}', 2],
+          dv: ['{\\frac{d #1}{d #2}}', 2],
+          abs: ['{\\left|#1\\right|}', 1],
+          norm: ['{\\left\\|#1\\right\\|}', 1],
+          curl: '{\\vec{\\nabla}\\times}',
+          div: '{\\vec{\\nabla}\\cdot}',
+          grad: '{\\vec{\\nabla}}',
+          sech: '{\\operatorname{sech}}',
+          csch: '{\\operatorname{csch}}',
+          coth: '{\\operatorname{coth}}',
+          circnum: ['{\\boxed{#1}}', 1],
+          vb: ['{\\mathbf{#1}}', 1],
+          eval: ['{\\left.#1\\right|}', 1],
+          dd: '{\\,d}'
+        }
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <script defer src="../../assets/js/main.js?v=4c167578"></script>
+
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="../../index.html">
+    <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M9 6.5V25.5M9 6.5H24M9 25.5H24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 16Q10.5 9.5 15.5 16T25.5 16" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/></svg>
+    <span>Mathematical Methods in the Physical Sciences</span>
+  </a>
+  <nav class="top-nav" aria-label="Primary">
+    <a href="../../index.html">Home</a>
+    <a href="../../toc.html">Contents</a>
+    <a href="../../projects.html">Projects</a>
+  </nav>
+</header>
+<main class="layout" id="main">
+  <aside class="sidebar">
+  <div class="sidebar-inner">
+    <p class="sidebar-kicker">Chapter 9</p>
+    <h2>Series Solutions of Ordinary Differential Equations (Chapter 12)</h2>
+    <nav class="chapter-toc" aria-label="Chapter contents">
+      <a class="toc-level-2" href="#sec-9-ordinary-regular-singular-and-irregular-points">9.1 Ordinary, Regular Singular, and Irregular Points</a>
+<a class="toc-level-2" href="#sec-9-legendre-s-differential-equation">9.2 Legendre’s Differential Equation</a>
+<a class="toc-level-3" href="#sec-9-power-series-solution-about-x-0-ordinary-point">9.2.1 Power–Series Solution About x=0 (Ordinary Point)</a>
+<a class="toc-level-3" href="#sec-9-polynomial-solutions-the-legendre-polynomials">9.2.2 Polynomial Solutions: the Legendre Polynomials</a>
+<a class="toc-level-3" href="#sec-9-radius-of-convergence-and-interval-of-validity">Radius of Convergence and Interval of Validity</a>
+<a class="toc-level-3" href="#sec-9-rodrigues-formula-for-legendre-polynomials">Rodrigues’ Formula for Legendre Polynomials</a>
+<a class="toc-level-3" href="#sec-9-examples">9.2.5 Examples</a>
+<a class="toc-level-3" href="#sec-9-orthogonality">Orthogonality</a>
+<a class="toc-level-3" href="#sec-9-plot-of-legendre-polynomials">Plot of Legendre Polynomials</a>
+<a class="toc-level-3" href="#sec-9-generating-function">9.2.8 Generating Function</a>
+<a class="toc-level-2" href="#sec-9-associated-legendre-functions">9.3 Associated Legendre Functions</a>
+<a class="toc-level-3" href="#sec-9-differential-equation">9.3.1 Differential Equation</a>
+<a class="toc-level-3" href="#sec-9-generating-the-solutions">9.3.2 Generating the Solutions</a>
+<a class="toc-level-3" href="#sec-9-orthogonality-14">9.3.3 Orthogonality</a>
+<a class="toc-level-3" href="#sec-9-connection-to-spherical-harmonics">9.3.4 Connection to Spherical Harmonics</a>
+<a class="toc-level-2" href="#sec-9-bessel-s-differential-equation">9.4 Bessel’s Differential Equation</a>
+<a class="toc-level-3" href="#sec-9-frobenius-series-solution-about-x-0-regular-singular-point">9.4.1 Frobenius Series Solution About x=0 (Regular Singular Point)</a>
+<a class="toc-level-3" href="#sec-9-gamma-function-and-coefficient-formula">Gamma Function and Coefficient Formula</a>
+<a class="toc-level-3" href="#sec-9-constructing-the-series-solution">Constructing the Series Solution</a>
+<a class="toc-level-3" href="#sec-9-the-first-solution-for-integer-order">The First Solution for Integer Order</a>
+<a class="toc-level-3" href="#sec-9-the-second-solution-for-integer-order">The Second Solution for Integer Order</a>
+<a class="toc-level-3" href="#sec-9-hankel-functions-bessel-functions-of-the-third-kind">9.4.6 Hankel Functions (Bessel Functions of the Third Kind)</a>
+<a class="toc-level-3" href="#sec-9-graphical-behavior-of-bessel-functions">9.4.7 Graphical Behavior of Bessel Functions</a>
+<a class="toc-level-3" href="#sec-9-orthogonality-24">9.4.8 Orthogonality</a>
+<a class="toc-level-3" href="#sec-9-generating-function-25">9.4.9 Generating Function</a>
+<a class="toc-level-2" href="#sec-9-orthogonal-eigenfunction-bases-in-physics">9.5 Orthogonal Eigenfunction Bases in Physics</a>
+<a class="toc-level-3" href="#sec-9-1-fourier-series-modes-e-ik-n-x-basis-on-a-finite-interval">9.5.1 1. Fourier Series Modes e^ik_n x: Basis on a Finite Interval</a>
+<a class="toc-level-3" href="#sec-9-2-legendre-polynomials-p-x-basis-on-1-1">9.5.2 2. Legendre Polynomials P_(x): Basis on [-1,1]</a>
+<a class="toc-level-3" href="#sec-9-3-spherical-harmonics-y-m-basis-on-the-sphere">9.5.3 3. Spherical Harmonics Y_ m(,): Basis on the Sphere</a>
+<a class="toc-level-2" href="#sec-9-where-series-solutions-are-used">9.6 Where Series Solutions Are Used</a>
+<a class="toc-level-2" href="#sec-9-summary-table">Summary Table</a>
+<a class="toc-level-2" href="#sec-9-for-the-interested-reader">For the Interested Reader</a>
+<a class="toc-level-3" href="#sec-9-the-method">The method</a>
+<a class="toc-level-3" href="#sec-9-the-functions">The functions</a>
+    </nav>
+  </div>
+</aside>
+
+  <article class="content">
+    <header class="chapter-hero">
+      <p>Chapter 9</p>
+      <h1>Series Solutions of Ordinary Differential Equations (Chapter 12)</h1>
+    </header>
+    <h2 id="sec-9-ordinary-regular-singular-and-irregular-points"><span class="sec-number">9.1</span>Ordinary, Regular Singular, and Irregular Points</h2>
+<p>Consider the second–order linear differential equation</p>
+<div class="math-block">\begin{equation}
+y&#x27;&#x27; + P(x)\,y&#x27; + Q(x)\,y = 0,
+\end{equation}</div>
+<p>where <span class="math-inline">\(P(x)\)</span> and <span class="math-inline">\(Q(x)\)</span> are known functions.</p>
+<section class="callout definition"><header>Definition - Analytic function</header><p>A function <span class="math-inline">\(f(x)\)</span> is called <em>analytic</em> at <span class="math-inline">\(x=x_0\)</span> if it can be written as a convergent power series in a neighborhood of <span class="math-inline">\(x_0\)</span>:</p>
+<div class="math-block">\begin{equation}
+	f(x)=\sum_{n=0}^{\infty} c_n(x-x_0)^n.
+	\end{equation}</div>
+<p>Analytic functions are finite, smooth, and well behaved near <span class="math-inline">\(x_0\)</span>.</p></section>
+<section class="callout definition"><header>Definition</header><p>A point <span class="math-inline">\(x=x_0\)</span> of the differential equation is classified as follows:</p>
+<ul><li><p><strong>Ordinary point:</strong> <span class="math-inline">\(x_0\)</span> is an ordinary point if both <span class="math-inline">\(P(x)\)</span> and <span class="math-inline">\(Q(x)\)</span> are analytic at <span class="math-inline">\(x_0\)</span>. All coefficients are finite and smooth, so we may solve the equation using a standard <strong>power–series (Taylor) expansion</strong></p>
+<div class="math-block">\begin{equation}
+		y(x)=\sum_{n=0}^{\infty} A_n (x-x_0)^n.
+		\end{equation}</div></li><li><p><strong>Regular singular point:</strong> <span class="math-inline">\(x_0\)</span> is a regular singular point if <span class="math-inline">\(P(x)\)</span> or <span class="math-inline">\(Q(x)\)</span> diverge at <span class="math-inline">\(x_0\)</span>, but the combinations</p>
+<div class="math-block">\begin{equation}
+		(x-x_0)P(x), \qquad (x-x_0)^2 Q(x)
+		\end{equation}</div>
+<p>are analytic at <span class="math-inline">\(x_0\)</span>. The singularity is “mild’’ and the correct solution method is the <strong>Frobenius method</strong>, which assumes</p>
+<div class="math-block">\begin{equation}
+		y(x)=\sum_{n=0}^{\infty} a_n (x-x_0)^{n+r},\qquad a_0\neq 0.
+		\end{equation}</div>
+<p>This produces an <em>indicial equation</em> for <span class="math-inline">\(r\)</span> and a recurrence for <span class="math-inline">\(a_n\)</span>.</p></li><li><p><strong>Irregular singular point:</strong> If even <span class="math-inline">\((x-x_0)P(x)\)</span> or <span class="math-inline">\((x-x_0)^2 Q(x)\)</span> fail to be analytic, then the point is an irregular singular point. The singularity is “too strong’’ and ordinary series or Frobenius methods typically fail.</p></li></ul></section>
+<section class="callout remark"><header>Remark</header><ul><li><p>At an <strong>ordinary point</strong>, use a <strong>Taylor series</strong>.</p></li><li><p>At a <strong>regular singular point</strong>, use the <strong>Frobenius series</strong>.</p></li><li><p>Many special functions in physics—Legendre, Bessel, Hermite, Laguerre—originate from equations with <strong>regular singular points</strong>, where Frobenius expansions naturally apply.</p></li></ul></section>
+<section class="callout example"><header>Example - (ordinary point): Solve <span class="math-inline">\(y&#x27; = 2xy\)</span> by two methods</header><p>We solve</p>
+<div class="math-block">\begin{equation}
+	y&#x27; = 2xy
+	\end{equation}</div>
+<p>by (1) the standard separable method and (2) a power–series method about <span class="math-inline">\(x_0=0\)</span>.</p>
+<p><strong>Method 1: Standard (separable) solution.</strong></p>
+<p>For <span class="math-inline">\(y\neq 0\)</span>,</p>
+<div class="math-block">\begin{equation}
+	\frac{dy}{dx} = 2xy
+	\quad\Longrightarrow\quad
+	\frac{1}{y}\,dy = 2x\,dx.
+	\end{equation}</div>
+<p>Integrate both sides:</p>
+<div class="math-block">\begin{equation}
+	\int \frac{1}{y}\,dy = \int 2x\,dx
+	\quad\Longrightarrow\quad
+	\ln|y| = x^{2} + C.
+	\end{equation}</div>
+<p>Exponentiate:</p>
+<div class="math-block">\begin{equation}
+	|y| = e^{x^{2}+C} = e^C e^{x^{2}}.
+	\end{equation}</div>
+<p>Let <span class="math-inline">\(C_1 = \pm e^C\)</span> (an arbitrary constant), then</p>
+<div class="math-block">\begin{equation}
+	y(x) = C_1 e^{x^{2}}.
+	\end{equation}</div>
+<p>Allowing <span class="math-inline">\(C_1=0\)</span> also includes the trivial solution <span class="math-inline">\(y\equiv 0\)</span>:</p>
+<div class="math-block">\begin{equation}
+	\boxed{\,y(x) = C_1 e^{x^{2}},\quad C_1\in\mathbb{R}.\,}
+	\end{equation}</div>
+<p><strong>Method 2: Power–series solution about <span class="math-inline">\(x_0=0\)</span>.</strong></p>
+<p>Assume a power series</p>
+<div class="math-block">\begin{equation}
+	y(x) = \sum_{n=0}^{\infty} a_n x^{n},
+	\end{equation}</div>
+<p>so</p>
+<div class="math-block">\begin{equation}
+	y&#x27;(x) = \sum_{n=1}^{\infty} n a_n x^{n-1}.
+	\end{equation}</div>
+<p>Substitute into <span class="math-inline">\(y&#x27; = 2xy\)</span>:</p>
+<div class="math-block">\begin{equation}
+	\sum_{n=1}^{\infty} n a_n x^{n-1}
+	= 2x \sum_{n=0}^{\infty} a_n x^{n}
+	= 2\sum_{n=0}^{\infty} a_n x^{n+1}.
+	\end{equation}</div>
+<p><strong>Align the powers of <span class="math-inline">\(x\)</span>.</strong></p>
+<p>On the left, set <span class="math-inline">\(m=n-1\)</span>:</p>
+<div class="math-block">\begin{equation}
+	\sum_{m=0}^{\infty} (m+1)a_{m+1} x^{m}.
+	\end{equation}</div>
+<p>On the right, write the sum with index <span class="math-inline">\(m\)</span>:</p>
+<div class="math-block">\begin{equation}
+	2\sum_{m=1}^{\infty} a_{m-1} x^{m}.
+	\end{equation}</div>
+<p>Thus</p>
+<div class="math-block">\begin{equation}
+	\sum_{m=0}^{\infty} (m+1)a_{m+1} x^{m}
+	=
+	2\sum_{m=1}^{\infty} a_{m-1} x^{m}.
+	\end{equation}</div>
+<p>For <span class="math-inline">\(m=0\)</span>, only the left sum contributes:</p>
+<div class="math-block">\begin{equation}
+	(0+1)a_1 = 0 \quad\Longrightarrow\quad a_1 = 0.
+	\end{equation}</div>
+<p>For <span class="math-inline">\(m\ge 1\)</span>, equate coefficients of <span class="math-inline">\(x^{m}\)</span>:</p>
+<div class="math-block">\begin{equation}
+	(m+1)a_{m+1} = 2a_{m-1}, \qquad m\ge1.
+	\end{equation}</div>
+<p>So the recurrence is</p>
+<div class="math-block">\begin{equation}
+	\boxed{\; a_{m+1} = \frac{2}{m+1}\,a_{m-1}, \quad m\ge1. \;}
+	\end{equation}</div>
+<p><strong>Compute the coefficients.</strong></p>
+<div class="math-block">\begin{equation}
+	\begin{aligned}
+		m=1:&amp;\quad 2a_2 = 2a_0 \Rightarrow a_2 = a_0,\\
+		m=2:&amp;\quad 3a_3 = 2a_1 = 0 \Rightarrow a_3 = 0,\\
+		m=3:&amp;\quad 4a_4 = 2a_2 = 2a_0 \Rightarrow a_4 = \frac{a_0}{2!},\\
+		m=5:&amp;\quad 6a_6 = 2a_4 = a_0 \Rightarrow a_6 = \frac{a_0}{3!},\ \ldots
+	\end{aligned}
+	\end{equation}</div>
+<p>We see</p>
+<div class="math-block">\begin{equation}
+	a_{2k} = \frac{a_0}{k!},\qquad a_{2k+1}=0,\quad k=0,1,2,\ldots
+	\end{equation}</div>
+<p>Therefore</p>
+<div class="math-block">\begin{equation}
+	y(x) = a_0\left(1 + x^{2} + \frac{x^{4}}{2!} + \frac{x^{6}}{3!} + \cdots\right)
+	= a_0\sum_{k=0}^{\infty} \frac{x^{2k}}{k!}
+	= a_0 e^{x^{2}}.
+	\end{equation}</div>
+<p>Renaming <span class="math-inline">\(a_0\)</span> as <span class="math-inline">\(C_1\)</span>, we obtain the same family of solutions:</p>
+<div class="math-block">\begin{equation}
+	\boxed{\,y(x) = C_1 e^{x^{2}},\quad C_1\in\mathbb{R}.\,}
+	\end{equation}</div></section>
+<h2 id="sec-9-legendre-s-differential-equation"><span class="sec-number">9.2</span>Legendre’s Differential Equation</h2>
+<p>Many physical systems with spherical symmetry—electrostatics, gravitational potentials, quantum mechanics, and classical wave equations—lead to the <strong>Legendre differential equation</strong>:</p>
+<div class="math-block">\begin{equation}
+\boxed{
+	(1-x^{2})\,y&#x27;&#x27; - 2x\,y&#x27; + \ell(\ell+1)\,y = 0,
+}
+\qquad \ell = 0,1,2,\ldots
+\end{equation}</div>
+<section class="callout remark"><header>Remark</header><p>The points <span class="math-inline">\(x=\pm1\)</span> are <strong>regular singular points</strong>, while <span class="math-inline">\(x=0\)</span> is an <strong>ordinary point</strong>. Therefore ordinary power series work at the center, and Frobenius-type behavior appears at the endpoints.</p></section>
+<h3 id="sec-9-power-series-solution-about-x-0-ordinary-point"><span class="sec-number">9.2.1</span>Power–Series Solution About <span class="math-inline">\(x=0\)</span> (Ordinary Point)</h3>
+<p>We now derive the recurrence relation for the coefficients <span class="math-inline">\(a_n\)</span>.</p>
+<p>Assume a power–series solution about the ordinary point <span class="math-inline">\(x=0\)</span>:</p>
+<div class="math-block">\begin{equation}
+y(x) = \sum_{n=0}^{\infty} a_n x^n.
+\end{equation}</div>
+<p>Then</p>
+<div class="math-block">\begin{equation}
+y&#x27;(x) = \sum_{n=1}^{\infty} n a_n x^{n-1},
+\qquad
+y&#x27;&#x27;(x) = \sum_{n=2}^{\infty} n(n-1) a_n x^{n-2}.
+\end{equation}</div>
+<p>Substitute these into Legendre’s equation</p>
+<div class="math-block">\begin{equation}
+(1-x^2)y&#x27;&#x27; - 2x\,y&#x27; + \ell(\ell+1)y = 0:
+\end{equation}</div>
+<div class="math-block">\begin{equation}
+(1-x^2)\sum_{n=2}^{\infty} n(n-1)a_n x^{n-2}
+- 2x \sum_{n=1}^{\infty} n a_n x^{n-1}
++ \ell(\ell+1)\sum_{n=0}^{\infty} a_n x^n = 0.
+\end{equation}</div>
+<p>First expand the product <span class="math-inline">\((1-x^2)y&#x27;&#x27;\)</span>:</p>
+<div class="math-block">\begin{equation}
+(1-x^2)y&#x27;&#x27;
+= \sum_{n=2}^{\infty} n(n-1)a_n x^{n-2}
+- \sum_{n=2}^{\infty} n(n-1)a_n x^{n}.
+\end{equation}</div>
+<p>Now shift indices so that every sum is in powers of <span class="math-inline">\(x^n\)</span>.</p>
+<p>For the first sum, let <span class="math-inline">\(k=n-2\)</span> (equivalently <span class="math-inline">\(n=k+2\)</span>):</p>
+<div class="math-block">\begin{equation}
+\sum_{n=2}^{\infty} n(n-1)a_n x^{n-2}
+= \sum_{k=0}^{\infty} (k+2)(k+1)a_{k+2} x^{k}.
+\end{equation}</div>
+<p>Renaming <span class="math-inline">\(k\)</span> back to <span class="math-inline">\(n\)</span>,</p>
+<div class="math-block">\begin{equation}
+\sum_{n=0}^{\infty} (n+2)(n+1)a_{n+2} x^{n}.
+\end{equation}</div>
+<p>The other sums already have powers <span class="math-inline">\(x^n\)</span> (we can extend the lower limit to <span class="math-inline">\(0\)</span>, since the missing terms are zero):</p>
+<div class="math-block">\begin{equation}
+- \sum_{n=2}^{\infty} n(n-1)a_n x^{n}
+= -\sum_{n=0}^{\infty} n(n-1)a_n x^n,
+\end{equation}</div>
+<div class="math-block">\begin{equation}
+- 2x \sum_{n=1}^{\infty} n a_n x^{n-1}
+= -2 \sum_{n=1}^{\infty} n a_n x^{n}
+= -2\sum_{n=0}^{\infty} n a_n x^n,
+\end{equation}</div>
+<div class="math-block">\begin{equation}
+\ell(\ell+1)\sum_{n=0}^{\infty} a_n x^n
+= \sum_{n=0}^{\infty} \ell(\ell+1)a_n x^n.
+\end{equation}</div>
+<p>Putting all pieces together:</p>
+<div class="math-block">\begin{equation}
+\sum_{n=0}^{\infty} (n+2)(n+1)a_{n+2} x^{n}
+- \sum_{n=0}^{\infty} n(n-1)a_{n} x^{n}
+- 2\sum_{n=0}^{\infty} n a_{n} x^{n}
++ \sum_{n=0}^{\infty} \ell(\ell+1)a_n x^n
+= 0.
+\end{equation}</div>
+<p>Combine the last three sums:</p>
+<div class="math-block">\begin{equation}
+\sum_{n=0}^{\infty}
+\Big[
+(n+2)(n+1)a_{n+2}
++ \big(\ell(\ell+1) - n(n-1) - 2n\big)a_n
+\Big] x^n = 0.
+\end{equation}</div>
+<p>Note that</p>
+<div class="math-block">\begin{equation}
+n(n-1) + 2n = n^2 - n + 2n = n^2 + n = n(n+1),
+\end{equation}</div>
+<p>so</p>
+<div class="math-block">\begin{equation}
+\ell(\ell+1) - n(n-1) - 2n
+= \ell(\ell+1) - n(n+1).
+\end{equation}</div>
+<p>Thus</p>
+<div class="math-block">\begin{equation}
+\sum_{n=0}^{\infty}
+\Big[
+(n+2)(n+1)a_{n+2}
++ \big(\ell(\ell+1) - n(n+1)\big)a_n
+\Big] x^n = 0.
+\end{equation}</div>
+<p>For this identity to hold for all <span class="math-inline">\(x\)</span>, each coefficient of <span class="math-inline">\(x^n\)</span> must vanish:</p>
+<div class="math-block">\begin{equation}
+(n+2)(n+1)a_{n+2}
++ \big(\ell(\ell+1) - n(n+1)\big)a_n = 0.
+\end{equation}</div>
+<p>Solving for <span class="math-inline">\(a_{n+2}\)</span> gives the recurrence</p>
+<div class="math-block">\begin{equation}
+\boxed{
+	a_{n+2}
+	= \frac{n(n+1) - \ell(\ell+1)}{(n+1)(n+2)}\,a_n,
+	\qquad n=0,1,2,\ldots
+}
+\end{equation}</div>
+<p>which determines all higher coefficients from <span class="math-inline">\(a_0\)</span> and <span class="math-inline">\(a_1\)</span>. Starting from the recurrence relation</p>
+<div class="math-block">\begin{equation}
+a_{n+2}
+= \frac{n(n+1)-\ell(\ell+1)}{(n+1)(n+2)}\,a_n,
+\qquad n=0,1,2,\ldots,
+\end{equation}</div>
+<p>we compute the first few coefficients.</p>
+<p class="paragraph-title">Coefficient <span class="math-inline">\(a_{2}\)</span>.</p>
+<p>Set <span class="math-inline">\(n=0\)</span>:</p>
+<div class="math-block">\begin{equation}
+a_{2}
+= \frac{0\cdot 1 - \ell(\ell+1)}{1\cdot 2}\,a_{0}
+= -\frac{\ell(\ell+1)}{2}\,a_{0}.
+\end{equation}</div>
+<p class="paragraph-title">Coefficient <span class="math-inline">\(a_{3}\)</span>.</p>
+<p>Set <span class="math-inline">\(n=1\)</span>:</p>
+<div class="math-block">\begin{equation}
+a_{3}
+= \frac{1\cdot 2 - \ell(\ell+1)}{2\cdot 3}\,a_{1}
+= \frac{2-\ell(\ell+1)}{6}\,a_{1}
+= -\frac{\ell(\ell+1)-2}{3!}\,a_{1} = -\frac{(\ell-1)(\ell+2)}{3!}\,a_{1}.
+\end{equation}</div>
+<p class="paragraph-title">Coefficient <span class="math-inline">\(a_{4}\)</span>.</p>
+<p>Set <span class="math-inline">\(n=2\)</span>:</p>
+<div class="math-block">\begin{equation}
+a_{4}
+= \frac{2\cdot 3 - \ell(\ell+1)}{3\cdot 4}\,a_{2}
+= \frac{6-\ell(\ell+1)}{12}\,a_{2}.
+\end{equation}</div>
+<p>Using <span class="math-inline">\(a_{2}=-\dfrac{\ell(\ell+1)}{2}a_{0}\)</span>:</p>
+<div class="math-block">\begin{equation}
+a_{4}
+= \frac{6-\ell(\ell+1)}{12}
+\left(-\frac{\ell(\ell+1)}{2}a_{0}\right)
+= -\frac{\ell(\ell+1)\bigl(6-\ell(\ell+1)\bigr)}{24}\,a_{0}.
+\end{equation}</div>
+<p>Since <span class="math-inline">\(6-\ell(\ell+1)=-(\ell-2)(\ell+3)\)</span>, this becomes</p>
+<div class="math-block">\begin{equation}
+a_{4}
+= \frac{\ell(\ell+1)(\ell-2)(\ell+3)}{4!}\,a_{0}.
+\end{equation}</div>
+<p class="paragraph-title">Coefficient <span class="math-inline">\(a_{5}\)</span>.</p>
+<p>Set <span class="math-inline">\(n=3\)</span>:</p>
+<div class="math-block">\begin{equation}
+a_{5}
+= \frac{3\cdot 4 - \ell(\ell+1)}{4\cdot 5}\,a_{3}
+= \frac{12-\ell(\ell+1)}{20}\,a_{3}.
+\end{equation}</div>
+<p>Using <span class="math-inline">\(a_{3}=\dfrac{2-\ell(\ell+1)}{6}a_{1}\)</span>:</p>
+<div class="math-block">\begin{equation}
+a_{5}
+= \frac{12-\ell(\ell+1)}{20}
+\cdot \frac{2-\ell(\ell+1)}{6}a_{1}
+= \frac{(12-\ell(\ell+1))(2-\ell(\ell+1))}{120}\,a_{1}.
+\end{equation}</div>
+<p>Factoring,</p>
+<div class="math-block">\begin{equation}
+(12-\ell(\ell+1))(2-\ell(\ell+1))
+= (\ell-1)(\ell+2)(\ell-3)(\ell+4),
+\end{equation}</div>
+<p>so</p>
+<div class="math-block">\begin{equation}
+a_{5}
+= \frac{(\ell-1)(\ell+2)(\ell-3)(\ell+4)}{5!}\,a_{1}.
+\end{equation}</div>
+<p class="paragraph-title">Therefore</p>
+<div class="math-block">\begin{equation}
+\boxed{
+	\begin{aligned}
+		a_{2} &amp;= -\dfrac{\ell(\ell+1)}{2}\,a_{0},\\[6pt]
+		a_{3} &amp;= -\frac{(\ell-1)(\ell+2)}{3!}\,a_{1},\\[6pt]
+		a_{4} &amp;= \dfrac{\ell(\ell+1)(\ell-2)(\ell+3)}{4!}\,a_{0},\\[6pt]
+		a_{5} &amp;= \dfrac{(\ell-1)(\ell+2)(\ell-3)(\ell+4)}{5!}\,a_{1}.
+	\end{aligned}
+}
+\end{equation}</div>
+<section class="callout remark"><header>Remark</header><p>Even coefficients depend only on <span class="math-inline">\(a_0\)</span>; odd coefficients depend only on <span class="math-inline">\(a_1\)</span>. Thus the general solution splits into two independent series: one even in <span class="math-inline">\(x\)</span>, built from <span class="math-inline">\(a_0\)</span>, and one odd in <span class="math-inline">\(x\)</span>, built from <span class="math-inline">\(a_1\)</span>.</p></section>
+<div class="math-block">\begin{equation}
+\begin{aligned}
+	y(x)=\sum_{n=0}^{\infty} a_n x^n
+	= &amp;\;
+	a_{0}\Bigl[
+	1
+	- \frac{\ell(\ell+1)}{2!}x^{2}
+	+ \frac{\ell(\ell+1)(\ell-2)(\ell+3)}{4!}x^{4}
+	- \cdots
+	\Bigr]
+	\\[6pt]
+	&amp;\quad
+	+ a_{1}\Bigl[
+	x
+	- \frac{(\ell-1)(\ell+2)}{3!}x^{3}
+	+ \frac{(\ell-1)(\ell+2)(\ell-3)(\ell+4)}{5!}x^{5}
+	- \cdots
+	\Bigr].
+\end{aligned}
+\end{equation}</div>
+<h3 id="sec-9-polynomial-solutions-the-legendre-polynomials"><span class="sec-number">9.2.2</span>Polynomial Solutions: the Legendre Polynomials</h3>
+<p>Now restrict to the physically important case where <span class="math-inline">\(\ell\)</span> is a non-negative integer. The recurrence factor</p>
+<div class="math-block">\begin{equation}
+n(n+1)-\ell(\ell+1)
+\end{equation}</div>
+<p>vanishes when <span class="math-inline">\(n=\ell\)</span>. Since even coefficients use <span class="math-inline">\(n=0,2,4,\dots\)</span> and odd coefficients use <span class="math-inline">\(n=1,3,5,\dots\)</span>, the vanishing occurs either in the even or odd subsequence:</p>
+<ul><li><p>If <span class="math-inline">\(\ell\)</span> is even, then <span class="math-inline">\(n=\ell\)</span> appears in the even subsequence. The even series terminates at <span class="math-inline">\(x^\ell\)</span>; set <span class="math-inline">\(a_1=0\)</span>, <span class="math-inline">\(a_0\neq 0\)</span>.</p></li><li><p>If <span class="math-inline">\(\ell\)</span> is odd, then <span class="math-inline">\(n=\ell\)</span> appears in the odd subsequence. The odd series terminates at <span class="math-inline">\(x^\ell\)</span>; set <span class="math-inline">\(a_0=0\)</span>, <span class="math-inline">\(a_1\neq 0\)</span>.</p></li></ul>
+<p>Thus for each integer <span class="math-inline">\(\ell\)</span>, exactly one of the two series becomes a finite polynomial of degree <span class="math-inline">\(\ell\)</span>. This terminating series, normalized by <span class="math-inline">\(P_\ell(1)=1\)</span>, is the Legendre polynomial <span class="math-inline">\(P_\ell(x)\)</span>.</p>
+<ul><li><p>Even <span class="math-inline">\(\ell\)</span>: <span class="math-inline">\(P_\ell(x)\)</span> comes from the even series (an even function of <span class="math-inline">\(x\)</span>).</p></li><li><p>Odd <span class="math-inline">\(\ell\)</span>: <span class="math-inline">\(P_\ell(x)\)</span> comes from the odd series (an odd function of <span class="math-inline">\(x\)</span>).</p></li></ul>
+<p>We now illustrate this for <span class="math-inline">\(\ell=0,1,2,3,4\)</span>, always normalizing with <span class="math-inline">\(P_\ell(1)=1\)</span>.</p>
+<h4 id="sec-9-case-0">Case <span class="math-inline">\(\ell = 0\)</span></h4>
+<p>Here <span class="math-inline">\(\ell(\ell+1)=0\)</span>. The even series gives</p>
+<div class="math-block">\begin{equation}
+a_0\bigl[\,1-0\cdot x^2+0\cdot x^4-\cdots\,\bigr]=a_0.
+\end{equation}</div>
+<p>The odd series does not terminate. To obtain the polynomial solution, choose <span class="math-inline">\(a_0\neq 0\)</span> and set <span class="math-inline">\(a_1=0\)</span>. Normalization <span class="math-inline">\(P_0(1)=1\)</span> gives <span class="math-inline">\(a_0=1\)</span>, hence</p>
+<div class="math-block">\begin{equation}
+\boxed{P_{0}(x)=1.}
+\end{equation}</div>
+<h4 id="sec-9-case-1">Case <span class="math-inline">\(\ell = 1\)</span></h4>
+<p>Here <span class="math-inline">\(\ell(\ell+1)=2\)</span>. The odd series is</p>
+<div class="math-block">\begin{equation}
+a_1\left[
+x
+- \frac{2-2}{3!}x^{3}
++ \cdots
+\right]
+= a_1 x,
+\end{equation}</div>
+<p>since the coefficient of <span class="math-inline">\(x^3\)</span> vanishes. The even series does not terminate. To get the polynomial, choose <span class="math-inline">\(a_1\neq 0\)</span>, <span class="math-inline">\(a_0=0\)</span>. With <span class="math-inline">\(P_1(1)=1\)</span>, we take <span class="math-inline">\(a_1=1\)</span> and obtain</p>
+<div class="math-block">\begin{equation}
+\boxed{P_{1}(x)=x.}
+\end{equation}</div>
+<h4 id="sec-9-case-2">Case <span class="math-inline">\(\ell = 2\)</span></h4>
+<p>Here <span class="math-inline">\(\ell(\ell+1)=6\)</span>. The even series begins</p>
+<div class="math-block">\begin{equation}
+a_0\left[
+1
+- \frac{6}{2!} x^{2}
++ \cdots
+\right]
+= a_0\left[1 - 3x^2 + \cdots\right].
+\end{equation}</div>
+<p>At <span class="math-inline">\(n=2\)</span>, the factor <span class="math-inline">\(n(n+1)-\ell(\ell+1)=6-6=0\)</span>, so <span class="math-inline">\(a_4\)</span> and all higher even coefficients vanish and the even series terminates at <span class="math-inline">\(x^2\)</span>:</p>
+<div class="math-block">\begin{equation}
+a_0\left(1 - 3x^2\right).
+\end{equation}</div>
+<p>The odd series does not terminate. Choose <span class="math-inline">\(a_0\neq 0,\;a_1=0\)</span> and normalize with <span class="math-inline">\(P_2(1)=1\)</span>. Since the polynomial at <span class="math-inline">\(x=1\)</span> is <span class="math-inline">\(a_0(1-3)=-2a_0\)</span>,</p>
+<div class="math-block">\begin{equation}
+-2a_0 = 1 \quad\Rightarrow\quad a_0=-\tfrac12,
+\end{equation}</div>
+<p>so</p>
+<div class="math-block">\begin{equation}
+\boxed{P_2(x)=-\tfrac12\left(1 - 3x^2\right)=\tfrac12(3x^2-1).}
+\end{equation}</div>
+<h4 id="sec-9-case-3">Case <span class="math-inline">\(\ell = 3\)</span></h4>
+<p>Here <span class="math-inline">\(\ell(\ell+1)=12\)</span>. The odd series is</p>
+<div class="math-block">\begin{equation}
+a_1\left[
+x
+- \frac{12-2}{3!}x^{3}
++ \cdots
+\right]
+= a_1\left[x - \frac{10}{6}x^3 + \cdots\right]
+= a_1\left[x - \frac{5}{3}x^3 + \cdots\right].
+\end{equation}</div>
+<p>At <span class="math-inline">\(n=3\)</span>, the factor <span class="math-inline">\(n(n+1)-\ell(\ell+1)=12-12=0\)</span>, so higher odd coefficients vanish and the odd series terminates at <span class="math-inline">\(x^3\)</span>:</p>
+<div class="math-block">\begin{equation}
+a_1\left(x - \tfrac{5}{3}x^3\right).
+\end{equation}</div>
+<p>The even series does not terminate. To obtain the polynomial, choose <span class="math-inline">\(a_1\neq 0,\;a_0=0\)</span> and normalize with <span class="math-inline">\(P_3(1)=1\)</span>. Since the polynomial at <span class="math-inline">\(x=1\)</span> is <span class="math-inline">\(a_1(1-\tfrac53)=-\tfrac23 a_1\)</span>,</p>
+<div class="math-block">\begin{equation}
+-\tfrac23 a_1 = 1 \quad\Rightarrow\quad a_1=-\tfrac32,
+\end{equation}</div>
+<p>so</p>
+<div class="math-block">\begin{equation}
+\boxed{P_3(x)=-\tfrac32\left(x - \tfrac{5}{3}x^3\right)=\tfrac12(5x^3-3x).}
+\end{equation}</div>
+<h4 id="sec-9-case-4">Case <span class="math-inline">\(\ell = 4\)</span></h4>
+<p>Here <span class="math-inline">\(\ell(\ell+1)=20\)</span>. The even series is</p>
+<div class="math-block">\begin{equation}
+a_0\left[
+1
+- \frac{20}{2!}x^{2}
++ \frac{20(2)(7)}{4!}x^{4}
+- \cdots
+\right]
+= a_0\left[1 - 10x^2 + \frac{35}{3}x^4 - \cdots\right].
+\end{equation}</div>
+<p>At <span class="math-inline">\(n=4\)</span>, the factor <span class="math-inline">\(n(n+1)-\ell(\ell+1)=20-20=0\)</span>, so higher even coefficients vanish and the even series terminates. The odd series does not terminate. Choose <span class="math-inline">\(a_0\neq 0,\;a_1=0\)</span> and normalize with <span class="math-inline">\(P_4(1)=1\)</span>:</p>
+<div class="math-block">\begin{equation}
+a_0=\frac{3}{8},
+\end{equation}</div>
+<p>giving</p>
+<div class="math-block">\begin{equation}
+\boxed{P_4(x)=\tfrac18(35x^4-30x^2+3).}
+\end{equation}</div>
+<p class="paragraph-title">Therefore Legendre Polynomials are</p>
+<div class="math-block">\begin{equation}
+\begin{aligned}
+	P_0(x) &amp;= 1,\\[4pt]
+	P_1(x) &amp;= x,\\[4pt]
+	P_2(x) &amp;= \tfrac12(3x^2 - 1),\\[4pt]
+	P_3(x) &amp;= \tfrac12(5x^3 - 3x),\\[4pt]
+	P_4(x) &amp;= \tfrac18(35x^4 - 30x^2 + 3),\;\ldots
+\end{aligned}
+\end{equation}</div>
+<p>These polynomials appear throughout physics, especially in problems involving spherical symmetry such as multipole expansions, potential theory, and quantum angular momentum.</p>
+<h3 id="sec-9-radius-of-convergence-and-interval-of-validity">Radius of Convergence and Interval of Validity</h3>
+<p>For large <span class="math-inline">\(n\)</span>,</p>
+<div class="math-block">\begin{equation}
+\frac{n(n+1)-\ell(\ell+1)}{(n+1)(n+2)}
+\sim
+\frac{n^2}{n^2}
+=1.
+\end{equation}</div>
+<p>Thus from</p>
+<div class="math-block">\begin{equation}
+a_{n+2}
+= \frac{n(n+1)-\ell(\ell+1)}{(n+1)(n+2)}\,a_n.
+\end{equation}</div>
+<p>we get</p>
+<div class="math-block">\begin{equation}
+a_{n+2}\sim a_n,
+\qquad\text{for } n\gg 1.
+\end{equation}</div>
+<p>This means that the coefficients behave like those of the geometric series</p>
+<div class="math-block">\begin{equation}
+1 + x^2 + x^4 + \cdots
+\quad\text{or}\quad
+x + x^3 + x^5 + \cdots,
+\end{equation}</div>
+<p>both of which converge only when <span class="math-inline">\(|x|&lt;1\)</span>.</p>
+<p>This immediately gives</p>
+<div class="math-block">\begin{equation}
+\boxed{R = 1 \quad \text{(radius of convergence).}}
+\end{equation}</div>
+<p class="paragraph-title">Behavior at the endpoints.</p>
+<p>At <span class="math-inline">\(x=\pm1\)</span>, the general term behaves like</p>
+<div class="math-block">\begin{equation}
+a_{2n}(\pm1)^{2n} \sim a_{2n},
+\qquad
+a_{2n+1}(\pm1)^{2n+1} \sim a_{2n+1},
+\end{equation}</div>
+<p>and since</p>
+<div class="math-block">\begin{equation}
+a_{n+2}\sim a_n,
+\end{equation}</div>
+<p>the terms do not tend to zero rapidly enough to converge. Typical endpoint behavior is of the form</p>
+<div class="math-block">\begin{equation}
+1 + \frac{1}{3} + \frac{1}{5} + \cdots,
+\end{equation}</div>
+<p>which diverges. Therefore,</p>
+<div class="math-block">\begin{equation}
+\boxed{
+	\text{the series solution diverges at } x=\pm1.
+}
+\end{equation}</div>
+<p>Only when the series <em>terminates</em>—that is, when <span class="math-inline">\(\ell\)</span> is a nonnegative integer—do we obtain a polynomial that is finite at the endpoints.</p>
+<p class="paragraph-title">Interval of validity.</p>
+<p>For non-terminating solutions,</p>
+<div class="math-block">\begin{equation}
+y(x)=\sum_{n=0}^\infty a_n x^n
+\quad
+\text{is valid only for}\quad
+-1 &lt; x &lt; 1.
+\end{equation}</div>
+<p>For terminating solutions (the Legendre polynomials <span class="math-inline">\(P_\ell(x)\)</span>), the result is a finite polynomial of degree <span class="math-inline">\(\ell\)</span>, so</p>
+<div class="math-block">\begin{equation}
+\boxed{
+	P_\ell(x)\ \text{is valid and finite on the entire interval }[-1,1].
+}
+\end{equation}</div>
+<section class="callout remark"><header>Remark</header><p>In physical applications, <span class="math-inline">\(x=\cos\theta\)</span> ranges over <span class="math-inline">\([-1,1]\)</span>. Therefore only the terminating solutions—Legendre polynomials—are acceptable, while the second independent solution diverges at the endpoints.</p></section>
+<h3 id="sec-9-rodrigues-formula-for-legendre-polynomials">Rodrigues’ Formula for Legendre Polynomials</h3>
+<p>Another elegant way of generating these polynomials is provided by <strong>Rodrigues’ formula</strong>.</p>
+<section class="callout theorem"><header>Theorem - Rodrigues’ Formula</header><div class="math-block">\begin{equation}
+	\boxed{
+		P_\ell(x) = \frac{1}{2^\ell \ell!}\,\frac{d^\ell}{dx^\ell}\left( x^2 - 1 \right)^\ell
+	}
+	\end{equation}</div></section>
+<p>This formula expresses the Legendre polynomial <span class="math-inline">\( P_\ell(x) \)</span> as the <span class="math-inline">\(\ell\)</span>-th derivative of the simple algebraic function <span class="math-inline">\( (x^2 - 1)^\ell \)</span>. It provides a direct computational method for generating all Legendre polynomials.</p>
+<h3 id="sec-9-examples"><span class="sec-number">9.2.5</span>Examples</h3>
+<section class="callout example"><header>Example - 1: Compute <span class="math-inline">\( P_0(x) \)</span> from Rodrigues’ formula</header><p>For <span class="math-inline">\( \ell = 0 \)</span>:</p>
+<div class="math-block">\begin{equation}
+	(x^2 - 1)^0 = 1,
+	\qquad
+	\frac{d^0}{dx^0}(1) = 1.
+	\end{equation}</div>
+<p>Thus,</p>
+<div class="math-block">\begin{equation}
+	P_0(x)
+	= \frac{1}{2^0 0!}\cdot 1
+	= 1.
+	\end{equation}</div>
+<div class="centered"><p>P_0(x) = 1</p></div>
+<p>This matches the known result.</p></section>
+<section class="callout example"><header>Example - 2: Compute <span class="math-inline">\( P_1(x) \)</span> from Rodrigues’ formula</header><p>For <span class="math-inline">\( \ell = 1 \)</span>:</p>
+<div class="math-block">\begin{equation}
+	(x^2 - 1)^1 = x^2 - 1.
+	\end{equation}</div>
+<p>Differentiate once:</p>
+<div class="math-block">\begin{equation}
+	\frac{d}{dx}(x^2 - 1) = 2x.
+	\end{equation}</div>
+<p>Now apply Rodrigues’ formula:</p>
+<div class="math-block">\begin{equation}
+	P_1(x)
+	= \frac{1}{2^1 1!}(2x)
+	= x.
+	\end{equation}</div>
+<div class="centered"><p>P_1(x) = x</p></div>
+<p>Again this matches the standard Legendre polynomial.</p></section>
+<section class="callout example"><header>Example - 3: Compute <span class="math-inline">\( P_2(x) \)</span> from Rodrigues' formula</header><p>For <span class="math-inline">\( \ell = 2 \)</span>:</p>
+<div class="math-block">\begin{equation}
+	(x^2-1)^2 = x^4 - 2x^2 + 1.
+	\end{equation}</div>
+<p>Differentiate twice:</p>
+<div class="math-block">\begin{equation}
+	\frac{d}{dx}(x^4 - 2x^2 + 1) = 4x^3 - 4x,
+	\end{equation}</div>
+<div class="math-block">\begin{equation}
+	\frac{d^2}{dx^2}(x^4 - 2x^2 + 1) = 12x^2 - 4.
+	\end{equation}</div>
+<p>Apply the normalization factor, noting that <span class="math-inline">\(2^2\,2! = 4\cdot 2 = 8\)</span>:</p>
+<div class="math-block">\begin{equation}
+	P_2(x) = \frac{1}{2^2\,2!}(12x^2 - 4)
+	= \frac{1}{8}(12x^2 - 4)
+	= \frac{1}{8}\cdot 4(3x^2 - 1)
+	= \frac{1}{2}(3x^2 - 1).
+	\end{equation}</div>
+<div class="centered"><p>P_2(x) = 12(3x^2 - 1)</p></div></section>
+<h3 id="sec-9-orthogonality">Orthogonality</h3>
+<p>The Legendre polynomials satisfy an essential orthogonality relation on <span class="math-inline">\([-1,1]\)</span>:</p>
+<div class="math-block">\begin{equation}
+\boxed{
+	\int_{-1}^{1} P_\ell(x)P_m(x)\,dx
+	=\frac{2}{2\ell+1}\,\delta_{\ell m}.
+}
+\end{equation}</div>
+<section class="callout remark"><header>Remark</header><p>Orthogonality makes the Legendre polynomials a natural basis for expanding any sufficiently smooth function on <span class="math-inline">\([-1,1]\)</span>. This is the spherical analogue of Fourier series.</p></section>
+<h3 id="sec-9-plot-of-legendre-polynomials">Plot of Legendre Polynomials</h3>
+<p>Figure <a href="../chapter-09/index.html#chapter-09-fig-1">9.1</a> shows the first six Legendre polynomials <span class="math-inline">\(P_0(x)\)</span> through <span class="math-inline">\(P_5(x)\)</span> on the interval <span class="math-inline">\(-1 \le x \le 1\)</span>. These polynomials are finite everywhere on the interval, alternate between even and odd parity, and exhibit an increasing number of oscillations with order.</p>
+<figure id="chapter-09-fig-1" class="figure"><img src="assets/img/Fig9_3.png" alt="The Legendre polynomials P0(x)–P5(x) plotted on [-1,1]." loading="lazy" style="--figure-width: 90%;"><figcaption>Figure 9.1. The Legendre polynomials <span class="math-inline">\(P_0(x)\)</span>–<span class="math-inline">\(P_5(x)\)</span> plotted on <span class="math-inline">\([-1,1]\)</span>.</figcaption></figure>
+<h3 id="sec-9-generating-function"><span class="sec-number">9.2.8</span>Generating Function</h3>
+<p>The Legendre polynomials have a remarkable generating function:</p>
+<div class="math-block">\begin{equation}
+\boxed{
+	G(x,t)=\frac{1}{\sqrt{1-2xt+t^2}}=\sum_{\ell=0}^{\infty} P_\ell(x)t^\ell.
+}
+\end{equation}</div>
+<p>For any power series</p>
+<div class="math-block">\begin{equation}
+f(t) = \sum_{\ell=0}^{\infty} c_\ell t^\ell,
+\end{equation}</div>
+<p>we can recover the coefficients by</p>
+<div class="math-block">\begin{equation}
+c_\ell = \frac{1}{\ell!}\, \frac{d^\ell f}{dt^\ell}\Big|_{t=0}.
+\end{equation}</div>
+<p>Here, <span class="math-inline">\(x\)</span> is treated as a constant parameter and <span class="math-inline">\(t\)</span> is the series variable. Applying this to the generating function,</p>
+<div class="math-block">\begin{equation}
+G(x,t) = \sum_{\ell=0}^{\infty} P_\ell(x)\, t^\ell,
+\end{equation}</div>
+<p>we get</p>
+<div class="math-block">\begin{equation}
+\boxed{
+	P_\ell(x)
+	= \frac{1}{\ell!}\,\frac{\partial^\ell}{\partial t^\ell}
+	\left[ \frac{1}{\sqrt{1-2xt+t^{2}}} \right]_{t=0}.
+}
+\end{equation}</div>
+<section class="callout example"><header>Example - Computing the first few Legendre polynomials from <span class="math-inline">\(G(x,t)\)</span></header><p><strong>(a) <span class="math-inline">\(\ell=0\)</span>.</strong></p>
+<div class="math-block">\begin{equation}
+	P_0(x)
+	= G(x,0)
+	= \frac{1}{\sqrt{1-0+0}} = 1.
+	\end{equation}</div>
+<p><strong>(b) <span class="math-inline">\(\ell=1\)</span>.</strong> First derivative:</p>
+<div class="math-block">\begin{equation}
+	\frac{\partial G}{\partial t}
+	= \frac{\partial}{\partial t}(1-2xt+t^{2})^{-1/2}
+	= -\tfrac12(1-2xt+t^{2})^{-3/2}(-2x+2t)
+	= (x - t)(1-2xt+t^{2})^{-3/2}.
+	\end{equation}</div>
+<p>Evaluate at <span class="math-inline">\(t=0\)</span>:</p>
+<div class="math-block">\begin{equation}
+	P_1(x) = \frac{\partial G}{\partial t}\Big|_{t=0}
+	= x.
+	\end{equation}</div>
+<p><strong>(c) <span class="math-inline">\(\ell=2\)</span>.</strong> Second derivative:</p>
+<div class="math-block">\begin{equation}
+	P_2(x)
+	= \frac{1}{2!}\,\frac{\partial^2 G}{\partial t^2}\Big|_{t=0}.
+	\end{equation}</div>
+<p>Carrying out the differentiation (or using a CAS) gives</p>
+<div class="math-block">\begin{equation}
+	P_2(x) = \tfrac12(3x^2 - 1).
+	\end{equation}</div>
+<p><strong>(d) <span class="math-inline">\(\ell=3\)</span>.</strong></p>
+<div class="math-block">\begin{equation}
+	P_3(x)
+	= \frac{1}{3!}\,\frac{\partial^3 G}{\partial t^3}\Big|_{t=0}
+	= \tfrac12(5x^3 - 3x).
+	\end{equation}</div>
+<p>Thus the generating function indeed reproduces the familiar Legendre polynomials:</p>
+<div class="math-block">\begin{equation}
+	P_0(x)=1,\quad
+	P_1(x)=x,\quad
+	P_2(x)=\tfrac12(3x^2-1),\quad
+	P_3(x)=\tfrac12(5x^3-3x),\ \ldots
+	\end{equation}</div></section>
+<h2 id="sec-9-associated-legendre-functions"><span class="sec-number">9.3</span>Associated Legendre Functions</h2>
+<p>The associated Legendre functions arise naturally when solving Laplace’s equation or the angular part of the Schrödinger equation in spherical coordinates. They generalize the Legendre polynomials by introducing an integer parameter <span class="math-inline">\(m\)</span> that accounts for the dependence on the azimuthal angle <span class="math-inline">\(\phi\)</span>.</p>
+<h3 id="sec-9-differential-equation"><span class="sec-number">9.3.1</span>Differential Equation</h3>
+<p>Starting from separation of variables on the sphere, the angular function <span class="math-inline">\(P_\ell^m(x)\)</span> satisfies the <strong>associated Legendre differential equation</strong></p>
+<div class="math-block">\begin{equation}
+\boxed{
+	(1-x^2)\,y&#x27;&#x27; - 2x\,y&#x27; +
+	\left[\ell(\ell+1) - \frac{m^2}{1-x^2}\right] y = 0,
+}
+\qquad -1 \le x \le 1,
+\end{equation}</div>
+<p>where</p>
+<div class="math-block">\begin{equation}
+\ell = 0,1,2,\ldots,\qquad m = 0,1,2,\ldots,\ell.
+\end{equation}</div>
+<p>For <span class="math-inline">\(m=0\)</span>, the equation reduces to Legendre’s equation.</p>
+<section class="callout remark"><header>Remark</header><p>The points <span class="math-inline">\(x=\pm1\)</span> are <strong>regular singular points</strong>. A Frobenius expansion shows that near <span class="math-inline">\(x=\pm1\)</span> the solution behaves as <span class="math-inline">\((1-x^2)^{m/2}\)</span>, which guarantees finiteness for integer <span class="math-inline">\(m\)</span>.</p></section>
+<h3 id="sec-9-generating-the-solutions"><span class="sec-number">9.3.2</span>Generating the Solutions</h3>
+<p>The associated Legendre functions can be obtained from the Legendre polynomials by repeated differentiation:</p>
+<div class="math-block">\begin{equation}
+\boxed{
+	P_\ell^{\,m}(x)
+	= (-1)^m(1-x^2)^{m/2}\,\frac{d^m}{dx^m} P_\ell(x).
+}
+\end{equation}</div>
+<p>This formula produces all associated functions once <span class="math-inline">\(P_\ell(x)\)</span> is known.</p>
+<p>Examples:</p>
+<div class="math-block">\begin{equation}
+\begin{aligned}
+	P_1^1(x) &amp;= -(1-x^2)^{1/2},\\[4pt]
+	P_2^1(x) &amp;= -3x(1-x^2)^{1/2},\\[4pt]
+	P_2^2(x) &amp;= 3(1-x^2).
+\end{aligned}
+\end{equation}</div>
+<section class="callout remark"><header>Remark</header><p>When <span class="math-inline">\(m\)</span> is even, <span class="math-inline">\(P_\ell^m(x)\)</span> has the same parity as <span class="math-inline">\(P_\ell(x)\)</span>:</p>
+<div class="math-block">\begin{equation}
+	P_\ell^m(-x)=(-1)^{\ell+m} P_\ell^m(x).
+	\end{equation}</div></section>
+<h3 id="sec-9-orthogonality-14"><span class="sec-number">9.3.3</span>Orthogonality</h3>
+<p>For fixed <span class="math-inline">\(m\)</span>, the associated Legendre functions are orthogonal on <span class="math-inline">\([-1,1]\)</span>:</p>
+<div class="math-block">\begin{equation}
+\boxed{
+	\int_{-1}^{1} P_\ell^m(x)\,P_{\ell&#x27;}^m(x)\,dx
+	= \frac{2(\ell+m)!}{(2\ell+1)(\ell-m)!}\,\delta_{\ell\ell&#x27;}.
+}
+\end{equation}</div>
+<p>This extends the orthogonality of Legendre polynomials to functions of higher order <span class="math-inline">\(m\)</span>.</p>
+<section class="callout remark"><header>Remark</header><p>Because of this orthogonality, associated Legendre functions play the same role in spherical problems that sines and cosines play in problems with Cartesian symmetry.</p></section>
+<h3 id="sec-9-connection-to-spherical-harmonics"><span class="sec-number">9.3.4</span>Connection to Spherical Harmonics</h3>
+<p>The full angular dependence of Laplace’s equation and the angular part of the Schrödinger equation in spherical coordinates is expressed using the <strong>spherical harmonics</strong>:</p>
+<div class="math-block">\begin{equation}
+\boxed{
+	Y_{\ell m}(\theta,\phi)
+	= N_{\ell m}\,P_{\ell}^{\,m}(\cos\theta)\,e^{im\phi},
+}
+\qquad
+\ell = 0,1,2,\ldots,
+\qquad
+m = -\ell,\ldots,\ell.
+\end{equation}</div>
+<p class="paragraph-title">Normalization constant.</p>
+<p>The spherical harmonics are orthonormal on the unit sphere,</p>
+<div class="math-block">\begin{equation}
+\int_{0}^{2\pi}\!\!\int_{0}^{\pi}
+Y_{\ell m}(\theta,\phi)\,Y_{\ell&#x27; m&#x27;}^{*}(\theta,\phi)\,
+\sin\theta\, d\theta\, d\phi
+=\delta_{\ell\ell&#x27;}\delta_{mm&#x27;}.
+\end{equation}</div>
+<p>This is achieved when</p>
+<div class="math-block">\begin{equation}
+\boxed{
+	N_{\ell m}
+	= (-1)^{m}
+	\sqrt{\frac{2\ell+1}{4\pi}\,
+		\frac{(\ell-m)!}{(\ell+m)!}}.
+}
+\end{equation}</div>
+<p>The factor <span class="math-inline">\((-1)^{m}\)</span> (the Condon–Shortley phase) is conventional and ensures consistency with standard quantum mechanics notation.</p>
+<section class="callout remark"><header>Remark - Physical meaning</header><ul><li><p>Each pair <span class="math-inline">\((\ell,m)\)</span> labels an angular momentum eigenstate.</p></li><li><p><span class="math-inline">\(P_{\ell}^{\,m}(\cos\theta)\)</span> describes the dependence on the polar angle <span class="math-inline">\(\theta\)</span>.</p></li><li><p><span class="math-inline">\(e^{im\phi}\)</span> carries the azimuthal dependence and corresponds to the <span class="math-inline">\(z\)</span>-component of angular momentum.</p></li><li><p>Higher <span class="math-inline">\(|m|\)</span> values push the probability toward the equator (<span class="math-inline">\(\theta=\pi/2\)</span>), reflecting the classical picture of a rotating object with greater projection of angular momentum about the <span class="math-inline">\(z\)</span>-axis.</p></li></ul>
+<p>Thus, the associated Legendre functions provide the essential angular structure of all spherical harmonics.</p></section>
+<h2 id="sec-9-bessel-s-differential-equation"><span class="sec-number">9.4</span>Bessel’s Differential Equation</h2>
+<p>Bessel’s equation appears naturally in problems with cylindrical symmetry: heat conduction in cylinders, vibrations of circular membranes (“drumhead problem”), electromagnetic waves in cylindrical waveguides, and quantum mechanics in cylindrical potentials.</p>
+<p>The <strong>Bessel differential equation</strong> of order <span class="math-inline">\(p\)</span> is</p>
+<div class="math-block">\begin{equation}
+\boxed{
+	x^{2}y&#x27;&#x27; + x y&#x27; + (x^{2} - p^{2})y = 0,
+}
+\qquad p \in \mathbb{R}.
+\end{equation}</div>
+<section class="callout remark"><header>Remark</header><p>The point <span class="math-inline">\(x=0\)</span> is a <strong>regular singular point</strong>. Therefore we must use the <strong>Frobenius method</strong> (generalized power series). For <span class="math-inline">\(x&gt;0\)</span>, all coefficients are analytic and the equation is perfectly regular.</p></section>
+<h3 id="sec-9-frobenius-series-solution-about-x-0-regular-singular-point"><span class="sec-number">9.4.1</span>Frobenius Series Solution About <span class="math-inline">\(x=0\)</span> (Regular Singular Point)</h3>
+<p>We seek a generalized power series (Frobenius expansion)</p>
+<div class="math-block">\begin{equation}
+y(x) = \sum_{n=0}^\infty a_n x^{n+r},
+\qquad a_0\neq 0,
+\end{equation}</div>
+<p>where the exponent <span class="math-inline">\(r\)</span> is to be determined.</p>
+<p>Compute derivatives:</p>
+<div class="math-block">\begin{equation}
+y&#x27; = \sum_{n=0}^\infty (n+r)a_n x^{n+r-1},
+\qquad
+y&#x27;&#x27; = \sum_{n=0}^\infty (n+r)(n+r-1)a_n x^{n+r-2}.
+\end{equation}</div>
+<p>Substitute into Bessel’s equation:</p>
+<div class="math-block">\begin{equation}
+x^2 y&#x27;&#x27; + x y&#x27; + (x^2 - p^2)y = 0.
+\end{equation}</div>
+<p>We obtain:</p>
+<div class="math-block">\begin{equation}
+x^2 \sum_{n=0}^\infty (n+r)(n+r-1)a_n x^{n+r-2}
++ x \sum_{n=0}^\infty (n+r)a_n x^{n+r-1}
++ (x^2 - p^2)\sum_{n=0}^\infty a_n x^{n+r} = 0.
+\end{equation}</div>
+<p>Simplifying each term:</p>
+<div class="math-block">\begin{equation}
+\sum_{n=0}^\infty (n+r)(n+r-1)a_n x^{n+r}
++
+\sum_{n=0}^\infty (n+r)a_n x^{n+r}
++
+\sum_{n=0}^\infty a_n x^{n+r+2}
+-
+p^2\sum_{n=0}^\infty a_n x^{n+r}
+= 0.
+\end{equation}</div>
+<p>Combine the first three sums:</p>
+<div class="math-block">\begin{equation}
+(n+r)(n+r-1)+(n+r)-p^2=(n+r)^2-p^2.
+\end{equation}</div>
+<p>Thus,</p>
+<div class="math-block">\begin{equation}
+\sum_{n=0}^\infty\big[(n+r)^2-p^2\big]a_n x^{n+r}
++ \sum_{n=0}^\infty a_n x^{n+r+2}=0.
+\end{equation}</div>
+<p>Shift the index in the <span class="math-inline">\(x^{n+r+2}\)</span> term.  Starting from</p>
+<div class="math-block">\begin{equation}
+\sum_{n=0}^{\infty} a_n x^{n+r+2},
+\end{equation}</div>
+<p>let <span class="math-inline">\(m = n+2\)</span> (so <span class="math-inline">\(n = m-2\)</span>). Then</p>
+<div class="math-block">\begin{equation}
+\sum_{n=0}^{\infty} a_n x^{n+r+2}
+= \sum_{m=2}^{\infty} a_{m-2} x^{m+r}.
+\end{equation}</div>
+<p>Renaming the index <span class="math-inline">\(m \to n\)</span> gives</p>
+<div class="math-block">\begin{equation}
+\sum_{n=0}^\infty\big[(n+r)^2-p^2\big]a_n x^{n+r}
++ \sum_{n=2}^\infty a_{n-2} x^{n+r}=0.
+\end{equation}</div>
+<p>Now all powers of <span class="math-inline">\(x\)</span> match:</p>
+<div class="math-block">\begin{equation}
+(r^2 - p^2)\, a_0 x^r
++ \big[(1+r)^2 - p^2\big] a_1 x^{r+1}
++ \sum_{n=2}^\infty
+\Big[
+\big((n+r)^2-p^2\big)a_n + a_{n-2}
+\Big] x^{n+r} = 0.
+\end{equation}</div>
+<p>Because this holds for all <span class="math-inline">\(x\)</span>, each coefficient must vanish:</p>
+<ul><li><p><strong>Indicial equation</strong> (coefficient of <span class="math-inline">\(x^r\)</span>):</p>
+<div class="math-block">\begin{equation}
+	(r^2 - p^2)a_0 = 0
+	\quad\Rightarrow\quad
+	\boxed{r = \pm p}.
+	\end{equation}</div>
+<p>We assume <span class="math-inline">\(a_0 \neq 0\)</span>, so the equation determines <span class="math-inline">\(r\)</span>.</p></li><li><p><strong>Coefficient of <span class="math-inline">\(x^{r+1}\)</span></strong>:</p>
+<div class="math-block">\begin{equation}
+	[(1+r)^2 - p^2]\, a_1 = 0.
+	\end{equation}</div>
+<p>For <span class="math-inline">\(r=\pm p\)</span>, the factor is nonzero, so we must have</p>
+<div class="math-block">\begin{equation}
+	\boxed{a_1 = 0}.
+	\end{equation}</div>
+<p>Thus the series built from <span class="math-inline">\(a_0\)</span> contains only even powers of <span class="math-inline">\(x\)</span>.</p></li><li><p><strong>Recurrence relation for <span class="math-inline">\(n\ge2\)</span> (coefficient of <span class="math-inline">\(x^{n+r}\)</span>)</strong>:</p>
+<div class="math-block">\begin{equation}
+	\big((n+r)^2 - p^2\big)a_n + a_{n-2} = 0
+	\quad\Rightarrow\quad
+	\boxed{
+		a_n = -\dfrac{a_{n-2}}{(n+r)^2 - p^2}.
+	}
+	\end{equation}</div></li></ul>
+<p>To obtain a solution that stays finite at <span class="math-inline">\(x=0\)</span>, we choose the positive root <span class="math-inline">\(r = p\)</span>. Then the recurrence becomes</p>
+<div class="math-block">\begin{equation}
+a_n = -\frac{a_{n-2}}{(n+p)^2 - p^2}
+= -\frac{a_{n-2}}{n(n+2p)}.
+\end{equation}</div>
+<p>Since <span class="math-inline">\(a_1=0\)</span>, all odd coefficients are zero. We therefore write <span class="math-inline">\(n=2k\)</span> (even index) and obtain</p>
+<div class="math-block">\begin{equation}
+\boxed{
+	a_{2k}
+	= -\frac{a_{2k-2}}{(2k+p)^2 - p^2}
+	= -\frac{a_{2k-2}}{2k(2k+2p)}
+	= -\frac{a_{2k-2}}{2^{2}k(k+p)}.
+}
+\tag{$\star$}
+\end{equation}</div>
+<h3 id="sec-9-gamma-function-and-coefficient-formula">Gamma Function and Coefficient Formula</h3>
+<section class="callout definition"><header>Definition - Gamma Function</header><p>For <span class="math-inline">\(\operatorname{Re}(z)&gt;0\)</span>, the Gamma function is defined by</p>
+<div class="math-block">\begin{equation}
+	\Gamma(z) = \int_{0}^{\infty} t^{z-1} e^{-t}\,dt.
+	\end{equation}</div>
+<p>It satisfies the recursion</p>
+<div class="math-block">\begin{equation}
+	\Gamma(z+1) = z\,\Gamma(z),
+	\end{equation}</div>
+<p>and in particular, for a positive integer <span class="math-inline">\(n\)</span>,</p>
+<div class="math-block">\begin{equation}
+	\Gamma(n+1) = n!.
+	\end{equation}</div></section>
+<p>We now use the recurrence <span class="math-inline">\((\star)\)</span> to write the first few even coefficients in a systematic way.</p>
+<p>For <span class="math-inline">\(k=1\)</span>:</p>
+<div class="math-block">\begin{equation}
+a_2 = -\frac{a_0}{2^{2}\,1(1+p)}
+= -\frac{a_0}{2^{2}(1+p)}
+= -\frac{a_0\,\Gamma(1+p)}{2^{2}\,\Gamma(2+p)}.
+\end{equation}</div>
+<p>For <span class="math-inline">\(k=2\)</span>:</p>
+<div class="math-block">\begin{equation}
+a_4 = -\frac{a_2}{2^{2}\,2(2+p)}
+= \frac{a_0}{2^{4}\,2!(1+p)(2+p)}
+= \frac{a_0\,\Gamma(1+p)}{2^{4}\,2!\,\Gamma(3+p)}.
+\end{equation}</div>
+<p>For <span class="math-inline">\(k=3\)</span>:</p>
+<div class="math-block">\begin{equation}
+a_6 = -\frac{a_4}{2^{2}\,3(3+p)}
+= -\frac{a_0}{2^{6}\,3!(1+p)(2+p)(3+p)}
+= -\frac{a_0\,\Gamma(1+p)}{2^{6}\,3!\,\Gamma(4+p)}.
+\end{equation}</div>
+<p>We see the pattern: each new <span class="math-inline">\(a_{2k}\)</span> picks up a factor <span class="math-inline">\(-1/[2^{2}k(k+p)]\)</span>, which builds up the factorials and Gamma functions.</p>
+<p>By induction, the general even coefficient is</p>
+<div class="math-block">\begin{equation}
+\boxed{
+	a_{2k}
+	= \frac{(-1)^k\,a_0\,\Gamma(1+p)}
+	{2^{2k}\,k!\,\Gamma(k+1+p)},
+	\qquad k=0,1,2,\dots
+}
+\tag{$\dagger$}
+\end{equation}</div>
+<p>(For <span class="math-inline">\(k=0\)</span> this gives <span class="math-inline">\(a_0\)</span> back.)</p>
+<h3 id="sec-9-constructing-the-series-solution">Constructing the Series Solution</h3>
+<p>Our Frobenius ansatz was</p>
+<div class="math-block">\begin{equation}
+y(x) = \sum_{n=0}^{\infty} a_n x^{n+r},
+\qquad r=p.
+\end{equation}</div>
+<p>Since only even <span class="math-inline">\(n\)</span> survive,</p>
+<div class="math-block">\begin{equation}
+y(x) = \sum_{k=0}^{\infty} a_{2k}\,x^{2k+p}.
+\end{equation}</div>
+<p>Insert the general coefficient (<span class="math-inline">\(\dagger\)</span>):</p>
+<div class="math-block">\begin{equation}
+\begin{aligned}
+	y(x)
+	&amp;= \sum_{k=0}^{\infty}
+	\frac{(-1)^k\,a_0\,\Gamma(1+p)}{2^{2k}k!\,\Gamma(k+1+p)}\,x^{2k+p} \\[4pt]
+	&amp;= a_0\,\Gamma(1+p)\,x^{p}
+	\sum_{k=0}^{\infty}
+	\frac{(-1)^k}{k!\,\Gamma(k+1+p)}
+	\left(\frac{x^2}{2^{2}}\right)^{k} \\[4pt]
+	&amp;= a_0\,\Gamma(1+p)\,
+	\sum_{k=0}^{\infty}
+	\frac{(-1)^k}{k!\,\Gamma(k+1+p)}
+	\left(\frac{x}{2}\right)^{2k+p}.
+\end{aligned}
+\end{equation}</div>
+<p>So</p>
+<div class="math-block">\begin{equation}
+\boxed{
+	y(x)
+	= a_0\,\Gamma(1+p)
+	\sum_{k=0}^{\infty}
+	\frac{(-1)^k}{k!\,\Gamma(k+p+1)}
+	\left(\frac{x}{2}\right)^{2k+p}.
+}
+\end{equation}</div>
+<p>To obtain the <strong>standard Bessel function of the first kind</strong> <span class="math-inline">\(J_p(x)\)</span>, we choose <span class="math-inline">\(a_0\)</span> so that the prefactor becomes 1.  A convenient choice is</p>
+<div class="math-block">\begin{equation}
+a_0 = \frac{1}{2^{p}\Gamma(1+p)}.
+\end{equation}</div>
+<p>Then</p>
+<div class="math-block">\begin{equation}
+a_0\,\Gamma(1+p) = \frac{1}{2^{p}},
+\end{equation}</div>
+<p>and we arrive at the final series:</p>
+<div class="math-block">\begin{equation}
+\boxed{
+	J_p(x)
+	= \sum_{k=0}^{\infty}
+	\frac{(-1)^k}{k!\,\Gamma(k+p+1)}
+	\left(\frac{x}{2}\right)^{2k+p},
+}
+\end{equation}</div>
+<p>and the second solution is given by <span class="math-inline">\( J_{-p}(x) \)</span></p>
+<h3 id="sec-9-the-first-solution-for-integer-order">The First Solution for Integer Order</h3>
+<p>For integer order <span class="math-inline">\(p=n\)</span>, the general series reduces to</p>
+<div class="math-block">\begin{equation}
+\boxed{
+	J_n(x)
+	= \sum_{k=0}^{\infty}
+	\frac{(-1)^k}{k!\,(n+k)!}
+	\left(\frac{x}{2}\right)^{2k+n}
+}
+\end{equation}</div>
+<p>since <span class="math-inline">\(\Gamma(n+k+1) = (n+k)!\)</span>. This is the standard power–series definition of the Bessel function of the first kind. Small-order Bessel functions follow immediately:</p>
+<div class="math-block">\begin{equation}
+\begin{aligned}
+	J_0(x) &amp;= 1 - \frac{x^{2}}{4} + \frac{x^{4}}{64} - \frac{x^{6}}{2304} + \cdots,\\[6pt]
+	J_1(x) &amp;= \frac{x}{2} - \frac{x^{3}}{16} + \frac{x^{5}}{384} - \frac{x^{7}}{18432} + \cdots,\\[6pt]
+	J_2(x) &amp;= \frac{x^{2}}{8} - \frac{x^{4}}{96} + \frac{x^{6}}{3072} - \cdots.
+\end{aligned}
+\end{equation}</div>
+<h3 id="sec-9-the-second-solution-for-integer-order">The Second Solution for Integer Order</h3>
+<p>For integer <span class="math-inline">\(p = n\)</span> we have the symmetry relation</p>
+<div class="math-block">\begin{equation}
+J_{-n}(x) = (-1)^n J_n(x),
+\end{equation}</div>
+<p>which shows that <span class="math-inline">\(J_n\)</span> and <span class="math-inline">\(J_{-n}\)</span> are not linearly independent when <span class="math-inline">\(n\)</span> is an integer. To obtain a second linearly independent solution, we define</p>
+<div class="math-block">\begin{equation}
+\boxed{
+	Y_p(x)
+	= \frac{J_p(x)\cos(p\pi) - J_{-p}(x)}{\sin(p\pi)},
+}
+\end{equation}</div>
+<p>which is well-defined for all non-integer <span class="math-inline">\(p\)</span>. In the limit as <span class="math-inline">\(p \to n \in \mathbb{Z}\)</span>, this expression produces the <strong>Bessel function of the second kind</strong>, often denoted <span class="math-inline">\(Y_n(x)\)</span> or <span class="math-inline">\(N_n(x)\)</span>.</p>
+<p>Near the origin, <span class="math-inline">\(Y_n(x)\)</span> diverges logarithmically:</p>
+<div class="math-block">\begin{equation}
+Y_n(x) \sim \frac{2}{\pi}\left[\ln\!\left(\frac{x}{2}\right)+\gamma\right]J_n(x) + \cdots,
+\qquad x \to 0,
+\end{equation}</div>
+<p>where <span class="math-inline">\(\gamma\)</span> is the Euler–Mascheroni constant.</p>
+<section class="callout remark"><header>Remark - Physical acceptability</header><p>In most problems involving cylindrical symmetry (vibrating membranes, heat flow in cylinders, electromagnetic waves in cylindrical guides), the solution must remain <em>finite at the origin</em>. Since</p>
+<div class="math-block">\begin{equation}
+	Y_p(x) \to \infty \quad \text{as } x \to 0,
+	\end{equation}</div>
+<p>the only physically acceptable solution is</p>
+<div class="math-block">\begin{equation}
+	\boxed{ J_p(x) }.
+	\end{equation}</div></section>
+<h3 id="sec-9-hankel-functions-bessel-functions-of-the-third-kind"><span class="sec-number">9.4.6</span>Hankel Functions (Bessel Functions of the Third Kind)</h3>
+<p>The Bessel functions of the first and second kind, <span class="math-inline">\(J_p(x)\)</span> and <span class="math-inline">\(Y_p(x)\)</span>, form a fundamental pair of real solutions to Bessel’s differential equation. In many applications—especially those involving <em>wave propagation</em>, <em>radiation</em>, or <em>scattering</em>—it is convenient to combine these into complex-valued solutions known as the <strong>Hankel functions</strong>.</p>
+<section class="callout definition"><header>Definition - Hankel Functions of Order <span class="math-inline">\(p\)</span></header><p>The Hankel functions of the first and second kind are defined as</p>
+<div class="math-block">\begin{equation}
+	\boxed{
+		H_p^{(1)}(x) = J_p(x) + i\,Y_p(x),
+		\qquad
+		H_p^{(2)}(x) = J_p(x) - i\,Y_p(x).
+	}
+	\end{equation}</div></section>
+<p>The functions <span class="math-inline">\(H_p^{(1)}(x)\)</span> and <span class="math-inline">\(H_p^{(2)}(x)\)</span> are linearly independent and form a complete pair of complex solutions to Bessel’s equation:</p>
+<div class="math-block">\begin{equation}
+x^2 y&#x27;&#x27; + x y&#x27; + (x^2 - p^2) y = 0.
+\end{equation}</div>
+<h3 id="sec-9-graphical-behavior-of-bessel-functions"><span class="sec-number">9.4.7</span>Graphical Behavior of Bessel Functions</h3>
+<p>To better understand the qualitative behavior of Bessel functions, it is useful to look at their graphs. Figure <a href="../chapter-09/index.html#chapter-09-fig-2">9.2</a> shows the first three Bessel functions of the first kind, <span class="math-inline">\(J_0(x)\)</span>, <span class="math-inline">\(J_1(x)\)</span>, and <span class="math-inline">\(J_2(x)\)</span>, and Fig. <a href="../chapter-09/index.html#chapter-09-fig-3">9.3</a> shows the corresponding Bessel functions of the second kind, <span class="math-inline">\(Y_0(x)\)</span>, <span class="math-inline">\(Y_1(x)\)</span>, and <span class="math-inline">\(Y_2(x)\)</span>, all plotted for <span class="math-inline">\(0&lt;x\le 20\)</span>.</p>
+<figure id="chapter-09-fig-2" class="figure"><img src="assets/img/Fig9_1.png" alt="Bessel functions of the first kind J(x) for =0,1,2." loading="lazy" style="--figure-width: 85%;"><figcaption>Figure 9.2. Bessel functions of the first kind <span class="math-inline">\(J_\alpha(x)\)</span> for
+		<span class="math-inline">\(\alpha=0,1,2\)</span>.</figcaption></figure>
+<section class="callout remark"><header>Remark - Bessel functions of the first kind <span class="math-inline">\(J_\alpha(x)\)</span></header><ul><li><p><span class="math-inline">\(J_0(x)\)</span> starts from <span class="math-inline">\(J_0(0)=1\)</span>; all higher orders satisfy <span class="math-inline">\(J_n(0)=0\)</span> for <span class="math-inline">\(n\ge1\)</span>.</p></li><li><p>Each <span class="math-inline">\(J_\alpha(x)\)</span> oscillates with a wavelength that slowly approaches a constant as <span class="math-inline">\(x\)</span> increases.</p></li><li><p>The oscillations have a slowly decreasing amplitude, roughly decaying like <span class="math-inline">\(1/\sqrt{x}\)</span> for large <span class="math-inline">\(x\)</span>.</p></li><li><p>The zeros of <span class="math-inline">\(J_\alpha(x)\)</span> are not equally spaced, but they become more nearly equally spaced as <span class="math-inline">\(x\)</span> grows.</p></li><li><p>Higher orders <span class="math-inline">\(J_1(x)\)</span>, <span class="math-inline">\(J_2(x),\dots\)</span> are “pushed to the right’’: they remain small near the origin and their first zero occurs at larger values of <span class="math-inline">\(x\)</span>.</p></li></ul></section>
+<figure id="chapter-09-fig-3" class="figure"><img src="assets/img/Fig9_2.png" alt="Bessel functions of the second kind Y(x) for =0,1,2." loading="lazy" style="--figure-width: 85%;"><figcaption>Figure 9.3. Bessel functions of the second kind <span class="math-inline">\(Y_\alpha(x)\)</span> for
+		<span class="math-inline">\(\alpha=0,1,2\)</span>.</figcaption></figure>
+<section class="callout remark"><header>Remark - Bessel functions of the second kind <span class="math-inline">\(Y_\alpha(x)\)</span></header><ul><li><p>Near the origin, all <span class="math-inline">\(Y_\alpha(x)\)</span> have a <em>logarithmic singularity</em> and diverge to <span class="math-inline">\(-\infty\)</span> as <span class="math-inline">\(x\to0^{+}\)</span>.</p></li><li><p>For <span class="math-inline">\(x\)</span> away from zero, <span class="math-inline">\(Y_\alpha(x)\)</span> oscillate with a behavior similar to <span class="math-inline">\(J_\alpha(x)\)</span>: approximately sinusoidal with a slowly decreasing amplitude for large <span class="math-inline">\(x\)</span>.</p></li><li><p>Because of the divergence at <span class="math-inline">\(x=0\)</span>, <span class="math-inline">\(Y_\alpha(x)\)</span> are usually <em>not</em> acceptable in physical problems where the solution must remain finite at the origin (for example, in cylindrical coordinates with a physical axis at <span class="math-inline">\(r=0\)</span>).</p></li><li><p>Nevertheless, <span class="math-inline">\(Y_\alpha(x)\)</span> form, together with <span class="math-inline">\(J_\alpha(x)\)</span>, a complete set of independent solutions of Bessel’s equation on <span class="math-inline">\((0,\infty)\)</span>.</p></li></ul></section>
+<h3 id="sec-9-orthogonality-24"><span class="sec-number">9.4.8</span>Orthogonality</h3>
+<p>On the interval <span class="math-inline">\(0\le x\le R\)</span>, the Bessel functions satisfy</p>
+<div class="math-block">\begin{equation}
+\boxed{
+	\int_0^R x\, J_p\left(\alpha_{p m}\tfrac{x}{R}\right)
+	J_p\left(\alpha_{p n}\tfrac{x}{R}\right)\,dx
+	= \frac{R^2}{2}\,[J_{p+1}(\alpha_{p n})]^2\,\delta_{mn},
+}
+\end{equation}</div>
+<p>where <span class="math-inline">\(\alpha_{p n}\)</span> are the zeros of <span class="math-inline">\(J_p(x)\)</span>.</p>
+<section class="callout remark"><header>Remark</header><p>This orthogonality makes Bessel functions the natural basis for expanding functions defined on circular domains, just as Legendre polynomials are the natural basis on <span class="math-inline">\([-1,1]\)</span>.</p></section>
+<h3 id="sec-9-generating-function-25"><span class="sec-number">9.4.9</span>Generating Function</h3>
+<p>The Bessel functions have the elegant generating function</p>
+<div class="math-block">\begin{equation}
+\boxed{
+	e^{\frac{x}{2}(t-\frac1t)}
+	= \sum_{n=-\infty}^{\infty} t^n J_n(x).
+}
+\end{equation}</div>
+<section class="callout example"><header>Example</header><p>Expanding for small <span class="math-inline">\(t\)</span> yields</p>
+<div class="math-block">\begin{equation}
+	e^{\frac{x}{2}(t-\frac1t)}
+	= J_0(x) + tJ_1(x) + t^2 J_2(x) + \cdots
+	+ t^{-1}J_{-1}(x) + t^{-2}J_{-2}(x)+\cdots.
+	\end{equation}</div>
+<p>Differentiating with respect to <span class="math-inline">\(t\)</span> and evaluating at <span class="math-inline">\(t=0\)</span> (or <span class="math-inline">\(\infty\)</span>) extracts <span class="math-inline">\(J_n(x)\)</span> in the same manner as with Legendre polynomials.</p></section>
+<h2 id="sec-9-orthogonal-eigenfunction-bases-in-physics"><span class="sec-number">9.5</span>Orthogonal Eigenfunction Bases in Physics</h2>
+<p>We have learned that many important families of functions form <strong>orthogonal and complete bases</strong>. This means that any physically meaningful function can be expanded using these basis functions, and the expansion coefficients follow directly from their orthogonality relations.</p>
+<p>In this section we summarize three of the most important bases encountered in mathematical physics:</p>
+<div class="math-block">\begin{equation}
+\boxed{
+	\text{Fourier series modes } e^{ik_n x},\qquad
+	\text{Legendre polynomials } P_\ell(x),\qquad
+	\text{Spherical harmonics } Y_{\ell m}(\theta,\phi).
+}
+\end{equation}</div>
+<h3 id="sec-9-1-fourier-series-modes-e-ik-n-x-basis-on-a-finite-interval"><span class="sec-number">9.5.1</span>1. Fourier Series Modes <span class="math-inline">\(e^{ik_n x}\)</span>: Basis on a Finite Interval</h3>
+<p>On the interval <span class="math-inline">\(\left[-\dfrac{L}{2},\,\dfrac{L}{2}\right]\)</span>, the complex Fourier basis functions are</p>
+<div class="math-block">\begin{equation}
+e^{ik_n x}, \qquad k_n = \frac{2\pi n}{L},
+\qquad n = 0, \pm1, \pm2, \ldots
+\end{equation}</div>
+<section class="callout theorem"><header>Theorem - Orthogonality of the Fourier series basis</header><div class="math-block">\begin{equation}
+	\int_{-L/2}^{L/2} e^{ik_n x}\,e^{-ik_m x}\,dx
+	= L\,\delta_{nm}.
+	\end{equation}</div></section>
+<p>Thus any function <span class="math-inline">\(f(x)\)</span> defined on <span class="math-inline">\(\left[-\dfrac{L}{2},\,\dfrac{L}{2}\right]\)</span> can be expanded as a Fourier series:</p>
+<div class="math-block">\begin{equation}
+f(x) = \sum_{n=-\infty}^{\infty} c_n\,e^{ik_n x}.
+\end{equation}</div>
+<p>Using orthogonality, the expansion coefficients are</p>
+<div class="math-block">\begin{equation}
+c_n = \frac{1}{L} \int_{-L/2}^{L/2}
+f(x)\,e^{-ik_n x}\,dx.
+\end{equation}</div>
+<p>Therefore, the set <span class="math-inline">\(\{e^{ik_n x}\}\)</span> forms a complete orthogonal basis on <span class="math-inline">\(\left[-\dfrac{L}{2},\,\dfrac{L}{2}\right]\)</span>.</p>
+<h3 id="sec-9-2-legendre-polynomials-p-x-basis-on-1-1"><span class="sec-number">9.5.2</span>2. Legendre Polynomials <span class="math-inline">\(P_\ell(x)\)</span>: Basis on <span class="math-inline">\([-1,1]\)</span></h3>
+<p>When the problem depends only on an angular variable through <span class="math-inline">\(x = \cos\theta\)</span>, the relevant basis functions are the Legendre polynomials:</p>
+<div class="math-block">\begin{equation}
+P_0(x),\,P_1(x),\,P_2(x),\ldots, \qquad -1 \le x \le 1.
+\end{equation}</div>
+<section class="callout theorem"><header>Theorem - Orthogonality relation</header><div class="math-block">\begin{equation}
+	\int_{-1}^{1} P_\ell(x)\,P_{\ell&#x27;}(x)\,dx
+	= \frac{2}{2\ell+1}\,\delta_{\ell\ell&#x27;}.
+	\end{equation}</div></section>
+<p>A function <span class="math-inline">\(f(x)\)</span> defined on <span class="math-inline">\([-1,1]\)</span> can be expanded as</p>
+<div class="math-block">\begin{equation}
+f(x) = \sum_{\ell=0}^{\infty} c_\ell\,P_\ell(x),
+\end{equation}</div>
+<p>with coefficients obtained from orthogonality:</p>
+<div class="math-block">\begin{equation}
+c_\ell = \frac{2\ell+1}{2}
+\int_{-1}^{1} f(x)\,P_\ell(x)\,dx.
+\end{equation}</div>
+<p>Thus <span class="math-inline">\(\{P_\ell(x)\}\)</span> forms a complete orthogonal basis on <span class="math-inline">\([-1,1]\)</span>.</p>
+<h3 id="sec-9-3-spherical-harmonics-y-m-basis-on-the-sphere"><span class="sec-number">9.5.3</span>3. Spherical Harmonics <span class="math-inline">\(Y_{\ell m}(\theta,\phi)\)</span>: Basis on the Sphere</h3>
+<p>For functions defined on the sphere, the natural basis is the set of spherical harmonics:</p>
+<div class="math-block">\begin{equation}
+Y_{\ell m}(\theta,\phi), \qquad
+\ell = 0,1,2,\ldots,\quad m=-\ell,\ldots,\ell.
+\end{equation}</div>
+<section class="callout theorem"><header>Theorem - Orthogonality relation</header><div class="math-block">\begin{equation}
+	\int_{0}^{2\pi}\!\!\int_{0}^{\pi}
+	Y_{\ell m}(\theta,\phi)\,
+	Y_{\ell&#x27; m&#x27;}^{*}(\theta,\phi)\,
+	\sin\theta\,d\theta\,d\phi
+	= \delta_{\ell\ell&#x27;}\,\delta_{mm&#x27;}.
+	\end{equation}</div></section>
+<p>Any square-integrable function on the sphere can be expanded as</p>
+<div class="math-block">\begin{equation}
+f(\theta,\phi)
+= \sum_{\ell=0}^{\infty}\;\sum_{m=-\ell}^{\ell}
+c_{\ell m}\,Y_{\ell m}(\theta,\phi),
+\end{equation}</div>
+<p>with expansion coefficients</p>
+<div class="math-block">\begin{equation}
+c_{\ell m} =
+\int_{0}^{2\pi}\!\!\int_{0}^{\pi}
+f(\theta,\phi)\,Y_{\ell m}^{*}(\theta,\phi)\,
+\sin\theta\,d\theta\,d\phi.
+\end{equation}</div>
+<p>Thus <span class="math-inline">\(\{Y_{\ell m}\}\)</span> forms a complete orthonormal basis on the sphere <span class="math-inline">\(S^{2}\)</span>.</p>
+<h2 id="sec-9-where-series-solutions-are-used"><span class="sec-number">9.6</span>Where Series Solutions Are Used</h2>
+<p>The elementary methods of Chapter 8 fail the moment an ODE has variable coefficients, and almost every equation coming from a physical problem with spherical or cylindrical symmetry does. The power-series and Frobenius methods of this chapter are what handle them, and the special functions they produce — Legendre polynomials, Bessel functions, spherical harmonics — are not curiosities but the standard vocabulary of mathematical physics.</p>
+<ul><li><p><strong>Spherical problems.</strong> Separating Laplace's equation or the Schrödinger equation in spherical coordinates always produces Legendre's equation for the polar angle. Its finite solutions are the Legendre polynomials, and combined with <span class="math-inline">\(e^{im\phi}\)</span> they build the spherical harmonics <span class="math-inline">\(Y_{\ell m}\)</span> — the angular states of the hydrogen atom and the shapes behind the periodic table.</p></li><li><p><strong>Cylindrical problems.</strong> Separating the wave or heat equation in cylindrical coordinates produces Bessel's equation. Bessel functions describe the vibrations of a circular drum, the modes of an optical fibre or waveguide, and diffraction through a circular aperture.</p></li><li><p><strong>Multipole expansions.</strong> The generating function <span class="math-inline">\(1/\sqrt{1-2xt+t^2} = \sum P_\ell(x)t^\ell\)</span> is exactly the expansion of a Coulomb or gravitational potential in powers of distance ratio, term by term the monopole, dipole, quadrupole, and so on.</p></li><li><p><strong>Orthogonal expansions.</strong> Because each family is orthogonal and complete, an arbitrary function can be expanded in it and the coefficients read off by an integral — the same move as a Fourier series (Chapter 7), extended to the interval <span class="math-inline">\([-1,1]\)</span> and to the sphere.</p></li><li><p><strong>Quantum angular momentum.</strong> The pair <span class="math-inline">\((\ell,m)\)</span> labelling the spherical harmonics is precisely the angular-momentum quantum numbers, and the orthogonality relation is the statement that distinct angular-momentum states do not overlap.</p></li></ul>
+<section class="callout remark"><header>Remark</header><p>One structural idea ties the chapter together. Where a solution is required, an ordinary point admits an ordinary power series; a regular singular point requires the Frobenius form <span class="math-inline">\(x^r\sum a_n x^n\)</span> with <span class="math-inline">\(r\)</span> fixed by the indicial equation; an irregular singular point generally admits neither. Legendre (<span class="math-inline">\(x=0\)</span> ordinary) and Bessel (<span class="math-inline">\(x=0\)</span> regular singular) are the two worked cases, and the physically admissible solutions are singled out by demanding finiteness at the singular points — which is exactly what forces <span class="math-inline">\(\ell\)</span> to be an integer and picks <span class="math-inline">\(J_p\)</span> over <span class="math-inline">\(Y_p\)</span>.</p></section>
+<h2 id="sec-9-summary-table">Summary Table</h2>
+<div class="table-wrap"><table><tr><td><strong>Object</strong></td><td><strong>Formula</strong></td><td><strong>Notes</strong></td></tr><tr><td>Ordinary point</td><td>power series <span class="math-inline">\(\sum a_n x^n\)</span></td><td>e.g. <span class="math-inline">\(x=0\)</span> for Legendre.</td></tr><tr><td>Regular singular point</td><td>Frobenius <span class="math-inline">\(x^r\sum a_n x^n\)</span></td><td><span class="math-inline">\(r\)</span> from the indicial equation; <span class="math-inline">\(x=0\)</span> for Bessel.</td></tr><tr><td>Legendre equation</td><td><span class="math-inline">\((1-x^2)y&#x27;&#x27; - 2xy&#x27; + \ell(\ell+1)y = 0\)</span></td><td>Finite solutions when <span class="math-inline">\(\ell\in\mathbb{Z}_{\ge0}\)</span>.</td></tr><tr><td>Legendre recurrence</td><td><span class="math-inline">\(a_{n+2} = \dfrac{n(n+1)-\ell(\ell+1)}{(n+1)(n+2)}a_n\)</span></td><td>Terminates at <span class="math-inline">\(n=\ell\)</span>, giving <span class="math-inline">\(P_\ell\)</span>.</td></tr><tr><td>Rodrigues' formula</td><td><span class="math-inline">\(P_\ell = \dfrac{1}{2^\ell \ell!}\dfrac{d^\ell}{dx^\ell}(x^2-1)^\ell\)</span></td><td><span class="math-inline">\(P_0=1,\ P_1=x,\ P_2=\tfrac12(3x^2-1),\ldots\)</span></td></tr><tr><td>Legendre orthogonality</td><td><span class="math-inline">\(\displaystyle\int_{-1}^{1} P_\ell P_{\ell&#x27;}\,dx = \dfrac{2}{2\ell+1}\delta_{\ell\ell&#x27;}\)</span></td><td>Basis for expansions on <span class="math-inline">\([-1,1]\)</span>.</td></tr><tr><td>Generating function</td><td><span class="math-inline">\(\dfrac{1}{\sqrt{1-2xt+t^2}} = \sum_\ell P_\ell(x)t^\ell\)</span></td><td>The multipole expansion.</td></tr><tr><td>Associated Legendre</td><td><span class="math-inline">\(P_\ell^m = (-1)^m(1-x^2)^{m/2}\dfrac{d^m}{dx^m}P_\ell\)</span></td><td>Angular part with azimuthal index <span class="math-inline">\(m\)</span>.</td></tr><tr><td>Bessel equation</td><td><span class="math-inline">\(x^2 y&#x27;&#x27; + xy&#x27; + (x^2-p^2)y = 0\)</span></td><td>Regular singular point at <span class="math-inline">\(x=0\)</span>.</td></tr><tr><td>Bessel function</td><td><span class="math-inline">\(J_p(x) = \displaystyle\sum_{k=0}^{\infty}\dfrac{(-1)^k}{k!\,\Gamma(k+p+1)}\Big(\dfrac{x}{2}\Big)^{2k+p}\)</span></td><td>Finite at <span class="math-inline">\(x=0\)</span>; <span class="math-inline">\(Y_p\)</span> diverges there.</td></tr><tr><td>Spherical harmonics</td><td><span class="math-inline">\(Y_{\ell m} = N_{\ell m}P_\ell^m(\cos\theta)e^{im\phi}\)</span></td><td>Orthonormal basis on the sphere.</td></tr></table></div>
+<h2 id="sec-9-for-the-interested-reader">For the Interested Reader</h2>
+<p>This chapter is where a physics student first meets the special functions that recur for the rest of the subject. The two aims worth separating are learning the <em>method</em> (power series and Frobenius) and learning the <em>functions</em> (Legendre, Bessel, and their properties). The sources below split along that line. Everything is free.</p>
+<h3 id="sec-9-the-method">The method</h3>
+<ul><li><p><strong>Paul's Online Math Notes — Series Solutions.</strong> <a href="https://tutorial.math.lamar.edu/Classes/DE/SeriesSolutions.aspx">Series Solutions to Differential Equations</a> — the clearest step-by-step account of the power-series method at ordinary points, with several fully worked recurrences.</p></li><li><p><strong>OpenStax, <em>Calculus Volume 3</em>.</strong> <a href="https://openstax.org/books/calculus-volume-3/pages/7-4-series-solutions-of-differential-equations">7.4 Series Solutions of Differential Equations</a> — a gentler first pass, useful before the Frobenius case.</p></li></ul>
+<h3 id="sec-9-the-functions">The functions</h3>
+<ul><li><p><strong>NIST Digital Library of Mathematical Functions.</strong> The authoritative modern reference, free and exhaustive: <a href="https://dlmf.nist.gov/14">Chapter 14, Legendre Functions</a> and <a href="https://dlmf.nist.gov/10">Chapter 10, Bessel Functions</a>. Every identity quoted in this chapter — recurrences, orthogonality, generating functions, asymptotics — is stated there in full, with proofs referenced. Use it as a lookup table, not a textbook.</p></li></ul>
+<section class="callout remark"><header>Remark</header><p>A practical note. In real calculations one almost never sums these series by hand; the recurrences, orthogonality integrals and generating functions of this chapter are what actually get used, and numerical libraries evaluate <span class="math-inline">\(P_\ell\)</span>, <span class="math-inline">\(J_p\)</span> and <span class="math-inline">\(Y_{\ell m}\)</span> directly. The value of deriving them here is to understand <em>why</em> they have the properties the libraries rely on — why <span class="math-inline">\(\ell\)</span> must be an integer, why <span class="math-inline">\(J_p\)</span> and not <span class="math-inline">\(Y_p\)</span> is finite at the origin, and why the expansions converge.</p></section>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <a href="../chapter-08/index.html">Previous: Ordinary Differential Equations</a>
+      <a href="../../toc.html">Contents</a>
+      <a href="../chapter-10/index.html">Next: Partial Differential Equations (Chapter 13)</a>
+    </nav>
+  </article>
+</main>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p>&copy; 2026 Erfan Saydanzad. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

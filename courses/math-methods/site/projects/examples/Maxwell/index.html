@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Standing Electromagnetic Wave in a Square Cavity | Mathematical Methods in the Physical Sciences</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+  <link rel="preload" href="../../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../../assets/css/site.css?v=4c167578">
+  <script>
+    window.MathJax = {
+      // tagformat is an optional TeX extension, not part of the combined
+      // tex-chtml build. Without these two lines the tagformat block below is
+      // read and silently ignored, and every equation numbers from 1 with no
+      // chapter in front of it.
+      loader: { load: ['[tex]/tagformat'] },
+      tex: {
+        packages: { '[+]': ['tagformat'] },
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        processEnvironments: true,
+        tags: 'ams',
+        // The PDF numbers equations within the chapter (\numberwithin
+        // {equation}{chapter}), so "1.8" is the eighth equation of
+        // chapter 1. MathJax counts from 1 on every page, which would have
+        // shown that same equation as "8". Prefixing the chapter number
+        // keeps a reference valid against either version.
+        tagformat: {
+          number: function (n) { return ''  + n; }
+        },
+        macros: {
+          pdv: ['{\\frac{\\partial #1}{\\partial #2}}', 2],
+          dv: ['{\\frac{d #1}{d #2}}', 2],
+          abs: ['{\\left|#1\\right|}', 1],
+          norm: ['{\\left\\|#1\\right\\|}', 1],
+          curl: '{\\vec{\\nabla}\\times}',
+          div: '{\\vec{\\nabla}\\cdot}',
+          grad: '{\\vec{\\nabla}}',
+          sech: '{\\operatorname{sech}}',
+          csch: '{\\operatorname{csch}}',
+          coth: '{\\operatorname{coth}}',
+          circnum: ['{\\boxed{#1}}', 1],
+          vb: ['{\\mathbf{#1}}', 1],
+          eval: ['{\\left.#1\\right|}', 1],
+          dd: '{\\,d}'
+        }
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <script defer src="../../../assets/js/main.js?v=4c167578"></script>
+
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="../../../index.html">
+    <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M9 6.5V25.5M9 6.5H24M9 25.5H24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 16Q10.5 9.5 15.5 16T25.5 16" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/></svg>
+    <span>Mathematical Methods in the Physical Sciences</span>
+  </a>
+  <nav class="top-nav" aria-label="Primary">
+    <a href="../../../index.html">Home</a>
+    <a href="../../../toc.html">Contents</a>
+    <a href="../../../projects.html">Projects</a>
+  </nav>
+</header>
+<main class="content project" id="main">
+<header class="project-head"><p class="project-kicker">Worked example · solved on paper</p><h1>A Standing Electromagnetic Wave in a Square Cavity</h1><p class="project-author">PHYS 3260, Mathematical Methods — worked example</p></header>
+<section class="project-problem" aria-label="The problem"><p class="project-problem-kicker">The problem</p><p>Consider the electromagnetic field</p>
+<div class="math-block">\begin{equation}
+  \vec{E}(x, y, t) = E_0 \cos\!\left( \frac{\pi x}{L} \right)
+                          \cos\!\left( \frac{\pi y}{L} \right)
+                          \sin(\omega t)\, \hat{\mathbf{k}},
+  \label{eq:Egiven}
+\end{equation}</div>
+<div class="math-block">\begin{equation}
+  \vec{B}(x, y, t) = B_0 \left[
+    - \cos\!\left( \frac{\pi x}{L} \right) \sin\!\left( \frac{\pi y}{L} \right) \hat{\mathbf{i}}
+    + \sin\!\left( \frac{\pi x}{L} \right) \cos\!\left( \frac{\pi y}{L} \right) \hat{\mathbf{j}}
+  \right] \cos(\omega t).
+  \label{eq:Bgiven}
+\end{equation}</div>
+<ul><li class="labeled"><span class="item-label">(a)</span><p>Show that this field satisfies Maxwell's equations in vacuum if</p>
+<div class="math-block">\[
+    \omega = \frac{\sqrt{2}\, \pi c}{L}, \qquad B_0 = \frac{E_0}{\sqrt{2}\,c}.
+  \]</div></li><li class="labeled"><span class="item-label">(b)</span><p>The field is a standing electromagnetic wave inside a metal-walled cavity of square cross-section <span class="math-inline">\(L \times L\)</span> parallel to the <span class="math-inline">\(xy\)</span>-plane and very long in the <span class="math-inline">\(z\)</span>-direction — a <em>cavity oscillator</em>. Sketch <span class="math-inline">\(\vec{E}\)</span> and <span class="math-inline">\(\vec{B}\)</span>. The wave number is <span class="math-inline">\(k = \pi/L\)</span>, so the wavelength is <span class="math-inline">\(\lambda = 2L\)</span>.</p></li></ul></section>
+<p class="project-abstract"><strong>Abstract.</strong> A pair of fields is proposed for the inside of a long metal-walled pipe of
+   square cross-section. Requiring that they satisfy Maxwell's equations in
+   vacuum fixes both the oscillation frequency, <span class="math-inline">\(\omega = \sqrt{2}\,\pi c/L\)</span>, and
+   the ratio of the field amplitudes, <span class="math-inline">\(B_0 = E_0/(\sqrt{2}c)\)</span>. Separating
+   variables in the resulting wave equation then produces the whole family of
+   allowed modes, <span class="math-inline">\(\omega_{mn} = (\pi c/L)\sqrt{m^2+n^2}\)</span>, of which the given
+   field is the lowest. Python turns the closed-form fields into maps of
+   <span class="math-inline">\(\vec{E}\)</span> and <span class="math-inline">\(\vec{B}\)</span> and into an animation, which shows the electric and
+   magnetic energy trading places twice per period. The work uses partial
+   differentiation and the vector operators of Chapter 6 and the
+   separation-of-variables method for partial differential equations of
+   Chapter 10.</p>
+<h2 id="sec-900-the-physics-question"><span class="sec-number">1</span>The physics question</h2>
+<p>The problem hands over a pair of fields and asks whether they can exist. That is a shorter road to the same physics than solving Maxwell's equations from nothing: substituting <span class="math-inline">\(\eqref{eq:Egiven}\)</span> and <span class="math-inline">\(\eqref{eq:Bgiven}\)</span> into the four equations turns each of them into an algebraic condition, and two of those conditions are what fix the only unknowns in the problem, <span class="math-inline">\(\omega\)</span> and <span class="math-inline">\(B_0\)</span>. Part (b) then names what the algebra has produced — the lowest standing-wave mode of a hollow metal pipe of square cross-section — and this report takes that one step past what was asked, separating variables in the wave equation to get the whole family of modes such a cavity supports, of which the given field is the first.</p>
+<p>Throughout, the cross-section is centred on the origin, so <span class="math-inline">\(x\)</span> and <span class="math-inline">\(y\)</span> each run over <span class="math-inline">\([-L/2,\, L/2]\)</span>. That choice matters: <span class="math-inline">\(\cos(\pi x/L)\)</span> vanishes at <span class="math-inline">\(x = \pm L/2\)</span>, which is exactly the boundary condition a conducting wall imposes. Written on a <span class="math-inline">\([0, L]\)</span> grid the same formula would put a maximum on the wall and would not be a cavity field at all.</p>
+<h2 id="sec-900-maxwell-s-equations-and-the-boundary-conditions"><span class="sec-number">2</span>Maxwell's equations and the boundary conditions</h2>
+<p>In a linear medium Maxwell's equations read</p>
+<div class="math-block">\begin{align}
+  \nabla \cdot \vec{D} &amp;= \rho_f, &amp;
+  \nabla \times \vec{E} &amp;= -\frac{\partial \vec{B}}{\partial t}, \notag \\
+  \nabla \cdot \vec{B} &amp;= 0, &amp;
+  \nabla \times \vec{H} &amp;= \vec{J}_f + \frac{\partial \vec{D}}{\partial t},
+  \label{eq:maxwell-medium}
+\end{align}</div>
+<p>where <span class="math-inline">\(\rho_f\)</span> is the free charge density and <span class="math-inline">\(\vec{J}_f\)</span> the free current density, and where</p>
+<div class="math-block">\begin{equation}
+  \vec{D} = \varepsilon_0 \vec{E} + \vec{P},
+  \qquad
+  \vec{B} = \mu_0 (\vec{H} + \vec{M}),
+\end{equation}</div>
+<p>with <span class="math-inline">\(\vec{P}\)</span> the polarisation (electric dipole moment per unit volume) and <span class="math-inline">\(\vec{M}\)</span> the magnetisation (magnetic dipole moment per unit volume).</p>
+<h3 id="sec-900-boundary-conditions-at-an-interface"><span class="sec-number">2.1</span>Boundary conditions at an interface</h3>
+<p>Let <span class="math-inline">\(\mathcal{S}\)</span> separate two homogeneous isotropic media, and let <span class="math-inline">\(\hat{\mathbf{n}}\)</span> be the unit normal pointing from medium 1 into medium 2. Applying the integral form of <span class="math-inline">\(\eqref{eq:maxwell-medium}\)</span> to a flat pillbox and to a vanishing-height loop straddling the surface gives the four matching conditions. The two integral theorems used below — the divergence theorem for the pillboxes and Stokes' theorem for the loops — are the ones proved in <strong>Chapter 6</strong>; here they do the work of turning differential equations into statements about what happens at a surface.</p>
+<p>Gauss's law on a thin pillbox gives</p>
+<div class="math-block">\begin{equation}
+  \oint \vec D\cdot d\vec S = Q_{\mathrm{f}}
+  \;\Longrightarrow\;
+  (\vec D_2 - \vec D_1)\cdot\hat{\mathbf n}\,\Delta S = \sigma_f\,\Delta S,
+  \label{eq:pillbox}
+\end{equation}</div>
+<p>and the same pillbox applied to <span class="math-inline">\(\oint \vec B\cdot d\vec S = 0\)</span> gives the magnetic counterpart. Faraday's law on a rectangular loop of length <span class="math-inline">\(\Delta\ell\)</span> whose height goes to zero encloses no flux, so</p>
+<div class="math-block">\begin{equation}
+  \oint_{\ell} \vec E\cdot d\vec l
+  = -\frac{d}{dt}\int_S \vec B\cdot d\vec S \approx 0,
+  \label{eq:loop}
+\end{equation}</div>
+<p>and the Ampère–Maxwell law on that loop encloses only the surface current. Together, <span class="math-inline">\(\eqref{eq:pillbox}\)</span> and <span class="math-inline">\(\eqref{eq:loop}\)</span> give the four matching conditions</p>
+<div class="math-block">\begin{align}
+  \hat{\mathbf n}\cdot(\vec D_2-\vec D_1) &amp;= \sigma_f, &amp;
+  \hat{\mathbf n}\times(\vec E_2-\vec E_1) &amp;= \vec 0, \notag \\
+  \hat{\mathbf n}\cdot(\vec B_2-\vec B_1) &amp;= 0, &amp;
+  \hat{\mathbf n}\times(\vec H_2-\vec H_1) &amp;= \vec K_f .
+  \label{eq:bcs}
+\end{align}</div>
+<p>Inside a perfect conductor both fields vanish, so the second and third of <span class="math-inline">\(\eqref{eq:bcs}\)</span> say that at the cavity wall the tangential electric field and the normal magnetic field must be zero. For the field <span class="math-inline">\(\eqref{eq:Egiven}\)</span> the only component of <span class="math-inline">\(\vec E\)</span> is tangential to every wall, which is why <span class="math-inline">\(E_z\)</span> has to vanish on all four of them.</p>
+<h3 id="sec-900-reduction-to-the-source-free-vacuum-equations"><span class="sec-number">2.2</span>Reduction to the source-free vacuum equations</h3>
+<p>Inside the cavity there are no free charges or currents and no matter to polarise: <span class="math-inline">\(\rho_f = 0\)</span>, <span class="math-inline">\(\vec{J}_f = 0\)</span>, <span class="math-inline">\(\vec{P} = \vec{M} = 0\)</span>. Equations <span class="math-inline">\(\eqref{eq:maxwell-medium}\)</span> collapse to</p>
+<div class="math-block">\begin{align}
+  \nabla \cdot \vec{E} &amp;= 0, &amp;
+  \nabla \times \vec{E} &amp;= -\frac{\partial \vec{B}}{\partial t}, \notag\\
+  \nabla \cdot \vec{B} &amp;= 0, &amp;
+  \nabla \times \vec{B} &amp;= \frac{1}{c^2}\frac{\partial \vec{E}}{\partial t},
+  \label{eq:maxwell-vacuum}
+\end{align}</div>
+<p>with <span class="math-inline">\(c = 1/\sqrt{\varepsilon_0 \mu_0}\)</span>.</p>
+<h2 id="sec-900-a-verifying-the-field"><span class="sec-number">3</span>(a) Verifying the field</h2>
+<p>Each of the four equations in <span class="math-inline">\(\eqref{eq:maxwell-vacuum}\)</span> is now checked in turn. Every step is a partial derivative of a product of sines and cosines — the machinery of Chapter 6.</p>
+<h3 id="sec-900-divergence-of-e"><span class="sec-number">3.1</span>Divergence of <span class="math-inline">\(\vec{E}\)</span></h3>
+<p>With <span class="math-inline">\(\nabla = \hat{\mathbf{i}}\,\frac{\partial}{\partial x} + \hat{\mathbf{j}}\,\frac{\partial}{\partial y}
++ \hat{\mathbf{k}}\,\frac{\partial}{\partial z}\)</span> and <span class="math-inline">\(\vec{E} = E_z\hat{\mathbf{k}}\)</span>,</p>
+<div class="math-block">\begin{equation}
+  \nabla \cdot \vec{E} = \frac{\partial E_x}{\partial x} + \frac{\partial E_y}{\partial y} + \frac{\partial E_z}{\partial z}
+  = \frac{\partial E_z}{\partial z} = 0,
+  \label{eq:divE}
+\end{equation}</div>
+<p>because <span class="math-inline">\(E_z\)</span> does not depend on <span class="math-inline">\(z\)</span>.</p>
+<h3 id="sec-900-divergence-of-b"><span class="sec-number">3.2</span>Divergence of <span class="math-inline">\(\vec{B}\)</span></h3>
+<p>Here <span class="math-inline">\(B_z = 0\)</span> and</p>
+<div class="math-block">\begin{align*}
+  \frac{\partial B_x}{\partial x} &amp;= \frac{\pi}{L} B_0 \sin\!\left( \frac{\pi x}{L} \right)
+                   \sin\!\left( \frac{\pi y}{L} \right) \cos(\omega t), \\
+  \frac{\partial B_y}{\partial y} &amp;= -\frac{\pi}{L} B_0 \sin\!\left( \frac{\pi x}{L} \right)
+                   \sin\!\left( \frac{\pi y}{L} \right) \cos(\omega t),
+\end{align*}</div>
+<p>which cancel term by term, so</p>
+<div class="math-block">\begin{equation}
+  \nabla \cdot \vec{B} = \frac{\partial B_x}{\partial x} + \frac{\partial B_y}{\partial y} = 0 .
+  \label{eq:divB}
+\end{equation}</div>
+<h3 id="sec-900-curl-of-e-faraday-s-law"><span class="sec-number">3.3</span>Curl of <span class="math-inline">\(\vec{E}\)</span>: Faraday's law</h3>
+<p>Since <span class="math-inline">\(\vec E\)</span> has only a <span class="math-inline">\(z\)</span>-component,</p>
+<div class="math-block">\begin{equation}
+  \nabla \times \vec{E} =
+  \frac{\partial E_z}{\partial y}\,\hat{\mathbf{i}} - \frac{\partial E_z}{\partial x}\,\hat{\mathbf{j}},
+  \label{eq:curlE-general}
+\end{equation}</div>
+<p>and with</p>
+<div class="math-block">\begin{align*}
+  \frac{\partial E_z}{\partial y} &amp;= -E_0 \frac{\pi}{L} \cos\!\left( \frac{\pi x}{L} \right)
+                    \sin\!\left( \frac{\pi y}{L} \right) \sin(\omega t), \\
+  \frac{\partial E_z}{\partial x} &amp;= -E_0 \frac{\pi}{L} \sin\!\left( \frac{\pi x}{L} \right)
+                    \cos\!\left( \frac{\pi y}{L} \right) \sin(\omega t),
+\end{align*}</div>
+<p>equation <span class="math-inline">\(\eqref{eq:curlE-general}\)</span> becomes</p>
+<div class="math-block">\begin{equation}
+  \nabla \times \vec{E} = -\frac{\pi E_0}{L}
+  \left[ \cos\!\left( \frac{\pi x}{L} \right)\sin\!\left( \frac{\pi y}{L} \right)\hat{\mathbf{i}}
+       - \sin\!\left( \frac{\pi x}{L} \right)\cos\!\left( \frac{\pi y}{L} \right)\hat{\mathbf{j}}
+  \right]\sin(\omega t).
+  \label{eq:curlE}
+\end{equation}</div>
+<p>Differentiating <span class="math-inline">\(\eqref{eq:Bgiven}\)</span> in time,</p>
+<div class="math-block">\begin{equation}
+  -\frac{\partial \vec{B}}{\partial t} = B_0 \omega
+  \left[ \cos\!\left( \frac{\pi x}{L} \right)\sin\!\left( \frac{\pi y}{L} \right)\hat{\mathbf{i}}
+       - \sin\!\left( \frac{\pi x}{L} \right)\cos\!\left( \frac{\pi y}{L} \right)\hat{\mathbf{j}}
+  \right]\sin(\omega t).
+  \label{eq:dBdt}
+\end{equation}</div>
+<p>Equations <span class="math-inline">\(\eqref{eq:curlE}\)</span> and <span class="math-inline">\(\eqref{eq:dBdt}\)</span> agree, with the same spatial pattern and the same time dependence, provided</p>
+<div class="math-block">\begin{equation}
+  \frac{\pi E_0}{L} = B_0\,\omega .
+  \label{eq:match1}
+\end{equation}</div>
+<h3 id="sec-900-curl-of-b-the-amp-ere-maxwell-law"><span class="sec-number">3.4</span>Curl of <span class="math-inline">\(\vec{B}\)</span>: the Ampère–Maxwell law</h3>
+<p>Only the <span class="math-inline">\(z\)</span>-component survives:</p>
+<div class="math-block">\begin{equation}
+  (\nabla \times \vec{B})_z = \frac{\partial B_y}{\partial x} - \frac{\partial B_x}{\partial y},
+  \label{eq:curlB-general}
+\end{equation}</div>
+<div class="math-block">\begin{align*}
+  \frac{\partial B_y}{\partial x} &amp;= B_0 \frac{\pi}{L} \cos\!\left( \frac{\pi x}{L} \right)
+                   \cos\!\left( \frac{\pi y}{L} \right) \cos(\omega t), \\
+  \frac{\partial B_x}{\partial y} &amp;= -B_0 \frac{\pi}{L} \cos\!\left( \frac{\pi x}{L} \right)
+                   \cos\!\left( \frac{\pi y}{L} \right) \cos(\omega t),
+\end{align*}</div>
+<p>so that <span class="math-inline">\(\eqref{eq:curlB-general}\)</span> gives</p>
+<div class="math-block">\begin{equation}
+  \nabla \times \vec{B} = \frac{2\pi B_0}{L}
+  \cos\!\left( \frac{\pi x}{L} \right)\cos\!\left( \frac{\pi y}{L} \right)
+  \cos(\omega t)\, \hat{\mathbf{k}},
+  \label{eq:curlB}
+\end{equation}</div>
+<p>while the displacement-current term is</p>
+<div class="math-block">\begin{equation}
+  \frac{1}{c^2}\frac{\partial \vec{E}}{\partial t} = \frac{E_0 \omega}{c^2}
+  \cos\!\left( \frac{\pi x}{L} \right)\cos\!\left( \frac{\pi y}{L} \right)
+  \cos(\omega t)\, \hat{\mathbf{k}} .
+  \label{eq:displacement}
+\end{equation}</div>
+<p>Matching the coefficients of <span class="math-inline">\(\eqref{eq:curlB}\)</span> and <span class="math-inline">\(\eqref{eq:displacement}\)</span>,</p>
+<div class="math-block">\begin{equation}
+  \frac{2\pi B_0}{L} = \frac{E_0 \omega}{c^2}.
+  \label{eq:match2}
+\end{equation}</div>
+<h3 id="sec-900-solving-the-two-matching-conditions"><span class="sec-number">3.5</span>Solving the two matching conditions</h3>
+<p>Equation <span class="math-inline">\(\eqref{eq:match1}\)</span> gives <span class="math-inline">\(B_0 = \pi E_0/(L\omega)\)</span>. Substituting into <span class="math-inline">\(\eqref{eq:match2}\)</span>,</p>
+<div class="math-block">\begin{equation}
+  \frac{2\pi}{L}\cdot\frac{\pi E_0}{L\omega} = \frac{E_0\omega}{c^2}
+  \quad\Longrightarrow\quad
+  \omega^2 = \frac{2\pi^2 c^2}{L^2},
+  \label{eq:omega-squared}
+\end{equation}</div>
+<p>so that</p>
+<div class="math-block">\begin{equation}
+  \boxed{\;\omega = \frac{\sqrt{2}\,\pi c}{L}, \qquad B_0 = \frac{E_0}{\sqrt{2}\,c}\;}
+  \label{eq:answer-a}
+\end{equation}</div>
+<p>as required. Note what the two conditions did: Faraday's law fixed the <em>ratio</em> of the amplitudes, and the Ampère–Maxwell law then fixed the <em>frequency</em>. Neither equation alone determines both.</p>
+<h2 id="sec-900-b-what-the-field-looks-like"><span class="sec-number">4</span>(b) What the field looks like</h2>
+<p>The field is a standing wave. Both <span class="math-inline">\(\vec{E}\)</span> and <span class="math-inline">\(\vec{B}\)</span> keep a fixed spatial shape and simply breathe in amplitude, and because one carries <span class="math-inline">\(\sin\omega t\)</span> while the other carries <span class="math-inline">\(\cos\omega t\)</span>, they are a quarter period out of step: whenever <span class="math-inline">\(\vec{E}\)</span> is at its largest, <span class="math-inline">\(\vec{B}\)</span> is momentarily zero, and conversely.</p>
+<p>Because <span class="math-inline">\(B_z = 0\)</span> while <span class="math-inline">\(E_z \ne 0\)</span>, this is a <em>transverse magnetic</em> (TM) mode with respect to the long axis of the cavity, the lowest member of that family. Figure <a href="#fig-1">1</a> shows the two fields, each at the instant it is largest.</p>
+<figure id="fig-1" class="figure"><img src="assets/img/fig_fields.png" alt="The TM11 cavity mode, drawn twice: at t = T/4, when E is at its peak and B has vanished, and at t = 0, when the reverse holds. In each panel the upper coloured surface is Ez/E0 over the cross-section, with the upright arrows showing E itself running from the plane up to that surface; the lower plane carries |B|/B0 on the same colour map, with arrows giving its direction. Ez is largest at the centre and vanishes on all four walls, as the conducting boundary requires, while B vanishes at the centre and is largest at the wall midpoints — the two fields are out of step in space as well as in time. That neither panel is busy in both halves at once is the quarter-period phase shift, seen directly." loading="lazy" style="--figure-width: 98%;"><figcaption>Figure 1. The TM<span class="math-inline">\(_{11}\)</span> cavity mode, drawn twice: at <span class="math-inline">\(t = T/4\)</span>, when
+    <span class="math-inline">\(\vec{E}\)</span> is at its peak and <span class="math-inline">\(\vec{B}\)</span> has vanished, and at <span class="math-inline">\(t = 0\)</span>, when
+    the reverse holds. In each panel the upper coloured surface is <span class="math-inline">\(E_z/E_0\)</span>
+    over the cross-section, with the upright arrows showing <span class="math-inline">\(\vec{E}\)</span> itself
+    running from the plane up to that surface; the lower plane carries
+    <span class="math-inline">\(|\vec{B}|/B_0\)</span> on the same colour map, with arrows giving its direction.
+    <span class="math-inline">\(E_z\)</span> is largest at the centre and vanishes on all four walls, as the
+    conducting boundary requires, while <span class="math-inline">\(\vec{B}\)</span> vanishes at the centre and is
+    largest at the wall midpoints — the two fields are out of step in space as
+    well as in time. That neither panel is busy in both halves at once is the
+    quarter-period phase shift, seen directly.</figcaption></figure>
+<p>Figure <a href="#fig-2">2</a> runs one full period of the oscillation. Plotting <span class="math-inline">\(E_z\)</span> as a height turns the standing wave into a surface that swells, flattens and inverts without its shape ever changing; the upright arrows are the electric field vector itself, and <span class="math-inline">\(\vec{B}\)</span> — which lies in the plane — is drawn as arrows on the floor beneath. The quarter-period phase shift then needs no explaining: the surface is flat, and the upright arrows are gone, exactly when the floor arrows are longest.</p>
+<figure id="fig-2" class="figure animation"><img src="assets/img/anim.gif" alt="One period of the cavity oscillation. Above: the coloured surface is Ez/E0 and the upright arrows are E. Below: the floor carries |B|/B0 on the same colour map, with arrows for its direction. At t=0 the surface is flat while the floor is at full colour; a quarter period later the surface has swelled to its maximum and the floor has drained to zero; at t=T/2 the surface is flat again and the floor arrows have reversed; at t=3T/4 the whole surface has inverted. The two colour scales differ because Ez is signed and |B| is not. The shape never changes — only its amplitude — which is what makes this a standing wave rather than a travelling one." loading="lazy"><figcaption>Figure 2. One period of the cavity oscillation. Above: the coloured surface is
+   <span class="math-inline">\(E_z/E_0\)</span> and the upright arrows are <span class="math-inline">\(\vec{E}\)</span>. Below: the floor carries
+   <span class="math-inline">\(|\vec{B}|/B_0\)</span> on the same colour map, with arrows for its direction. At
+   <span class="math-inline">\(t=0\)</span> the surface is flat while the floor is at full colour; a quarter period
+   later the surface has swelled to its maximum and the floor has drained to
+   zero; at <span class="math-inline">\(t=T/2\)</span> the surface is flat again and the floor arrows have
+   reversed; at <span class="math-inline">\(t=3T/4\)</span> the whole surface has inverted. The two colour scales
+   differ because <span class="math-inline">\(E_z\)</span> is signed and <span class="math-inline">\(|\vec{B}|\)</span> is not. The shape never
+   changes — only its amplitude — which is what makes this a standing wave
+   rather than a travelling one.</figcaption></figure>
+<h2 id="sec-900-the-full-family-of-modes"><span class="sec-number">5</span>The full family of modes</h2>
+<p>Nothing above required the particular pattern in <span class="math-inline">\(\eqref{eq:Egiven}\)</span>. Solving the cavity from scratch produces every mode it supports, and the given field turns out to be the lowest one.</p>
+<h3 id="sec-900-wave-equation"><span class="sec-number">5.1</span>Wave equation</h3>
+<p>Take the curl of Faraday's law and use <span class="math-inline">\(\nabla \times (\nabla \times \vec{E}) = \nabla(\nabla \cdot \vec{E}) - \nabla^2\vec{E}\)</span> together with <span class="math-inline">\(\nabla\cdot\vec{E} = 0\)</span>:</p>
+<div class="math-block">\begin{equation}
+  \nabla^2 \vec{E} = \frac{1}{c^2}\,\frac{\partial ^2 \vec{E}}{\partial t^2},
+  \qquad\text{and likewise}\qquad
+  \nabla^2 \vec{B} = \frac{1}{c^2}\,\frac{\partial ^2 \vec{B}}{\partial t^2}.
+  \label{eq:wave}
+\end{equation}</div>
+<p>Every Cartesian component of both fields satisfies the same scalar wave equation — the partial differential equation of Chapter 10.</p>
+<h3 id="sec-900-separation-of-variables-chapter-10"><span class="sec-number">5.2</span>Separation of variables (Chapter 10)</h3>
+<p>This is the method of <strong>Chapter 10</strong> applied unchanged. Look for a solution of <span class="math-inline">\(\eqref{eq:wave}\)</span> with no <span class="math-inline">\(z\)</span>-dependence in the product form <span class="math-inline">\(E_z(x,y,t) = X(x)\,Y(y)\,T(t)\)</span>. Substituting and dividing by <span class="math-inline">\(XYT\)</span> gives</p>
+<div class="math-block">\begin{equation}
+  \frac{X&#x27;&#x27;}{X} + \frac{Y&#x27;&#x27;}{Y} = \frac{1}{c^2}\frac{T&#x27;&#x27;}{T},
+  \label{eq:separated}
+\end{equation}</div>
+<p>in which the first term depends only on <span class="math-inline">\(x\)</span>, the second only on <span class="math-inline">\(y\)</span> and the third only on <span class="math-inline">\(t\)</span>. Three functions of independent variables can agree only if each is a constant, so <span class="math-inline">\(\eqref{eq:separated}\)</span> splits into</p>
+<div class="math-block">\begin{equation}
+  X&#x27;&#x27; = -k_x^2 X, \qquad Y&#x27;&#x27; = -k_y^2 Y, \qquad T&#x27;&#x27; = -\omega^2 T,
+  \qquad \omega^2 = c^2\,(k_x^2 + k_y^2).
+  \label{eq:three-odes}
+\end{equation}</div>
+<p>The signs in <span class="math-inline">\(\eqref{eq:three-odes}\)</span> are forced: a positive separation constant would give growing exponentials, which cannot vanish on both walls.</p>
+<h3 id="sec-900-applying-the-walls"><span class="sec-number">5.3</span>Applying the walls</h3>
+<p><span class="math-inline">\(E_z\)</span> is tangential to all four walls, so it must vanish at <span class="math-inline">\(x = \pm L/2\)</span> and at <span class="math-inline">\(y = \pm L/2\)</span>. Measuring from the wall at <span class="math-inline">\(x = -L/2\)</span>, the admissible solutions are</p>
+<div class="math-block">\begin{equation}
+  E_z^{(m,n)}(x,y,t) = E_0
+    \sin\!\left( \frac{m\pi (x + L/2)}{L} \right)
+    \sin\!\left( \frac{n\pi (y + L/2)}{L} \right)
+    \sin(\omega_{mn} t),
+  \qquad m, n = 1, 2, 3, \dots
+  \label{eq:modes}
+\end{equation}</div>
+<p>with</p>
+<div class="math-block">\begin{equation}
+  \boxed{\;\omega_{mn} = \frac{\pi c}{L}\sqrt{m^2 + n^2}\;}
+  \label{eq:omega-mn}
+\end{equation}</div>
+<p>For <span class="math-inline">\(m = n = 1\)</span> the shifted sine is just <span class="math-inline">\(\cos(\pi x/L)\)</span>, so <span class="math-inline">\(\eqref{eq:modes}\)</span> reproduces the field of the problem and <span class="math-inline">\(\eqref{eq:omega-mn}\)</span> reproduces <span class="math-inline">\(\omega_{11} = \sqrt{2}\pi c/L\)</span>, confirming <span class="math-inline">\(\eqref{eq:answer-a}\)</span>. Writing the modes as shifted sines rather than as <span class="math-inline">\(\cos(m\pi x/L)\)</span> matters for the higher ones: the plain cosine satisfies the boundary condition only when <span class="math-inline">\(m\)</span> is odd, and would put an antinode on the conductor when <span class="math-inline">\(m\)</span> is even.</p>
+<p>The six lowest modes are shown in Figure <a href="#fig-3">3</a>. Their frequencies are not multiples of one another — <span class="math-inline">\(\sqrt{m^2+n^2}\)</span> is rarely a rational multiple of <span class="math-inline">\(\sqrt2\)</span> — and modes related by swapping <span class="math-inline">\(m\)</span> and <span class="math-inline">\(n\)</span> are degenerate, sharing one frequency between two distinct field patterns.</p>
+<figure id="fig-3" class="figure"><img src="assets/img/fig_modes.png" alt="The six lowest cavity modes, each shown as the surface Ez over the cross-section with the field vectors standing on it, and with their frequencies in units of 11. Dashed lines mark the nodes, where Ez is permanently zero and the arrows have no length; on either side of a node the arrows point in opposite directions, which is what a change of sign means physically. The pairs (1,2)/(2,1) and (1,3)/(3,1) are degenerate: the same frequency carried by two different patterns, one the other rotated by a quarter turn." loading="lazy" style="--figure-width: 98%;"><figcaption>Figure 3. The six lowest cavity modes, each shown as the surface <span class="math-inline">\(E_z\)</span> over the
+    cross-section with the field vectors standing on it, and with their
+    frequencies in units of <span class="math-inline">\(\omega_{11}\)</span>. Dashed lines mark the nodes, where
+    <span class="math-inline">\(E_z\)</span> is permanently zero and the arrows have no length; on either side of a
+    node the arrows point in opposite directions, which is what a change of sign
+    means physically. The pairs <span class="math-inline">\((1,2)\)</span>/<span class="math-inline">\((2,1)\)</span> and <span class="math-inline">\((1,3)\)</span>/<span class="math-inline">\((3,1)\)</span> are
+    degenerate: the same frequency carried by two different patterns, one the
+    other rotated by a quarter turn.</figcaption></figure>
+<p>Once <span class="math-inline">\(E_z\)</span> is known, <span class="math-inline">\(\vec{B}\)</span> follows from Faraday's law, so <span class="math-inline">\(\eqref{eq:modes}\)</span> determines the mode completely.</p>
+<h2 id="sec-900-energy-in-the-cavity"><span class="sec-number">6</span>Energy in the cavity</h2>
+<p>The energy density of the field is <span class="math-inline">\(u = \tfrac{1}{2}\varepsilon_0 E^2 + B^2/(2\mu_0)\)</span>. Integrating it over the cross-section is a double integral of the kind set up in <strong>Chapter 5</strong>, and the only fact needed is <span class="math-inline">\(\int_{-L/2}^{L/2}\cos^2(\pi x/L)\,dx = L/2\)</span>. Using <span class="math-inline">\(\eqref{eq:Egiven}\)</span> and <span class="math-inline">\(\eqref{eq:Bgiven}\)</span> with <span class="math-inline">\(B_0 = E_0/(\sqrt{2}c)\)</span> from <span class="math-inline">\(\eqref{eq:answer-a}\)</span>,</p>
+<div class="math-block">\begin{equation}
+  U_E(t) = \frac{\varepsilon_0 E_0^2 L^2}{8}\,\sin^2(\omega t),
+  \qquad
+  U_B(t) = \frac{\varepsilon_0 E_0^2 L^2}{8}\,\cos^2(\omega t),
+\end{equation}</div>
+<p>so the total <span class="math-inline">\(U_E + U_B\)</span> is constant, as it must be for a lossless cavity. The two peak values come out equal — a check the script prints when it runs, and the content of Figure <a href="#fig-4">4</a>. The energy sloshes back and forth between the electric and magnetic field twice per period, exactly as it does between the capacitor and the inductor of an <span class="math-inline">\(LC\)</span> circuit.</p>
+<figure id="fig-4" class="figure"><img src="assets/img/fig_energy.png" alt="Electric and magnetic energy over one period. Each is largest when the other vanishes, and their sum is constant." loading="lazy" style="--figure-width: 90%;"><figcaption>Figure 4. Electric and magnetic energy over one period. Each is largest when
+    the other vanishes, and their sum is constant.</figcaption></figure>
+<h2 id="sec-900-which-course-methods-were-used"><span class="sec-number">7</span>Which course methods were used</h2>
+<ul><li><p><strong>Partial differentiation and vector operators (Chapter 6).</strong> Verifying the field is four exercises in taking divergences and curls of products of sines and cosines; the two matching conditions <span class="math-inline">\(\eqref{eq:match1}\)</span>–<span class="math-inline">\(\eqref{eq:match2}\)</span> fall straight out of them.</p></li><li><p><strong>Partial differential equations (Chapter 10).</strong> Eliminating <span class="math-inline">\(\vec{B}\)</span> turns Maxwell's equations into the wave equation, and separation of variables plus the wall conditions turns that into the discrete family <span class="math-inline">\(\eqref{eq:modes}\)</span>. The quantisation of <span class="math-inline">\(\omega_{mn}\)</span> is a boundary-value problem, not a property of the wave equation itself.</p></li><li><p><strong>Fourier series (Chapter 7).</strong> The modes <span class="math-inline">\(\eqref{eq:modes}\)</span> are a complete orthogonal set on the square, so any field the cavity can hold is a double Fourier sine series in these patterns — which is what lets us treat the lowest mode on its own.</p></li><li><p><strong>Multiple integrals (Chapter 5).</strong> The stored energies <span class="math-inline">\(U_E\)</span> and <span class="math-inline">\(U_B\)</span> are area integrals of the energy density over the cross-section.</p></li></ul>
+<h2 id="sec-900-conclusion"><span class="sec-number">8</span>Conclusion</h2>
+<p>Requiring the proposed field to satisfy Maxwell's equations in vacuum forces <span class="math-inline">\(\omega = \sqrt{2}\pi c/L\)</span> and <span class="math-inline">\(B_0 = E_0/(\sqrt{2}c)\)</span>, and the field is then the lowest TM mode of a square cavity. Solving the same problem by separation of variables gives the whole spectrum <span class="math-inline">\(\omega_{mn} = (\pi c/L)\sqrt{m^2+n^2}\)</span>, with degenerate pairs whenever <span class="math-inline">\(m \neq n\)</span>. The visualisation shows what the algebra states: a field frozen in shape, oscillating in amplitude, passing its energy back and forth between <span class="math-inline">\(\vec{E}\)</span> and <span class="math-inline">\(\vec{B}\)</span> twice each period, and going to zero at the conducting walls.</p>
+<h2 id="sec-900-references">References</h2>
+<ul><li><p>M. L. Boas, <em>Mathematical Methods in the Physical Sciences</em>, Wiley, 3rd ed., 2006 (Problem 11.13, Chapter 6).</p></li><li><p>D. J. Griffiths, <em>Introduction to Electrodynamics</em>, Cambridge University Press, 5th ed., 2023 (waveguides and cavities).</p></li></ul>
+<p class="project-back"><a href="../../../projects.html">← All projects</a></p>
+</main>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p>&copy; 2026 Erfan Saydanzad. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 8: Rotational and Vibrational Spectroscopy | Direct Method</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+  <link rel="preload" href="../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../assets/css/site.css?v=db81423d">
+  <script>
+    window.MathJax = {
+      // tagformat is an optional TeX extension, not part of the combined
+      // tex-chtml build. Without these two lines the tagformat block below is
+      // read and silently ignored, and every equation numbers from 1 with no
+      // chapter in front of it.
+      loader: { load: ['[tex]/tagformat'] },
+      tex: {
+        packages: { '[+]': ['tagformat'] },
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        processEnvironments: true,
+        tags: 'ams',
+        // The PDF numbers equations within the chapter (\numberwithin
+        // {equation}{chapter}), so "1.8" is the eighth equation of
+        // chapter 1. MathJax counts from 1 on every page, which would have
+        // shown that same equation as "8". Prefixing the chapter number
+        // keeps a reference valid against either version.
+        tagformat: {
+          number: function (n) { return '8.' + n; }
+        },
+        macros: {
+          pdv: ['{\\frac{\\partial #1}{\\partial #2}}', 2],
+          dv: ['{\\frac{d #1}{d #2}}', 2],
+          abs: ['{\\left|#1\\right|}', 1],
+          norm: ['{\\left\\|#1\\right\\|}', 1],
+          curl: '{\\vec{\\nabla}\\times}',
+          div: '{\\vec{\\nabla}\\cdot}',
+          grad: '{\\vec{\\nabla}}',
+          sech: '{\\operatorname{sech}}',
+          csch: '{\\operatorname{csch}}',
+          coth: '{\\operatorname{coth}}',
+          circnum: ['{\\boxed{#1}}', 1],
+          vb: ['{\\mathbf{#1}}', 1],
+          eval: ['{\\left.#1\\right|}', 1],
+          dd: '{\\,d}',
+          // Dirac notation. The chapters are written with the physics
+          // package, which MathJax does not have, so every bra-ket command
+          // the notes use has to be defined here or it renders as red text.
+          // \braket is always given two arguments in these sources.
+          ket: ['{\\left|#1\\right\\rangle}', 1],
+          bra: ['{\\left\\langle#1\\right|}', 1],
+          braket: ['{\\left\\langle#1\\middle|#2\\right\\rangle}', 2],
+          ketbra: ['{\\left|#1\\right\\rangle\\!\\left\\langle#2\\right|}', 2],
+          dyad: ['{\\left|#1\\right\\rangle\\!\\left\\langle#2\\right|}', 2],
+          op: ['{\\left|#1\\right\\rangle\\!\\left\\langle#1\\right|}', 1],
+          mel: ['{\\left\\langle#1\\right|#2\\left|#3\\right\\rangle}', 3],
+          expval: ['{\\left\\langle#1\\right\\rangle}', 1],
+          ev: ['{\\left\\langle#1\\right\\rangle}', 1],
+          comm: ['{\\left[#1,#2\\right]}', 2],
+          acomm: ['{\\left\\{#1,#2\\right\\}}', 2],
+          anticommutator: ['{\\left\\{#1,#2\\right\\}}', 2],
+          Tr: '{\\operatorname{Tr}}',
+          tr: '{\\operatorname{tr}}',
+          bm: ['{\\boldsymbol{#1}}', 1]
+        }
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <script defer src="../../assets/js/main.js?v=db81423d"></script>
+
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="../../index.html">
+    <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M9 6.5V25.5M9 6.5H24M9 25.5H24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 16Q10.5 9.5 15.5 16T25.5 16" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/></svg>
+    <span>Direct Method</span>
+  </a>
+  <nav class="top-nav" aria-label="Primary">
+    <a href="../../index.html">Home</a>
+    <a href="../../toc.html">Contents</a>
+    <a href="../../projects.html">Projects</a>
+  </nav>
+</header>
+<main class="layout" id="main">
+  <aside class="sidebar">
+  <div class="sidebar-inner">
+    <p class="sidebar-kicker">Chapter 8</p>
+    <h2>Rotational and Vibrational Spectroscopy</h2>
+    <nav class="chapter-toc" aria-label="Chapter contents">
+      <a class="toc-level-2" href="#sec-8-introduction">8.1 Introduction</a>
+<a class="toc-level-2" href="#sec-8-radiative-processes-and-einstein-coefficients">8.2 Radiative Processes and Einstein Coefficients</a>
+<a class="toc-level-2" href="#sec-8-rotational-spectroscopy">8.3 Rotational Spectroscopy</a>
+<a class="toc-level-2" href="#sec-8-vibrational-spectroscopy">8.4 Vibrational Spectroscopy</a>
+<a class="toc-level-3" href="#sec-8-vibration-rotation-bands">8.4.1 Vibration–Rotation Bands</a>
+<a class="toc-level-3" href="#sec-8-real-band-structure-b-b-b-b">8.4.2 Real Band Structure: B&#x27; != B&#x27;&#x27;</a>
+<a class="toc-level-2" href="#sec-8-normal-modes-and-co-2-2">8.5 Normal Modes and CO2</a>
+<a class="toc-level-3" href="#sec-8-raman-scattering">8.5.1 Raman Scattering</a>
+<a class="toc-level-3" href="#sec-8-stokes-and-anti-stokes-lines">8.5.2 Stokes and Anti-Stokes Lines</a>
+<a class="toc-level-2" href="#sec-8-summary">8.6 Summary</a>
+<a class="toc-level-2" href="#sec-8-exercises">8.7 Exercises</a>
+<a class="toc-level-2" href="#sec-8-project-the-normal-modes-of-co-2-2">8.8 Project: The Normal Modes of CO2</a>
+    </nav>
+  </div>
+</aside>
+
+  <article class="content">
+    <header class="chapter-hero">
+      <p>Chapter 8</p>
+      <h1>Rotational and Vibrational Spectroscopy</h1>
+    </header>
+    <h2 id="sec-8-introduction"><span class="sec-number">8.1</span>Introduction</h2>
+<p>Chapter 7 found the vibrational and rotational levels. A level scheme is not a spectrum: what a spectrometer records is a set of <em>transitions</em>, and which transitions appear is a separate question.</p>
+<p>That question always has the same form. From Chapter 6, the rate of a one-photon transition is proportional to <span class="math-inline">\(|\bra{f}\hat{\vec d}\ket{i}|^{2}\)</span>, so the whole of this chapter is one calculation repeated:</p>
+<div class="math-block" id="eq-eq-spec-master">\begin{equation}
+	\label{eq:SPEC-master}
+	\text{is}\quad
+	\bra{f}\hat{\vec d}\ket{i}\quad\text{zero or not?}
+\end{equation}</div>
+<p>Nonzero means the line appears, with strength given by the square. Zero means it is invisible, however much light you shine. We evaluate the integrals rather than quoting the rules.</p>
+<p>Two results are used later. A molecule can be entirely dark in one kind of spectroscopy and bright in another — symmetry decides, and CO<span class="math-inline">\(_2\)</span> is the standard example. And the pattern of a band gives the geometry, which is how a spectrum becomes structural information.</p>
+<p>This chapter uses one workflow repeatedly:</p>
+<ol><li><p>identify initial and final states;</p></li><li><p>test if the transition moment is symmetry-allowed;</p></li><li><p>use level formulas to predict line positions;</p></li><li><p>use populations and matrix elements to interpret intensities.</p></li></ol>
+<h2 id="sec-8-radiative-processes-and-einstein-coefficients"><span class="sec-number">8.2</span>Radiative Processes and Einstein Coefficients</h2>
+<p>Before applying selection rules, it helps to separate the three elementary radiative processes between two levels <span class="math-inline">\(1\)</span> and <span class="math-inline">\(2\)</span>:</p>
+<div class="math-block" id="eq-eq-spec-einstein-rates">\begin{equation}
+	\label{eq:SPEC-einstein-rates}
+	R_{\mathrm{abs}}=B_{12}\rho(\nu)N_1,
+	\qquad
+	R_{\mathrm{stim}}=B_{21}\rho(\nu)N_2,
+	\qquad
+	R_{\mathrm{sp}}=A_{21}N_2,
+\end{equation}</div>
+<p>where <span class="math-inline">\(\rho(\nu)\)</span> is the spectral energy density and <span class="math-inline">\(N_i\)</span> are level populations.</p>
+<p>At thermal equilibrium, detailed balance gives</p>
+<div class="math-block" id="eq-eq-spec-einstein-relations">\begin{equation}
+	\label{eq:SPEC-einstein-relations}
+	B_{12}=B_{21},
+	\qquad
+	\frac{A_{21}}{B_{21}}=\frac{8\pi h\nu^3}{c^3}.
+\end{equation}</div>
+<p>These relations are useful in practice: once an absorption strength is known, they connect it to spontaneous-emission lifetime <span class="math-inline">\(\tau_{\mathrm{rad}}\sim1/A_{21}\)</span> and therefore to fluorescence intensity.</p>
+<h2 id="sec-8-rotational-spectroscopy"><span class="sec-number">8.3</span>Rotational Spectroscopy</h2>
+<p>The rotational states of a diatomic are the spherical harmonics of Chapter 3, now describing the orientation of the molecular axis: <span class="math-inline">\(\ket{J,M}\to Y_J^{M}(\theta,\varphi)\)</span>, with energies <span class="math-inline">\(E_J=BJ(J+1)\)</span>.</p>
+<p>The dipole moment of the molecule points along its axis. Writing its magnitude as <span class="math-inline">\(d_0\)</span> (a permanent, geometry-dependent constant) and its direction as the unit vector <span class="math-inline">\(\hat n(\theta,\varphi)\)</span>,</p>
+<div class="math-block" id="eq-eq-spec-molecular-dipole">\begin{equation}
+	\label{eq:SPEC-molecular-dipole}
+	\hat{\vec d}=d_0\,\hat n(\theta,\varphi).
+\end{equation}</div>
+<p>The <span class="math-inline">\(z\)</span> component is <span class="math-inline">\(d_0\cos\theta\)</span>, so the matrix element is</p>
+<div class="math-block" id="eq-eq-spec-rot-matrix">\begin{equation}
+	\label{eq:SPEC-rot-matrix}
+	\bra{J&#x27;M&#x27;}\hat d_z\ket{JM}
+	=d_0\int Y_{J&#x27;}^{M&#x27;*}\,\cos\theta\;Y_J^{M}\,d\Omega .
+\end{equation}</div>
+<p>Two facts follow immediately, and both are physical rather than technical.</p>
+<section class="callout theorem" id="theorem-thm-spec-rot-active"><header>Theorem 8.3.1 - Rotational activity</header><p> A molecule has a pure rotational spectrum only if <span class="math-inline">\(d_0\neq0\)</span>, that is, only if it possesses a permanent electric dipole moment.</p></section>
+<div class="proof" data-lead="Proof."><p>Equation <a href="../chapter-08/index.html#eq-eq-spec-rot-matrix">(8.5)</a> is proportional to <span class="math-inline">\(d_0\)</span>. If the dipole moment vanishes, every rotational matrix element vanishes with it, whatever the angular integral does.</p></div>
+<p>So HCl, CO and H<span class="math-inline">\(_2\)</span>O have microwave spectra. H<span class="math-inline">\(_2\)</span>, N<span class="math-inline">\(_2\)</span>, O<span class="math-inline">\(_2\)</span> and — importantly for this course — CO<span class="math-inline">\(_2\)</span> do not. A symmetric linear molecule O=C=O has its charge distribution balanced about the inversion centre, so <span class="math-inline">\(d_0=0\)</span> exactly by symmetry, and rotating it presents nothing for the field to grip.</p>
+<section class="callout theorem" id="theorem-thm-spec-rot-rule"><header>Theorem 8.3.2 - Rotational selection rule</header><p> The integral in Eq. <a href="../chapter-08/index.html#eq-eq-spec-rot-matrix">(8.5)</a> vanishes unless</p>
+<div class="math-block" id="eq-eq-spec-rot-rule">\begin{equation}
+		\label{eq:SPEC-rot-rule}
+		\Delta J=\pm1,
+		\qquad
+		\Delta M=0 \quad\text{(for $z$-polarized light)}.
+	\end{equation}</div></section>
+<div class="proof" data-lead="Proof."><p>Use <span class="math-inline">\(\cos\theta=\sqrt{4\pi/3}\,Y_1^{0}\)</span> from Eq. <a href="../chapter-04/index.html#eq-eq-h-ylm-table">(4.31)</a>, so the integral becomes one over three spherical harmonics,</p>
+<div class="math-block">\[
+	\sqrt{\frac{4\pi}{3}}\int Y_{J&#x27;}^{M&#x27;*}\,Y_1^{0}\,Y_J^{M}\,d\Omega .
+	\]</div>
+<p>Two properties of that integral settle the matter. The <span class="math-inline">\(\varphi\)</span> dependence is <span class="math-inline">\(e^{i(M-M&#x27;+0)\varphi}\)</span>, which integrates to zero unless <span class="math-inline">\(M&#x27;=M\)</span>. And the product <span class="math-inline">\(Y_1^{0}Y_J^{M}\)</span> expands in spherical harmonics of rank <span class="math-inline">\(|J-1|\)</span> to <span class="math-inline">\(J+1\)</span> only, so orthogonality kills everything except <span class="math-inline">\(J&#x27;=J\pm1\)</span>; the case <span class="math-inline">\(J&#x27;=J\)</span> is further excluded by parity, since <span class="math-inline">\(Y_J^{M}\)</span> and <span class="math-inline">\(Y_1^{0}Y_J^{M}\)</span> then have opposite parity <span class="math-inline">\((-1)^{J}\)</span> versus <span class="math-inline">\((-1)^{J+1}\)</span>.</p></div>
+<p>Combining Theorem <a href="../chapter-08/index.html#theorem-thm-spec-rot-rule">8.3.2</a> with Eq. <a href="../chapter-07/index.html#eq-eq-mol-rot-spacing">(7.27)</a>, absorption from <span class="math-inline">\(J\)</span> to <span class="math-inline">\(J+1\)</span> costs</p>
+<div class="math-block" id="eq-eq-spec-rot-lines">\begin{equation}
+	\label{eq:SPEC-rot-lines}
+	\Delta E=E_{J+1}-E_J=2B(J+1),
+	\qquad J=0,1,2,\dots
+\end{equation}</div>
+<p>so the lines fall at <span class="math-inline">\(2B, 4B, 6B,\dots\)</span>: a ladder of <em>equally spaced</em> lines separated by <span class="math-inline">\(2B\)</span>. Measure the spacing, get <span class="math-inline">\(B\)</span>, get <span class="math-inline">\(I\)</span>, get the bond length — Example <a href="../chapter-07/index.html#example-ex-mol-bond-length">7.7.1</a>.</p>
+<section class="callout remark" id="remark-rem-spec-intensities"><header>Remark 8.3.1 - Line intensities</header><p> The lines are not equally strong. The population of level <span class="math-inline">\(J\)</span> at temperature <span class="math-inline">\(T\)</span> is proportional to the degeneracy times the Boltzmann factor,</p>
+<div class="math-block" id="eq-eq-spec-boltzmann">\begin{equation}
+		\label{eq:SPEC-boltzmann}
+		N_J\propto(2J+1)\,e^{-BJ(J+1)/k_BT},
+	\end{equation}</div>
+<p>which rises from the degeneracy and falls from the exponential, peaking at <span class="math-inline">\(J_{\max}\simeq\sqrt{k_BT/2B}-\tfrac12\)</span>. A rotational band therefore has a characteristic intensity envelope, and its maximum is a thermometer.</p></section>
+<h2 id="sec-8-vibrational-spectroscopy"><span class="sec-number">8.4</span>Vibrational Spectroscopy</h2>
+<p>Now the vibrational levels <span class="math-inline">\(E_v=\hbar\omega_e(v+\tfrac12)\)</span>. The relevant dipole is again the molecule's own, but what matters is how it <em>changes</em> as the bond stretches. Expand about equilibrium in the displacement <span class="math-inline">\(q=R-R_e\)</span>:</p>
+<div class="math-block" id="eq-eq-spec-dipole-expansion">\begin{equation}
+	\label{eq:SPEC-dipole-expansion}
+	d(R)=d(R_e)
+	+\left.\frac{dd}{dR}\right|_{R_e}q
+	+\frac12\left.\frac{d^{2}d}{dR^{2}}\right|_{R_e}q^{2}+\dots
+\end{equation}</div>
+<section class="callout theorem" id="theorem-thm-spec-vib"><header>Theorem 8.4.1 - Vibrational activity and selection rule</header><p> Within the harmonic approximation, the vibrational matrix element <span class="math-inline">\(\bra{v&#x27;}d(R)\ket{v}\)</span> vanishes unless</p>
+<div class="math-block" id="eq-eq-spec-vib-rule">\begin{equation}
+		\label{eq:SPEC-vib-rule}
+		\Delta v=\pm1 ,
+	\end{equation}</div>
+<p>and even then only if <span class="math-inline">\(\left.dd/dR\right|_{R_e}\neq0\)</span>: the dipole moment must change with the vibrational coordinate.</p></section>
+<div class="proof" data-lead="Proof."><p>Insert Eq. <a href="../chapter-08/index.html#eq-eq-spec-dipole-expansion">(8.9)</a> into <span class="math-inline">\(\bra{v&#x27;}d(R)\ket{v}\)</span> and take the terms in turn.</p>
+<p>The constant <span class="math-inline">\(d(R_e)\)</span> gives <span class="math-inline">\(d(R_e)\braket{v&#x27;}{v}=d(R_e)\delta_{v&#x27;v}\)</span>, which is zero for any transition: a constant dipole cannot drive a vibrational change.</p>
+<p>The linear term gives <span class="math-inline">\(\left.\frac{dd}{dR}\right|_{R_e}\bra{v&#x27;}\hat q\ket{v}\)</span>. From Chapter 2, Def. <a href="../chapter-02/index.html#definition-def-ms-ladder">2.7.1</a>, the displacement operator is</p>
+<div class="math-block">\[
+	\hat q=\sqrt{\frac{\hbar}{2\mu\omega_e}}\left(\hat a+\hat a^{\dagger}\right),
+	\]</div>
+<p>so by Eq. <a href="../chapter-02/index.html#eq-eq-ms-ladder-action">(2.38)</a></p>
+<div class="math-block">\[
+	\bra{v&#x27;}\hat q\ket{v}
+	=\sqrt{\frac{\hbar}{2\mu\omega_e}}
+	\left(\sqrt{v}\,\delta_{v&#x27;,v-1}+\sqrt{v+1}\,\delta_{v&#x27;,v+1}\right),
+	\]</div>
+<p>which is nonzero only for <span class="math-inline">\(v&#x27;=v\pm1\)</span>. That is Eq. <a href="../chapter-08/index.html#eq-eq-spec-vib-rule">(8.10)</a>, and it is proportional to the dipole gradient.</p></div>
+<section class="callout remark" id="remark-rem-spec-overtones"><header>Remark 8.4.1 - Overtones</header><p> The rule is a property of the harmonic oscillator, not of molecules. Two things spoil it, both weakly. The quadratic term in Eq. <a href="../chapter-08/index.html#eq-eq-spec-dipole-expansion">(8.9)</a> contributes <span class="math-inline">\(\bra{v&#x27;}\hat q^{2}\ket{v}\)</span>, which connects <span class="math-inline">\(v&#x27;=v\pm2\)</span>; and anharmonicity (Sec. <a href="../chapter-07/index.html#sec-7-anharmonicity">7.6.2</a>) mixes the harmonic states. The resulting <em>overtone</em> bands are typically a hundred times weaker than the fundamental and are routinely observed.</p></section>
+<section class="callout example" id="example-ex-spec-homonuclear"><header>Example 8.4.1 - Why N<span class="math-inline">\(_2\)</span> is invisible and HCl is not</header><p> Explain why the bulk of the atmosphere is transparent in the infrared.</p>
+<p class="solution-head">Solution.</p>
+<p>N<span class="math-inline">\(_2\)</span> and O<span class="math-inline">\(_2\)</span> are homonuclear. By symmetry their dipole moment is zero at <em>every</em> bond length — stretching a symmetric molecule keeps it symmetric — so <span class="math-inline">\(d(R)\equiv0\)</span> and hence <span class="math-inline">\(\left.dd/dR\right|_{R_e}=0\)</span>. By Theorem <a href="../chapter-08/index.html#theorem-thm-spec-vib">8.4.1</a> they have no infrared spectrum at all.</p>
+<p>HCl is heteronuclear: the chlorine draws charge, so <span class="math-inline">\(d(R)\neq0\)</span>, and stretching the bond changes the separation of the charges, so <span class="math-inline">\(dd/dR\neq0\)</span>. It absorbs strongly.</p>
+<p>Since N<span class="math-inline">\(_2\)</span> and O<span class="math-inline">\(_2\)</span> make up <span class="math-inline">\(99\%\)</span> of the atmosphere and neither absorbs infrared, the atmosphere's infrared behaviour is set entirely by trace species that do — H<span class="math-inline">\(_2\)</span>O, CO<span class="math-inline">\(_2\)</span>, CH<span class="math-inline">\(_4\)</span>. That is the physical basis of the greenhouse effect, and it is a selection rule.</p></section>
+<h3 id="sec-8-vibration-rotation-bands"><span class="sec-number">8.4.1</span>Vibration–Rotation Bands</h3>
+<p>A real infrared spectrum shows not one line per vibrational transition but a whole structure, because rotational spacings are a hundred times smaller (Sec. <a href="../chapter-07/index.html#sec-7-the-three-energy-scales">7.10</a>) and the molecule changes <span class="math-inline">\(v\)</span> and <span class="math-inline">\(J\)</span> together.</p>
+<p>Combining Eqs. <a href="../chapter-08/index.html#eq-eq-spec-rot-rule">(8.6)</a> and <a href="../chapter-08/index.html#eq-eq-spec-vib-rule">(8.10)</a>, and writing the band centre as <span class="math-inline">\(\tilde\nu_0=\omega_e/2\pi c\)</span>, the transition wavenumbers for <span class="math-inline">\(v\to v+1\)</span> are</p>
+<div class="math-block" id="eq-eq-spec-branches">\begin{equation}
+	\label{eq:SPEC-branches}
+	\begin{aligned}
+		\text{$R$ branch } (J\to J+1):&amp;\quad
+		\tilde\nu=\tilde\nu_0+2B(J+1), \quad J=0,1,2,\dots\\
+		\text{$P$ branch } (J\to J-1):&amp;\quad
+		\tilde\nu=\tilde\nu_0-2BJ, \quad J=1,2,3,\dots\\
+		\text{$Q$ branch } (J\to J):&amp;\quad
+		\tilde\nu=\tilde\nu_0 .
+	\end{aligned}
+\end{equation}</div>
+<p>The result is a double comb of lines spaced <span class="math-inline">\(2B\)</span>, with a <em>gap</em> of <span class="math-inline">\(4B\)</span> at the centre where the <span class="math-inline">\(Q\)</span> branch would be. For a diatomic in a <span class="math-inline">\(\Sigma\)</span> state the <span class="math-inline">\(Q\)</span> branch is forbidden — <span class="math-inline">\(\Delta J=0\)</span> requires the transition dipole to have a component along the molecular axis with <span class="math-inline">\(\Delta\Lambda\neq0\)</span> — so the gap is the signature of the band.</p>
+<h3 id="sec-8-real-band-structure-b-b-b-b"><span class="sec-number">8.4.2</span>Real Band Structure: <span class="math-inline">\(B&#x27;\neq B&#x27;&#x27;\)</span></h3>
+<p>Equation <a href="../chapter-08/index.html#eq-eq-spec-branches">(8.11)</a> assumes one rotational constant <span class="math-inline">\(B\)</span> for both vibrational states. Real bands use two constants: <span class="math-inline">\(B&#x27;&#x27;\)</span> (lower) and <span class="math-inline">\(B&#x27;\)</span> (upper). Keeping only first-order vibration–rotation effects gives</p>
+<div class="math-block" id="eq-eq-spec-real-branches">\begin{equation}
+	\label{eq:SPEC-real-branches}
+	\begin{aligned}
+		\tilde\nu_R(J)&amp;=\tilde\nu_0+(B&#x27;+B&#x27;&#x27;)(J+1)+(B&#x27;-B&#x27;&#x27;)(J+1)^2,\\
+		\tilde\nu_P(J)&amp;=\tilde\nu_0-(B&#x27;+B&#x27;&#x27;)J+(B&#x27;-B&#x27;&#x27;)J^2.
+	\end{aligned}
+\end{equation}</div>
+<p>If <span class="math-inline">\(B&#x27;&lt;B&#x27;&#x27;\)</span> (the usual case), lines in one branch crowd and can form a band head. The head condition is approximately</p>
+<div class="math-block" id="eq-eq-spec-band-head">\begin{equation}
+	\label{eq:SPEC-band-head}
+	J_{\mathrm{head}}\approx
+	\frac{B&#x27;+B&#x27;&#x27;}{2(B&#x27;&#x27;-B&#x27;)}-1,
+\end{equation}</div>
+<p>which is one of the quickest diagnostics for geometry change upon vibrational excitation.</p>
+<h2 id="sec-8-normal-modes-and-co-2-2"><span class="sec-number">8.5</span>Normal Modes and CO<span class="math-inline">\(_2\)</span></h2>
+<p>For a polyatomic molecule each normal mode of Sec. <a href="../chapter-07/index.html#sec-7-polyatomic-molecules-normal-modes">7.8</a> is an independent oscillator in a collective coordinate <span class="math-inline">\(Q_i\)</span>, and Theorem <a href="../chapter-08/index.html#theorem-thm-spec-vib">8.4.1</a> applies to each separately: mode <span class="math-inline">\(i\)</span> is infrared active if and only if</p>
+<div class="math-block" id="eq-eq-spec-mode-active">\begin{equation}
+	\label{eq:SPEC-mode-active}
+	\left.\frac{\partial\vec d}{\partial Q_i}\right|_{Q=0}\neq0 .
+\end{equation}</div>
+<p>CO<span class="math-inline">\(_2\)</span> has four modes (Sec. <a href="../chapter-07/index.html#sec-7-polyatomic-molecules-normal-modes">7.8</a>), and they do not all behave the same way.</p>
+<section class="callout example" id="example-ex-spec-co2-symmetric"><header>Example 8.5.1 - Which CO<span class="math-inline">\(_2\)</span> modes absorb</header><p> Determine the infrared activity of the symmetric stretch, the antisymmetric stretch and the bend.</p>
+<p class="solution-head">Solution.</p>
+<p>Assign partial charges <span class="math-inline">\(-q\)</span>, <span class="math-inline">\(+2q\)</span>, <span class="math-inline">\(-q\)</span> to O, C, O, so that the molecule is neutral, and compute <span class="math-inline">\(\vec d=\sum_iq_i\vec r_i\)</span> during each motion.</p>
+<p><em>Symmetric stretch <span class="math-inline">\(\nu_1\)</span>.</em> Both oxygens move outward together by <span class="math-inline">\(+s\)</span> and <span class="math-inline">\(-s\)</span> along the axis, carbon stationary. Then</p>
+<div class="math-block">\[
+	d_z=(-q)(-R_e-s)+(2q)(0)+(-q)(R_e+s)=0 ,
+	\]</div>
+<p>identically, for every <span class="math-inline">\(s\)</span>. The molecule stays symmetric about its centre throughout, so its dipole is zero at every instant, <span class="math-inline">\(\partial d/\partial Q_1=0\)</span>, and the mode is <strong>infrared inactive</strong>.</p>
+<p><em>Antisymmetric stretch <span class="math-inline">\(\nu_3\)</span>.</em> One bond lengthens by <span class="math-inline">\(s\)</span> while the other shortens by <span class="math-inline">\(s\)</span>, so the carbon shifts relative to the centre of the oxygens. Now</p>
+<div class="math-block">\[
+	d_z\propto s\neq0 ,
+	\]</div>
+<p>an oscillating dipole along the axis. <strong>Active.</strong></p>
+<p><em>Bend <span class="math-inline">\(\nu_2\)</span>.</em> The carbon moves perpendicular to the axis while the oxygens move the other way, producing a dipole perpendicular to the axis. <strong>Active.</strong></p>
+<p>So CO<span class="math-inline">\(_2\)</span> absorbs at <span class="math-inline">\(667\)</span> and <span class="math-inline">\(2349\)</span> cm<span class="math-inline">\(^{-1}\)</span> and is transparent at <span class="math-inline">\(1333\)</span> cm<span class="math-inline">\(^{-1}\)</span>; and by Theorem <a href="../chapter-08/index.html#theorem-thm-spec-rot-active">8.3.1</a> it has no microwave spectrum at all. Its two active bands lie where the Earth radiates, which is what makes it a greenhouse gas — and its inactive mode is invisible to the same measurement.</p></section>
+<h3 id="sec-8-raman-scattering"><span class="sec-number">8.5.1</span>Raman Scattering</h3>
+<p>A mode invisible in absorption need not be invisible altogether. In <em>Raman scattering</em> the molecule is not asked to absorb resonantly: a photon is scattered, and in the process leaves behind or removes one vibrational quantum, so the scattered light returns shifted by the vibrational frequency.</p>
+<p>The relevant quantity is not the permanent dipole but the <em>polarizability</em> <span class="math-inline">\(\alpha\)</span> — how easily the electron cloud distorts in a field. The field induces a dipole <span class="math-inline">\(\vec d_{\mathrm{ind}}=\alpha\vec E\)</span>, and expanding <span class="math-inline">\(\alpha\)</span> in the normal coordinate as in Eq. <a href="../chapter-08/index.html#eq-eq-spec-dipole-expansion">(8.9)</a> gives</p>
+<section class="callout theorem" id="theorem-thm-spec-raman"><header>Theorem 8.5.1 - Raman activity</header><p> A vibrational mode is Raman active if and only if</p>
+<div class="math-block" id="eq-eq-spec-raman-rule">\begin{equation}
+		\label{eq:SPEC-raman-rule}
+		\left.\frac{\partial\alpha}{\partial Q_i}\right|_{Q=0}\neq0 .
+	\end{equation}</div></section>
+<p>For the symmetric stretch of CO<span class="math-inline">\(_2\)</span> the polarizability certainly changes — the molecule grows and a larger electron cloud is easier to polarise — even though the dipole does not. The mode that infrared spectroscopy cannot see, Raman scattering sees clearly.</p>
+<section class="callout theorem" id="theorem-thm-spec-mutual-exclusion"><header>Theorem 8.5.2 - Rule of mutual exclusion</header><p> In a molecule with a centre of inversion, no vibrational mode is both infrared and Raman active.</p></section>
+<div class="proof" data-lead="Proof."><p>Under inversion the dipole moment is odd (<span class="math-inline">\(\hat\Pi\vec d\hat\Pi^{\dagger}=-\vec d\)</span>) while the polarizability, a second-rank tensor built from two factors of position, is even. A normal coordinate <span class="math-inline">\(Q_i\)</span> is itself either even (<span class="math-inline">\(g\)</span>) or odd (<span class="math-inline">\(u\)</span>) under inversion. For <span class="math-inline">\(\partial\vec d/\partial Q_i\)</span> to be nonzero, <span class="math-inline">\(Q_i\)</span> must be odd; for <span class="math-inline">\(\partial\alpha/\partial Q_i\)</span> to be nonzero, <span class="math-inline">\(Q_i\)</span> must be even. No mode can be both.</p></div>
+<p>The two techniques are therefore complementary by symmetry rather than by accident, and for a centrosymmetric molecule both are needed to see all the modes.</p>
+<h3 id="sec-8-stokes-and-anti-stokes-lines"><span class="sec-number">8.5.2</span>Stokes and Anti-Stokes Lines</h3>
+<p>Raman spectra contain two shifted sets of lines around the laser frequency: Stokes (red-shifted) and anti-Stokes (blue-shifted). Their intensity ratio is</p>
+<div class="math-block" id="eq-eq-spec-stokes-ratio">\begin{equation}
+	\label{eq:SPEC-stokes-ratio}
+	\frac{I_{\mathrm{AS}}}{I_{\mathrm{S}}}
+	\approx
+	\left(
+	\frac{\tilde\nu_0+\tilde\nu_v}{\tilde\nu_0-\tilde\nu_v}
+	\right)^4
+	\exp\!\left(-\frac{hc\tilde\nu_v}{k_BT}\right).
+\end{equation}</div>
+<p>The Boltzmann factor dominates: anti-Stokes lines are weaker because they start from thermally excited vibrational states. This ratio is therefore a direct temperature probe.</p>
+<h2 id="sec-8-summary"><span class="sec-number">8.6</span>Summary</h2>
+<ul><li><p>Whether a line appears is decided by one question: is <span class="math-inline">\(\bra{f}\hat{\vec d}\ket{i}\)</span> zero? Everything here is that question asked of different operators.</p></li><li><p>Absorption, stimulated emission, and spontaneous emission are connected by Einstein coefficients, Eqs. <a href="../chapter-08/index.html#eq-eq-spec-einstein-rates">(8.2)</a> and <a href="../chapter-08/index.html#eq-eq-spec-einstein-relations">(8.3)</a>; they link line strengths and radiative lifetimes.</p></li><li><p>Rotation: <span class="math-inline">\(\Delta J=\pm1\)</span> (Thm. <a href="../chapter-08/index.html#theorem-thm-spec-rot-rule">8.3.2</a>), lines equally spaced by <span class="math-inline">\(2B\)</span>, and <em>only</em> if the molecule has a permanent dipole (Thm. <a href="../chapter-08/index.html#theorem-thm-spec-rot-active">8.3.1</a>). CO<span class="math-inline">\(_2\)</span> has none. Intensities follow the Boltzmann envelope, peaking near <span class="math-inline">\(J_{\max}\simeq\sqrt{k_BT/2B}\)</span>.</p></li><li><p>Vibration: <span class="math-inline">\(\Delta v=\pm1\)</span> from <span class="math-inline">\(\bra{v&#x27;}\hat q\ket{v}\propto\sqrt{v}\delta_{v&#x27;,v-1}+\sqrt{v+1}\delta_{v&#x27;,v+1}\)</span>, and only if <span class="math-inline">\(dd/dR\neq0\)</span> (Thm. <a href="../chapter-08/index.html#theorem-thm-spec-vib">8.4.1</a>). Homonuclear diatomics are infrared-dark, which is why the atmosphere is transparent except for its trace gases.</p></li><li><p>A vibrational band carries rotational structure: <span class="math-inline">\(P\)</span>, <span class="math-inline">\(Q\)</span> and <span class="math-inline">\(R\)</span> branches, Eq. <a href="../chapter-08/index.html#eq-eq-spec-branches">(8.11)</a>, with lines spaced <span class="math-inline">\(2B\)</span> and a central gap of <span class="math-inline">\(4B\)</span> in the simplest model. In real spectra, <span class="math-inline">\(B&#x27;\neq B&#x27;&#x27;\)</span> causes branch asymmetry and can create a band head, Eq. <a href="../chapter-08/index.html#eq-eq-spec-band-head">(8.13)</a>.</p></li><li><p>Polyatomics: mode <span class="math-inline">\(i\)</span> is infrared active if <span class="math-inline">\(\partial\vec d/\partial Q_i\neq0\)</span>. CO<span class="math-inline">\(_2\)</span>'s symmetric stretch is inactive because the molecule stays symmetric throughout the motion; the bend and antisymmetric stretch are active.</p></li><li><p>Raman scattering is governed by <span class="math-inline">\(\partial\alpha/\partial Q_i\)</span> instead, and in a centrosymmetric molecule the two techniques are mutually exclusive by parity (Thm. <a href="../chapter-08/index.html#theorem-thm-spec-mutual-exclusion">8.5.2</a>). The Stokes/anti-Stokes ratio, Eq. <a href="../chapter-08/index.html#eq-eq-spec-stokes-ratio">(8.16)</a>, gives temperature.</p></li></ul>
+<h2 id="sec-8-exercises"><span class="sec-number">8.7</span>Exercises</h2>
+<ol><li><p><strong>The rotational integral.</strong> Evaluate <span class="math-inline">\(\int Y_1^{0*}\cos\theta\,Y_0^{0}\,d\Omega\)</span> explicitly using Eq. <a href="../chapter-04/index.html#eq-eq-h-ylm-table">(4.31)</a>, and confirm it is nonzero. Then evaluate <span class="math-inline">\(\int Y_0^{0*}\cos\theta\,Y_0^{0}\,d\Omega\)</span> and confirm it vanishes. Which part of Theorem <a href="../chapter-08/index.html#theorem-thm-spec-rot-rule">8.3.2</a> does each illustrate?</p></li><li><p><strong>Which molecules are active?</strong> For H<span class="math-inline">\(_2\)</span>, HCl, CO<span class="math-inline">\(_2\)</span>, H<span class="math-inline">\(_2\)</span>O and N<span class="math-inline">\(_2\)</span>O (linear but N–N–O, hence not symmetric), state whether each has (a) a pure rotational spectrum and (b) at least one infrared-active vibration. Give the one-line symmetry reason in each case.</p></li><li><p><strong>The vibrational matrix element.</strong> Reproduce the proof of Theorem <a href="../chapter-08/index.html#theorem-thm-spec-vib">8.4.1</a>. Then compute <span class="math-inline">\(\bra{2}\hat q^{2}\ket{0}\)</span> using <span class="math-inline">\(\hat q\propto\hat a+\hat a^{\dagger}\)</span> and Eq. <a href="../chapter-02/index.html#eq-eq-ms-ladder-action">(2.38)</a>, and confirm it is nonzero — this is the first overtone of Remark <a href="../chapter-08/index.html#remark-rem-spec-overtones">8.4.1</a>.</p></li><li><p><strong>Reading a band.</strong> An infrared band shows a comb of lines spaced <span class="math-inline">\(0.72\)</span> cm<span class="math-inline">\(^{-1}\)</span> on either side of a gap centred at <span class="math-inline">\(2143\)</span> cm<span class="math-inline">\(^{-1}\)</span>.</p>
+<ol><li><p>Identify the branches and the band centre.</p></li><li><p>Find <span class="math-inline">\(B\)</span>, and hence the bond length, taking <span class="math-inline">\(\mu=1.139\times10^{-26}\)</span> kg.</p></li><li><p>The central gap is <span class="math-inline">\(4B\)</span> wide rather than <span class="math-inline">\(2B\)</span>. Explain why, using Eq. <a href="../chapter-08/index.html#eq-eq-spec-branches">(8.11)</a>.</p></li></ol></li><li><p><strong>Boltzmann envelope.</strong> Using Eq. <a href="../chapter-08/index.html#eq-eq-spec-boltzmann">(8.8)</a> with <span class="math-inline">\(B=1.931\)</span> cm<span class="math-inline">\(^{-1}\)</span> for CO at <span class="math-inline">\(300\)</span> K, find <span class="math-inline">\(J_{\max}\)</span>. (Note <span class="math-inline">\(k_BT=208\)</span> cm<span class="math-inline">\(^{-1}\)</span> at <span class="math-inline">\(300\)</span> K.) Sketch the expected intensity pattern of the <span class="math-inline">\(P\)</span> and <span class="math-inline">\(R\)</span> branches.</p></li><li><p><strong>Mutual exclusion.</strong> Reproduce the proof of Theorem <a href="../chapter-08/index.html#theorem-thm-spec-mutual-exclusion">8.5.2</a>. Then determine, for each of CO<span class="math-inline">\(_2\)</span>'s four modes, whether the normal coordinate is <span class="math-inline">\(g\)</span> or <span class="math-inline">\(u\)</span> under inversion, and hence confirm the activity assignments of Example <a href="../chapter-08/index.html#example-ex-spec-co2-symmetric">8.5.1</a>.</p></li><li><p><strong>Einstein coefficients and lifetime.</strong> A transition has frequency <span class="math-inline">\(\nu=6.0\times10^{13}\)</span> Hz and <span class="math-inline">\(B_{21}=2.5\times10^{20}\)</span> in SI units.</p>
+<ol><li><p>Use Eq. <a href="../chapter-08/index.html#eq-eq-spec-einstein-relations">(8.3)</a> to find <span class="math-inline">\(A_{21}\)</span>.</p></li><li><p>Estimate the radiative lifetime <span class="math-inline">\(\tau_{\mathrm{rad}}\)</span>.</p></li><li><p>Explain qualitatively how the lifetime changes for a higher-frequency transition with similar dipole strength.</p></li></ol></li><li><p><strong>Real branch formulas.</strong> For a band with <span class="math-inline">\(\tilde\nu_0=2143\)</span> cm<span class="math-inline">\(^{-1}\)</span>, <span class="math-inline">\(B&#x27;&#x27;=1.93\)</span> cm<span class="math-inline">\(^{-1}\)</span>, and <span class="math-inline">\(B&#x27;=1.88\)</span> cm<span class="math-inline">\(^{-1}\)</span>:</p>
+<ol><li><p>Compute <span class="math-inline">\(\tilde\nu_R(0)\)</span>, <span class="math-inline">\(\tilde\nu_R(5)\)</span>, <span class="math-inline">\(\tilde\nu_P(1)\)</span>, and <span class="math-inline">\(\tilde\nu_P(6)\)</span> from Eq. <a href="../chapter-08/index.html#eq-eq-spec-real-branches">(8.12)</a>.</p></li><li><p>Use Eq. <a href="../chapter-08/index.html#eq-eq-spec-band-head">(8.13)</a> to estimate whether a band head appears in the observed <span class="math-inline">\(J\)</span> range.</p></li><li><p>Compare with the equal-spacing prediction of Eq. <a href="../chapter-08/index.html#eq-eq-spec-branches">(8.11)</a>.</p></li></ol></li><li><p><strong>Raman thermometry.</strong> A Raman spectrum collected with <span class="math-inline">\(\tilde\nu_0=18797\)</span> cm<span class="math-inline">\(^{-1}\)</span> (532 nm laser) shows a mode at <span class="math-inline">\(\tilde\nu_v=1000\)</span> cm<span class="math-inline">\(^{-1}\)</span> with <span class="math-inline">\(I_{\mathrm{AS}}/I_{\mathrm{S}}=0.11\)</span>. Estimate the sample temperature using Eq. <a href="../chapter-08/index.html#eq-eq-spec-stokes-ratio">(8.16)</a>.</p></li></ol>
+<h2 id="sec-8-project-the-normal-modes-of-co-2-2"><span class="sec-number">8.8</span>Project: The Normal Modes of CO<span class="math-inline">\(_2\)</span></h2>
+<p><strong>The problem.</strong> Compute the normal modes of CO<span class="math-inline">\(_2\)</span> from a ball-and-spring model and predict which are infrared active. This is the classical normal-mode analysis that underlies the quantum result, and it is an eigenvalue problem.</p>
+<p>Model the molecule as three masses on a line — <span class="math-inline">\(m_\mathrm{O}\)</span>, <span class="math-inline">\(m_\mathrm{C}\)</span>, <span class="math-inline">\(m_\mathrm{O}\)</span> — joined by two identical springs of constant <span class="math-inline">\(k\)</span>. Restrict attention to motion <em>along</em> the axis, which captures the two stretches; the bend needs the perpendicular coordinates.</p>
+<ol><li><p><strong>On paper.</strong> Write Newton's equations for the three axial displacements <span class="math-inline">\(x_1,x_2,x_3\)</span>. Put them in the form <span class="math-inline">\(\ddot{\vec x}=-\mathbf{M}^{-1}\mathbf{K}\vec x\)</span> and write both <span class="math-inline">\(3\times3\)</span> matrices out explicitly.</p></li><li><p><strong>On paper.</strong> Find the three eigenvalues by hand. One is zero: identify which motion it is and explain why it <em>must</em> be there. Show that the other two are</p>
+<div class="math-block">\[
+	\omega_1^{2}=\frac{k}{m_\mathrm{O}},
+	\qquad
+	\omega_3^{2}=k\left(\frac{1}{m_\mathrm{O}}+\frac{2}{m_\mathrm{C}}\right),
+	\]</div>
+<p>and identify which is the symmetric and which the antisymmetric stretch.</p></li><li><p><strong>On paper.</strong> Show from these that <span class="math-inline">\(\omega_3&gt;\omega_1\)</span> always, and compute the predicted ratio <span class="math-inline">\(\omega_3/\omega_1\)</span> using <span class="math-inline">\(m_\mathrm{O}=16\)</span> and <span class="math-inline">\(m_\mathrm{C}=12\)</span> u. Compare with the measured <span class="math-inline">\(2349/1333=1.76\)</span>.</p></li><li><p><strong>On the computer.</strong> Diagonalise the matrix numerically and confirm your eigenvalues and eigenvectors. Choose <span class="math-inline">\(k\)</span> so the antisymmetric mode comes out at <span class="math-inline">\(2349\)</span> cm<span class="math-inline">\(^{-1}\)</span>, then report what the model predicts for the symmetric stretch. Comment on the discrepancy with (c): what has a two-spring model left out?</p></li><li><p><strong>On the computer.</strong> For each mode compute the dipole moment as a function of time, assigning charges <span class="math-inline">\(-q,+2q,-q\)</span> and summing <span class="math-inline">\(\sum_iq_ix_i(t)\)</span>. Plot both. One should oscillate and the other be identically zero, reproducing Example <a href="../chapter-08/index.html#example-ex-spec-co2-symmetric">8.5.1</a> numerically rather than by symmetry argument.</p></li><li><p><strong>What has to move.</strong> One animation per stretching mode: the three atoms oscillating with the relative amplitudes and phases from your eigenvectors, with the instantaneous dipole drawn as an arrow beneath. The arrow should stay dead at zero for the symmetric mode and swing for the antisymmetric one. That contrast is the whole of infrared selection rules in one figure.</p></li></ol>
+<p><strong>The check.</strong> The zero eigenvalue in (b) is the test that your matrices are right: rigid translation of the whole molecule costs no energy, so it <em>must</em> appear as a zero mode. If it does not come out exactly zero numerically, your force-constant matrix has an error — each of its rows must sum to zero.</p>
+<p><strong>Be ready to answer.</strong> Your part (e) shows the symmetric stretch has no oscillating dipole and so cannot absorb infrared light. Yet the mode exists and carries energy. How would you detect it experimentally, and what property of the molecule does that technique couple to instead?</p>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <a href="../chapter-07/index.html">Previous: Molecular Structure, Vibration and Rotation</a>
+      <a href="../../toc.html">Contents</a>
+      <a href="../chapter-09/index.html">Next: Electronic Spectroscopy</a>
+    </nav>
+  </article>
+</main>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p>&copy; 2026 Erfan Saydanzad. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

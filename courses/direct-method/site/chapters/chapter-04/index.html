@@ -1,0 +1,751 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 4: The Hydrogen Atom | Direct Method</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+  <link rel="preload" href="../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../assets/css/site.css?v=db81423d">
+  <script>
+    window.MathJax = {
+      // tagformat is an optional TeX extension, not part of the combined
+      // tex-chtml build. Without these two lines the tagformat block below is
+      // read and silently ignored, and every equation numbers from 1 with no
+      // chapter in front of it.
+      loader: { load: ['[tex]/tagformat'] },
+      tex: {
+        packages: { '[+]': ['tagformat'] },
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        processEnvironments: true,
+        tags: 'ams',
+        // The PDF numbers equations within the chapter (\numberwithin
+        // {equation}{chapter}), so "1.8" is the eighth equation of
+        // chapter 1. MathJax counts from 1 on every page, which would have
+        // shown that same equation as "8". Prefixing the chapter number
+        // keeps a reference valid against either version.
+        tagformat: {
+          number: function (n) { return '4.' + n; }
+        },
+        macros: {
+          pdv: ['{\\frac{\\partial #1}{\\partial #2}}', 2],
+          dv: ['{\\frac{d #1}{d #2}}', 2],
+          abs: ['{\\left|#1\\right|}', 1],
+          norm: ['{\\left\\|#1\\right\\|}', 1],
+          curl: '{\\vec{\\nabla}\\times}',
+          div: '{\\vec{\\nabla}\\cdot}',
+          grad: '{\\vec{\\nabla}}',
+          sech: '{\\operatorname{sech}}',
+          csch: '{\\operatorname{csch}}',
+          coth: '{\\operatorname{coth}}',
+          circnum: ['{\\boxed{#1}}', 1],
+          vb: ['{\\mathbf{#1}}', 1],
+          eval: ['{\\left.#1\\right|}', 1],
+          dd: '{\\,d}',
+          // Dirac notation. The chapters are written with the physics
+          // package, which MathJax does not have, so every bra-ket command
+          // the notes use has to be defined here or it renders as red text.
+          // \braket is always given two arguments in these sources.
+          ket: ['{\\left|#1\\right\\rangle}', 1],
+          bra: ['{\\left\\langle#1\\right|}', 1],
+          braket: ['{\\left\\langle#1\\middle|#2\\right\\rangle}', 2],
+          ketbra: ['{\\left|#1\\right\\rangle\\!\\left\\langle#2\\right|}', 2],
+          dyad: ['{\\left|#1\\right\\rangle\\!\\left\\langle#2\\right|}', 2],
+          op: ['{\\left|#1\\right\\rangle\\!\\left\\langle#1\\right|}', 1],
+          mel: ['{\\left\\langle#1\\right|#2\\left|#3\\right\\rangle}', 3],
+          expval: ['{\\left\\langle#1\\right\\rangle}', 1],
+          ev: ['{\\left\\langle#1\\right\\rangle}', 1],
+          comm: ['{\\left[#1,#2\\right]}', 2],
+          acomm: ['{\\left\\{#1,#2\\right\\}}', 2],
+          anticommutator: ['{\\left\\{#1,#2\\right\\}}', 2],
+          Tr: '{\\operatorname{Tr}}',
+          tr: '{\\operatorname{tr}}',
+          bm: ['{\\boldsymbol{#1}}', 1]
+        }
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <script defer src="../../assets/js/main.js?v=db81423d"></script>
+
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="../../index.html">
+    <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M9 6.5V25.5M9 6.5H24M9 25.5H24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 16Q10.5 9.5 15.5 16T25.5 16" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/></svg>
+    <span>Direct Method</span>
+  </a>
+  <nav class="top-nav" aria-label="Primary">
+    <a href="../../index.html">Home</a>
+    <a href="../../toc.html">Contents</a>
+    <a href="../../projects.html">Projects</a>
+  </nav>
+</header>
+<main class="layout" id="main">
+  <aside class="sidebar">
+  <div class="sidebar-inner">
+    <p class="sidebar-kicker">Chapter 4</p>
+    <h2>The Hydrogen Atom</h2>
+    <nav class="chapter-toc" aria-label="Chapter contents">
+      <a class="toc-level-2" href="#sec-4-introduction">4.1 Introduction</a>
+<a class="toc-level-2" href="#sec-4-the-two-body-problem-and-the-reduced-mass">4.2 The Two-Body Problem and the Reduced Mass</a>
+<a class="toc-level-2" href="#sec-4-the-time-independent-schr-odinger-equation">4.3 The Time-Independent Schrödinger Equation</a>
+<a class="toc-level-2" href="#sec-4-separation-of-variables">4.4 Separation of Variables</a>
+<a class="toc-level-3" href="#sec-4-the-angular-equation">The angular equation</a>
+<a class="toc-level-3" href="#sec-4-the-radial-equation">The radial equation</a>
+<a class="toc-level-3" href="#sec-4-reduction-to-one-dimensional-form">4.4.3 Reduction to One-Dimensional Form</a>
+<a class="toc-level-2" href="#sec-4-solving-the-angular-equation">4.5 Solving the Angular Equation</a>
+<a class="toc-level-3" href="#sec-4-the-azimuthal-equation">The azimuthal equation</a>
+<a class="toc-level-3" href="#sec-4-the-polar-equation">The polar equation</a>
+<a class="toc-level-3" href="#sec-4-the-spherical-harmonics">The spherical harmonics</a>
+<a class="toc-level-2" href="#sec-4-solving-the-radial-equation">4.6 Solving the Radial Equation</a>
+<a class="toc-level-3" href="#sec-4-step-1-the-asymptotic-behaviour">Step 1: the asymptotic behaviour</a>
+<a class="toc-level-3" href="#sec-4-step-2-strip-out-both-limits">Step 2: strip out both limits</a>
+<a class="toc-level-3" href="#sec-4-step-3-power-series-and-the-recursion-relation">Step 3: power series and the recursion relation</a>
+<a class="toc-level-3" href="#sec-4-step-4-the-series-must-terminate">Step 4: the series must terminate</a>
+<a class="toc-level-3" href="#sec-4-step-5-the-energy">Step 5: the energy</a>
+<a class="toc-level-3" href="#sec-4-step-6-the-radial-functions">Step 6: the radial functions</a>
+<a class="toc-level-2" href="#sec-4-the-complete-solution">4.7 The Complete Solution</a>
+<a class="toc-level-3" href="#sec-4-degeneracy">4.7.1 Degeneracy</a>
+<a class="toc-level-3" href="#sec-4-expectation-values-and-the-size-of-an-orbital">4.7.2 Expectation Values and the Size of an Orbital</a>
+<a class="toc-level-2" href="#sec-4-atomic-units">4.8 Atomic Units</a>
+<a class="toc-level-2" href="#sec-4-rydberg-states">4.9 Rydberg States</a>
+<a class="toc-level-2" href="#sec-4-summary">4.10 Summary</a>
+<a class="toc-level-2" href="#sec-4-exercises">4.11 Exercises</a>
+<a class="toc-level-2" href="#sec-4-project-hydrogen-numerically-and-exactly">4.12 Project: Hydrogen, Numerically and Exactly</a>
+    </nav>
+  </div>
+</aside>
+
+  <article class="content">
+    <header class="chapter-hero">
+      <p>Chapter 4</p>
+      <h1>The Hydrogen Atom</h1>
+    </header>
+    <h2 id="sec-4-introduction"><span class="sec-number">4.1</span>Introduction</h2>
+<p>The hydrogen atom is the only atom whose Schrödinger equation can be solved exactly in closed form. That makes this chapter the analytical centre of the whole course: every atom and molecule that follows is described by saying how it differs from this solution.</p>
+<p>We will carry the calculation out completely. The two-body problem is reduced to one body, the Laplacian is written in spherical coordinates, the variables are separated, both resulting ordinary differential equations are solved, and the quantization of the energy is obtained from the requirement that the radial solution remain finite. The complete normalized wave functions and the energy spectrum are collected in Sec. <a href="../chapter-04/index.html#sec-4-the-complete-solution">4.7</a>.</p>
+<h2 id="sec-4-the-two-body-problem-and-the-reduced-mass"><span class="sec-number">4.2</span>The Two-Body Problem and the Reduced Mass</h2>
+<p>A hydrogen atom is an electron of mass <span class="math-inline">\(m_e\)</span> and charge <span class="math-inline">\(-e\)</span> at position <span class="math-inline">\(\vec r_e\)</span>, and a proton of mass <span class="math-inline">\(m_p\)</span> and charge <span class="math-inline">\(+e\)</span> at <span class="math-inline">\(\vec r_p\)</span>. The Hamiltonian is</p>
+<div class="math-block" id="eq-eq-h-two-body">\begin{equation}
+	\label{eq:H-two-body}
+	\hat H=-\frac{\hbar^{2}}{2m_e}\nabla_e^{2}
+	-\frac{\hbar^{2}}{2m_p}\nabla_p^{2}
+	-\frac{e^{2}}{4\pi\epsilon_0|\vec r_e-\vec r_p|} .
+\end{equation}</div>
+<p>Introduce centre-of-mass and relative coordinates,</p>
+<div class="math-block" id="eq-eq-h-coords">\begin{equation}
+	\label{eq:H-coords}
+	\vec R=\frac{m_e\vec r_e+m_p\vec r_p}{m_e+m_p},
+	\qquad
+	\vec r=\vec r_e-\vec r_p ,
+\end{equation}</div>
+<p>and define the total and reduced masses</p>
+<div class="math-block" id="eq-eq-h-masses">\begin{equation}
+	\label{eq:H-masses}
+	M=m_e+m_p,
+	\qquad
+	\boxed{\;\mu=\frac{m_em_p}{m_e+m_p}\;}
+\end{equation}</div>
+<p>In these coordinates the kinetic energy separates exactly,</p>
+<div class="math-block" id="eq-eq-h-separated-kinetic">\begin{equation}
+	\label{eq:H-separated-kinetic}
+	-\frac{\hbar^{2}}{2m_e}\nabla_e^{2}-\frac{\hbar^{2}}{2m_p}\nabla_p^{2}
+	=-\frac{\hbar^{2}}{2M}\nabla_R^{2}-\frac{\hbar^{2}}{2\mu}\nabla_r^{2},
+\end{equation}</div>
+<p>and the potential depends on <span class="math-inline">\(\vec r\)</span> alone. Writing <span class="math-inline">\(\Psi=\Phi(\vec R)\psi(\vec r)\)</span> therefore separates the problem: <span class="math-inline">\(\Phi\)</span> is a free particle of mass <span class="math-inline">\(M\)</span> (the atom as a whole drifting through space, which we discard) and <span class="math-inline">\(\psi\)</span> obeys a one-body equation.</p>
+<div class="math-block" id="eq-eq-h-hamiltonian-si">\begin{equation}
+	\label{eq:H-hamiltonian-SI}
+	\boxed{\;
+		\hat H=-\frac{\hbar^{2}}{2\mu}\nabla^{2}+V(r),
+		\qquad
+		V(r)=-\frac{Ze^{2}}{4\pi\epsilon_0 r}\;}
+\end{equation}</div>
+<p>where we have allowed a nuclear charge <span class="math-inline">\(Ze\)</span> so that the result covers He<span class="math-inline">\(^{+}\)</span>, Li<span class="math-inline">\(^{2+}\)</span> and so on; for hydrogen <span class="math-inline">\(Z=1\)</span>.</p>
+<p>Numerically, <span class="math-inline">\(m_p/m_e=1836.15\)</span>, so</p>
+<div class="math-block" id="eq-eq-h-mu-number">\begin{equation}
+	\label{eq:H-mu-number}
+	\mu=\frac{m_e}{1+m_e/m_p}=m_e\left(1-\frac{1}{1837.15}\right)
+	=0.999456\,m_e .
+\end{equation}</div>
+<p>The correction is <span class="math-inline">\(5.4\times10^{-4}\)</span> — small, but large enough to be measured, and it is the origin of the isotope shift between hydrogen and deuterium.</p>
+<h2 id="sec-4-the-time-independent-schr-odinger-equation"><span class="sec-number">4.3</span>The Time-Independent Schrödinger Equation</h2>
+<p>We solve <span class="math-inline">\(\hat H\psi=E\psi\)</span>, that is</p>
+<div class="math-block" id="eq-eq-h-tise">\begin{equation}
+	\label{eq:H-TISE}
+	\left[-\frac{\hbar^{2}}{2\mu}\nabla^{2}
+	-\frac{Ze^{2}}{4\pi\epsilon_0 r}\right]\psi(r,\theta,\varphi)
+	=E\,\psi(r,\theta,\varphi).
+\end{equation}</div>
+<p>Because <span class="math-inline">\(V\)</span> depends only on <span class="math-inline">\(r\)</span>, spherical coordinates are the natural choice. The Laplacian in spherical coordinates is</p>
+<div class="math-block" id="eq-eq-h-laplacian">\begin{equation}
+	\label{eq:H-laplacian}
+	\nabla^{2}
+	=\frac{1}{r^{2}}\frac{\partial}{\partial r}
+	\!\left(r^{2}\frac{\partial}{\partial r}\right)
+	+\frac{1}{r^{2}\sin\theta}\frac{\partial}{\partial\theta}
+	\!\left(\sin\theta\frac{\partial}{\partial\theta}\right)
+	+\frac{1}{r^{2}\sin^{2}\theta}\frac{\partial^{2}}{\partial\varphi^{2}} .
+\end{equation}</div>
+<p>Substituting Eq. <a href="../chapter-04/index.html#eq-eq-h-laplacian">(4.8)</a> into Eq. <a href="../chapter-04/index.html#eq-eq-h-tise">(4.7)</a> gives the equation in full:</p>
+<div class="math-block" id="eq-eq-h-tise-full">\begin{equation}
+	\label{eq:H-TISE-full}
+	\begin{aligned}
+		-\frac{\hbar^{2}}{2\mu}
+		\Biggl[
+		&amp;\frac{1}{r^{2}}\frac{\partial}{\partial r}
+		\!\left(r^{2}\frac{\partial\psi}{\partial r}\right)
+		+\frac{1}{r^{2}\sin\theta}\frac{\partial}{\partial\theta}
+		\!\left(\sin\theta\frac{\partial\psi}{\partial\theta}\right)\\
+		&amp;+\frac{1}{r^{2}\sin^{2}\theta}
+		\frac{\partial^{2}\psi}{\partial\varphi^{2}}
+		\Biggr]
+		-\frac{Ze^{2}}{4\pi\epsilon_0 r}\,\psi=E\,\psi .
+	\end{aligned}
+\end{equation}</div>
+<p>Comparing Eq. <a href="../chapter-04/index.html#eq-eq-h-laplacian">(4.8)</a> with the operator <span class="math-inline">\(\hat L^{2}\)</span> of Chapter 3, Eq. <a href="../chapter-03/index.html#eq-eq-am-l2-spherical">(3.31)</a>, the two angular terms are precisely <span class="math-inline">\(-\hat L^{2}/\hbar^{2}r^{2}\)</span>. So Eq. <a href="../chapter-04/index.html#eq-eq-h-laplacian">(4.8)</a> can be written compactly as</p>
+<div class="math-block" id="eq-eq-h-laplacian-l2">\begin{equation}
+	\label{eq:H-laplacian-L2}
+	\nabla^{2}=\frac{1}{r^{2}}\frac{\partial}{\partial r}
+	\!\left(r^{2}\frac{\partial}{\partial r}\right)
+	-\frac{\hat L^{2}}{\hbar^{2}r^{2}} ,
+\end{equation}</div>
+<p>which is the form that makes the separation transparent.</p>
+<h2 id="sec-4-separation-of-variables"><span class="sec-number">4.4</span>Separation of Variables</h2>
+<p>Assume a product solution,</p>
+<div class="math-block" id="eq-eq-h-product">\begin{equation}
+	\label{eq:H-product}
+	\psi(r,\theta,\varphi)=R(r)\,Y(\theta,\varphi).
+\end{equation}</div>
+<p>Substitute Eq. <a href="../chapter-04/index.html#eq-eq-h-product">(4.11)</a> into Eq. <a href="../chapter-04/index.html#eq-eq-h-tise-full">(4.9)</a>. The radial derivative acts only on <span class="math-inline">\(R\)</span> and the angular derivatives only on <span class="math-inline">\(Y\)</span>, so</p>
+<div class="math-block" id="eq-eq-h-sep-step1">\begin{equation}
+	\label{eq:H-sep-step1}
+	-\frac{\hbar^{2}}{2\mu}
+	\left[
+	\frac{Y}{r^{2}}\frac{d}{dr}\!\left(r^{2}\frac{dR}{dr}\right)
+	+\frac{R}{r^{2}}\,\Lambda Y
+	\right]
+	-\frac{Ze^{2}}{4\pi\epsilon_0 r}RY=E\,RY ,
+\end{equation}</div>
+<p>where for brevity</p>
+<div class="math-block" id="eq-eq-h-angular-operator">\begin{equation}
+	\label{eq:H-angular-operator}
+	\Lambda Y\equiv
+	\frac{1}{\sin\theta}\frac{\partial}{\partial\theta}
+	\!\left(\sin\theta\frac{\partial Y}{\partial\theta}\right)
+	+\frac{1}{\sin^{2}\theta}\frac{\partial^{2}Y}{\partial\varphi^{2}} .
+\end{equation}</div>
+<p>Now multiply Eq. <a href="../chapter-04/index.html#eq-eq-h-sep-step1">(4.12)</a> through by <span class="math-inline">\(-\dfrac{2\mu r^{2}}{\hbar^{2}RY}\)</span> and rearrange so that all <span class="math-inline">\(r\)</span> dependence is on the left and all angular dependence on the right:</p>
+<div class="math-block" id="eq-eq-h-sep-step2">\begin{equation}
+	\label{eq:H-sep-step2}
+	\underbrace{
+		\frac{1}{R}\frac{d}{dr}\!\left(r^{2}\frac{dR}{dr}\right)
+		+\frac{2\mu r^{2}}{\hbar^{2}}
+		\left[E+\frac{Ze^{2}}{4\pi\epsilon_0 r}\right]
+	}_{\text{function of } r \text{ only}}
+	=
+	\underbrace{
+		-\frac{\Lambda Y}{Y}
+	}_{\text{function of } \theta,\varphi \text{ only}} .
+\end{equation}</div>
+<p>A function of <span class="math-inline">\(r\)</span> can equal a function of <span class="math-inline">\((\theta,\varphi)\)</span> for all values of all three variables only if both are the same constant. Call that <em>separation constant</em> <span class="math-inline">\(l(l+1)\)</span> — a choice of name, justified in Sec. <a href="../chapter-04/index.html#sec-4-solving-the-angular-equation">4.5</a> when the constant turns out to be forced into exactly that form. Equation <a href="../chapter-04/index.html#eq-eq-h-sep-step2">(4.14)</a> then splits into two ordinary differential equations.</p>
+<h3 id="sec-4-the-angular-equation">The angular equation</h3>
+<div class="math-block" id="eq-eq-h-angular-eq">\begin{equation}
+	\label{eq:H-angular-eq}
+	\frac{1}{\sin\theta}\frac{\partial}{\partial\theta}
+	\!\left(\sin\theta\frac{\partial Y}{\partial\theta}\right)
+	+\frac{1}{\sin^{2}\theta}\frac{\partial^{2}Y}{\partial\varphi^{2}}
+	+l(l+1)\,Y=0 .
+\end{equation}</div>
+<h3 id="sec-4-the-radial-equation">The radial equation</h3>
+<div class="math-block" id="eq-eq-h-radial-eq">\begin{equation}
+	\label{eq:H-radial-eq}
+	\frac{1}{r^{2}}\frac{d}{dr}\!\left(r^{2}\frac{dR}{dr}\right)
+	+\left[\frac{2\mu}{\hbar^{2}}\bigl(E-V(r)\bigr)
+	-\frac{l(l+1)}{r^{2}}\right]R=0 .
+\end{equation}</div>
+<p>Notice what the separation has achieved: the potential appears <em>only</em> in the radial equation. Equation <a href="../chapter-04/index.html#eq-eq-h-angular-eq">(4.15)</a> contains no reference to <span class="math-inline">\(V\)</span>, so its solutions are the same for <em>every</em> central potential. They are solved once, in Sec. <a href="../chapter-04/index.html#sec-4-solving-the-angular-equation">4.5</a>, and reused for every atom in this book.</p>
+<h3 id="sec-4-reduction-to-one-dimensional-form"><span class="sec-number">4.4.3</span>Reduction to One-Dimensional Form</h3>
+<p>The radial equation <a href="../chapter-04/index.html#eq-eq-h-radial-eq">(4.16)</a> has a first-derivative term, which is inconvenient. It is removed by the substitution</p>
+<div class="math-block" id="eq-eq-h-u-def">\begin{equation}
+	\label{eq:H-u-def}
+	\boxed{\;U(r)=r\,R(r)\;}
+\end{equation}</div>
+<p>Let us verify this explicitly, since the manipulation recurs throughout the book. From <span class="math-inline">\(R=U/r\)</span>,</p>
+<div class="math-block" id="eq-eq-h-u-step1">\begin{equation}
+	\label{eq:H-u-step1}
+	\frac{dR}{dr}=\frac{1}{r}\frac{dU}{dr}-\frac{U}{r^{2}},
+	\qquad\text{so}\qquad
+	r^{2}\frac{dR}{dr}=r\frac{dU}{dr}-U .
+\end{equation}</div>
+<p>Differentiating again,</p>
+<div class="math-block" id="eq-eq-h-u-step2">\begin{equation}
+	\label{eq:H-u-step2}
+	\frac{d}{dr}\!\left(r^{2}\frac{dR}{dr}\right)
+	=\frac{dU}{dr}+r\frac{d^{2}U}{dr^{2}}-\frac{dU}{dr}
+	=r\frac{d^{2}U}{dr^{2}} .
+\end{equation}</div>
+<p>Substituting Eq. <a href="../chapter-04/index.html#eq-eq-h-u-step2">(4.19)</a> into Eq. <a href="../chapter-04/index.html#eq-eq-h-radial-eq">(4.16)</a> and multiplying by <span class="math-inline">\(r\)</span> gives the result:</p>
+<div class="math-block" id="eq-eq-h-radial-1d">\begin{equation}
+	\label{eq:H-radial-1D}
+	\boxed{\;
+		-\frac{\hbar^{2}}{2\mu}\frac{d^{2}U}{dr^{2}}
+		+\left[V(r)+\frac{\hbar^{2}l(l+1)}{2\mu r^{2}}\right]U
+		=E\,U \;}
+\end{equation}</div>
+<p>This has exactly the form of the one-dimensional Schrödinger equation of Chapter 2, on the half-line <span class="math-inline">\(0&lt;r&lt;\infty\)</span>, with an <em>effective potential</em></p>
+<div class="math-block" id="eq-eq-h-veff">\begin{equation}
+	\label{eq:H-Veff}
+	V_{\mathrm{eff}}(r)=V(r)+\frac{\hbar^{2}l(l+1)}{2\mu r^{2}} .
+\end{equation}</div>
+<p>The added term is the <em>centrifugal barrier</em>: repulsive, and divergent as <span class="math-inline">\(r\to0\)</span> for every <span class="math-inline">\(l&gt;0\)</span>.</p>
+<p>The boundary condition is <span class="math-inline">\(U(0)=0\)</span>, which follows from requiring <span class="math-inline">\(R=U/r\)</span> to remain finite at the origin.</p>
+<h2 id="sec-4-solving-the-angular-equation"><span class="sec-number">4.5</span>Solving the Angular Equation</h2>
+<p>Equation <a href="../chapter-04/index.html#eq-eq-h-angular-eq">(4.15)</a> separates once more. Write</p>
+<div class="math-block" id="eq-eq-h-y-product">\begin{equation}
+	\label{eq:H-Y-product}
+	Y(\theta,\varphi)=\Theta(\theta)\,\Phi(\varphi),
+\end{equation}</div>
+<p>substitute, and multiply by <span class="math-inline">\(\sin^{2}\theta/\Theta\Phi\)</span>:</p>
+<div class="math-block" id="eq-eq-h-theta-phi-sep">\begin{equation}
+	\label{eq:H-theta-phi-sep}
+	\underbrace{
+		\frac{\sin\theta}{\Theta}\frac{d}{d\theta}
+		\!\left(\sin\theta\frac{d\Theta}{d\theta}\right)
+		+l(l+1)\sin^{2}\theta
+	}_{\theta \text{ only}}
+	=
+	\underbrace{
+		-\frac{1}{\Phi}\frac{d^{2}\Phi}{d\varphi^{2}}
+	}_{\varphi \text{ only}}
+	\equiv m^{2} ,
+\end{equation}</div>
+<p>introducing a second separation constant, written <span class="math-inline">\(m^{2}\)</span> in anticipation.</p>
+<h3 id="sec-4-the-azimuthal-equation">The azimuthal equation</h3>
+<div class="math-block" id="eq-eq-h-phi-eq">\begin{equation}
+	\label{eq:H-phi-eq}
+	\frac{d^{2}\Phi}{d\varphi^{2}}=-m^{2}\Phi
+	\qquad\Longrightarrow\qquad
+	\Phi(\varphi)=\frac{1}{\sqrt{2\pi}}e^{im\varphi} .
+\end{equation}</div>
+<p>The physical requirement is that <span class="math-inline">\(\Phi\)</span> be single-valued: rotating by <span class="math-inline">\(2\pi\)</span> returns to the same point in space, so <span class="math-inline">\(\Phi(\varphi+2\pi)=\Phi(\varphi)\)</span>. This requires <span class="math-inline">\(e^{2\pi im}=1\)</span>, hence</p>
+<div class="math-block" id="eq-eq-h-m-integer">\begin{equation}
+	\label{eq:H-m-integer}
+	m=0,\pm1,\pm2,\dots
+\end{equation}</div>
+<p><em>This is where quantization first enters</em>, and it comes from a boundary condition, not from any postulate.</p>
+<h3 id="sec-4-the-polar-equation">The polar equation</h3>
+<p>With <span class="math-inline">\(x=\cos\theta\)</span>, Eq. <a href="../chapter-04/index.html#eq-eq-h-theta-phi-sep">(4.23)</a> becomes the <em>associated Legendre equation</em></p>
+<div class="math-block" id="eq-eq-h-legendre">\begin{equation}
+	\label{eq:H-legendre}
+	\frac{d}{dx}\!\left[(1-x^{2})\frac{d\Theta}{dx}\right]
+	+\left[l(l+1)-\frac{m^{2}}{1-x^{2}}\right]\Theta=0 .
+\end{equation}</div>
+<p>Solving this by power series — the same technique applied to the radial equation in Sec. <a href="../chapter-04/index.html#sec-4-solving-the-radial-equation">4.6</a> — gives solutions that remain finite at <span class="math-inline">\(x=\pm1\)</span> (that is, at the poles <span class="math-inline">\(\theta=0,\pi\)</span>) <em>only if</em></p>
+<div class="math-block" id="eq-eq-h-l-m-values">\begin{equation}
+	\label{eq:H-l-m-values}
+	l=0,1,2,\dots
+	\qquad\text{and}\qquad
+	|m|\le l .
+\end{equation}</div>
+<p>This is why the separation constant was written <span class="math-inline">\(l(l+1)\)</span>: the condition for a finite solution forces it into that form with integer <span class="math-inline">\(l\)</span>. The solutions are the <em>associated Legendre polynomials</em> <span class="math-inline">\(P_l^{m}(x)\)</span>, given by</p>
+<div class="math-block" id="eq-eq-h-legendre-poly">\begin{equation}
+	\label{eq:H-legendre-poly}
+	P_l^{m}(x)=(1-x^{2})^{|m|/2}
+	\left(\frac{d}{dx}\right)^{|m|}P_l(x),
+	\qquad
+	P_l(x)=\frac{1}{2^{l}l!}\left(\frac{d}{dx}\right)^{l}(x^{2}-1)^{l},
+\end{equation}</div>
+<p>the second expression being Rodrigues' formula for the ordinary Legendre polynomials.</p>
+<h3 id="sec-4-the-spherical-harmonics">The spherical harmonics</h3>
+<p>Combining and normalising on the unit sphere gives the standard result.</p>
+<div class="math-block" id="eq-eq-h-ylm">\begin{equation}
+	\label{eq:H-Ylm}
+	\boxed{\;
+		Y_l^{m}(\theta,\varphi)
+		=\sqrt{\frac{(2l+1)}{4\pi}\frac{(l-|m|)!}{(l+|m|)!}}\;
+		P_l^{m}(\cos\theta)\,e^{im\varphi}\;}
+\end{equation}</div>
+<p>orthonormal in the sense</p>
+<div class="math-block" id="eq-eq-h-ylm-ortho">\begin{equation}
+	\label{eq:H-Ylm-ortho}
+	\int_{0}^{2\pi}\!\!\int_{0}^{\pi}
+	Y_{l&#x27;}^{m&#x27;*}\,Y_{l}^{m}\,\sin\theta\,d\theta\,d\varphi
+	=\delta_{ll&#x27;}\delta_{mm&#x27;} .
+\end{equation}</div>
+<p>The lowest few, written out:</p>
+<div class="math-block" id="eq-eq-h-ylm-table">\begin{equation}
+	\label{eq:H-Ylm-table}
+	\begin{aligned}
+		Y_0^{0}&amp;=\frac{1}{\sqrt{4\pi}}, &amp;
+		Y_1^{0}&amp;=\sqrt{\frac{3}{4\pi}}\cos\theta, &amp;
+		Y_1^{\pm1}&amp;=\mp\sqrt{\frac{3}{8\pi}}\sin\theta\,e^{\pm i\varphi},\\[4pt]
+		Y_2^{0}&amp;=\sqrt{\frac{5}{16\pi}}(3\cos^{2}\theta-1), &amp;
+		Y_2^{\pm1}&amp;=\mp\sqrt{\frac{15}{8\pi}}\sin\theta\cos\theta\,e^{\pm i\varphi}, &amp;
+		Y_2^{\pm2}&amp;=\sqrt{\frac{15}{32\pi}}\sin^{2}\theta\,e^{\pm2i\varphi}.
+	\end{aligned}
+\end{equation}</div>
+<p>Comparing Eq. <a href="../chapter-04/index.html#eq-eq-h-angular-eq">(4.15)</a> with Eq. <a href="../chapter-03/index.html#eq-eq-am-l2-spherical">(3.31)</a> of Chapter 3 identifies what has been solved: the angular equation is the eigenvalue equation for <span class="math-inline">\(\hat L^{2}\)</span>, and Eq. <a href="../chapter-04/index.html#eq-eq-h-l-m-values">(4.27)</a> is the spectrum obtained there by algebra alone. The two routes agree, as they must.</p>
+<h2 id="sec-4-solving-the-radial-equation"><span class="sec-number">4.6</span>Solving the Radial Equation</h2>
+<p>Now put the Coulomb potential into Eq. <a href="../chapter-04/index.html#eq-eq-h-radial-1d">(4.20)</a>:</p>
+<div class="math-block" id="eq-eq-h-radial-coulomb">\begin{equation}
+	\label{eq:H-radial-coulomb}
+	-\frac{\hbar^{2}}{2\mu}\frac{d^{2}U}{dr^{2}}
+	+\left[-\frac{Ze^{2}}{4\pi\epsilon_0 r}
+	+\frac{\hbar^{2}l(l+1)}{2\mu r^{2}}\right]U=E\,U .
+\end{equation}</div>
+<p>We seek <em>bound</em> states, <span class="math-inline">\(E&lt;0\)</span>. Define</p>
+<div class="math-block" id="eq-eq-h-kappa">\begin{equation}
+	\label{eq:H-kappa}
+	\kappa=\frac{\sqrt{-2\mu E}}{\hbar}
+	\qquad\text{(real and positive for } E&lt;0),
+\end{equation}</div>
+<p>and the dimensionless variable and parameter</p>
+<div class="math-block" id="eq-eq-h-rho">\begin{equation}
+	\label{eq:H-rho}
+	\rho=\kappa r,
+	\qquad
+	\rho_0=\frac{\mu Ze^{2}}{2\pi\epsilon_0\hbar^{2}\kappa} .
+\end{equation}</div>
+<p>Dividing Eq. <a href="../chapter-04/index.html#eq-eq-h-radial-coulomb">(4.32)</a> by <span class="math-inline">\(E\)</span> and rewriting in terms of <span class="math-inline">\(\rho\)</span> gives the equation in its cleanest form:</p>
+<div class="math-block" id="eq-eq-h-radial-dimensionless">\begin{equation}
+	\label{eq:H-radial-dimensionless}
+	\frac{d^{2}U}{d\rho^{2}}
+	=\left[1-\frac{\rho_0}{\rho}+\frac{l(l+1)}{\rho^{2}}\right]U .
+\end{equation}</div>
+<h3 id="sec-4-step-1-the-asymptotic-behaviour">Step 1: the asymptotic behaviour</h3>
+<p>As <span class="math-inline">\(\rho\to\infty\)</span> the bracket tends to <span class="math-inline">\(1\)</span>, so <span class="math-inline">\(d^{2}U/d\rho^{2}\to U\)</span>, giving <span class="math-inline">\(U\sim e^{\pm\rho}\)</span>. The growing solution is not normalizable, so</p>
+<div class="math-block" id="eq-eq-h-asymptotic-large">\begin{equation}
+	\label{eq:H-asymptotic-large}
+	U\longrightarrow e^{-\rho}
+	\qquad (\rho\to\infty).
+\end{equation}</div>
+<p>As <span class="math-inline">\(\rho\to0\)</span> the <span class="math-inline">\(l(l+1)/\rho^{2}\)</span> term dominates, so <span class="math-inline">\(d^{2}U/d\rho^{2}\simeq l(l+1)U/\rho^{2}\)</span>, whose solutions are <span class="math-inline">\(U\sim\rho^{l+1}\)</span> and <span class="math-inline">\(U\sim\rho^{-l}\)</span>. The second violates <span class="math-inline">\(U(0)=0\)</span>, so</p>
+<div class="math-block" id="eq-eq-h-asymptotic-small">\begin{equation}
+	\label{eq:H-asymptotic-small}
+	U\longrightarrow \rho^{l+1}
+	\qquad (\rho\to0).
+\end{equation}</div>
+<h3 id="sec-4-step-2-strip-out-both-limits">Step 2: strip out both limits</h3>
+<p>Write</p>
+<div class="math-block" id="eq-eq-h-v-def">\begin{equation}
+	\label{eq:H-v-def}
+	U(\rho)=\rho^{l+1}e^{-\rho}\,v(\rho),
+\end{equation}</div>
+<p>which builds in both asymptotic forms and leaves <span class="math-inline">\(v\)</span> to be found. Substituting into Eq. <a href="../chapter-04/index.html#eq-eq-h-radial-dimensionless">(4.35)</a> and simplifying gives</p>
+<div class="math-block" id="eq-eq-h-v-equation">\begin{equation}
+	\label{eq:H-v-equation}
+	\rho\frac{d^{2}v}{d\rho^{2}}
+	+2(l+1-\rho)\frac{dv}{d\rho}
+	+\bigl[\rho_0-2(l+1)\bigr]v=0 .
+\end{equation}</div>
+<h3 id="sec-4-step-3-power-series-and-the-recursion-relation">Step 3: power series and the recursion relation</h3>
+<p>Expand</p>
+<div class="math-block" id="eq-eq-h-v-series">\begin{equation}
+	\label{eq:H-v-series}
+	v(\rho)=\sum_{j=0}^{\infty}c_j\rho^{j} .
+\end{equation}</div>
+<p>Substituting into Eq. <a href="../chapter-04/index.html#eq-eq-h-v-equation">(4.39)</a> and collecting the coefficient of <span class="math-inline">\(\rho^{j}\)</span> gives the recursion relation</p>
+<div class="math-block" id="eq-eq-h-recursion">\begin{equation}
+	\label{eq:H-recursion}
+	\boxed{\;
+		c_{j+1}=\frac{2(j+l+1)-\rho_0}{(j+1)(j+2l+2)}\,c_j \;}
+\end{equation}</div>
+<h3 id="sec-4-step-4-the-series-must-terminate">Step 4: the series must terminate</h3>
+<p>For large <span class="math-inline">\(j\)</span>, Eq. <a href="../chapter-04/index.html#eq-eq-h-recursion">(4.41)</a> behaves as <span class="math-inline">\(c_{j+1}\simeq(2/j)c_j\)</span>, which sums to <span class="math-inline">\(v\sim e^{2\rho}\)</span> and hence <span class="math-inline">\(U\sim e^{+\rho}\)</span> — the divergent solution we rejected. The only escape is for the series to <em>stop</em>: there must be a largest power <span class="math-inline">\(j_{\max}\)</span> with <span class="math-inline">\(c_{j_{\max}}\neq0\)</span> and <span class="math-inline">\(c_{j_{\max}+1}=0\)</span>. From Eq. <a href="../chapter-04/index.html#eq-eq-h-recursion">(4.41)</a> that requires</p>
+<div class="math-block" id="eq-eq-h-termination">\begin{equation}
+	\label{eq:H-termination}
+	\rho_0=2(j_{\max}+l+1).
+\end{equation}</div>
+<p>Define the <em>principal quantum number</em></p>
+<div class="math-block" id="eq-eq-h-n-def">\begin{equation}
+	\label{eq:H-n-def}
+	n\equiv j_{\max}+l+1 ,
+	\qquad\text{so}\qquad
+	\rho_0=2n .
+\end{equation}</div>
+<p>Since <span class="math-inline">\(j_{\max}\ge0\)</span> and <span class="math-inline">\(l\ge0\)</span> are integers, <span class="math-inline">\(n\)</span> is a positive integer, and</p>
+<div class="math-block" id="eq-eq-h-l-range">\begin{equation}
+	\label{eq:H-l-range}
+	\boxed{\;n=1,2,3,\dots
+		\qquad\text{and}\qquad
+		l=0,1,\dots,n-1\;}
+\end{equation}</div>
+<p>The restriction <span class="math-inline">\(l\le n-1\)</span> is not imposed — it is forced by <span class="math-inline">\(j_{\max}=n-l-1\ge0\)</span>.</p>
+<h3 id="sec-4-step-5-the-energy">Step 5: the energy</h3>
+<p>Combining <span class="math-inline">\(\rho_0=2n\)</span> with the definitions in Eqs. <a href="../chapter-04/index.html#eq-eq-h-kappa">(4.33)</a> and <a href="../chapter-04/index.html#eq-eq-h-rho">(4.34)</a>,</p>
+<div class="math-block" id="eq-eq-h-kappa-solve">\begin{equation}
+	\label{eq:H-kappa-solve}
+	\frac{\mu Ze^{2}}{2\pi\epsilon_0\hbar^{2}\kappa}=2n
+	\qquad\Longrightarrow\qquad
+	\kappa=\frac{\mu Ze^{2}}{4\pi\epsilon_0\hbar^{2}n}
+	=\frac{Z}{n}\cdot\frac{\mu}{m_e}\cdot\frac{1}{a_0},
+\end{equation}</div>
+<p>where the <em>Bohr radius</em> is</p>
+<div class="math-block" id="eq-eq-h-bohr">\begin{equation}
+	\label{eq:H-bohr}
+	\boxed{\;a_0\equiv\frac{4\pi\epsilon_0\hbar^{2}}{m_e e^{2}}
+		=0.529\,177~\text{\AA}\;}
+\end{equation}</div>
+<section class="callout remark" id="remark-rem-h-reduced-mass-care"><header>Remark 4.6.1 - <span class="math-inline">\(m_e\)</span> or <span class="math-inline">\(\mu\)</span>?</header><p> The length appearing naturally in the derivation above is <span class="math-inline">\(4\pi\epsilon_0\hbar^{2}/\mu e^{2}\)</span>, with the <em>reduced</em> mass. The <em>Bohr radius</em> <span class="math-inline">\(a_0\)</span> is defined by convention with <span class="math-inline">\(m_e\)</span>, as in Eq. <a href="../chapter-04/index.html#eq-eq-h-bohr">(4.46)</a>, and <span class="math-inline">\(0.529\,177\)</span> Å is that value. The two differ by</p>
+<div class="math-block">\[
+	\frac{4\pi\epsilon_0\hbar^{2}/\mu e^{2}}{a_0}=\frac{m_e}{\mu}=1.000545 ,
+	\]</div>
+<p>using Eq. <a href="../chapter-04/index.html#eq-eq-h-mu-number">(4.6)</a> — five parts in ten thousand. We write <span class="math-inline">\(a_0\)</span> throughout and carry <span class="math-inline">\(\mu\)</span> explicitly where it matters, which is exactly the isotope shift noted in Sec. <a href="../chapter-04/index.html#sec-4-the-two-body-problem-and-the-reduced-mass">4.2</a>. Be aware that many texts silently set <span class="math-inline">\(\mu=m_e\)</span> from the outset; the distinction only becomes visible in high-precision spectroscopy.</p></section>
+<p>Then from <span class="math-inline">\(E=-\hbar^{2}\kappa^{2}/2\mu\)</span>,</p>
+<div class="math-block" id="eq-eq-h-energies-si">\begin{equation}
+	\label{eq:H-energies-SI}
+	\boxed{\;
+		E_n=-\frac{\mu Z^{2}e^{4}}{2(4\pi\epsilon_0)^{2}\hbar^{2}}
+		\,\frac{1}{n^{2}}
+		=-\frac{\mu}{m_e}\,\frac{\hbar^{2}Z^{2}}{2m_ea_0^{2}n^{2}} \;}
+\end{equation}</div>
+<p>Setting <span class="math-inline">\(\mu\to m_e\)</span> — the limit of infinite nuclear mass — and <span class="math-inline">\(Z=1\)</span> gives the familiar</p>
+<div class="math-block" id="eq-eq-h-energies-ev">\begin{equation}
+	\label{eq:H-energies-eV}
+	\boxed{\;E_n=-\frac{\mathcal{E}_{\mathrm{Ryd}}}{n^{2}},
+		\qquad
+		\mathcal{E}_{\mathrm{Ryd}}=13.6057~\mathrm{eV}\;}
+\end{equation}</div>
+<p><span class="math-inline">\(\mathcal{E}_{\mathrm{Ryd}}\)</span> is the <em>Rydberg energy</em>, and it is an infinite-mass quantity: for real hydrogen the factor <span class="math-inline">\(\mu/m_e=0.999456\)</span> of Eq. <a href="../chapter-04/index.html#eq-eq-h-mu-number">(4.6)</a> reduces it to <span class="math-inline">\(13.598\)</span> eV, which is the measured ionization energy. The two agree to four significant figures, and we use <span class="math-inline">\(13.606\)</span> eV throughout except where the difference is the point. The levels crowd towards <span class="math-inline">\(E=0\)</span> as <span class="math-inline">\(n\to\infty\)</span>.</p>
+<h3 id="sec-4-step-6-the-radial-functions">Step 6: the radial functions</h3>
+<p>The terminating series <span class="math-inline">\(v(\rho)\)</span> of Eq. <a href="../chapter-04/index.html#eq-eq-h-v-series">(4.40)</a> is, up to normalization, an <em>associated Laguerre polynomial</em> <span class="math-inline">\(L_{n-l-1}^{2l+1}(2\rho)\)</span>, defined by</p>
+<div class="math-block" id="eq-eq-h-laguerre">\begin{equation}
+	\label{eq:H-laguerre}
+	L_{q}^{p}(x)=\frac{e^{x}x^{-p}}{q!}
+	\left(\frac{d}{dx}\right)^{q}\!\left(e^{-x}x^{p+q}\right).
+\end{equation}</div>
+<p>Carrying out the normalization <span class="math-inline">\(\int_0^\infty|R_{nl}|^{2}r^{2}dr=1\)</span> gives the complete result:</p>
+<div class="math-block" id="eq-eq-h-rnl">\begin{equation}
+	\label{eq:H-Rnl}
+	\boxed{\;
+		R_{nl}(r)=
+		\sqrt{\left(\frac{2Z}{na_0}\right)^{3}
+			\frac{(n-l-1)!}{2n\,(n+l)!}}\;
+		e^{-Zr/na_0}
+		\left(\frac{2Zr}{na_0}\right)^{l}
+		L_{n-l-1}^{2l+1}\!\left(\frac{2Zr}{na_0}\right)\;}
+\end{equation}</div>
+<p>For <span class="math-inline">\(Z=1\)</span> the lowest few, written out explicitly, are</p>
+<div class="math-block" id="eq-eq-h-rnl-table">\begin{equation}
+	\label{eq:H-Rnl-table}
+	\begin{aligned}
+		R_{10}&amp;=\frac{2}{a_0^{3/2}}\,e^{-r/a_0},\\[4pt]
+		R_{20}&amp;=\frac{1}{2\sqrt{2}\,a_0^{3/2}}
+		\left(2-\frac{r}{a_0}\right)e^{-r/2a_0},
+		&amp;\quad
+		R_{21}&amp;=\frac{1}{2\sqrt{6}\,a_0^{3/2}}
+		\frac{r}{a_0}\,e^{-r/2a_0},\\[4pt]
+		R_{30}&amp;=\frac{2}{81\sqrt{3}\,a_0^{3/2}}
+		\left(27-\frac{18r}{a_0}+\frac{2r^{2}}{a_0^{2}}\right)e^{-r/3a_0},
+		&amp;\quad
+		R_{31}&amp;=\frac{4}{81\sqrt{6}\,a_0^{3/2}}
+		\left(\frac{6r}{a_0}-\frac{r^{2}}{a_0^{2}}\right)e^{-r/3a_0},\\[4pt]
+		R_{32}&amp;=\frac{4}{81\sqrt{30}\,a_0^{3/2}}
+		\frac{r^{2}}{a_0^{2}}\,e^{-r/3a_0}. &amp; &amp;
+	\end{aligned}
+\end{equation}</div>
+<p>The polynomial factor in <span class="math-inline">\(R_{nl}\)</span> has degree <span class="math-inline">\(n-l-1\)</span>, so <span class="math-inline">\(R_{nl}\)</span> has</p>
+<div class="math-block" id="eq-eq-h-nodes">\begin{equation}
+	\label{eq:H-nodes}
+	n-l-1 \quad\text{radial nodes},
+\end{equation}</div>
+<p>and the total number of nodes, radial plus angular, is <span class="math-inline">\(n-1\)</span>.</p>
+<h2 id="sec-4-the-complete-solution"><span class="sec-number">4.7</span>The Complete Solution</h2>
+<p>Collecting Eqs. <a href="../chapter-04/index.html#eq-eq-h-ylm">(4.29)</a> and <a href="../chapter-04/index.html#eq-eq-h-rnl">(4.50)</a>, the normalized eigenfunctions of the hydrogen atom are</p>
+<div class="math-block" id="eq-eq-h-psi-nlm">\begin{equation}
+	\label{eq:H-psi-nlm}
+	\boxed{\;\psi_{nlm}(r,\theta,\varphi)=R_{nl}(r)\,Y_l^{m}(\theta,\varphi)\;}
+\end{equation}</div>
+<p>or, written out in full,</p>
+<div class="math-block" id="eq-eq-h-psi-explicit">\begin{equation}
+	\label{eq:H-psi-explicit}
+	\begin{aligned}
+		\psi_{nlm}(r,\theta,\varphi)
+		=\;&amp;\sqrt{\left(\frac{2Z}{na_0}\right)^{3}
+			\frac{(n-l-1)!}{2n(n+l)!}}\;
+		e^{-Zr/na_0}
+		\left(\frac{2Zr}{na_0}\right)^{l}
+		L_{n-l-1}^{2l+1}\!\left(\frac{2Zr}{na_0}\right)\\
+		&amp;\times
+		\sqrt{\frac{(2l+1)}{4\pi}\frac{(l-|m|)!}{(l+|m|)!}}\;
+		P_l^{m}(\cos\theta)\,e^{im\varphi},
+	\end{aligned}
+\end{equation}</div>
+<p>with energies given by Eq. <a href="../chapter-04/index.html#eq-eq-h-energies-si">(4.47)</a> and quantum numbers</p>
+<div class="math-block" id="eq-eq-h-quantum-numbers">\begin{equation}
+	\label{eq:H-quantum-numbers}
+	n=1,2,3,\dots;
+	\qquad
+	l=0,1,\dots,n-1;
+	\qquad
+	m=-l,-l+1,\dots,l-1,l .
+\end{equation}</div>
+<p>The three quantum numbers came from three separate places, and it is worth recording which:</p>
+<div class="centered"><div class="table-wrap"><table><tr><td>
+		Number</td><td>Arises from</td><td>Physical meaning</td></tr><tr><td>
+		<span class="math-inline">\(m\)</span></td><td>single-valuedness in <span class="math-inline">\(\varphi\)</span></td><td><span class="math-inline">\(L_z=m\hbar\)</span></td></tr><tr><td><span class="math-inline">\(l\)</span></td><td>finiteness of <span class="math-inline">\(\Theta\)</span> at the poles</td><td><span class="math-inline">\(L^{2}=l(l+1)\hbar^{2}\)</span></td></tr><tr><td><span class="math-inline">\(n\)</span></td><td>termination of the radial series</td><td>energy <span class="math-inline">\(E_n\)</span></td></tr><tr><td></td></tr></table></div></div>
+<p>Each is a boundary condition, not a postulate. Quantization in quantum mechanics is always of this kind.</p>
+<h3 id="sec-4-degeneracy"><span class="sec-number">4.7.1</span>Degeneracy</h3>
+<p>The energy in Eq. <a href="../chapter-04/index.html#eq-eq-h-energies-si">(4.47)</a> depends on <span class="math-inline">\(n\)</span> alone. Counting the states that share it, using Eq. <a href="../chapter-04/index.html#eq-eq-h-quantum-numbers">(4.55)</a>,</p>
+<div class="math-block" id="eq-eq-h-degeneracy">\begin{equation}
+	\label{eq:H-degeneracy}
+	\sum_{l=0}^{n-1}(2l+1)
+	=2\cdot\frac{(n-1)n}{2}+n
+	=n^{2}-n+n
+	=n^{2} ,
+\end{equation}</div>
+<p>so level <span class="math-inline">\(n\)</span> is <span class="math-inline">\(n^{2}\)</span>-fold degenerate, or <span class="math-inline">\(2n^{2}\)</span> counting the two spin states of Chapter 3.</p>
+<p>The <span class="math-inline">\(m\)</span>-degeneracy is expected: it follows from rotational symmetry, and any central potential has it. The <span class="math-inline">\(l\)</span>-degeneracy is not. Chapter 3 showed that different <span class="math-inline">\(l\)</span> means a different centrifugal barrier and hence a physically different radial equation — Eq. <a href="../chapter-04/index.html#eq-eq-h-radial-1d">(4.20)</a> literally changes — yet the energies coincide. This is special to the exact <span class="math-inline">\(1/r\)</span> potential. It is called the <em>accidental degeneracy</em>, and Chapter 5 shows it breaking as soon as a second electron is present.</p>
+<h3 id="sec-4-expectation-values-and-the-size-of-an-orbital"><span class="sec-number">4.7.2</span>Expectation Values and the Size of an Orbital</h3>
+<p>The probability of finding the electron between <span class="math-inline">\(r\)</span> and <span class="math-inline">\(r+dr\)</span>, integrated over all angles, is</p>
+<div class="math-block" id="eq-eq-h-radial-density">\begin{equation}
+	\label{eq:H-radial-density}
+	P(r)\,dr=|R_{nl}(r)|^{2}r^{2}dr=|U_{nl}(r)|^{2}dr ,
+\end{equation}</div>
+<p>which is why <span class="math-inline">\(U=rR\)</span> is the natural object: <span class="math-inline">\(|U|^{2}\)</span> is the radial probability density directly.</p>
+<section class="callout example" id="example-ex-h-most-probable"><header>Example 4.7.1 - The most probable radius of the ground state</header><p> Find where the <span class="math-inline">\(1s\)</span> electron is most likely to be found, and compare with <span class="math-inline">\(\expval{r}\)</span>.</p>
+<p class="solution-head">Solution.</p>
+<p>From Eqs. <a href="../chapter-04/index.html#eq-eq-h-rnl-table">(4.51)</a> and <a href="../chapter-04/index.html#eq-eq-h-radial-density">(4.57)</a> with <span class="math-inline">\(Z=1\)</span>,</p>
+<div class="math-block">\[
+	P(r)=\frac{4}{a_0^{3}}r^{2}e^{-2r/a_0}.
+	\]</div>
+<p>Differentiate and set to zero:</p>
+<div class="math-block">\[
+	\frac{dP}{dr}=\frac{4}{a_0^{3}}
+	\left(2r-\frac{2r^{2}}{a_0}\right)e^{-2r/a_0}=0
+	\qquad\Longrightarrow\qquad
+	r=a_0 .
+	\]</div>
+<p>So the most probable radius is exactly the Bohr radius — the quantum-mechanical solution reproduces the radius of Bohr's circular orbit, though as the peak of a distribution rather than a trajectory.</p>
+<p>The mean radius is different. Using <span class="math-inline">\(\int_0^\infty r^{n}e^{-\alpha r}dr=n!/\alpha^{n+1}\)</span>,</p>
+<div class="math-block">\[
+	\expval{r}=\int_0^\infty rP(r)\,dr
+	=\frac{4}{a_0^{3}}\int_0^\infty r^{3}e^{-2r/a_0}dr
+	=\frac{4}{a_0^{3}}\cdot\frac{3!}{(2/a_0)^{4}}
+	=\frac{4}{a_0^{3}}\cdot\frac{6a_0^{4}}{16}
+	=\frac{3a_0}{2}.
+	\]</div>
+<p>The mean exceeds the mode because the distribution has a long tail to large <span class="math-inline">\(r\)</span>. Both numbers are useful, and they are not the same number — a distinction worth keeping straight whenever an “atomic size” is quoted.</p></section>
+<p>The general results, quoted, are</p>
+<div class="math-block" id="eq-eq-h-expectation-values">\begin{equation}
+	\label{eq:H-expectation-values}
+	\expval{r}_{nl}=\frac{a_0}{2Z}\bigl[3n^{2}-l(l+1)\bigr],
+	\qquad
+	\expval{\frac{1}{r}}_{nl}=\frac{Z}{n^{2}a_0},
+	\qquad
+	\expval{r^{2}}_{nl}=\frac{n^{2}a_0^{2}}{2Z^{2}}
+	\bigl[5n^{2}+1-3l(l+1)\bigr].
+\end{equation}</div>
+<p>The middle one is worth noting: <span class="math-inline">\(\expval{1/r}\)</span> depends only on <span class="math-inline">\(n\)</span>, which combined with <span class="math-inline">\(\expval{V}=-Ze^{2}\expval{1/r}/4\pi\epsilon_0=2E_n\)</span> is the quantum version of the virial theorem for a <span class="math-inline">\(1/r\)</span> potential.</p>
+<p>Orbitals therefore grow as <span class="math-inline">\(n^{2}\)</span>: <span class="math-inline">\(1.5\,a_0\)</span> for the ground state, about <span class="math-inline">\(150\,a_0\approx8\)</span> nm at <span class="math-inline">\(n=10\)</span>, and larger than many molecules by <span class="math-inline">\(n=30\)</span>.</p>
+<h2 id="sec-4-atomic-units"><span class="sec-number">4.8</span>Atomic Units</h2>
+<p>The constants in Eqs. <a href="../chapter-04/index.html#eq-eq-h-energies-si">(4.47)</a> and <a href="../chapter-04/index.html#eq-eq-h-rnl">(4.50)</a> are cumbersome, and research papers eliminate them by a choice of units. They state this once, usually in a single parenthetical sentence, and everything after it is unreadable if the sentence is skipped.</p>
+<section class="callout definition" id="definition-def-h-au"><header>Definition 4.8.1 - Atomic units</header><p> Atomic units are defined by setting</p>
+<div class="math-block" id="eq-eq-h-au-def">\begin{equation}
+		\label{eq:H-au-def}
+		\hbar=m_e=e=\frac{1}{4\pi\epsilon_0}=1 .
+	\end{equation}</div></section>
+<p>Every other unit follows. From Eq. <a href="../chapter-04/index.html#eq-eq-h-bohr">(4.46)</a>, the unit of length is <span class="math-inline">\(a_0\)</span>; from Eq. <a href="../chapter-04/index.html#eq-eq-h-energies-si">(4.47)</a>, the unit of energy is <span class="math-inline">\(\mu e^{4}/(4\pi\epsilon_0)^{2}\hbar^{2}\)</span>, called the <em>hartree</em>:</p>
+<div class="centered"><div class="table-wrap"><table><tr><td>
+		Quantity</td><td>Unit</td><td>Expression</td><td>Value</td></tr><tr><td>
+		Length</td><td>bohr</td><td><span class="math-inline">\(a_0=4\pi\epsilon_0\hbar^{2}/m_ee^{2}\)</span></td><td><span class="math-inline">\(0.529\,177\)</span> Å</td></tr><tr><td>Energy</td><td>hartree</td><td><span class="math-inline">\(E_h=m_ee^{4}/(4\pi\epsilon_0)^{2}\hbar^{2}\)</span></td><td><span class="math-inline">\(27.2114\)</span> eV</td></tr><tr><td>Energy</td><td>rydberg</td><td><span class="math-inline">\(\tfrac12E_h\)</span></td><td><span class="math-inline">\(13.6057\)</span> eV</td></tr><tr><td>Time</td><td>—</td><td><span class="math-inline">\(\hbar/E_h\)</span></td><td><span class="math-inline">\(24.19\)</span> as</td></tr><tr><td>Velocity</td><td>—</td><td><span class="math-inline">\(\alpha c\)</span></td><td><span class="math-inline">\(2.19\times10^{6}\)</span> m/s</td></tr><tr><td>Field</td><td>—</td><td><span class="math-inline">\(E_h/ea_0\)</span></td><td><span class="math-inline">\(5.14\times10^{11}\)</span> V/m</td></tr><tr><td></td></tr></table></div></div>
+<p>In these units Eqs. <a href="../chapter-04/index.html#eq-eq-h-hamiltonian-si">(4.5)</a>, <a href="../chapter-04/index.html#eq-eq-h-radial-1d">(4.20)</a> and <a href="../chapter-04/index.html#eq-eq-h-energies-si">(4.47)</a> become simply</p>
+<div class="math-block" id="eq-eq-h-au-forms">\begin{equation}
+	\label{eq:H-au-forms}
+	\hat H=-\frac{1}{2}\nabla^{2}-\frac{Z}{r},
+	\qquad
+	-\frac{1}{2}\frac{d^{2}U}{dr^{2}}
+	+\left[-\frac{Z}{r}+\frac{l(l+1)}{2r^{2}}\right]U=EU,
+	\qquad
+	E_n=-\frac{Z^{2}}{2n^{2}} .
+\end{equation}</div>
+<p>Two entries in the table carry physics rather than convenience. The atomic unit of time is <span class="math-inline">\(24\)</span> attoseconds — the natural timescale of electronic motion, and the reason attosecond pulses are the tool of choice for watching electrons. And the atomic unit of field, <span class="math-inline">\(5.14\times10^{11}\)</span> V/m, is the field the electron feels in the ground state; a laser reaching an appreciable fraction of it competes with the binding of the atom itself, which is what the phrase “strong field” means.</p>
+<section class="callout example" id="example-ex-h-laser-units"><header>Example 4.8.1 - Converting a laser specification</header><p> A laser has wavelength <span class="math-inline">\(800\)</span> nm and peak intensity <span class="math-inline">\(1\times10^{13}\)</span> W/cm<span class="math-inline">\(^{2}\)</span>. Express the photon energy, the optical period and the field amplitude in atomic units.</p>
+<p class="solution-head">Solution.</p>
+<p><em>Photon energy.</em> <span class="math-inline">\(E=hc/\lambda\)</span>, and with <span class="math-inline">\(hc=1239.8\)</span> eV nm,</p>
+<div class="math-block">\[
+	E=\frac{1239.8}{800}=1.550~\mathrm{eV}
+	=\frac{1.550}{27.2114}=0.0570~\text{a.u.}
+	\]</div>
+<p><em>Period.</em> <span class="math-inline">\(T=2\pi/\omega\)</span> with <span class="math-inline">\(\omega=E\)</span> in atomic units, so</p>
+<div class="math-block">\[
+	T=\frac{2\pi}{0.0570}=110.2~\text{a.u.}
+	=110.2\times24.19~\mathrm{as}=2.67~\mathrm{fs},
+	\]</div>
+<p>which is the correct optical period for <span class="math-inline">\(800\)</span> nm light.</p>
+<p><em>Field.</em> From <span class="math-inline">\(I=\tfrac12\epsilon_0cE_0^{2}\)</span> with <span class="math-inline">\(I=1\times10^{17}\)</span> W/m<span class="math-inline">\(^{2}\)</span>,</p>
+<div class="math-block">\[
+	E_0=\sqrt{\frac{2I}{\epsilon_0c}}
+	=\sqrt{\frac{2\times10^{17}}{8.854\times10^{-12}\times3\times10^{8}}}
+	=8.68\times10^{9}~\mathrm{V/m},
+	\]</div>
+<p>so in atomic units</p>
+<div class="math-block">\[
+	E_0=\frac{8.68\times10^{9}}{5.14\times10^{11}}=0.0169~\text{a.u.}
+	\]</div>
+<p>This is about <span class="math-inline">\(1.7\%\)</span> of the field binding the ground state — a genuine perturbation for hydrogen, but note that a Rydberg state at <span class="math-inline">\(n=10\)</span> is bound by <span class="math-inline">\(1/n^{2}=1\%\)</span> of the ground-state energy and feels an internal field smaller by <span class="math-inline">\(n^{4}\)</span>, so the same laser is overwhelmingly strong for it. “Strong” is always relative to the state.</p></section>
+<h2 id="sec-4-rydberg-states"><span class="sec-number">4.9</span>Rydberg States</h2>
+<section class="callout definition" id="definition-def-h-rydberg"><header>Definition 4.9.1 - Rydberg state</header><p> A <em>Rydberg state</em> is a state of high principal quantum number, in which the electron is far from the nucleus and weakly bound.</p></section>
+<p>Four scalings follow directly from the results above, and all four are used later in this book.</p>
+<p><strong>Binding energy <span class="math-inline">\(\propto n^{-2}\)</span>.</strong> From Eq. <a href="../chapter-04/index.html#eq-eq-h-energies-ev">(4.48)</a>, the electron is bound by only <span class="math-inline">\(13.606/n^{2}\)</span> eV: at <span class="math-inline">\(n=10\)</span>, that is <span class="math-inline">\(0.136\)</span> eV, less than an infrared photon.</p>
+<p><strong>Size <span class="math-inline">\(\propto n^{2}\)</span>.</strong> From Eq. <a href="../chapter-04/index.html#eq-eq-h-expectation-values">(4.58)</a>.</p>
+<p><strong>Level spacing <span class="math-inline">\(\propto n^{-3}\)</span>.</strong> Differentiating Eq. <a href="../chapter-04/index.html#eq-eq-h-energies-si">(4.47)</a>,</p>
+<div class="math-block" id="eq-eq-h-spacing">\begin{equation}
+	\label{eq:H-spacing}
+	\Delta E=E_{n+1}-E_n\simeq\frac{dE_n}{dn}
+	=\frac{\mathcal{E}_{\mathrm{Ryd}}\cdot2}{n^{3}}
+	=\frac{27.21}{n^{3}}~\mathrm{eV} ,
+\end{equation}</div>
+<p>so levels crowd towards the ionization threshold and the density of states per unit energy grows as <span class="math-inline">\(n^{3}\)</span>.</p>
+<p><strong>Probability density near the nucleus <span class="math-inline">\(\propto n^{-3}\)</span>.</strong> This is the important one. The wave function is normalized over a region of size <span class="math-inline">\(n^{2}\)</span>, so its amplitude in any <em>fixed</em> small region near the origin must shrink. Explicitly, for <span class="math-inline">\(l=0\)</span> and <span class="math-inline">\(r\ll a_0n^{2}\)</span>, the exponential and polynomial factors in Eq. <a href="../chapter-04/index.html#eq-eq-h-rnl">(4.50)</a> are both of order unity, and the normalization prefactor <span class="math-inline">\((2Z/na_0)^{3/2}\sqrt{(n-l-1)!/2n(n+l)!}\)</span> supplies the entire <span class="math-inline">\(n\)</span> dependence, giving</p>
+<div class="math-block" id="eq-eq-h-amplitude-scaling">\begin{equation}
+	\label{eq:H-amplitude-scaling}
+	\boxed{\;|U_{nl}(r)|^{2}\propto n^{-3}
+		\qquad\text{for fixed small } r\;}
+\end{equation}</div>
+<p>Equation <a href="../chapter-04/index.html#eq-eq-h-amplitude-scaling">(4.62)</a> deserves to be stated as a principle:</p>
+<div class="centered"><p><em>Any process requiring the electron to be near the nucleus runs at a rate proportional to <span class="math-inline">\(n^{-3}\)</span>.</em></p></div>
+<p>A quantity linear in the wave function rather than quadratic — a dipole matrix element, for instance — carries the square root, <span class="math-inline">\(n^{-3/2}\)</span>. These two exponents govern the Rydberg physics of Chapters 5, 9 and 10.</p>
+<section class="callout example" id="example-ex-h-classical"><header>Example 4.9.1 - How classical is a Rydberg state?</header><p> Estimate the orbital period of an <span class="math-inline">\(n=20\)</span> electron in hydrogen and compare it with the beat period between adjacent levels.</p>
+<p class="solution-head">Solution.</p>
+<p>For a circular Bohr orbit of radius <span class="math-inline">\(r_n=n^{2}a_0\)</span>, the classical period in atomic units is <span class="math-inline">\(T=2\pi n^{3}\)</span>. For <span class="math-inline">\(n=20\)</span>,</p>
+<div class="math-block">\[
+	T=2\pi(8000)=5.03\times10^{4}~\text{a.u.}
+	=5.03\times10^{4}\times24.19~\mathrm{as}=1.22~\mathrm{ps}.
+	\]</div>
+<p>The spacing to the neighbouring level, from Eq. <a href="../chapter-04/index.html#eq-eq-h-spacing">(4.61)</a>, is <span class="math-inline">\(\Delta E=1/n^{3}\)</span> a.u. <span class="math-inline">\(=1.25\times10^{-4}\)</span> a.u. <span class="math-inline">\(=3.4\)</span> meV, and a superposition of two levels beats at</p>
+<div class="math-block">\[
+	T_{\mathrm{beat}}=\frac{2\pi}{\Delta E}=2\pi n^{3},
+	\]</div>
+<p>which is the <em>same number</em>.</p>
+<p>This is the correspondence principle made quantitative: a superposition of a few neighbouring Rydberg levels forms a localised packet that orbits the nucleus on the classical Kepler period and stays recognisable for many orbits. It is also the mechanism behind the quantum beats measured in Chapter 11 — there, between molecular Rydberg states, and on a timescale of tens of femtoseconds rather than a picosecond.</p></section>
+<h2 id="sec-4-summary"><span class="sec-number">4.10</span>Summary</h2>
+<ul><li><p>The two-body problem reduces to one body of reduced mass <span class="math-inline">\(\mu=m_em_p/(m_e+m_p)=0.99946\,m_e\)</span> in the potential <span class="math-inline">\(V=-Ze^{2}/4\pi\epsilon_0r\)</span>.</p></li><li><p>Separating <span class="math-inline">\(\psi=R(r)Y(\theta,\varphi)\)</span> with separation constant <span class="math-inline">\(l(l+1)\)</span> gives the angular equation <a href="../chapter-04/index.html#eq-eq-h-angular-eq">(4.15)</a>, which contains no potential and so is solved once for all central problems, and the radial equation <a href="../chapter-04/index.html#eq-eq-h-radial-eq">(4.16)</a>.</p></li><li><p>The substitution <span class="math-inline">\(U=rR\)</span> removes the first derivative and yields the one-dimensional form <a href="../chapter-04/index.html#eq-eq-h-radial-1d">(4.20)</a> with the centrifugal barrier <span class="math-inline">\(\hbar^{2}l(l+1)/2\mu r^{2}\)</span> and boundary condition <span class="math-inline">\(U(0)=0\)</span>.</p></li><li><p>The angular solutions are the spherical harmonics <span class="math-inline">\(Y_l^{m}\)</span>, Eq. <a href="../chapter-04/index.html#eq-eq-h-ylm">(4.29)</a>, built from associated Legendre polynomials; single-valuedness quantizes <span class="math-inline">\(m\)</span> and finiteness at the poles quantizes <span class="math-inline">\(l\)</span>, with <span class="math-inline">\(|m|\le l\)</span>.</p></li><li><p>The radial solution is obtained by stripping out the asymptotic forms <span class="math-inline">\(e^{-\rho}\)</span> and <span class="math-inline">\(\rho^{l+1}\)</span>, expanding in a power series, and requiring the series to terminate. Termination gives <span class="math-inline">\(\rho_0=2n\)</span> with <span class="math-inline">\(n=j_{\max}+l+1\)</span>, hence <span class="math-inline">\(l\le n-1\)</span>, and fixes the energy.</p></li><li><p>Results: <span class="math-inline">\(E_n=-\mu Z^{2}e^{4}/2(4\pi\epsilon_0)^{2}\hbar^{2}n^{2}
+	=-13.606Z^{2}/n^{2}\)</span> eV, radial functions Eq. <a href="../chapter-04/index.html#eq-eq-h-rnl">(4.50)</a> with <span class="math-inline">\(n-l-1\)</span> nodes, and complete wave functions <span class="math-inline">\(\psi_{nlm}=R_{nl}Y_l^{m}\)</span>.</p></li><li><p>Degeneracy <span class="math-inline">\(n^{2}\)</span> (or <span class="math-inline">\(2n^{2}\)</span> with spin). The <span class="math-inline">\(m\)</span>-degeneracy follows from rotational symmetry; the <span class="math-inline">\(l\)</span>-degeneracy is accidental, special to <span class="math-inline">\(1/r\)</span>, and breaks in every other atom.</p></li><li><p><span class="math-inline">\(\expval{r}=(a_0/2Z)[3n^{2}-l(l+1)]\)</span>; the most probable radius of the <span class="math-inline">\(1s\)</span> state is exactly <span class="math-inline">\(a_0\)</span> while <span class="math-inline">\(\expval{r}=1.5a_0\)</span>.</p></li><li><p>Atomic units set <span class="math-inline">\(\hbar=m_e=e=1/4\pi\epsilon_0=1\)</span>: <span class="math-inline">\(a_0\)</span>, <span class="math-inline">\(27.21\)</span> eV, <span class="math-inline">\(24\)</span> as, <span class="math-inline">\(5.14\times10^{11}\)</span> V/m.</p></li><li><p>Rydberg scalings: binding <span class="math-inline">\(n^{-2}\)</span>, size <span class="math-inline">\(n^{2}\)</span>, spacing <span class="math-inline">\(n^{-3}\)</span>, and probability density near the nucleus <span class="math-inline">\(n^{-3}\)</span> — the last governing every core-sensitive rate, with dipole matrix elements carrying <span class="math-inline">\(n^{-3/2}\)</span>.</p></li></ul>
+<h2 id="sec-4-exercises"><span class="sec-number">4.11</span>Exercises</h2>
+<ol><li><p><strong>The substitution, verified.</strong> Carry out the steps of Eqs. <a href="../chapter-04/index.html#eq-eq-h-u-step1">(4.18)</a>–<a href="../chapter-04/index.html#eq-eq-h-u-step2">(4.19)</a> yourself, and confirm that Eq. <a href="../chapter-04/index.html#eq-eq-h-radial-eq">(4.16)</a> becomes Eq. <a href="../chapter-04/index.html#eq-eq-h-radial-1d">(4.20)</a>. State where the boundary condition <span class="math-inline">\(U(0)=0\)</span> comes from.</p></li><li><p><strong>Checking a wave function.</strong> Take <span class="math-inline">\(R_{10}=2a_0^{-3/2}e^{-r/a_0}\)</span> from Eq. <a href="../chapter-04/index.html#eq-eq-h-rnl-table">(4.51)</a>, with <span class="math-inline">\(Z=1\)</span>.</p>
+<ol><li><p>Verify that <span class="math-inline">\(U_{10}=rR_{10}\)</span> satisfies Eq. <a href="../chapter-04/index.html#eq-eq-h-radial-1d">(4.20)</a> with <span class="math-inline">\(l=0\)</span> and <span class="math-inline">\(E=-13.606\)</span> eV, by direct substitution.</p></li><li><p>Verify the normalization <span class="math-inline">\(\int_0^\infty|R_{10}|^{2}r^{2}dr=1\)</span>.</p></li><li><p>Repeat the normalization check for <span class="math-inline">\(R_{21}\)</span>.</p></li></ol></li><li><p><strong>The recursion relation.</strong> Substitute the series <a href="../chapter-04/index.html#eq-eq-h-v-series">(4.40)</a> into Eq. <a href="../chapter-04/index.html#eq-eq-h-v-equation">(4.39)</a> and derive the recursion <a href="../chapter-04/index.html#eq-eq-h-recursion">(4.41)</a>. Then, for <span class="math-inline">\(n=2\)</span> and <span class="math-inline">\(l=0\)</span>, use it to find <span class="math-inline">\(c_1/c_0\)</span> and confirm that <span class="math-inline">\(c_2=0\)</span>, so the polynomial is <span class="math-inline">\(1-\rho/2\)</span> — which reproduces the <span class="math-inline">\((2-r/a_0)\)</span> factor of <span class="math-inline">\(R_{20}\)</span> in Eq. <a href="../chapter-04/index.html#eq-eq-h-rnl-table">(4.51)</a> up to normalization.</p></li><li><p><strong>Degeneracy and expectation values.</strong></p>
+<ol><li><p>Prove Eq. <a href="../chapter-04/index.html#eq-eq-h-degeneracy">(4.56)</a> step by step.</p></li><li><p>Using Eq. <a href="../chapter-04/index.html#eq-eq-h-expectation-values">(4.58)</a>, compute <span class="math-inline">\(\expval{r}\)</span> for the <span class="math-inline">\(3s\)</span>, <span class="math-inline">\(3p\)</span> and <span class="math-inline">\(3d\)</span> states of hydrogen in units of <span class="math-inline">\(a_0\)</span>. They have the same energy: explain in one sentence how they can have different mean radii.</p></li><li><p>Verify <span class="math-inline">\(\expval{V}=2E_n\)</span> for the ground state using <span class="math-inline">\(\expval{1/r}=Z/n^{2}a_0\)</span>.</p></li></ol></li><li><p><strong>Atomic units.</strong> Redo Example <a href="../chapter-04/index.html#example-ex-h-laser-units">4.8.1</a> for an XUV pulse of photon energy <span class="math-inline">\(17.6\)</span> eV: give the energy in atomic units, the wavelength in nm, and the optical period in attoseconds. Then confirm the claim in Sec. <a href="../chapter-04/index.html#sec-4-atomic-units">4.8</a> that the dipole approximation is safe by comparing the wavelength with <span class="math-inline">\(\expval{r}\)</span> for the ground state.</p></li></ol>
+<h2 id="sec-4-project-hydrogen-numerically-and-exactly"><span class="sec-number">4.12</span>Project: Hydrogen, Numerically and Exactly</h2>
+<p><strong>The problem.</strong> Solve Eq. <a href="../chapter-04/index.html#eq-eq-h-radial-1d">(4.20)</a> on a computer and confirm every analytic result of this chapter. The same solver, with the potential changed, handles the screened atoms of Chapter 5 and the molecular vibrations of Chapter 7, so build it carefully.</p>
+<p>Work in atomic units, where the equation is the middle expression of Eq. <a href="../chapter-04/index.html#eq-eq-h-au-forms">(4.60)</a>.</p>
+<ol><li><p><strong>On paper.</strong> Discretise the equation. On a uniform grid <span class="math-inline">\(r_i=ih\)</span>, the second derivative is <span class="math-inline">\(U&#x27;&#x27;(r_i)\simeq(U_{i+1}-2U_i+U_{i-1})/h^{2}\)</span>. Write down the resulting matrix eigenvalue problem <span class="math-inline">\(\mathbf{H}\vec U=E\vec U\)</span>, giving the diagonal and off-diagonal entries explicitly in terms of <span class="math-inline">\(h\)</span>, <span class="math-inline">\(r_i\)</span> and <span class="math-inline">\(l\)</span>.</p></li><li><p><strong>On the computer.</strong> Diagonalise it for <span class="math-inline">\(l=0\)</span> and report the four lowest eigenvalues. Compare with <span class="math-inline">\(-1/2n^{2}\)</span>. State the <span class="math-inline">\(r_{\max}\)</span> and <span class="math-inline">\(h\)</span> you needed for four-figure agreement, and explain why too small an <span class="math-inline">\(r_{\max}\)</span> fails while too small an <span class="math-inline">\(h\)</span> merely costs time.</p></li><li><p><strong>On the computer.</strong> Repeat for <span class="math-inline">\(l=1\)</span> and <span class="math-inline">\(l=2\)</span>. Confirm the accidental degeneracy: the lowest <span class="math-inline">\(l=1\)</span> level should equal the second <span class="math-inline">\(l=0\)</span> level to your numerical accuracy. Report the actual discrepancy.</p></li><li><p><strong>On the computer.</strong> Plot <span class="math-inline">\(|U_{nl}(r)|^{2}\)</span> for <span class="math-inline">\((n,l)=(1,0),(2,0),(2,1),(3,0),(3,2)\)</span>, overlaying the analytic forms from Eq. <a href="../chapter-04/index.html#eq-eq-h-rnl-table">(4.51)</a>. Count the nodes and check Eq. <a href="../chapter-04/index.html#eq-eq-h-nodes">(4.52)</a>.</p></li><li><p><strong>On the computer.</strong> Compute <span class="math-inline">\(\expval{r}\)</span> numerically for each state in (d) and compare with Eq. <a href="../chapter-04/index.html#eq-eq-h-expectation-values">(4.58)</a>. Also locate the maximum of <span class="math-inline">\(|U_{10}|^{2}\)</span> and confirm it sits at <span class="math-inline">\(r=a_0\)</span>, as Example <a href="../chapter-04/index.html#example-ex-h-most-probable">4.7.1</a> predicts.</p></li><li><p><strong>On the computer.</strong> Test Eq. <a href="../chapter-04/index.html#eq-eq-h-amplitude-scaling">(4.62)</a>. For <span class="math-inline">\(l=0\)</span> and <span class="math-inline">\(n=1\)</span> to <span class="math-inline">\(8\)</span>, compute <span class="math-inline">\(\int_0^{a_0}|U_{n0}|^{2}dr\)</span> and plot it against <span class="math-inline">\(n\)</span> on log–log axes. Measure the slope; you should find <span class="math-inline">\(-3\)</span>.</p></li><li><p><strong>What has to move.</strong> One animation: <span class="math-inline">\(|U_{n0}(r)|^{2}\)</span> as <span class="math-inline">\(n\)</span> steps from <span class="math-inline">\(1\)</span> to <span class="math-inline">\(8\)</span>, on axes wide enough to show the state spreading out, with the region <span class="math-inline">\(r&lt;a_0\)</span> shaded so the shrinking amplitude inside it is visible. That shrinkage is the <span class="math-inline">\(n^{-3}\)</span> law.</p></li></ol>
+<p><strong>The check.</strong> Part (f) is the one that matters and the one most likely to go wrong. A slope of <span class="math-inline">\(-2\)</span> instead of <span class="math-inline">\(-3\)</span> almost always means the wave functions were normalized on a grid too short to hold the larger states, so their normalization is wrong. Fix the grid, not the exponent.</p>
+<p><strong>Be ready to answer.</strong> Your part (c) energies came out independent of <span class="math-inline">\(l\)</span>, as Eq. <a href="../chapter-04/index.html#eq-eq-h-energies-si">(4.47)</a> says. But the equation you actually diagonalised, Eq. <a href="../chapter-04/index.html#eq-eq-h-radial-1d">(4.20)</a>, is visibly different for each <span class="math-inline">\(l\)</span> — the centrifugal term changes the matrix. How can three different matrices share eigenvalues, and what single change to the potential in your code would destroy the coincidence?</p>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <a href="../chapter-03/index.html">Previous: Angular Momentum and Central Potentials</a>
+      <a href="../../toc.html">Contents</a>
+      <a href="../chapter-05/index.html">Next: Many-Electron Atoms</a>
+    </nav>
+  </article>
+</main>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p>&copy; 2026 Erfan Saydanzad. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

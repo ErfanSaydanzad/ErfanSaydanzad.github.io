@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 11: Time-Dependent Rydberg–Fano Dynamics in CO2 | Direct Method</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+  <link rel="preload" href="../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../assets/css/site.css?v=db81423d">
+  <script>
+    window.MathJax = {
+      // tagformat is an optional TeX extension, not part of the combined
+      // tex-chtml build. Without these two lines the tagformat block below is
+      // read and silently ignored, and every equation numbers from 1 with no
+      // chapter in front of it.
+      loader: { load: ['[tex]/tagformat'] },
+      tex: {
+        packages: { '[+]': ['tagformat'] },
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        processEnvironments: true,
+        tags: 'ams',
+        // The PDF numbers equations within the chapter (\numberwithin
+        // {equation}{chapter}), so "1.8" is the eighth equation of
+        // chapter 1. MathJax counts from 1 on every page, which would have
+        // shown that same equation as "8". Prefixing the chapter number
+        // keeps a reference valid against either version.
+        tagformat: {
+          number: function (n) { return '11.' + n; }
+        },
+        macros: {
+          pdv: ['{\\frac{\\partial #1}{\\partial #2}}', 2],
+          dv: ['{\\frac{d #1}{d #2}}', 2],
+          abs: ['{\\left|#1\\right|}', 1],
+          norm: ['{\\left\\|#1\\right\\|}', 1],
+          curl: '{\\vec{\\nabla}\\times}',
+          div: '{\\vec{\\nabla}\\cdot}',
+          grad: '{\\vec{\\nabla}}',
+          sech: '{\\operatorname{sech}}',
+          csch: '{\\operatorname{csch}}',
+          coth: '{\\operatorname{coth}}',
+          circnum: ['{\\boxed{#1}}', 1],
+          vb: ['{\\mathbf{#1}}', 1],
+          eval: ['{\\left.#1\\right|}', 1],
+          dd: '{\\,d}',
+          // Dirac notation. The chapters are written with the physics
+          // package, which MathJax does not have, so every bra-ket command
+          // the notes use has to be defined here or it renders as red text.
+          // \braket is always given two arguments in these sources.
+          ket: ['{\\left|#1\\right\\rangle}', 1],
+          bra: ['{\\left\\langle#1\\right|}', 1],
+          braket: ['{\\left\\langle#1\\middle|#2\\right\\rangle}', 2],
+          ketbra: ['{\\left|#1\\right\\rangle\\!\\left\\langle#2\\right|}', 2],
+          dyad: ['{\\left|#1\\right\\rangle\\!\\left\\langle#2\\right|}', 2],
+          op: ['{\\left|#1\\right\\rangle\\!\\left\\langle#1\\right|}', 1],
+          mel: ['{\\left\\langle#1\\right|#2\\left|#3\\right\\rangle}', 3],
+          expval: ['{\\left\\langle#1\\right\\rangle}', 1],
+          ev: ['{\\left\\langle#1\\right\\rangle}', 1],
+          comm: ['{\\left[#1,#2\\right]}', 2],
+          acomm: ['{\\left\\{#1,#2\\right\\}}', 2],
+          anticommutator: ['{\\left\\{#1,#2\\right\\}}', 2],
+          Tr: '{\\operatorname{Tr}}',
+          tr: '{\\operatorname{tr}}',
+          bm: ['{\\boldsymbol{#1}}', 1]
+        }
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <script defer src="../../assets/js/main.js?v=db81423d"></script>
+
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="../../index.html">
+    <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M9 6.5V25.5M9 6.5H24M9 25.5H24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 16Q10.5 9.5 15.5 16T25.5 16" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/></svg>
+    <span>Direct Method</span>
+  </a>
+  <nav class="top-nav" aria-label="Primary">
+    <a href="../../index.html">Home</a>
+    <a href="../../toc.html">Contents</a>
+    <a href="../../projects.html">Projects</a>
+  </nav>
+</header>
+<main class="layout" id="main">
+  <aside class="sidebar">
+  <div class="sidebar-inner">
+    <p class="sidebar-kicker">Chapter 11</p>
+    <h2>Time-Dependent Rydberg–Fano Dynamics in CO<span class="math-inline">\(_2\)</span></h2>
+    <nav class="chapter-toc" aria-label="Chapter contents">
+      <a class="toc-level-2" href="#sec-11-introduction">11.1 Introduction</a>
+<a class="toc-level-2" href="#sec-11-the-physical-setup">11.2 The Physical Setup</a>
+<a class="toc-level-2" href="#sec-11-the-channel-basis">11.3 The Channel Basis</a>
+<a class="toc-level-3" href="#sec-11-the-hamiltonian">11.3.1 The Hamiltonian</a>
+<a class="toc-level-2" href="#sec-11-deriving-the-coupled-equations">11.4 Deriving the Coupled Equations</a>
+<a class="toc-level-3" href="#sec-11-reading-the-terms">11.4.1 Reading the Terms</a>
+<a class="toc-level-3" href="#sec-11-the-effective-pump-amplitude">11.4.2 The Effective Pump Amplitude</a>
+<a class="toc-level-2" href="#sec-11-the-approximations">11.5 The Approximations</a>
+<a class="toc-level-2" href="#sec-11-what-the-model-predicts">11.6 What the Model Predicts</a>
+<a class="toc-level-3" href="#sec-11-the-coupled-channel-c-here-x-a-fano-profile-assembling-itself">The coupled channel (C, here X): a Fano profile assembling itself</a>
+<a class="toc-level-3" href="#sec-11-the-uncoupled-channel-n-here-b-quantum-beats">The uncoupled channel (N, here B): quantum beats</a>
+<a class="toc-level-2" href="#sec-11-summary">11.7 Summary</a>
+<a class="toc-level-2" href="#sec-11-exercises">11.8 Exercises</a>
+<a class="toc-level-2" href="#sec-11-project-time-resolved-fano-buildup">11.9 Project: Time-Resolved Fano Buildup</a>
+    </nav>
+  </div>
+</aside>
+
+  <article class="content">
+    <header class="chapter-hero">
+      <p>Chapter 11</p>
+      <h1>Time-Dependent Rydberg–Fano Dynamics in CO<span class="math-inline">\(_2\)</span></h1>
+    </header>
+    <h2 id="sec-11-introduction"><span class="sec-number">11.1</span>Introduction</h2>
+<p>This is where the book arrives.</p>
+<p>Chapter 10 gave the Fano profile: the asymmetric line produced when a resonance and a direct route lead to the same continuum. That result is <em>stationary</em>. It describes the spectrum obtained after waiting long enough for everything to settle, and says nothing about how the profile came to be.</p>
+<p>But the profile is not present at the instant of excitation. It builds up over the autoionization lifetime, while the Rydberg population that feeds it decays. With attosecond pulses that construction can be watched, and watching it requires abandoning the stationary picture and keeping the amplitudes and their phases — Chapter 6's coupled equations, with no perturbative expansion.</p>
+<p>The chapter sets up the channel basis, derives the coupled equations by projection, states the approximations, and says what the calculation predicts. The equations of Sec. <a href="../chapter-11/index.html#sec-11-deriving-the-coupled-equations">11.4</a> are those of the research this course prepares for.<span class="footnote">(E. Saydanzad, V.-H. Hoang and U. Thumm,
+<em>Time-resolved Rydberg dynamics in molecules</em>, validated against the
+photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</strong>,
+043106 (2024).)</span> They look formidable; they are not. Every symbol has been defined in an earlier chapter, and the whole system is Theorem <a href="../chapter-06/index.html#theorem-thm-td-coupled">6.2.1</a> with the terms written out.</p>
+<p>We work in atomic units throughout, so <span class="math-inline">\(\hbar=1\)</span>.</p>
+<h2 id="sec-11-the-physical-setup"><span class="sec-number">11.2</span>The Physical Setup</h2>
+<p>An attosecond XUV pulse, centred near <span class="math-inline">\(17.6\)</span> eV with bandwidth about <span class="math-inline">\(0.4\)</span> eV, illuminates CO<span class="math-inline">\(_2\)</span> in its ground state <span class="math-inline">\(X^{1}\Sigma_g^{+}\)</span>. A near-infrared pulse follows after a controllable delay <span class="math-inline">\(t_d\)</span>. Photoelectrons are collected and their energies recorded as a function of that delay.</p>
+<p>Three things can happen, and the model is an accounting of them.</p>
+<p><strong>Pathway 1 — direct ionization.</strong> The XUV photon ionizes immediately, leaving CO<span class="math-inline">\(_2^{+}\)</span> in <span class="math-inline">\(X^{2}\Pi_g\)</span> (threshold <span class="math-inline">\(13.78\)</span> eV, Example <a href="../chapter-07/index.html#example-ex-mol-co2-ions">7.5.2</a>) plus a photoelectron. Since <span class="math-inline">\(17.6&gt;13.78\)</span>, this channel is always open.</p>
+<p><strong>Pathway 2 — resonant excitation and autoionization.</strong> The same photon instead excites a Rydberg state of the <span class="math-inline">\((3\sigma_u)^{-1}nl\sigma_g\)</span> series, converging to <span class="math-inline">\(B^{2}\Sigma_u^{+}\)</span> at <span class="math-inline">\(18.08\)</span> eV (Chapter 9). These states sit near <span class="math-inline">\(17.5\)</span> eV, above the <span class="math-inline">\(X\)</span> threshold, so they autoionize into the <em>same</em> continuum that pathway 1 reaches.</p>
+<p>Pathways 1 and 2 end in the same final state. They interfere. That is Chapter 10's Fano problem, now happening in real time.</p>
+<p><strong>Pathway 3 — the probe.</strong> The delayed infrared pulse ionizes whatever Rydberg population survives, into the <span class="math-inline">\(B^{2}\Sigma_u^{+}\)</span> continuum. No XUV route reaches this channel, so it is a clean measurement of the Rydberg population — and, because several Rydberg states were excited coherently by the broadband pump, of the <em>phases</em> between them.</p>
+<p>That is why the experiment uses two colours. The coupled channel (<span class="math-inline">\(\mathcal C\)</span>, here <span class="math-inline">\(X\)</span>) shows interference between direct and resonant ionization; the uncoupled channel (<span class="math-inline">\(\mathcal N\)</span>, here <span class="math-inline">\(B\)</span>) shows quantum beats between coherently excited Rydberg states.</p>
+<h2 id="sec-11-the-channel-basis"><span class="sec-number">11.3</span>The Channel Basis</h2>
+<p>Expand the molecular state in the available states, exactly as Theorem <a href="../chapter-10/index.html#theorem-thm-fano-completeness">10.2.1</a> prescribes — a sum over discrete states and an integral over each continuum — with the free-evolution phases extracted as in Chapter 6:</p>
+<p>Following the notation of the manuscript Supplementary, <span class="math-inline">\(\mathcal C\)</span> labels continua coupled to the Rydberg manifold by configuration interaction, and <span class="math-inline">\(\mathcal N\)</span> labels continua that are not. For CO<span class="math-inline">\(_2\)</span> in this chapter, <span class="math-inline">\(\mathcal C\equiv X^{2}\Pi_g\)</span> and <span class="math-inline">\(\mathcal N\equiv B^{2}\Sigma_u^{+}\)</span>.</p>
+<div class="math-block" id="eq-eq-co2-expansion">\begin{equation}
+	\label{eq:CO2-expansion}
+	\boxed{
+		\begin{aligned}
+			\ket{\Psi(t)}
+			=\;&amp; c_g(t)\,e^{-iE_gt}\ket{g}
+			+\sum_n c_{\mathcal R_n}(t)\,e^{-iE_{\mathcal R_n}t}\ket{\mathcal R_n}\\
+			&amp;+\int d\varepsilon_\alpha\,
+			c_{\mathcal C}(t,\varepsilon_\alpha)\,e^{-i(E_{\mathcal C}+\varepsilon_\alpha)t}
+			\ket{\mathcal C,\varepsilon_\alpha}\\
+			&amp;+\int d\varepsilon_\beta\,
+			c_{\mathcal N}(t,\varepsilon_\beta)\,e^{-i(E_{\mathcal N}+\varepsilon_\beta)t}
+			\ket{\mathcal N,\varepsilon_\beta}
+		\end{aligned}}
+\end{equation}</div>
+<div class="centered"><div class="table-wrap"><table><tr><td>
+		Amplitude</td><td>State</td><td>Introduced in</td></tr><tr><td>
+		<span class="math-inline">\(c_g\)</span></td><td>neutral ground state <span class="math-inline">\(X^{1}\Sigma_g^{+}\)</span></td><td>Ch. 7</td></tr><tr><td><span class="math-inline">\(c_{\mathcal R_n}\)</span></td><td>Rydberg state <span class="math-inline">\((3\sigma_u)^{-1}nl\sigma_g\)</span></td><td>Ch. 9</td></tr><tr><td><span class="math-inline">\(c_{\mathcal C}(t,\varepsilon_\alpha)\)</span></td><td>coupled continuum (here <span class="math-inline">\(X^{2}\Pi_g\)</span>) + electron energy <span class="math-inline">\(\varepsilon_\alpha\)</span></td><td>Ch. 9, 10</td></tr><tr><td><span class="math-inline">\(c_{\mathcal N}(t,\varepsilon_\beta)\)</span></td><td>uncoupled continuum (here <span class="math-inline">\(B^{2}\Sigma_u^{+}\)</span>) + electron energy <span class="math-inline">\(\varepsilon_\beta\)</span></td><td>Ch. 9, 10</td></tr><tr><td></td></tr></table></div></div>
+<p>The two continua differ in one respect: <span class="math-inline">\(\mathcal C\)</span> is <em>coupled</em> to the Rydberg series by configuration interaction — the states autoionize into it — and <span class="math-inline">\(\mathcal N\)</span> is not. That is not an assumption but a consequence of energy: the Rydberg states lie <em>below</em> the <span class="math-inline">\(B\)</span> threshold, so they cannot decay into it, only be driven into it by absorbing an infrared photon.</p>
+<p>Because the expansion is over a complete orthonormal set, probability is conserved exactly:</p>
+<div class="math-block" id="eq-eq-co2-normalization">\begin{equation}
+	\label{eq:CO2-normalization}
+	|c_g|^{2}+\sum_n|c_{\mathcal R_n}|^{2}
+	+\int d\varepsilon_\alpha|c_{\mathcal C}|^{2}
+	+\int d\varepsilon_\beta|c_{\mathcal N}|^{2}=1 .
+\end{equation}</div>
+<p>This is the check to apply to any numerical solution (Remark <a href="../chapter-06/index.html#remark-rem-td-norm">6.2.3</a>).</p>
+<h3 id="sec-11-the-hamiltonian"><span class="sec-number">11.3.1</span>The Hamiltonian</h3>
+<div class="math-block" id="eq-eq-co2-hamiltonian">\begin{equation}
+	\label{eq:CO2-hamiltonian}
+	\hat H(t)=\hat K_N+\hat V_{NN}+\hat H_e+\hat D(t),
+\end{equation}</div>
+<p>with <span class="math-inline">\(\hat K_N\)</span> and <span class="math-inline">\(\hat V_{NN}\)</span> from Eq. <a href="../chapter-07/index.html#eq-eq-mol-h-parts">(7.2)</a>. The essential step is to split the electronic Hamiltonian according to whether it acts within a channel or between channels. Introducing projectors <span class="math-inline">\(\hat P_a\)</span> onto the individual channels,</p>
+<div class="math-block" id="eq-eq-co2-hsplit">\begin{equation}
+	\label{eq:CO2-Hsplit}
+	\hat H_e=\hat H_{\mathrm{ch}}+\hat V_{\mathrm{CI}},
+	\qquad
+	\hat H_{\mathrm{ch}}=\sum_a\hat P_a\hat H_e\hat P_a,
+	\qquad
+	\hat V_{\mathrm{CI}}=\sum_{a\neq b}\hat P_a\hat H_e\hat P_b .
+\end{equation}</div>
+<p><span class="math-inline">\(\hat H_{\mathrm{ch}}\)</span> gives each channel its energies. <span class="math-inline">\(\hat V_{\mathrm{CI}}\)</span> — the <em>configuration interaction</em> — collects the off-diagonal blocks and couples the Rydberg configurations to the open <span class="math-inline">\(\mathcal C\)</span> continuum. It is the autoionization coupling of Chapter 10, Eq. <a href="../chapter-10/index.html#eq-eq-fano-coupling">(10.4)</a>, under its research name.</p>
+<p>The laser term is Chapter 6's dipole interaction with two pulses:</p>
+<div class="math-block" id="eq-eq-co2-dipole">\begin{equation}
+	\label{eq:CO2-dipole}
+	\hat D(t)=\hat D_{\mathrm{XUV}}\,h_{\mathrm{XUV}}(t)\,
+	e^{i(\omega_{\mathrm{XUV}}t+\phi_{\mathrm{XUV}})}
+	+\hat D_{\mathrm{IR}}\,h_{\mathrm{IR}}(t-t_d)\,
+	e^{i(\omega_{\mathrm{IR}}t+\phi_{\mathrm{IR}})}
+	+\mathrm{h.c.},
+\end{equation}</div>
+<p>with envelopes <span class="math-inline">\(h\)</span>, carrier frequencies <span class="math-inline">\(\omega\)</span>, carrier phases <span class="math-inline">\(\phi\)</span>, and the pump–probe delay <span class="math-inline">\(t_d\)</span> appearing in exactly one place — the argument of the infrared envelope. That is the knob the experiment turns.</p>
+<h2 id="sec-11-deriving-the-coupled-equations"><span class="sec-number">11.4</span>Deriving the Coupled Equations</h2>
+<p>The derivation is Theorem <a href="../chapter-06/index.html#theorem-thm-td-coupled">6.2.1</a> applied to Eq. <a href="../chapter-11/index.html#eq-eq-co2-expansion">(11.1)</a>, and it is worth following once because the result looks more complicated than the procedure.</p>
+<p><strong>Step 1: project.</strong> Substituting Eq. <a href="../chapter-11/index.html#eq-eq-co2-expansion">(11.1)</a> into <span class="math-inline">\(i\partial_t\ket{\Psi}=\hat H\ket{\Psi}\)</span> and projecting onto each basis state gives, exactly as in the proof of Theorem <a href="../chapter-06/index.html#theorem-thm-td-coupled">6.2.1</a>, one equation per amplitude. Each term carries three factors: the amplitude it comes from, the matrix element connecting the two states, and a phase <span class="math-inline">\(e^{i(E_{\mathrm{final}}-E_{\mathrm{initial}})t}\)</span>.</p>
+<p><strong>Step 2: identify the matrix elements.</strong> Only three kinds are nonzero, and each was established earlier:</p>
+<ul><li><p><span class="math-inline">\(\bra{g}\hat D_{\mathrm{XUV}}\ket{\mathcal R_n}\)</span> and <span class="math-inline">\(\bra{g}\hat D_{\mathrm{XUV}}\ket{\mathcal C,\varepsilon_\alpha}\)</span> — XUV excitation and direct ionization, both allowed by Example <a href="../chapter-09/index.html#example-ex-elec-parity">9.7.1</a>;</p></li><li><p><span class="math-inline">\(\bra{\mathcal R_n}\hat D_{\mathrm{IR}}\ket{\mathcal N,\varepsilon_\beta}\)</span> — infrared probe ionization;</p></li><li><p><span class="math-inline">\(\bra{\mathcal C,\varepsilon_\alpha}\hat V_{\mathrm{CI}}\ket{\mathcal R_n}
+	=\sqrt{\Gamma_{nn}/2\pi}\)</span> — autoionization, from Eq. <a href="../chapter-10/index.html#eq-eq-fano-effective-coupling">(10.9)</a>.</p></li></ul>
+<p><strong>Step 3: apply the rotating-wave approximation</strong> to the XUV pulse (Def. <a href="../chapter-06/index.html#definition-def-td-rwa">6.4.1</a>), discarding the counter-rotating terms.</p>
+<p><strong>Step 4: eliminate the coupled continuum.</strong> The <span class="math-inline">\(\mathcal C\)</span> continuum appears in the Rydberg equation through the autoionization coupling. Solving the <span class="math-inline">\(c_{\mathcal C}\)</span> equation formally and substituting back — a Laplace transform, with the Markov approximation that the coupling is flat across the narrow resonance — converts that coupling into two terms: a decay <span class="math-inline">\(-i\Gamma_{nn}c_{\mathcal R_n}/2\)</span> and a principal-value shift, which is absorbed into the measured resonance energy exactly as <span class="math-inline">\(F(E)\)</span> was in Sec. <a href="../chapter-10/index.html#sec-10-fano-s-diagonalisation">10.4</a>. This is the <em>Markov–Fano reduction</em>, and it is where <span class="math-inline">\(\Gamma\)</span> enters the time domain.</p>
+<p>The result is four equations.</p>
+<p><strong>The ground state</strong> loses population to the Rydberg states and to the <span class="math-inline">\(\mathcal C\)</span> continuum:</p>
+<div class="math-block" id="eq-eq-co2-cg">\begin{equation}
+	\label{eq:CO2-cg}
+	\begin{aligned}
+		i\dot c_g
+		=\;&amp;\sum_n c_{\mathcal R_n}\,h_{\mathrm{XUV}}(t)\,
+		e^{i\phi_{\mathrm{XUV}}}\,
+		e^{-i(E_{\mathcal R_n}-E_g-\omega_{\mathrm{XUV}})t}\,
+		\bra{g}\hat D_{\mathrm{XUV}}\ket{\mathcal R_n}\\
+		&amp;+\int d\varepsilon_\alpha\,
+		c_{\mathcal C}(t,\varepsilon_\alpha)\,h_{\mathrm{XUV}}(t)\,
+		e^{i\phi_{\mathrm{XUV}}}\,
+		e^{-i(E_{\mathcal C}+\varepsilon_\alpha-E_g-\omega_{\mathrm{XUV}})t}\,
+		\bra{g}\hat D_{\mathrm{XUV}}\ket{\mathcal C,\varepsilon_\alpha} .
+	\end{aligned}
+\end{equation}</div>
+<p><strong>Each Rydberg amplitude</strong> is pumped from the ground state, decays by autoionization, and is depleted by the probe:</p>
+<div class="math-block" id="eq-eq-co2-cr">\begin{equation}
+	\label{eq:CO2-cR}
+	\begin{aligned}
+		i\dot c_{\mathcal R_n}
+		+i\frac{\Gamma_{nn}}{2}c_{\mathcal R_n}
+		=\;&amp;\rho_n\,c_g\,h_{\mathrm{XUV}}(t)\,
+		e^{-i\phi_{\mathrm{XUV}}}\,
+		e^{i(E_{\mathcal R_n}-E_g-\omega_{\mathrm{XUV}})t}\\
+		&amp;+\int d\varepsilon_\beta\,
+		c_{\mathcal N}(t,\varepsilon_\beta)\,h_{\mathrm{IR}}(t-t_d)\,
+		e^{i\phi_{\mathrm{IR}}}\,
+		e^{-i(E_{\mathcal N}+\varepsilon_\beta-E_{\mathcal R_n}-\omega_{\mathrm{IR}})t}\,
+		\bra{\mathcal R_n}\hat D_{\mathrm{IR}}\ket{\mathcal N,\varepsilon_\beta} .
+	\end{aligned}
+\end{equation}</div>
+<p><strong>The coupled continuum</strong> receives amplitude from both routes:</p>
+<div class="math-block" id="eq-eq-co2-cx">\begin{equation}
+	\label{eq:CO2-cX}
+	\begin{aligned}
+		i\dot c_{\mathcal C}(t,\varepsilon_\alpha)
+		=\;&amp; c_g\,h_{\mathrm{XUV}}(t)\,e^{-i\phi_{\mathrm{XUV}}}\,
+		e^{i(E_{\mathcal C}+\varepsilon_\alpha-E_g-\omega_{\mathrm{XUV}})t}\,
+		\bra{g}\hat D_{\mathrm{XUV}}\ket{\mathcal C,\varepsilon_\alpha}\\
+		&amp;+\sum_n c_{\mathcal R_n}\,
+		e^{i(E_{\mathcal C}+\varepsilon_\alpha-E_{\mathcal R_n})t}\,
+		\sqrt{\frac{\Gamma_{nn}}{2\pi}} .
+	\end{aligned}
+\end{equation}</div>
+<p><strong>The uncoupled continuum</strong> is fed only by the probe:</p>
+<div class="math-block" id="eq-eq-co2-cb">\begin{equation}
+	\label{eq:CO2-cB}
+	i\dot c_{\mathcal N}(t,\varepsilon_\beta)
+	=\sum_n c_{\mathcal R_n}\,h_{\mathrm{IR}}(t-t_d)\,
+	e^{-i\phi_{\mathrm{IR}}}\,
+	e^{-i(E_{\mathcal R_n}-E_{\mathcal N}-\varepsilon_\beta+\omega_{\mathrm{IR}})t}\,
+	\bra{\mathcal R_n}\hat D_{\mathrm{IR}}\ket{\mathcal N,\varepsilon_\beta} .
+\end{equation}</div>
+<h3 id="sec-11-reading-the-terms"><span class="sec-number">11.4.1</span>Reading the Terms</h3>
+<p>Four observations account for everything above.</p>
+<section class="callout remark" id="remark-rem-co2-structure"><header>Remark 11.4.1 - Every coupling is envelope <span class="math-inline">\(\times\)</span> phase <span class="math-inline">\(\times\)</span> dipole</header><p> That is the structure of Eq. <a href="../chapter-06/index.html#eq-eq-td-coupled">(6.3)</a>: <span class="math-inline">\(h(t)\)</span> says when the pulse is present, the exponential carries the energy mismatch, and the matrix element says how strongly the states are connected. By Remark <a href="../chapter-06/index.html#remark-rem-td-resonance">6.2.2</a> a term matters only when its exponent is small — when the photon energy nearly matches the transition.</p></section>
+<section class="callout remark" id="remark-rem-co2-decay"><header>Remark 11.4.2 - The decay term is not from the laser</header><p> The term <span class="math-inline">\(i\Gamma_{nn}c_{\mathcal R_n}/2\)</span> on the left of Eq. <a href="../chapter-11/index.html#eq-eq-co2-cr">(11.7)</a> carries no envelope and no dipole. It is autoionization, present whether or not any light is on, and it makes the effective Hamiltonian non-Hermitian in the Rydberg block. The factor <span class="math-inline">\(\tfrac12\)</span> is because amplitudes decay at half the rate of populations: <span class="math-inline">\(|c|^{2}\sim e^{-\Gamma t}\)</span> requires <span class="math-inline">\(c\sim e^{-\Gamma t/2}\)</span>.</p></section>
+<section class="callout remark" id="remark-rem-co2-two-ends"><header>Remark 11.4.3 - The two ends of the same process</header><p> The second term of Eq. <a href="../chapter-11/index.html#eq-eq-co2-cx">(11.8)</a> is <span class="math-inline">\(\sqrt{\Gamma_{nn}/2\pi}\)</span> — Eq. <a href="../chapter-10/index.html#eq-eq-fano-effective-coupling">(10.9)</a> exactly. It and the decay term of Remark <a href="../chapter-11/index.html#remark-rem-co2-decay">11.4.2</a> are the same physics viewed from opposite ends: population leaving the Rydberg state arrives in the continuum. Together they conserve Eq. <a href="../chapter-11/index.html#eq-eq-co2-normalization">(11.2)</a>.</p></section>
+<section class="callout remark" id="remark-rem-co2-interference"><header>Remark 11.4.4 - Interference lives in Eq. <a href="../chapter-11/index.html#eq-eq-co2-cx">(11.8)</a></header><p> Its two terms add <em>amplitudes</em> into the same final state <span class="math-inline">\(\ket{\mathcal C,\varepsilon_\alpha}\)</span>. Squaring the sum produces a cross term, and that cross term is the Fano asymmetry — now time-dependent, because the two contributions arrive on different schedules. The direct term follows the pump envelope and stops when the pulse does; the resonant term keeps arriving for as long as the Rydberg states take to decay.</p></section>
+<h3 id="sec-11-the-effective-pump-amplitude"><span class="sec-number">11.4.2</span>The Effective Pump Amplitude</h3>
+<p>One symbol in Eq. <a href="../chapter-11/index.html#eq-eq-co2-cr">(11.7)</a> remains: <span class="math-inline">\(\rho_n\)</span>, the effective strength with which the XUV pumps the Rydberg state. It is <em>not</em> simply the bound dipole, because the Markov elimination of the continuum folds the direct route into the resonant one. The result is</p>
+<div class="math-block" id="eq-eq-co2-rho">\begin{equation}
+	\label{eq:CO2-rho}
+	\boxed{\;
+		\rho_n=(q_n-i)\sqrt{\frac{\pi\Gamma_{nn}}{2}}\;
+		\bra{g}\hat D_{\mathrm{XUV}}\ket{\mathcal C,\varepsilon_\alpha}
+		\Big|_{\varepsilon_\alpha=E_{\mathcal R_n}-E_{\mathcal C}}\;}
+\end{equation}</div>
+<p>evaluated at the on-shell photoelectron energy — the energy the electron must carry for energy to be conserved when the resonance decays.</p>
+<p>Chapter 10's asymmetry parameter appears here in the combination <span class="math-inline">\((q_n-i)\)</span>, and that complex factor is the whole time-dependent Fano effect in one bracket. The real part is resonant excitation; the imaginary part is interference with the direct route; and <span class="math-inline">\(q_n\)</span> measures their ratio, exactly as in Eq. <a href="../chapter-10/index.html#eq-eq-fano-q-def">(10.18)</a>. Setting <span class="math-inline">\(q_n\to\infty\)</span> leaves the resonance alone; setting <span class="math-inline">\(q_n=0\)</span> leaves only the interference term, which is the window resonance of Chapter 10.</p>
+<h2 id="sec-11-the-approximations"><span class="sec-number">11.5</span>The Approximations</h2>
+<p>A model is only as good as its stated assumptions. Six are made, and you should now be able to judge every one.</p>
+<ol><li><p><strong>Two channels.</strong> One coupled continuum (<span class="math-inline">\(\mathcal C\)</span>, here <span class="math-inline">\(X^{2}\Pi_g\)</span>) and one uncoupled (<span class="math-inline">\(\mathcal N\)</span>, here <span class="math-inline">\(B^{2}\Sigma_u^{+}\)</span>); the <span class="math-inline">\(A\)</span> and <span class="math-inline">\(C\)</span> ionic states of Example <a href="../chapter-07/index.html#example-ex-mol-co2-ions">7.5.2</a> are dropped. Justified because the experiment resolves photoelectron energy and can separate the channels.</p></li><li><p><strong>One vibrational level and one partial wave per channel.</strong> Nuclear motion is frozen — the timescale argument of Sec. <a href="../chapter-07/index.html#sec-7-the-three-energy-scales">7.10</a>: the pump is a few femtoseconds, nuclear motion takes tens. This is the weakest assumption for the longest-lived resonances, which survive for picoseconds.</p></li><li><p><strong>Configuration interaction restricted to the resonant coupling.</strong> Only <span class="math-inline">\(\bra{\mathcal R_n}\hat V_{\mathrm{CI}}\ket{\mathcal C,\varepsilon_\alpha}\)</span> is kept, set to <span class="math-inline">\(\sqrt{\Gamma_{nn}/2\pi}\)</span>; continuum–continuum interactions are dropped.</p></li><li><p><strong>Independent resonances.</strong> Cross-widths <span class="math-inline">\(\Gamma_{nm}=0\)</span> for <span class="math-inline">\(m\neq n\)</span>, so each state decays at its own rate without coherent mixing through the shared continuum. Exercise <strong>E3</strong> tests this.</p></li><li><p><strong>No infrared coupling within the Rydberg manifold.</strong> <span class="math-inline">\(\bra{\mathcal R_m}\hat D_{\mathrm{IR}}\ket{\mathcal R_n}=0\)</span>, the parity argument of Example <a href="../chapter-09/index.html#example-ex-elec-parity">9.7.1</a>: both series are built on the same <span class="math-inline">\(3\sigma_u\)</span> hole with <span class="math-inline">\(g\)</span> Rydberg orbitals, so both have total parity <span class="math-inline">\(u\)</span>, and one photon cannot connect two states of equal parity. Not an approximation so much as a symmetry.</p></li><li><p><strong>Predissociation neglected.</strong> The sharp states can also fall apart into neutral fragments, competing with autoionization. Omitting it makes the calculated autoionization yields upper bounds.</p></li></ol>
+<p>Assumption (v) illustrates what this course was for. It removes an entire block of the Hamiltonian and costs nothing — no fitting, no parameter, no error — because it follows from the inversion symmetry of a linear centrosymmetric molecule. A symmetry argument proved in Chapter 3, applied to labels earned in Chapter 7, simplifies a research calculation in Chapter 11.</p>
+<h2 id="sec-11-what-the-model-predicts"><span class="sec-number">11.6</span>What the Model Predicts</h2>
+<p>Solving Eqs. <a href="../chapter-11/index.html#eq-eq-co2-cg">(11.6)</a>–<a href="../chapter-11/index.html#eq-eq-co2-cb">(11.9)</a> for each delay <span class="math-inline">\(t_d\)</span> gives <span class="math-inline">\(|c_{\mathcal C}(\infty,\varepsilon_\alpha)|^{2}\)</span> and <span class="math-inline">\(|c_{\mathcal N}(\infty,\varepsilon_\beta)|^{2}\)</span> — the photoelectron spectrum in each channel as a function of delay. The two observables answer different questions.</p>
+<h3 id="sec-11-the-coupled-channel-c-here-x-a-fano-profile-assembling-itself">The coupled channel (C, here X): a Fano profile assembling itself</h3>
+<p>Both pathways reach this continuum, so its spectrum carries the interference. Early in the pulse only the direct route has contributed and the spectrum is smooth. As the Rydberg states decay — over hundreds of femtoseconds for the sharp series, tens for the diffuse — the resonant amplitude accumulates and the asymmetric Fano profile of Chapter 10 grows in where a featureless background used to be.</p>
+<div class="centered"><p><em>The Fano line shape is not a property a state has; it is something that happens, on the timescale <span class="math-inline">\(\tau=\hbar/\Gamma\)</span>.</em></p></div>
+<p>Chapter 10's stationary formula, Eq. <a href="../chapter-10/index.html#eq-eq-fano-profile">(10.16)</a>, is the <span class="math-inline">\(t\to\infty\)</span> limit of this.</p>
+<h3 id="sec-11-the-uncoupled-channel-n-here-b-quantum-beats">The uncoupled channel (N, here B): quantum beats</h3>
+<p>No XUV route reaches this continuum, so its population is proportional to the Rydberg population surviving when the probe arrives. The broadband pump excited several Rydberg states <em>coherently</em> (Example <a href="../chapter-06/index.html#example-ex-td-pulse-spec">6.5.2</a>), and their amplitudes carry phases advancing at different rates, <span class="math-inline">\(e^{-iE_{\mathcal R_n}t}\)</span>. Any pair therefore beats at</p>
+<div class="math-block" id="eq-eq-co2-beat">\begin{equation}
+	\label{eq:CO2-beat}
+	\omega_{nm}=E_{\mathcal R_n}-E_{\mathcal R_m},
+\end{equation}</div>
+<p>and the <span class="math-inline">\(\mathcal N\)</span>-channel yield (here the <span class="math-inline">\(B\)</span> channel) oscillates with <span class="math-inline">\(t_d\)</span> at that frequency, superposed on the overall exponential decay.</p>
+<p>Fourier transforming the delay dependence therefore recovers the level <em>spacings</em> directly. Because the photoelectron energy is resolved as well, pairs whose beat frequencies nearly coincide but whose electron energies differ can be told apart — which is what makes the technique more than a lifetime measurement.</p>
+<section class="callout example" id="example-ex-co2-beats"><header>Example 11.6.1 - Which beats are observable</header><p> Two members of the sharp series lie at <span class="math-inline">\(17.5395\)</span> eV (<span class="math-inline">\(5d\)</span>, <span class="math-inline">\(\tau=372.6\)</span> fs) and <span class="math-inline">\(17.7018\)</span> eV (<span class="math-inline">\(6d\)</span>, <span class="math-inline">\(\tau=1457.5\)</span> fs). Find the beat period and decide whether it can be seen.</p>
+<p class="solution-head">Solution.</p>
+<p>The spacing is</p>
+<div class="math-block">\[
+	\Delta E=17.7018-17.5395=0.1623~\mathrm{eV},
+	\]</div>
+<p>and with <span class="math-inline">\(2\pi\hbar=4.136\)</span> eV fs the beat period is</p>
+<div class="math-block">\[
+	T=\frac{2\pi\hbar}{\Delta E}=\frac{4.136}{0.1623}=25.5~\mathrm{fs}.
+	\]</div>
+<p>Now the question that decides whether the experiment works. The beating survives only as long as <em>both</em> states do, so the shorter lifetime governs:</p>
+<div class="math-block">\[
+	\frac{372.6}{25.5}\approx15~\text{beat periods}.
+	\]</div>
+<p>Fifteen oscillations before the envelope decays is ample — the Fourier transform will show a clean, narrow peak.</p>
+<p>Contrast the diffuse series, where the <span class="math-inline">\(5s\)</span> state lives <span class="math-inline">\(15.9\)</span> fs. Its beats against a neighbour would be damped within a single period, so no oscillation is observable at all: that channel reports a decay and nothing more.</p>
+<p>The same experiment therefore measures a <em>frequency</em> for one series and only a <em>lifetime</em> for the other, and the difference traces back through <span class="math-inline">\(\Gamma\tau=\hbar\)</span> to states differing only in <span class="math-inline">\(l\)</span> — that is, to the centrifugal barrier of Chapter 3.</p></section>
+<h2 id="sec-11-summary"><span class="sec-number">11.7</span>Summary</h2>
+<ul><li><p>An XUV pump reaches the coupled continuum (<span class="math-inline">\(\mathcal C\equiv X^{2}\Pi_g\)</span>) both directly and through the <span class="math-inline">\((3\sigma_u)^{-1}nl\sigma_g\)</span> Rydberg states, which autoionize into it; those two routes interfere. A delayed infrared probe ionizes the surviving Rydberg population into the uncoupled continuum (<span class="math-inline">\(\mathcal N\equiv B^{2}\Sigma_u^{+}\)</span>), which no XUV route reaches.</p></li><li><p>The state is expanded as Eq. <a href="../chapter-11/index.html#eq-eq-co2-expansion">(11.1)</a>: two discrete kinds of amplitude and two continuum integrals, with probability conserved by Eq. <a href="../chapter-11/index.html#eq-eq-co2-normalization">(11.2)</a>.</p></li><li><p><span class="math-inline">\(\hat H_e\)</span> splits into channel-diagonal blocks and the configuration interaction <span class="math-inline">\(\hat V_{\mathrm{CI}}\)</span>, which is the autoionization coupling of Chapter 10.</p></li><li><p>Projecting, applying the RWA and eliminating the coupled continuum in the Markov–Fano reduction gives Eqs. <a href="../chapter-11/index.html#eq-eq-co2-cg">(11.6)</a>–<a href="../chapter-11/index.html#eq-eq-co2-cb">(11.9)</a>: Chapter 6's <span class="math-inline">\(i\dot c_k=\sum_nc_nV_{kn}e^{i\omega_{kn}t}\)</span> written out. Every coupling is envelope <span class="math-inline">\(\times\)</span> phase <span class="math-inline">\(\times\)</span> dipole; the decay term <span class="math-inline">\(i\Gamma_{nn}/2\)</span> carries neither and is autoionization.</p></li><li><p>Interference sits in Eq. <a href="../chapter-11/index.html#eq-eq-co2-cx">(11.8)</a>, whose two terms add amplitudes into one final state. The complex factor <span class="math-inline">\((q_n-i)\)</span> in <span class="math-inline">\(\rho_n\)</span> carries the balance of the two routes.</p></li><li><p>Of the six approximations, the one removing most work — no infrared coupling within the Rydberg manifold — is a parity argument, not a fit.</p></li><li><p>The <span class="math-inline">\(\mathcal C\)</span> channel (here <span class="math-inline">\(X\)</span>) shows the Fano profile <em>building up</em> over <span class="math-inline">\(\tau=\hbar/\Gamma\)</span>: the line shape is an event, not a property. The <span class="math-inline">\(\mathcal N\)</span> channel (here <span class="math-inline">\(B\)</span>) shows quantum beats at the Rydberg level spacings, Eq. <a href="../chapter-11/index.html#eq-eq-co2-beat">(11.11)</a>, so a Fourier transform of the delay dependence returns the spectrum of the wave packet.</p></li></ul>
+<h2 id="sec-11-exercises"><span class="sec-number">11.8</span>Exercises</h2>
+<ol><li><p><strong>Account for every term.</strong> Take Eq. <a href="../chapter-11/index.html#eq-eq-co2-cr">(11.7)</a>. For each of its three terms state (a) which physical process it represents, (b) which pulse if any drives it, and (c) which earlier chapter defined the quantity in it. Then explain why the second term contains <span class="math-inline">\(c_{\mathcal N}\)</span> rather than <span class="math-inline">\(c_{\mathcal C}\)</span>.</p></li><li><p><strong>Beats and lifetimes.</strong> Repeat Example <a href="../chapter-11/index.html#example-ex-co2-beats">11.6.1</a> for <span class="math-inline">\(7d\)</span> (<span class="math-inline">\(17.8000\)</span> eV, <span class="math-inline">\(\tau=3378.5\)</span> fs) and <span class="math-inline">\(8d\)</span> (<span class="math-inline">\(17.8650\)</span> eV, <span class="math-inline">\(\tau=1485.2\)</span> fs). Give the beat period and the number of observable periods. Then find the pair from Chapter 10's table whose beat would be <em>hardest</em> to observe, and say why.</p></li><li><p><strong>Testing assumption (iv).</strong> Independent resonances requires that neighbouring resonances not overlap: widths small compared with spacing.</p>
+<ol><li><p>Using <span class="math-inline">\(\Gamma_n\propto(n^{*})^{-3}\)</span> (Thm. <a href="../chapter-10/index.html#theorem-thm-fano-scaling">10.6.1</a>) and the Rydberg level spacing <span class="math-inline">\(\Delta E\propto(n^{*})^{-3}\)</span> (Eq. <a href="../chapter-04/index.html#eq-eq-h-spacing">(4.61)</a>), show that the ratio <span class="math-inline">\(\Gamma/\Delta E\)</span> is <em>independent of <span class="math-inline">\(n^{*}\)</span></em>.</p></li><li><p>Evaluate that ratio for the <span class="math-inline">\(5d\)</span> state using its width and its spacing to <span class="math-inline">\(6d\)</span>.</p></li><li><p>Comment: does the assumption get better or worse as <span class="math-inline">\(n\)</span> increases, and why is that answer surprising?</p></li></ol></li><li><p><strong>The pump amplitude.</strong> From Eq. <a href="../chapter-11/index.html#eq-eq-co2-rho">(11.10)</a>, compute <span class="math-inline">\(|\rho_n|\)</span> in terms of <span class="math-inline">\(q_n\)</span> and <span class="math-inline">\(\Gamma_{nn}\)</span>, and find the phase of <span class="math-inline">\(\rho_n\)</span>. What happens to both as <span class="math-inline">\(q_n\to\infty\)</span>, and what physical situation does that limit describe?</p></li><li><p><strong>Norm conservation.</strong> Show analytically that with the probe off and the pump over,</p>
+<div class="math-block">\[
+	\frac{d}{dt}\left[\sum_n|c_{\mathcal R_n}|^{2}
+	+\int d\varepsilon_\alpha|c_{\mathcal C}|^{2}\right]=0 .
+	\]</div>
+<p>using Eqs. <a href="../chapter-11/index.html#eq-eq-co2-cr">(11.7)</a> and <a href="../chapter-11/index.html#eq-eq-co2-cx">(11.8)</a>. Identify which two terms cancel, and relate the result to Remark <a href="../chapter-11/index.html#remark-rem-co2-two-ends">11.4.3</a>.</p></li></ol>
+<h2 id="sec-11-project-time-resolved-fano-buildup"><span class="sec-number">11.9</span>Project: Time-Resolved Fano Buildup</h2>
+<p><strong>The problem.</strong> Solve a reduced version of Eqs. <a href="../chapter-11/index.html#eq-eq-co2-cg">(11.6)</a>–<a href="../chapter-11/index.html#eq-eq-co2-cb">(11.9)</a> numerically and watch both signatures appear: the Fano profile assembling itself in the coupled channel (<span class="math-inline">\(\mathcal C\)</span>, here <span class="math-inline">\(X\)</span>), and quantum beats in the uncoupled channel (<span class="math-inline">\(\mathcal N\)</span>, here <span class="math-inline">\(B\)</span>). This is the capstone of the course, and a small version of the research code.</p>
+<p>Reduce as follows: keep the ground state, <em>two</em> Rydberg states (so there is something to beat), and both continua on energy grids. Take the pump weak enough that <span class="math-inline">\(c_g\approx1\)</span> throughout, which removes Eq. <a href="../chapter-11/index.html#eq-eq-co2-cg">(11.6)</a>.</p>
+<p>Use real parameters: <span class="math-inline">\(E_{\mathcal N}=E_B=18.08\)</span> eV, and for the two Rydberg states the <span class="math-inline">\(5d\)</span> and <span class="math-inline">\(6d\)</span> values — energies <span class="math-inline">\(17.5395\)</span> and <span class="math-inline">\(17.7018\)</span> eV, lifetimes <span class="math-inline">\(372.6\)</span> and <span class="math-inline">\(1457.5\)</span> fs, infrared dipoles <span class="math-inline">\(1.000\)</span> and <span class="math-inline">\(0.765\)</span>, <span class="math-inline">\(q_{5d}=2.00\)</span> and <span class="math-inline">\(q_{6d}=3.69\)</span>. Take a Gaussian XUV pulse of <span class="math-inline">\(0.4\)</span> eV bandwidth centred at <span class="math-inline">\(17.6\)</span> eV and a longer infrared pulse. Work in atomic units.</p>
+<ol><li><p><strong>On paper.</strong> Write the reduced equations explicitly for two Rydberg states with <span class="math-inline">\(c_g=1\)</span>. Confirm by inspection that with the probe off each <span class="math-inline">\(c_{\mathcal R_n}\)</span> decays as <span class="math-inline">\(e^{-\Gamma_{nn}t/2}\)</span> once the pump has passed, so <span class="math-inline">\(|c_{\mathcal R_n}|^{2}\)</span> decays at <span class="math-inline">\(\Gamma_{nn}\)</span>.</p></li><li><p><strong>On paper.</strong> Convert every parameter to atomic units and state the time step you will need. It must resolve the fastest phase in the problem — identify which exponent in Eqs. <a href="../chapter-11/index.html#eq-eq-co2-cr">(11.7)</a>–<a href="../chapter-11/index.html#eq-eq-co2-cb">(11.9)</a> that is.</p></li><li><p><strong>On the computer.</strong> With the probe off, integrate the <span class="math-inline">\(c_{\mathcal R_n}\)</span> and <span class="math-inline">\(c_{\mathcal C}\)</span> equations and plot the <span class="math-inline">\(\mathcal C\)</span>-channel spectrum <span class="math-inline">\(|c_{\mathcal C}(t,\varepsilon_\alpha)|^{2}\)</span> at several times: during the pulse, at <span class="math-inline">\(\tau/4\)</span>, <span class="math-inline">\(\tau\)</span> and <span class="math-inline">\(4\tau\)</span> of the shorter-lived state. The asymmetric profile should grow out of a smooth background. Compare the final spectrum with Eq. <a href="../chapter-10/index.html#eq-eq-fano-profile">(10.16)</a> using the same <span class="math-inline">\(q\)</span> and <span class="math-inline">\(\Gamma\)</span>.</p></li><li><p><strong>On the computer.</strong> Verify that <span class="math-inline">\(\sum_n|c_{\mathcal R_n}|^{2}+\int d\varepsilon_\alpha|c_{\mathcal C}|^{2}\)</span> is conserved once the pump is over — the analytic result of Exercise <strong>E5</strong>. Report the drift; this tests whether your continuum grid is dense and wide enough, and you should state what you needed.</p></li><li><p><strong>On the computer.</strong> Switch the probe on and scan <span class="math-inline">\(t_d\)</span> over several hundred femtoseconds. Plot the total <span class="math-inline">\(\mathcal N\)</span>-channel yield <span class="math-inline">\(\int d\varepsilon_\beta|c_{\mathcal N}(\infty,\varepsilon_\beta)|^{2}\)</span> against <span class="math-inline">\(t_d\)</span>: exponential decay with oscillations superposed.</p></li><li><p><strong>On the computer.</strong> Fourier transform that delay trace and identify the beat frequency. Compare with <span class="math-inline">\(E_{6d}-E_{5d}\)</span> from Eq. <a href="../chapter-11/index.html#eq-eq-co2-beat">(11.11)</a> and with the <span class="math-inline">\(25.5\)</span> fs period of Example <a href="../chapter-11/index.html#example-ex-co2-beats">11.6.1</a>.</p></li><li><p><strong>What has to move.</strong> Two animations. First, the <span class="math-inline">\(\mathcal C\)</span>-channel spectrum (here <span class="math-inline">\(X\)</span>) against time with the stationary Fano profile drawn behind as a dashed target — the moving curve should converge onto it. Second, the two Rydberg populations and the <span class="math-inline">\(\mathcal N\)</span>-channel yield (here <span class="math-inline">\(B\)</span>) as the delay is scanned, so the beating is visible as it is measured.</p></li></ol>
+<p><strong>The check.</strong> Part (c) is the one to get right and part (d) is how you know you have. If the built-up profile does not converge to Eq. <a href="../chapter-10/index.html#eq-eq-fano-profile">(10.16)</a>, the usual causes are a continuum grid too narrow to hold the resonance wings, or a grid spacing coarser than <span class="math-inline">\(\Gamma\)</span>. Both show up first as drift in (d).</p>
+<p><strong>Be ready to answer.</strong> Your part (c) spectra converge to the stationary Fano profile, which Chapter 10 derived without any reference to time. Explain what the time-dependent calculation tells you that the stationary one cannot — and identify one experimental observable that would be identical in both descriptions, and one that would not.</p>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <a href="../chapter-10/index.html">Previous: Rydberg and Continuum States; Fano Resonances</a>
+      <a href="../../toc.html">Contents</a>
+      <span></span>
+    </nav>
+  </article>
+</main>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p>&copy; 2026 Erfan Saydanzad. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

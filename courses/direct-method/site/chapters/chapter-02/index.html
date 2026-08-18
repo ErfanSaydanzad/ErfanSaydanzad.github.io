@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 2: Simple Model Systems: Solving the Schrödinger Equation | Direct Method</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+  <link rel="preload" href="../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../assets/css/site.css?v=db81423d">
+  <script>
+    window.MathJax = {
+      // tagformat is an optional TeX extension, not part of the combined
+      // tex-chtml build. Without these two lines the tagformat block below is
+      // read and silently ignored, and every equation numbers from 1 with no
+      // chapter in front of it.
+      loader: { load: ['[tex]/tagformat'] },
+      tex: {
+        packages: { '[+]': ['tagformat'] },
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        processEnvironments: true,
+        tags: 'ams',
+        // The PDF numbers equations within the chapter (\numberwithin
+        // {equation}{chapter}), so "1.8" is the eighth equation of
+        // chapter 1. MathJax counts from 1 on every page, which would have
+        // shown that same equation as "8". Prefixing the chapter number
+        // keeps a reference valid against either version.
+        tagformat: {
+          number: function (n) { return '2.' + n; }
+        },
+        macros: {
+          pdv: ['{\\frac{\\partial #1}{\\partial #2}}', 2],
+          dv: ['{\\frac{d #1}{d #2}}', 2],
+          abs: ['{\\left|#1\\right|}', 1],
+          norm: ['{\\left\\|#1\\right\\|}', 1],
+          curl: '{\\vec{\\nabla}\\times}',
+          div: '{\\vec{\\nabla}\\cdot}',
+          grad: '{\\vec{\\nabla}}',
+          sech: '{\\operatorname{sech}}',
+          csch: '{\\operatorname{csch}}',
+          coth: '{\\operatorname{coth}}',
+          circnum: ['{\\boxed{#1}}', 1],
+          vb: ['{\\mathbf{#1}}', 1],
+          eval: ['{\\left.#1\\right|}', 1],
+          dd: '{\\,d}',
+          // Dirac notation. The chapters are written with the physics
+          // package, which MathJax does not have, so every bra-ket command
+          // the notes use has to be defined here or it renders as red text.
+          // \braket is always given two arguments in these sources.
+          ket: ['{\\left|#1\\right\\rangle}', 1],
+          bra: ['{\\left\\langle#1\\right|}', 1],
+          braket: ['{\\left\\langle#1\\middle|#2\\right\\rangle}', 2],
+          ketbra: ['{\\left|#1\\right\\rangle\\!\\left\\langle#2\\right|}', 2],
+          dyad: ['{\\left|#1\\right\\rangle\\!\\left\\langle#2\\right|}', 2],
+          op: ['{\\left|#1\\right\\rangle\\!\\left\\langle#1\\right|}', 1],
+          mel: ['{\\left\\langle#1\\right|#2\\left|#3\\right\\rangle}', 3],
+          expval: ['{\\left\\langle#1\\right\\rangle}', 1],
+          ev: ['{\\left\\langle#1\\right\\rangle}', 1],
+          comm: ['{\\left[#1,#2\\right]}', 2],
+          acomm: ['{\\left\\{#1,#2\\right\\}}', 2],
+          anticommutator: ['{\\left\\{#1,#2\\right\\}}', 2],
+          Tr: '{\\operatorname{Tr}}',
+          tr: '{\\operatorname{tr}}',
+          bm: ['{\\boldsymbol{#1}}', 1]
+        }
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <script defer src="../../assets/js/main.js?v=db81423d"></script>
+
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="../../index.html">
+    <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M9 6.5V25.5M9 6.5H24M9 25.5H24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 16Q10.5 9.5 15.5 16T25.5 16" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/></svg>
+    <span>Direct Method</span>
+  </a>
+  <nav class="top-nav" aria-label="Primary">
+    <a href="../../index.html">Home</a>
+    <a href="../../toc.html">Contents</a>
+    <a href="../../projects.html">Projects</a>
+  </nav>
+</header>
+<main class="layout" id="main">
+  <aside class="sidebar">
+  <div class="sidebar-inner">
+    <p class="sidebar-kicker">Chapter 2</p>
+    <h2>Simple Model Systems: Solving the Schrödinger Equation</h2>
+    <nav class="chapter-toc" aria-label="Chapter contents">
+      <a class="toc-level-2" href="#sec-2-introduction">2.1 Introduction</a>
+<a class="toc-level-2" href="#sec-2-stationary-states">2.2 Stationary States</a>
+<a class="toc-level-2" href="#sec-2-the-free-particle">2.3 The Free Particle</a>
+<a class="toc-level-3" href="#sec-2-wave-packets-and-group-velocity">2.3.1 Wave Packets and Group Velocity</a>
+<a class="toc-level-2" href="#sec-2-the-infinite-square-well">2.4 The Infinite Square Well</a>
+<a class="toc-level-2" href="#sec-2-the-finite-square-well">2.5 The Finite Square Well</a>
+<a class="toc-level-3" href="#sec-2-even-solutions">Even solutions</a>
+<a class="toc-level-3" href="#sec-2-odd-solutions">Odd solutions</a>
+<a class="toc-level-3" href="#sec-2-solving-the-conditions">Solving the conditions</a>
+<a class="toc-level-2" href="#sec-2-the-potential-barrier-and-tunnelling">2.6 The Potential Barrier and Tunnelling</a>
+<a class="toc-level-2" href="#sec-2-the-harmonic-oscillator">2.7 The Harmonic Oscillator</a>
+<a class="toc-level-3" href="#sec-2-ladder-operators">2.7.1 Ladder Operators</a>
+<a class="toc-level-3" href="#sec-2-the-spectrum">2.7.2 The Spectrum</a>
+<a class="toc-level-3" href="#sec-2-position-representation">2.7.3 Position Representation</a>
+<a class="toc-level-2" href="#sec-2-summary">2.8 Summary</a>
+<a class="toc-level-2" href="#sec-2-exercises">2.9 Exercises</a>
+<a class="toc-level-2" href="#sec-2-project-solving-one-dimensional-problems-numerically">2.10 Project: Solving One-Dimensional Problems Numerically</a>
+    </nav>
+  </div>
+</aside>
+
+  <article class="content">
+    <header class="chapter-hero">
+      <p>Chapter 2</p>
+      <h1>Simple Model Systems: Solving the Schrödinger Equation</h1>
+    </header>
+    <h2 id="sec-2-introduction"><span class="sec-number">2.1</span>Introduction</h2>
+<p>Chapter 1 set out the postulates. This chapter applies them to the smallest set of problems that can be solved exactly, in one dimension, and it is worth being explicit about why these particular problems and no others.</p>
+<p>Each one is a permanent tool rather than an exercise:</p>
+<ul><li><p>the <strong>free particle</strong> gives the continuum states that every ionization process ends in;</p></li><li><p>the <strong>infinite well</strong> gives quantization in its simplest form and the node-counting rule used to check every later solution;</p></li><li><p>the <strong>finite well</strong> gives the transcendental matching conditions that recur whenever a potential has more than one region;</p></li><li><p>the <strong>barrier</strong> gives tunnelling, and the exponential sensitivity that makes strong-field ionization possible;</p></li><li><p>the <strong>harmonic oscillator</strong> gives the ladder-operator method, which Chapter 3 reuses for angular momentum, and describes every molecular vibration in Chapter 7.</p></li></ul>
+<p>All five reappear. The three-dimensional atoms of Chapters 4 and 5 reduce, after separating the angles, to a one-dimensional radial equation of exactly the form solved here.</p>
+<h2 id="sec-2-stationary-states"><span class="sec-number">2.2</span>Stationary States</h2>
+<p>The time-dependent Schrödinger equation (TDSE) of Chapter 1 is</p>
+<div class="math-block" id="eq-eq-ms-tdse">\begin{equation}
+	\label{eq:MS-TDSE}
+	i\hbar\,\frac{\partial}{\partial t}\ket{\Psi(t)}=\hat H\ket{\Psi(t)} .
+\end{equation}</div>
+<section class="callout theorem" id="theorem-thm-ms-separation"><header>Theorem 2.2.1 - Separation of the TDSE</header><p> If <span class="math-inline">\(\hat H\)</span> does not depend on time, then Eq. <a href="../chapter-02/index.html#eq-eq-ms-tdse">(2.1)</a> admits solutions of the form</p>
+<div class="math-block" id="eq-eq-ms-stationary">\begin{equation}
+		\label{eq:MS-stationary}
+		\ket{\Psi(t)}=e^{-iEt/\hbar}\ket{\psi},
+	\end{equation}</div>
+<p>where <span class="math-inline">\(\ket{\psi}\)</span> satisfies the time-independent Schrödinger equation (TISE)</p>
+<div class="math-block" id="eq-eq-ms-tise">\begin{equation}
+		\label{eq:MS-TISE}
+		\hat H\ket{\psi}=E\ket{\psi} .
+	\end{equation}</div></section>
+<div class="proof" data-lead="Proof."><p>Try <span class="math-inline">\(\ket{\Psi(t)}=f(t)\ket{\psi}\)</span> with <span class="math-inline">\(\ket{\psi}\)</span> time-independent. Substituting into Eq. <a href="../chapter-02/index.html#eq-eq-ms-tdse">(2.1)</a>,</p>
+<div class="math-block">\[
+	i\hbar\,\dot f(t)\ket{\psi}=f(t)\hat H\ket{\psi} .
+	\]</div>
+<p>Taking the inner product with <span class="math-inline">\(\bra{\psi}\)</span> and dividing by <span class="math-inline">\(f\braket{\psi}{\psi}\)</span>,</p>
+<div class="math-block">\[
+	i\hbar\frac{\dot f}{f}=\frac{\bra{\psi}\hat H\ket{\psi}}{\braket{\psi}{\psi}}
+	\equiv E ,
+	\]</div>
+<p>a constant, since the left side depends only on <span class="math-inline">\(t\)</span> and the right side not at all. Integrating gives <span class="math-inline">\(f=e^{-iEt/\hbar}\)</span>, and substituting back gives Eq. <a href="../chapter-02/index.html#eq-eq-ms-tise">(2.3)</a>.</p></div>
+<section class="callout remark" id="remark-rem-ms-stationary"><header>Remark 2.2.1 - Why “stationary”</header><p> The state <a href="../chapter-02/index.html#eq-eq-ms-stationary">(2.2)</a> does change in time — its phase rotates — but the phase cancels in every probability:</p>
+<div class="math-block">\[
+	|\Psi(x,t)|^{2}=\left|e^{-iEt/\hbar}\right|^{2}|\psi(x)|^{2}=|\psi(x)|^{2},
+	\]</div>
+<p>and likewise for the expectation value of any time-independent operator. Nothing observable evolves. Motion requires a <em>superposition</em> of stationary states with different energies, whose relative phases advance at different rates — the mechanism behind wave packets (Sec. <a href="../chapter-02/index.html#sec-2-wave-packets-and-group-velocity">2.3.1</a>) and quantum beats (Chapter 11).</p></section>
+<p>In one dimension, with <span class="math-inline">\(\hat H=\hat p^{2}/2m+V(x)\)</span> and <span class="math-inline">\(\hat p=-i\hbar\,d/dx\)</span>, Eq. <a href="../chapter-02/index.html#eq-eq-ms-tise">(2.3)</a> reads</p>
+<div class="math-block" id="eq-eq-ms-tise-1d">\begin{equation}
+	\label{eq:MS-TISE-1D}
+	\boxed{\;
+		-\frac{\hbar^{2}}{2m}\frac{d^{2}\psi}{dx^{2}}+V(x)\psi(x)=E\,\psi(x)\;}
+\end{equation}</div>
+<p>This is the equation solved five times below. Two general facts about it save work every time.</p>
+<section class="callout theorem" id="theorem-thm-ms-continuity"><header>Theorem 2.2.2 - Continuity conditions</header><p> Wherever <span class="math-inline">\(V(x)\)</span> is finite, <span class="math-inline">\(\psi\)</span> and <span class="math-inline">\(d\psi/dx\)</span> are both continuous. Where <span class="math-inline">\(V\)</span> has an infinite jump, <span class="math-inline">\(\psi\)</span> remains continuous but <span class="math-inline">\(d\psi/dx\)</span> need not.</p></section>
+<div class="proof" data-lead="Proof."><p>Rearranging Eq. <a href="../chapter-02/index.html#eq-eq-ms-tise-1d">(2.4)</a>, <span class="math-inline">\(\psi&#x27;&#x27;=\tfrac{2m}{\hbar^{2}}(V-E)\psi\)</span>. If <span class="math-inline">\(V\)</span> is finite then <span class="math-inline">\(\psi&#x27;&#x27;\)</span> is finite, so <span class="math-inline">\(\psi&#x27;\)</span> is continuous, and hence <span class="math-inline">\(\psi\)</span> is too. If <span class="math-inline">\(V\)</span> is infinite the argument fails for <span class="math-inline">\(\psi&#x27;\)</span>, but <span class="math-inline">\(\psi\)</span> must still be continuous for <span class="math-inline">\(\psi&#x27;&#x27;\)</span> to be integrable.</p></div>
+<section class="callout theorem" id="theorem-thm-ms-nodes"><header>Theorem 2.2.3 - Node counting</header><p> The bound states of Eq. <a href="../chapter-02/index.html#eq-eq-ms-tise-1d">(2.4)</a> in one dimension are non-degenerate, can be chosen real, and may be ordered so that the <span class="math-inline">\(n\)</span>-th state (<span class="math-inline">\(n=1,2,3,\dots\)</span>) has exactly <span class="math-inline">\(n-1\)</span> nodes.</p></section>
+<p>Theorem <a href="../chapter-02/index.html#theorem-thm-ms-nodes">2.2.3</a> is quoted rather than proved, but it is used constantly: it is how you confirm a numerical solution has not skipped a level, and it reappears as the rule <span class="math-inline">\(n-l-1\)</span> for hydrogen in Chapter 4.</p>
+<h2 id="sec-2-the-free-particle"><span class="sec-number">2.3</span>The Free Particle</h2>
+<p>Take <span class="math-inline">\(V(x)=0\)</span> everywhere. Equation <a href="../chapter-02/index.html#eq-eq-ms-tise-1d">(2.4)</a> becomes</p>
+<div class="math-block" id="eq-eq-ms-free-eq">\begin{equation}
+	\label{eq:MS-free-eq}
+	\frac{d^{2}\psi}{dx^{2}}=-k^{2}\psi,
+	\qquad
+	k=\frac{\sqrt{2mE}}{\hbar},
+\end{equation}</div>
+<p>with general solution</p>
+<div class="math-block" id="eq-eq-ms-free-solution">\begin{equation}
+	\label{eq:MS-free-solution}
+	\psi_k(x)=A e^{ikx}+Be^{-ikx} .
+\end{equation}</div>
+<p>Taking the two terms separately, <span class="math-inline">\(e^{ikx}\)</span> moves to the right and <span class="math-inline">\(e^{-ikx}\)</span> to the left, each with</p>
+<div class="math-block" id="eq-eq-ms-free-energy">\begin{equation}
+	\label{eq:MS-free-energy}
+	E=\frac{\hbar^{2}k^{2}}{2m},
+	\qquad
+	p=\hbar k .
+\end{equation}</div>
+<p>There is no boundary condition and hence <em>no quantization</em>: every <span class="math-inline">\(E&gt;0\)</span> is allowed. This is the continuum, and it is the first appearance of the object that Chapters 9 to 11 depend on.</p>
+<section class="callout remark" id="remark-rem-ms-continuum-norm"><header>Remark 2.3.1 - Normalization of continuum states</header><p> A plane wave is not square-integrable: <span class="math-inline">\(\int_{-\infty}^{\infty}|e^{ikx}|^{2}dx=\int dx\)</span> diverges. Two standard repairs exist. One is to confine the particle to a large box of length <span class="math-inline">\(L\)</span> and normalize to <span class="math-inline">\(1/\sqrt{L}\)</span>, taking <span class="math-inline">\(L\to\infty\)</span> at the end. The other, used throughout the research literature and adopted in Chapter 10, is to normalize to a Dirac delta,</p>
+<div class="math-block" id="eq-eq-ms-delta-norm">\begin{equation}
+		\label{eq:MS-delta-norm}
+		\braket{k}{k&#x27;}=\delta(k-k&#x27;)
+		\qquad\text{or}\qquad
+		\braket{\varepsilon}{\varepsilon&#x27;}=\delta(\varepsilon-\varepsilon&#x27;) ,
+	\end{equation}</div>
+<p>the second being <em>energy normalization</em>. Which convention is in use changes factors of <span class="math-inline">\(2\pi\)</span> and densities of states in every formula, so it must always be stated.</p></section>
+<h3 id="sec-2-wave-packets-and-group-velocity"><span class="sec-number">2.3.1</span>Wave Packets and Group Velocity</h3>
+<p>A single plane wave is spread over all space and describes nothing localised. A particle is built as a superposition:</p>
+<div class="math-block" id="eq-eq-ms-packet">\begin{equation}
+	\label{eq:MS-packet}
+	\Psi(x,t)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}
+	A(k)\,e^{i(kx-\omega(k)t)}\,dk ,
+	\qquad
+	\omega(k)=\frac{E(k)}{\hbar}=\frac{\hbar k^{2}}{2m} .
+\end{equation}</div>
+<p>Expanding <span class="math-inline">\(\omega(k)\)</span> about the central wavenumber <span class="math-inline">\(k_0\)</span>, <span class="math-inline">\(\omega\simeq\omega_0+(k-k_0)\,d\omega/dk\)</span>, the packet moves without changing shape at the <em>group velocity</em></p>
+<div class="math-block" id="eq-eq-ms-group-velocity">\begin{equation}
+	\label{eq:MS-group-velocity}
+	v_g=\left.\frac{d\omega}{dk}\right|_{k_0}
+	=\frac{\hbar k_0}{m}=\frac{p_0}{m} ,
+\end{equation}</div>
+<p>which is the classical velocity — a first instance of the correspondence principle. Keeping the next term in the expansion makes the packet spread, because different <span class="math-inline">\(k\)</span> components travel at different speeds.</p>
+<h2 id="sec-2-the-infinite-square-well"><span class="sec-number">2.4</span>The Infinite Square Well</h2>
+<p>Let</p>
+<div class="math-block" id="eq-eq-ms-infinite-well-v">\begin{equation}
+	\label{eq:MS-infinite-well-V}
+	V(x)=
+	\begin{cases}
+		0, &amp; 0&lt;x&lt;a,\\
+		\infty, &amp; \text{otherwise.}
+	\end{cases}
+\end{equation}</div>
+<p>Since <span class="math-inline">\(V=\infty\)</span> outside, <span class="math-inline">\(\psi\)</span> must vanish there, and by Theorem <a href="../chapter-02/index.html#theorem-thm-ms-continuity">2.2.2</a> <span class="math-inline">\(\psi\)</span> is continuous, so</p>
+<div class="math-block" id="eq-eq-ms-well-bc">\begin{equation}
+	\label{eq:MS-well-BC}
+	\psi(0)=\psi(a)=0 .
+\end{equation}</div>
+<p>Inside, Eq. <a href="../chapter-02/index.html#eq-eq-ms-tise-1d">(2.4)</a> is Eq. <a href="../chapter-02/index.html#eq-eq-ms-free-eq">(2.5)</a> again, with general solution most conveniently written</p>
+<div class="math-block" id="eq-eq-ms-well-general">\begin{equation}
+	\label{eq:MS-well-general}
+	\psi(x)=A\sin kx+B\cos kx .
+\end{equation}</div>
+<p>Apply the boundary conditions in turn. At <span class="math-inline">\(x=0\)</span>, <span class="math-inline">\(\psi(0)=B=0\)</span>, leaving <span class="math-inline">\(\psi=A\sin kx\)</span>. At <span class="math-inline">\(x=a\)</span>,</p>
+<div class="math-block" id="eq-eq-ms-well-quantization">\begin{equation}
+	\label{eq:MS-well-quantization}
+	A\sin ka=0
+	\qquad\Longrightarrow\qquad
+	ka=n\pi,
+	\qquad n=1,2,3,\dots
+\end{equation}</div>
+<p>(<span class="math-inline">\(n=0\)</span> gives <span class="math-inline">\(\psi\equiv0\)</span>, which is not a state; negative <span class="math-inline">\(n\)</span> merely changes the sign.) Hence <span class="math-inline">\(k_n=n\pi/a\)</span> and, from Eq. <a href="../chapter-02/index.html#eq-eq-ms-free-eq">(2.5)</a>,</p>
+<div class="math-block" id="eq-eq-ms-well-energies">\begin{equation}
+	\label{eq:MS-well-energies}
+	\boxed{\;E_n=\frac{\hbar^{2}k_n^{2}}{2m}
+		=\frac{n^{2}\pi^{2}\hbar^{2}}{2ma^{2}},
+		\qquad n=1,2,3,\dots\;}
+\end{equation}</div>
+<p>Normalization fixes <span class="math-inline">\(A\)</span>:</p>
+<div class="math-block" id="eq-eq-ms-well-normalization">\begin{equation}
+	\label{eq:MS-well-normalization}
+	1=\int_0^{a}|A|^{2}\sin^{2}\!\left(\frac{n\pi x}{a}\right)dx
+	=|A|^{2}\frac{a}{2}
+	\qquad\Longrightarrow\qquad
+	A=\sqrt{\frac{2}{a}} ,
+\end{equation}</div>
+<p>using <span class="math-inline">\(\int_0^{a}\sin^{2}(n\pi x/a)\,dx=a/2\)</span>. Therefore</p>
+<div class="math-block" id="eq-eq-ms-well-states">\begin{equation}
+	\label{eq:MS-well-states}
+	\boxed{\;\psi_n(x)=\sqrt{\frac{2}{a}}
+		\sin\!\left(\frac{n\pi x}{a}\right),
+		\qquad 0&lt;x&lt;a\;}
+\end{equation}</div>
+<p>These are orthonormal, <span class="math-inline">\(\int_0^a\psi_m\psi_n\,dx=\delta_{mn}\)</span>, as Chapter 1's general theorem for Hermitian operators requires.</p>
+<section class="callout remark" id="remark-rem-ms-well-lessons"><header>Remark 2.4.1 - Three lessons</header><p> First, <em>confinement quantizes</em>: the discrete spectrum came entirely from the two boundary conditions, not from any postulate. Second, the ground-state energy is not zero, <span class="math-inline">\(E_1=\pi^{2}\hbar^{2}/2ma^{2}\)</span>; a confined particle cannot be at rest, which is the uncertainty principle in energy form. Third, <span class="math-inline">\(\psi_n\)</span> has <span class="math-inline">\(n-1\)</span> nodes inside the well, confirming Theorem <a href="../chapter-02/index.html#theorem-thm-ms-nodes">2.2.3</a>.</p></section>
+<section class="callout example" id="example-ex-ms-well-numbers"><header>Example 2.4.1 - Numbers for an electron and for a molecule</header><p> Evaluate <span class="math-inline">\(E_1\)</span> for an electron confined to <span class="math-inline">\(a=0.1\)</span> nm (an atom) and for a nitrogen molecule confined to <span class="math-inline">\(a=1\)</span> cm (a laboratory box).</p>
+<p class="solution-head">Solution.</p>
+<p>Use <span class="math-inline">\(E_1=\pi^{2}\hbar^{2}/2ma^{2}\)</span>. For the electron, with <span class="math-inline">\(\hbar=1.055\times10^{-34}\)</span> J s and <span class="math-inline">\(m=9.11\times10^{-31}\)</span> kg,</p>
+<div class="math-block">\[
+	E_1=\frac{\pi^{2}(1.055\times10^{-34})^{2}}
+	{2(9.11\times10^{-31})(1.0\times10^{-10})^{2}}
+	=6.0\times10^{-18}~\mathrm{J}=38~\mathrm{eV}.
+	\]</div>
+<p>Comparable to atomic binding energies — so quantization matters at this scale, as it must.</p>
+<p>For N<span class="math-inline">\(_2\)</span>, <span class="math-inline">\(m=4.65\times10^{-26}\)</span> kg and <span class="math-inline">\(a=10^{-2}\)</span> m:</p>
+<div class="math-block">\[
+	E_1=\frac{\pi^{2}(1.055\times10^{-34})^{2}}
+	{2(4.65\times10^{-26})(10^{-2})^{2}}
+	=1.2\times10^{-38}~\mathrm{J}=7.5\times10^{-20}~\mathrm{eV}.
+	\]</div>
+<p>Compare <span class="math-inline">\(k_BT\approx0.025\)</span> eV at room temperature: the level spacing is smaller by eighteen orders of magnitude, so the levels are utterly unresolvable and the motion is classical. The same formula covers both cases; only <span class="math-inline">\(ma^{2}\)</span> differs.</p></section>
+<h2 id="sec-2-the-finite-square-well"><span class="sec-number">2.5</span>The Finite Square Well</h2>
+<p>Let</p>
+<div class="math-block" id="eq-eq-ms-finite-well-v">\begin{equation}
+	\label{eq:MS-finite-well-V}
+	V(x)=
+	\begin{cases}
+		-V_0, &amp; |x|&lt;a,\\
+		0, &amp; |x|&gt;a,
+	\end{cases}
+	\qquad V_0&gt;0 ,
+\end{equation}</div>
+<p>and seek bound states, <span class="math-inline">\(-V_0&lt;E&lt;0\)</span>. Define</p>
+<div class="math-block" id="eq-eq-ms-finite-k-kappa">\begin{equation}
+	\label{eq:MS-finite-k-kappa}
+	k=\frac{\sqrt{2m(E+V_0)}}{\hbar}
+	\quad\text{(inside)},
+	\qquad
+	\kappa=\frac{\sqrt{-2mE}}{\hbar}
+	\quad\text{(outside)} ,
+\end{equation}</div>
+<p>both real and positive.</p>
+<p>The solutions are oscillatory inside and exponential outside. Because <span class="math-inline">\(V(-x)=V(x)\)</span>, the Hamiltonian commutes with parity, so the eigenstates can be chosen even or odd — which halves the work.</p>
+<h3 id="sec-2-even-solutions">Even solutions</h3>
+<p>Take</p>
+<div class="math-block" id="eq-eq-ms-even-form">\begin{equation}
+	\label{eq:MS-even-form}
+	\psi(x)=
+	\begin{cases}
+		C\cos kx, &amp; |x|&lt;a,\\
+		De^{-\kappa|x|}, &amp; |x|&gt;a .
+	\end{cases}
+\end{equation}</div>
+<p>Matching <span class="math-inline">\(\psi\)</span> and <span class="math-inline">\(\psi&#x27;\)</span> at <span class="math-inline">\(x=a\)</span> (Theorem <a href="../chapter-02/index.html#theorem-thm-ms-continuity">2.2.2</a>):</p>
+<div class="math-block" id="eq-eq-ms-even-matching">\begin{equation}
+	\label{eq:MS-even-matching}
+	C\cos ka=De^{-\kappa a},
+	\qquad
+	-Ck\sin ka=-D\kappa e^{-\kappa a} .
+\end{equation}</div>
+<p>Dividing the second by the first eliminates both constants:</p>
+<div class="math-block" id="eq-eq-ms-even-condition">\begin{equation}
+	\label{eq:MS-even-condition}
+	\boxed{\;k\tan ka=\kappa\;}
+\end{equation}</div>
+<h3 id="sec-2-odd-solutions">Odd solutions</h3>
+<p>Take <span class="math-inline">\(\psi=C\sin kx\)</span> inside and <span class="math-inline">\(\psi=\pm De^{-\kappa|x|}\)</span> outside. The same division gives</p>
+<div class="math-block" id="eq-eq-ms-odd-condition">\begin{equation}
+	\label{eq:MS-odd-condition}
+	\boxed{\;-k\cot ka=\kappa\;}
+\end{equation}</div>
+<h3 id="sec-2-solving-the-conditions">Solving the conditions</h3>
+<p>Equations <a href="../chapter-02/index.html#eq-eq-ms-even-condition">(2.22)</a> and <a href="../chapter-02/index.html#eq-eq-ms-odd-condition">(2.23)</a> are <em>transcendental</em>: they have no closed-form solution. The standard route is graphical. Introduce the dimensionless variables</p>
+<div class="math-block" id="eq-eq-ms-z-z0">\begin{equation}
+	\label{eq:MS-z-z0}
+	z=ka,
+	\qquad
+	z_0=\frac{a\sqrt{2mV_0}}{\hbar} ,
+\end{equation}</div>
+<p>and note from Eq. <a href="../chapter-02/index.html#eq-eq-ms-finite-k-kappa">(2.19)</a> that <span class="math-inline">\(k^{2}+\kappa^{2}=2mV_0/\hbar^{2}\)</span>, so <span class="math-inline">\(\kappa a=\sqrt{z_0^{2}-z^{2}}\)</span>. The conditions become</p>
+<div class="math-block" id="eq-eq-ms-graphical">\begin{equation}
+	\label{eq:MS-graphical}
+	\tan z=\frac{\sqrt{z_0^{2}-z^{2}}}{z}
+	\quad\text{(even)},
+	\qquad
+	-\cot z=\frac{\sqrt{z_0^{2}-z^{2}}}{z}
+	\quad\text{(odd)} ,
+\end{equation}</div>
+<p>to be solved for <span class="math-inline">\(0&lt;z&lt;z_0\)</span>. Plotting both sides against <span class="math-inline">\(z\)</span> and reading off the intersections gives the bound-state energies.</p>
+<section class="callout theorem" id="theorem-thm-ms-count"><header>Theorem 2.5.1 - Number of bound states</header><p> The finite well of Eq. <a href="../chapter-02/index.html#eq-eq-ms-finite-well-v">(2.18)</a> has</p>
+<div class="math-block" id="eq-eq-ms-count">\begin{equation}
+		\label{eq:MS-count}
+		N=\left\lceil\frac{2z_0}{\pi}\right\rceil
+	\end{equation}</div>
+<p>bound states, alternating even, odd, even, . In particular <span class="math-inline">\(N\ge1\)</span>: <em>a one-dimensional well always binds at least one state</em>, however shallow.</p></section>
+<p>The last statement is worth remembering, and it is special to one dimension — in three dimensions a shallow well may bind nothing at all.</p>
+<section class="callout remark" id="remark-rem-ms-penetration"><header>Remark 2.5.1 - Penetration into the forbidden region</header><p> Outside the well <span class="math-inline">\(E&lt;V\)</span>, which is classically forbidden, yet Eq. <a href="../chapter-02/index.html#eq-eq-ms-even-form">(2.20)</a> gives <span class="math-inline">\(\psi\propto e^{-\kappa|x|}\)</span>, nonzero for all finite <span class="math-inline">\(x\)</span>. The particle has a nonzero probability of being found where a classical particle could never be, over a characteristic depth <span class="math-inline">\(1/\kappa\)</span>. This is the same exponential tail that becomes tunnelling in the next section, and — in Chapter 4 — the reason a low-<span class="math-inline">\(l\)</span> electron can reach a nucleus that a centrifugal barrier appears to exclude it from.</p></section>
+<h2 id="sec-2-the-potential-barrier-and-tunnelling"><span class="sec-number">2.6</span>The Potential Barrier and Tunnelling</h2>
+<p>Now invert the well. Let</p>
+<div class="math-block" id="eq-eq-ms-barrier-v">\begin{equation}
+	\label{eq:MS-barrier-V}
+	V(x)=
+	\begin{cases}
+		V_0, &amp; 0&lt;x&lt;L,\\
+		0, &amp; \text{otherwise,}
+	\end{cases}
+\end{equation}</div>
+<p>and send a particle in from the left with <span class="math-inline">\(0&lt;E&lt;V_0\)</span> — classically unable to pass.</p>
+<p>Write the solution in three regions:</p>
+<div class="math-block" id="eq-eq-ms-barrier-regions">\begin{equation}
+	\label{eq:MS-barrier-regions}
+	\psi(x)=
+	\begin{cases}
+		Ae^{ikx}+Be^{-ikx}, &amp; x&lt;0,\\
+		Fe^{\kappa x}+Ge^{-\kappa x}, &amp; 0&lt;x&lt;L,\\
+		Ce^{ikx}, &amp; x&gt;L,
+	\end{cases}
+\end{equation}</div>
+<p>with <span class="math-inline">\(k=\sqrt{2mE}/\hbar\)</span> and <span class="math-inline">\(\kappa=\sqrt{2m(V_0-E)}/\hbar\)</span>. The absence of a left-moving wave for <span class="math-inline">\(x&gt;L\)</span> encodes the physical setup: nothing comes back from the far side.</p>
+<p>Matching <span class="math-inline">\(\psi\)</span> and <span class="math-inline">\(\psi&#x27;\)</span> at <span class="math-inline">\(x=0\)</span> and at <span class="math-inline">\(x=L\)</span> gives four linear equations in <span class="math-inline">\(A,B,F,G,C\)</span>; eliminating <span class="math-inline">\(B\)</span>, <span class="math-inline">\(F\)</span> and <span class="math-inline">\(G\)</span> leaves the ratio <span class="math-inline">\(C/A\)</span>, and the <em>transmission coefficient</em> <span class="math-inline">\(T=|C/A|^{2}\)</span> is</p>
+<div class="math-block" id="eq-eq-ms-transmission">\begin{equation}
+	\label{eq:MS-transmission}
+	\boxed{\;
+		T=\left[1+\frac{V_0^{2}\sinh^{2}(\kappa L)}{4E(V_0-E)}\right]^{-1}\;}
+\end{equation}</div>
+<p>For a thick or high barrier, <span class="math-inline">\(\kappa L\gg1\)</span>, we may use <span class="math-inline">\(\sinh x\simeq\tfrac12e^{x}\)</span>, giving the form that is actually used:</p>
+<div class="math-block" id="eq-eq-ms-transmission-thick">\begin{equation}
+	\label{eq:MS-transmission-thick}
+	\boxed{\;
+		T\simeq\frac{16E(V_0-E)}{V_0^{2}}\,e^{-2\kappa L}\;}
+\end{equation}</div>
+<section class="callout remark" id="remark-rem-ms-tunnelling-sensitivity"><header>Remark 2.6.1 - Exponential sensitivity</header><p> The dominant factor is <span class="math-inline">\(e^{-2\kappa L}\)</span>: the transmission falls exponentially with barrier width and with the square root of the barrier height. That extreme sensitivity is what makes tunnelling both a precise tool and a violent process. It underlies the scanning tunnelling microscope, radioactive <span class="math-inline">\(\alpha\)</span> decay, and — the case relevant to this course — strong-field ionization, in which a laser field bends the atomic potential into a barrier of finite width so that the bound electron can escape without absorbing a photon.</p></section>
+<section class="callout example" id="example-ex-ms-tunnelling-numbers"><header>Example 2.6.1 - Tunnelling through a thin barrier</header><p> An electron of energy <span class="math-inline">\(E=1\)</span> eV meets a barrier of height <span class="math-inline">\(V_0=2\)</span> eV and width <span class="math-inline">\(L=0.5\)</span> nm. Find <span class="math-inline">\(T\)</span>, and then find it again for <span class="math-inline">\(L=1.0\)</span> nm.</p>
+<p class="solution-head">Solution.</p>
+<p>First <span class="math-inline">\(\kappa\)</span>. With <span class="math-inline">\(V_0-E=1\)</span> eV <span class="math-inline">\(=1.602\times10^{-19}\)</span> J,</p>
+<div class="math-block">\[
+	\kappa=\frac{\sqrt{2(9.11\times10^{-31})(1.602\times10^{-19})}}
+	{1.055\times10^{-34}}
+	=5.12\times10^{9}~\mathrm{m^{-1}} .
+	\]</div>
+<p>For <span class="math-inline">\(L=0.5\)</span> nm, <span class="math-inline">\(\kappa L=2.56\)</span>, so <span class="math-inline">\(e^{-2\kappa L}=e^{-5.12}=6.0\times10^{-3}\)</span>. The prefactor is <span class="math-inline">\(16E(V_0-E)/V_0^{2}=16(1)(1)/4=4\)</span>, so</p>
+<div class="math-block">\[
+	T\simeq4\times6.0\times10^{-3}=2.4\times10^{-2} .
+	\]</div>
+<p>About one electron in forty gets through.</p>
+<p>Doubling the width to <span class="math-inline">\(1.0\)</span> nm gives <span class="math-inline">\(\kappa L=5.12\)</span> and <span class="math-inline">\(e^{-2\kappa L}=e^{-10.24}=3.6\times10^{-5}\)</span>, so</p>
+<div class="math-block">\[
+	T\simeq1.4\times10^{-4} .
+	\]</div>
+<p>Doubling the width cut the transmission by a factor of <span class="math-inline">\(170\)</span>. That is Remark <a href="../chapter-02/index.html#remark-rem-ms-tunnelling-sensitivity">2.6.1</a> in numbers, and it is why a tunnelling current measures distance to a fraction of an atomic diameter.</p></section>
+<h2 id="sec-2-the-harmonic-oscillator"><span class="sec-number">2.7</span>The Harmonic Oscillator</h2>
+<p>Let</p>
+<div class="math-block" id="eq-eq-ms-ho-v">\begin{equation}
+	\label{eq:MS-HO-V}
+	V(x)=\tfrac12m\omega^{2}x^{2},
+	\qquad\text{so}\qquad
+	\hat H=\frac{\hat p^{2}}{2m}+\frac12m\omega^{2}\hat x^{2} .
+\end{equation}</div>
+<p>This system earns its place three times over: it is exactly solvable; any smooth potential near a stable minimum is approximately harmonic, which is why it describes every molecular vibration in Chapter 7; and its solution introduces the ladder-operator method that Chapter 3 reuses for angular momentum.</p>
+<h3 id="sec-2-ladder-operators"><span class="sec-number">2.7.1</span>Ladder Operators</h3>
+<section class="callout definition" id="definition-def-ms-ladder"><header>Definition 2.7.1 - Annihilation and creation operators</header><div class="math-block" id="eq-eq-ms-ladder-def">\begin{equation}
+		\label{eq:MS-ladder-def}
+		\hat a=\sqrt{\frac{m\omega}{2\hbar}}
+		\left(\hat x+\frac{i}{m\omega}\hat p\right),
+		\qquad
+		\hat a^{\dagger}=\sqrt{\frac{m\omega}{2\hbar}}
+		\left(\hat x-\frac{i}{m\omega}\hat p\right).
+	\end{equation}</div></section>
+<section class="callout theorem" id="theorem-thm-ms-ladder-algebra"><header>Theorem 2.7.1 - Commutator and Hamiltonian</header><div class="math-block" id="eq-eq-ms-a-comm">\begin{equation}
+		\label{eq:MS-a-comm}
+		[\hat a,\hat a^{\dagger}]=1 ,
+	\end{equation}</div>
+<p>and</p>
+<div class="math-block" id="eq-eq-ms-h-ladder">\begin{equation}
+		\label{eq:MS-H-ladder}
+		\hat H=\hbar\omega\left(\hat a^{\dagger}\hat a+\tfrac12\right)
+		=\hbar\omega\left(\hat N+\tfrac12\right),
+		\qquad
+		\hat N\equiv\hat a^{\dagger}\hat a .
+	\end{equation}</div></section>
+<div class="proof" data-lead="Proof."><p>For the commutator, expand using <span class="math-inline">\([\hat x,\hat p]=i\hbar\)</span>:</p>
+<div class="math-block">\[
+	[\hat a,\hat a^{\dagger}]
+	=\frac{m\omega}{2\hbar}
+	\left[\hat x+\frac{i\hat p}{m\omega},\;\hat x-\frac{i\hat p}{m\omega}\right]
+	=\frac{m\omega}{2\hbar}
+	\left(-\frac{i}{m\omega}[\hat x,\hat p]+\frac{i}{m\omega}[\hat p,\hat x]\right).
+	\]</div>
+<p>Both terms equal <span class="math-inline">\(\hbar/m\omega\)</span>, so the bracket is <span class="math-inline">\(2\hbar/m\omega\)</span> and the whole expression is <span class="math-inline">\(1\)</span>.</p>
+<p>For the Hamiltonian, multiply out:</p>
+<div class="math-block">\[
+	\hat a^{\dagger}\hat a
+	=\frac{m\omega}{2\hbar}
+	\left(\hat x^{2}+\frac{\hat p^{2}}{m^{2}\omega^{2}}
+	+\frac{i}{m\omega}[\hat x,\hat p]\right)
+	=\frac{m\omega\hat x^{2}}{2\hbar}+\frac{\hat p^{2}}{2\hbar m\omega}
+	-\frac12 .
+	\]</div>
+<p>Multiplying by <span class="math-inline">\(\hbar\omega\)</span>,</p>
+<div class="math-block">\[
+	\hbar\omega\,\hat a^{\dagger}\hat a
+	=\frac{m\omega^{2}\hat x^{2}}{2}+\frac{\hat p^{2}}{2m}
+	-\frac{\hbar\omega}{2}
+	=\hat H-\frac{\hbar\omega}{2},
+	\]</div>
+<p>which rearranges to Eq. <a href="../chapter-02/index.html#eq-eq-ms-h-ladder">(2.34)</a>.</p></div>
+<h3 id="sec-2-the-spectrum"><span class="sec-number">2.7.2</span>The Spectrum</h3>
+<p>Let <span class="math-inline">\(\ket{n}\)</span> be an eigenket of <span class="math-inline">\(\hat N\)</span> with <span class="math-inline">\(\hat N\ket{n}=n\ket{n}\)</span>. From Eq. <a href="../chapter-02/index.html#eq-eq-ms-a-comm">(2.33)</a>,</p>
+<div class="math-block" id="eq-eq-ms-n-comm">\begin{equation}
+	\label{eq:MS-N-comm}
+	[\hat N,\hat a]=-\hat a,
+	\qquad
+	[\hat N,\hat a^{\dagger}]=+\hat a^{\dagger} ,
+\end{equation}</div>
+<p>so <span class="math-inline">\(\hat a\ket{n}\)</span> has eigenvalue <span class="math-inline">\(n-1\)</span> and <span class="math-inline">\(\hat a^{\dagger}\ket{n}\)</span> has <span class="math-inline">\(n+1\)</span>: the operators step down and up the ladder.</p>
+<p>The ladder must have a bottom, because</p>
+<div class="math-block" id="eq-eq-ms-positivity">\begin{equation}
+	\label{eq:MS-positivity}
+	n=\bra{n}\hat a^{\dagger}\hat a\ket{n}
+	=\bigl\|\hat a\ket{n}\bigr\|^{2}\ge0 .
+\end{equation}</div>
+<p>If <span class="math-inline">\(n\)</span> were not a non-negative integer, repeated application of <span class="math-inline">\(\hat a\)</span> would eventually produce a state with negative eigenvalue, contradicting Eq. <a href="../chapter-02/index.html#eq-eq-ms-positivity">(2.36)</a>. The only escape is that the chain terminates on a state with <span class="math-inline">\(\hat a\ket{0}=0\)</span>, whence <span class="math-inline">\(n=0,1,2,\dots\)</span></p>
+<section class="callout theorem" id="theorem-thm-ms-ho-spectrum"><header>Theorem 2.7.2 - Harmonic oscillator spectrum</header><div class="math-block" id="eq-eq-ms-ho-energies">\begin{equation}
+		\label{eq:MS-HO-energies}
+		\boxed{\;E_n=\hbar\omega\left(n+\tfrac12\right),
+			\qquad n=0,1,2,\dots\;}
+	\end{equation}</div>
+<p>with</p>
+<div class="math-block" id="eq-eq-ms-ladder-action">\begin{equation}
+		\label{eq:MS-ladder-action}
+		\hat a\ket{n}=\sqrt{n}\,\ket{n-1},
+		\qquad
+		\hat a^{\dagger}\ket{n}=\sqrt{n+1}\,\ket{n+1},
+		\qquad
+		\ket{n}=\frac{(\hat a^{\dagger})^{n}}{\sqrt{n!}}\ket{0} .
+	\end{equation}</div></section>
+<p>The normalization constants follow from Eq. <a href="../chapter-02/index.html#eq-eq-ms-positivity">(2.36)</a>: <span class="math-inline">\(\|\hat a\ket{n}\|^{2}=n\)</span> gives <span class="math-inline">\(\sqrt{n}\)</span>, and <span class="math-inline">\(\|\hat a^{\dagger}\ket{n}\|^{2}=\bra{n}\hat a\hat a^{\dagger}\ket{n}
+=\bra{n}(\hat N+1)\ket{n}=n+1\)</span> gives <span class="math-inline">\(\sqrt{n+1}\)</span>.</p>
+<section class="callout remark" id="remark-rem-ms-ho-features"><header>Remark 2.7.1 - Two features to carry forward</header><p> The levels are <em>equally spaced</em> by <span class="math-inline">\(\hbar\omega\)</span> — unique among the systems in this chapter, and the reason a vibrational spectrum shows one dominant line rather than a converging series (Chapter 8). And the ground-state energy is <span class="math-inline">\(\tfrac12\hbar\omega\)</span>, not zero: the <em>zero-point energy</em>. A chemical bond is never still, even at absolute zero.</p></section>
+<h3 id="sec-2-position-representation"><span class="sec-number">2.7.3</span>Position Representation</h3>
+<p>To obtain the wave functions, write <span class="math-inline">\(\hat a\ket{0}=0\)</span> in position space. With <span class="math-inline">\(\hat p=-i\hbar\,d/dx\)</span>, Def. <a href="../chapter-02/index.html#definition-def-ms-ladder">2.7.1</a> gives</p>
+<div class="math-block" id="eq-eq-ms-ground-ode">\begin{equation}
+	\label{eq:MS-ground-ODE}
+	\left(x+\frac{\hbar}{m\omega}\frac{d}{dx}\right)\psi_0(x)=0
+	\qquad\Longrightarrow\qquad
+	\frac{d\psi_0}{\psi_0}=-\frac{m\omega}{\hbar}x\,dx ,
+\end{equation}</div>
+<p>which integrates to a Gaussian. Introducing the natural length scale and the dimensionless coordinate</p>
+<div class="math-block" id="eq-eq-ms-xi">\begin{equation}
+	\label{eq:MS-xi}
+	\xi=x\sqrt{\frac{m\omega}{\hbar}} ,
+\end{equation}</div>
+<p>and normalizing with <span class="math-inline">\(\int e^{-\xi^{2}}d\xi=\sqrt{\pi}\)</span>,</p>
+<div class="math-block" id="eq-eq-ms-ground-state">\begin{equation}
+	\label{eq:MS-ground-state}
+	\psi_0(x)=\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}e^{-\xi^{2}/2} .
+\end{equation}</div>
+<p>Applying <span class="math-inline">\(\hat a^{\dagger}\)</span> repeatedly, as in Eq. <a href="../chapter-02/index.html#eq-eq-ms-ladder-action">(2.38)</a>, generates the rest. The result is</p>
+<div class="math-block" id="eq-eq-ms-ho-states">\begin{equation}
+	\label{eq:MS-HO-states}
+	\boxed{\;
+		\psi_n(x)=\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}
+		\frac{1}{\sqrt{2^{n}n!}}\;H_n(\xi)\,e^{-\xi^{2}/2}\;}
+\end{equation}</div>
+<p>where <span class="math-inline">\(H_n\)</span> are the <em>Hermite polynomials</em>, given by</p>
+<div class="math-block" id="eq-eq-ms-hermite">\begin{equation}
+	\label{eq:MS-hermite}
+	H_n(\xi)=(-1)^{n}e^{\xi^{2}}
+	\left(\frac{d}{d\xi}\right)^{n}e^{-\xi^{2}} ,
+\end{equation}</div>
+<p>the first few being</p>
+<div class="math-block" id="eq-eq-ms-hermite-table">\begin{equation}
+	\label{eq:MS-hermite-table}
+	H_0=1,
+	\qquad
+	H_1=2\xi,
+	\qquad
+	H_2=4\xi^{2}-2,
+	\qquad
+	H_3=8\xi^{3}-12\xi,
+	\qquad
+	H_4=16\xi^{4}-48\xi^{2}+12 .
+\end{equation}</div>
+<p><span class="math-inline">\(H_n\)</span> has <span class="math-inline">\(n\)</span> real zeros, so <span class="math-inline">\(\psi_n\)</span> has <span class="math-inline">\(n\)</span> nodes — consistent with Theorem <a href="../chapter-02/index.html#theorem-thm-ms-nodes">2.2.3</a> once the counting is shifted for the label starting at <span class="math-inline">\(n=0\)</span>. The parity is <span class="math-inline">\((-1)^{n}\)</span>, since <span class="math-inline">\(H_n\)</span> contains only even or only odd powers.</p>
+<section class="callout example" id="example-ex-ms-zero-point"><header>Example 2.7.1 - Zero-point energy of a real bond</header><p> The H<span class="math-inline">\(_2\)</span> molecule has a vibrational wavenumber <span class="math-inline">\(\tilde\nu=4401\)</span> cm<span class="math-inline">\(^{-1}\)</span>. Find <span class="math-inline">\(\hbar\omega\)</span> in eV and the zero-point energy, and compare with the bond dissociation energy of <span class="math-inline">\(4.48\)</span> eV.</p>
+<p class="solution-head">Solution.</p>
+<p>Convert using <span class="math-inline">\(1\)</span> cm<span class="math-inline">\(^{-1}=1.2398\times10^{-4}\)</span> eV:</p>
+<div class="math-block">\[
+	\hbar\omega=4401\times1.2398\times10^{-4}=0.546~\mathrm{eV},
+	\]</div>
+<p>so the zero-point energy is</p>
+<div class="math-block">\[
+	E_0=\tfrac12\hbar\omega=0.273~\mathrm{eV}.
+	\]</div>
+<p>This is <span class="math-inline">\(6\%\)</span> of the dissociation energy — small but not negligible, and it must be included whenever bond strengths are compared. It also explains why the measured dissociation energy of H<span class="math-inline">\(_2\)</span> differs from that of D<span class="math-inline">\(_2\)</span>: the heavier isotope has smaller <span class="math-inline">\(\omega=\sqrt{k/\mu}\)</span> and hence a lower zero-point energy, so it sits deeper in the same potential well and is harder to break. The potential curve is identical; only the nuclear mass differs.</p></section>
+<h2 id="sec-2-summary"><span class="sec-number">2.8</span>Summary</h2>
+<ul><li><p>A time-independent <span class="math-inline">\(\hat H\)</span> gives stationary states <span class="math-inline">\(\Psi=e^{-iEt/\hbar}\psi\)</span> (Thm. <a href="../chapter-02/index.html#theorem-thm-ms-separation">2.2.1</a>); nothing observable evolves in one, so motion requires a superposition.</p></li><li><p><span class="math-inline">\(\psi\)</span> and <span class="math-inline">\(\psi&#x27;\)</span> are continuous wherever <span class="math-inline">\(V\)</span> is finite (Thm. <a href="../chapter-02/index.html#theorem-thm-ms-continuity">2.2.2</a>); the <span class="math-inline">\(n\)</span>-th bound state has <span class="math-inline">\(n-1\)</span> nodes (Thm. <a href="../chapter-02/index.html#theorem-thm-ms-nodes">2.2.3</a>).</p></li><li><p>Free particle: <span class="math-inline">\(\psi=e^{\pm ikx}\)</span>, <span class="math-inline">\(E=\hbar^{2}k^{2}/2m\)</span>, no quantization — the continuum. It is normalized either in a box or to <span class="math-inline">\(\delta(\varepsilon-\varepsilon&#x27;)\)</span>; the convention matters. A packet moves at <span class="math-inline">\(v_g=p_0/m\)</span>.</p></li><li><p>Infinite well: <span class="math-inline">\(E_n=n^{2}\pi^{2}\hbar^{2}/2ma^{2}\)</span>, <span class="math-inline">\(\psi_n=\sqrt{2/a}\sin(n\pi x/a)\)</span>. Confinement quantizes, and <span class="math-inline">\(E_1&gt;0\)</span>.</p></li><li><p>Finite well: matching gives the transcendental conditions <span class="math-inline">\(k\tan ka=\kappa\)</span> (even) and <span class="math-inline">\(-k\cot ka=\kappa\)</span> (odd), solved graphically in terms of <span class="math-inline">\(z=ka\)</span> and <span class="math-inline">\(z_0=a\sqrt{2mV_0}/\hbar\)</span>. There are <span class="math-inline">\(\lceil2z_0/\pi\rceil\)</span> bound states, always at least one, and the wave function penetrates the classically forbidden region as <span class="math-inline">\(e^{-\kappa|x|}\)</span>.</p></li><li><p>Barrier: <span class="math-inline">\(T=[1+V_0^{2}\sinh^{2}(\kappa L)/4E(V_0-E)]^{-1}\)</span>, reducing to <span class="math-inline">\(T\simeq16E(V_0-E)V_0^{-2}e^{-2\kappa L}\)</span> for a thick barrier. The exponential sensitivity underlies the tunnelling microscope and strong-field ionization.</p></li><li><p>Harmonic oscillator: <span class="math-inline">\([\hat a,\hat a^{\dagger}]=1\)</span>, <span class="math-inline">\(\hat H=\hbar\omega(\hat N+\tfrac12)\)</span>, <span class="math-inline">\(E_n=\hbar\omega(n+\tfrac12)\)</span>, and <span class="math-inline">\(\psi_n\propto H_n(\xi)e^{-\xi^{2}/2}\)</span>. Equal spacing and a nonzero zero-point energy are its two signature features.</p></li></ul>
+<h2 id="sec-2-exercises"><span class="sec-number">2.9</span>Exercises</h2>
+<ol><li><p><strong>The infinite well, start to finish.</strong> Derive Eqs. <a href="../chapter-02/index.html#eq-eq-ms-well-energies">(2.15)</a> and <a href="../chapter-02/index.html#eq-eq-ms-well-states">(2.17)</a> yourself, applying both boundary conditions and carrying out the normalization integral. Then verify <span class="math-inline">\(\int_0^a\psi_1\psi_2\,dx=0\)</span> explicitly.</p></li><li><p><strong>Matching at a step.</strong> Derive Eq. <a href="../chapter-02/index.html#eq-eq-ms-even-condition">(2.22)</a> from Eq. <a href="../chapter-02/index.html#eq-eq-ms-even-matching">(2.21)</a>, and Eq. <a href="../chapter-02/index.html#eq-eq-ms-odd-condition">(2.23)</a> by the same route for the odd solutions. Explain why dividing the two matching equations is legitimate and what it accomplishes.</p></li><li><p><strong>Counting bound states.</strong> A well has <span class="math-inline">\(V_0=5\)</span> eV and half-width <span class="math-inline">\(a=0.2\)</span> nm, for an electron.</p>
+<ol><li><p>Compute <span class="math-inline">\(z_0\)</span> from Eq. <a href="../chapter-02/index.html#eq-eq-ms-z-z0">(2.24)</a>.</p></li><li><p>Use Theorem <a href="../chapter-02/index.html#theorem-thm-ms-count">2.5.1</a> to predict the number of bound states, and say which are even and which odd.</p></li><li><p>Solve Eq. <a href="../chapter-02/index.html#eq-eq-ms-graphical">(2.25)</a> graphically or numerically for the lowest <span class="math-inline">\(z\)</span>, and convert it to an energy in eV.</p></li></ol></li><li><p><strong>Tunnelling.</strong> Repeat Example <a href="../chapter-02/index.html#example-ex-ms-tunnelling-numbers">2.6.1</a> for a proton instead of an electron, at the same energy, height and width <span class="math-inline">\(L=0.5\)</span> nm. By what factor does <span class="math-inline">\(T\)</span> change, and which quantity in <span class="math-inline">\(\kappa\)</span> is responsible? Comment on why tunnelling is an electronic phenomenon far more often than a nuclear one.</p></li><li><p><strong>Oscillator algebra.</strong></p>
+<ol><li><p>Reproduce the proof of Theorem <a href="../chapter-02/index.html#theorem-thm-ms-ladder-algebra">2.7.1</a>.</p></li><li><p>Derive Eq. <a href="../chapter-02/index.html#eq-eq-ms-n-comm">(2.35)</a> from Eq. <a href="../chapter-02/index.html#eq-eq-ms-a-comm">(2.33)</a>.</p></li><li><p>Using Eq. <a href="../chapter-02/index.html#eq-eq-ms-ladder-action">(2.38)</a>, compute <span class="math-inline">\(\bra{n}\hat x^{2}\ket{n}\)</span> by writing <span class="math-inline">\(\hat x\)</span> in terms of <span class="math-inline">\(\hat a\)</span> and <span class="math-inline">\(\hat a^{\dagger}\)</span>, and hence verify <span class="math-inline">\(\expval{V}=\tfrac12E_n\)</span> — the virial theorem for a quadratic potential.</p></li></ol></li><li><p><strong>Hermite polynomials.</strong> Use Eq. <a href="../chapter-02/index.html#eq-eq-ms-hermite">(2.43)</a> to generate <span class="math-inline">\(H_1\)</span> and <span class="math-inline">\(H_2\)</span> and check them against Eq. <a href="../chapter-02/index.html#eq-eq-ms-hermite-table">(2.44)</a>. Then verify that <span class="math-inline">\(\psi_1\)</span> from Eq. <a href="../chapter-02/index.html#eq-eq-ms-ho-states">(2.42)</a> is normalized, using <span class="math-inline">\(\int\xi^{2}e^{-\xi^{2}}d\xi=\sqrt{\pi}/2\)</span>.</p></li></ol>
+<h2 id="sec-2-project-solving-one-dimensional-problems-numerically"><span class="sec-number">2.10</span>Project: Solving One-Dimensional Problems Numerically</h2>
+<p><strong>The problem.</strong> Build a general numerical solver for Eq. <a href="../chapter-02/index.html#eq-eq-ms-tise-1d">(2.4)</a> and validate it against every exact result in this chapter. This solver is reused in Chapters 3, 4, 5 and 7, so build it to be trusted.</p>
+<p>Work in atomic units (<span class="math-inline">\(\hbar=m=1\)</span>), where Eq. <a href="../chapter-02/index.html#eq-eq-ms-tise-1d">(2.4)</a> is <span class="math-inline">\(-\tfrac12\psi&#x27;&#x27;+V\psi=E\psi\)</span>.</p>
+<ol><li><p><strong>On paper.</strong> Discretise on a uniform grid <span class="math-inline">\(x_i=x_0+ih\)</span> using <span class="math-inline">\(\psi&#x27;&#x27;(x_i)\simeq(\psi_{i+1}-2\psi_i+\psi_{i-1})/h^{2}\)</span>. Write down the matrix <span class="math-inline">\(\mathbf{H}\)</span> explicitly, giving its diagonal and off-diagonal entries.</p></li><li><p><strong>On the computer.</strong> Validate against the infinite well: take <span class="math-inline">\(V=0\)</span> on <span class="math-inline">\((0,a)\)</span> with <span class="math-inline">\(\psi=0\)</span> at both ends, and compare the lowest five eigenvalues with Eq. <a href="../chapter-02/index.html#eq-eq-ms-well-energies">(2.15)</a>. Report the relative error and how it scales when you halve <span class="math-inline">\(h\)</span> — you should see it fall by about four, since the finite difference is second-order accurate.</p></li><li><p><strong>On the computer.</strong> Validate against the harmonic oscillator: take <span class="math-inline">\(V=\tfrac12x^{2}\)</span> on a domain wide enough that <span class="math-inline">\(\psi\)</span> has decayed, and confirm <span class="math-inline">\(E_n=n+\tfrac12\)</span> for <span class="math-inline">\(n=0\dots5\)</span>. Plot your <span class="math-inline">\(\psi_0\)</span> and <span class="math-inline">\(\psi_2\)</span> against Eqs. <a href="../chapter-02/index.html#eq-eq-ms-ho-states">(2.42)</a> and <a href="../chapter-02/index.html#eq-eq-ms-hermite-table">(2.44)</a>.</p></li><li><p><strong>On the computer.</strong> Now the finite well. Take <span class="math-inline">\(V=-V_0\)</span> on <span class="math-inline">\(|x|&lt;a\)</span> and zero outside, choose <span class="math-inline">\(V_0\)</span> and <span class="math-inline">\(a\)</span> giving <span class="math-inline">\(z_0\approx5\)</span>, and find all bound states. Check the count against Theorem <a href="../chapter-02/index.html#theorem-thm-ms-count">2.5.1</a>, check the parity alternation, and compare each energy with a numerical solution of Eq. <a href="../chapter-02/index.html#eq-eq-ms-graphical">(2.25)</a>.</p></li><li><p><strong>On the computer.</strong> Plot one bound state on a logarithmic vertical axis and confirm that the tail outside the well is a straight line of slope <span class="math-inline">\(-\kappa\)</span>, with <span class="math-inline">\(\kappa\)</span> from Eq. <a href="../chapter-02/index.html#eq-eq-ms-finite-k-kappa">(2.19)</a>. This is Remark <a href="../chapter-02/index.html#remark-rem-ms-penetration">2.5.1</a> made quantitative.</p></li><li><p><strong>On the computer.</strong> Tunnelling. Rather than eigenvalues, compute <span class="math-inline">\(T(E)\)</span> from Eq. <a href="../chapter-02/index.html#eq-eq-ms-transmission">(2.29)</a> for a barrier of your choice and plot it against <span class="math-inline">\(E\)</span> from <span class="math-inline">\(0\)</span> to <span class="math-inline">\(2V_0\)</span> on a logarithmic scale. Mark <span class="math-inline">\(E=V_0\)</span>. Comment on what happens <em>above</em> the barrier, where classically <span class="math-inline">\(T\)</span> would be exactly <span class="math-inline">\(1\)</span>.</p></li><li><p><strong>What has to move.</strong> One animation: a Gaussian wave packet built as in Eq. <a href="../chapter-02/index.html#eq-eq-ms-packet">(2.9)</a> approaching your barrier, with <span class="math-inline">\(|\Psi(x,t)|^{2}\)</span> shown as it splits into a reflected and a transmitted part. Caption it with the fraction that got through, and compare that fraction with Eq. <a href="../chapter-02/index.html#eq-eq-ms-transmission">(2.29)</a> evaluated at the packet's central energy.</p></li></ol>
+<p><strong>The check.</strong> Part (b) is the one that certifies the solver. If the error does not fall by a factor of four when <span class="math-inline">\(h\)</span> is halved, the discretisation is wrong — most often a missing factor of <span class="math-inline">\(\tfrac12\)</span> or <span class="math-inline">\(h^{2}\)</span> in the matrix. Fix it before going further; every later chapter depends on this code.</p>
+<p><strong>Be ready to answer.</strong> In part (f), transmission above the barrier is not <span class="math-inline">\(1\)</span>, and oscillates. Explain the oscillation physically — what is interfering with what — and identify the energies at which <span class="math-inline">\(T\)</span> returns exactly to <span class="math-inline">\(1\)</span>.</p>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <a href="../chapter-01/index.html">Previous: Mathematical Tools of Quantum Mechanics</a>
+      <a href="../../toc.html">Contents</a>
+      <a href="../chapter-03/index.html">Next: Angular Momentum and Central Potentials</a>
+    </nav>
+  </article>
+</main>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p>&copy; 2026 Erfan Saydanzad. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

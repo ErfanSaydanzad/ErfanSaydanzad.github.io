@@ -1,0 +1,1421 @@
+/* ==========================================================================
+   Lecture note stylesheet
+
+   Design goals, in priority order:
+     1. Long-form readability. Students read this for hours.
+     2. Consistency. A theorem looks identical in every chapter.
+     3. Calm. Nothing moves, blinks or competes with the mathematics.
+     4. Prints like a book.
+
+   Semantic colour is defined ONCE per callout kind, in the token block
+   below. Every callout is drawn by a single rule that reads those tokens,
+   so a definition can never drift away from other definitions.
+   ========================================================================== */
+
+:root {
+  /* Ink and paper.
+     The paper is a shade off pure white on purpose. Black on #ffffff is the
+     highest-contrast pairing a screen can make, and for an hour of reading
+     that is not a virtue: it overstimulates the eye and is the usual cause of
+     the ache people blame on "screens". A couple of per cent off white, and
+     ink that stops short of black, keeps every contrast ratio well past AA
+     while taking the glare out. */
+  --ink: #1a1c1e;
+  --ink-soft: #4a5057;
+  /* A shade darker than it looks like it needs to be: this grey also has to
+     clear 4.5:1 against --wash, not only against --paper. */
+  --muted: #69707e;
+  --line: #e3e6ea;
+  --line-strong: #cfd4da;
+  --paper: #fbfbfc;
+  --wash: #f2f4f7;
+  /* Text that sits on top of the accent, not beside it. */
+  --on-accent: #ffffff;
+
+  /* One accent, used sparingly: links and the current-section marker. */
+  --accent: #0f5f66;
+  --accent-soft: #e8f2f2;
+
+  /* --- Semantic colours. Change a kind here and it changes everywhere. --- */
+  --c-definition: #1d4ed8;
+  --c-definition-bg: #f2f6fe;
+  --c-theorem: #6d28d9;
+  --c-theorem-bg: #f7f4fe;
+  /* Examples share the solution green: a solution now lives inside its
+     example, so one colour covers the worked-problem material. */
+  --c-example: #15803d;
+  --c-example-bg: #f2f9f4;
+  --c-solution: #15803d;
+  --c-solution-bg: #f2f9f4;
+  --c-remark: #475569;
+  --c-remark-bg: #f7f8fa;
+  --c-proof: #475569;
+  --c-proof-bg: #fcfcfd;
+  --c-context: #0f766e;
+  --c-context-bg: #f0f7f7;
+
+  /* Type
+     Serif for reading, sans for the chrome around it -- the reverse of what
+     this site started with, and the change is driven by the mathematics.
+     MathJax sets every formula in a serif; in a sans paragraph an inline
+     \(\omega_{nm}\) reads as something pasted in from another document,
+     because it is. With the prose in a serif the symbols sit on the line
+     with the words, and the page matches the PDF besides.
+     Source Serif 4 is drawn for screen reading at length, carries a real
+     italic (this book italicises a variable every other sentence) and has an
+     optical-size axis, so headings get the display cut and body text the
+     text cut without anyone choosing. It is self-hosted below: no request to
+     a third party, and nothing to break if one goes away. */
+  --sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif;
+  --serif: "Source Serif 4", Charter, "Iowan Old Style", Georgia, "Times New Roman", serif;
+
+  /* Width of the content column. Everything in the column aligns to this:
+     prose, callouts, headings and figures share one right edge. Display
+     equations are wide, so this is set for mathematics, not for prose. */
+  --measure: 57rem;
+  /* Pure prose (no equations) gets a shorter line: ~72 characters. */
+  --prose: 41rem;
+
+  color-scheme: light dark;
+}
+
+/* ------------------------------------------------------------ dark mode -- */
+
+/* Follows the reader's system setting; there is no toggle, because a toggle
+   is a decision the operating system has already made for them.
+   Two rules govern the palette below. The page is never pure black -- black
+   backgrounds bloom white text and make it hard to hold a line -- and the
+   text is never pure white, for the same reason the light theme is not pure
+   black on pure white. Every accent is lifted, because a colour that reads as
+   deep and calm on paper reads as muddy and unreadable on a dark ground. */
+/* screen, not all: a reader whose machine is in dark mode still prints onto
+   white paper, and the lifted accents below would come out of a printer pale
+   and unreadable. Print keeps the light palette. */
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    --ink: #e4e7ec;
+    --ink-soft: #b3bac5;
+    --muted: #868e9c;
+    --line: #272c34;
+    --line-strong: #39404b;
+    --paper: #14161a;
+    --wash: #1b1e24;
+    --on-accent: #0b0e11;
+
+    --accent: #5fb6bd;
+    --accent-soft: #14292c;
+
+    --c-definition: #86a9ff;
+    --c-definition-bg: #161b28;
+    --c-theorem: #b598f2;
+    --c-theorem-bg: #1c1830;
+    --c-example: #5fc98c;
+    --c-example-bg: #13221a;
+    --c-solution: #5fc98c;
+    --c-solution-bg: #13221a;
+    --c-remark: #99a4b4;
+    --c-remark-bg: #1a1d23;
+    --c-proof: #99a4b4;
+    --c-proof-bg: #17191e;
+    --c-context: #58bdb3;
+    --c-context-bg: #122322;
+  }
+
+  /* Every figure on this site is drawn by matplotlib on white paper, and the
+     colour in them is carrying meaning -- the sign of a displacement, which
+     mode is which. Dimming them with a filter would be a lie told for the
+     sake of the theme, so they keep their white and are given an edge, which
+     reads as a plate laid on the page rather than as a hole burned in it. */
+  .figure img, figure img, .project-card-preview {
+    box-shadow: 0 0 0 1px var(--line-strong);
+  }
+}
+
+/* ----------------------------------------------------------------- type -- */
+
+/* One family, two axes (weight 300-700, optical size 8-60), split by script
+   so a page of English pulls the latin file and nothing else. font-display:
+   swap means the text is readable in the fallback serif from the first paint
+   and reflows once when the real face lands. */
+
+@font-face {
+  font-family: "Source Serif 4";
+  font-style: italic;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("../fonts/source-serif-4-latin-italic.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Source Serif 4";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("../fonts/source-serif-4-latin-roman.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Source Serif 4";
+  font-style: italic;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("../fonts/source-serif-4-latin-ext-italic.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Source Serif 4";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("../fonts/source-serif-4-latin-ext-roman.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Source Serif 4";
+  font-style: italic;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("../fonts/source-serif-4-greek-italic.woff2") format("woff2");
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+
+@font-face {
+  font-family: "Source Serif 4";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("../fonts/source-serif-4-greek-roman.woff2") format("woff2");
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  /* Fluid, and in rem rather than px, so that a reader who has set a larger
+     default font size in the browser actually gets one. The vw term is small
+     on purpose: body text should drift by a point across the range of
+     screens, not swing. */
+  font-size: clamp(1rem, 0.95rem + 0.16vw, 1.09rem);
+  line-height: 1.72;
+  /* Let the browser drive the opsz axis from the font size: small text gets
+     the sturdier cut with more open spacing, headings the finer one. */
+  font-optical-sizing: auto;
+  text-rendering: optimizeLegibility;
+}
+
+/* Captions are commentary on the text, not part of it, so they change voice:
+   the sans, one step down, is the oldest editorial signal there is. */
+figcaption, .interactive-caption, .suggestion-meta {
+  font-family: var(--sans);
+}
+
+/* Let the browser rework the last lines of a paragraph to avoid a one-word
+   final line, and even out the line lengths of a heading. Both degrade to
+   ordinary wrapping where they are not supported. */
+p, li, figcaption, dd { text-wrap: pretty; }
+h1, h2, h3, h4, .project-card strong, .suggestion h3 { text-wrap: balance; }
+
+/* Anchored links land under the sticky header without it. */
+:target { scroll-margin-top: 5rem; }
+
+::selection { background: var(--accent-soft); color: var(--ink); }
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 0.07em;
+  text-underline-offset: 0.18em;
+}
+a:hover { text-decoration-thickness: 0.12em; }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Skip repeated chrome when tabbing or using a screen reader. */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+}
+.skip-link:focus {
+  left: 12px;
+  top: 12px;
+  z-index: 50;
+  padding: 10px 14px;
+  background: var(--paper);
+  border: 1px solid var(--accent);
+}
+
+/* --------------------------------------------------------------- header -- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 58px;
+  padding: 0 24px;
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  line-height: 1.2;
+}
+
+/* The mark. No box around it any more: the letter is the mark, and a border
+   was doing the work of making a bare glyph look deliberate. */
+.brand-mark {
+  width: 30px;
+  height: 30px;
+  flex: none;
+  color: var(--ink);
+  overflow: visible;
+}
+
+.top-nav {
+  display: flex;
+  gap: 20px;
+  font-family: var(--sans);
+  font-size: 0.88rem;
+}
+.top-nav a { color: var(--muted); text-decoration: none; }
+.top-nav a:hover { color: var(--ink); }
+
+/* ----------------------------------------------------------------- home -- */
+
+/* Same shell width as .layout, so the page does not jump between views. */
+.home, .toc-page, .projects-page, .project {
+  width: min(1240px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.home-hero, .simple-header {
+  padding: clamp(40px, 7vw, 76px) 0 26px;
+  border-bottom: 1px solid var(--line);
+}
+
+.home-hero p, .simple-header p, .chapter-hero p, .sidebar-kicker {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.home-hero h1, .simple-header h1 {
+  max-width: 26ch;
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  line-height: 1.08;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+}
+
+.home-meta {
+  margin-top: 16px;
+  max-width: var(--prose);
+  color: var(--ink-soft);
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 10px;
+  padding: 30px 0 60px;
+}
+
+.chapter-card {
+  display: flex;
+  min-height: 118px;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--paper);
+  color: var(--ink);
+  text-decoration: none;
+}
+.chapter-card:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.chapter-card span {
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+.chapter-card strong {
+  font-family: var(--serif);
+  font-size: 1.16rem;
+  line-height: 1.25;
+  font-weight: 400;
+}
+
+/* ------------------------------------------------------------- projects -- */
+
+/* A project card leads with its animation. The preview sits flush against the
+   top of the card, so the padding is applied to the text below it rather than
+   to the card as a whole. */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--paper);
+  color: var(--ink);
+  text-decoration: none;
+  overflow: hidden;
+}
+.project-card:hover { border-color: var(--accent); background: var(--accent-soft); }
+.project-card-preview {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  /* contain, not cover: these frames carry their own titles and captions, and
+     cropping to fill the card cut the heading off the top of them. */
+  object-fit: contain;
+  object-position: center;
+  /* The frames are matplotlib output on white; the plate stays white in both
+     themes so the figure keeps the colours it was drawn with. */
+  background: #ffffff;
+  border-bottom: 1px solid var(--line);
+}
+.project-card strong {
+  font-family: var(--serif);
+  font-size: 1.12rem;
+  line-height: 1.25;
+  font-weight: 400;
+  padding: 16px 18px 0;
+}
+.project-card-author {
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0 18px 18px;
+}
+.project-card > strong:last-child { padding-bottom: 18px; }
+
+.project-group { padding-bottom: 0; }
+.project-group h2 { margin-bottom: 0; }
+
+/* Wider than the chapter cards: the preview is an animated figure, and at
+   240px its labels are too small to read. */
+.project-grid { grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); }
+
+.project-head { margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+.project-kicker {
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.project-head h1 { font-family: var(--serif); font-weight: 600; margin: 0 0 8px; }
+.project-author { color: var(--muted); font-family: var(--sans); margin: 0 0 14px; }
+.project-abstract { color: var(--ink-soft); line-height: 1.6; }
+/* Placed below the problem, the abstract opens the report and needs the air
+   an opening paragraph gets. In the header it is a dek and needs none. */
+.project-problem + .project-abstract { margin-top: 0; }
+
+/* The assignment, set apart above the report. Ruled rather than boxed: it
+   often runs to displayed equations and a list of parts, and a panel that
+   long reads as a second page rather than as a quotation of the question. */
+.project-problem {
+  margin: 0 0 30px;
+  padding: 4px 0 18px 20px;
+  border-left: 3px solid var(--accent);
+  border-bottom: 1px solid var(--line);
+}
+/* The title sits directly on the problem, so the rule under the title would
+   be a second line a few pixels above the block's own. */
+.project-head:has(+ .project-problem) {
+  margin-bottom: 22px;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+.project-problem-kicker {
+  color: var(--accent);
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+}
+/* The block ends on its own rule, so the last thing in it -- usually the last
+   part of the last \item -- must not push a paragraph margin against it. */
+.project-problem > :last-child,
+.project-problem li:last-child > :last-child { margin-bottom: 0; }
+
+/* \item[(a)]: the marker is the label, so the bullet would be a second one. */
+li.labeled { list-style: none; }
+li.labeled > .item-label { font-weight: 600; margin-right: 0.4em; }
+li.labeled > .item-label + p { display: inline; }
+
+.figure.animation img { border: 1px solid var(--line); border-radius: 4px; }
+
+pre.code {
+  background: var(--accent-soft, #f2f6fe);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 14px 16px;
+  overflow-x: auto;
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.project-back { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line); }
+.muted { color: var(--muted); }
+
+.download-link {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.download-link:hover { background: var(--accent); color: var(--on-accent); }
+
+/* -------------------------------------------------------- chapter shell -- */
+
+.layout {
+  display: grid;
+  grid-template-columns: 248px minmax(0, 1fr);
+  gap: 52px;
+  width: min(1240px, calc(100% - 40px));
+  margin: 0 auto;
+  padding-bottom: 72px;
+}
+
+.sidebar { position: relative; }
+
+.sidebar-inner {
+  position: sticky;
+  top: 86px;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  padding: 30px 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+}
+
+.sidebar h2 {
+  margin: 0 0 12px;
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.chapter-toc {
+  display: grid;
+  gap: 1px;
+  font-family: var(--sans);
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
+.chapter-toc a {
+  padding: 5px 10px;
+  border-left: 2px solid transparent;
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+.chapter-toc a:hover {
+  color: var(--ink);
+  background: var(--wash);
+}
+.chapter-toc a.is-active {
+  border-left-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-soft);
+  font-weight: 600;
+}
+/* Two visible levels, so the shape of a chapter is readable at a glance. */
+.chapter-toc .toc-level-2 {
+  font-weight: 600;
+  color: var(--ink);
+}
+.chapter-toc .toc-level-3 {
+  padding-left: 22px;
+  font-size: 0.81rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.content {
+  min-width: 0;          /* lets long equations scroll instead of overflowing */
+  max-width: var(--measure);
+  padding: 30px 0 0;
+}
+
+.chapter-hero {
+  margin-bottom: 34px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--line);
+}
+
+.chapter-hero h1 {
+  max-width: 24ch;
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(2.1rem, 4.4vw, 3.1rem);
+  line-height: 1.14;
+  font-weight: 400;
+  letter-spacing: -0.012em;
+}
+
+/* -------------------------------------------------------------- content -- */
+
+.content h2, .content h3, .content h4 {
+  font-family: var(--serif);
+  font-weight: 600;
+  line-height: 1.3;
+  scroll-margin-top: 84px;   /* so anchor links clear the sticky header */
+  break-after: avoid;
+}
+
+/* The section number, as the PDF prints it. Set in the accent so the eye can
+   run down the numbers without reading the titles, and given a fixed gap
+   rather than a space so that "1.10" and "1.2" start their titles alike. */
+.sec-number {
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  margin-right: 0.5em;
+}
+
+.content h2 {
+  margin: 2.6rem 0 0.9rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--line);
+  font-size: clamp(1.7rem, 2.6vw, 2.15rem);
+  font-weight: 500;
+}
+
+.content h3 {
+  margin: 2rem 0 0.7rem;
+  font-size: 1.42rem;
+}
+
+.content h4 {
+  margin: 1.6rem 0 0.5rem;
+  font-size: 1.16rem;
+  color: var(--ink);
+}
+
+.content p { margin: 0 0 1.1em; }
+.content ul, .content ol { padding-left: 1.4rem; margin: 0.8em 0 1.15em; }
+.content li { margin: 0.35em 0; }
+.content li > p { margin: 0.25em 0; }
+
+.content strong { font-weight: 700; }
+
+.paragraph-title {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* ----------------------------------------------------------------- math -- */
+
+/* Display equations are the one thing allowed to use the full column
+   width, and to scroll sideways rather than wrap. */
+.math-block {
+  margin: 1.3rem 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.15rem 0;
+}
+
+.math-block mjx-container[display="true"] { margin: 0 !important; }
+
+.math-inline { overflow-wrap: anywhere; }
+
+/* -------------------------------------------------------------- figures -- */
+
+figure, .figure, .table-figure {
+  margin: 1.7rem 0;
+  text-align: center;
+  break-inside: avoid;
+}
+
+.figure img, figure img {
+  max-width: min(var(--figure-width, 100%), 100%);
+  height: auto;
+  border-radius: 4px;
+}
+
+.figure-single { margin: 1.1rem 0; }
+
+figcaption {
+  margin: 0.7rem auto 0;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  text-align: left;
+}
+
+/* --------------------------------------------------------- interactives -- */
+
+.interactive-figure {
+  margin: 1.8rem 0;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--paper);
+  break-inside: avoid;
+}
+
+.interactive-figure > header {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+  background: var(--wash);
+}
+
+.interactive-figure > header span {
+  display: block;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.interactive-figure > header strong {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.interactive-mount { min-height: 220px; padding: 14px 16px; }
+
+.interactive-mount:empty::before,
+.interactive-mount > p:only-child {
+  display: block;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  text-align: center;
+}
+
+.interactive-caption {
+  margin: 0;
+  padding: 0 16px 14px;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+/* ------------------------------------------------ suggested projects -- */
+
+/* Ten offers, each read in the same order: what is asked, what solves it,
+   what moves, and what will be asked back. The counter is drawn by hand and
+   pushed into the margin so that the four labelled lines of each entry stay
+   flush with one another and the list scans as a table would. */
+
+.suggestions {
+  counter-reset: suggestion;
+  margin: 1.6rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.suggestion {
+  counter-increment: suggestion;
+  position: relative;
+  margin: 0 0 1.4rem;
+  padding: 16px 18px 16px 62px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--paper);
+  break-inside: avoid;
+}
+
+.suggestion::before {
+  content: counter(suggestion);
+  position: absolute;
+  top: 16px;
+  left: 18px;
+  width: 30px;
+  color: var(--accent);
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1;
+  text-align: right;
+}
+
+.suggestion h3 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.16rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.suggestion-meta {
+  margin: 2px 0 10px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.suggestion p { margin: 0 0 0.6rem; font-size: 0.95rem; }
+.suggestion p strong { color: var(--ink); }
+.suggestion p:last-child { margin-bottom: 0; }
+
+/* The problem itself, quoted inside the card in the same ruled block a project
+   page gives it, so the thing a student is handed and the thing they hand back
+   look alike. */
+.suggestion .project-problem {
+  margin: 0 0 0.9rem;
+  padding: 2px 0 12px 16px;
+  font-size: 0.95rem;
+}
+.suggestion .project-problem-kicker { font-size: 0.72rem; }
+
+/* (a), (b), (c) -- lettered because the parts are referred to by letter in the
+   text around them, and because a numbered list inside a numbered list of
+   problems would be two counters saying different things. */
+.problem-parts { counter-reset: part; margin: 0.7rem 0 0; padding-left: 2.1em; list-style: none; }
+.problem-parts > li { counter-increment: part; position: relative; margin: 0 0 0.55rem; }
+.problem-parts > li:last-child { margin-bottom: 0; }
+.problem-parts > li::before {
+  content: "(" counter(part, lower-alpha) ")";
+  position: absolute;
+  left: -2.1em;
+  width: 1.8em;
+  color: var(--accent);
+  font-weight: 600;
+  text-align: left;
+}
+
+/* The question they will be asked in the talk. It is the part of the offer
+   that decides the grade, so it is set apart rather than buried at the end. */
+.suggestion-defend {
+  padding: 10px 12px;
+  border-left: 3px solid var(--accent);
+  background: var(--accent-soft);
+  font-style: italic;
+}
+
+.suggestion-defend strong { font-style: normal; }
+
+@media (max-width: 34rem) {
+  .suggestion { padding: 14px 14px 14px 14px; }
+  .suggestion::before { position: static; display: block; width: auto; text-align: left; }
+}
+
+/* ------------------------------------------------------ listening panel -- */
+
+/* Two sounds offered side by side, for a comparison the reader makes by ear.
+   The pair is deliberately symmetric: neither is the "answer", and the whole
+   point is that they differ only in the ladder of numbers printed on them.
+   The back-to-back button leads, because a difference in pitch is far easier
+   to name across four seconds than across half a minute. */
+
+.listen { display: grid; gap: 14px; }
+
+.listen-ab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 18px;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.listen-ab:hover { filter: brightness(1.12); }
+
+.listen-ab .listen-icon { margin-top: 0; background: var(--on-accent); }
+.listen-ab .listen-icon::before { border-left-color: var(--accent); }
+.listen-ab.is-playing .listen-icon::before {
+  background: var(--accent);
+  box-shadow: inset 3px 0 0 var(--paper);
+}
+
+.listen-pair {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 12px;
+}
+
+.listen-button {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  background: var(--paper);
+  color: inherit;
+  font-family: var(--sans);
+  text-align: left;
+  cursor: pointer;
+}
+
+.listen-button:hover { border-color: var(--accent); background: var(--wash); }
+
+.listen-button.is-playing {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* A triangle for stopped, two bars for playing: the state of the sound has to
+   be visible at a glance, since a reader with the audio muted has no other
+   way to tell that a click did anything. */
+.listen-icon {
+  flex: none;
+  width: 26px;
+  height: 26px;
+  margin-top: 3px;
+  border-radius: 50%;
+  background: var(--accent);
+  position: relative;
+}
+
+.listen-icon::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  border-style: solid;
+  border-width: 5px 0 5px 8px;
+  border-color: transparent transparent transparent var(--on-accent);
+}
+
+.listen-button.is-playing .listen-icon::before {
+  transform: translate(-50%, -50%);
+  border: none;
+  width: 8px;
+  height: 10px;
+  background: var(--on-accent);
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+
+.listen-body { display: grid; gap: 2px; line-height: 1.45; }
+.listen-body strong { font-family: var(--serif); font-size: 1.05rem; }
+.listen-sub { color: var(--muted); font-size: 0.85rem; }
+
+.listen-ladder {
+  margin-top: 4px;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.listen-verdict { color: var(--accent); font-size: 0.85rem; font-style: italic; }
+
+.listen-meter {
+  height: 4px;
+  border-radius: 2px;
+  background: var(--line);
+  overflow: hidden;
+}
+
+.listen-meter-fill { height: 100%; width: 0; background: var(--accent); }
+
+.listen-status {
+  margin: 0;
+  min-height: 1.4em;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* Paper cannot play a sound, so the panel prints as its description only. */
+@media print {
+  .listen-meter, .listen-icon, .listen-ab { display: none; }
+  .listen-button { border-style: dashed; }
+}
+
+/* ------------------------------------------------------------- callouts -- */
+
+/* ONE rule draws every callout. Each kind below only supplies two
+   variables, which is what keeps the colour coding consistent. */
+.callout {
+  --callout-color: var(--c-remark);
+  --callout-bg: var(--c-remark-bg);
+
+  margin: 1.5rem 0;
+  padding: 15px 18px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--callout-color);
+  border-radius: 5px;
+  background: var(--callout-bg);
+  break-inside: avoid;
+}
+
+.callout header {
+  margin-bottom: 0.45rem;
+  color: var(--callout-color);
+  font-family: var(--serif);
+  font-size: 1.14rem;
+  font-weight: 600;
+  line-height: 1.32;
+}
+
+.callout > *:last-child { margin-bottom: 0; }
+
+.callout.definition { --callout-color: var(--c-definition); --callout-bg: var(--c-definition-bg); }
+.callout.theorem    { --callout-color: var(--c-theorem);    --callout-bg: var(--c-theorem-bg); }
+.callout.example    { --callout-color: var(--c-example);    --callout-bg: var(--c-example-bg); }
+.callout.solution   { --callout-color: var(--c-solution);   --callout-bg: var(--c-solution-bg); }
+.callout.remark     { --callout-color: var(--c-remark);     --callout-bg: var(--c-remark-bg); }
+.callout.context    { --callout-color: var(--c-context);    --callout-bg: var(--c-context-bg); }
+
+/* A proof is NOT boxed. It reads as running text opened by "Proof." and
+   closed with a tombstone, the way a printed textbook sets it, which keeps
+   the number of panels on a page down. */
+.proof {
+  margin: 1.4rem 0;
+}
+.proof > p:first-of-type::before {
+  content: "Proof. ";
+  font-style: italic;
+  font-weight: 600;
+}
+/* Most proofs end on a display equation, so the tombstone hangs off the
+   block rather than the last child, where it would land mid-equation. */
+.proof::after {
+  content: "\25A1";
+  display: block;
+  margin-top: -0.7em;
+  color: var(--muted);
+  text-align: right;
+}
+
+/* Linked video card. The thumbnail comes from YouTube; nothing is embedded,
+   so no third-party script runs unless the student follows the link. */
+.video-preview {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 0.8rem 0;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #0f172a;
+  color: #fff;
+  text-decoration: none;
+}
+.video-preview img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.video-preview::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 45%, rgba(15, 23, 42, 0.72));
+}
+.video-preview-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  width: 68px;
+  height: 47px;
+  border-radius: 13px;
+  background: #dc2626;
+  transform: translate(-50%, -50%);
+}
+.video-preview-play::before {
+  content: "";
+  position: absolute;
+  top: 13px;
+  left: 27px;
+  border-style: solid;
+  border-width: 10px 0 10px 17px;
+  border-color: transparent transparent transparent #fff;
+}
+.video-preview-label {
+  position: absolute;
+  left: 14px;
+  bottom: 12px;
+  z-index: 1;
+  padding: 5px 9px;
+  border-radius: 5px;
+  background: rgba(15, 23, 42, 0.82);
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+.video-preview:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Heading that opens a solution inside its example box, so an example and
+   its solution are one panel rather than two. */
+.solution-head {
+  margin: 1.15em 0 0.4em;
+  color: var(--c-solution);
+  font-family: var(--serif);
+  font-size: 1.06rem;
+  font-weight: 600;
+}
+.solution-head + * { margin-top: 0; }
+
+/* --------------------------------------------------------------- tables -- */
+
+.table-wrap { overflow-x: auto; margin: 1.4rem 0; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.93rem;
+  line-height: 1.5;
+}
+
+td, th {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+th, tr:first-child td {
+  border-bottom: 1px solid var(--line-strong);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------- degraded conversions -- */
+
+.tikz-fallback, .latex-table, .missing-asset {
+  overflow-x: auto;
+  margin: 1.2rem 0;
+  padding: 14px;
+  border: 1px dashed var(--line-strong);
+  border-radius: 5px;
+  background: var(--wash);
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 0.84rem;
+  text-align: left;
+}
+
+/* --------------------------------------------------------------- inline -- */
+
+.centered { text-align: center; }
+.flushright { text-align: right; }
+.underline { text-decoration: underline; }
+.text-accent { color: var(--accent); }
+
+/* ----------------------------------------------------- chapter movement -- */
+
+.chapter-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 60px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  font-family: var(--sans);
+  font-size: 0.9rem;
+}
+.chapter-nav a {
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+.chapter-nav a:last-child { text-align: right; }
+.chapter-nav a:hover { border-color: var(--accent); color: var(--accent); }
+
+/* Front-matter overview: full column, since it carries figures and boxes. */
+.overview {
+  padding-top: 34px;
+  border-top: 1px solid var(--line);
+}
+.overview > h1, .overview > h2 {
+  margin-top: 0;
+}
+
+/* The preface sits directly under the overview on the home page, so it
+   keeps the same measure as .content rather than the narrower --prose.
+   Two different text widths stacked on one page read as a mistake, which
+   outweighs the slightly longer line. */
+.preface {
+  margin-bottom: 72px;
+  padding-top: 34px;
+  border-top: 1px solid var(--line);
+}
+
+.toc-chapter {
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+.toc-chapter h2 {
+  margin: 0 0 10px;
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+.toc-chapter h2 a { color: var(--ink); text-decoration: none; }
+.toc-chapter h2 a:hover { color: var(--accent); }
+.toc-chapter ol {
+  columns: 2 250px;
+  column-gap: 40px;
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: 0.94rem;
+}
+.toc-chapter ol a {
+  text-decoration: none;
+  color: var(--ink-soft);
+}
+.toc-chapter ol a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+}
+.toc-chapter ol li::marker { color: var(--muted); }
+.toc-chapter li { margin: 0.2em 0; break-inside: avoid; }
+
+/* ---------------------------------------------------------------- footer -- */
+
+.site-footer {
+  margin-top: 64px;
+  padding: 22px 0 30px;
+  border-top: 1px solid var(--line);
+}
+.site-footer-inner {
+  width: min(1240px, calc(100% - 40px));
+  margin: 0 auto;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 0.84rem;
+}
+.site-footer p { margin: 0; }
+
+/* ----------------------------------------------------------- responsive -- */
+
+@media (max-width: 960px) {
+  .layout { display: block; width: min(100% - 32px, 760px); }
+  .sidebar { display: none; }
+  .content { width: 100%; padding-top: 24px; }
+  .site-header { padding: 0 16px; }
+  .brand span:last-child { display: none; }
+}
+
+@media (max-width: 560px) {
+  body { font-size: 17px; }
+  :root { --measure: 100%; }
+  .home, .toc-page { width: calc(100% - 28px); }
+  .home-grid { grid-template-columns: 1fr; }
+  .chapter-nav { grid-template-columns: 1fr; }
+  .chapter-nav a, .chapter-nav a:last-child { text-align: left; }
+  .top-nav { gap: 14px; }
+  .toc-chapter ol { columns: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* ---------------------------------------------------------------- print -- */
+
+/* Target: a page that comes out of the browser looking like the PDF.
+   Screen chrome disappears, the column becomes the page, and nothing is
+   allowed to split across a page break if it can be helped. */
+
+@page {
+  margin: 18mm 17mm 20mm;
+}
+
+@media print {
+  html, body {
+    background: #fff;
+    color: #000;
+    font-size: 10.5pt;
+    line-height: 1.55;
+  }
+
+  /* Screen-only furniture. */
+  .site-header,
+  .top-nav,
+  .sidebar,
+  .chapter-nav,
+  .skip-link,
+  .home-grid {
+    display: none !important;
+  }
+
+  .layout {
+    display: block;
+    width: auto;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .content,
+  .home,
+  .toc-page {
+    width: auto;
+    max-width: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Full page width for text: print has its own comfortable measure. */
+  :root { --measure: 100%; }
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  .chapter-hero {
+    margin-bottom: 18pt;
+    padding-bottom: 8pt;
+    border-bottom: 0.5pt solid #999;
+  }
+  .chapter-hero h1 { font-size: 20pt; }
+  .chapter-hero p { color: #555; }
+
+  .content h2 {
+    margin: 16pt 0 6pt;
+    padding-bottom: 2pt;
+    border-bottom: 0.5pt solid #bbb;
+    font-size: 14pt;
+  }
+  .content h3 { margin: 12pt 0 4pt; font-size: 12pt; }
+  .content h4 { margin: 10pt 0 3pt; font-size: 11pt; color: #000; }
+
+  /* Never strand a heading at the foot of a page. */
+  h1, h2, h3, h4 { break-after: avoid; page-break-after: avoid; }
+
+  p, li { orphans: 3; widows: 3; }
+
+  /* Keep every self-contained block whole. */
+  .callout,
+  figure,
+  .figure,
+  .table-figure,
+  .math-block,
+  table,
+  .interactive-figure {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Callouts keep their identity in print, but as line and label rather
+     than a block of ink: tinted panels band badly on most printers. */
+  /* A thumbnail cannot be played on paper, so print the address. */
+  .video-preview { display: none; }
+
+  .site-footer {
+    margin-top: 18pt;
+    padding: 6pt 0 0;
+    border-top: 0.5pt solid #bbb;
+  }
+  .site-footer-inner { width: auto; font-size: 8.5pt; }
+
+  .proof { margin: 8pt 0; break-inside: avoid; }
+  .solution-head { margin: 7pt 0 3pt; font-size: 11pt; }
+
+  .callout {
+    margin: 9pt 0;
+    padding: 6pt 0 6pt 10pt;
+    border: 0;
+    border-left: 1.5pt solid var(--callout-color);
+    border-radius: 0;
+    background: transparent;
+  }
+  .callout header {
+    margin-bottom: 2pt;
+    color: var(--callout-color);
+    font-family: var(--serif);
+    font-size: 11pt;
+    font-weight: 600;
+  }
+
+  /* Greyscale printers still need the kinds to be distinguishable, so the
+     label carries the meaning even when the colour is lost. */
+
+  figcaption {
+    margin-top: 4pt;
+    font-size: 9pt;
+    color: #333;
+  }
+
+  .figure img, figure img {
+    max-width: 100%;
+    /* Images are usually the thing that overflows a printed page. */
+    max-height: 78vh;
+    object-fit: contain;
+  }
+
+  table { font-size: 9.5pt; }
+  td, th { border-bottom: 0.5pt solid #bbb; }
+
+  .math-block {
+    margin: 8pt 0;
+    overflow: visible;   /* scrollbars cannot exist on paper */
+  }
+
+  .interactive-figure > header { background: transparent; }
+  .interactive-mount { display: none; }   /* nothing interactive on paper */
+  .interactive-figure::after {
+    content: "Interactive figure -- view online.";
+    display: block;
+    padding: 6pt 0;
+    color: #555;
+    font-size: 9pt;
+    font-style: italic;
+  }
+
+  .toc-chapter { break-inside: avoid; }
+}

@@ -1,0 +1,1392 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 4: Partial Differentiation | Mathematical Methods in the Physical Sciences</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+  <link rel="preload" href="../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../assets/css/site.css?v=4c167578">
+  <script>
+    window.MathJax = {
+      // tagformat is an optional TeX extension, not part of the combined
+      // tex-chtml build. Without these two lines the tagformat block below is
+      // read and silently ignored, and every equation numbers from 1 with no
+      // chapter in front of it.
+      loader: { load: ['[tex]/tagformat'] },
+      tex: {
+        packages: { '[+]': ['tagformat'] },
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        processEnvironments: true,
+        tags: 'ams',
+        // The PDF numbers equations within the chapter (\numberwithin
+        // {equation}{chapter}), so "1.8" is the eighth equation of
+        // chapter 1. MathJax counts from 1 on every page, which would have
+        // shown that same equation as "8". Prefixing the chapter number
+        // keeps a reference valid against either version.
+        tagformat: {
+          number: function (n) { return '4.' + n; }
+        },
+        macros: {
+          pdv: ['{\\frac{\\partial #1}{\\partial #2}}', 2],
+          dv: ['{\\frac{d #1}{d #2}}', 2],
+          abs: ['{\\left|#1\\right|}', 1],
+          norm: ['{\\left\\|#1\\right\\|}', 1],
+          curl: '{\\vec{\\nabla}\\times}',
+          div: '{\\vec{\\nabla}\\cdot}',
+          grad: '{\\vec{\\nabla}}',
+          sech: '{\\operatorname{sech}}',
+          csch: '{\\operatorname{csch}}',
+          coth: '{\\operatorname{coth}}',
+          circnum: ['{\\boxed{#1}}', 1],
+          vb: ['{\\mathbf{#1}}', 1],
+          eval: ['{\\left.#1\\right|}', 1],
+          dd: '{\\,d}'
+        }
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <script defer src="../../assets/js/main.js?v=4c167578"></script>
+
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="../../index.html">
+    <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M9 6.5V25.5M9 6.5H24M9 25.5H24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 16Q10.5 9.5 15.5 16T25.5 16" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/></svg>
+    <span>Mathematical Methods in the Physical Sciences</span>
+  </a>
+  <nav class="top-nav" aria-label="Primary">
+    <a href="../../index.html">Home</a>
+    <a href="../../toc.html">Contents</a>
+    <a href="../../projects.html">Projects</a>
+  </nav>
+</header>
+<main class="layout" id="main">
+  <aside class="sidebar">
+  <div class="sidebar-inner">
+    <p class="sidebar-kicker">Chapter 4</p>
+    <h2>Partial Differentiation</h2>
+    <nav class="chapter-toc" aria-label="Chapter contents">
+      <a class="toc-level-2" href="#sec-4-introduction">4.1 Introduction</a>
+<a class="toc-level-3" href="#sec-4-notation">Notation</a>
+<a class="toc-level-2" href="#sec-4-applications-in-thermodynamics">4.2 Applications in Thermodynamics</a>
+<a class="toc-level-2" href="#sec-4-power-series-in-two-variables">4.3 Power Series in Two Variables</a>
+<a class="toc-level-3" href="#sec-4-general-expansion">General Expansion</a>
+<a class="toc-level-3" href="#sec-4-taylor-expansion-approach">Taylor Expansion Approach</a>
+<a class="toc-level-2" href="#sec-4-total-differentials">4.4 Total Differentials</a>
+<a class="toc-level-3" href="#sec-4-review-one-variable">Review: One Variable</a>
+<a class="toc-level-3" href="#sec-4-two-variables">Two Variables</a>
+<a class="toc-level-3" href="#sec-4-general-case">General Case</a>
+<a class="toc-level-2" href="#sec-4-chain-rule-differentiating-a-function-of-a-function">4.5 Chain Rule: Differentiating a Function of a Function</a>
+<a class="toc-level-2" href="#sec-4-implicit-differentiation">4.6 Implicit Differentiation</a>
+<a class="toc-level-3" href="#sec-4-first-derivative">First Derivative</a>
+<a class="toc-level-3" href="#sec-4-second-derivative">Second Derivative</a>
+<a class="toc-level-2" href="#sec-4-more-on-chain-rule">4.7 More on Chain Rule</a>
+<a class="toc-level-2" href="#sec-4-chain-rule-in-polar-and-rectangular-coordinates">4.8 Chain Rule in Polar and Rectangular Coordinates</a>
+<a class="toc-level-2" href="#sec-4-change-of-variables-laplace-equation-in-polar-coordinates">4.9 Change of Variables: Laplace Equation in Polar Coordinates</a>
+<a class="toc-level-2" href="#sec-4-leibniz-s-rule">4.10 Leibniz’s Rule</a>
+<a class="toc-level-3" href="#sec-4-general-leibniz-rule">General Leibniz Rule</a>
+<a class="toc-level-2" href="#sec-4-where-partial-differentiation-is-used">4.11 Where Partial Differentiation Is Used</a>
+<a class="toc-level-2" href="#sec-4-summary-table">Summary Table</a>
+<a class="toc-level-2" href="#sec-4-for-the-interested-reader">For the Interested Reader</a>
+<a class="toc-level-3" href="#sec-4-videos">Videos</a>
+<a class="toc-level-3" href="#sec-4-websites">Websites</a>
+    </nav>
+  </div>
+</aside>
+
+  <article class="content">
+    <header class="chapter-hero">
+      <p>Chapter 4</p>
+      <h1>Partial Differentiation</h1>
+    </header>
+    <h2 id="sec-4-introduction"><span class="sec-number">4.1</span>Introduction</h2>
+<p>In many physical problems, we encounter functions that depend on more than one variable, e.g.,</p>
+<div class="math-block">\begin{equation}
+f = f(x,y,z,\dots).
+\end{equation}</div>
+<p>The <strong>partial derivative</strong> of <span class="math-inline">\(f\)</span> with respect to <span class="math-inline">\(x\)</span> means differentiating <span class="math-inline">\(f\)</span> with respect to <span class="math-inline">\(x\)</span> while treating all the other variables as constants. We denote this as</p>
+<div class="math-block">\begin{equation}
+\frac{\partial f}{\partial x}.
+\end{equation}</div>
+<section class="callout definition"><header>Definition - Partial Derivative</header><p>Let <span class="math-inline">\(f(x_1, x_2, \dots, x_n)\)</span> be a function of several variables. The <strong>partial derivative</strong> of <span class="math-inline">\(f\)</span> with respect to the variable <span class="math-inline">\(x_i\)</span> is defined by</p>
+<div class="math-block">\begin{equation}
+	\frac{\partial f}{\partial x_i}
+	=
+	\lim_{\Delta x_i \to 0}
+	\frac{
+		f(x_1, \dots, x_i + \Delta x_i, \dots, x_n)
+		-
+		f(x_1, \dots, x_i, \dots, x_n)
+	}{\Delta x_i}.
+	\end{equation}</div>
+<p>All other variables are held constant during the differentiation.</p></section>
+<h3 id="sec-4-notation">Notation</h3>
+<p>There are multiple notations for partial derivatives. For first-order:</p>
+<div class="math-block">\begin{equation}
+\frac{\partial f}{\partial x} = f_x.
+\end{equation}</div>
+<p>For higher-order derivatives:</p>
+<div class="math-block">\begin{equation}
+\frac{\partial ^2 f}{\partial x^2} = f_{xx},
+\qquad
+\frac{\partial ^2 f}{\partial x \partial y} = f_{xy},
+\qquad
+\frac{\partial ^2 f}{\partial y^2} = f_{yy}.
+\end{equation}</div>
+<section class="callout example"><header>Example - Partial Derivatives of a Multivariable Function</header><p>Let</p>
+<div class="math-block">\begin{equation}
+	f(x,y) = x^3y - e^{xy}.
+	\end{equation}</div>
+<p><strong>First-order partial derivatives:</strong></p>
+<div class="math-block">\begin{equation}
+	\frac{\partial f}{\partial x} = 3x^2y - y e^{xy},
+	\qquad
+	\frac{\partial f}{\partial y} = x^3 - x e^{xy}.
+	\end{equation}</div>
+<p><strong>Second-order partial derivatives:</strong></p>
+<div class="math-block">\begin{equation}
+	\frac{\partial ^2 f}{\partial x^2} = 6xy - y^2 e^{xy},
+	\qquad
+	\frac{\partial ^2 f}{\partial y^2} = -x^2 e^{xy}.
+	\end{equation}</div>
+<div class="math-block">\begin{equation}
+	\frac{\partial ^2 f}{\partial x \partial y} = 3x^2 - e^{xy} - xy e^{xy},
+	\qquad
+	\frac{\partial ^2 f}{\partial y \partial x} = 3x^2 - e^{xy} - xy e^{xy}.
+	\end{equation}</div>
+<p><strong>Conclusion:</strong> Mixed partials agree:</p>
+<div class="math-block">\begin{equation}
+	\frac{\partial ^2 f}{\partial x \partial y} = \frac{\partial ^2 f}{\partial y \partial x},
+	\end{equation}</div>
+<p>(as long as <span class="math-inline">\(f\)</span> is sufficiently smooth — Clairaut's Theorem).</p></section>
+<section class="callout remark"><header>Remark</header><p>For sufficiently smooth functions, the mixed derivatives are equal:</p>
+<div class="math-block">\begin{equation}
+	\frac{\partial ^2 f}{\partial x \partial y} = \frac{\partial ^2 f}{\partial y \partial x}.
+	\end{equation}</div>
+<p>This is known as <strong>Clairaut’s theorem</strong>.</p></section>
+<section class="callout example"><header>Example - Change of Variables and Partial Derivatives</header><p>Let</p>
+<div class="math-block">\begin{equation}
+	z = x^2 - y^2,
+	\qquad
+	x = r\cos\theta,\quad y = r\sin\theta.
+	\end{equation}</div>
+<p>Then, using <span class="math-inline">\(x^2 + y^2 = r^2\)</span>, we can rewrite <span class="math-inline">\(z\)</span> in different but equivalent forms and compute <span class="math-inline">\(\frac{\partial z}{\partial r}\)</span> while holding different variables constant.</p>
+<p><strong>1) Expressing <span class="math-inline">\(z\)</span> in terms of <span class="math-inline">\(r\)</span> and <span class="math-inline">\(\theta\)</span>:</strong></p>
+<div class="math-block">\begin{equation}
+	z = r^2\cos^2\theta - r^2\sin^2\theta
+	= r^2 \cos(2\theta).
+	\end{equation}</div>
+<p>Holding <span class="math-inline">\(\theta\)</span> constant:</p>
+<div class="math-block">\begin{equation}
+	\left(\frac{\partial z}{\partial r}\right)_{\theta}
+	= 2r(\cos^2\theta - \sin^2\theta)
+	= 2r\cos(2\theta).
+	\end{equation}</div>
+<p><strong>2) Expressing <span class="math-inline">\(z\)</span> in terms of <span class="math-inline">\(x\)</span> and <span class="math-inline">\(r\)</span>:</strong></p>
+<div class="math-block">\begin{equation}
+	z = 2x^2 - (x^2 + y^2)
+	= 2x^2 - r^2.
+	\end{equation}</div>
+<p>Holding <span class="math-inline">\(x\)</span> constant:</p>
+<div class="math-block">\begin{equation}
+	\left(\frac{\partial z}{\partial r}\right)_{x}
+	= -2r.
+	\end{equation}</div>
+<p><strong>3) Expressing <span class="math-inline">\(z\)</span> in terms of <span class="math-inline">\(y\)</span> and <span class="math-inline">\(r\)</span>:</strong></p>
+<div class="math-block">\begin{equation}
+	z = (x^2 + y^2) - 2y^2
+	= r^2 - 2y^2.
+	\end{equation}</div>
+<p>Holding <span class="math-inline">\(y\)</span> constant:</p>
+<div class="math-block">\begin{equation}
+	\left(\frac{\partial z}{\partial r}\right)_{y}
+	= 2r.
+	\end{equation}</div>
+<p> <strong>Important:</strong> Each derivative is different because a different quantity is held fixed. Thus, we write:</p>
+<div class="math-block">\begin{equation}
+	\left(\frac{\partial z}{\partial r}\right)_{\theta}, \qquad
+	\left(\frac{\partial z}{\partial r}\right)_{x}, \qquad
+	\left(\frac{\partial z}{\partial r}\right)_{y},
+	\end{equation}</div>
+<p>to remove ambiguity in multivariable calculus.</p></section>
+<h2 id="sec-4-applications-in-thermodynamics"><span class="sec-number">4.2</span>Applications in Thermodynamics</h2>
+<p>Partial derivatives play a central role in thermodynamics because most physical quantities depend on more than one variable. For example, temperature <span class="math-inline">\(T\)</span>, pressure <span class="math-inline">\(p\)</span>, volume <span class="math-inline">\(V\)</span>, and entropy <span class="math-inline">\(S\)</span> are related through equations of state and energy relations. To describe how one variable changes while others are held constant, we use partial derivatives with explicit subscripts.</p>
+<p>For example, the temperature can be expressed as a function of pressure and volume,</p>
+<div class="math-block">\begin{equation}
+T = T(p,V),
+\end{equation}</div>
+<p>or as a function of pressure and internal energy,</p>
+<div class="math-block">\begin{equation}
+T = T(p,U).
+\end{equation}</div>
+<p>In these cases, we encounter derivatives such as</p>
+<div class="math-block">\begin{equation}
+\left(\frac{\partial T}{\partial p}\right)_V,
+\qquad
+\left(\frac{\partial T}{\partial p}\right)_U,
+\quad \dots
+\end{equation}</div>
+<ul><li><p><span class="math-inline">\(\displaystyle \left(\frac{\partial T}{\partial p}\right)_V\)</span>: how the temperature changes with pressure at <strong>constant volume</strong>. Physically this is a gas in a sealed rigid container: the volume cannot change, so heating the gas raises both its temperature and its pressure together. For an ideal gas <span class="math-inline">\(pV = Nk_BT\)</span> gives <span class="math-inline">\(\left(\frac{\partial T}{\partial p}\right)_V = V/Nk_B\)</span> directly.</p></li><li><p><span class="math-inline">\(\displaystyle \left(\frac{\partial T}{\partial p}\right)_U\)</span>: how the temperature changes with pressure at <strong>constant internal energy</strong>. This is the derivative relevant to the Joule free expansion, in which a gas expands into a vacuum inside rigid insulated walls: no heat enters and no work is done, so <span class="math-inline">\(U\)</span> is unchanged. For an ideal gas <span class="math-inline">\(U\)</span> depends on <span class="math-inline">\(T\)</span> alone, so this derivative vanishes and the temperature does not change — a result that fails for a real gas, where it measures the intermolecular forces.</p></li></ul>
+<section class="callout remark"><header>Remark</header><p>Constant <span class="math-inline">\(U\)</span> is not the same as adiabatic. Adiabatic means no heat crosses the boundary, <span class="math-inline">\(\delta Q = 0\)</span>; for a reversible process that is constant entropy, <span class="math-inline">\(S\)</span>. A gas compressed adiabatically does have work done on it, so its internal energy rises. The free expansion above happens to be both adiabatic and at constant <span class="math-inline">\(U\)</span> only because no work is done either.</p></section>
+<section class="callout remark"><header>Remark</header><p>The subscript indicates which variables are kept constant during differentiation. For example:</p>
+<div class="math-block">\begin{equation}
+	\left(\frac{\partial T}{\partial p}\right)_V \quad \text{means ``change in $T$ with respect to $p$ while keeping $V$ fixed.&#x27;&#x27;}
+	\end{equation}</div>
+<p>This removes ambiguity and prevents misinterpretation of derivatives.</p></section>
+<section class="callout example"><header>Example - Physics: the thermodynamic cyclic relation</header><p>A gas has an equation of state relating <span class="math-inline">\(p\)</span>, <span class="math-inline">\(V\)</span> and <span class="math-inline">\(T\)</span>, such as <span class="math-inline">\(pV = Nk_BT\)</span>, so that any one of the three is determined by the other two. Show that</p>
+<div class="math-block">\begin{equation}
+	\left(\frac{\partial p}{\partial V}\right)_T
+	\left(\frac{\partial V}{\partial T}\right)_p
+	\left(\frac{\partial T}{\partial p}\right)_V
+	= -1 .
+	\label{eq:cyclic_relation}
+	\end{equation}</div>
+<p class="solution-head">Solution.</p>
+<p>The result is surprising at first sight: one might expect the three factors to cancel to <span class="math-inline">\(+1\)</span>, as they would if the symbols were ordinary fractions. They do not, and the minus sign is the point.</p>
+<p>Regard <span class="math-inline">\(T\)</span> as a function of <span class="math-inline">\(p\)</span> and <span class="math-inline">\(V\)</span> and write its total differential:</p>
+<div class="math-block">\begin{equation}
+	dT = \left(\frac{\partial T}{\partial p}\right)_V dp + \left(\frac{\partial T}{\partial V}\right)_p dV .
+	\end{equation}</div>
+<p>Now specialise to a process at constant temperature, so <span class="math-inline">\(dT = 0\)</span>:</p>
+<div class="math-block">\begin{equation}
+	0 = \left(\frac{\partial T}{\partial p}\right)_V dp + \left(\frac{\partial T}{\partial V}\right)_p dV .
+	\end{equation}</div>
+<p>Dividing by <span class="math-inline">\(dV\)</span> at fixed <span class="math-inline">\(T\)</span> and solving for the ratio gives</p>
+<div class="math-block">\begin{equation}
+	\left(\frac{\partial p}{\partial V}\right)_T
+	= - \frac{\left(\frac{\partial T}{\partial V}\right)_p}{\left(\frac{\partial T}{\partial p}\right)_V}.
+	\end{equation}</div>
+<p>Substitute this into the left-hand side of <span class="math-inline">\(\eqref{eq:cyclic_relation}\)</span>. The middle factor may be inverted, because <span class="math-inline">\(\left(\frac{\partial V}{\partial T}\right)_p\)</span> and <span class="math-inline">\(\left(\frac{\partial T}{\partial V}\right)_p\)</span> hold the <em>same</em> variable <span class="math-inline">\(p\)</span> fixed and so are genuine reciprocals:</p>
+<div class="math-block">\begin{equation}
+	\left(\frac{\partial p}{\partial V}\right)_T
+	\left(\frac{\partial V}{\partial T}\right)_p
+	\left(\frac{\partial T}{\partial p}\right)_V
+	= - \frac{\left(\frac{\partial T}{\partial V}\right)_p}{\left(\frac{\partial T}{\partial p}\right)_V}
+	\cdot \frac{1}{\left(\frac{\partial T}{\partial V}\right)_p}
+	\cdot \left(\frac{\partial T}{\partial p}\right)_V
+	= -1 .
+	\end{equation}</div>
+<p>As a check, use the ideal gas law <span class="math-inline">\(pV = Nk_BT\)</span> directly:</p>
+<div class="math-block">\begin{equation}
+	\left(\frac{\partial p}{\partial V}\right)_T = -\frac{Nk_BT}{V^2},
+	\qquad
+	\left(\frac{\partial V}{\partial T}\right)_p = \frac{Nk_B}{p},
+	\qquad
+	\left(\frac{\partial T}{\partial p}\right)_V = \frac{V}{Nk_B},
+	\end{equation}</div>
+<p>whose product is <span class="math-inline">\(-\dfrac{Nk_BT}{V\,p} = -1\)</span>, since <span class="math-inline">\(pV = Nk_BT\)</span>. </p>
+<p>The minus sign has a physical reading. Raise the pressure at fixed volume and the temperature rises; raise the temperature at fixed pressure and the volume rises; so increasing the volume at fixed temperature must <em>lower</em> the pressure. Two increases and one decrease give the negative sign. This relation is used constantly in thermodynamics to trade an unmeasurable derivative for two measurable ones.</p></section>
+<h2 id="sec-4-power-series-in-two-variables"><span class="sec-number">4.3</span>Power Series in Two Variables</h2>
+<p>Just as a function of a single variable can be expressed as a power series expansion, functions of two variables can also be expanded into a series about a point <span class="math-inline">\((a,b)\)</span>.</p>
+<section class="callout example"><header>Example - Series Expansion of <span class="math-inline">\(\sin(x)\cos(y)\)</span></header><p>Use the power series</p>
+<div class="math-block">\begin{equation}
+	\sin(x) = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \cdots,
+	\qquad
+	\cos(y) = 1 - \frac{y^2}{2!} + \frac{y^4}{4!} - \cdots.
+	\end{equation}</div>
+<p>Multiply the expansions:</p>
+<div class="math-block">\begin{equation}
+	\sin(x)\cos(y)
+	=
+	\left(x - \frac{x^3}{3!} + \cdots\right)
+	\left(1 - \frac{y^2}{2!} + \cdots\right).
+	\end{equation}</div>
+<p>Collecting lowest-order terms:</p>
+<div class="math-block">\begin{equation}
+	= x - \frac{x^3}{3!} - \frac{x y^2}{2!} + \cdots
+	\end{equation}</div>
+<p>Thus, the (truncated) power-series expansion is:</p>
+<div class="math-block">\begin{equation}
+	\boxed{\sin(x)\cos(y) =
+		x - \frac{x^3}{6} - \frac{xy^2}{2} + \cdots}
+	\end{equation}</div></section>
+<section class="callout example"><header>Example - Series Expansion of <span class="math-inline">\(\ln(1+x-y)\)</span></header><p>Start with the known expansion (for <span class="math-inline">\(|z|&lt;1\)</span>):</p>
+<div class="math-block">\begin{equation}
+	\ln(1+z)
+	=
+	z - \frac{z^2}{2} + \frac{z^3}{3} - \cdots.
+	\end{equation}</div>
+<p>Let <span class="math-inline">\(z = x - y\)</span>:</p>
+<div class="math-block">\begin{equation}
+	\ln(1+x-y)
+	=
+	(x-y) - \frac{(x-y)^2}{2}
+	+ \frac{(x-y)^3}{3} - \cdots.
+	\end{equation}</div>
+<p>Expand:</p>
+<div class="math-block">\begin{equation}
+	= (x-y) - \frac{x^2 - 2xy + y^2}{2}
+	+ \frac{x^3 - 3x^2y + 3xy^2 - y^3}{3} - \cdots
+	\end{equation}</div>
+<p>Simplify:</p>
+<div class="math-block">\begin{equation}
+	\boxed{
+		\ln(1+x-y)
+		=
+		x - y
+		- \frac{x^2}{2} + xy - \frac{y^2}{2}
+		+ \frac{x^3}{3} - x^2y + xy^2 - \frac{y^3}{3}
+		+ \cdots
+	}
+	\end{equation}</div></section>
+<h3 id="sec-4-general-expansion">General Expansion</h3>
+<p>In general, a sufficiently smooth function <span class="math-inline">\(f(x,y)\)</span> can be expanded in a power series about a point <span class="math-inline">\((a,b)\)</span> as</p>
+<div class="math-block">\begin{equation}
+f(x,y) = \sum_{n=0}^{\infty} \frac{1}{n!}
+\left((x-a)\frac{\partial}{\partial X} + (y-b)\frac{\partial}{\partial Y}\right)^n \left.f(X,Y)\right|_{(a,b)}.
+\label{eq:taylor_two_var}
+\end{equation}</div>
+<p>This is the multivariable Taylor series expansion. The operator in brackets is raised to the <span class="math-inline">\(n\)</span>th power <em>before</em> acting on <span class="math-inline">\(f\)</span>, so at order <span class="math-inline">\(n\)</span> it produces every mixed derivative of total order <span class="math-inline">\(n\)</span>, each weighted by a binomial coefficient. Writing out <span class="math-inline">\(n=2\)</span> gives the familiar three terms in <span class="math-inline">\(x^2\)</span>, <span class="math-inline">\(xy\)</span> and <span class="math-inline">\(y^2\)</span> used below.</p>
+<h3 id="sec-4-taylor-expansion-approach">Taylor Expansion Approach</h3>
+<p>Instead of multiplying series, we can also compute the expansion of</p>
+<div class="math-block">\begin{equation}
+f(x,y) = \sin(x)\cos(y)
+\end{equation}</div>
+<p>directly using the <strong>two-variable Taylor series</strong> about <span class="math-inline">\((0,0)\)</span>:</p>
+<div class="math-block">\begin{equation}
+\begin{aligned}
+	f(x,y) &amp;= f(0,0)
+	+ \left.\frac{\partial f}{\partial X}\right|_{(0,0)} x
+	+ \left.\frac{\partial f}{\partial Y}\right|_{(0,0)} y \\[6pt]
+	&amp;\quad + \frac{1}{2!}\Bigg[
+	\left.\frac{\partial^{2} f}{\partial X^{2}}\right|_{(0,0)} x^2
+	+ 2 \left.\frac{\partial^{2} f}{\partial X\,\partial Y}\right|_{(0,0)} xy
+	+ \left.\frac{\partial^{2} f}{\partial Y^{2}}\right|_{(0,0)} y^2
+	\Bigg] + \cdots
+\end{aligned}
+\end{equation}</div>
+<p class="paragraph-title">Step 1. Zeroth order</p>
+<div class="math-block">\begin{equation}
+f(0,0) = \sin(0)\cos(0) = 0.
+\end{equation}</div>
+<p class="paragraph-title">Step 2. First order</p>
+<div class="math-block">\begin{equation}
+\frac{\partial f}{\partial X} = \cos(X)\cos(Y), \quad
+\left.\frac{\partial f}{\partial X}\right|_{(0,0)} = 1,
+\end{equation}</div>
+<div class="math-block">\begin{equation}
+\frac{\partial f}{\partial Y} = -\sin(X)\sin(Y), \quad
+\left.\frac{\partial f}{\partial Y}\right|_{(0,0)} = 0.
+\end{equation}</div>
+<p>So the linear contribution is <span class="math-inline">\(x\)</span>.</p>
+<p class="paragraph-title">Step 3. Second order</p>
+<p>At <span class="math-inline">\((0,0)\)</span>, all second derivatives vanish, so there is no quadratic contribution.</p>
+<p class="paragraph-title">Step 4. Third order</p>
+<p>At third order the bracket in <span class="math-inline">\(\eqref{eq:taylor_two_var}\)</span> produces four terms, not one:</p>
+<div class="math-block">\begin{equation}
+\frac{1}{3!}\Bigg[
+\left.\frac{\partial^{3} f}{\partial X^{3}}\right|_{(0,0)} x^3
++ 3\left.\frac{\partial ^3 f}{\partial X^2 \partial Y}\right|_{(0,0)} x^2 y
++ 3\left.\frac{\partial ^3 f}{\partial X \partial Y^2}\right|_{(0,0)} x y^2
++ \left.\frac{\partial^{3} f}{\partial Y^{3}}\right|_{(0,0)} y^3
+\Bigg].
+\end{equation}</div>
+<p>Evaluating each at the origin, where <span class="math-inline">\(\sin\)</span> vanishes and <span class="math-inline">\(\cos\)</span> equals one:</p>
+<div class="math-block">\begin{equation}
+\frac{\partial^{3} f}{\partial X^{3}} = -\cos X\cos Y \ \to\ -1,
+\qquad
+\frac{\partial ^3 f}{\partial X \partial Y^2} = -\cos X\cos Y \ \to\ -1,
+\end{equation}</div>
+<div class="math-block">\begin{equation}
+\frac{\partial ^3 f}{\partial X^2 \partial Y} = \sin X\sin Y \ \to\ 0,
+\qquad
+\frac{\partial^{3} f}{\partial Y^{3}} = \sin X\sin Y \ \to\ 0 .
+\end{equation}</div>
+<p>So the third-order contribution is</p>
+<div class="math-block">\begin{equation}
+\frac{1}{6}\Big[-x^3 + 3(-1)xy^2\Big]
+= -\frac{x^3}{6} - \frac{xy^2}{2}.
+\end{equation}</div>
+<p class="paragraph-title">Result</p>
+<p>Collecting terms:</p>
+<div class="math-block">\begin{equation}
+\sin(x)\cos(y) = x - \frac{x^3}{6} - \frac{xy^2}{2} + \cdots
+\end{equation}</div>
+<section class="callout remark"><header>Remark</header><p>This matches the result obtained earlier by multiplying the single-variable series, including the <span class="math-inline">\(xy^2\)</span> term. That term is easy to lose: it comes from the mixed derivative <span class="math-inline">\(\frac{\partial ^3 f}{\partial X \partial Y^2}\)</span>, not from differentiating three times in <span class="math-inline">\(x\)</span>. When using the multivariable Taylor series, every mixed derivative of the given total order must be included, each with its binomial coefficient.</p></section>
+<h2 id="sec-4-total-differentials"><span class="sec-number">4.4</span>Total Differentials</h2>
+<h3 id="sec-4-review-one-variable">Review: One Variable</h3>
+<figure id="chapter-04-fig-1" class="figure"><img src="assets/img/Fig_4_1.jpeg" alt="Illustration of the differential: for a small change dx, the corresponding change in y is approximated by dy = y&amp;#x27; dx." loading="lazy" style="--figure-width: 40%;"><figcaption>Figure 4.1. Illustration of the differential: for a small change <span class="math-inline">\(dx\)</span>, the corresponding change in <span class="math-inline">\(y\)</span> is approximated by <span class="math-inline">\(dy = y&#x27; dx\)</span>.</figcaption></figure>
+<p>If <span class="math-inline">\(y = f(x)\)</span>, then</p>
+<div class="math-block">\begin{equation}
+y&#x27; = \frac{d y}{d x} = \frac{d f(x)}{d x}.
+\end{equation}</div>
+<p>By definition,</p>
+<div class="math-block">\begin{equation}
+\frac{d y}{d x} = \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}.
+\end{equation}</div>
+<p>Hence, for small <span class="math-inline">\(\Delta x\)</span>,</p>
+<div class="math-block">\begin{equation}
+dx = \Delta x, \qquad dy = y&#x27; \, dx.
+\end{equation}</div>
+<h3 id="sec-4-two-variables">Two Variables</h3>
+<p>If <span class="math-inline">\(f = f(x,y)\)</span>, then the <strong>total differential</strong> is</p>
+<div class="math-block">\begin{equation}
+df = \frac{\partial f}{\partial x} dx + \frac{\partial f}{\partial y} dy.
+\end{equation}</div>
+<h3 id="sec-4-general-case">General Case</h3>
+<p>For a function of many variables,</p>
+<div class="math-block">\begin{equation}
+f = f(x,y,z,\dots),
+\end{equation}</div>
+<p>the total differential is</p>
+<div class="math-block">\begin{equation}
+df = \frac{\partial f}{\partial x} dx + \frac{\partial f}{\partial y} dy + \frac{\partial f}{\partial z} dz + \cdots
+\end{equation}</div>
+<section class="callout remark"><header>Remark</header><p>The total differential expresses the approximate change in <span class="math-inline">\(f\)</span> resulting from small changes in its independent variables.</p></section>
+<h2 id="sec-4-chain-rule-differentiating-a-function-of-a-function"><span class="sec-number">4.5</span>Chain Rule: Differentiating a Function of a Function</h2>
+<p>The chain rule extends naturally to functions of functions. If a variable depends on another, which in turn depends on a third, we can differentiate by following the chain of dependencies.</p>
+<section class="callout theorem"><header>Theorem - Chain Rule for Composite Functions</header><p>If <span class="math-inline">\(y = y(u)\)</span> and <span class="math-inline">\(u = u(x)\)</span>, then the derivative of <span class="math-inline">\(y\)</span> with respect to <span class="math-inline">\(x\)</span> is</p>
+<div class="math-block">\begin{equation}
+	\boxed{\frac{d y}{d x} = \frac{d y}{d u}\,\frac{d u}{d x}}.
+	\end{equation}</div>
+<p> More generally, if</p>
+<div class="math-block">\begin{equation}
+	u = u(x,y), \qquad x = x(t), \qquad y = y(t),
+	\end{equation}</div>
+<p>then</p>
+<div class="math-block">\begin{equation}
+	\boxed{\frac{d u}{d t}
+		= \frac{\partial u}{\partial x}\,\frac{d x}{d t}
+		+ \frac{\partial u}{\partial y}\,\frac{d y}{d t}}.
+	\end{equation}</div>
+<p> For functions depending on multiple variables,</p>
+<div class="math-block">\begin{equation}
+	\boxed{
+		\frac{d u}{d t}
+		= \frac{\partial u}{\partial x}\,\frac{d x}{d t}
+		+ \frac{\partial u}{\partial y}\,\frac{d y}{d t}
+		+ \frac{\partial u}{\partial z}\,\frac{d z}{d t}
+		+ \cdots
+	}
+	\end{equation}</div>
+<p>where the sum includes a term for each independent variable.</p></section>
+<section class="callout example"><header>Example</header><p>Let</p>
+<div class="math-block">\begin{equation}
+	y = \ln(u), \qquad u = \sin(v), \qquad v = 2x.
+	\end{equation}</div>
+<p>Find <span class="math-inline">\(\frac{d y}{d x}\)</span>.</p>
+<p class="solution-head">Solution.</p>
+<div class="math-block">\begin{equation}
+	\frac{d y}{d x} = \frac{d y}{d u}\,\frac{d u}{d v}\,\frac{d v}{d x}.
+	\end{equation}</div>
+<p>Compute the derivatives step by step:</p>
+<div class="math-block">\begin{equation}
+	\frac{d y}{d u} = \frac{1}{u},
+	\qquad
+	\frac{d u}{d v} = \cos(v),
+	\qquad
+	\frac{d v}{d x} = 2.
+	\end{equation}</div>
+<p>Thus,</p>
+<div class="math-block">\begin{equation}
+	\frac{d y}{d x} = \frac{1}{u}\cos(v)\cdot 2 = \frac{2\cos(v)}{u}.
+	\end{equation}</div>
+<p>Since <span class="math-inline">\(u=\sin(v)\)</span>,</p>
+<div class="math-block">\begin{equation}
+	\boxed{\frac{d y}{d x} = \frac{2\cos(v)}{\sin(v)} = 2\cot(v) = 2\cot(2x).}
+	\end{equation}</div></section>
+<section class="callout example"><header>Example</header><p>Let</p>
+<div class="math-block">\begin{equation}
+	z = x y,
+	\qquad x = 2t^2,
+	\qquad y = \sin(t).
+	\end{equation}</div>
+<p>Find <span class="math-inline">\(\frac{d z}{d t}\)</span>.</p>
+<p class="solution-head">Solution.</p>
+<div class="math-block">\begin{equation}
+	\frac{d z}{d t}
+	= \frac{\partial z}{\partial x}\frac{d x}{d t}
+	+ \frac{\partial z}{\partial y}\frac{d y}{d t}.
+	\end{equation}</div>
+<p>Since</p>
+<div class="math-block">\begin{equation}
+	\frac{\partial z}{\partial x} = y,
+	\qquad
+	\frac{\partial z}{\partial y} = x,
+	\end{equation}</div>
+<p>we get</p>
+<div class="math-block">\begin{equation}
+	\frac{d z}{d t} = y\,\frac{d x}{d t} + x\,\frac{d y}{d t}.
+	\end{equation}</div>
+<p>Now compute the derivatives:</p>
+<div class="math-block">\begin{equation}
+	\frac{d x}{d t} = 4t,
+	\qquad
+	\frac{d y}{d t} = \cos(t).
+	\end{equation}</div>
+<p>Therefore,</p>
+<div class="math-block">\begin{equation}
+	\frac{d z}{d t} = \sin(t)(4t) + (2t^2)\cos(t).
+	\end{equation}</div>
+<div class="math-block">\begin{equation}
+	\boxed{\frac{d z}{d t} = 4t\sin(t) + 2t^2\cos(t).}
+	\end{equation}</div></section>
+<section class="callout remark"><header>Remark</header><p>The chain rule allows us to differentiate composite functions systematically, even when variables are nested or interdependent.</p></section>
+<h2 id="sec-4-implicit-differentiation"><span class="sec-number">4.6</span>Implicit Differentiation</h2>
+<p>Often, functions are defined <strong>implicitly</strong> rather than explicitly. For example, if <span class="math-inline">\(x\)</span> and <span class="math-inline">\(t\)</span> are related by</p>
+<div class="math-block">\begin{equation}
+x + e^x = t,
+\end{equation}</div>
+<p>then <span class="math-inline">\(x\)</span> is an implicit function of <span class="math-inline">\(t\)</span>.</p>
+<h3 id="sec-4-first-derivative">First Derivative</h3>
+<p>Differentiate both sides of</p>
+<div class="math-block">\begin{equation}
+x + e^x = t
+\end{equation}</div>
+<p>with respect to <span class="math-inline">\(t\)</span>:</p>
+<div class="math-block">\begin{equation}
+\frac{d x}{d t} + e^x \frac{d x}{d t} = 1.
+\end{equation}</div>
+<p>Thus,</p>
+<div class="math-block">\begin{equation}
+\frac{d x}{d t} = \frac{1}{1+e^x}.
+\end{equation}</div>
+<h3 id="sec-4-second-derivative">Second Derivative</h3>
+<p>From the expression for <span class="math-inline">\(\frac{d x}{d t}\)</span>, we differentiate again:</p>
+<div class="math-block">\begin{equation}
+\frac{d^{2} x}{d t^{2}} = \frac{d}{d t}\!\left[(1+e^x)^{-1}\right].
+\end{equation}</div>
+<p>Apply the chain rule:</p>
+<div class="math-block">\begin{equation}
+\frac{d^{2} x}{d t^{2}} = -(1+e^x)^{-2}\cdot e^x \frac{d x}{d t}.
+\end{equation}</div>
+<p>Now substitute <span class="math-inline">\(\frac{d x}{d t} = \dfrac{1}{1+e^x}\)</span>:</p>
+<div class="math-block">\begin{equation}
+\frac{d^{2} x}{d t^{2}} = -\frac{e^x}{(1+e^x)^3}.
+\end{equation}</div>
+<section class="callout example"><header>Example</header><p>Find the equation of the tangent line to the curve</p>
+<div class="math-block">\begin{equation}
+	x^3 - 3y^3 + xy + 21 = 0
+	\end{equation}</div>
+<p>at the point <span class="math-inline">\((1,2)\)</span>.</p>
+<p class="solution-head">Solution.</p>
+<p>First check that the point actually lies on the curve, since everything below depends on it:</p>
+<div class="math-block">\begin{equation}
+	1^3 - 3(2)^3 + (1)(2) + 21 = 1 - 24 + 2 + 21 = 0 . \checkmark
+	\end{equation}</div>
+<p>Now differentiate implicitly with respect to <span class="math-inline">\(x\)</span>, remembering that <span class="math-inline">\(y\)</span> is a function of <span class="math-inline">\(x\)</span>, so <span class="math-inline">\(y^3\)</span> and <span class="math-inline">\(xy\)</span> need the chain and product rules:</p>
+<div class="math-block">\begin{equation}
+	3x^2 - 9y^2\,\frac{d y}{d x} + y + x\,\frac{d y}{d x} = 0.
+	\end{equation}</div>
+<p>Group the <span class="math-inline">\(\frac{d y}{d x}\)</span> terms:</p>
+<div class="math-block">\begin{equation}
+	(x - 9y^2)\frac{d y}{d x} = -(3x^2 + y).
+	\end{equation}</div>
+<p>Solve for slope:</p>
+<div class="math-block">\begin{equation}
+	\frac{d y}{d x} = \frac{-(3x^2 + y)}{x - 9y^2}.
+	\end{equation}</div>
+<p>At the point <span class="math-inline">\((1,2)\)</span>:</p>
+<div class="math-block">\begin{equation}
+	\frac{d y}{d x}\Big|_{(1,2)}
+	= \frac{-(3(1)^2 + 2)}{1 - 9(2^2)}
+	= \frac{-5}{-35}
+	= \frac{1}{7}.
+	\end{equation}</div>
+<p>The tangent line with slope <span class="math-inline">\(m = \frac{1}{7}\)</span> at <span class="math-inline">\((1,2)\)</span>:</p>
+<div class="math-block">\begin{equation}
+	y - 2 = \frac{1}{7}(x - 1).
+	\end{equation}</div>
+<p>Simplifying:</p>
+<div class="math-block">\begin{equation}
+	\boxed{x - 7y + 13 = 0.}
+	\end{equation}</div></section>
+<section class="callout remark"><header>Remark</header><p>Implicit differentiation allows us to compute derivatives (and tangent lines) for curves not expressed explicitly as <span class="math-inline">\(y=f(x)\)</span>.</p></section>
+<h2 id="sec-4-more-on-chain-rule"><span class="sec-number">4.7</span>More on Chain Rule</h2>
+<section class="callout theorem"><header>Theorem - General Chain Rule</header><p>Suppose</p>
+<div class="math-block">\begin{equation}
+	u = u(x,y,z),
+	\qquad x = x(s,t),
+	\quad y = y(s,t),
+	\quad z = z(s,t).
+	\end{equation}</div>
+<p>Then the chain rule gives</p>
+<div class="math-block">\begin{equation}
+	\boxed{
+		\frac{\partial u}{\partial s}
+		=
+		\frac{\partial u}{\partial x}\frac{\partial x}{\partial s}
+		+ \frac{\partial u}{\partial y}\frac{\partial y}{\partial s}
+		+ \frac{\partial u}{\partial z}\frac{\partial z}{\partial s}}
+	\end{equation}</div>
+<div class="math-block">\begin{equation}
+	\boxed{
+		\frac{\partial u}{\partial t}
+		=
+		\frac{\partial u}{\partial x}\frac{\partial x}{\partial t}
+		+ \frac{\partial u}{\partial y}\frac{\partial y}{\partial t}
+		+ \frac{\partial u}{\partial z}\frac{\partial z}{\partial t}}
+	\end{equation}</div></section>
+<div class="proof" data-lead="Proof."><p>Write the total differential of <span class="math-inline">\(u=u(x,y,z)\)</span>:</p>
+<div class="math-block">\begin{equation}
+	du = \frac{\partial u}{\partial x}\,dx + \frac{\partial u}{\partial y}\,dy + \frac{\partial u}{\partial z}\,dz.
+	\end{equation}</div>
+<p>Since <span class="math-inline">\(x=x(s,t),\; y=y(s,t),\; z=z(s,t)\)</span>, their differentials are</p>
+<div class="math-block">\begin{equation}
+	dx = \frac{\partial x}{\partial s}\,ds + \frac{\partial x}{\partial t}\,dt,\qquad
+	dy = \frac{\partial y}{\partial s}\,ds + \frac{\partial y}{\partial t}\,dt,\qquad
+	dz = \frac{\partial z}{\partial s}\,ds + \frac{\partial z}{\partial t}\,dt.
+	\end{equation}</div>
+<p>Substitute into <span class="math-inline">\(du\)</span> and collect coefficients of <span class="math-inline">\(ds\)</span> and <span class="math-inline">\(dt\)</span>:</p>
+<div class="math-block">\begin{equation}
+	\begin{aligned}
+		du &amp;= \Big(\frac{\partial u}{\partial x}\frac{\partial x}{\partial s} + \frac{\partial u}{\partial y}\frac{\partial y}{\partial s} + \frac{\partial u}{\partial z}\frac{\partial z}{\partial s}\Big)\,ds \\
+		&amp;\quad + \Big(\frac{\partial u}{\partial x}\frac{\partial x}{\partial t} + \frac{\partial u}{\partial y}\frac{\partial y}{\partial t} + \frac{\partial u}{\partial z}\frac{\partial z}{\partial t}\Big)\,dt.
+	\end{aligned}
+	\end{equation}</div>
+<p>By the definition of partial derivatives of <span class="math-inline">\(u\)</span> as a function of <span class="math-inline">\((s,t)\)</span>,</p>
+<div class="math-block">\begin{equation}
+	\frac{\partial u}{\partial s} = \frac{\partial u}{\partial x}\frac{\partial x}{\partial s} + \frac{\partial u}{\partial y}\frac{\partial y}{\partial s} + \frac{\partial u}{\partial z}\frac{\partial z}{\partial s},\qquad
+	\frac{\partial u}{\partial t} = \frac{\partial u}{\partial x}\frac{\partial x}{\partial t} + \frac{\partial u}{\partial y}\frac{\partial y}{\partial t} + \frac{\partial u}{\partial z}\frac{\partial z}{\partial t}.
+	\end{equation}</div>
+<p>Writing these two identities together in matrix form gives</p>
+<div class="math-block">\begin{equation}
+	\begin{pmatrix}
+		\frac{\partial u}{\partial s} &amp; \frac{\partial u}{\partial t}
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		\frac{\partial u}{\partial x} &amp; \frac{\partial u}{\partial y} &amp; \frac{\partial u}{\partial z}
+	\end{pmatrix}
+	\begin{pmatrix}
+		\frac{\partial x}{\partial s} &amp; \frac{\partial x}{\partial t} \\[6pt]
+		\frac{\partial y}{\partial s} &amp; \frac{\partial y}{\partial t} \\[6pt]
+		\frac{\partial z}{\partial s} &amp; \frac{\partial z}{\partial t}
+	\end{pmatrix},
+	\end{equation}</div>
+<p>which is the desired matrix chain rule. Check the shapes: a <span class="math-inline">\(1\times3\)</span> row times a <span class="math-inline">\(3\times2\)</span> matrix gives a <span class="math-inline">\(1\times2\)</span> row, one entry for each of <span class="math-inline">\(s\)</span> and <span class="math-inline">\(t\)</span>. The middle matrix is the <strong>Jacobian</strong> of the change of variables, and the chain rule is just matrix multiplication by it.</p></div>
+<section class="callout example"><header>Example</header><p>Let</p>
+<div class="math-block">\begin{equation}
+	z = xy,
+	\qquad x = \sin(s+t),
+	\qquad y = s - t.
+	\end{equation}</div>
+<p>We want to compute <span class="math-inline">\(\frac{\partial z}{\partial s}\)</span> and <span class="math-inline">\(\frac{\partial z}{\partial t}\)</span>.</p>
+<p class="solution-head">Solution.</p>
+<p class="paragraph-title">Step 1. Apply the Chain Rule</p>
+<div class="math-block">\begin{equation}
+	\frac{\partial z}{\partial s}
+	= \frac{\partial z}{\partial x}\frac{\partial x}{\partial s}
+	+ \frac{\partial z}{\partial y}\frac{\partial y}{\partial s},
+	\qquad
+	\frac{\partial z}{\partial t}
+	= \frac{\partial z}{\partial x}\frac{\partial x}{\partial t}
+	+ \frac{\partial z}{\partial y}\frac{\partial y}{\partial t}.
+	\end{equation}</div>
+<p class="paragraph-title">Step 2. Compute partial derivatives of <span class="math-inline">\(z\)</span></p>
+<p>Since <span class="math-inline">\(z = xy\)</span>,</p>
+<div class="math-block">\begin{equation}
+	\frac{\partial z}{\partial x} = y,
+	\qquad
+	\frac{\partial z}{\partial y} = x.
+	\end{equation}</div>
+<p class="paragraph-title">Step 3. Compute derivatives of <span class="math-inline">\(x\)</span> and <span class="math-inline">\(y\)</span></p>
+<div class="math-block">\begin{equation}
+	x = \sin(s+t)
+	\Rightarrow
+	\frac{\partial x}{\partial s} = \cos(s+t),
+	\quad
+	\frac{\partial x}{\partial t} = \cos(s+t),
+	\end{equation}</div>
+<div class="math-block">\begin{equation}
+	y = s - t
+	\Rightarrow
+	\frac{\partial y}{\partial s} = 1,
+	\quad
+	\frac{\partial y}{\partial t} = -1.
+	\end{equation}</div>
+<p class="paragraph-title">Step 4. Substitute and simplify</p>
+<div class="math-block">\begin{equation}
+	\frac{\partial z}{\partial s}
+	= y\cos(s+t) + x,
+	\qquad
+	\frac{\partial z}{\partial t}
+	= y\cos(s+t) - x.
+	\end{equation}</div>
+<div class="math-block">\begin{equation}
+	\boxed{
+		\frac{\partial z}{\partial s} = (s - t)\cos(s+t) + \sin(s+t),
+		\qquad
+		\frac{\partial z}{\partial t} = (s - t)\cos(s+t) - \sin(s+t)
+	}
+	\end{equation}</div></section>
+<section class="callout example"><header>Example</header><p>For</p>
+<div class="math-block">\begin{equation}
+	z=x-y,\qquad
+	x^2+y^2=t^2,\qquad
+	x\sin t=ye^y,
+	\end{equation}</div>
+<p>find <span class="math-inline">\(\frac{d z}{d t}=?\)</span></p>
+<p class="solution-head">Solution.</p>
+<p><strong>Step 1. Differentiate the constraints.</strong></p>
+<div class="math-block">\begin{equation}
+	2x\,dx+2y\,dy=2t\,dt,
+	\qquad
+	\sin t\,dx+x\cos t\,dt=(y+1)e^y\,dy.
+	\end{equation}</div>
+<p><strong>Step 2. Rearrange to a linear system for <span class="math-inline">\(dx,dy\)</span>.</strong></p>
+<div class="math-block">\begin{equation}
+	x\,dx+y\,dy=t\,dt,
+	\qquad
+	\sin t\,dx-(y+1)e^y\,dy=-x\cos t\,dt.
+	\end{equation}</div>
+<p><strong>Step 3. Solve for <span class="math-inline">\(dx\)</span> (and similarly <span class="math-inline">\(dy\)</span>) by determinants.</strong></p>
+<div class="math-block">\begin{equation}
+	dx
+	=\frac{
+		\begin{vmatrix}
+			t\,dt &amp; y\\[4pt]
+			- x\cos t\,dt &amp; -(y+1)e^y
+		\end{vmatrix}
+	}{
+		\begin{vmatrix}
+			x &amp; y\\[4pt]
+			\sin t &amp; -(y+1)e^y
+		\end{vmatrix}
+	}
+	=\frac{-t(y+1)e^y + xy\cos t}{-x(y+1)e^y - y\sin t}\,dt.
+	\end{equation}</div>
+<p>Equivalently,</p>
+<div class="math-block">\begin{equation}
+	\frac{dx}{dt}
+	=\frac{t(y+1)e^y - xy\cos t}{x(y+1)e^y + y\sin t}.
+	\end{equation}</div>
+<p>A parallel computation gives</p>
+<div class="math-block">\begin{equation}
+	dy
+	=\frac{
+		\begin{vmatrix}
+			x &amp; t\,dt \\[4pt]
+			\sin t &amp; -x\cos t\,dt
+		\end{vmatrix}
+	}{
+		\begin{vmatrix}
+			x &amp; y \\[4pt]
+			\sin t &amp; -(y+1)e^y
+		\end{vmatrix}
+	}
+	=\frac{-x^{2}\cos t - t\sin t}{-x(y+1)e^y - y\sin t}\,dt.
+	\end{equation}</div>
+<p>Equivalently,</p>
+<div class="math-block">\begin{equation}
+	\frac{dy}{dt}
+	=\frac{x^{2}\cos t + t\sin t}{x(y+1)e^y + y\sin t}.
+	\end{equation}</div>
+<p>Since <span class="math-inline">\(z = x - y\)</span>, we have</p>
+<div class="math-block">\begin{equation}
+	\frac{dz}{dt}=\frac{dx}{dt}-\frac{dy}{dt}.
+	\end{equation}</div></section>
+<section class="callout example"><header>Example</header><p>Find <span class="math-inline">\(\frac{\partial z}{\partial s}\)</span> and <span class="math-inline">\(\frac{\partial z}{\partial t}\)</span> given</p>
+<div class="math-block">\begin{equation}
+	z = x^2 + xy,
+	\qquad
+	x^2 + y^3 = st + 5,
+	\qquad
+	x^3 - y^2 = s^2 + t^2.
+	\end{equation}</div>
+<p class="solution-head">Solution.</p>
+<p class="paragraph-title">Step 1. Differential of <span class="math-inline">\(z\)</span></p>
+<p>We compute</p>
+<div class="math-block">\begin{equation}
+	dz = \frac{\partial z}{\partial x} dx + \frac{\partial z}{\partial y} dy
+	= (2x+y)\,dx + x\,dy.
+	\end{equation}</div>
+<p class="paragraph-title">Step 2. Differentiating the constraints</p>
+<p>From the two constraint equations, take differentials:</p>
+<div class="math-block">\begin{equation}
+	2x\,dx + 3y^2\,dy = s\,dt + t\,ds,
+	\end{equation}</div>
+<div class="math-block">\begin{equation}
+	3x^2\,dx - 2y\,dy = 2s\,ds + 2t\,dt.
+	\end{equation}</div>
+<p>These form a linear system for <span class="math-inline">\(dx\)</span> and <span class="math-inline">\(dy\)</span> in terms of <span class="math-inline">\(ds,dt\)</span>.</p>
+<p class="paragraph-title">Step 3. Solve for <span class="math-inline">\(dx,dy\)</span></p>
+<p>We write in matrix form:</p>
+<div class="math-block">\begin{equation}
+	\begin{pmatrix}
+		2x &amp; 3y^2 \\[6pt]
+		3x^2 &amp; -2y
+	\end{pmatrix}
+	\begin{pmatrix}
+		dx \\[6pt]
+		dy
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		s\,dt + t\,ds \\[6pt]
+		2s\,ds + 2t\,dt
+	\end{pmatrix}.
+	\end{equation}</div>
+<p>Thus</p>
+<div class="math-block">\begin{equation}
+	dx =
+	\frac{
+		\begin{vmatrix}
+			s\,dt+t\,ds &amp; 3y^2 \\
+			2s\,ds+2t\,dt &amp; -2y
+		\end{vmatrix}
+	}{
+		\begin{vmatrix}
+			2x &amp; 3y^2 \\
+			3x^2 &amp; -2y
+		\end{vmatrix}
+	},
+	\qquad
+	dy =
+	\frac{
+		\begin{vmatrix}
+			2x &amp; s\,dt+t\,ds \\
+			3x^2 &amp; 2s\,ds+2t\,dt
+		\end{vmatrix}
+	}{
+		\begin{vmatrix}
+			2x &amp; 3y^2 \\
+			3x^2 &amp; -2y
+		\end{vmatrix}
+	}.
+	\end{equation}</div>
+<p>Determinant denominator</p>
+<div class="math-block">\begin{equation}
+	D=
+	\begin{vmatrix}
+		2x &amp; 3y^2\\
+		3x^2 &amp; -2y
+	\end{vmatrix}
+	=-4xy-9x^2y^2 = -(4xy+9x^2y^2).
+	\end{equation}</div>
+<p>Cramer's rule results simplified</p>
+<div class="math-block">\begin{equation}
+	dx=\frac{-\big(2ys\,dt+2yt\,ds+6y^2s\,ds+6y^2t\,dt\big)}{D},\qquad
+	dy=\frac{\,4xs\,ds+4xt\,dt-3x^2s\,dt-3x^2t\,ds\,}{D}.
+	\end{equation}</div>
+<p class="paragraph-title">Step 4. Substitution into <span class="math-inline">\(dz\)</span></p>
+<div class="math-block">\begin{equation}
+	dz=(2x+y)\,dx+x\,dy
+	=\frac{N_s\,ds+N_t\,dt}{D},
+	\end{equation}</div>
+<p>with</p>
+<div class="math-block">\begin{equation}
+	\begin{aligned}
+		N_s&amp;=4sx^2-12sxy^2-6sy^3-3tx^3-4txy-2ty^2,\\
+		N_t&amp;=-3sx^3-4sxy-2sy^2+4tx^2-12txy^2-6ty^3.
+	\end{aligned}
+	\end{equation}</div>
+<p>Final partial derivatives (with positive denominator)</p>
+<div class="math-block">\begin{equation}
+	\boxed{\;
+		\frac{\partial z}{\partial s}
+		=\frac{3t x^3+4txy+2t y^2-4s x^2+12sxy^2+6s y^3}{\,4xy+9x^2y^2\,}
+		\;}
+	\end{equation}</div>
+<div class="math-block">\begin{equation}
+	\boxed{\;
+		\frac{\partial z}{\partial t}
+		=\frac{3s x^3+4sxy+2s y^2-4t x^2+12txy^2+6t y^3}{\,4xy+9x^2y^2\,}
+		\;}
+	\end{equation}</div></section>
+<section class="callout example"><header>Example</header><p>For the same three equations as the previous example, namely <span class="math-inline">\(z = x^2+xy\)</span> with <span class="math-inline">\(x^2+y^3 = st+5\)</span> and <span class="math-inline">\(x^3-y^2 = s^2+t^2\)</span>, find <span class="math-inline">\(\left(\frac{\partial s}{\partial z}\right)_{x}\)</span>.</p>
+<p class="solution-head">Solution.</p>
+<p class="paragraph-title">Step 1. Set <span class="math-inline">\(dx = 0\)</span></p>
+<p>The subscript <span class="math-inline">\(x\)</span> says that <span class="math-inline">\(x\)</span> is the variable held fixed, so <span class="math-inline">\(dx = 0\)</span> throughout and the differentials of the previous example simplify at once.</p>
+<div class="math-block">\begin{equation}
+	dz = x\,dy.
+	\end{equation}</div>
+<div class="math-block">\begin{equation}
+	3y^2\,dy = s\,dt + t\,ds,
+	\end{equation}</div>
+<div class="math-block">\begin{equation}
+	- 2y\,dy = 2s\,ds + 2t\,dt.
+	\end{equation}</div>
+<p>These form a linear system for <span class="math-inline">\(ds\)</span>, <span class="math-inline">\(dt\)</span>, and <span class="math-inline">\(dy\)</span>. The system becomes:</p>
+<div class="math-block">\begin{equation}
+	\begin{cases}
+		x\,dy = dz, \\
+		t\,ds + s\,dt - 3y^2\,dy = 0, \\
+		2s\,ds + 2t\,dt + 2y\,dy = 0.
+	\end{cases}
+	\end{equation}</div>
+<p class="paragraph-title">Step 2. Solve using determinants</p>
+<p>Writing as a determinant system, we get</p>
+<div class="math-block">\begin{equation}
+	ds =
+	\frac{
+		\begin{vmatrix}
+			 dz &amp; 0 &amp; x \\
+			0 &amp; s &amp; -3y^2 \\
+			0 &amp; 2t &amp; 2y
+		\end{vmatrix}
+	}{
+		\begin{vmatrix}
+			0 &amp; 0 &amp; x \\
+			t &amp; s &amp; -3y^2 \\
+			2s &amp; 2t &amp; 2y
+		\end{vmatrix}
+	}.
+	\end{equation}</div>
+<p>Evaluating:</p>
+<div class="math-block">\begin{equation}
+	ds = \frac{(2sy + 6ty^2)\,dz}{x(2t^2 - 2s^2)}.
+	\end{equation}</div>
+<p>Thus</p>
+<div class="math-block">\begin{equation}
+	\left(\frac{\partial s}{\partial z}\right)_{x}
+	= \frac{sy + 3ty^2}{x(t^2 - s^2)}.
+	\end{equation}</div></section>
+<h2 id="sec-4-chain-rule-in-polar-and-rectangular-coordinates"><span class="sec-number">4.8</span>Chain Rule in Polar and Rectangular Coordinates</h2>
+<p>Let <span class="math-inline">\(x,y\)</span> be rectangular coordinates and <span class="math-inline">\(r,\theta\)</span> be polar coordinates in a plane. The relations are</p>
+<div class="math-block">\begin{equation}
+x = r\cos\theta, \qquad y = r\sin\theta,
+\end{equation}</div>
+<p>or equivalently</p>
+<div class="math-block">\begin{equation}
+r = \sqrt{x^2+y^2}, \qquad \theta = \tan^{-1}\!\left(\frac{y}{x}\right).
+\end{equation}</div>
+<p>We want to study derivatives such as <span class="math-inline">\(\frac{\partial \theta}{\partial x}\)</span>, <span class="math-inline">\(\frac{\partial x}{\partial \theta}\)</span>, etc., and check whether they are reciprocals.</p>
+<p class="paragraph-title">Step 1. Compute <span class="math-inline">\(\frac{\partial \theta}{\partial x}\)</span></p>
+<p>From</p>
+<div class="math-block">\begin{equation}
+\theta = \arctan\!\left(\frac{y}{x}\right),
+\end{equation}</div>
+<p>we treat <span class="math-inline">\(y\)</span> as constant and differentiate:</p>
+<div class="math-block">\begin{equation}
+\frac{\partial \theta}{\partial x} = \frac{-y/x^2}{1+(y/x)^2} = -\frac{y}{r^2}.
+\label{eq:dtheta_dx}
+\end{equation}</div>
+<p>The last step used <span class="math-inline">\(x^2+y^2=r^2\)</span> to clear the denominator.</p>
+<p class="paragraph-title">Step 2. Compute <span class="math-inline">\(\frac{\partial x}{\partial \theta}\)</span></p>
+<p>From <span class="math-inline">\(x = r\cos\theta\)</span> we get</p>
+<div class="math-block">\begin{equation}
+\frac{\partial x}{\partial \theta} = -r\sin\theta = -y.
+\end{equation}</div>
+<section class="callout remark"><header>Remark</header><p>Clearly,</p>
+<div class="math-block">\begin{equation}
+	\frac{\partial \theta}{\partial x} \neq \frac{1}{\frac{\partial x}{\partial \theta}}.
+	\end{equation}</div>
+<p>These derivatives are <em>not reciprocals</em>. The reason: <span class="math-inline">\(\big(\frac{\partial \theta}{\partial x}\big)_y\)</span> means <span class="math-inline">\(y\)</span> is held constant, whereas <span class="math-inline">\(\big(\frac{\partial x}{\partial \theta}\big)_r\)</span> means <span class="math-inline">\(r\)</span> is held constant. Since the conditions differ, they are not reciprocals.</p></section>
+<p class="paragraph-title">Step 3. A reciprocal relation</p>
+<p>Let’s compute</p>
+<div class="math-block">\begin{equation}
+\left(\frac{\partial x}{\partial \theta}\right)_y.
+\end{equation}</div>
+<p>We use <span class="math-inline">\(x = r\cos\theta\)</span>, <span class="math-inline">\(y = r\sin\theta\)</span>, so with <span class="math-inline">\(y\)</span> constant:</p>
+<div class="math-block">\begin{equation}
+\left(\frac{\partial x}{\partial \theta}\right)_y = y(-\csc^2\theta) = -\frac{y}{\sin^2\theta}.
+\end{equation}</div>
+<p>Meanwhile,</p>
+<div class="math-block">\begin{equation}
+\left(\frac{\partial \theta}{\partial x}\right)_y = -\frac{y}{r^2}.
+\end{equation}</div>
+<p>Now check:</p>
+<div class="math-block">\begin{equation}
+\left(\frac{\partial x}{\partial \theta}\right)_y = \frac{1}{\left(\frac{\partial \theta}{\partial x}\right)_y}.
+\end{equation}</div>
+<p>So these are reciprocals.</p>
+<section class="callout remark"><header>Remark - Rule</header><p><span class="math-inline">\(\frac{\partial u}{\partial v}\)</span> and <span class="math-inline">\(\frac{\partial v}{\partial u}\)</span> are not usually reciprocals. They are reciprocals only if the set of independent variables (besides <span class="math-inline">\(u,v\)</span>) are the same in both cases.</p></section>
+<p class="paragraph-title">Step 4. Using differentials</p>
+<p>From <span class="math-inline">\(\theta = \arctan(y/x)\)</span> we can find</p>
+<div class="math-block">\begin{equation}
+d\theta = \frac{x\,dy - y\,dx}{r^2}.
+\end{equation}</div>
+<p>From <span class="math-inline">\(x = r\cos\theta\)</span>,</p>
+<div class="math-block">\begin{equation}
+dx = \cos\theta\,dr - r\sin\theta\,d\theta.
+\end{equation}</div>
+<p>If <span class="math-inline">\(y\)</span> is constant (<span class="math-inline">\(dy=0\)</span>), then</p>
+<div class="math-block">\begin{equation}
+d\theta_y = -\frac{y}{r^2}\,dx_y,
+\end{equation}</div>
+<p>so</p>
+<div class="math-block">\begin{equation}
+\left(\frac{\partial \theta}{\partial x}\right)_y = \frac{d\theta_y}{dx_y} = -\frac{y}{r^2}.
+\end{equation}</div>
+<p>By inversion,</p>
+<div class="math-block">\begin{equation}
+\left(\frac{\partial x}{\partial \theta}\right)_y = \frac{dx_y}{d\theta_y} = -\frac{r^2}{y},
+\end{equation}</div>
+<p>which is indeed the reciprocal.</p>
+<p class="paragraph-title">Matrix notation</p>
+<p>It is convenient to write</p>
+<div class="math-block">\begin{equation}
+\begin{pmatrix}
+	dx \\ dy
+\end{pmatrix}
+=
+\begin{pmatrix}
+	\frac{\partial x}{\partial r} &amp; \frac{\partial x}{\partial \theta} \\
+	\frac{\partial y}{\partial r} &amp; \frac{\partial y}{\partial \theta}
+\end{pmatrix}
+\begin{pmatrix}
+	dr \\ d\theta
+\end{pmatrix}
+=
+\begin{pmatrix}
+	\cos\theta &amp; -r\sin\theta \\[6pt]
+	\sin\theta &amp; r\cos\theta
+\end{pmatrix}
+\begin{pmatrix}
+	dr \\ d\theta
+\end{pmatrix}.
+\end{equation}</div>
+<p>Denote this Jacobian matrix as <span class="math-inline">\(A\)</span>.</p>
+<p>Then the inverse relation is</p>
+<div class="math-block">\begin{equation}
+\begin{pmatrix}
+	dr \\ d\theta
+\end{pmatrix}
+=
+A^{-1}
+\begin{pmatrix}
+	dx \\ dy
+\end{pmatrix}.
+\end{equation}</div>
+<p>Carrying out the inversion, we obtain</p>
+<div class="math-block">\begin{equation}
+\begin{pmatrix}
+	\frac{\partial r}{\partial x} &amp; \frac{\partial r}{\partial y} \\[6pt]
+	\frac{\partial \theta}{\partial x} &amp; \frac{\partial \theta}{\partial y}
+\end{pmatrix}
+=
+\begin{pmatrix}
+	\cos\theta &amp; \sin\theta \\[6pt]
+	-\tfrac{1}{r}\sin\theta &amp; \tfrac{1}{r}\cos\theta
+\end{pmatrix}.
+\end{equation}</div>
+<p class="paragraph-title">Read off partial derivatives</p>
+<p>Thus,</p>
+<div class="math-block">\begin{equation}
+\frac{\partial r}{\partial x} = \cos\theta = \frac{x}{r},
+\quad
+\frac{\partial r}{\partial y} = \sin\theta = \frac{y}{r},
+\end{equation}</div>
+<div class="math-block">\begin{equation}
+\frac{\partial \theta}{\partial x} = -\frac{1}{r}\sin\theta = -\frac{y}{r^2},
+\quad
+\frac{\partial \theta}{\partial y} = \frac{1}{r}\cos\theta = \frac{x}{r^2}.
+\end{equation}</div>
+<section class="callout remark"><header>Remark</header><p>Notice: although individual pairs like <span class="math-inline">\(\frac{\partial \theta}{\partial x}\)</span> and <span class="math-inline">\(\frac{\partial x}{\partial \theta}\)</span> are not reciprocals, the Jacobian matrices <span class="math-inline">\(
+	\begin{pmatrix}
+		\cos\theta &amp; -r\sin\theta \\[6pt]
+		\sin\theta &amp; r\cos\theta
+	\end{pmatrix}
+	\)</span> and <span class="math-inline">\(\begin{pmatrix}
+	 	\cos\theta &amp; \sin\theta \\[6pt]
+	 	-\tfrac{1}{r}\sin\theta &amp; \tfrac{1}{r}\cos\theta
+	 \end{pmatrix}\)</span> are inverses of each other.</p></section>
+<h2 id="sec-4-change-of-variables-laplace-equation-in-polar-coordinates"><span class="sec-number">4.9</span>Change of Variables: Laplace Equation in Polar Coordinates</h2>
+<p>We want to write the Laplace equation</p>
+<div class="math-block">\begin{equation}
+\frac{\partial^{2} f}{\partial x^{2}} + \frac{\partial^{2} f}{\partial y^{2}} = 0
+\end{equation}</div>
+<p>in terms of polar coordinates <span class="math-inline">\((r,\theta)\)</span>, where</p>
+<div class="math-block">\begin{equation}
+x = r\cos\theta,
+\qquad
+y = r\sin\theta.
+\end{equation}</div>
+<p class="paragraph-title">Step 1. First Derivatives</p>
+<p class="paragraph-title">Way 1: Chain rule form</p>
+<div class="math-block">\begin{equation}
+\frac{\partial f}{\partial r} = \frac{\partial f}{\partial x}\frac{\partial x}{\partial r} + \frac{\partial f}{\partial y}\frac{\partial y}{\partial r}
+= \cos\theta \,\frac{\partial f}{\partial x} + \sin\theta \,\frac{\partial f}{\partial y},
+\end{equation}</div>
+<div class="math-block">\begin{equation}
+\frac{\partial f}{\partial \theta} = \frac{\partial f}{\partial x}\frac{\partial x}{\partial \theta} + \frac{\partial f}{\partial y}\frac{\partial y}{\partial \theta}
+= -r\sin\theta \,\frac{\partial f}{\partial x} + r\cos\theta \,\frac{\partial f}{\partial y}.
+\end{equation}</div>
+<p>In matrix form,</p>
+<div class="math-block">\begin{equation}
+\begin{pmatrix}
+	\frac{\partial f}{\partial r} \\[6pt]
+	\frac{\partial f}{\partial \theta}
+\end{pmatrix}
+=
+\begin{pmatrix}
+	\cos\theta &amp; \sin\theta \\[6pt]
+	-r\sin\theta &amp; r\cos\theta
+\end{pmatrix}
+\begin{pmatrix}
+	\frac{\partial f}{\partial x} \\[6pt]
+	\frac{\partial f}{\partial y}
+\end{pmatrix}.
+\end{equation}</div>
+<p>Equivalently,</p>
+<div class="math-block">\begin{equation}
+\begin{pmatrix}
+	\frac{\partial f}{\partial x} \\[6pt]
+	\frac{\partial f}{\partial y}
+\end{pmatrix}
+=
+\begin{pmatrix}
+	\cos\theta &amp; -\tfrac{\sin\theta}{r} \\[6pt]
+	\sin\theta &amp; \tfrac{\cos\theta}{r}
+\end{pmatrix}
+\begin{pmatrix}
+	\frac{\partial f}{\partial r} \\[6pt]
+	\frac{\partial f}{\partial \theta}
+\end{pmatrix}.
+\end{equation}</div>
+<p class="paragraph-title">Step 2. Second Derivatives — Full Expansion</p>
+<p>Now compute</p>
+<div class="math-block">\begin{equation}
+\frac{\partial^{2} f}{\partial x^{2}} = \frac{\partial}{\partial x}\!\Big(\cos\theta \frac{\partial f}{\partial r} - \tfrac{\sin\theta}{r}\frac{\partial f}{\partial \theta}\Big),
+\end{equation}</div>
+<div class="math-block">\begin{equation}
+\frac{\partial^{2} f}{\partial y^{2}} = \frac{\partial}{\partial y}\!\Big(\sin\theta \frac{\partial f}{\partial r} + \tfrac{\cos\theta}{r}\frac{\partial f}{\partial \theta}\Big).
+\end{equation}</div>
+<p>Recall from Step 1:</p>
+<div class="math-block">\begin{equation}
+\frac{\partial f}{\partial x}=\cos\theta \,\frac{\partial f}{\partial r}-\frac{\sin\theta}{r}\,\frac{\partial f}{\partial \theta},
+\qquad
+\frac{\partial f}{\partial y}=\sin\theta \,\frac{\partial f}{\partial r}+\frac{\cos\theta}{r}\,\frac{\partial f}{\partial \theta}.
+\end{equation}</div>
+<p>We will also use the relations</p>
+<div class="math-block">\begin{equation}
+\frac{\partial r}{\partial x}=\cos\theta,\quad \frac{\partial r}{\partial y}=\sin\theta,\quad
+\frac{\partial \theta}{\partial x}=-\frac{\sin\theta}{r},\quad \frac{\partial \theta}{\partial y}=\frac{\cos\theta}{r},
+\end{equation}</div>
+<p>and</p>
+<div class="math-block">\begin{equation}
+\frac{\partial}{\partial x}\!\left(\frac1r\right)=-\frac{\cos\theta}{r^2},\qquad
+\frac{\partial}{\partial y}\!\left(\frac1r\right)=-\frac{\sin\theta}{r^2}.
+\end{equation}</div>
+<p class="paragraph-title">Compute <span class="math-inline">\(\frac{\partial^{2} f}{\partial x^{2}}\)</span>.</p>
+<p>Write</p>
+<div class="math-block">\begin{equation}
+\frac{\partial f}{\partial x}=A-B,\qquad
+A=\cos\theta\,\frac{\partial f}{\partial r},\quad B=\frac{\sin\theta}{r}\,\frac{\partial f}{\partial \theta}.
+\end{equation}</div>
+<p><em>Term <span class="math-inline">\(A_x\)</span>:</em></p>
+<div class="math-block">\begin{equation}
+\frac{\partial A}{\partial x}=(\frac{\partial}{\partial x}\cos\theta)\,\frac{\partial f}{\partial r}+\cos\theta\,\frac{\partial}{\partial x}\!\left(\frac{\partial f}{\partial r}\right).
+\end{equation}</div>
+<p>Now</p>
+<div class="math-block">\begin{equation}
+\frac{\partial}{\partial x}\cos\theta=-\sin\theta\,\frac{\partial \theta}{\partial x}=\frac{\sin^2\theta}{r},
+\end{equation}</div>
+<p>and</p>
+<div class="math-block">\begin{equation}
+\frac{\partial}{\partial x}\!\left(\frac{\partial f}{\partial r}\right)
+= \frac{\partial^{2} f}{\partial r^{2}}\,\frac{\partial r}{\partial x}+\frac{\partial^{2} f}{\partial r\,\partial \theta}\,\frac{\partial \theta}{\partial x}
+= \cos\theta\,\frac{\partial^{2} f}{\partial r^{2}} - \frac{\sin\theta}{r}\,\frac{\partial ^2 f}{\partial r \partial\theta}.
+\end{equation}</div>
+<p>Thus</p>
+<div class="math-block">\begin{equation}
+\frac{\partial A}{\partial x}=\frac{\sin^2\theta}{r}\,\frac{\partial f}{\partial r}+\cos^2\theta\,\frac{\partial^{2} f}{\partial r^{2}}
+-\frac{\sin\theta\cos\theta}{r}\,\frac{\partial ^2 f}{\partial r \partial\theta}.
+\end{equation}</div>
+<p><em>Term <span class="math-inline">\(B_x\)</span>:</em></p>
+<div class="math-block">\begin{equation}
+\frac{\partial B}{\partial x}=\frac{\partial}{\partial x}\!\left(\frac{\sin\theta}{r}\right)\frac{\partial f}{\partial \theta}
++\frac{\sin\theta}{r}\,\frac{\partial}{\partial x}\!\left(\frac{\partial f}{\partial \theta}\right).
+\end{equation}</div>
+<p>Compute</p>
+<div class="math-block">\begin{equation}
+\frac{\partial}{\partial x}\!\left(\frac{\sin\theta}{r}\right)
+=-\frac{2\sin\theta\cos\theta}{r^2},
+\end{equation}</div>
+<p>and</p>
+<div class="math-block">\begin{equation}
+\frac{\partial}{\partial x}\!\left(\frac{\partial f}{\partial \theta}\right)
+=\frac{\partial^{2} f}{\partial r\,\partial \theta}\,\frac{\partial r}{\partial x}+\frac{\partial^{2} f}{\partial \theta^{2}}\,\frac{\partial \theta}{\partial x}
+=\cos\theta\,\frac{\partial^{2} f}{\partial r\,\partial \theta}-\frac{\sin\theta}{r}\,\frac{\partial^{2} f}{\partial \theta^{2}}.
+\end{equation}</div>
+<p>Hence</p>
+<div class="math-block">\begin{equation}
+\frac{\partial B}{\partial x}=-\frac{2\sin\theta\cos\theta}{r^2}\,\frac{\partial f}{\partial \theta}
++\frac{\sin\theta\cos\theta}{r}\,\frac{\partial^{2} f}{\partial r\,\partial \theta}
+-\frac{\sin^2\theta}{r^2}\,\frac{\partial^{2} f}{\partial \theta^{2}}.
+\end{equation}</div>
+<p><em>Combine:</em></p>
+<div class="math-block">\begin{equation}
+\frac{\partial^{2} f}{\partial x^{2}}
+=\cos^2\theta\,\frac{\partial^{2} f}{\partial r^{2}}
++\frac{\sin^2\theta}{r}\,\frac{\partial f}{\partial r}
+-\frac{2\sin\theta\cos\theta}{r}\,\frac{\partial^{2} f}{\partial r\,\partial \theta}
++\frac{2\sin\theta\cos\theta}{r^2}\,\frac{\partial f}{\partial \theta}
++\frac{\sin^2\theta}{r^2}\,\frac{\partial^{2} f}{\partial \theta^{2}}.
+\end{equation}</div>
+<p class="paragraph-title">Compute <span class="math-inline">\(\frac{\partial^{2} f}{\partial y^{2}}\)</span>.</p>
+<p>Similarly,</p>
+<div class="math-block">\begin{equation}
+\frac{\partial f}{\partial y}=C+D,\qquad
+C=\sin\theta\,\frac{\partial f}{\partial r},\quad D=\frac{\cos\theta}{r}\,\frac{\partial f}{\partial \theta}.
+\end{equation}</div>
+<p><em>Term <span class="math-inline">\(C_y\)</span>:</em></p>
+<div class="math-block">\begin{equation}
+\frac{\partial C}{\partial y}=(\frac{\partial}{\partial y}\sin\theta)\,\frac{\partial f}{\partial r}+\sin\theta\,\frac{\partial}{\partial y}\!\left(\frac{\partial f}{\partial r}\right).
+\end{equation}</div>
+<p>Now</p>
+<div class="math-block">\begin{equation}
+\frac{\partial}{\partial y}\sin\theta=\cos\theta\,\frac{\partial \theta}{\partial y}=\frac{\cos^2\theta}{r},
+\end{equation}</div>
+<p>and</p>
+<div class="math-block">\begin{equation}
+\frac{\partial}{\partial y}\!\left(\frac{\partial f}{\partial r}\right)
+=\frac{\partial^{2} f}{\partial r^{2}}\,\frac{\partial r}{\partial y}+\frac{\partial^{2} f}{\partial r\,\partial \theta}\,\frac{\partial \theta}{\partial y}
+=\sin\theta\,\frac{\partial^{2} f}{\partial r^{2}}+\frac{\cos\theta}{r}\,\frac{\partial^{2} f}{\partial r\,\partial \theta}.
+\end{equation}</div>
+<p>Thus</p>
+<div class="math-block">\begin{equation}
+\frac{\partial C}{\partial y}=\frac{\cos^2\theta}{r}\,\frac{\partial f}{\partial r}
++\sin^2\theta\,\frac{\partial^{2} f}{\partial r^{2}}
++\frac{\sin\theta\cos\theta}{r}\,\frac{\partial^{2} f}{\partial r\,\partial \theta}.
+\end{equation}</div>
+<p><em>Term <span class="math-inline">\(D_y\)</span>:</em></p>
+<div class="math-block">\begin{equation}
+\frac{\partial D}{\partial y}=\frac{\partial}{\partial y}\!\left(\frac{\cos\theta}{r}\right)\frac{\partial f}{\partial \theta}
++\frac{\cos\theta}{r}\,\frac{\partial}{\partial y}\!\left(\frac{\partial f}{\partial \theta}\right).
+\end{equation}</div>
+<p>Now</p>
+<div class="math-block">\begin{equation}
+\frac{\partial}{\partial y}\!\left(\frac{\cos\theta}{r}\right)=-\frac{2\sin\theta\cos\theta}{r^2},
+\end{equation}</div>
+<p>and</p>
+<div class="math-block">\begin{equation}
+\frac{\partial}{\partial y}\!\left(\frac{\partial f}{\partial \theta}\right)
+=\frac{\partial^{2} f}{\partial r\,\partial \theta}\,\frac{\partial r}{\partial y}+\frac{\partial^{2} f}{\partial \theta^{2}}\,\frac{\partial \theta}{\partial y}
+=\sin\theta\,\frac{\partial^{2} f}{\partial r\,\partial \theta}+\frac{\cos\theta}{r}\,\frac{\partial^{2} f}{\partial \theta^{2}}.
+\end{equation}</div>
+<p>Thus</p>
+<div class="math-block">\begin{equation}
+\frac{\partial D}{\partial y}=-\frac{2\sin\theta\cos\theta}{r^2}\,\frac{\partial f}{\partial \theta}
++\frac{\sin\theta\cos\theta}{r}\,\frac{\partial^{2} f}{\partial r\,\partial \theta}
++\frac{\cos^2\theta}{r^2}\,\frac{\partial^{2} f}{\partial \theta^{2}}.
+\end{equation}</div>
+<p><em>Combine:</em></p>
+<div class="math-block">\begin{equation}
+\frac{\partial^{2} f}{\partial y^{2}}
+=\sin^2\theta\,\frac{\partial^{2} f}{\partial r^{2}}
++\frac{\cos^2\theta}{r}\,\frac{\partial f}{\partial r}
++\frac{2\sin\theta\cos\theta}{r}\,\frac{\partial^{2} f}{\partial r\,\partial \theta}
+-\frac{2\sin\theta\cos\theta}{r^2}\,\frac{\partial f}{\partial \theta}
++\frac{\cos^2\theta}{r^2}\,\frac{\partial^{2} f}{\partial \theta^{2}}.
+\end{equation}</div>
+<p class="paragraph-title">Final Combination.</p>
+<p>Adding the two results, every term containing <span class="math-inline">\(\sin\theta\cos\theta\)</span> cancels between them, and the surviving <span class="math-inline">\(\sin^2\theta + \cos^2\theta\)</span> factors reduce to <span class="math-inline">\(1\)</span>:</p>
+<div class="math-block">\begin{equation}
+\frac{\partial^{2} f}{\partial x^{2}}+\frac{\partial^{2} f}{\partial y^{2}}
+=\frac{\partial^{2} f}{\partial r^{2}}+\frac{1}{r}\,\frac{\partial f}{\partial r}+\frac{1}{r^2}\,\frac{\partial^{2} f}{\partial \theta^{2}}.
+\end{equation}</div>
+<div class="math-block">\begin{equation}
+\boxed{\,\frac{\partial^{2} f}{\partial x^{2}}+\frac{\partial^{2} f}{\partial y^{2}}
+	= \frac{\partial^{2} f}{\partial r^{2}}+\frac{1}{r}\frac{\partial f}{\partial r}+\frac{1}{r^2}\frac{\partial^{2} f}{\partial \theta^{2}}\,}
+\label{eq:laplacian_polar}
+\end{equation}</div>
+<p class="paragraph-title">Final Result</p>
+<p>The first two terms are often written more compactly by recognising a product rule, which gives the form of Laplace's equation used throughout Chapter 10:</p>
+<div class="math-block">\begin{equation}
+\frac{1}{r}\frac{\partial}{\partial r}\Big(r \frac{\partial f}{\partial r}\Big) + \frac{1}{r^2}\frac{\partial^{2} f}{\partial \theta^{2}} = 0.
+\end{equation}</div>
+<p>Note the extra <span class="math-inline">\(\frac{1}{r}\frac{\partial f}{\partial r}\)</span> term, which has no counterpart in Cartesian coordinates. It is not an algebraic accident: it is what accounts for the fact that circles of larger radius have more room, and it is the reason solutions in polar coordinates involve <span class="math-inline">\(\ln r\)</span> and powers <span class="math-inline">\(r^{n}\)</span> rather than the linear functions of the Cartesian case.</p>
+<section class="callout remark"><header>Remark</header><p>This change of variables illustrates how PDEs can be transformed into more convenient coordinate systems. In particular, Laplace’s equation in polar form is crucial in problems with radial or angular symmetry.</p></section>
+<h2 id="sec-4-leibniz-s-rule"><span class="sec-number">4.10</span>Leibniz’s Rule</h2>
+<p>Consider a function defined by an integral:</p>
+<div class="math-block">\begin{equation}
+f(x) = \frac{d F(x)}{d x},
+\qquad
+F(x) = \int_a^x f(t)\,dt.
+\end{equation}</div>
+<p>Then by the Fundamental Theorem of Calculus,</p>
+<div class="math-block">\begin{equation}
+\frac{d}{d x} \int_a^x f(t)\,dt = f(x).
+\end{equation}</div>
+<p>If instead we write</p>
+<div class="math-block">\begin{equation}
+\int_x^a f(t)\,dt = F(a) - F(x),
+\end{equation}</div>
+<p>then</p>
+<div class="math-block">\begin{equation}
+\frac{d}{d x} \int_x^a f(t)\,dt = -f(x).
+\end{equation}</div>
+<h3 id="sec-4-general-leibniz-rule">General Leibniz Rule</h3>
+<p>If</p>
+<div class="math-block">\begin{equation}
+I(x) = \int_{u(x)}^{v(x)} f(x,t)\,dt,
+\end{equation}</div>
+<p>then differentiating with respect to <span class="math-inline">\(x\)</span> gives</p>
+<div class="math-block">\begin{equation}
+\frac{d I}{d x}
+= f(x,v(x))\frac{d v}{d x} - f(x,u(x))\frac{d u}{d x}
++ \int_{u(x)}^{v(x)} \frac{\partial f(x,t)}{\partial x}\,dt.
+\end{equation}</div>
+<p>This is known as <strong>Leibniz’s Rule</strong>.</p>
+<section class="callout example"><header>Example - Leibniz rule with variable limits</header><p>Evaluate</p>
+<div class="math-block">\begin{equation}
+I(x) = \int_{x}^{2x} \frac{e^{xt}}{t}\,dt.
+\end{equation}</div>
+<p class="solution-head">Solution.</p>
+<p class="paragraph-title">Step 1. Apply Leibniz’s rule</p>
+<div class="math-block">\begin{equation}
+\frac{d I}{d x} = \frac{e^{x(2x)}}{2x}\frac{d (2x)}{d x}
+- \frac{e^{x(x)}}{x}\frac{d (x)}{d x}
++ \int_{x}^{2x} \frac{\partial}{\partial x}\!\Big(\frac{e^{xt}}{t}\Big)\,dt.
+\end{equation}</div>
+<p class="paragraph-title">Step 2. Simplify</p>
+<div class="math-block">\begin{equation}
+\frac{d I}{d x} = \frac{e^{2x^2}}{2x}(2) - \frac{e^{x^2}}{x}(1)
++ \int_x^{2x} e^{xt}\,dt.
+\end{equation}</div>
+<div class="math-block">\begin{equation}
+\frac{d I}{d x} = \frac{e^{2x^2}}{x} - \frac{e^{x^2}}{x}
++ \Bigg[\frac{1}{x}e^{xt}\Bigg]_{t=x}^{2x}.
+\end{equation}</div>
+<p class="paragraph-title">Step 3. Evaluate the integral</p>
+<div class="math-block">\begin{equation}
+\int_x^{2x} e^{xt}\,dt = \frac{1}{x}\Big(e^{2x^2} - e^{x^2}\Big).
+\end{equation}</div>
+<p class="paragraph-title">Step 4. Collect terms</p>
+<div class="math-block">\begin{equation}
+\frac{d I}{d x} = \frac{e^{2x^2}}{x} - \frac{e^{x^2}}{x}
++ \frac{1}{x}\Big(e^{2x^2} - e^{x^2}\Big).
+\end{equation}</div>
+<div class="math-block">\begin{equation}
+\frac{d I}{d x} = \frac{2}{x}\Big(e^{2x^2} - e^{x^2}\Big).
+\end{equation}</div></section>
+<section class="callout remark"><header>Remark</header><p>Leibniz’s rule generalizes the Fundamental Theorem of Calculus by handling integrals with <strong>variable limits</strong> and <strong>integrands depending on the parameter <span class="math-inline">\(x\)</span></strong>.</p></section>
+<h2 id="sec-4-where-partial-differentiation-is-used"><span class="sec-number">4.11</span>Where Partial Differentiation Is Used</h2>
+<p>The thermodynamic examples earlier in this chapter are the most immediate application, but the techniques developed here recur throughout the rest of these notes. It is worth seeing the pattern now.</p>
+<ul><li><p><strong>Which variables are held fixed matters.</strong> This is the single most important idea in the chapter, and the one most often skipped. The three derivatives <span class="math-inline">\(\left(\frac{\partial z}{\partial r}\right)_\theta\)</span>, <span class="math-inline">\(\left(\frac{\partial z}{\partial r}\right)_x\)</span> and <span class="math-inline">\(\left(\frac{\partial z}{\partial r}\right)_y\)</span> computed at the start are genuinely different numbers. Thermodynamics is where students first meet this, and where forgetting it does the most damage.</p></li><li><p><strong>Changing coordinates.</strong> Rewriting the Laplacian in polar coordinates, as in <span class="math-inline">\(\eqref{eq:laplacian_polar}\)</span>, is what makes problems with circular symmetry tractable. The same calculation in spherical coordinates underlies the hydrogen atom (Chapters 12–13).</p></li><li><p><strong>Small changes and error propagation.</strong> The total differential <span class="math-inline">\(df = \frac{\partial f}{\partial x}dx + \frac{\partial f}{\partial y}dy\)</span> is how uncertainty in measured quantities propagates into a computed result.</p></li><li><p><strong>Partial differential equations.</strong> Laplace's, the diffusion and the wave equations are all relations among partial derivatives; Chapter 10 is devoted to solving them.</p></li><li><p><strong>Differentiating under the integral sign.</strong> Leibniz's rule turns some otherwise intractable integrals into differential equations, and is the basis of several techniques in Chapters 5 and 7.</p></li></ul>
+<section class="callout remark"><header>Remark</header><p>Notice how much of the chapter reduces to one habit: write the total differential, then impose whatever is being held constant. The chain rule, implicit differentiation, the reciprocal relations and the cyclic relation <span class="math-inline">\(\eqref{eq:cyclic_relation}\)</span> were all obtained that way. If a problem asks how one quantity changes when another is varied under some constraint, start by writing <span class="math-inline">\(df\)</span> and setting the constrained differential to zero.</p></section>
+<h2 id="sec-4-summary-table">Summary Table</h2>
+<div class="table-wrap"><table><tr><td><strong>Idea</strong></td><td><strong>Formula</strong></td><td><strong>Notes</strong></td></tr><tr><td>Partial derivative</td><td><span class="math-inline">\(\frac{\partial f}{\partial x}\)</span></td><td>Differentiate in <span class="math-inline">\(x\)</span>, all other variables held fixed.</td></tr><tr><td>Held-constant notation</td><td><span class="math-inline">\(\left(\frac{\partial z}{\partial r}\right)_\theta\)</span></td><td>The subscript says what is fixed; without it the symbol is ambiguous.</td></tr><tr><td>Mixed partials</td><td><span class="math-inline">\(f_{xy} = f_{yx}\)</span></td><td>Equal for sufficiently smooth <span class="math-inline">\(f\)</span> (Clairaut).</td></tr><tr><td>Total differential</td><td><span class="math-inline">\(df = \frac{\partial f}{\partial x}dx + \frac{\partial f}{\partial y}dy\)</span></td><td>The workhorse of the chapter.</td></tr><tr><td>Chain rule</td><td><span class="math-inline">\(\frac{d u}{d t} = \frac{\partial u}{\partial x}\frac{d x}{d t} + \frac{\partial u}{\partial y}\frac{d y}{d t}\)</span></td><td>One term per intermediate variable.</td></tr><tr><td>Matrix chain rule</td><td>row vector <span class="math-inline">\(\times\)</span> Jacobian</td><td>Shapes: <span class="math-inline">\(1\times n\)</span> times <span class="math-inline">\(n\times m\)</span>.</td></tr><tr><td>Implicit differentiation</td><td>Differentiate the whole relation, then solve</td><td>For curves not given as <span class="math-inline">\(y=f(x)\)</span>.</td></tr><tr><td>Reciprocal rule</td><td><span class="math-inline">\(\left(\frac{\partial u}{\partial v}\right)_w = 1\big/\left(\frac{\partial v}{\partial u}\right)_w\)</span></td><td>Only when the <em>same</em> variable is held fixed.</td></tr><tr><td>Cyclic relation</td><td><span class="math-inline">\(\left(\frac{\partial p}{\partial V}\right)_T\left(\frac{\partial V}{\partial T}\right)_p\left(\frac{\partial T}{\partial p}\right)_V = -1\)</span></td><td>Note the minus sign.</td></tr><tr><td>Two-variable Taylor</td><td><span class="math-inline">\(\sum \frac{1}{n!}\big((x-a)\partial_X + (y-b)\partial_Y\big)^n f\)</span></td><td>Include every mixed derivative of each order.</td></tr><tr><td>Laplacian in polar</td><td><span class="math-inline">\(\frac{\partial^{2} f}{\partial r^{2}} + \frac1r\frac{\partial f}{\partial r} + \frac{1}{r^2}\frac{\partial^{2} f}{\partial \theta^{2}}\)</span></td><td>The <span class="math-inline">\(\frac1r\frac{\partial f}{\partial r}\)</span> term has no Cartesian analogue.</td></tr><tr><td>Leibniz's rule</td><td><span class="math-inline">\(\frac{d I}{d x} = f(x,v)v&#x27; - f(x,u)u&#x27; + \int_u^v \frac{\partial f}{\partial x}dt\)</span></td><td>Variable limits and a parameter in the integrand.</td></tr></table></div>
+<h2 id="sec-4-for-the-interested-reader">For the Interested Reader</h2>
+<p>This chapter is the multivariable calculus a physics course actually uses, compressed. If any of it went past too quickly, the sources below cover the same ground at a gentler pace. Everything listed is free.</p>
+<h3 id="sec-4-videos">Videos</h3>
+<p>Derivatives are much easier to grasp from a picture than from a limit. 3Blue1Brown's <em>Essence of Calculus</em> explains what each rule of this chapter actually <em>does</em> — the chain and product rules, higher derivatives, and implicit differentiation seen geometrically:</p>
+<section class="callout context"><header>Video</header><p><strong>Visualizing the chain rule and product rule — 3Blue1Brown</strong></p>
+<a class="video-preview" href="https://www.youtube.com/watch?v=YG15m2VwSjA" target="_blank" rel="noopener" aria-label="Watch Visualizing the chain rule and product rule — 3Blue1Brown on YouTube"><img src="https://img.youtube.com/vi/YG15m2VwSjA/hqdefault.jpg" alt="Video thumbnail for Visualizing the chain rule and product rule — 3Blue1Brown" loading="lazy"><span class="video-preview-play" aria-hidden="true"></span><span class="video-preview-label">Watch on YouTube</span></a>
+<p><a href="https://www.youtube.com/watch?v=YG15m2VwSjA" target="_blank" rel="noopener">Open video on YouTube</a></p></section>
+<section class="callout context"><header>Video</header><p><strong>Implicit differentiation, what's going on here? — 3Blue1Brown</strong></p>
+<a class="video-preview" href="https://www.youtube.com/watch?v=qb40J4N1fa4" target="_blank" rel="noopener" aria-label="Watch Implicit differentiation, what&#x27;s going on here? — 3Blue1Brown on YouTube"><img src="https://img.youtube.com/vi/qb40J4N1fa4/hqdefault.jpg" alt="Video thumbnail for Implicit differentiation, what&#x27;s going on here? — 3Blue1Brown" loading="lazy"><span class="video-preview-play" aria-hidden="true"></span><span class="video-preview-label">Watch on YouTube</span></a>
+<p><a href="https://www.youtube.com/watch?v=qb40J4N1fa4" target="_blank" rel="noopener">Open video on YouTube</a></p></section>
+<section class="callout context"><header>Video</header><p><strong>Higher order derivatives — 3Blue1Brown</strong></p>
+<a class="video-preview" href="https://www.youtube.com/watch?v=BLkz5LGWihw" target="_blank" rel="noopener" aria-label="Watch Higher order derivatives — 3Blue1Brown on YouTube"><img src="https://img.youtube.com/vi/BLkz5LGWihw/hqdefault.jpg" alt="Video thumbnail for Higher order derivatives — 3Blue1Brown" loading="lazy"><span class="video-preview-play" aria-hidden="true"></span><span class="video-preview-label">Watch on YouTube</span></a>
+<p><a href="https://www.youtube.com/watch?v=BLkz5LGWihw" target="_blank" rel="noopener">Open video on YouTube</a></p></section>
+<p>Two short Khan Academy clips build the specific picture of a <em>partial</em> derivative as the slope of a slice through a surface:</p>
+<section class="callout context"><header>Video</header><p><strong>Partial derivatives, introduction — Khan Academy</strong></p>
+<a class="video-preview" href="https://www.youtube.com/watch?v=AXqhWeUEtQU" target="_blank" rel="noopener" aria-label="Watch Partial derivatives, introduction — Khan Academy on YouTube"><img src="https://img.youtube.com/vi/AXqhWeUEtQU/hqdefault.jpg" alt="Video thumbnail for Partial derivatives, introduction — Khan Academy" loading="lazy"><span class="video-preview-play" aria-hidden="true"></span><span class="video-preview-label">Watch on YouTube</span></a>
+<p><a href="https://www.youtube.com/watch?v=AXqhWeUEtQU" target="_blank" rel="noopener">Open video on YouTube</a></p></section>
+<section class="callout context"><header>Video</header><p><strong>Partial derivatives and graphs — Khan Academy</strong></p>
+<a class="video-preview" href="https://www.youtube.com/watch?v=dfvnCHqzK54" target="_blank" rel="noopener" aria-label="Watch Partial derivatives and graphs — Khan Academy on YouTube"><img src="https://img.youtube.com/vi/dfvnCHqzK54/hqdefault.jpg" alt="Video thumbnail for Partial derivatives and graphs — Khan Academy" loading="lazy"><span class="video-preview-play" aria-hidden="true"></span><span class="video-preview-label">Watch on YouTube</span></a>
+<p><a href="https://www.youtube.com/watch?v=dfvnCHqzK54" target="_blank" rel="noopener">Open video on YouTube</a></p></section>
+<h3 id="sec-4-websites">Websites</h3>
+<ul><li><p><strong>OpenStax, <em>Calculus Volume 3</em>, Chapter 4.</strong> <a href="https://openstax.org/books/calculus-volume-3/pages/4-1-functions-of-several-variables">4.1 Functions of Several Variables</a>, <a href="https://openstax.org/books/calculus-volume-3/pages/4-3-partial-derivatives">4.3 Partial Derivatives</a> and <a href="https://openstax.org/books/calculus-volume-3/pages/4-5-the-chain-rule">4.5 The Chain Rule</a> — many more worked examples than we have room for, with exercises.</p></li><li><p><strong>Paul's Online Math Notes.</strong> <a href="https://tutorial.math.lamar.edu/Classes/CalcIII/PartialDerivatives.aspx">Partial Derivatives</a> and <a href="https://tutorial.math.lamar.edu/Classes/CalcIII/ChainRule.aspx">Chain Rule</a> — the quickest source of extra practice once you know which technique you need. The chain-rule page is particularly good on tree diagrams for keeping track of which variable depends on which.</p></li></ul>
+<section class="callout remark"><header>Remark</header><p>One thing you will not find in the calculus sources: the notation <span class="math-inline">\(\left(\frac{\partial T}{\partial p}\right)_V\)</span> with an explicit subscript. Mathematics courses usually fix the independent variables once and never revisit the choice, so the ambiguity never arises. In thermodynamics it arises constantly, which is why this chapter labours the point. For that side of the subject a thermodynamics text will serve you better than a calculus one.</p></section>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <a href="../chapter-03/index.html">Previous: Linear Algebra</a>
+      <a href="../../toc.html">Contents</a>
+      <a href="../chapter-05/index.html">Next: Multiple Integrals; Applications of Integration</a>
+    </nav>
+  </article>
+</main>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p>&copy; 2026 Erfan Saydanzad. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

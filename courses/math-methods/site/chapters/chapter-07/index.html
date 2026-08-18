@@ -1,0 +1,823 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 7: Fourier Series and Transforms | Mathematical Methods in the Physical Sciences</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+  <link rel="preload" href="../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../assets/css/site.css?v=4c167578">
+  <script>
+    window.MathJax = {
+      // tagformat is an optional TeX extension, not part of the combined
+      // tex-chtml build. Without these two lines the tagformat block below is
+      // read and silently ignored, and every equation numbers from 1 with no
+      // chapter in front of it.
+      loader: { load: ['[tex]/tagformat'] },
+      tex: {
+        packages: { '[+]': ['tagformat'] },
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        processEnvironments: true,
+        tags: 'ams',
+        // The PDF numbers equations within the chapter (\numberwithin
+        // {equation}{chapter}), so "1.8" is the eighth equation of
+        // chapter 1. MathJax counts from 1 on every page, which would have
+        // shown that same equation as "8". Prefixing the chapter number
+        // keeps a reference valid against either version.
+        tagformat: {
+          number: function (n) { return '7.' + n; }
+        },
+        macros: {
+          pdv: ['{\\frac{\\partial #1}{\\partial #2}}', 2],
+          dv: ['{\\frac{d #1}{d #2}}', 2],
+          abs: ['{\\left|#1\\right|}', 1],
+          norm: ['{\\left\\|#1\\right\\|}', 1],
+          curl: '{\\vec{\\nabla}\\times}',
+          div: '{\\vec{\\nabla}\\cdot}',
+          grad: '{\\vec{\\nabla}}',
+          sech: '{\\operatorname{sech}}',
+          csch: '{\\operatorname{csch}}',
+          coth: '{\\operatorname{coth}}',
+          circnum: ['{\\boxed{#1}}', 1],
+          vb: ['{\\mathbf{#1}}', 1],
+          eval: ['{\\left.#1\\right|}', 1],
+          dd: '{\\,d}'
+        }
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <script defer src="../../assets/js/main.js?v=4c167578"></script>
+
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="../../index.html">
+    <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M9 6.5V25.5M9 6.5H24M9 25.5H24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 16Q10.5 9.5 15.5 16T25.5 16" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/></svg>
+    <span>Mathematical Methods in the Physical Sciences</span>
+  </a>
+  <nav class="top-nav" aria-label="Primary">
+    <a href="../../index.html">Home</a>
+    <a href="../../toc.html">Contents</a>
+    <a href="../../projects.html">Projects</a>
+  </nav>
+</header>
+<main class="layout" id="main">
+  <aside class="sidebar">
+  <div class="sidebar-inner">
+    <p class="sidebar-kicker">Chapter 7</p>
+    <h2>Fourier Series and Transforms</h2>
+    <nav class="chapter-toc" aria-label="Chapter contents">
+      <a class="toc-level-2" href="#sec-7-even-and-odd-functions">7.1 Even and Odd Functions</a>
+<a class="toc-level-2" href="#sec-7-periodic-functions-and-fourier-series">7.2 Periodic Functions and Fourier Series</a>
+<a class="toc-level-3" href="#sec-7-fundamental-periodic-basis">7.2.1 Fundamental Periodic Basis</a>
+<a class="toc-level-3" href="#sec-7-complex-fourier-series">7.2.2 Complex Fourier Series</a>
+<a class="toc-level-3" href="#sec-7-real-form-of-the-fourier-series">7.2.3 Real Form of the Fourier Series</a>
+<a class="toc-level-3" href="#sec-7-dirichlet-conditions-and-convergence-of-fourier-series">7.2.4 Dirichlet Conditions and Convergence of Fourier Series</a>
+<a class="toc-level-3" href="#sec-7-meaning-and-interpretation-of-the-fourier-series">7.2.5 Meaning and Interpretation of the Fourier Series</a>
+<a class="toc-level-3" href="#sec-7-applications-in-signal-processing">Applications in Signal Processing</a>
+<a class="toc-level-2" href="#sec-7-fourier-transform">7.3 Fourier Transform</a>
+<a class="toc-level-3" href="#sec-7-transition-from-discrete-to-continuous-spectrum">Transition from Discrete to Continuous Spectrum</a>
+<a class="toc-level-2" href="#sec-7-where-fourier-analysis-is-used">7.4 Where Fourier Analysis Is Used</a>
+<a class="toc-level-2" href="#sec-7-summary-table">Summary Table</a>
+<a class="toc-level-2" href="#sec-7-for-the-interested-reader">For the Interested Reader</a>
+<a class="toc-level-3" href="#sec-7-the-idea-seen">The idea, seen</a>
+<a class="toc-level-3" href="#sec-7-worked-technique-and-practice">Worked technique and practice</a>
+    </nav>
+  </div>
+</aside>
+
+  <article class="content">
+    <header class="chapter-hero">
+      <p>Chapter 7</p>
+      <h1>Fourier Series and Transforms</h1>
+    </header>
+    <h2 id="sec-7-even-and-odd-functions"><span class="sec-number">7.1</span>Even and Odd Functions</h2>
+<section class="callout definition"><header>Definition - Even and Odd Functions</header><ul><li><p>A function <span class="math-inline">\( f(x) \)</span> is said to be <strong>even</strong> if</p>
+<div class="math-block">\begin{equation}
+		f(-x) = f(x).
+		\end{equation}</div></li><li><p>A function <span class="math-inline">\( f(x) \)</span> is said to be <strong>odd</strong> if</p>
+<div class="math-block">\begin{equation}
+		f(-x) = -f(x).
+		\end{equation}</div></li></ul>
+<p><strong>Properties of Integrals over Symmetric Limits:</strong></p>
+<div class="math-block">\begin{equation}
+	\boxed{
+		\begin{aligned}
+			&amp;\text{If } f(x) \text{ is even:}
+			&amp;&amp; \int_{-L/2}^{L/2} f(x)\,dx = 2\int_{0}^{L/2} f(x)\,dx, \\[6pt]
+			&amp;\text{If } f(x) \text{ is odd:}
+			&amp;&amp; \int_{-L/2}^{L/2} f(x)\,dx = 0.
+		\end{aligned}
+	}
+	\end{equation}</div></section>
+<section class="callout remark"><header>Remark</header><p>In general, any function <span class="math-inline">\( f(x) \)</span> can be expressed as the sum of an even and an odd function:</p>
+<div class="math-block">\begin{equation}
+	\boxed{
+		f(x) = \frac{1}{2}\big[f(x) + f(-x)\big]
+		+ \frac{1}{2}\big[f(x) - f(-x)\big].
+	}
+	\end{equation}</div>
+<p>The first term is the even part of <span class="math-inline">\( f(x) \)</span>, and the second term is the odd part.</p></section>
+<h2 id="sec-7-periodic-functions-and-fourier-series"><span class="sec-number">7.2</span>Periodic Functions and Fourier Series</h2>
+<section class="callout definition"><header>Definition - Periodic Function</header><p>A function <span class="math-inline">\( f(x) \)</span> is said to be <strong>periodic</strong> with period <span class="math-inline">\(L&gt;0\)</span> if</p>
+<div class="math-block">\begin{equation}
+	\boxed{f(x+L) = f(x)}
+	\quad \text{for all } x.
+	\end{equation}</div>
+<p>The smallest positive <span class="math-inline">\(L\)</span> satisfying this relation is called the <strong>fundamental period</strong>.</p></section>
+<figure id="chapter-07-fig-1" class="figure"><img src="assets/img/Fig7_1.png" alt="A periodic function of period L: the same shape repeats on every interval of length L." loading="lazy" style="--figure-width: 80%;"><figcaption>Figure 7.1. A periodic function of period <span class="math-inline">\(L\)</span>: the same shape repeats on every interval of length <span class="math-inline">\(L\)</span>.</figcaption></figure>
+<section class="callout remark"><header>Remark</header><p>Common periodic functions include</p>
+<div class="math-block">\begin{equation}
+	\sin\!\left(\tfrac{2\pi x}{L}\right), \quad
+	\cos\!\left(\tfrac{2\pi x}{L}\right), \quad
+	e^{\,i\,\tfrac{2\pi x}{L}},
+	\end{equation}</div>
+<p>all sharing the same fundamental period <span class="math-inline">\(L\)</span>.</p></section>
+<section class="callout definition"><header>Definition - Average Value of a Function</header><p>For a periodic function <span class="math-inline">\( f(x) \)</span> of period <span class="math-inline">\( L \)</span>, the <strong>average value</strong> (or mean value) of the function over one period is defined as</p>
+<div class="math-block">\begin{equation}
+	\boxed{
+		\langle f \rangle = \frac{1}{L}\int_{-L/2}^{L/2} f(x)\,dx.
+	}
+	\end{equation}</div></section>
+<h3 id="sec-7-fundamental-periodic-basis"><span class="sec-number">7.2.1</span>Fundamental Periodic Basis</h3>
+<p>For the exponential function <span class="math-inline">\( e^{ikx} \)</span> to have period <span class="math-inline">\(L\)</span>,</p>
+<div class="math-block">\begin{equation}
+e^{ik(x+L)} = e^{ikx} \quad \Rightarrow \quad e^{ikL} = 1.
+\end{equation}</div>
+<p>Since <span class="math-inline">\( e^{i2\pi n}=1 \)</span> for integers <span class="math-inline">\(n\)</span>, we have</p>
+<div class="math-block">\begin{equation}
+\boxed{k_n = \frac{2\pi n}{L}}, \qquad n=0,\pm1,\pm2,\ldots
+\end{equation}</div>
+<p>Thus, the functions</p>
+<div class="math-block">\begin{equation}
+\boxed{e^{i k_n x} = e^{i \frac{2\pi n x}{L}}}
+\end{equation}</div>
+<p>form a complete orthogonal set over one period.</p>
+<section class="callout remark"><header>Remark - Orthogonality</header><div class="math-block">\begin{equation}
+	\int_{-L/2}^{L/2} e^{i k_m x}\, e^{-i k_n x}\,dx = L\,\delta_{mn}.
+	\end{equation}</div></section>
+<h3 id="sec-7-complex-fourier-series"><span class="sec-number">7.2.2</span>Complex Fourier Series</h3>
+<section class="callout definition"><header>Definition - Complex Fourier Series</header><p>A periodic function <span class="math-inline">\( f(x) \)</span> of period <span class="math-inline">\(L\)</span> can be represented as</p>
+<div class="math-block">\begin{equation}
+	\boxed{
+		f(x) = \sum_{n=-\infty}^{\infty} c_n\, e^{i k_n x}},
+	\qquad
+	k_n = \frac{2\pi n}{L},
+	\end{equation}</div>
+<p>where the coefficients are</p>
+<div class="math-block">\begin{equation}
+	\boxed{
+		c_n = \frac{1}{L}\int_{-L/2}^{L/2} f(x)\,e^{-i k_n x}\,dx.}
+	\end{equation}</div></section>
+<div class="proof" data-lead="Proof."><p>Starting from <span class="math-inline">\( f(x) = \sum c_n e^{i k_n x} \)</span>, multiply by <span class="math-inline">\( e^{-i k_m x} \)</span> and integrate:</p>
+<div class="math-block">\begin{equation}
+	\int_{-L/2}^{L/2} f(x)e^{-i k_m x}\,dx
+	= \sum_n c_n \!\int_{-L/2}^{L/2} e^{i(k_n-k_m)x}\,dx
+	= L\,c_m,
+	\end{equation}</div>
+<p>by orthogonality. Hence,</p>
+<div class="math-block">\begin{equation}
+	\boxed{c_m = \frac{1}{L}\int_{-L/2}^{L/2} f(x)\,e^{-i k_m x}\,dx.}
+	\end{equation}</div></div>
+<section class="callout remark"><header>Remark</header><p>For a <strong>real-valued function</strong> <span class="math-inline">\( f(x) \)</span>, the complex coefficients satisfy</p>
+<div class="math-block">\begin{equation}
+	c_{-n} = c_n^*.
+	\end{equation}</div></section>
+<h3 id="sec-7-real-form-of-the-fourier-series"><span class="sec-number">7.2.3</span>Real Form of the Fourier Series</h3>
+<section class="callout theorem"><header>Theorem - Real Form of the Fourier Series</header><div class="math-block">\begin{equation}
+	\boxed{
+		f(x) = \frac{a_0}{2}
+		+ \sum_{n=1}^{\infty}
+		\Big[
+		a_n\cos\!\left(\frac{2\pi n x}{L}\right)
+		+ b_n\sin\!\left(\frac{2\pi n x}{L}\right)
+		\Big].
+	}
+	\end{equation}</div></section>
+<div class="proof" data-lead="Proof."><p><strong>Starting from the complex Fourier series.</strong></p>
+<p>We begin with the complex form of the Fourier series for a periodic function <span class="math-inline">\( f(x) \)</span> of period <span class="math-inline">\( L \)</span>:</p>
+<div class="math-block">\begin{equation}
+f(x) = \sum_{n=-\infty}^{\infty} c_n\, e^{i k_n x},
+\qquad \text{where } k_n = \frac{2\pi n}{L}.
+\end{equation}</div>
+<p>We separate the <span class="math-inline">\( n=0 \)</span> term and rearrange positive and negative indices:</p>
+<div class="math-block">\begin{equation}
+f(x) = c_0 + \sum_{n=1}^{\infty} \left( c_n e^{i k_n x} + c_{-n} e^{-i k_n x} \right).
+\end{equation}</div>
+<p>Using <span class="math-inline">\( c_{-n} = c_n^* \)</span>, we have</p>
+<div class="math-block">\begin{equation}
+f(x) = c_0 + \sum_{n=1}^{\infty} \left( c_n e^{i k_n x} + c_n^* e^{-i k_n x} \right).
+\end{equation}</div>
+<p><strong>Expressing in terms of sine and cosine.</strong></p>
+<p>Let</p>
+<div class="math-block">\begin{equation}
+c_0 = \frac{a_0}{2}
+\qquad
+c_n = \frac{1}{2}\left( a_n - i b_n \right),
+\qquad
+c_n^* = \frac{1}{2}\left( a_n + i b_n \right),
+\end{equation}</div>
+<p>where <span class="math-inline">\( a_n \)</span> and <span class="math-inline">\( b_n \)</span> are real numbers.</p>
+<p>Then</p>
+<div class="math-block">\begin{equation}
+\begin{aligned}
+	c_n e^{i k_n x} + c_n^* e^{-i k_n x}
+	&amp;= \frac{1}{2}\big[(a_n - i b_n)(\cos k_n x + i\sin k_n x)
+	+ (a_n + i b_n)(\cos k_n x - i\sin k_n x)\big] \\[4pt]
+	&amp;= a_n \cos k_n x + b_n \sin k_n x.
+\end{aligned}
+\end{equation}</div>
+<p>Hence the series becomes</p>
+<div class="math-block">\begin{equation}
+f(x) = \frac{a_0}{2} + \sum_{n=1}^{\infty} \left( a_n \cos k_n x + b_n \sin k_n x \right).
+\end{equation}</div>
+<p>Thus the final <strong>real form of the Fourier series</strong> is</p>
+<div class="math-block">\begin{equation}
+\boxed{
+	f(x) = \frac{a_0}{2}
+	+ \sum_{n=1}^{\infty}
+	\left[
+	a_n \cos\left(\frac{2\pi n x}{L}\right)
+	+ b_n \sin\left(\frac{2\pi n x}{L}\right)
+	\right].
+}
+\end{equation}</div></div>
+<section class="callout remark"><header>Remark</header><ul><li><p><span class="math-inline">\( \tfrac{a_0}{2} \)</span>: average (DC component) of <span class="math-inline">\(f(x)\)</span>,</p></li><li><p><span class="math-inline">\( a_n \)</span>: amplitude of the cosine component,</p></li><li><p><span class="math-inline">\( b_n \)</span>: amplitude of the sine component,</p></li><li><p>frequency of the <span class="math-inline">\(n\)</span>-th harmonic: <span class="math-inline">\( f_n = \tfrac{n}{L}. \)</span></p></li></ul></section>
+<section class="callout theorem"><header>Theorem - Fourier Coefficients</header><p>For <span class="math-inline">\(f(x)\)</span> of period <span class="math-inline">\(L\)</span>:</p>
+<div class="math-block">\begin{equation}
+	\boxed{
+		\begin{aligned}
+			a_0 &amp;= \frac{2}{L}\!\int_{-L/2}^{L/2} f(x)\,dx, \\[4pt]
+			a_n &amp;= \frac{2}{L}\!\int_{-L/2}^{L/2} f(x)\cos\!\left(\frac{2\pi n x}{L}\right)\!dx, \\[4pt]
+			b_n &amp;= \frac{2}{L}\!\int_{-L/2}^{L/2} f(x)\sin\!\left(\frac{2\pi n x}{L}\right)\!dx.
+	\end{aligned}}
+	\end{equation}</div></section>
+<div class="proof" data-lead="Proof."><p>Multiply both sides of the Fourier expansion by <span class="math-inline">\( \cos\!\left(\frac{2\pi m x}{L}\right) \)</span> and integrate over one period:</p>
+<div class="math-block">\begin{equation}
+	\int_{-L/2}^{L/2} f(x)\cos\!\left(\frac{2\pi m x}{L}\right)dx
+	= \int_{-L/2}^{L/2} \Big[a_0 + \sum_{n=1}^{\infty}\big(a_n\cos\!\tfrac{2\pi n x}{L} + b_n\sin\!\tfrac{2\pi n x}{L}\big)\Big]
+	\cos\!\left(\frac{2\pi m x}{L}\right)dx.
+	\end{equation}</div>
+<p>Using the orthogonality relations:</p>
+<div class="math-block">\begin{equation}
+	\begin{aligned}
+		\int_{-L/2}^{L/2}\cos\!\left(\frac{2\pi m x}{L}\right)\!dx &amp;= 0, \\[3pt]
+		\int_{-L/2}^{L/2}
+		\cos\!\left(\frac{2\pi n x}{L}\right)\cos\!\left(\frac{2\pi m x}{L}\right)\!dx &amp;= \frac{L}{2}\delta_{mn}, \\[3pt]
+		\int_{-L/2}^{L/2}
+		\sin\!\left(\frac{2\pi n x}{L}\right)\cos\!\left(\frac{2\pi m x}{L}\right)\!dx &amp;= 0,
+	\end{aligned}
+	\end{equation}</div>
+<p>all terms vanish except the one where <span class="math-inline">\( n = m \)</span>:</p>
+<div class="math-block">\begin{equation}
+	\int_{-L/2}^{L/2} f(x)\cos\!\left(\frac{2\pi m x}{L}\right)\!dx = a_m\,\frac{L}{2}.
+	\end{equation}</div>
+<p>Hence,</p>
+<div class="math-block">\begin{equation}
+	\boxed{a_m = \frac{2}{L}\int_{-L/2}^{L/2} f(x)\cos\!\left(\frac{2\pi m x}{L}\right)\!dx.}
+	\end{equation}</div>
+<p>Similarly, multiplying the Fourier series by <span class="math-inline">\( \sin\!\left(\frac{2\pi m x}{L}\right) \)</span> and integrating gives</p>
+<div class="math-block">\begin{equation}
+	\boxed{b_m = \frac{2}{L}\int_{-L/2}^{L/2} f(x)\sin\!\left(\frac{2\pi m x}{L}\right)\!dx.}
+	\end{equation}</div>
+<p>Finally, integrating both sides of the Fourier expansion over one period. Since the integrals of all sine and cosine terms vanish over a full period, only the constant term <span class="math-inline">\(\tfrac{a_0}{2}\)</span> survives:</p>
+<div class="math-block">\begin{equation}
+	\int_{-L/2}^{L/2} f(x)\,dx
+	= \int_{-L/2}^{L/2}\frac{a_0}{2}\,dx
+	= \frac{a_0}{2}\,L .
+	\end{equation}</div>
+<p>Hence,</p>
+<div class="math-block">\begin{equation}
+	\boxed{a_0 = \frac{2}{L}\int_{-L/2}^{L/2} f(x)\,dx,}
+	\end{equation}</div>
+<p>consistent with the general formula for <span class="math-inline">\(a_n\)</span> at <span class="math-inline">\(n=0\)</span>. Note that it is <span class="math-inline">\(\tfrac{a_0}{2}\)</span>, not <span class="math-inline">\(a_0\)</span>, that equals the <strong>average value</strong> (mean) of <span class="math-inline">\(f(x)\)</span> over one period; writing the constant term as <span class="math-inline">\(\tfrac{a_0}{2}\)</span> is precisely what lets the single formula <span class="math-inline">\(a_n = \tfrac{2}{L}\int f\cos(2\pi n x/L)\,dx\)</span> cover the case <span class="math-inline">\(n=0\)</span>.</p></div>
+<h3 id="sec-7-dirichlet-conditions-and-convergence-of-fourier-series"><span class="sec-number">7.2.4</span>Dirichlet Conditions and Convergence of Fourier Series</h3>
+<section class="callout definition"><header>Definition - Dirichlet Conditions</header><p>A periodic function <span class="math-inline">\( f(x) \)</span> of period <span class="math-inline">\( L \)</span> can be represented by a Fourier series (without modification) on the interval <span class="math-inline">\( \big[-\tfrac{L}{2}, \tfrac{L}{2}\big] \)</span> if it satisfies the following conditions:</p>
+<ol><li><p><span class="math-inline">\( f(x) \)</span> is <strong>single-valued</strong> and <strong>piecewise continuous</strong> within one period.</p></li><li><p><span class="math-inline">\( f(x) \)</span> has a <strong>finite number of finite discontinuities</strong>.</p></li><li><p><span class="math-inline">\( f(x) \)</span> has a <strong>finite number of maxima and minima</strong> within one period.</p></li><li><p>The integral of its absolute value over one period is finite:</p>
+<div class="math-block">\begin{equation}
+		\int_{-L/2}^{L/2} |f(x)|\,dx &lt; \infty.
+		\end{equation}</div></li></ol></section>
+<figure id="chapter-07-fig-2" class="figure"><img src="assets/img/Fig7_2.jpeg" alt="Example of a function satisfying Dirichlet conditions over one period." loading="lazy" style="--figure-width: 80%;"><figcaption>Figure 7.2. Example of a function satisfying Dirichlet conditions over one period.</figcaption></figure>
+<section class="callout theorem"><header>Theorem - Convergence of the Fourier Series</header><p>If <span class="math-inline">\( f(x) \)</span> satisfies the Dirichlet conditions and has period <span class="math-inline">\( L \)</span>, then its Fourier series</p>
+<div class="math-block">\begin{equation}
+	f(x) = \frac{a_0}{2} + \sum_{n=1}^{\infty}
+	\Big[a_n\cos\!\Big(\frac{2\pi n x}{L}\Big) + b_n\sin\!\Big(\frac{2\pi n x}{L}\Big)\Big]
+	\end{equation}</div>
+<p>converges as follows:</p>
+<ul><li><p>At every point where <span class="math-inline">\( f(x) \)</span> is continuous, the Fourier series converges to <span class="math-inline">\( f(x) \)</span>.</p></li><li><p>At each point of discontinuity <span class="math-inline">\( x_0 \)</span>, the Fourier series converges to the midpoint of the jump:</p>
+<div class="math-block">\begin{equation}
+		f_{\text{series}}(x_0) = \frac{1}{2}\Big[f(x_0^+) + f(x_0^-)\Big].
+		\end{equation}</div></li></ul></section>
+<h3 id="sec-7-meaning-and-interpretation-of-the-fourier-series"><span class="sec-number">7.2.5</span>Meaning and Interpretation of the Fourier Series</h3>
+<p>The Fourier series allows us to express any sufficiently smooth periodic function <span class="math-inline">\( f(x) \)</span> (with period <span class="math-inline">\(L\)</span>) as a sum of simple oscillatory components — <strong>sine and cosine waves</strong>. Mathematically,</p>
+<div class="math-block">\begin{equation}
+\boxed{
+	f(x) = \frac{a_0}{2}
+	+ \sum_{n=1}^{\infty}
+	\big[
+	a_n \cos(k_n x) + b_n \sin(k_n x)
+	\big],
+}
+\qquad k_n = \frac{2\pi n}{L}.
+\end{equation}</div>
+<p>Each term in the sum represents a <strong>harmonic component</strong> (or mode) of the signal.</p>
+<section class="callout definition"><header>Definition - Harmonic Component</header><p>The <span class="math-inline">\(n\)</span>-th term in the Fourier series,</p>
+<div class="math-block">\begin{equation}
+	\boxed{
+		\phi_n(x) = a_n \cos(k_n x) + b_n \sin(k_n x),
+	}
+	\end{equation}</div>
+<p>is called the <strong><span class="math-inline">\(n\)</span>-th harmonic</strong>. It corresponds to a wave of frequency</p>
+<div class="math-block">\begin{equation}
+	\nu_n = \frac{n}{L}
+	\quad \text{or angular frequency} \quad
+	\omega_n = k_n = \frac{2\pi n}{L}.
+	\end{equation}</div></section>
+<p>Thus,</p>
+<div class="math-block">\begin{equation}
+\begin{aligned}
+	\phi_0(x) &amp;= \frac{a_0}{2}, &amp;&amp; \text{(average or DC component)} \\[4pt]
+	\phi_1(x) &amp;= a_1 \cos(k_1 x) + b_1 \sin(k_1 x), &amp;&amp; \text{(fundamental harmonic)} \\[4pt]
+	\phi_2(x) &amp;= a_2 \cos(2k_1 x) + b_2 \sin(2k_1 x), &amp;&amp; \text{(second harmonic)} \\[4pt]
+	\phi_N(x) &amp;= a_N \cos(Nk_1 x) + b_N \sin(Nk_1 x), &amp;&amp; \text{($N$-th harmonic)}.
+\end{aligned}
+\end{equation}</div>
+<p>Each harmonic contributes a specific <strong>frequency</strong>, <strong>amplitude</strong>, and <strong>phase</strong> to the total waveform. The original function <span class="math-inline">\( f(x) \)</span> is reconstructed by summing all harmonic components:</p>
+<div class="math-block">\begin{equation}
+\boxed{
+	f(x) = \phi_0(x) + \phi_1(x) + \phi_2(x) + \cdots
+	= \sum_{n=0}^{\infty} \phi_n(x).
+}
+\end{equation}</div>
+<p>As more harmonics are included, the approximation of <span class="math-inline">\( f(x) \)</span> becomes more accurate. Lower harmonics (<span class="math-inline">\(n=0,1,2\)</span>) describe the overall shape, while higher harmonics capture finer details and sharp transitions.</p>
+<h3 id="sec-7-applications-in-signal-processing">Applications in Signal Processing</h3>
+<section class="callout definition"><header>Definition - Low-Pass Filter</header><p>A <em>low-pass filter</em> removes high-frequency (large <span class="math-inline">\(n\)</span>) components from a signal, keeping only low-frequency terms:</p>
+<div class="math-block">\begin{equation}
+	f_{\text{filtered}}(x)
+	= \sum_{n=0}^{N} \phi_n(x),
+	\end{equation}</div>
+<p>where <span class="math-inline">\(N\)</span> sets the cutoff frequency.</p></section>
+<section class="callout remark"><header>Remark - Applications</header><ul><li><p><strong>Signal processing:</strong> Decompose and reconstruct signals by frequency content.</p></li><li><p><strong>Noise reduction:</strong> Remove unwanted high-frequency components using low-pass filtering.</p></li><li><p><strong>Data compression:</strong> Approximate a signal using only the dominant harmonics.</p></li><li><p><strong>Physics:</strong> Analyze normal modes in vibrating strings, membranes, and quantum systems.</p></li></ul></section>
+<section class="callout example"><header>Example - Square step on <span class="math-inline">\(\lbrack{}-\pi,\pi\rbrack{}\)</span></header><p>Find the Fourier series of</p>
+<div class="math-block">\begin{equation}
+	f(x)=\begin{cases}
+		0,&amp; -\pi&lt;x&lt;0,\\[2pt]
+		1,&amp; 0&lt;x&lt;\pi,
+	\end{cases}
+	\qquad\text{(period }2\pi\text{)}.
+	\end{equation}</div>
+<div class="centered"><figure id="chapter-07-fig-3" class="figure"><img src="assets/img/Fig7_square_step_fourier.png" alt="The square step on [-,] with the partial sums S1, S3 and S9 of its Fourier series. Each added term follows the step more closely, except near the jumps, where the overshoot persists." loading="lazy" style="--figure-width: 88%;"><figcaption>Figure 7.3. The square step on <span class="math-inline">\([-\pi,\pi]\)</span> with the partial sums <span class="math-inline">\(S_1\)</span>, <span class="math-inline">\(S_3\)</span> and <span class="math-inline">\(S_9\)</span> of its Fourier series. Each added term follows the step more closely, except near the jumps, where the overshoot persists.</figcaption></figure></div>
+<p><strong>Fourier form on <span class="math-inline">\([-\pi,\pi]\)</span>.</strong> With period <span class="math-inline">\(L=2\pi\)</span>, the series is</p>
+<div class="math-block">\begin{equation}
+	f(x)=\frac{a_0}{2}+\sum_{n=1}^{\infty}\big[a_n\cos(nx)+b_n\sin(nx)\big],
+	\end{equation}</div>
+<p>where, from the coefficient formulas with <span class="math-inline">\(L=2\pi\)</span> so that <span class="math-inline">\(\tfrac{2}{L}=\tfrac1\pi\)</span>,</p>
+<div class="math-block">\begin{equation}
+	a_0=\frac{1}{\pi}\!\int_{-\pi}^{\pi}\!f(x)\,dx,\quad
+	a_n=\frac{1}{\pi}\!\int_{-\pi}^{\pi}\!f(x)\cos(nx)\,dx,\quad
+	b_n=\frac{1}{\pi}\!\int_{-\pi}^{\pi}\!f(x)\sin(nx)\,dx.
+	\end{equation}</div>
+<p class="solution-head">Solution.</p>
+<p><strong>Step 1: </strong> <span class="math-inline">\(a_0\)</span>. The constant term of the series is <span class="math-inline">\(\tfrac{a_0}{2}\)</span>, so we expect it to equal the average of <span class="math-inline">\(f\)</span>, namely <span class="math-inline">\(\tfrac12\)</span>.</p>
+<div class="math-block">\begin{equation}
+	a_0=\frac{1}{\pi}\!\int_{-\pi}^{\pi}\!f(x)\,dx
+	= \frac{1}{\pi}\!\int_{0}^{\pi}\!1\,dx
+	=1
+	\quad\Rightarrow\quad
+	\frac{a_0}{2}=\frac{1}{2}.
+	\end{equation}</div>
+<p><strong>Step 2: </strong> <span class="math-inline">\(a_n\)</span> (all <span class="math-inline">\(n\ge1\)</span>).</p>
+<div class="math-block">\begin{equation}
+	a_n=\frac{1}{\pi}\!\int_{0}^{\pi}\!\cos(nx)\,dx
+	=\frac{1}{\pi}\cdot\frac{\sin(nx)}{n}\Big|_{0}^{\pi}=0.
+	\end{equation}</div>
+<p><strong>Step 3: </strong> <span class="math-inline">\(b_n\)</span> (all <span class="math-inline">\(n\ge1\)</span>).</p>
+<div class="math-block">\begin{equation}
+	b_n=\frac{1}{\pi}\!\int_{0}^{\pi}\!\sin(nx)\,dx
+	=\frac{1}{\pi}\cdot\frac{-\cos(nx)}{n}\Big|_{0}^{\pi}
+	=\frac{1}{n\pi}\big(1-\cos(n\pi)\big)
+	=\frac{1-(-1)^n}{n\pi}.
+	\end{equation}</div>
+<p>Hence</p>
+<div class="math-block">\begin{equation}
+	b_n=
+	\begin{cases}
+		0,&amp; n\ \text{even},\\[4pt]
+		\displaystyle \frac{2}{n\pi},&amp; n\ \text{odd}.
+	\end{cases}
+	\end{equation}</div>
+<p><strong>Result.</strong></p>
+<div class="math-block">\begin{equation}
+	\boxed{
+		f(x)=\frac{1}{2}+\frac{2}{\pi}\!\left(\sin x+\frac{\sin 3x}{3}+\frac{\sin 5x}{5}+\cdots\right)
+	}
+	\end{equation}</div>
+<p>(i.e., the sum runs over odd <span class="math-inline">\(n\)</span>). At the jump points <span class="math-inline">\(x\equiv 0,\pi\ (\mathrm{mod}\ 2\pi)\)</span>, the series converges to the average <span class="math-inline">\(\tfrac{1}{2}\)</span> (Dirichlet’s theorem).</p></section>
+<section class="callout example"><header>Example - Periodic ramp on <span class="math-inline">\((0,\pi)\)</span> (period <span class="math-inline">\(2\pi\)</span>)</header><div class="centered"><figure id="chapter-07-fig-4" class="figure"><img src="assets/img/Fig7_periodic_ramp_fourier.png" alt="The periodic ramp of period 2 with the partial sums S0, S1, S2 and S8 of its Fourier series." loading="lazy" style="--figure-width: 88%;"><figcaption>Figure 7.4. The periodic ramp of period <span class="math-inline">\(2\pi\)</span> with the partial sums <span class="math-inline">\(S_0\)</span>, <span class="math-inline">\(S_1\)</span>, <span class="math-inline">\(S_2\)</span> and <span class="math-inline">\(S_8\)</span> of its Fourier series.</figcaption></figure></div>
+<p><strong>Fourier form on <span class="math-inline">\([-\pi,\pi]\)</span> (period <span class="math-inline">\(2\pi\)</span>).</strong></p>
+<div class="math-block">\begin{equation}
+	f(x)=\frac{a_0}{2}+\sum_{n=1}^{\infty}\big[a_n\cos(nx)+b_n\sin(nx)\big],
+	\quad
+	\begin{aligned}
+		a_0&amp;=\frac{1}{\pi}\!\int_{-\pi}^{\pi} f(x)\,dx,\\
+		a_n&amp;=\frac{1}{\pi}\!\int_{-\pi}^{\pi} f(x)\cos(nx)\,dx,\\
+		b_n&amp;=\frac{1}{\pi}\!\int_{-\pi}^{\pi} f(x)\sin(nx)\,dx.
+	\end{aligned}
+	\end{equation}</div>
+<p class="solution-head">Solution.</p>
+<div class="math-block">\begin{equation}
+	a_0=\frac{1}{\pi}\int_{0}^{\pi}\!x\,dx
+	=\frac{1}{\pi}\Big[\frac{x^{2}}{2}\Big]_0^{\pi}
+	=\frac{\pi}{2}
+	\quad\Rightarrow\quad \frac{a_0}{2}=\boxed{\frac{\pi}{4}}.
+	\end{equation}</div>
+<p><strong>Step 2: Cosine coefficients (<span class="math-inline">\(n\ge1\)</span>).</strong></p>
+<div class="math-block">\begin{equation}
+	a_n=\frac{1}{\pi}\int_{0}^{\pi}\!x\cos(nx)\,dx
+	\quad(\text{IBP: }u=x,\ dv=\cos nx\,dx \Rightarrow v=\tfrac{1}{n}\sin nx).
+	\end{equation}</div>
+<div class="math-block">\begin{equation}
+	a_n=\frac{1}{\pi}\Big[x\frac{\sin(nx)}{n}\Big]_{0}^{\pi}
+	-\frac{1}{\pi}\int_{0}^{\pi}\frac{\sin(nx)}{n}\,dx
+	=\frac{1}{\pi n^2}\big(\cos n\pi-1\big)
+	=\boxed{\frac{(-1)^n-1}{\pi n^2}}
+	=
+	\begin{cases}
+		0,&amp; n\ \text{even},\\[4pt]
+		-\dfrac{2}{\pi n^2},&amp; n\ \text{odd}.
+	\end{cases}
+	\end{equation}</div>
+<p><strong>Step 3: Sine coefficients (<span class="math-inline">\(n\ge1\)</span>).</strong></p>
+<div class="math-block">\begin{equation}
+	b_n=\frac{1}{\pi}\int_{0}^{\pi}\!x\sin(nx)\,dx
+	\quad(\text{IBP: }u=x,\ dv=\sin nx\,dx \Rightarrow v=-\tfrac{1}{n}\cos nx).
+	\end{equation}</div>
+<div class="math-block">\begin{equation}
+	b_n=\frac{1}{\pi}\Big[-x\frac{\cos(nx)}{n}\Big]_{0}^{\pi}
+	+\frac{1}{\pi}\int_{0}^{\pi}\frac{\cos(nx)}{n}\,dx
+	=-\frac{(-1)^n}{n}
+	=\boxed{\frac{(-1)^{n+1}}{n}}.
+	\end{equation}</div>
+<p><strong>Final series.</strong></p>
+<div class="math-block">\begin{equation}
+	\boxed{
+		f(x)=\frac{\pi}{4}
+		+\sum_{n=1}^{\infty}\left[
+		\frac{(-1)^n-1}{\pi n^2}\cos(nx)
+		+\frac{(-1)^{n+1}}{n}\sin(nx)
+		\right]
+	}
+	\end{equation}</div>
+<p>or, separating even/odd indices,</p>
+<div class="math-block">\begin{equation}
+	\boxed{
+		f(x)=\frac{\pi}{4}
+		-\frac{2}{\pi}\sum_{k=0}^{\infty}\frac{\cos\big((2k+1)x\big)}{(2k+1)^2}
+		+\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}\sin(nx).
+	}
+	\end{equation}</div>
+<p>At the jump points <span class="math-inline">\(x\equiv 0,\pi\ (\mathrm{mod}\ 2\pi)\)</span>, the series converges to the midpoint value <span class="math-inline">\(\tfrac{1}{2}(0+\pi)=\tfrac{\pi}{2}\)</span>.</p></section>
+<section class="callout example"><header>Example - Periodic half-ramp</header><p>Let</p>
+<div class="math-block">\begin{equation}
+	f(t)=
+	\begin{cases}
+		0, &amp; -\dfrac{T}{2}&lt; t &lt; 0,\\[4pt]
+		t, &amp; 0&lt; t &lt; \dfrac{T}{2},
+	\end{cases}
+	\qquad \text{extended periodically with period }T.
+	\end{equation}</div>
+<p>We find its real Fourier series</p>
+<div class="centered"><figure id="chapter-07-fig-5" class="figure"><img src="assets/img/Fig7_half_ramp.png" alt="The periodic half-ramp: f(t)=t on (0,T/2) and zero on (-T/2,0), extended with period T." loading="lazy" style="--figure-width: 88%;"><figcaption>Figure 7.5. The periodic half-ramp: <span class="math-inline">\(f(t)=t\)</span> on <span class="math-inline">\((0,T/2)\)</span> and zero on <span class="math-inline">\((-T/2,0)\)</span>, extended with period <span class="math-inline">\(T\)</span>.</figcaption></figure></div>
+<div class="math-block">\begin{equation}
+	f(t)=\dfrac{a_0}{2}+\sum_{n=1}^{\infty}\Big[ a_n\cos(\omega_n t)+ b_n\sin(\omega_n t)\Big],
+	\qquad
+	\omega_n=\dfrac{2\pi n}{T}.
+	\end{equation}</div>
+<p class="solution-head">Solution.</p>
+<div class="math-block">\begin{equation}
+	a_0=\frac{2}{T}\int_{-T/2}^{T/2}f(t)\,dt
+	=\frac{2}{T}\int_{0}^{T/2} t\,dt
+	=\frac{2}{T}\cdot\frac{(T/2)^2}{2}
+	=\boxed{\frac{T}{4}}.
+	\end{equation}</div>
+<p>Hence the DC term is <span class="math-inline">\(a_0/2=\boxed{T/8}\)</span>.</p>
+<p><strong>Step 2: Cosine coefficients.</strong></p>
+<div class="math-block">\begin{equation}
+	a_n=\frac{2}{T}\int_{-T/2}^{T/2} f(t)\cos(\omega_n t)\,dt
+	=\frac{2}{T}\int_{0}^{T/2} t\cos(\omega_n t)\,dt.
+	\end{equation}</div>
+<p>Integration by parts with <span class="math-inline">\(u=t\)</span>, <span class="math-inline">\(dv=\cos(\omega_n t)\,dt\)</span> gives</p>
+<div class="math-block">\begin{equation}
+	\int t\cos(\omega_n t)\,dt=\frac{t\sin(\omega_n t)}{\omega_n}
+	+\frac{\cos(\omega_n t)}{\omega_n^2}.
+	\end{equation}</div>
+<p>Therefore</p>
+<div class="math-block">\begin{equation}
+	\begin{aligned}
+		a_n&amp;=\frac{2}{T}\left[
+		\frac{t\sin(\omega_n t)}{\omega_n}
+		+\frac{\cos(\omega_n t)}{\omega_n^2}
+		\right]_{0}^{T/2}
+		=\frac{2}{T}\left[
+		\frac{(T/2)\sin(\omega_n T/2)}{\omega_n}
+		+\frac{\cos(\omega_n T/2)-1}{\omega_n^2}
+		\right].
+	\end{aligned}
+	\end{equation}</div>
+<p>Using <span class="math-inline">\(\sin(\omega_n T/2)=\sin(n\pi)=0\)</span> and <span class="math-inline">\(\cos(\omega_n T/2)=\cos(n\pi)=(-1)^n\)</span>,</p>
+<div class="math-block">\begin{equation}
+	\boxed{\,a_n=\frac{2}{T}\cdot\frac{(-1)^n-1}{\omega_n^2}\,}
+	=\boxed{\,\frac{T}{2\pi^2 n^2}\Big[(-1)^n-1\Big]\,}.
+	\end{equation}</div>
+<p>Hence</p>
+<div class="math-block">\begin{equation}
+	\boxed{\,a_n=0\ \text{for even }n,\qquad a_n=-\frac{T}{\pi^2 n^2}\ \text{for odd }n.\,}
+	\end{equation}</div>
+<p><strong>Step 3: Sine coefficients.</strong></p>
+<div class="math-block">\begin{equation}
+	b_n=\frac{2}{T}\int_{-T/2}^{T/2} f(t)\sin(\omega_n t)\,dt
+	=\frac{2}{T}\int_{0}^{T/2} t\sin(\omega_n t)\,dt.
+	\end{equation}</div>
+<p>With <span class="math-inline">\(u=t\)</span>, <span class="math-inline">\(dv=\sin(\omega_n t)\,dt\)</span>,</p>
+<div class="math-block">\begin{equation}
+	\int t\sin(\omega_n t)\,dt
+	=-\frac{t\cos(\omega_n t)}{\omega_n}
+	+\frac{\sin(\omega_n t)}{\omega_n^2}.
+	\end{equation}</div>
+<p>Thus</p>
+<div class="math-block">\begin{equation}
+	b_n=\frac{2}{T}\left[
+	-\frac{t\cos(\omega_n t)}{\omega_n}
+	+\frac{\sin(\omega_n t)}{\omega_n^2}
+	\right]_{0}^{T/2}
+	=-\frac{2}{T}\cdot\frac{(T/2)\cos(\omega_n T/2)}{\omega_n}
+	=\boxed{\,\frac{(-1)^{n+1}}{\omega_n}\,}
+	=\boxed{\,\frac{(-1)^{n+1}T}{2\pi n}\,}.
+	\end{equation}</div>
+<p><strong>Result (real Fourier series).</strong></p>
+<div class="math-block">\begin{equation}
+	\boxed{
+		f(t)=\frac{T}{8}
+		+\sum_{\substack{n=1\\ \text{odd }n}}^{\infty}\!\left(-\frac{T}{\pi^2 n^2}\right)\cos\!\left(\frac{2\pi n t}{T}\right)
+		+\sum_{n=1}^{\infty}\frac{(-1)^{n+1}T}{2\pi n}\,\sin\!\left(\frac{2\pi n t}{T}\right)
+	}.
+	\end{equation}</div>
+<ul><li><p><span class="math-inline">\(a_n\)</span> vanish for even <span class="math-inline">\(n\)</span>; cosine terms appear only for odd harmonics and decay as <span class="math-inline">\(1/n^2\)</span>.</p></li><li><p><span class="math-inline">\(b_n\)</span> decay as <span class="math-inline">\(1/n\)</span> with alternating sign, reflecting the sharp corner at <span class="math-inline">\(t=0\)</span> (Gibbs effect upon truncation).</p></li><li><p>The average (DC) level over a period is <span class="math-inline">\(T/8\)</span>.</p></li></ul></section>
+<section class="callout example"><header>Example - Complex Fourier Series of a Periodic Ramp Function <span class="math-inline">\(f(x)=x\)</span> (period <span class="math-inline">\(L\)</span>)</header><p>Consider a spatially periodic function</p>
+<div class="math-block">\begin{equation}
+	f(x) = x, \qquad -\frac{L}{2} &lt; x &lt; \frac{L}{2},
+	\end{equation}</div>
+<p>which repeats every interval of length <span class="math-inline">\(L\)</span>. This represents a periodic <strong>ramp waveform</strong>, analogous to a sawtooth pattern in signal processing.</p>
+<div class="centered"><figure id="chapter-07-fig-6" class="figure"><img src="assets/img/Fig7_sawtooth_ramp.png" alt="Periodic ramp function f(x)=x on [-L/2,L/2], repeated with period L." loading="lazy" style="--figure-width: 62%;"><figcaption>Figure 7.6. Periodic ramp function <span class="math-inline">\(f(x)=x\)</span> on <span class="math-inline">\([-L/2,L/2]\)</span>, repeated with period <span class="math-inline">\(L\)</span>.</figcaption></figure></div>
+<p class="solution-head">Solution.</p>
+<p>For a periodic function <span class="math-inline">\(f(x)\)</span> of period <span class="math-inline">\(L\)</span>, the complex Fourier coefficients are</p>
+<div class="math-block">\begin{equation}
+	c_n = \frac{1}{L}\int_{-L/2}^{L/2} f(x)\, e^{-i\,k_n x}\,dx,
+	\qquad \text{where } k_n = \frac{2\pi n}{L}.
+	\end{equation}</div>
+<p>Substitute <span class="math-inline">\(f(x)=x\)</span>:</p>
+<div class="math-block">\begin{equation}
+	\boxed{
+		c_n = \frac{1}{L}\int_{-L/2}^{L/2} x\, e^{-i k_n x}\,dx.
+	}
+	\end{equation}</div>
+<p><strong>Step 2. Integration by parts.</strong></p>
+<p>Let</p>
+<div class="math-block">\begin{equation}
+	u = x, \quad dv = e^{-i k_n x}\,dx
+	\quad\Rightarrow\quad
+	du = dx, \quad v = \frac{e^{-i k_n x}}{-i k_n} = \frac{i}{k_n} e^{-i k_n x}.
+	\end{equation}</div>
+<p>Then</p>
+<div class="math-block">\begin{equation}
+	\begin{aligned}
+		c_n &amp;= \frac{1}{L}\Big[u v\Big]_{-L/2}^{L/2} - \frac{1}{L}\int_{-L/2}^{L/2} v\,du \\[4pt]
+		&amp;= \frac{i}{L k_n}\Big[x\,e^{-i k_n x}\Big]_{-L/2}^{L/2}
+		- \frac{i}{L k_n}\int_{-L/2}^{L/2} e^{-i k_n x}\,dx.
+	\end{aligned}
+	\end{equation}</div>
+<p><strong>Step 3. Simplify the second term.</strong></p>
+<p>The exponential integral gives</p>
+<div class="math-block">\begin{equation}
+	\int_{-L/2}^{L/2} e^{-i k_n x}\,dx
+	= \frac{2\sin(k_n L/2)}{k_n}
+	= \frac{2\sin(\pi n)}{k_n} = 0,
+	\end{equation}</div>
+<p>since <span class="math-inline">\(\sin(\pi n)=0\)</span> for all integer <span class="math-inline">\(n\)</span>. Hence, only the boundary term contributes.</p>
+<p><strong>Step 4. Evaluate the boundary term.</strong></p>
+<div class="math-block">\begin{equation}
+	\begin{aligned}
+		c_n
+		&amp;= \frac{i}{L k_n}
+		\Big[\frac{L}{2} e^{-i k_n L/2} - \left(-\frac{L}{2}\right)e^{i k_n L/2}\Big] \\[4pt]
+		&amp;= \frac{i}{2 k_n}\Big(e^{-i\pi n} + e^{i\pi n}\Big)
+		= \frac{i}{k_n}\cos(\pi n).
+	\end{aligned}
+	\end{equation}</div>
+<p>Using <span class="math-inline">\(\cos(\pi n)=(-1)^n\)</span>, we have</p>
+<div class="math-block">\begin{equation}
+	\boxed{
+		c_n = \frac{i}{k_n}(-1)^n = \frac{iL}{2\pi n}(-1)^n,
+		\qquad n\neq 0.
+	}
+	\end{equation}</div>
+<p><strong>Step 5. DC (zero-frequency) coefficient.</strong></p>
+<div class="math-block">\begin{equation}
+	c_0 = \frac{1}{L}\int_{-L/2}^{L/2} x\,dx = 0,
+	\end{equation}</div>
+<p>since <span class="math-inline">\(f(x)=x\)</span> is an odd function and its average over one period is zero.</p>
+<p><strong>Step 6. Complete complex Fourier series.</strong></p>
+<div class="math-block">\begin{equation}
+	\boxed{
+		f(x) = \sum_{\substack{n=-\infty \\ n\neq 0}}^{\infty}
+		\frac{iL}{2\pi n}(-1)^n\, e^{i\,k_n x},
+		\qquad k_n = \frac{2\pi n}{L}.
+	}
+	\end{equation}</div>
+<p><strong>Interpretation.</strong></p>
+<ul><li><p>The amplitude of each harmonic decreases as <span class="math-inline">\(1/n\)</span>, meaning higher-frequency components contribute less to the total waveform.</p></li><li><p>Because <span class="math-inline">\(f(x)\)</span> is an <strong>odd</strong> function, the coefficients <span class="math-inline">\(c_n\)</span> are purely imaginary (<span class="math-inline">\(c_{-n}=c_n^*\)</span>), corresponding to a sine-only spectrum.</p></li><li><p>Truncating the series to a few terms yields a smooth approximation of the ramp—analogous to applying a <strong>low-pass filter</strong> that removes sharp discontinuities.</p></li></ul></section>
+<h2 id="sec-7-fourier-transform"><span class="sec-number">7.3</span>Fourier Transform</h2>
+<p>The Fourier transform can be viewed as the limiting case of the complex Fourier series when the period <span class="math-inline">\(L \to \infty\)</span>. In this limit, the function <span class="math-inline">\( f(x) \)</span> becomes <strong>nonperiodic</strong>, and the discrete spectrum of wave numbers becomes continuous.</p>
+<h3 id="sec-7-transition-from-discrete-to-continuous-spectrum">Transition from Discrete to Continuous Spectrum</h3>
+<p>Consider a periodic function <span class="math-inline">\(f(x)\)</span> with period <span class="math-inline">\(L\)</span>:</p>
+<div class="math-block">\begin{equation}
+f(x) = \sum_{n=-\infty}^{\infty} c_n\, e^{i k_n x},
+\qquad
+k_n = \frac{2\pi n}{L}.
+\end{equation}</div>
+<p>When <span class="math-inline">\(L \to \infty\)</span>, the spacing between successive wave numbers becomes infinitesimal:</p>
+<div class="math-block">\begin{equation}
+\Delta k = k_{n+1} - k_n = \frac{2\pi}{L} \;\;\Rightarrow\;\; \Delta k \to 0.
+\end{equation}</div>
+<p>The discrete index <span class="math-inline">\(n\)</span> is replaced by a continuous variable <span class="math-inline">\(k\)</span>:</p>
+<div class="math-block">\begin{equation}
+\sum_{n=-\infty}^{\infty} \longrightarrow \frac{L}{2\pi}\int_{-\infty}^{\infty} dk.
+\end{equation}</div>
+<section class="callout definition"><header>Definition - Fourier Coefficient in Continuous Limit</header><p>Let</p>
+<div class="math-block">\begin{equation}
+	\boxed{
+		g(k) = \frac{L}{2\pi}\, c_n
+		\qquad \text{with} \quad k = k_n.
+	}
+	\end{equation}</div>
+<p>Then <span class="math-inline">\(g(k)\)</span> becomes a continuous function that represents the <strong>spectral amplitude density</strong> of <span class="math-inline">\(f(x)\)</span>.</p></section>
+<p>Substituting into the series and taking the limit <span class="math-inline">\(L \to \infty\)</span>:</p>
+<div class="math-block">\begin{equation}
+\begin{aligned}
+	f(x)
+	&amp;= \sum_{n=-\infty}^{\infty} c_n e^{i k_n x}
+	= \frac{L}{2\pi} \sum_{n=-\infty}^{\infty} g(k_n) e^{i k_n x} \Delta k
+	\;\;\xrightarrow[L\to\infty]{}\;\;
+	\int_{-\infty}^{\infty} g(k)\, e^{i k x}\, dk.
+\end{aligned}
+\end{equation}</div>
+<section class="callout definition"><header>Definition - Fourier Transform (F.T.) and Inverse Transform</header><div class="math-block">\begin{equation}
+	\boxed{
+		\begin{aligned}
+			f(x) &amp;= \int_{-\infty}^{\infty} g(k)\, e^{i k x}\, dk,
+			&amp;&amp; \text{(Inverse Fourier Transform)}\\[6pt]
+			g(k) &amp;= \frac{1}{2\pi}\int_{-\infty}^{\infty} f(x)\, e^{-i k x}\, dx,
+			&amp;&amp; \text{(Fourier Transform).}
+		\end{aligned}
+	}
+	\end{equation}</div></section>
+<section class="callout remark"><header>Remark</header><ul><li><p><span class="math-inline">\(f(x)\)</span>: function in the <strong>spatial (time)</strong> domain.</p></li><li><p><span class="math-inline">\(g(k)\)</span>: its representation in the <strong>frequency (wave number)</strong> domain.</p></li><li><p>The transform pair is symmetric up to the normalization factor <span class="math-inline">\(1/2\pi\)</span>.</p></li></ul></section>
+<section class="callout definition"><header>Definition - Fourier Transform (F.T.) and Inverse Transform in the Time Domain</header><div class="math-block">\begin{equation}
+	\boxed{
+		\begin{aligned}
+			f(t) &amp;= \frac{1}{2\pi}\int_{-\infty}^{\infty} g(\omega)\, e^{i \omega t}\, d\omega,
+			&amp;&amp; \text{(Inverse Fourier Transform)} \\[6pt]
+			g(\omega) &amp;= \int_{-\infty}^{\infty} f(t)\, e^{-i \omega t}\, dt,
+			&amp;&amp; \text{(Fourier Transform).}
+		\end{aligned}
+	}
+	\end{equation}</div></section>
+<section class="callout example"><header>Example - Rectangular pulse of width <span class="math-inline">\(2a\)</span></header><p>Let</p>
+<div class="math-block">\begin{equation}
+	f(x)=
+	\begin{cases}
+		1, &amp; -a&lt;x&lt;a,\\[2pt]
+		0, &amp; \text{otherwise},
+	\end{cases}
+	\qquad a&gt;0.
+	\end{equation}</div>
+<p>This is a nonperiodic rectangular pulse centered at the origin with total width <span class="math-inline">\(2a\)</span> and unit height.</p>
+<div class="centered"><figure id="chapter-07-fig-7" class="figure"><img src="assets/img/Fig7_rectangular_pulse.png" alt="The rectangular pulse of total width 2a and unit height, centred at the origin." loading="lazy" style="--figure-width: 62%;"><figcaption>Figure 7.7. The rectangular pulse of total width <span class="math-inline">\(2a\)</span> and unit height, centred at the origin.</figcaption></figure></div>
+<p>We use the transform pair</p>
+<div class="math-block">\begin{equation}
+	g(k)=\frac{1}{2\pi}\!\int_{-\infty}^{\infty} f(x)\,e^{-ikx}\,dx,
+	\qquad
+	f(x)=\int_{-\infty}^{\infty} g(k)\,e^{ikx}\,dk.
+	\end{equation}</div>
+<p class="solution-head">Solution.</p>
+<div class="math-block">\begin{equation}
+	g(k)=\frac{1}{2\pi}\int_{-a}^{a} e^{-ikx}\,dx.
+	\end{equation}</div>
+<p><strong>Step 2. Evaluate the integral.</strong></p>
+<div class="math-block">\begin{equation}
+	\int e^{-ikx}\,dx = \frac{e^{-ikx}}{-ik}
+	\quad\Rightarrow\quad
+	\int_{-a}^{a} e^{-ikx}\,dx
+	= \frac{e^{-ika}-e^{ika}}{-ik}
+	= \frac{2\sin(ka)}{k}.
+	\end{equation}</div>
+<p><strong>Step 3. Simplify and express the result.</strong></p>
+<div class="math-block">\begin{equation}
+	\boxed{
+		g(k)
+		= \frac{1}{2\pi}\cdot\frac{2\sin(ka)}{k}
+		= \frac{1}{\pi}\,\frac{\sin(ka)}{k}
+		= \frac{a}{\pi}\,\mathrm{sinc}(ak),
+	}
+	\qquad
+	\mathrm{sinc}(u)=\frac{\sin u}{u}.
+	\end{equation}</div>
+<p>At <span class="math-inline">\(k=0\)</span>, we take the limit <span class="math-inline">\(\displaystyle g(0)=\lim_{k\to0}\frac{a}{\pi}\,\mathrm{sinc}(ak)=\frac{a}{\pi}.\)</span></p>
+<p><strong>Key features.</strong></p>
+<ul><li><p><span class="math-inline">\(g(k)\)</span> is real, even, and has zeros at <span class="math-inline">\(k=\pm n\pi/a\)</span> for <span class="math-inline">\(n=1,2,3,\ldots\)</span>.</p></li><li><p>The main lobe width <span class="math-inline">\(\Delta k \sim 2\pi/a\)</span> — increasing <span class="math-inline">\(a\)</span> (wider pulse) narrows the spectrum.</p></li><li><p>The transform pair summarizes the <strong>width–bandwidth tradeoff:</strong> a narrow function in <span class="math-inline">\(k\)</span>-space corresponds to a wide function in <span class="math-inline">\(x\)</span>-space and vice versa.</p></li></ul>
+<div class="centered"><figure id="chapter-07-fig-8" class="figure"><img src="assets/img/Fig7_sinc_spectrum.png" alt="Rectangular pulse in x-space and its sinc-shaped spectrum in k-space. A wider pulse (larger a) gives a narrower main lobe in k." loading="lazy" style="--figure-width: 62%;"><figcaption>Figure 7.8. Rectangular pulse in <span class="math-inline">\(x\)</span>-space and its sinc-shaped spectrum in <span class="math-inline">\(k\)</span>-space. A wider pulse (larger <span class="math-inline">\(a\)</span>) gives a narrower main lobe in <span class="math-inline">\(k\)</span>.</figcaption></figure></div></section>
+<section class="callout example"><header>Example - Fourier Transform of <span class="math-inline">\( f(t) = e^{-a|t|} \)</span></header><p>Let</p>
+<div class="math-block">\begin{equation}
+	f(t) = e^{-a|t|}, \qquad a &gt; 0.
+	\end{equation}</div>
+<p>This function decays exponentially on both sides of <span class="math-inline">\(t=0\)</span>:</p>
+<div class="centered"><figure id="chapter-07-fig-9" class="figure"><img src="assets/img/Fig7_exponential_decay.png" alt="The two-sided exponential f(t)=e^-a|t|, which decays on both sides of t=0." loading="lazy" style="--figure-width: 62%;"><figcaption>Figure 7.9. The two-sided exponential <span class="math-inline">\(f(t)=e^{-a|t|}\)</span>, which decays on both sides of <span class="math-inline">\(t=0\)</span>.</figcaption></figure></div>
+<p>We use the Fourier transform convention:</p>
+<div class="math-block">\begin{equation}
+	f(t) = \int_{-\infty}^{\infty} g(\omega)e^{i\omega t}\,d\omega,
+	\qquad
+	g(\omega) = \frac{1}{2\pi}\int_{-\infty}^{\infty} f(t)e^{-i\omega t}\,dt.
+	\end{equation}</div>
+<p class="solution-head">Solution.</p>
+<div class="math-block">\begin{equation}
+	g(\omega)
+	= \frac{1}{2\pi}\!\left[
+	\int_{-\infty}^{0} e^{at} e^{-i\omega t}\,dt
+	+ \int_{0}^{\infty} e^{-at} e^{-i\omega t}\,dt
+	\right].
+	\end{equation}</div>
+<p><strong>Step 2. Evaluate each integral.</strong></p>
+<div class="math-block">\begin{equation}
+	\int_{0}^{\infty} e^{-at} e^{-i\omega t}\,dt
+	= \frac{1}{a+i\omega},
+	\qquad
+	\int_{-\infty}^{0} e^{at} e^{-i\omega t}\,dt
+	= \frac{1}{a-i\omega}.
+	\end{equation}</div>
+<p><strong>Step 3. Combine the results:</strong></p>
+<div class="math-block">\begin{equation}
+	g(\omega)
+	= \frac{1}{2\pi}\left(\frac{1}{a+i\omega} + \frac{1}{a-i\omega}\right)
+	= \frac{1}{\pi}\,\frac{a}{a^2+\omega^2}.
+	\end{equation}</div>
+<p>Thus, the Fourier transform of <span class="math-inline">\( e^{-a|t|} \)</span> is</p>
+<div class="math-block">\begin{equation}
+	\boxed{
+		g(\omega) = \frac{1}{\pi}\,\frac{a}{a^2+\omega^2}
+	}
+	\end{equation}</div>
+<p>which is known as the <strong>Lorentzian function</strong>.</p>
+<p><strong>Shape of <span class="math-inline">\( g(\omega) \)</span>:</strong></p>
+<div class="centered"><figure id="chapter-07-fig-10" class="figure"><img src="assets/img/Fig7_lorentzian_spectrum.png" alt="The Lorentzian spectrum g() a/(a^2+^2), the Fourier transform of the two-sided exponential." loading="lazy" style="--figure-width: 62%;"><figcaption>Figure 7.10. The Lorentzian spectrum <span class="math-inline">\(g(\omega)\propto a/(a^{2}+\omega^{2})\)</span>, the Fourier transform of the two-sided exponential.</figcaption></figure></div>
+<p>As <span class="math-inline">\(a\)</span> increases, <span class="math-inline">\(g(\omega)\)</span> becomes broader and shorter; as <span class="math-inline">\(a\)</span> decreases, it becomes narrower and taller.</p></section>
+<h2 id="sec-7-where-fourier-analysis-is-used"><span class="sec-number">7.4</span>Where Fourier Analysis Is Used</h2>
+<p>The single idea of this chapter — that a function can be rebuilt from sines and cosines, or from complex exponentials — is one of the most widely used in all of physics and engineering. The reason is that the basis functions <span class="math-inline">\(e^{ikx}\)</span> are the natural language of anything that oscillates, and of the linear equations that govern waves, heat and quantum systems.</p>
+<ul><li><p><strong>Solving partial differential equations.</strong> Fourier's original motive was heat flow. Because each mode <span class="math-inline">\(e^{ikx}\)</span> evolves independently under the heat, wave and Schrödinger equations, expanding the initial state in modes turns a partial differential equation into a set of ordinary ones. This is the method of Chapter 10.</p></li><li><p><strong>Signal processing.</strong> A signal's Fourier coefficients are its frequency content. Filtering, noise removal and compression are all operations on that spectrum, as the low-pass filter of this chapter showed.</p></li><li><p><strong>Spectroscopy and optics.</strong> The rectangular-pulse and Lorentzian transforms computed above are exactly the line shapes measured in spectroscopy: the width of a spectral line and the lifetime of the state that produced it are a Fourier transform pair.</p></li><li><p><strong>Quantum mechanics.</strong> Position and momentum wavefunctions are Fourier transforms of one another. The width–bandwidth tradeoff seen in the pulse example — narrow in <span class="math-inline">\(x\)</span> means wide in <span class="math-inline">\(k\)</span> — is, with <span class="math-inline">\(p=\hbar k\)</span>, the Heisenberg uncertainty principle.</p></li><li><p><strong>Normal modes.</strong> The harmonics of a Fourier series are the standing waves of a vibrating string or air column; their frequencies <span class="math-inline">\(\nu_n = n/L\)</span> are why instruments have a well-defined pitch.</p></li></ul>
+<section class="callout remark"><header>Remark</header><p>The width–bandwidth tradeoff deserves a second mention because it recurs under so many names. A pulse of duration <span class="math-inline">\(\Delta t\)</span> has a spectrum of width <span class="math-inline">\(\Delta\omega \sim 1/\Delta t\)</span>. In signal processing this limits how sharply a filter can act; in spectroscopy it is the natural linewidth; in quantum mechanics it is <span class="math-inline">\(\Delta x\,\Delta p \gtrsim \hbar\)</span>. They are all one statement about Fourier pairs: you cannot make a function narrow in both domains at once.</p></section>
+<h2 id="sec-7-summary-table">Summary Table</h2>
+<div class="table-wrap"><table><tr><td><strong>Object</strong></td><td><strong>Formula</strong></td><td><strong>Notes</strong></td></tr><tr><td>Complex series</td><td><span class="math-inline">\(f(x) = \sum_{n=-\infty}^{\infty} c_n e^{i k_n x}\)</span></td><td><span class="math-inline">\(k_n = 2\pi n/L\)</span>; the compact form.</td></tr><tr><td>Complex coefficient</td><td><span class="math-inline">\(c_n = \frac{1}{L}\int_{-L/2}^{L/2} f\,e^{-i k_n x}\,dx\)</span></td><td>For real <span class="math-inline">\(f\)</span>, <span class="math-inline">\(c_{-n}=c_n^*\)</span>.</td></tr><tr><td>Real series</td><td><span class="math-inline">\(f(x) = \frac{a_0}{2} + \sum_{n\ge1}\big[a_n\cos k_n x + b_n\sin k_n x\big]\)</span></td><td><span class="math-inline">\(\tfrac{a_0}{2}\)</span> is the average of <span class="math-inline">\(f\)</span>.</td></tr><tr><td>Real coefficients</td><td><span class="math-inline">\(a_n,b_n = \frac{2}{L}\int_{-L/2}^{L/2} f\,\{\cos,\sin\}(k_n x)\,dx\)</span></td><td>The <span class="math-inline">\(\tfrac{2}{L}\)</span> gives <span class="math-inline">\(a_0\)</span> at <span class="math-inline">\(n=0\)</span>.</td></tr><tr><td>Even / odd</td><td>even <span class="math-inline">\(\Rightarrow b_n=0\)</span>;  odd <span class="math-inline">\(\Rightarrow a_n=0\)</span></td><td>Halves the work when <span class="math-inline">\(f\)</span> has symmetry.</td></tr><tr><td>Dirichlet / jumps</td><td>series <span class="math-inline">\(\to \tfrac12[f(x^+)+f(x^-)]\)</span></td><td>Converges to the midpoint at a jump.</td></tr><tr><td>Fourier transform</td><td><span class="math-inline">\(g(k) = \frac{1}{2\pi}\int_{-\infty}^{\infty} f\,e^{-ikx}\,dx\)</span></td><td>The <span class="math-inline">\(L\to\infty\)</span> limit of the series.</td></tr><tr><td>Inverse transform</td><td><span class="math-inline">\(f(x) = \int_{-\infty}^{\infty} g(k)\,e^{ikx}\,dk\)</span></td><td>Rebuilds <span class="math-inline">\(f\)</span> from its spectrum.</td></tr><tr><td>Width–bandwidth</td><td><span class="math-inline">\(\Delta x\,\Delta k \gtrsim 1\)</span></td><td>Narrow in <span class="math-inline">\(x\)</span> <span class="math-inline">\(\Leftrightarrow\)</span> wide in <span class="math-inline">\(k\)</span>.</td></tr></table></div>
+<section class="callout remark"><header>Remark - A caution on conventions</header><p>Fourier transforms are defined with several different placements of the <span class="math-inline">\(2\pi\)</span>: all on the inverse transform (as here), split symmetrically as <span class="math-inline">\(1/\sqrt{2\pi}\)</span> on each, or attached to the frequency variable <span class="math-inline">\(\nu = k/2\pi\)</span> instead of <span class="math-inline">\(k\)</span>. Every choice is self-consistent, but formulas from two sources cannot be mixed without checking. Whenever you quote a transform, note which convention it assumes.</p></section>
+<h2 id="sec-7-for-the-interested-reader">For the Interested Reader</h2>
+<p>Fourier analysis is a subject where a single good picture replaces pages of algebra: once you see a Fourier series as a sum of rotating vectors, the coefficient formulas stop looking arbitrary. The videos below are the best route to that picture. Everything listed is free.</p>
+<h3 id="sec-7-the-idea-seen">The idea, seen</h3>
+<p>3Blue1Brown builds the Fourier series and then the transform from the geometry of rotating vectors, motivated — as Fourier himself was — by heat flow:</p>
+<section class="callout context"><header>Video</header><p><strong>But what is a Fourier series? From heat flow to drawing with circles — 3Blue1Brown</strong></p>
+<a class="video-preview" href="https://www.youtube.com/watch?v=r6sGWTCMz2k" target="_blank" rel="noopener" aria-label="Watch But what is a Fourier series? From heat flow to drawing with circles — 3Blue1Brown on YouTube"><img src="https://img.youtube.com/vi/r6sGWTCMz2k/hqdefault.jpg" alt="Video thumbnail for But what is a Fourier series? From heat flow to drawing with circles — 3Blue1Brown" loading="lazy"><span class="video-preview-play" aria-hidden="true"></span><span class="video-preview-label">Watch on YouTube</span></a>
+<p><a href="https://www.youtube.com/watch?v=r6sGWTCMz2k" target="_blank" rel="noopener">Open video on YouTube</a></p></section>
+<section class="callout context"><header>Video</header><p><strong>But what is the Fourier transform? A visual introduction — 3Blue1Brown</strong></p>
+<a class="video-preview" href="https://www.youtube.com/watch?v=spUNpyF58BY" target="_blank" rel="noopener" aria-label="Watch But what is the Fourier transform? A visual introduction — 3Blue1Brown on YouTube"><img src="https://img.youtube.com/vi/spUNpyF58BY/hqdefault.jpg" alt="Video thumbnail for But what is the Fourier transform? A visual introduction — 3Blue1Brown" loading="lazy"><span class="video-preview-play" aria-hidden="true"></span><span class="video-preview-label">Watch on YouTube</span></a>
+<p><a href="https://www.youtube.com/watch?v=spUNpyF58BY" target="_blank" rel="noopener">Open video on YouTube</a></p></section>
+<p>A complementary take, arriving at the transform from the physics rather than the geometry:</p>
+<section class="callout context"><header>Video</header><p><strong>To Understand the Fourier Transform, Start From Quantum Mechanics — Physics with Elliot</strong></p>
+<a class="video-preview" href="https://www.youtube.com/watch?v=W8QZ-yxebFA" target="_blank" rel="noopener" aria-label="Watch To Understand the Fourier Transform, Start From Quantum Mechanics — Physics with Elliot on YouTube"><img src="https://img.youtube.com/vi/W8QZ-yxebFA/hqdefault.jpg" alt="Video thumbnail for To Understand the Fourier Transform, Start From Quantum Mechanics — Physics with Elliot" loading="lazy"><span class="video-preview-play" aria-hidden="true"></span><span class="video-preview-label">Watch on YouTube</span></a>
+<p><a href="https://www.youtube.com/watch?v=W8QZ-yxebFA" target="_blank" rel="noopener">Open video on YouTube</a></p></section>
+<h3 id="sec-7-worked-technique-and-practice">Worked technique and practice</h3>
+<ul><li><p><strong>Paul's Online Math Notes.</strong> <a href="https://tutorial.math.lamar.edu/classes/de/fourierseries.aspx">Fourier Series</a> and <a href="https://tutorial.math.lamar.edu/Classes/DE/FourierSineSeries.aspx">Fourier Sine Series</a> — careful worked examples of exactly the coefficient integrals in this chapter, including the even/odd shortcuts.</p></li></ul>
+<section class="callout remark"><header>Remark</header><p>If only one of these fits your time, watch the two 3Blue1Brown videos before rereading the chapter. Most of what makes Fourier analysis feel abstract — why complex exponentials, why the integral extracts a coefficient, what a negative frequency means — becomes obvious once the series is seen as vectors adding tip to tail.</p></section>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <a href="../chapter-06/index.html">Previous: Vector Analysis</a>
+      <a href="../../toc.html">Contents</a>
+      <a href="../chapter-08/index.html">Next: Ordinary Differential Equations</a>
+    </nav>
+  </article>
+</main>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p>&copy; 2026 Erfan Saydanzad. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

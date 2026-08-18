@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home | Mathematical Methods in the Physical Sciences</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+  <link rel="preload" href="assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/site.css?v=4c167578">
+  <script>
+    window.MathJax = {
+      // tagformat is an optional TeX extension, not part of the combined
+      // tex-chtml build. Without these two lines the tagformat block below is
+      // read and silently ignored, and every equation numbers from 1 with no
+      // chapter in front of it.
+      loader: { load: ['[tex]/tagformat'] },
+      tex: {
+        packages: { '[+]': ['tagformat'] },
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        processEnvironments: true,
+        tags: 'ams',
+        // The PDF numbers equations within the chapter (\numberwithin
+        // {equation}{chapter}), so "1.8" is the eighth equation of
+        // chapter 1. MathJax counts from 1 on every page, which would have
+        // shown that same equation as "8". Prefixing the chapter number
+        // keeps a reference valid against either version.
+        tagformat: {
+          number: function (n) { return ''  + n; }
+        },
+        macros: {
+          pdv: ['{\\frac{\\partial #1}{\\partial #2}}', 2],
+          dv: ['{\\frac{d #1}{d #2}}', 2],
+          abs: ['{\\left|#1\\right|}', 1],
+          norm: ['{\\left\\|#1\\right\\|}', 1],
+          curl: '{\\vec{\\nabla}\\times}',
+          div: '{\\vec{\\nabla}\\cdot}',
+          grad: '{\\vec{\\nabla}}',
+          sech: '{\\operatorname{sech}}',
+          csch: '{\\operatorname{csch}}',
+          coth: '{\\operatorname{coth}}',
+          circnum: ['{\\boxed{#1}}', 1],
+          vb: ['{\\mathbf{#1}}', 1],
+          eval: ['{\\left.#1\\right|}', 1],
+          dd: '{\\,d}'
+        }
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <script defer src="assets/js/main.js?v=4c167578"></script>
+
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M9 6.5V25.5M9 6.5H24M9 25.5H24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 16Q10.5 9.5 15.5 16T25.5 16" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/></svg>
+    <span>Mathematical Methods in the Physical Sciences</span>
+  </a>
+  <nav class="top-nav" aria-label="Primary">
+    <a href="index.html">Home</a>
+    <a href="toc.html">Contents</a>
+    <a href="projects.html">Projects</a>
+  </nav>
+</header>
+<main class="home" id="main">
+  <section class="home-hero">
+    <p>PHYS 3260 Lecture Notes</p>
+    <h1>Mathematical Methods in the Physical Sciences</h1>
+    <div class="home-meta">Erfan Saydanzad · Kennesaw State University</div>
+  </section>
+  <section class="home-grid" aria-label="Chapters">
+    <a class="chapter-card" href="chapters/chapter-00/index.html">
+  <span>Chapter 0</span>
+  <strong>Math Review for Calculus-Based Physics</strong>
+</a>
+<a class="chapter-card" href="chapters/chapter-01/index.html">
+  <span>Chapter 1</span>
+  <strong>Infinite Series and Power Series</strong>
+</a>
+<a class="chapter-card" href="chapters/chapter-02/index.html">
+  <span>Chapter 2</span>
+  <strong>Complex Numbers</strong>
+</a>
+<a class="chapter-card" href="chapters/chapter-03/index.html">
+  <span>Chapter 3</span>
+  <strong>Linear Algebra</strong>
+</a>
+<a class="chapter-card" href="chapters/chapter-04/index.html">
+  <span>Chapter 4</span>
+  <strong>Partial Differentiation</strong>
+</a>
+<a class="chapter-card" href="chapters/chapter-05/index.html">
+  <span>Chapter 5</span>
+  <strong>Multiple Integrals; Applications of Integration</strong>
+</a>
+<a class="chapter-card" href="chapters/chapter-06/index.html">
+  <span>Chapter 6</span>
+  <strong>Vector Analysis</strong>
+</a>
+<a class="chapter-card" href="chapters/chapter-07/index.html">
+  <span>Chapter 7</span>
+  <strong>Fourier Series and Transforms</strong>
+</a>
+<a class="chapter-card" href="chapters/chapter-08/index.html">
+  <span>Chapter 8</span>
+  <strong>Ordinary Differential Equations</strong>
+</a>
+<a class="chapter-card" href="chapters/chapter-09/index.html">
+  <span>Chapter 9</span>
+  <strong>Series Solutions of Ordinary Differential Equations (Chapter 12)</strong>
+</a>
+<a class="chapter-card" href="chapters/chapter-10/index.html">
+  <span>Chapter 10</span>
+  <strong>Partial Differential Equations (Chapter 13)</strong>
+</a>
+  </section>
+  <section class="overview content">
+    <h2 id="why-these-methods-matter">Why These Methods Matter</h2>
+<p>Mathematics is the language of physics. From Newton's laws to Schrödinger's equation, every major physical theory is stated mathematically, and a physical idea is only as sharp as the mathematics used to express it. The methods in these notes are not a detour on the way to physics; they are how physics is done.</p>
+<p>Rather than meet those methods one at a time and wonder where each is going, it helps to see the destination first. The three areas below are ones you already know something about. Each raises a mathematical question, and each question is answered by a chapter of these notes. The same handful of tools keeps reappearing: series to approximate, linear algebra to handle many coupled quantities at once, and differential equations to describe change.</p>
+<section class="callout context"><header>1. Classical Mechanics</header><p>Mechanics begins with Newton's second law, which is a second-order ordinary differential equation:</p>
+<div class="math-block">\[
+	\vec{F}_{\text{net}} = m \vec{a} = m \frac{d\vec{v}}{dt} = m \frac{d^2 \vec{r}}{dt^2},
+	\qquad
+	\vec{v} = \frac{d\vec{r}}{dt}.
+	\]</div>
+<p>Solving it for a given force is the central problem of the subject.</p>
+<figure class="figure figure-single"><img src="assets/img/Fig1.png" alt="Fig1" loading="lazy"></figure>
+<p><strong>Where this is developed:</strong></p>
+<ul><li><p><strong>Ordinary Differential Equations (Ch. 8):</strong> first- and second-order equations</p></li><li><p><strong>Linear Algebra (Ch. 3):</strong> systems of equations, eigenvalue problems, normal modes</p></li><li><p><strong>Infinite Series and Power Series (Ch. 1):</strong> approximating motion when no exact solution exists</p></li></ul>
+<p><strong>Applications:</strong> oscillators, planetary motion, variational principles</p></section>
+<section class="callout context"><header>2. Electromagnetism</header><p>Maxwell's equations describe how electric and magnetic fields behave in materials:</p>
+<div class="math-block">\[
+	\begin{aligned}
+		&amp;\vec{\nabla}\cdot \vec{D} = \rho_f, \quad &amp;&amp;\vec{\nabla}\cdot \vec{B} = 0 \\
+		&amp;\vec{\nabla}\times \vec{E} = -\frac{\partial \vec{B}}{\partial t}, \quad &amp;&amp;\vec{\nabla}\times \vec{H} = \vec{J}_f + \frac{\partial \vec{D}}{\partial t}
+	\end{aligned}
+	\]</div>
+<p>They are written in the language of vector calculus, so learning that language is a prerequisite for reading them at all.</p>
+<figure class="figure figure-single"><img src="assets/img/Fig2.png" alt="Fig2" loading="lazy"></figure>
+<p><strong>Where this is developed:</strong></p>
+<ul><li><p><strong>Vector Analysis (Ch. 6):</strong> gradient, divergence, curl; Gauss's and Stokes's theorems</p></li><li><p><strong>Partial Differential Equations (Ch. 10):</strong> Laplace's, Poisson's, and wave equations</p></li><li><p><strong>Fourier Series and Transforms (Ch. 7):</strong> solving boundary value problems for fields</p></li><li><p><strong>Multiple Integrals (Ch. 5):</strong> charge and current distributions in space</p></li></ul>
+<p><strong>Applications:</strong> fields in dielectrics, waveguides, AC circuits</p></section>
+<section class="callout context"><header>3. Quantum Mechanics</header><p>Quantum mechanics describes a particle by a wavefunction, which evolves according to the Schrödinger equation:</p>
+<div class="math-block">\[
+	i\hbar \frac{\partial \psi}{\partial t} = -\frac{\hbar^2}{2m} \nabla^2 \psi + V \psi.
+	\]</div>
+<p>Note that the equation is complex, and that it is again a partial differential equation: two of the threads running through these notes meet here.</p>
+<figure class="figure figure-single"><img src="assets/img/Fig3.png" alt="Fig3" loading="lazy"></figure>
+<p><strong>Where this is developed:</strong></p>
+<ul><li><p><strong>Complex Numbers (Ch. 2):</strong> Euler's formula, complex amplitudes</p></li><li><p><strong>Linear Algebra (Ch. 3):</strong> operators, eigenvalues, Hilbert space</p></li><li><p><strong>Fourier Series and Transforms (Ch. 7):</strong> analysing wavefunctions in different bases</p></li><li><p><strong>Partial Differential Equations (Ch. 10):</strong> time-dependent and time-independent Schrödinger equations</p></li><li><p><strong>Series Solutions (Ch. 9):</strong> special functions such as Legendre and Bessel</p></li></ul>
+<p><strong>Applications:</strong> atomic structure, tunnelling, the harmonic oscillator</p></section>
+<p> Read across the three boxes and the pattern is hard to miss: the same few chapters keep being called on. That is the argument for studying these methods together rather than picking them up piecemeal. When a technique appears later in the notes and its purpose is not obvious, it is worth returning to this page to see which physical question it was meant to answer.</p>
+  </section>
+  <section class="preface content">
+    <h2 id="preface">Preface</h2>
+<h2 id="sec--1-about-these-notes">About These Notes</h2>
+<p>Mathematics is the language through which we learn to understand nature. By mastering this language, we become able to describe physical systems, construct models, make predictions, and, in many cases, guide or control their behavior. For this reason, mathematical methods are not only technical tools; they are an essential part of how physicists think about the physical world.</p>
+<p>These lecture notes were developed for PHYS 3260: Mathematical Physics at Kennesaw State University. The purpose of the course is to introduce some of the most important mathematical methods used in physics, while keeping physical meaning at the center of the discussion. The goal is not simply to learn formulas, but to understand why a method is useful, when it should be applied, and what it tells us about a physical system. Although the course is intended primarily for physics students, many of these methods are also useful for students in engineering and other quantitative fields.</p>
+<p>We begin with infinite series, power series, and Taylor expansions because approximation is one of the central ideas of physical modeling. Exact solutions are often unavailable, and series provide a systematic way to represent complicated functions in forms that are easier to analyze and use. The course then turns to complex numbers, which are indispensable in many areas of physics. In some subjects, such as quantum mechanics, they are part of the structure of the theory itself; in others, they provide a natural and elegant way to describe oscillations, waves, and exponential behavior, and they often simplify the solution of differential equations.</p>
+<p>Linear algebra follows naturally, since many physical problems are expressed in terms of vectors, matrices, and linear transformations. A solid understanding of these ideas is essential for topics such as coupled systems, normal modes, and quantum mechanics. From there, the course moves to functions of several variables. Partial differentiation and multiple integration provide the tools needed to describe systems that depend on more than one variable, while coordinate transformations and Jacobians help us move between different mathematical descriptions of the same physical problem.</p>
+<p>Vector analysis then builds the language of fields. Concepts such as gradient, divergence, and curl are central to electromagnetism, fluid flow, and many other parts of physics. The integral theorems of vector calculus show how local properties and global behavior are connected, giving mathematical structure to important physical laws.</p>
+<p>The later chapters focus on methods for solving physical problems. Fourier series and Fourier transforms allow functions to be decomposed into simpler modes, an idea that is fundamental in wave motion, signal analysis, heat flow, and quantum theory. Ordinary differential equations describe how systems evolve and respond to external influences. Series solutions and special functions arise when these equations cannot be solved in elementary form, while partial differential equations bring together many of the main ideas of the course in the study of waves, potentials, diffusion, and boundary-value problems.</p>
+<p>The organization and style of these notes are inspired by Mary L. Boas’s <em>Mathematical Methods in the Physical Sciences</em>. Like that text, these notes aim to be practical, clear, and closely connected to applications. Many examples are drawn from physics, and one of my future goals is to include more physical examples throughout the notes. I hope this text serves not only as a guide for this course, but also as a useful reference for later study. Mathematical methods become powerful through practice, patience, and repeated connection to real problems, and these notes are meant to support that process.</p>
+<div class="flushright"><p>Erfan Saydanzad  Department of Physics  Kennesaw State University</p></div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p>&copy; 2026 Erfan Saydanzad. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>
