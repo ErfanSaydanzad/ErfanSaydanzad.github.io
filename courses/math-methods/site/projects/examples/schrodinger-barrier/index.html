@@ -50,10 +50,29 @@
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
   <script defer src="../../../assets/js/main.js?v=4c167578"></script>
 
-</head>
+<style>
+.site-header { justify-content: flex-start; gap: 16px; }
+.site-header .top-nav { margin-left: auto; }
+.site-up {
+  display: inline-flex; align-items: center; gap: 6px; flex: none;
+  padding: 4px 11px 4px 8px;
+  border: 1px solid var(--line); border-radius: 999px;
+  color: var(--muted); font-family: var(--sans); font-size: 0.78rem;
+  line-height: 1.4; text-decoration: none; white-space: nowrap;
+  transition: color .15s ease, border-color .15s ease, background-color .15s ease;
+}
+.site-up:hover, .site-up:focus-visible {
+  color: var(--accent); border-color: var(--accent); background: var(--wash);
+}
+.site-up svg { width: 12px; height: 12px; flex: none; }
+@media (max-width: 560px) {
+  .site-up { padding: 3px 8px 3px 6px; font-size: 0.72rem; gap: 4px; }
+}
+</style></head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
+  <a class="site-up" href="../../../../../../index.html"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.5 5.5 8l4.5 4.5"/></svg><span>Saydanzad Group</span></a>
   <a class="brand" href="../../../index.html">
     <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M9 6.5V25.5M9 6.5H24M9 25.5H24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 16Q10.5 9.5 15.5 16T25.5 16" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/></svg>
     <span>Mathematical Methods in the Physical Sciences</span>
