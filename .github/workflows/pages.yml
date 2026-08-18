@@ -1,0 +1,54 @@
+# Publish this repository to GitHub Pages.
+#
+# This repository holds a finished website -- HTML, CSS, images, fonts. There
+# is nothing to compile: the build happens on the author's machine, in the
+# MyWebsite project, and deploy_site.ps1 mirrors the result in here. So this
+# workflow only uploads the tree as it stands and hands it to Pages.
+#
+# It exists because this repository's Pages source is set to "GitHub Actions"
+# rather than to a branch. With that setting and no workflow, pushes deploy
+# nothing at all and the published site silently freezes at whatever was last
+# built, while every push still reports success.
+#
+# deploy_site.ps1 mirrors _site/ in here with robocopy /MIR, which deletes
+# whatever the build does not produce. It is told to leave .github alone, so
+# this file survives each publish. Do not remove that exclusion.
+name: Deploy to Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never let two publishes overwrite each other, but never cancel one that is
+# already running either: a half-applied deploy is worse than a slow one.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the published tree
+        uses: actions/checkout@v4
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload the site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v5
