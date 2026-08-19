@@ -748,39 +748,6 @@ math {
    lifted out to a real anchor instead. */
 .eqn-ref { font-variant-numeric: tabular-nums; white-space: nowrap; }
 
-/* ----------------------------------------------------------- animations -- */
-
-/* A GIF plays itself and never stops, which fails SC 2.2.2 (Pause, Stop, Hide)
-   on its own. main.js pairs each one with this control and a canvas holding
-   the frame it was stopped on. */
-.animation-still {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin-inline: auto;
-}
-
-.animation-toggle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  /* SC 2.5.5 Target Size. */
-  min-height: 44px;
-  padding: 0 16px;
-  margin: 8px auto 0;
-  border: 1px solid var(--line-strong);
-  border-radius: 6px;
-  background: var(--paper);
-  color: var(--ink-soft);
-  font-family: var(--sans);
-  font-size: 0.85rem;
-  cursor: pointer;
-}
-
-.animation-toggle:hover { color: var(--ink); border-color: var(--accent); }
-
-figure.animation { display: flex; flex-direction: column; align-items: center; }
-
 /* -------------------------------------------------------------- figures -- */
 
 figure, .figure, .table-figure {
@@ -804,7 +771,7 @@ figure, .figure, .table-figure {
 
    This only works because .diagram excludes photographs -- multiply would
    darken a photograph into the page instead of lifting its background. */
-.figure img.diagram, figure img.diagram, canvas.animation-still.diagram {
+img.diagram, canvas.diagram {
   mix-blend-mode: multiply;
   border-radius: 0;
 }
@@ -816,7 +783,7 @@ figure, .figure, .table-figure {
    multiplied away into the page. Next to its pair, the cascade does the right
    thing and the two cannot drift apart. */
 @media screen and (prefers-color-scheme: dark) {
-  .figure img.diagram, figure img.diagram, canvas.animation-still.diagram {
+  img.diagram, canvas.diagram {
     /* invert() turns the white paper black, which is darker than the page and
        reads as a hole cut in it. screen then blends that black away -- the
        mirror of multiply above -- leaving white ink on the page itself. */
