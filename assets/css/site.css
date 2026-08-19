@@ -363,8 +363,23 @@ main {
 /* --------------------------------------------------------------- hero ---- */
 
 .hero {
-  margin-bottom: clamp(3rem, 7vw, 5rem);
+  margin-bottom: clamp(2.75rem, 6vw, 4.25rem);
   max-width: 52rem;
+}
+
+/* One interval between the bands of the home page. They used to be spaced by
+   whichever margin each component happened to carry, which left the gaps
+   subtly unequal down the page. */
+.home-section + .home-section,
+.cards + .home-section,
+.home-section + .prose,
+.cards + .prose { margin-top: clamp(2.75rem, 6vw, 4.25rem); }
+
+/* A quiet rule above each band, so the page reads as a sequence of sections
+   rather than one long scroll. */
+.home-section > h2, .home-prose > h2 {
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--line);
 }
 .hero h1 {
   font-size: clamp(2.3rem, 6vw, 3.6rem);
@@ -586,6 +601,14 @@ main {
 /* -------------------------------------------------------------- prose ---- */
 
 .prose { max-width: var(--prose); }
+
+/* A prose column sitting under full-width sections looks pushed into the
+   corner if it is flush left. Centring it keeps the comfortable measure and
+   loses the indent. Section headings stay left, aligned with the column. */
+.home-prose {
+  max-width: 46rem;
+  margin-inline: auto;
+}
 .prose h2 {
   font-size: 1.45rem;
   margin: 2.4rem 0 0.8rem;
@@ -681,13 +704,31 @@ th { font-family: var(--sans); font-size: 0.8rem; text-transform: uppercase; let
 .factbox dd { margin: 0; }
 
 .linklist { list-style: none; margin: 0; padding: 0; }
-.linklist li { padding: 0.4rem 0; border-bottom: 1px solid var(--line); }
+.linklist li {
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--line);
+}
 .linklist li:last-child { border-bottom: 0; }
 .linklist li:first-child { padding-top: 0; }
+
+/* The title carries the link. An underline under two wrapped lines of a paper
+   title is a lot of ink for no added meaning, so it arrives on hover and on
+   keyboard focus, where it is doing real work. */
+.linklist a {
+  display: inline-block;
+  font-weight: 600;
+  line-height: 1.4;
+  text-decoration: none;
+}
+.linklist a:hover, .linklist a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
 .linklist span {
   display: block;
+  margin-top: 0.15rem;
   font-family: var(--sans);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: var(--muted);
 }
 

@@ -6,9 +6,9 @@
   <title>Chapter 3: Linear Algebra | Mathematical Methods in the Physical Sciences</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
   <link rel="preload" href="../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../../assets/css/site.css?v=191fbb0c">
+  <link rel="stylesheet" href="../../assets/css/site.css?v=93e9baca">
   <link rel="preload" href="../../assets/fonts/latinmodern-math.woff2" as="font" type="font/woff2" crossorigin>
-  <script defer src="../../assets/js/main.js?v=191fbb0c"></script>
+  <script defer src="../../assets/js/main.js?v=93e9baca"></script>
 
 <style>
 .site-header { justify-content: flex-start; gap: 16px; }
@@ -161,7 +161,7 @@
     </header>
     <h2 id="sec-3-linear-equations"><span class="sec-number">3.1</span>Linear Equations</h2>
 <p>Many problems in physics, engineering, and applied mathematics reduce to solving <strong>systems of linear equations</strong>: examples include Kirchhoff’s circuit laws, equilibrium conditions in mechanics, and eigenvalue problems in quantum mechanics.</p>
-<section class="callout definition"><header>Definition - Linear Equation</header><p>A <strong>linear equation</strong> in the variables <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Linear Equation</span></header><p>A <strong>linear equation</strong> in the variables <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>x</mi>
     <mn>1</mn>
@@ -378,7 +378,7 @@
 </math><span class="eqn-number" id="mjx-eqn:3.2">(3.2)</span></div></section>
 <h2 id="sec-3-system-of-linear-equations"><span class="sec-number">3.2</span>System of Linear Equations</h2>
 <p>For two variables, each linear equation is a line. The solution(s) of a system are the intersection point(s) of those lines.</p>
-<section class="callout example"><header>Example - A system with a unique solution</header><p>Solve</p>
+<section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">A system with a unique solution</span></header><p>Solve</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -604,7 +604,7 @@
 <ol><li><p>Interchange two rows.</p></li><li><p>Multiply (or divide) a row by a nonzero constant.</p></li><li><p>Add a multiple of one row to another.</p></li></ol>
 <p>These do <em>not</em> change the solution set. That is the whole justification for row reduction: each operation is reversible, so the system you end up with has exactly the same solutions as the one you started with, while being far easier to read them off from.</p>
 <h3 id="sec-3-row-echelon-form-ref-and-reduced-row-echelon-form-rref"><span class="sec-number">3.2.3</span>Row Echelon Form (REF) and Reduced Row Echelon Form (RREF)</h3>
-<section class="callout definition"><header>Definition - Row Echelon Form (REF)</header><p>A matrix is in <strong>row echelon form</strong> if:</p>
+<section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Row Echelon Form (REF)</span></header><p>A matrix is in <strong>row echelon form</strong> if:</p>
 <ol><li><p>all nonzero rows appear above any rows consisting entirely of zeros;</p></li><li><p>in each nonzero row, the first nonzero entry (called the <strong>leading entry</strong> or <strong>pivot</strong>) is to the right of the leading entry in the row above;</p></li><li><p>all entries <em>below</em> each leading entry are zero.</p></li></ol>
 <p><strong>Important:</strong> In REF, pivots <span class="underline">do not need</span> to be <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>1</mn>
@@ -695,7 +695,7 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:3.6">(3.6)</span></div></section>
-<section class="callout definition"><header>Definition - Reduced Row Echelon Form (RREF)</header><p>A matrix is in <strong>reduced row echelon form</strong> if:</p>
+<section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Reduced Row Echelon Form (RREF)</span></header><p>A matrix is in <strong>reduced row echelon form</strong> if:</p>
 <ol><li><p>it is already in REF;</p></li><li><p>each leading entry is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>1</mn>
 </math></span>;</p></li><li><p>each leading <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -831,9 +831,9 @@
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:3.8">(3.8)</span></div>
 <p>Pivot in column 3 has nonzero entries <em>above</em> it, violating (iii).</p></section>
-<section class="callout remark"><header>Remark - Rank</header><p>of a matrix equals the number of pivots (nonzero rows) in its RREF.</p></section>
+<section class="callout remark"><header><span class="callout-kind">Remark</span><span class="callout-title">Rank</span></header><p>of a matrix equals the number of pivots (nonzero rows) in its RREF.</p></section>
 <h2 id="sec-3-gauss-jordan-reduction"><span class="sec-number">3.3</span>Gauss–Jordan Reduction</h2>
-<section class="callout example"><header>Example - I   (Unique solution)</header><p>System:</p>
+<section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">I   (Unique solution)</span></header><p>System:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -1181,7 +1181,7 @@
   <mi>n</mi>
   <mo stretchy="false">⇒</mo>
 </math></span> unique solution.</p></section>
-<section class="callout example"><header>Example - II   (Infinitely many solutions)</header><div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">II   (Infinitely many solutions)</span></header><div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -1401,7 +1401,7 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:3.13">(3.13)</span></div></section>
-<section class="callout example"><header>Example - III   (Inconsistent)</header><div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">III   (Inconsistent)</span></header><div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -1775,7 +1775,7 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:3.16">(3.16)</span></div></section>
-<section class="callout example"><header>Example - IV   (Unique solution)</header><div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">IV   (Unique solution)</span></header><div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -2596,7 +2596,7 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:3.21">(3.21)</span></div></section>
-<section class="callout definition"><header>Definition - Rank Conditions for Solutions of Linear Systems</header><p>Let <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Rank Conditions for Solutions of Linear Systems</span></header><p>Let <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>n</mi>
 </math></span> be the number of unknowns, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>M</mi>
@@ -2786,11 +2786,11 @@
 </math></span>.</figcaption></figure>
 <h2 id="sec-3-determinants"><span class="sec-number">3.4</span>Determinants</h2>
 <p>Determinants provide a compact way of associating a scalar quantity with a square matrix. They are especially useful for testing invertibility and for solving systems of linear equations.</p>
-<section class="callout definition"><header>Definition - Determinant of a <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Determinant of a <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>2</mn>
   <mo>×</mo>
   <mn>2</mn>
-</math></span> Matrix</header><p>For</p>
+</math></span> Matrix</span></header><p>For</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -2891,11 +2891,11 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:3.24">(3.24)</span></div></section>
-<section class="callout definition"><header>Definition - Determinant of a <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Determinant of a <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>3</mn>
   <mo>×</mo>
   <mn>3</mn>
-</math></span> Matrix</header><div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+</math></span> Matrix</span></header><div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -3087,7 +3087,7 @@
     </mrow>
   </msup>
 </math></span>.</p>
-<section class="callout definition"><header>Definition - Cofactor</header><div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Cofactor</span></header><div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -3145,7 +3145,7 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:3.26">(3.26)</span></div></section>
-<section class="callout definition"><header>Definition - Cofactor Expansion</header><p>Expanding along row <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Cofactor Expansion</span></header><p>Expanding along row <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>1</mn>
 </math></span>:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
@@ -3531,7 +3531,7 @@
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:3.31">(3.31)</span></div></section>
 <h2 id="sec-3-cramer-s-rule"><span class="sec-number">3.5</span>Cramer's Rule</h2>
-<section class="callout theorem"><header>Theorem - Cramer's Rule</header><p>Let <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout theorem"><header><span class="callout-kind">Theorem</span><span class="callout-title">Cramer's Rule</span></header><p>Let <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>M</mi>
 </math></span> be an <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>n</mi>
@@ -5836,7 +5836,7 @@
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:3.60">(3.60)</span></div>
 <p>Since the dot product is negative, the angle between the vectors is obtuse.</p></section>
-<section class="callout example"><header>Example - Finding the angle between two vectors</header><p>Let</p>
+<section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">Finding the angle between two vectors</span></header><p>Let</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -6836,7 +6836,7 @@
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:3.76">(3.76)</span></div>
 <h3 id="sec-3-cross-product">Cross Product</h3>
-<section class="callout definition"><header>Definition - Cross Product</header><p>For two vectors <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Cross Product</span></header><p>For two vectors <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mover>
       <mi>a</mi>
@@ -8773,7 +8773,7 @@
 <h2 id="sec-3-matrix-operations"><span class="sec-number">3.7</span>Matrix Operations</h2>
 <h3 id="sec-3-matrix-equations"><span class="sec-number">3.7.1</span>Matrix Equations</h3>
 <p>Two matrices are said to be <strong>equal</strong> if and only if they have the same size (same number of rows and columns) and each corresponding element is equal.</p>
-<section class="callout definition"><header>Definition - Equality of Matrices</header><p>Two matrices <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Equality of Matrices</span></header><p>Two matrices <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>M</mi>
 </math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>A</mi>
@@ -8955,7 +8955,7 @@
 </math></span>. This operation means multiplying every entry of the matrix by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>λ</mi>
 </math></span>.</p>
-<section class="callout definition"><header>Definition - Scalar Multiplication of a Matrix</header><p>Let <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Scalar Multiplication of a Matrix</span></header><p>Let <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>M</mi>
   <mo>=</mo>
   <mo stretchy="false">(</mo>
@@ -9332,7 +9332,7 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:3.108">(3.108)</span></div></section>
-<section class="callout theorem"><header>Theorem - Scalar Multiplication Entry-wise</header><p>For any matrix <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout theorem"><header><span class="callout-kind">Theorem</span><span class="callout-title">Scalar Multiplication Entry-wise</span></header><p>For any matrix <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>M</mi>
   <mo>=</mo>
   <mo stretchy="false">(</mo>
@@ -9379,7 +9379,7 @@
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:3.109">(3.109)</span></div>
 <p>In other words, scalar multiplication acts on each entry of the matrix.</p></section>
-<section class="callout theorem"><header>Theorem - Determinant of a Scalar Multiple</header><p>Let <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout theorem"><header><span class="callout-kind">Theorem</span><span class="callout-title">Determinant of a Scalar Multiple</span></header><p>Let <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>A</mi>
 </math></span> be an <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>n</mi>
@@ -9420,7 +9420,7 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:3.110">(3.110)</span></div></section>
-<section class="callout example"><header>Example - Scalar multiplication</header><p>For the same <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">Scalar multiplication</span></header><p>For the same <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>A</mi>
 </math></span> as above, let <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>λ</mi>
@@ -9524,7 +9524,7 @@
 </math><span class="eqn-number" id="mjx-eqn:3.112">(3.112)</span></div></section>
 <h3 id="sec-3-matrix-addition"><span class="sec-number">3.7.3</span>Matrix Addition</h3>
 <p>Two matrices of the same size can be added by adding their corresponding elements.</p>
-<section class="callout definition"><header>Definition - Matrix Addition</header><p>Let <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Matrix Addition</span></header><p>Let <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>M</mi>
   <mo>=</mo>
   <mo stretchy="false">(</mo>
@@ -9834,7 +9834,7 @@
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:3.115">(3.115)</span></div></section>
 <section class="callout remark"><header>Remark</header><p>We can only add matrices if they have the same dimensions.</p></section>
-<section class="callout theorem"><header>Theorem - Entry-wise Addition</header><p>For matrices <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout theorem"><header><span class="callout-kind">Theorem</span><span class="callout-title">Entry-wise Addition</span></header><p>For matrices <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>M</mi>
   <mo>=</mo>
   <mo stretchy="false">(</mo>
@@ -9895,7 +9895,7 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:3.116">(3.116)</span></div></section>
-<section class="callout example"><header>Example - Simple Example</header><p>Let</p>
+<section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">Simple Example</span></header><p>Let</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -10066,7 +10066,7 @@
 </math></span> equals the number of rows of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>B</mi>
 </math></span>.</p>
-<section class="callout definition"><header>Definition - Matrix Multiplication</header><p>Let</p>
+<section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Matrix Multiplication</span></header><p>Let</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -10193,7 +10193,7 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:3.121">(3.121)</span></div></section>
-<section class="callout example"><header>Example - a</header><p>Let</p>
+<section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">a</span></header><p>Let</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -10447,7 +10447,7 @@
   <mi>B</mi>
   <mi>A</mi>
 </math></span> cannot be computed because the dimensions do not match.</p></section>
-<section class="callout example"><header>Example - b</header><p>Let</p>
+<section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">b</span></header><p>Let</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -10760,7 +10760,7 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:3.128">(3.128)</span></div></section>
-<section class="callout remark"><header>Remark - Properties of Matrix Multiplication</header><ol><li><p>Associativity: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout remark"><header><span class="callout-kind">Remark</span><span class="callout-title">Properties of Matrix Multiplication</span></header><ol><li><p>Associativity: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>A</mi>
   <mo stretchy="false">(</mo>
   <mi>B</mi>
@@ -10787,7 +10787,7 @@
   <mi>C</mi>
 </math></span>.</p></li></ol></section>
 <h3 id="sec-3-commutators-and-anticommutators">Commutators and Anticommutators</h3>
-<section class="callout definition"><header>Definition - Commutator of Matrices</header><p>For two square matrices <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Commutator of Matrices</span></header><p>For two square matrices <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>A</mi>
 </math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>B</mi>
@@ -10880,7 +10880,7 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:3.131">(3.131)</span></div></section>
-<section class="callout definition"><header>Definition - Anticommutator of Matrices</header><p>For two square matrices <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Anticommutator of Matrices</span></header><p>For two square matrices <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>A</mi>
 </math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>B</mi>
@@ -10959,7 +10959,7 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:3.133">(3.133)</span></div></section>
-<section class="callout theorem"><header>Theorem - Determinant of a Product</header><p>Let <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout theorem"><header><span class="callout-kind">Theorem</span><span class="callout-title">Determinant of a Product</span></header><p>Let <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>A</mi>
 </math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>B</mi>
@@ -11333,7 +11333,7 @@
 </math><span class="eqn-number" id="mjx-eqn:3.141">(3.141)</span></div></section>
 <h2 id="sec-3-zero-identity-and-transpose-of-matrices"><span class="sec-number">3.8</span>Zero, Identity, and Transpose of Matrices</h2>
 <h3 id="sec-3-zero-matrix"><span class="sec-number">3.8.1</span>Zero Matrix</h3>
-<section class="callout definition"><header>Definition - Zero (Null) Matrix</header><p>A <strong>zero matrix</strong>, denoted <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Zero (Null) Matrix</span></header><p>A <strong>zero matrix</strong>, denoted <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>0</mn>
 </math></span>, is a matrix in which every entry is zero. For any matrix <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>A</mi>
@@ -11405,7 +11405,7 @@
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:3.143">(3.143)</span></div></section>
 <h3 id="sec-3-identity-matrix"><span class="sec-number">3.8.2</span>Identity Matrix</h3>
-<section class="callout definition"><header>Definition - Identity Matrix</header><p>The <strong>identity matrix</strong>, denoted <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Identity Matrix</span></header><p>The <strong>identity matrix</strong>, denoted <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>I</mi>
 </math></span>, is a square matrix with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>1</mn>
@@ -11572,7 +11572,7 @@
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:3.147">(3.147)</span></div></section>
 <h3 id="sec-3-transpose-of-a-matrix"><span class="sec-number">3.8.3</span>Transpose of a Matrix</h3>
-<section class="callout definition"><header>Definition - Transpose</header><p>The <strong>transpose</strong> of a matrix <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Transpose</span></header><p>The <strong>transpose</strong> of a matrix <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>A</mi>
   <mo>=</mo>
   <mo stretchy="false">(</mo>
@@ -11619,7 +11619,7 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:3.148">(3.148)</span></div></section>
-<section class="callout theorem"><header>Theorem - Transpose of a Product</header><p>For any matrices <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout theorem"><header><span class="callout-kind">Theorem</span><span class="callout-title">Transpose of a Product</span></header><p>For any matrices <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>A</mi>
 </math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>B</mi>
@@ -12266,7 +12266,7 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:3.161">(3.161)</span></div>
-<section class="callout definition"><header>Definition - Inverse Matrix</header><p>A square matrix <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Inverse Matrix</span></header><p>A square matrix <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>A</mi>
 </math></span> is <strong>invertible</strong> (or <strong>nonsingular</strong>) if there exists a matrix <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
@@ -12316,7 +12316,7 @@
 </math></span> is called the <strong>inverse</strong> of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>A</mi>
 </math></span>.</p></section>
-<section class="callout theorem"><header>Theorem - Inverse via Cofactors (Adjugate Formula)</header><p>If <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout theorem"><header><span class="callout-kind">Theorem</span><span class="callout-title">Inverse via Cofactors (Adjugate Formula)</span></header><p>If <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>A</mi>
 </math></span> is an <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>n</mi>
@@ -12472,7 +12472,7 @@
 </math></span> of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>A</mi>
 </math></span>.</p></section>
-<section class="callout example"><header>Example - 2×2 inverse</header><p>If</p>
+<section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">2×2 inverse</span></header><p>If</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -12558,7 +12558,7 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:3.167">(3.167)</span></div></section>
-<section class="callout example"><header>Example - 3×3 inverse</header><p>Let</p>
+<section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">3×3 inverse</span></header><p>Let</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -13814,7 +13814,7 @@
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:3.182">(3.182)</span></div></section>
 <h3 id="sec-3-complex-conjugate-of-a-matrix"><span class="sec-number">3.8.5</span>Complex Conjugate of a Matrix</h3>
-<section class="callout definition"><header>Definition - Complex Conjugate</header><p>Let <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Complex Conjugate</span></header><p>Let <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>A</mi>
   <mo>=</mo>
   <mo stretchy="false">(</mo>
@@ -13952,7 +13952,7 @@
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:3.184">(3.184)</span></div></section>
 <h3 id="sec-3-hermitian-conjugate-adjoint"><span class="sec-number">3.8.6</span>Hermitian Conjugate (Adjoint)</h3>
-<section class="callout definition"><header>Definition - Hermitian Conjugate (Adjoint)</header><p>The <strong>Hermitian conjugate</strong> of a matrix <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Hermitian Conjugate (Adjoint)</span></header><p>The <strong>Hermitian conjugate</strong> of a matrix <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>A</mi>
 </math></span>, denoted <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
@@ -15392,7 +15392,7 @@
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:3.204">(3.204)</span></div></section>
 <h2 id="sec-3-linear-combinations-and-linear-functions"><span class="sec-number">3.9</span>Linear Combinations and Linear Functions</h2>
-<section class="callout definition"><header>Definition - Linear Combination</header><p>Let <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Linear Combination</span></header><p>Let <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mrow data-mjx-texclass="ORD">
       <mover>
@@ -15481,7 +15481,7 @@
     <mn>2</mn>
   </msub>
 </math></span>.</p></section>
-<section class="callout definition"><header>Definition - Linear Scalar Function</header><p>A function <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Linear Scalar Function</span></header><p>A function <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>f</mi>
   <mo>:</mo>
   <msup>
@@ -15591,7 +15591,7 @@
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:3.206">(3.206)</span></div>
 <p>Such functions are also called <strong>linear functionals</strong>.</p></section>
-<section class="callout definition"><header>Definition - Linear Vector Function</header><p>A vector-valued function <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Linear Vector Function</span></header><p>A vector-valued function <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mover>
       <mi>F</mi>
@@ -15763,7 +15763,7 @@
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:3.208">(3.208)</span></div>
 <p>Therefore, the exponential function is <strong>not linear</strong>.</p></section>
-<section class="callout definition"><header>Definition - Linear Operator</header><p>Let <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Linear Operator</span></header><p>Let <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mi data-mjx-variant="-tex-calligraphic" mathvariant="script">O</mi>
   </mrow>
@@ -15980,7 +15980,7 @@
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:3.212">(3.212)</span></div></section>
 <h2 id="sec-3-matrix-operators-and-linear-transformations"><span class="sec-number">3.10</span>Matrix Operators and Linear Transformations</h2>
-<section class="callout definition"><header>Definition - Linear Transformation</header><p>A <strong>linear transformation</strong> (or <strong>linear mapping</strong>) is a function</p>
+<section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Linear Transformation</span></header><p>A <strong>linear transformation</strong> (or <strong>linear mapping</strong>) is a function</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -16478,7 +16478,7 @@
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:3.217">(3.217)</span></div>
 <h2 id="sec-3-orthogonal-transformations"><span class="sec-number">3.11</span>Orthogonal Transformations</h2>
-<section class="callout definition"><header>Definition - Orthogonal Matrix</header><p>A real square matrix <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Orthogonal Matrix</span></header><p>A real square matrix <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>M</mi>
 </math></span> is called <strong>orthogonal</strong> if</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
@@ -16790,7 +16790,7 @@
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:3.223">(3.223)</span></div>
 <h3 id="sec-3-determinant-property">Determinant Property</h3>
-<section class="callout theorem"><header>Theorem - Determinant of an Orthogonal Matrix</header><p>If <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout theorem"><header><span class="callout-kind">Theorem</span><span class="callout-title">Determinant of an Orthogonal Matrix</span></header><p>If <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>M</mi>
 </math></span> is an orthogonal matrix, then</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
@@ -18018,7 +18018,7 @@
 </math></span>).</p></li><li><p>The product of orthogonal matrices is also orthogonal.</p></li></ul></section>
 <h2 id="sec-3-linear-independence"><span class="sec-number">3.14</span>Linear Independence</h2>
 <h3 id="sec-3-vectors-61">Vectors</h3>
-<section class="callout definition"><header>Definition - Linear Dependence</header><p>A set of vectors <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Linear Dependence</span></header><p>A set of vectors <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo fence="false" stretchy="false">{</mo>
   <mrow data-mjx-texclass="ORD">
     <mover>
@@ -18111,7 +18111,7 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:3.246">(3.246)</span></div></section>
-<section class="callout definition"><header>Definition - Linear Independence</header><p>A set of vectors is <strong>linearly independent</strong> if the <strong>only</strong> solution to</p>
+<section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Linear Independence</span></header><p>A set of vectors is <strong>linearly independent</strong> if the <strong>only</strong> solution to</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -18398,7 +18398,7 @@
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:3.251">(3.251)</span></div></section>
 <h3 id="sec-3-functions-and-linear-dependence">Functions and Linear Dependence</h3>
-<section class="callout definition"><header>Definition - Linear Dependence of Functions</header><p>Functions <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Linear Dependence of Functions</span></header><p>Functions <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>f</mi>
     <mn>1</mn>
@@ -18522,7 +18522,7 @@
   <mi>I</mi>
 </math></span>.</p></section>
 <h3 id="sec-3-wronskian-test-for-independence">Wronskian Test for Independence</h3>
-<section class="callout definition"><header>Definition - Wronskian</header><p>Given functions <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Wronskian</span></header><p>Given functions <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>f</mi>
     <mn>1</mn>
@@ -18706,7 +18706,7 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:3.253">(3.253)</span></div></section>
-<section class="callout theorem"><header>Theorem - Wronskian Test</header><p>If <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout theorem"><header><span class="callout-kind">Theorem</span><span class="callout-title">Wronskian Test</span></header><p>If <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>W</mi>
   <mo stretchy="false">(</mo>
   <mi>x</mi>
@@ -19241,7 +19241,7 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:3.263">(3.263)</span></div></section>
-<section class="callout theorem"><header>Theorem - Non-Trivial Solutions of Homogeneous Systems</header><p>A homogeneous system of linear equations</p>
+<section class="callout theorem"><header><span class="callout-kind">Theorem</span><span class="callout-title">Non-Trivial Solutions of Homogeneous Systems</span></header><p>A homogeneous system of linear equations</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -19482,11 +19482,11 @@
   <mo>=</mo>
   <mn>0</mn>
 </math></span>.</p>
-<section class="callout example"><header>Example - A <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">A <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>2</mn>
   <mo>×</mo>
   <mn>2</mn>
-</math></span> Matrix</header><p>Find the eigenvalues and normalized eigenvectors of</p>
+</math></span> Matrix</span></header><p>Find the eigenvalues and normalized eigenvectors of</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -22069,7 +22069,7 @@
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:3.308">(3.308)</span></div></li></ol></section>
 <h3 id="sec-3-examples-of-vector-spaces">Examples of Vector Spaces</h3>
-<section class="callout example"><header>Example - Polynomials</header><p>The set of all polynomials of degree <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">Polynomials</span></header><p>The set of all polynomials of degree <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo>≤</mo>
   <mn>3</mn>
 </math></span>,</p>
@@ -22144,7 +22144,7 @@
   <mo>≤</mo>
   <mn>3</mn>
 </math></span> can be written as a linear combination of these basis elements.</p></section>
-<section class="callout example"><header>Example - Functions</header><p>The set <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">Functions</span></header><p>The set <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo fence="false" stretchy="false">{</mo>
   <msup>
     <mi>e</mi>
@@ -22209,7 +22209,7 @@
   </msup>
   <mo fence="false" stretchy="false">}</mo>
 </math></span>.</p></section>
-<section class="callout example"><header>Example - Matrices</header><p>The set of all <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">Matrices</span></header><p>The set of all <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>2</mn>
   <mo>×</mo>
   <mn>2</mn>
@@ -23874,7 +23874,7 @@
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:3.339">(3.339)</span></div></li></ol>
 <p>At each step, we subtract projections to guarantee orthogonality, and then normalize to guarantee unit length.</p>
-<section class="callout example"><header>Example - Gram–Schmidt orthonormalization</header><p>Suppose we start with</p>
+<section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">Gram–Schmidt orthonormalization</span></header><p>Suppose we start with</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -25229,7 +25229,7 @@
 </main>
 <footer class="site-footer">
   <div class="site-footer-inner">
-    <p>&copy; 2026 Erfan Saydanzad. All rights reserved.</p>
+    <p>&copy; 2026 Erfan Saydanzad. All rights reserved. This material is published for reading and personal study; it may not be copied, redistributed, or reused in other work without written permission.</p>
   </div>
 </footer>
 </body>
