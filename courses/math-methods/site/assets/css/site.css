@@ -135,15 +135,6 @@
      Photographs are the one thing this must not touch -- a face or a piece of
      apparatus comes out as a negative -- so it is opt-in per image, set by
      the builder from the file type. */
-  .figure img.diagram, figure img.diagram, canvas.animation-still.diagram {
-    /* invert() turns the white paper black -- darker than the page, so on its
-       own it swaps one box for a worse one. screen then blends that black
-       away, the mirror of multiply above, and what is left is white ink on
-       the page itself. */
-    filter: invert(1) hue-rotate(180deg);
-    mix-blend-mode: screen;
-  }
-
   /* Anything left on white paper -- photographs, screenshots -- keeps it, and
      is given an edge so it reads as a plate laid on the page. */
   .figure img:not(.diagram), figure img:not(.diagram), .project-card-preview {
@@ -834,6 +825,22 @@ figure, .figure, .table-figure {
 .figure img.diagram, figure img.diagram, canvas.animation-still.diagram {
   mix-blend-mode: multiply;
   border-radius: 0;
+}
+
+/* The dark half of the same idea, kept here rather than with the rest of the
+   dark palette on purpose. That block sits near the top of this file, and a
+   rule written there would be overridden by the light rule above -- leaving a
+   figure with invert() *and* multiply, which is a black box with its ink
+   multiplied away into the page. Next to its pair, the cascade does the right
+   thing and the two cannot drift apart. */
+@media screen and (prefers-color-scheme: dark) {
+  .figure img.diagram, figure img.diagram, canvas.animation-still.diagram {
+    /* invert() turns the white paper black, which is darker than the page and
+       reads as a hole cut in it. screen then blends that black away -- the
+       mirror of multiply above -- leaving white ink on the page itself. */
+    filter: invert(1) hue-rotate(180deg);
+    mix-blend-mode: screen;
+  }
 }
 
 .figure-single { margin: 1.1rem 0; }
