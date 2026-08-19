@@ -414,6 +414,18 @@ main {
   border: 1px solid var(--line);
   border-radius: var(--radius);
 }
+
+/* A diagram is line art on white paper, and the plate around it is a box
+   around something that should not have one. The paper is blended away
+   instead of re-exporting every figure: multiply leaves the ink and lets the
+   page show through the white. Photographs keep their plate -- they have a
+   real edge, and multiply would darken them into the page. */
+.figure img.diagram {
+  background: transparent;
+  border-color: transparent;
+  border-radius: 0;
+  mix-blend-mode: multiply;
+}
 .figure figcaption {
   margin-top: 0.7rem;
   max-width: var(--prose);
@@ -433,8 +445,12 @@ main {
      lightness reversed. Photographs are excluded -- a face comes out as a
      negative -- which the builder marks from the file type. */
   .figure img.diagram {
+    /* invert() turns the white paper black, which is darker than the page and
+       reads as a hole; screen blends that black away and leaves the ink. */
     background: transparent;
+    border-color: transparent;
     filter: invert(1) hue-rotate(180deg);
+    mix-blend-mode: screen;
   }
 }
 

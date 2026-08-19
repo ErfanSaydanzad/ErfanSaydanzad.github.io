@@ -132,8 +132,13 @@
      it with a 180-degree hue rotation puts every hue back, leaving only the
      lightness reversed. Photographs must not be touched -- a face comes out a
      negative -- so it is opt-in, set by the builder from the file type. */
-  .figure img.diagram, figure img.diagram {
+  .figure img.diagram, figure img.diagram, canvas.animation-still.diagram {
+    /* invert() turns the white paper black -- darker than the page, so on its
+       own it swaps one box for a worse one. screen then blends that black
+       away, the mirror of multiply above, and what is left is white ink on
+       the page itself. */
     filter: invert(1) hue-rotate(180deg);
+    mix-blend-mode: screen;
   }
 
   .figure img:not(.diagram), figure img:not(.diagram), .project-card-preview {
@@ -797,6 +802,20 @@ figure, .figure, .table-figure {
   max-width: min(var(--figure-width, 100%), 100%);
   height: auto;
   border-radius: 4px;
+}
+
+/* Diagrams are drawn as black-on-white rasters, and a white rectangle sitting
+   in the page is a box around something that should not have one. Rather than
+   re-export every figure, the paper is blended away: multiply against a light
+   page leaves white untouched by the background and keeps the ink, so the
+   drawing appears to sit directly on the page. The dark rule below is the
+   same idea the other way up.
+
+   This only works because .diagram excludes photographs -- multiply would
+   darken a photograph into the page instead of lifting its background. */
+.figure img.diagram, figure img.diagram, canvas.animation-still.diagram {
+  mix-blend-mode: multiply;
+  border-radius: 0;
 }
 
 .figure-single { margin: 1.1rem 0; }

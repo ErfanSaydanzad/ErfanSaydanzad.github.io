@@ -44,7 +44,10 @@
     image.dataset.animationToggle = "true";
 
     const still = document.createElement("canvas");
-    still.className = "animation-still";
+    // Carry the diagram class across: the canvas stands in for the image
+    // while the animation is paused, and without it a paused figure would pop
+    // back to a white box on a dark page.
+    still.className = "animation-still" + (image.classList.contains("diagram") ? " diagram" : "");
     still.hidden = true;
     const source = image.currentSrc || image.src;
 
