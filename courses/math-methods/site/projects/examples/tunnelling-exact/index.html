@@ -6,49 +6,9 @@
   <title>Quantum Tunnelling of a Wave Packet through a Rectangular Barrier (Analytical) | Mathematical Methods in the Physical Sciences</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
   <link rel="preload" href="../../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../../../assets/css/site.css?v=4c167578">
-  <script>
-    window.MathJax = {
-      // tagformat is an optional TeX extension, not part of the combined
-      // tex-chtml build. Without these two lines the tagformat block below is
-      // read and silently ignored, and every equation numbers from 1 with no
-      // chapter in front of it.
-      loader: { load: ['[tex]/tagformat'] },
-      tex: {
-        packages: { '[+]': ['tagformat'] },
-        inlineMath: [['\\(', '\\)']],
-        displayMath: [['\\[', '\\]']],
-        processEnvironments: true,
-        tags: 'ams',
-        // The PDF numbers equations within the chapter (\numberwithin
-        // {equation}{chapter}), so "1.8" is the eighth equation of
-        // chapter 1. MathJax counts from 1 on every page, which would have
-        // shown that same equation as "8". Prefixing the chapter number
-        // keeps a reference valid against either version.
-        tagformat: {
-          number: function (n) { return ''  + n; }
-        },
-        macros: {
-          pdv: ['{\\frac{\\partial #1}{\\partial #2}}', 2],
-          dv: ['{\\frac{d #1}{d #2}}', 2],
-          abs: ['{\\left|#1\\right|}', 1],
-          norm: ['{\\left\\|#1\\right\\|}', 1],
-          curl: '{\\vec{\\nabla}\\times}',
-          div: '{\\vec{\\nabla}\\cdot}',
-          grad: '{\\vec{\\nabla}}',
-          sech: '{\\operatorname{sech}}',
-          csch: '{\\operatorname{csch}}',
-          coth: '{\\operatorname{coth}}',
-          circnum: ['{\\boxed{#1}}', 1],
-          vb: ['{\\mathbf{#1}}', 1],
-          eval: ['{\\left.#1\\right|}', 1],
-          dd: '{\\,d}'
-        }
-      }
-    };
-  </script>
-  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-  <script defer src="../../../assets/js/main.js?v=4c167578"></script>
+  <link rel="stylesheet" href="../../../assets/css/site.css?v=f86ec6ce">
+  <link rel="preload" href="../../../assets/fonts/latinmodern-math.woff2" as="font" type="font/woff2" crossorigin>
+  <script defer src="../../../assets/js/main.js?v=f86ec6ce"></script>
 
 <style>
 .site-header { justify-content: flex-start; gap: 16px; }
@@ -85,239 +45,3178 @@
 </header>
 <main class="content project" id="main">
 <header class="project-head"><p class="project-kicker">Worked example · solved on paper</p><h1>Quantum Tunnelling of a Wave Packet through a Rectangular Barrier (Analytical)</h1><p class="project-author">PHYS 3260, Mathematical Methods — worked example</p></header>
-<section class="project-problem" aria-label="The problem"><p class="project-problem-kicker">The problem</p><p>A particle of mass <span class="math-inline">\(m\)</span> moves in one dimension and meets a rectangular barrier of height <span class="math-inline">\(V_0\)</span> and width <span class="math-inline">\(a\)</span>,</p>
-<div class="math-block">\[
-  V(x) = V_0 \ \ \text{for } |x| &lt; a/2, \qquad V(x) = 0 \ \ \text{otherwise,}
-\]</div>
-<p>with <span class="math-inline">\(\hbar = m = 1\)</span>, <span class="math-inline">\(V_0 = 2\)</span> and <span class="math-inline">\(a = 1\)</span>. Its wavefunction obeys the time-dependent Schrödinger equation</p>
-<div class="math-block">\[
-  i\hbar\,\frac{\partial \psi}{\partial t}
-  = -\frac{\hbar^{2}}{2m}\,\frac{\partial^{2}\psi}{\partial x^{2}} + V(x)\,\psi .
-\]</div>
-<ul><li class="labeled"><span class="item-label">(a)</span><p>Separate the variables and solve the resulting ordinary differential equation exactly in each of the three regions where <span class="math-inline">\(V\)</span> is constant. Impose continuity of <span class="math-inline">\(\varphi\)</span> and <span class="math-inline">\(\varphi&#x27;\)</span> at both walls and obtain the reflection and transmission amplitudes <span class="math-inline">\(r(k)\)</span> and <span class="math-inline">\(t(k)\)</span> in closed form.</p></li><li class="labeled"><span class="item-label">(b)</span><p>Give <span class="math-inline">\(T(E) = |t|^{2}\)</span> as a formula, and prove from it that <span class="math-inline">\(R + T = 1\)</span> identically. Plot <span class="math-inline">\(T(E)\)</span> from <span class="math-inline">\(E = 0\)</span> to <span class="math-inline">\(E = 3V_0\)</span>, and account for the energies above the barrier at which <span class="math-inline">\(T = 1\)</span> exactly.</p></li><li class="labeled"><span class="item-label">(c)</span><p>Send a Gaussian wave packet <span class="math-inline">\(\psi(x,0) = (2\pi\sigma^{2})^{-1/4}e^{-(x-x_0)^{2}/4\sigma^{2}}e^{ik_0(x-x_0)}\)</span> at the barrier, with <span class="math-inline">\(x_0 = -40\)</span>, <span class="math-inline">\(\sigma = 5\)</span> and <span class="math-inline">\(k_0 = 1.6\)</span>, so that its mean energy is below <span class="math-inline">\(V_0\)</span>. Expand it in the states of (a), write the exact evolution, and animate it. Predict <span class="math-inline">\(T\)</span> for the packet as a whole <em>before</em> evolving it, and check the prediction against the evolved wavefunction.</p></li><li class="labeled"><span class="item-label">(d)</span><p>Account for the difference between the transmission of the packet and the transmission of a plane wave at the packet's mean energy.</p></li><li class="labeled"><span class="item-label">(e)</span><p>Nothing above may be discretised, and no differential equation may be stepped forward in time. The one integral with no closed form — the superposition in (c) — may be evaluated numerically.</p></li></ul></section>
+<section class="project-problem" aria-label="The problem"><p class="project-problem-kicker">The problem</p><p>A particle of mass <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span> moves in one dimension and meets a rectangular barrier of height <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>V</mi>
+    <mn>0</mn>
+  </msub>
+</math></span> and width <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+</math></span>,</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>V</mi>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <msub>
+    <mi>V</mi>
+    <mn>0</mn>
+  </msub>
+  <mtext> </mtext>
+  <mtext> </mtext>
+  <mtext>for </mtext>
+  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mi>x</mi>
+  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo>&lt;</mo>
+  <mi>a</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+  <mo>,</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="2em" />
+  </mstyle>
+  <mi>V</mi>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mn>0</mn>
+  <mtext> </mtext>
+  <mtext> </mtext>
+  <mtext>otherwise,</mtext>
+</math></div>
+<p>with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi data-mjx-alternate="1">ℏ</mi>
+  <mo>=</mo>
+  <mi>m</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>V</mi>
+    <mn>0</mn>
+  </msub>
+  <mo>=</mo>
+  <mn>2</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>. Its wavefunction obeys the time-dependent Schrödinger equation</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>i</mi>
+  <mi data-mjx-alternate="1">ℏ</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mfrac>
+    <mrow>
+      <mi>∂</mi>
+      <mi>ψ</mi>
+    </mrow>
+    <mrow>
+      <mi>∂</mi>
+      <mi>t</mi>
+    </mrow>
+  </mfrac>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mfrac>
+    <msup>
+      <mi data-mjx-alternate="1">ℏ</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mn>2</mn>
+      </mrow>
+    </msup>
+    <mrow>
+      <mn>2</mn>
+      <mi>m</mi>
+    </mrow>
+  </mfrac>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mfrac>
+    <mrow>
+      <msup>
+        <mi>∂</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mn>2</mn>
+        </mrow>
+      </msup>
+      <mi>ψ</mi>
+    </mrow>
+    <mrow>
+      <mi>∂</mi>
+      <msup>
+        <mi>x</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mn>2</mn>
+        </mrow>
+      </msup>
+    </mrow>
+  </mfrac>
+  <mo>+</mo>
+  <mi>V</mi>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mi>ψ</mi>
+  <mo>.</mo>
+</math></div>
+<ul><li class="labeled"><span class="item-label">(a)</span><p>Separate the variables and solve the resulting ordinary differential equation exactly in each of the three regions where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>V</mi>
+</math></span> is constant. Impose continuity of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>φ</mi>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>φ</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+</math></span> at both walls and obtain the reflection and transmission amplitudes <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mo stretchy="false">(</mo>
+  <mi>k</mi>
+  <mo stretchy="false">)</mo>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+  <mo stretchy="false">(</mo>
+  <mi>k</mi>
+  <mo stretchy="false">)</mo>
+</math></span> in closed form.</p></li><li class="labeled"><span class="item-label">(b)</span><p>Give <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>T</mi>
+  <mo stretchy="false">(</mo>
+  <mi>E</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mi>t</mi>
+  <msup>
+    <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+</math></span> as a formula, and prove from it that <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>R</mi>
+  <mo>+</mo>
+  <mi>T</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span> identically. Plot <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>T</mi>
+  <mo stretchy="false">(</mo>
+  <mi>E</mi>
+  <mo stretchy="false">)</mo>
+</math></span> from <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>E</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>E</mi>
+  <mo>=</mo>
+  <mn>3</mn>
+  <msub>
+    <mi>V</mi>
+    <mn>0</mn>
+  </msub>
+</math></span>, and account for the energies above the barrier at which <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>T</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span> exactly.</p></li><li class="labeled"><span class="item-label">(c)</span><p>Send a Gaussian wave packet <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ψ</mi>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo>,</mo>
+  <mn>0</mn>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mo stretchy="false">(</mo>
+  <mn>2</mn>
+  <mi>π</mi>
+  <msup>
+    <mi>σ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <msup>
+    <mo stretchy="false">)</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mn>4</mn>
+    </mrow>
+  </msup>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mo stretchy="false">(</mo>
+      <mi>x</mi>
+      <mo>−</mo>
+      <msub>
+        <mi>x</mi>
+        <mn>0</mn>
+      </msub>
+      <msup>
+        <mo stretchy="false">)</mo>
+        <mrow data-mjx-texclass="ORD">
+          <mn>2</mn>
+        </mrow>
+      </msup>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mn>4</mn>
+      <msup>
+        <mi>σ</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mn>2</mn>
+        </mrow>
+      </msup>
+    </mrow>
+  </msup>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>i</mi>
+      <msub>
+        <mi>k</mi>
+        <mn>0</mn>
+      </msub>
+      <mo stretchy="false">(</mo>
+      <mi>x</mi>
+      <mo>−</mo>
+      <msub>
+        <mi>x</mi>
+        <mn>0</mn>
+      </msub>
+      <mo stretchy="false">)</mo>
+    </mrow>
+  </msup>
+</math></span> at the barrier, with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>x</mi>
+    <mn>0</mn>
+  </msub>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>40</mn>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>σ</mi>
+  <mo>=</mo>
+  <mn>5</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>k</mi>
+    <mn>0</mn>
+  </msub>
+  <mo>=</mo>
+  <mn>1.6</mn>
+</math></span>, so that its mean energy is below <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>V</mi>
+    <mn>0</mn>
+  </msub>
+</math></span>. Expand it in the states of (a), write the exact evolution, and animate it. Predict <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>T</mi>
+</math></span> for the packet as a whole <em>before</em> evolving it, and check the prediction against the evolved wavefunction.</p></li><li class="labeled"><span class="item-label">(d)</span><p>Account for the difference between the transmission of the packet and the transmission of a plane wave at the packet's mean energy.</p></li><li class="labeled"><span class="item-label">(e)</span><p>Nothing above may be discretised, and no differential equation may be stepped forward in time. The one integral with no closed form — the superposition in (c) — may be evaluated numerically.</p></li></ul></section>
 <p class="project-abstract"><strong>Abstract.</strong> The time-dependent Schrödinger equation is solved in closed form for a
    particle incident on a rectangular barrier. Separation of variables reduces
    it to a linear ordinary differential equation with constant coefficients in
    each of the three regions where the potential is constant; requiring
-   <span class="math-inline">\(\varphi\)</span> and <span class="math-inline">\(\varphi&#x27;\)</span> to be continuous at the two walls gives four
-   equations, which are assembled into a <span class="math-inline">\(2\times2\)</span> transfer matrix and solved
+   <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>φ</mi>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>φ</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+</math></span> to be continuous at the two walls gives four
+   equations, which are assembled into a <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mo>×</mo>
+  <mn>2</mn>
+</math></span> transfer matrix and solved
    for the reflection and transmission amplitudes. The result is a closed-form
-   transmission coefficient <span class="math-inline">\(T(E)\)</span> valid at every energy, from which <span class="math-inline">\(R+T=1\)</span>
+   transmission coefficient <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>T</mi>
+  <mo stretchy="false">(</mo>
+  <mi>E</mi>
+  <mo stretchy="false">)</mo>
+</math></span> valid at every energy, from which <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>R</mi>
+  <mo>+</mo>
+  <mi>T</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>
    follows as an algebraic identity and the above-barrier resonances
-   <span class="math-inline">\(T=1\)</span> at <span class="math-inline">\(qa=n\pi\)</span> follow by analytic continuation. A Gaussian wave packet
-   with mean energy <span class="math-inline">\(0.64\,V_0\)</span> is then expanded in these exact stationary
-   states and evolved by superposition, giving <span class="math-inline">\(T = 0.290\)</span> and <span class="math-inline">\(R = 0.710\)</span> with
-   <span class="math-inline">\(R+T = 1.000\)</span>. The spectral decomposition shows the barrier acting as a
-   high-pass filter: the transmitted packet's mean wavenumber is <span class="math-inline">\(1.0\%\)</span> higher
+   <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>T</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span> at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+  <mi>a</mi>
+  <mo>=</mo>
+  <mi>n</mi>
+  <mi>π</mi>
+</math></span> follow by analytic continuation. A Gaussian wave packet
+   with mean energy <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0.64</mn>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msub>
+    <mi>V</mi>
+    <mn>0</mn>
+  </msub>
+</math></span> is then expanded in these exact stationary
+   states and evolved by superposition, giving <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>T</mi>
+  <mo>=</mo>
+  <mn>0.290</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>R</mi>
+  <mo>=</mo>
+  <mn>0.710</mn>
+</math></span> with
+   <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>R</mi>
+  <mo>+</mo>
+  <mi>T</mi>
+  <mo>=</mo>
+  <mn>1.000</mn>
+</math></span>. The spectral decomposition shows the barrier acting as a
+   high-pass filter: the transmitted packet's mean wavenumber is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1.0</mn>
+  <mi mathvariant="normal">%</mi>
+</math></span> higher
    than the incident packet's. The methods used are complex exponentials
    (Ch. 2), matrices (Ch. 3), the Fourier transform (Ch. 7), linear ordinary
    differential equations (Ch. 8) and separation of variables (Ch. 10).</p>
 <h2 id="sec-900-separating-the-variables-chapter-10"><span class="sec-number">1</span>Separating the variables (Chapter 10)</h2>
-<p>The potential does not depend on time, so the equation admits solutions of the product form <span class="math-inline">\(\psi(x,t) = \varphi(x)\,e^{-iEt/\hbar}\)</span>. Substituting this into the Schrödinger equation gives</p>
-<div class="math-block">\begin{equation}
-  i\hbar\,\varphi(x)\,\frac{d}{dt}e^{-iEt/\hbar}
-  = \left[-\frac{\hbar^{2}}{2m}\varphi&#x27;&#x27;(x) + V(x)\varphi(x)\right]e^{-iEt/\hbar},
-\end{equation}</div>
-<p>and since <span class="math-inline">\(i\hbar\,\frac{d}{dt}e^{-iEt/\hbar} = E\,e^{-iEt/\hbar}\)</span>, the exponential cancels from both sides. What is left is an ordinary differential equation for <span class="math-inline">\(\varphi\)</span> alone,</p>
-<div class="math-block">\begin{equation}
-  \frac{d^{2}\varphi}{dx^{2}} + \frac{2m}{\hbar^{2}}\bigl(E - V(x)\bigr)\varphi = 0 .
-  \label{eq:ode}
-\end{equation}</div>
-<p>Equation <span class="math-inline">\(\eqref{eq:ode}\)</span> is the whole of the physics in this report. Everything that follows is Chapter 8 applied to it: a second-order linear equation with constant coefficients, solved region by region and joined at the boundaries.</p>
+<p>The potential does not depend on time, so the equation admits solutions of the product form <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ψ</mi>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo>,</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mi>φ</mi>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi>i</mi>
+      <mi>E</mi>
+      <mi>t</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mi data-mjx-alternate="1">ℏ</mi>
+    </mrow>
+  </msup>
+</math></span>. Substituting this into the Schrödinger equation gives</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>i</mi>
+        <mi data-mjx-alternate="1">ℏ</mi>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <mi>φ</mi>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <mfrac>
+          <mi>d</mi>
+          <mrow>
+            <mi>d</mi>
+            <mi>t</mi>
+          </mrow>
+        </mfrac>
+        <msup>
+          <mi>e</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+            <mi>i</mi>
+            <mi>E</mi>
+            <mi>t</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mo>/</mo>
+            </mrow>
+            <mi data-mjx-alternate="1">ℏ</mi>
+          </mrow>
+        </msup>
+        <mo>=</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">[</mo>
+          <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+          <mfrac>
+            <msup>
+              <mi data-mjx-alternate="1">ℏ</mi>
+              <mrow data-mjx-texclass="ORD">
+                <mn>2</mn>
+              </mrow>
+            </msup>
+            <mrow>
+              <mn>2</mn>
+              <mi>m</mi>
+            </mrow>
+          </mfrac>
+          <msup>
+            <mi>φ</mi>
+            <mo data-mjx-alternate="1">″</mo>
+          </msup>
+          <mo stretchy="false">(</mo>
+          <mi>x</mi>
+          <mo stretchy="false">)</mo>
+          <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+          <mi>V</mi>
+          <mo stretchy="false">(</mo>
+          <mi>x</mi>
+          <mo stretchy="false">)</mo>
+          <mi>φ</mi>
+          <mo stretchy="false">(</mo>
+          <mi>x</mi>
+          <mo stretchy="false">)</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">]</mo>
+        </mrow>
+        <msup>
+          <mi>e</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+            <mi>i</mi>
+            <mi>E</mi>
+            <mi>t</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mo>/</mo>
+            </mrow>
+            <mi data-mjx-alternate="1">ℏ</mi>
+          </mrow>
+        </msup>
+        <mo>,</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:1">(1)</span></div>
+<p>and since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+  <mi data-mjx-alternate="1">ℏ</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mfrac>
+    <mi>d</mi>
+    <mrow>
+      <mi>d</mi>
+      <mi>t</mi>
+    </mrow>
+  </mfrac>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi>i</mi>
+      <mi>E</mi>
+      <mi>t</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mi data-mjx-alternate="1">ℏ</mi>
+    </mrow>
+  </msup>
+  <mo>=</mo>
+  <mi>E</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi>i</mi>
+      <mi>E</mi>
+      <mi>t</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mi data-mjx-alternate="1">ℏ</mi>
+    </mrow>
+  </msup>
+</math></span>, the exponential cancels from both sides. What is left is an ordinary differential equation for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>φ</mi>
+</math></span> alone,</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mfrac>
+          <mrow>
+            <msup>
+              <mi>d</mi>
+              <mrow data-mjx-texclass="ORD">
+                <mn>2</mn>
+              </mrow>
+            </msup>
+            <mi>φ</mi>
+          </mrow>
+          <mrow>
+            <mi>d</mi>
+            <msup>
+              <mi>x</mi>
+              <mrow data-mjx-texclass="ORD">
+                <mn>2</mn>
+              </mrow>
+            </msup>
+          </mrow>
+        </mfrac>
+        <mo>+</mo>
+        <mfrac>
+          <mrow>
+            <mn>2</mn>
+            <mi>m</mi>
+          </mrow>
+          <msup>
+            <mi data-mjx-alternate="1">ℏ</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mn>2</mn>
+            </mrow>
+          </msup>
+        </mfrac>
+        <mrow data-mjx-texclass="OPEN">
+          <mo minsize="1.2em" maxsize="1.2em">(</mo>
+        </mrow>
+        <mi>E</mi>
+        <mo>−</mo>
+        <mi>V</mi>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mrow data-mjx-texclass="CLOSE">
+          <mo minsize="1.2em" maxsize="1.2em">)</mo>
+        </mrow>
+        <mi>φ</mi>
+        <mo>=</mo>
+        <mn>0</mn>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:ode">(2)</span></div>
+<p>Equation <a class="eqn-ref" href="#mjx-eqn:eq:ode">(2)</a> is the whole of the physics in this report. Everything that follows is Chapter 8 applied to it: a second-order linear equation with constant coefficients, solved region by region and joined at the boundaries.</p>
 <h2 id="sec-900-solving-in-each-region-chapter-8"><span class="sec-number">2</span>Solving in each region (Chapter 8)</h2>
-<p>The potential is piecewise constant, so <span class="math-inline">\(\eqref{eq:ode}\)</span> has constant coefficients in each of three regions, and its solutions there are exponentials.</p>
-<p class="paragraph-title">Outside the barrier (<span class="math-inline">\(|x| &gt; a/2\)</span>).</p>
-<p>Here <span class="math-inline">\(V = 0\)</span>, so the coefficient of <span class="math-inline">\(\varphi\)</span> is <span class="math-inline">\(+2mE/\hbar^{2}\)</span>, which is positive. The characteristic equation <span class="math-inline">\(\lambda^{2} + k^{2} = 0\)</span> has imaginary roots, and the two solutions oscillate:</p>
-<div class="math-block">\begin{equation}
-  \varphi = A\,e^{ikx} + B\,e^{-ikx},
-  \qquad k = \frac{\sqrt{2mE}}{\hbar} .
-  \label{eq:outside}
-\end{equation}</div>
-<p class="paragraph-title">Inside the barrier (<span class="math-inline">\(|x| &lt; a/2\)</span>).</p>
-<p>Here <span class="math-inline">\(V = V_0 &gt; E\)</span>, so the same coefficient is <span class="math-inline">\(-2m(V_0-E)/\hbar^{2}\)</span>, which is negative. The characteristic equation <span class="math-inline">\(\lambda^{2} - \kappa^{2} = 0\)</span> has real roots, and the two solutions do not oscillate at all — one grows and one decays:</p>
-<div class="math-block">\begin{equation}
-  \varphi = C\,e^{\kappa x} + D\,e^{-\kappa x},
-  \qquad \kappa = \frac{\sqrt{2m(V_0 - E)}}{\hbar} .
-  \label{eq:inside}
-\end{equation}</div>
-<p>That change of sign is the origin of tunnelling. A classical particle stops at the wall because no real motion is available to it at <span class="math-inline">\(E &lt; V_0\)</span>; the wave does not stop, it changes from a sinusoid into an exponential and continues, reduced. Both solutions in <span class="math-inline">\(\eqref{eq:inside}\)</span> are needed. The decaying one dominates near the first wall, but the growing one, small as its coefficient is, is what carries an amplitude to the second wall and out the far side.</p>
-<p>Physical conditions now select which combination is wanted. The particle is incident from the left, so to the left of the barrier there is an incoming wave and a reflected one, and to the right there is only an outgoing wave — nothing returns from <span class="math-inline">\(x = +\infty\)</span>. Normalising the incoming amplitude to <span class="math-inline">\(1\)</span>,</p>
-<div class="math-block">\begin{equation}
-  \varphi_k(x) =
-  \begin{cases}
-    e^{ikx} + r\,e^{-ikx}, &amp; x &lt; -a/2, \\[2pt]
-    C\,e^{\kappa x} + D\,e^{-\kappa x}, &amp; |x| &lt; a/2, \\[2pt]
-    t\,e^{ikx}, &amp; x &gt; +a/2 ,
-  \end{cases}
-  \label{eq:ansatz}
-\end{equation}</div>
-<p>which leaves four unknown constants: <span class="math-inline">\(r\)</span>, <span class="math-inline">\(t\)</span>, <span class="math-inline">\(C\)</span> and <span class="math-inline">\(D\)</span>.</p>
-<figure id="fig-1" class="figure"><img src="assets/img/fig_regions.png" alt="The three regions, the form the solution takes in each, and the two points at which the pieces must be joined. Four matching conditions determine the four unknown constants in eq:ansatz." loading="lazy" style="--figure-width: 95%;"><figcaption>Figure 1. The three regions, the form the solution takes in each, and the two
+<p>The potential is piecewise constant, so <a class="eqn-ref" href="#mjx-eqn:eq:ode">(2)</a> has constant coefficients in each of three regions, and its solutions there are exponentials.</p>
+<p class="paragraph-title">Outside the barrier (<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mi>x</mi>
+  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo>&gt;</mo>
+  <mi>a</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+</math></span>).</p>
+<p>Here <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>V</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>, so the coefficient of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>φ</mi>
+</math></span> is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+  <mn>2</mn>
+  <mi>m</mi>
+  <mi>E</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msup>
+    <mi data-mjx-alternate="1">ℏ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+</math></span>, which is positive. The characteristic equation <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>λ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mo>+</mo>
+  <msup>
+    <mi>k</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> has imaginary roots, and the two solutions oscillate:</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>φ</mi>
+        <mo>=</mo>
+        <mi>A</mi>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <msup>
+          <mi>e</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mi>i</mi>
+            <mi>k</mi>
+            <mi>x</mi>
+          </mrow>
+        </msup>
+        <mo>+</mo>
+        <mi>B</mi>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <msup>
+          <mi>e</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+            <mi>i</mi>
+            <mi>k</mi>
+            <mi>x</mi>
+          </mrow>
+        </msup>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <mi>k</mi>
+        <mo>=</mo>
+        <mfrac>
+          <msqrt>
+            <mn>2</mn>
+            <mi>m</mi>
+            <mi>E</mi>
+          </msqrt>
+          <mi data-mjx-alternate="1">ℏ</mi>
+        </mfrac>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:outside">(3)</span></div>
+<p class="paragraph-title">Inside the barrier (<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mi>x</mi>
+  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo>&lt;</mo>
+  <mi>a</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+</math></span>).</p>
+<p>Here <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>V</mi>
+  <mo>=</mo>
+  <msub>
+    <mi>V</mi>
+    <mn>0</mn>
+  </msub>
+  <mo>&gt;</mo>
+  <mi>E</mi>
+</math></span>, so the same coefficient is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>2</mn>
+  <mi>m</mi>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>V</mi>
+    <mn>0</mn>
+  </msub>
+  <mo>−</mo>
+  <mi>E</mi>
+  <mo stretchy="false">)</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msup>
+    <mi data-mjx-alternate="1">ℏ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+</math></span>, which is negative. The characteristic equation <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>λ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mo>−</mo>
+  <msup>
+    <mi>κ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> has real roots, and the two solutions do not oscillate at all — one grows and one decays:</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>φ</mi>
+        <mo>=</mo>
+        <mi>C</mi>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <msup>
+          <mi>e</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mi>κ</mi>
+            <mi>x</mi>
+          </mrow>
+        </msup>
+        <mo>+</mo>
+        <mi>D</mi>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <msup>
+          <mi>e</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+            <mi>κ</mi>
+            <mi>x</mi>
+          </mrow>
+        </msup>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <mi>κ</mi>
+        <mo>=</mo>
+        <mfrac>
+          <msqrt>
+            <mn>2</mn>
+            <mi>m</mi>
+            <mo stretchy="false">(</mo>
+            <msub>
+              <mi>V</mi>
+              <mn>0</mn>
+            </msub>
+            <mo>−</mo>
+            <mi>E</mi>
+            <mo stretchy="false">)</mo>
+          </msqrt>
+          <mi data-mjx-alternate="1">ℏ</mi>
+        </mfrac>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:inside">(4)</span></div>
+<p>That change of sign is the origin of tunnelling. A classical particle stops at the wall because no real motion is available to it at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>E</mi>
+  <mo>&lt;</mo>
+  <msub>
+    <mi>V</mi>
+    <mn>0</mn>
+  </msub>
+</math></span>; the wave does not stop, it changes from a sinusoid into an exponential and continues, reduced. Both solutions in <a class="eqn-ref" href="#mjx-eqn:eq:inside">(4)</a> are needed. The decaying one dominates near the first wall, but the growing one, small as its coefficient is, is what carries an amplitude to the second wall and out the far side.</p>
+<p>Physical conditions now select which combination is wanted. The particle is incident from the left, so to the left of the barrier there is an incoming wave and a reflected one, and to the right there is only an outgoing wave — nothing returns from <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+  <mi mathvariant="normal">∞</mi>
+</math></span>. Normalising the incoming amplitude to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>,</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <msub>
+          <mi>φ</mi>
+          <mi>k</mi>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">{</mo>
+          <mtable columnalign="left left" columnspacing="1em" rowspacing="0.4em 0.4em 0.2em">
+            <mtr>
+              <mtd style="text-align: left">
+                <msup>
+                  <mi>e</mi>
+                  <mrow data-mjx-texclass="ORD">
+                    <mi>i</mi>
+                    <mi>k</mi>
+                    <mi>x</mi>
+                  </mrow>
+                </msup>
+                <mo>+</mo>
+                <mi>r</mi>
+                <mstyle scriptlevel="0">
+                  <mspace width="0.167em" />
+                </mstyle>
+                <msup>
+                  <mi>e</mi>
+                  <mrow data-mjx-texclass="ORD">
+                    <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+                    <mi>i</mi>
+                    <mi>k</mi>
+                    <mi>x</mi>
+                  </mrow>
+                </msup>
+                <mo>,</mo>
+              </mtd>
+              <mtd style="text-align: left">
+                <mi>x</mi>
+                <mo>&lt;</mo>
+                <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+                <mi>a</mi>
+                <mrow data-mjx-texclass="ORD">
+                  <mo>/</mo>
+                </mrow>
+                <mn>2</mn>
+                <mo>,</mo>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd style="text-align: left">
+                <mi>C</mi>
+                <mstyle scriptlevel="0">
+                  <mspace width="0.167em" />
+                </mstyle>
+                <msup>
+                  <mi>e</mi>
+                  <mrow data-mjx-texclass="ORD">
+                    <mi>κ</mi>
+                    <mi>x</mi>
+                  </mrow>
+                </msup>
+                <mo>+</mo>
+                <mi>D</mi>
+                <mstyle scriptlevel="0">
+                  <mspace width="0.167em" />
+                </mstyle>
+                <msup>
+                  <mi>e</mi>
+                  <mrow data-mjx-texclass="ORD">
+                    <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+                    <mi>κ</mi>
+                    <mi>x</mi>
+                  </mrow>
+                </msup>
+                <mo>,</mo>
+              </mtd>
+              <mtd style="text-align: left">
+                <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+                <mi>x</mi>
+                <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+                <mo>&lt;</mo>
+                <mi>a</mi>
+                <mrow data-mjx-texclass="ORD">
+                  <mo>/</mo>
+                </mrow>
+                <mn>2</mn>
+                <mo>,</mo>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd style="text-align: left">
+                <mi>t</mi>
+                <mstyle scriptlevel="0">
+                  <mspace width="0.167em" />
+                </mstyle>
+                <msup>
+                  <mi>e</mi>
+                  <mrow data-mjx-texclass="ORD">
+                    <mi>i</mi>
+                    <mi>k</mi>
+                    <mi>x</mi>
+                  </mrow>
+                </msup>
+                <mo>,</mo>
+              </mtd>
+              <mtd style="text-align: left">
+                <mi>x</mi>
+                <mo>&gt;</mo>
+                <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+                <mi>a</mi>
+                <mrow data-mjx-texclass="ORD">
+                  <mo>/</mo>
+                </mrow>
+                <mn>2</mn>
+                <mo>,</mo>
+              </mtd>
+            </mtr>
+          </mtable>
+          <mo data-mjx-texclass="CLOSE" fence="true" stretchy="true" symmetric="true" form="postfix" lspace="0em" rspace="0em" />
+        </mrow>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:ansatz">(5)</span></div>
+<p>which leaves four unknown constants: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>C</mi>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>D</mi>
+</math></span>.</p>
+<figure id="fig-1" class="figure"><img src="assets/img/fig_regions.png" class="diagram" alt="The three regions, the form the solution takes in each, and the two points at which the pieces must be joined. Four matching conditions determine the four unknown constants in eq:ansatz." loading="lazy" style="--figure-width: 95%;"><figcaption>Figure 1. The three regions, the form the solution takes in each, and the two
     points at which the pieces must be joined. Four matching conditions
-    determine the four unknown constants in <span class="math-inline">\(\eqref{eq:ansatz}\)</span>.</figcaption></figure>
+    determine the four unknown constants in <a class="eqn-ref" href="#mjx-eqn:eq:ansatz">(5)</a>.</figcaption></figure>
 <h2 id="sec-900-the-matching-conditions"><span class="sec-number">3</span>The matching conditions</h2>
-<p>At a step of finite height, both <span class="math-inline">\(\varphi\)</span> and <span class="math-inline">\(\varphi&#x27;\)</span> must be continuous. The reason is <span class="math-inline">\(\eqref{eq:ode}\)</span> itself: it expresses <span class="math-inline">\(\varphi&#x27;&#x27;\)</span> in terms of <span class="math-inline">\(\varphi\)</span>, and if <span class="math-inline">\(\varphi\)</span> and <span class="math-inline">\(V\)</span> are bounded then <span class="math-inline">\(\varphi&#x27;&#x27;\)</span> is bounded, so <span class="math-inline">\(\varphi&#x27;\)</span> cannot jump and <span class="math-inline">\(\varphi\)</span> cannot have a kink. Continuity of both quantities at each of the two walls gives four equations:</p>
-<div class="math-block">\begin{align}
-  e^{-ika/2} + r\,e^{ika/2}
-    &amp;= C\,e^{-\kappa a/2} + D\,e^{\kappa a/2},
-    \label{eq:m1}\\
-  ik\left(e^{-ika/2} - r\,e^{ika/2}\right)
-    &amp;= \kappa\left(C\,e^{-\kappa a/2} - D\,e^{\kappa a/2}\right),
-    \label{eq:m2}\\
-  C\,e^{\kappa a/2} + D\,e^{-\kappa a/2}
-    &amp;= t\,e^{ika/2},
-    \label{eq:m3}\\
-  \kappa\left(C\,e^{\kappa a/2} - D\,e^{-\kappa a/2}\right)
-    &amp;= ik\,t\,e^{ika/2}.
-    \label{eq:m4}
-\end{align}</div>
+<p>At a step of finite height, both <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>φ</mi>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>φ</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+</math></span> must be continuous. The reason is <a class="eqn-ref" href="#mjx-eqn:eq:ode">(2)</a> itself: it expresses <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>φ</mi>
+    <mo data-mjx-alternate="1">″</mo>
+  </msup>
+</math></span> in terms of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>φ</mi>
+</math></span>, and if <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>φ</mi>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>V</mi>
+</math></span> are bounded then <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>φ</mi>
+    <mo data-mjx-alternate="1">″</mo>
+  </msup>
+</math></span> is bounded, so <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>φ</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+</math></span> cannot jump and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>φ</mi>
+</math></span> cannot have a kink. Continuity of both quantities at each of the two walls gives four equations:</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true" columnalign="right left" columnspacing="0em" rowspacing="3pt">
+    <mtr>
+      <mtd>
+        <msup>
+          <mi>e</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+            <mi>i</mi>
+            <mi>k</mi>
+            <mi>a</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mo>/</mo>
+            </mrow>
+            <mn>2</mn>
+          </mrow>
+        </msup>
+        <mo>+</mo>
+        <mi>r</mi>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <msup>
+          <mi>e</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mi>i</mi>
+            <mi>k</mi>
+            <mi>a</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mo>/</mo>
+            </mrow>
+            <mn>2</mn>
+          </mrow>
+        </msup>
+      </mtd>
+      <mtd style="text-align: left">
+        <mi />
+        <mo>=</mo>
+        <mi>C</mi>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <msup>
+          <mi>e</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+            <mi>κ</mi>
+            <mi>a</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mo>/</mo>
+            </mrow>
+            <mn>2</mn>
+          </mrow>
+        </msup>
+        <mo>+</mo>
+        <mi>D</mi>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <msup>
+          <mi>e</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mi>κ</mi>
+            <mi>a</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mo>/</mo>
+            </mrow>
+            <mn>2</mn>
+          </mrow>
+        </msup>
+        <mo>,</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mi>i</mi>
+        <mi>k</mi>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <msup>
+            <mi>e</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+              <mi>i</mi>
+              <mi>k</mi>
+              <mi>a</mi>
+              <mrow data-mjx-texclass="ORD">
+                <mo>/</mo>
+              </mrow>
+              <mn>2</mn>
+            </mrow>
+          </msup>
+          <mo>−</mo>
+          <mi>r</mi>
+          <mstyle scriptlevel="0">
+            <mspace width="0.167em" />
+          </mstyle>
+          <msup>
+            <mi>e</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mi>i</mi>
+              <mi>k</mi>
+              <mi>a</mi>
+              <mrow data-mjx-texclass="ORD">
+                <mo>/</mo>
+              </mrow>
+              <mn>2</mn>
+            </mrow>
+          </msup>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
+      </mtd>
+      <mtd style="text-align: left">
+        <mi />
+        <mo>=</mo>
+        <mi>κ</mi>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mi>C</mi>
+          <mstyle scriptlevel="0">
+            <mspace width="0.167em" />
+          </mstyle>
+          <msup>
+            <mi>e</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+              <mi>κ</mi>
+              <mi>a</mi>
+              <mrow data-mjx-texclass="ORD">
+                <mo>/</mo>
+              </mrow>
+              <mn>2</mn>
+            </mrow>
+          </msup>
+          <mo>−</mo>
+          <mi>D</mi>
+          <mstyle scriptlevel="0">
+            <mspace width="0.167em" />
+          </mstyle>
+          <msup>
+            <mi>e</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mi>κ</mi>
+              <mi>a</mi>
+              <mrow data-mjx-texclass="ORD">
+                <mo>/</mo>
+              </mrow>
+              <mn>2</mn>
+            </mrow>
+          </msup>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
+        <mo>,</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mi>C</mi>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <msup>
+          <mi>e</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mi>κ</mi>
+            <mi>a</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mo>/</mo>
+            </mrow>
+            <mn>2</mn>
+          </mrow>
+        </msup>
+        <mo>+</mo>
+        <mi>D</mi>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <msup>
+          <mi>e</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+            <mi>κ</mi>
+            <mi>a</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mo>/</mo>
+            </mrow>
+            <mn>2</mn>
+          </mrow>
+        </msup>
+      </mtd>
+      <mtd style="text-align: left">
+        <mi />
+        <mo>=</mo>
+        <mi>t</mi>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <msup>
+          <mi>e</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mi>i</mi>
+            <mi>k</mi>
+            <mi>a</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mo>/</mo>
+            </mrow>
+            <mn>2</mn>
+          </mrow>
+        </msup>
+        <mo>,</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mi>κ</mi>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mi>C</mi>
+          <mstyle scriptlevel="0">
+            <mspace width="0.167em" />
+          </mstyle>
+          <msup>
+            <mi>e</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mi>κ</mi>
+              <mi>a</mi>
+              <mrow data-mjx-texclass="ORD">
+                <mo>/</mo>
+              </mrow>
+              <mn>2</mn>
+            </mrow>
+          </msup>
+          <mo>−</mo>
+          <mi>D</mi>
+          <mstyle scriptlevel="0">
+            <mspace width="0.167em" />
+          </mstyle>
+          <msup>
+            <mi>e</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+              <mi>κ</mi>
+              <mi>a</mi>
+              <mrow data-mjx-texclass="ORD">
+                <mo>/</mo>
+              </mrow>
+              <mn>2</mn>
+            </mrow>
+          </msup>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
+      </mtd>
+      <mtd style="text-align: left">
+        <mi />
+        <mo>=</mo>
+        <mi>i</mi>
+        <mi>k</mi>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <mi>t</mi>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <msup>
+          <mi>e</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mi>i</mi>
+            <mi>k</mi>
+            <mi>a</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mo>/</mo>
+            </mrow>
+            <mn>2</mn>
+          </mrow>
+        </msup>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:m1">(6)</span></div>
 <p>Four linear equations in four unknowns: the problem is now solved in principle, and the rest is bookkeeping.</p>
 <h2 id="sec-900-the-transfer-matrix-chapter-3"><span class="sec-number">4</span>The transfer matrix (Chapter 3)</h2>
-<p>Solving <span class="math-inline">\(\eqref{eq:m1}\)</span>–<span class="math-inline">\(\eqref{eq:m4}\)</span> by substitution is possible but unpleasant. Written in matrix form the same elimination is two lines. For a solution built out of <span class="math-inline">\(e^{\pm px}\)</span>, collect the values of <span class="math-inline">\(\varphi\)</span> and <span class="math-inline">\(\varphi&#x27;\)</span> at a point into a single matrix acting on the pair of amplitudes,</p>
-<div class="math-block">\begin{equation}
-  M(p, x) =
-  \begin{pmatrix} e^{px} &amp; e^{-px} \\ p\,e^{px} &amp; -p\,e^{-px} \end{pmatrix},
-  \qquad\text{so that}\qquad
-  \begin{pmatrix} \varphi(x) \\ \varphi&#x27;(x) \end{pmatrix}
-  = M(p, x)
-  \begin{pmatrix} \text{amplitude of } e^{px} \\ \text{amplitude of } e^{-px} \end{pmatrix} .
-  \label{eq:Mmatrix}
-\end{equation}</div>
-<p>Continuity at a wall is then the statement that the two sides produce the same column vector there. Equations <span class="math-inline">\(\eqref{eq:m1}\)</span>–<span class="math-inline">\(\eqref{eq:m2}\)</span> become</p>
-<div class="math-block">\begin{equation}
-  M(ik, -a/2)\binom{1}{r} = M(\kappa, -a/2)\binom{C}{D},
-  \label{eq:matchleft}
-\end{equation}</div>
-<p>and <span class="math-inline">\(\eqref{eq:m3}\)</span>–<span class="math-inline">\(\eqref{eq:m4}\)</span> become</p>
-<div class="math-block">\begin{equation}
-  M(\kappa, +a/2)\binom{C}{D} = M(ik, +a/2)\binom{t}{0}.
-  \label{eq:matchright}
-\end{equation}</div>
-<p>Solving <span class="math-inline">\(\eqref{eq:matchright}\)</span> for <span class="math-inline">\((C,D)\)</span> and substituting into <span class="math-inline">\(\eqref{eq:matchleft}\)</span> eliminates the interior amplitudes and leaves the whole barrier as a single matrix,</p>
-<div class="math-block">\begin{equation}
-  \binom{1}{r}
-  = \underbrace{M(ik,-\tfrac a2)^{-1} M(\kappa,-\tfrac a2)\,
-                M(\kappa,+\tfrac a2)^{-1} M(ik,+\tfrac a2)}_{\textstyle M(E)}
-    \binom{t}{0} .
-  \label{eq:transfer}
-\end{equation}</div>
-<p>The two rows of <span class="math-inline">\(\eqref{eq:transfer}\)</span> read <span class="math-inline">\(1 = M_{11}t\)</span> and <span class="math-inline">\(r = M_{21}t\)</span>, so</p>
-<div class="math-block">\begin{equation}
-  t = \frac{1}{M_{11}}, \qquad r = \frac{M_{21}}{M_{11}} .
-  \label{eq:rt}
-\end{equation}</div>
+<p>Solving <a class="eqn-ref" href="#mjx-eqn:eq:m1">(6)</a>–<a class="eqn-ref" href="#mjx-eqn:eq:m4">(9)</a> by substitution is possible but unpleasant. Written in matrix form the same elimination is two lines. For a solution built out of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">±</mo>
+      <mi>p</mi>
+      <mi>x</mi>
+    </mrow>
+  </msup>
+</math></span>, collect the values of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>φ</mi>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>φ</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+</math></span> at a point into a single matrix acting on the pair of amplitudes,</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>M</mi>
+        <mo stretchy="false">(</mo>
+        <mi>p</mi>
+        <mo>,</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mtable columnspacing="1em" rowspacing="4pt">
+            <mtr>
+              <mtd>
+                <msup>
+                  <mi>e</mi>
+                  <mrow data-mjx-texclass="ORD">
+                    <mi>p</mi>
+                    <mi>x</mi>
+                  </mrow>
+                </msup>
+              </mtd>
+              <mtd>
+                <msup>
+                  <mi>e</mi>
+                  <mrow data-mjx-texclass="ORD">
+                    <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+                    <mi>p</mi>
+                    <mi>x</mi>
+                  </mrow>
+                </msup>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <mi>p</mi>
+                <mstyle scriptlevel="0">
+                  <mspace width="0.167em" />
+                </mstyle>
+                <msup>
+                  <mi>e</mi>
+                  <mrow data-mjx-texclass="ORD">
+                    <mi>p</mi>
+                    <mi>x</mi>
+                  </mrow>
+                </msup>
+              </mtd>
+              <mtd>
+                <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+                <mi>p</mi>
+                <mstyle scriptlevel="0">
+                  <mspace width="0.167em" />
+                </mstyle>
+                <msup>
+                  <mi>e</mi>
+                  <mrow data-mjx-texclass="ORD">
+                    <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+                    <mi>p</mi>
+                    <mi>x</mi>
+                  </mrow>
+                </msup>
+              </mtd>
+            </mtr>
+          </mtable>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <mtext>so that</mtext>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mtable columnspacing="1em" rowspacing="4pt">
+            <mtr>
+              <mtd>
+                <mi>φ</mi>
+                <mo stretchy="false">(</mo>
+                <mi>x</mi>
+                <mo stretchy="false">)</mo>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <msup>
+                  <mi>φ</mi>
+                  <mo data-mjx-alternate="1">′</mo>
+                </msup>
+                <mo stretchy="false">(</mo>
+                <mi>x</mi>
+                <mo stretchy="false">)</mo>
+              </mtd>
+            </mtr>
+          </mtable>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
+        <mo>=</mo>
+        <mi>M</mi>
+        <mo stretchy="false">(</mo>
+        <mi>p</mi>
+        <mo>,</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mtable columnspacing="1em" rowspacing="4pt">
+            <mtr>
+              <mtd>
+                <mtext>amplitude of </mtext>
+                <msup>
+                  <mi>e</mi>
+                  <mrow data-mjx-texclass="ORD">
+                    <mi>p</mi>
+                    <mi>x</mi>
+                  </mrow>
+                </msup>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <mtext>amplitude of </mtext>
+                <msup>
+                  <mi>e</mi>
+                  <mrow data-mjx-texclass="ORD">
+                    <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+                    <mi>p</mi>
+                    <mi>x</mi>
+                  </mrow>
+                </msup>
+              </mtd>
+            </mtr>
+          </mtable>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:Mmatrix">(10)</span></div>
+<p>Continuity at a wall is then the statement that the two sides produce the same column vector there. Equations <a class="eqn-ref" href="#mjx-eqn:eq:m1">(6)</a>–<a class="eqn-ref" href="#mjx-eqn:eq:m2">(7)</a> become</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>M</mi>
+        <mo stretchy="false">(</mo>
+        <mi>i</mi>
+        <mi>k</mi>
+        <mo>,</mo>
+        <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+        <mi>a</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mo>/</mo>
+        </mrow>
+        <mn>2</mn>
+        <mo stretchy="false">)</mo>
+        <mrow data-mjx-texclass="ORD">
+          <mrow data-mjx-texclass="OPEN">
+            <mo minsize="2.047em" maxsize="2.047em">(</mo>
+          </mrow>
+          <mfrac linethickness="0">
+            <mn>1</mn>
+            <mi>r</mi>
+          </mfrac>
+          <mrow data-mjx-texclass="CLOSE">
+            <mo minsize="2.047em" maxsize="2.047em">)</mo>
+          </mrow>
+        </mrow>
+        <mo>=</mo>
+        <mi>M</mi>
+        <mo stretchy="false">(</mo>
+        <mi>κ</mi>
+        <mo>,</mo>
+        <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+        <mi>a</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mo>/</mo>
+        </mrow>
+        <mn>2</mn>
+        <mo stretchy="false">)</mo>
+        <mrow data-mjx-texclass="ORD">
+          <mrow data-mjx-texclass="OPEN">
+            <mo minsize="2.047em" maxsize="2.047em">(</mo>
+          </mrow>
+          <mfrac linethickness="0">
+            <mi>C</mi>
+            <mi>D</mi>
+          </mfrac>
+          <mrow data-mjx-texclass="CLOSE">
+            <mo minsize="2.047em" maxsize="2.047em">)</mo>
+          </mrow>
+        </mrow>
+        <mo>,</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:matchleft">(11)</span></div>
+<p>and <a class="eqn-ref" href="#mjx-eqn:eq:m3">(8)</a>–<a class="eqn-ref" href="#mjx-eqn:eq:m4">(9)</a> become</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>M</mi>
+        <mo stretchy="false">(</mo>
+        <mi>κ</mi>
+        <mo>,</mo>
+        <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+        <mi>a</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mo>/</mo>
+        </mrow>
+        <mn>2</mn>
+        <mo stretchy="false">)</mo>
+        <mrow data-mjx-texclass="ORD">
+          <mrow data-mjx-texclass="OPEN">
+            <mo minsize="2.047em" maxsize="2.047em">(</mo>
+          </mrow>
+          <mfrac linethickness="0">
+            <mi>C</mi>
+            <mi>D</mi>
+          </mfrac>
+          <mrow data-mjx-texclass="CLOSE">
+            <mo minsize="2.047em" maxsize="2.047em">)</mo>
+          </mrow>
+        </mrow>
+        <mo>=</mo>
+        <mi>M</mi>
+        <mo stretchy="false">(</mo>
+        <mi>i</mi>
+        <mi>k</mi>
+        <mo>,</mo>
+        <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+        <mi>a</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mo>/</mo>
+        </mrow>
+        <mn>2</mn>
+        <mo stretchy="false">)</mo>
+        <mrow data-mjx-texclass="ORD">
+          <mrow data-mjx-texclass="OPEN">
+            <mo minsize="2.047em" maxsize="2.047em">(</mo>
+          </mrow>
+          <mfrac linethickness="0">
+            <mi>t</mi>
+            <mn>0</mn>
+          </mfrac>
+          <mrow data-mjx-texclass="CLOSE">
+            <mo minsize="2.047em" maxsize="2.047em">)</mo>
+          </mrow>
+        </mrow>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:matchright">(12)</span></div>
+<p>Solving <a class="eqn-ref" href="#mjx-eqn:eq:matchright">(12)</a> for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi>C</mi>
+  <mo>,</mo>
+  <mi>D</mi>
+  <mo stretchy="false">)</mo>
+</math></span> and substituting into <a class="eqn-ref" href="#mjx-eqn:eq:matchleft">(11)</a> eliminates the interior amplitudes and leaves the whole barrier as a single matrix,</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mrow data-mjx-texclass="ORD">
+          <mrow data-mjx-texclass="OPEN">
+            <mo minsize="2.047em" maxsize="2.047em">(</mo>
+          </mrow>
+          <mfrac linethickness="0">
+            <mn>1</mn>
+            <mi>r</mi>
+          </mfrac>
+          <mrow data-mjx-texclass="CLOSE">
+            <mo minsize="2.047em" maxsize="2.047em">)</mo>
+          </mrow>
+        </mrow>
+        <mo>=</mo>
+        <munder>
+          <mrow data-mjx-texclass="OP">
+            <munder>
+              <mrow>
+                <mi>M</mi>
+                <mo stretchy="false">(</mo>
+                <mi>i</mi>
+                <mi>k</mi>
+                <mo>,</mo>
+                <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+                <mstyle displaystyle="false" scriptlevel="0">
+                  <mfrac>
+                    <mi>a</mi>
+                    <mn>2</mn>
+                  </mfrac>
+                </mstyle>
+                <msup>
+                  <mo stretchy="false">)</mo>
+                  <mrow data-mjx-texclass="ORD">
+                    <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+                    <mn>1</mn>
+                  </mrow>
+                </msup>
+                <mi>M</mi>
+                <mo stretchy="false">(</mo>
+                <mi>κ</mi>
+                <mo>,</mo>
+                <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+                <mstyle displaystyle="false" scriptlevel="0">
+                  <mfrac>
+                    <mi>a</mi>
+                    <mn>2</mn>
+                  </mfrac>
+                </mstyle>
+                <mo stretchy="false">)</mo>
+                <mstyle scriptlevel="0">
+                  <mspace width="0.167em" />
+                </mstyle>
+                <mi>M</mi>
+                <mo stretchy="false">(</mo>
+                <mi>κ</mi>
+                <mo>,</mo>
+                <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+                <mstyle displaystyle="false" scriptlevel="0">
+                  <mfrac>
+                    <mi>a</mi>
+                    <mn>2</mn>
+                  </mfrac>
+                </mstyle>
+                <msup>
+                  <mo stretchy="false">)</mo>
+                  <mrow data-mjx-texclass="ORD">
+                    <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+                    <mn>1</mn>
+                  </mrow>
+                </msup>
+                <mi>M</mi>
+                <mo stretchy="false">(</mo>
+                <mi>i</mi>
+                <mi>k</mi>
+                <mo>,</mo>
+                <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+                <mstyle displaystyle="false" scriptlevel="0">
+                  <mfrac>
+                    <mi>a</mi>
+                    <mn>2</mn>
+                  </mfrac>
+                </mstyle>
+                <mo stretchy="false">)</mo>
+              </mrow>
+              <mo>⏟</mo>
+            </munder>
+          </mrow>
+          <mrow data-mjx-texclass="ORD">
+            <mstyle displaystyle="false" scriptlevel="0">
+              <mi>M</mi>
+              <mo stretchy="false">(</mo>
+              <mi>E</mi>
+              <mo stretchy="false">)</mo>
+            </mstyle>
+          </mrow>
+        </munder>
+        <mrow data-mjx-texclass="ORD">
+          <mrow data-mjx-texclass="OPEN">
+            <mo minsize="2.047em" maxsize="2.047em">(</mo>
+          </mrow>
+          <mfrac linethickness="0">
+            <mi>t</mi>
+            <mn>0</mn>
+          </mfrac>
+          <mrow data-mjx-texclass="CLOSE">
+            <mo minsize="2.047em" maxsize="2.047em">)</mo>
+          </mrow>
+        </mrow>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:transfer">(13)</span></div>
+<p>The two rows of <a class="eqn-ref" href="#mjx-eqn:eq:transfer">(13)</a> read <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+  <mo>=</mo>
+  <msub>
+    <mi>M</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>11</mn>
+    </mrow>
+  </msub>
+  <mi>t</mi>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mo>=</mo>
+  <msub>
+    <mi>M</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>21</mn>
+    </mrow>
+  </msub>
+  <mi>t</mi>
+</math></span>, so</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>t</mi>
+        <mo>=</mo>
+        <mfrac>
+          <mn>1</mn>
+          <msub>
+            <mi>M</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mn>11</mn>
+            </mrow>
+          </msub>
+        </mfrac>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <mi>r</mi>
+        <mo>=</mo>
+        <mfrac>
+          <msub>
+            <mi>M</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mn>21</mn>
+            </mrow>
+          </msub>
+          <msub>
+            <mi>M</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mn>11</mn>
+            </mrow>
+          </msub>
+        </mfrac>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:rt">(14)</span></div>
 <p>Carrying out the matrix product and collecting the exponentials into hyperbolic functions gives the transmission amplitude in closed form,</p>
-<div class="math-block">\begin{equation}
-  t(k) = \frac{e^{-ika}}
-              {\cosh(\kappa a)
-               + \dfrac{i}{2}\left(\dfrac{\kappa}{k} - \dfrac{k}{\kappa}\right)\sinh(\kappa a)} .
-  \label{eq:tamp}
-\end{equation}</div>
-<p>The structure of <span class="math-inline">\(\eqref{eq:transfer}\)</span> is worth noting. A second barrier would insert two more factors into the same product and change nothing else in the derivation, which is what makes the transfer matrix the standard tool for layered structures.</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>t</mi>
+        <mo stretchy="false">(</mo>
+        <mi>k</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mfrac>
+          <msup>
+            <mi>e</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+              <mi>i</mi>
+              <mi>k</mi>
+              <mi>a</mi>
+            </mrow>
+          </msup>
+          <mrow>
+            <mi>cosh</mi>
+            <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+            <mo stretchy="false">(</mo>
+            <mi>κ</mi>
+            <mi>a</mi>
+            <mo stretchy="false">)</mo>
+            <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+            <mstyle displaystyle="true" scriptlevel="0">
+              <mfrac>
+                <mi>i</mi>
+                <mn>2</mn>
+              </mfrac>
+            </mstyle>
+            <mrow data-mjx-texclass="INNER">
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+              <mstyle displaystyle="true" scriptlevel="0">
+                <mfrac>
+                  <mi>κ</mi>
+                  <mi>k</mi>
+                </mfrac>
+              </mstyle>
+              <mo>−</mo>
+              <mstyle displaystyle="true" scriptlevel="0">
+                <mfrac>
+                  <mi>k</mi>
+                  <mi>κ</mi>
+                </mfrac>
+              </mstyle>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+            </mrow>
+            <mi>sinh</mi>
+            <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+            <mo stretchy="false">(</mo>
+            <mi>κ</mi>
+            <mi>a</mi>
+            <mo stretchy="false">)</mo>
+          </mrow>
+        </mfrac>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:tamp">(15)</span></div>
+<p>The structure of <a class="eqn-ref" href="#mjx-eqn:eq:transfer">(13)</a> is worth noting. A second barrier would insert two more factors into the same product and change nothing else in the derivation, which is what makes the transfer matrix the standard tool for layered structures.</p>
 <h2 id="sec-900-the-transmission-coefficient"><span class="sec-number">5</span>The transmission coefficient</h2>
-<p>Taking the squared modulus of <span class="math-inline">\(\eqref{eq:tamp}\)</span>, and simplifying with <span class="math-inline">\(k^{2} + \kappa^{2} = 2mV_0/\hbar^{2}\)</span> and <span class="math-inline">\(k^{2}\kappa^{2} = 4m^{2}E(V_0-E)/\hbar^{4}\)</span>, gives</p>
-<div class="math-block">\begin{equation}
-  \boxed{\;
-  T(E) = |t|^{2}
-  = \left[\,1 + \frac{V_0^{2}\,\sinh^{2}(\kappa a)}{4E(V_0 - E)}\,\right]^{-1} ,
-  \qquad \kappa = \frac{\sqrt{2m(V_0-E)}}{\hbar} .
-  \;}
-  \label{eq:T}
-\end{equation}</div>
-<p><span class="math-inline">\(T\)</span> is non-zero for every <span class="math-inline">\(E &gt; 0\)</span>, however far below <span class="math-inline">\(V_0\)</span>: that is tunnelling, and here it is a property of a formula rather than an observation about a particular run.</p>
-<h3 id="sec-900-r-t-1-is-an-identity"><span class="sec-number">5.1</span><span class="math-inline">\(R+T=1\)</span> is an identity</h3>
-<p>The same calculation applied to <span class="math-inline">\(r\)</span> gives</p>
-<div class="math-block">\begin{equation}
-  R = |r|^{2}
-  = \left[\,1 + \frac{4E(V_0 - E)}{V_0^{2}\sinh^{2}(\kappa a)}\,\right]^{-1} .
-  \label{eq:R}
-\end{equation}</div>
-<p>Writing <span class="math-inline">\(u = V_0^{2}\sinh^{2}(\kappa a)/4E(V_0-E)\)</span>, equations <span class="math-inline">\(\eqref{eq:T}\)</span> and <span class="math-inline">\(\eqref{eq:R}\)</span> are <span class="math-inline">\(T = 1/(1+u)\)</span> and <span class="math-inline">\(R = 1/(1+u^{-1}) = u/(1+u)\)</span>, so</p>
-<div class="math-block">\begin{equation}
-  R + T = \frac{u}{1+u} + \frac{1}{1+u} = 1
-\end{equation}</div>
-<p>for every <span class="math-inline">\(u\)</span> — that is, at every energy, for every barrier height and every width. Conservation of probability is therefore not a check to be performed on this solution but a property of it. Evaluating <span class="math-inline">\(|r|^{2}+|t|^{2}-1\)</span> numerically across the range of energies used below returns <span class="math-inline">\(9\times10^{-16}\)</span>, which measures the arithmetic of the computer and not the correctness of the physics.</p>
+<p>Taking the squared modulus of <a class="eqn-ref" href="#mjx-eqn:eq:tamp">(15)</a>, and simplifying with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>k</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mo>+</mo>
+  <msup>
+    <mi>κ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mo>=</mo>
+  <mn>2</mn>
+  <mi>m</mi>
+  <msub>
+    <mi>V</mi>
+    <mn>0</mn>
+  </msub>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msup>
+    <mi data-mjx-alternate="1">ℏ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>k</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <msup>
+    <mi>κ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mo>=</mo>
+  <mn>4</mn>
+  <msup>
+    <mi>m</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mi>E</mi>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>V</mi>
+    <mn>0</mn>
+  </msub>
+  <mo>−</mo>
+  <mi>E</mi>
+  <mo stretchy="false">)</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msup>
+    <mi data-mjx-alternate="1">ℏ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>4</mn>
+    </mrow>
+  </msup>
+</math></span>, gives</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mrow class="mml-boxed">
+          <mrow data-mjx-texclass="ORD">
+            <mstyle displaystyle="true" scriptlevel="0">
+              <mrow data-mjx-texclass="ORD">
+                <mstyle scriptlevel="0">
+                  <mspace width="0.278em" />
+                </mstyle>
+                <mi>T</mi>
+                <mo stretchy="false">(</mo>
+                <mi>E</mi>
+                <mo stretchy="false">)</mo>
+                <mo>=</mo>
+                <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+                <mi>t</mi>
+                <msup>
+                  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+                  <mrow data-mjx-texclass="ORD">
+                    <mn>2</mn>
+                  </mrow>
+                </msup>
+                <mo>=</mo>
+                <msup>
+                  <mrow data-mjx-texclass="INNER">
+                    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">[</mo>
+                    <mstyle scriptlevel="0">
+                      <mspace width="0.167em" />
+                    </mstyle>
+                    <mn>1</mn>
+                    <mo>+</mo>
+                    <mfrac>
+                      <mrow>
+                        <msubsup>
+                          <mi>V</mi>
+                          <mn>0</mn>
+                          <mrow data-mjx-texclass="ORD">
+                            <mn>2</mn>
+                          </mrow>
+                        </msubsup>
+                        <mstyle scriptlevel="0">
+                          <mspace width="0.167em" />
+                        </mstyle>
+                        <msup>
+                          <mi>sinh</mi>
+                          <mrow data-mjx-texclass="ORD">
+                            <mn>2</mn>
+                          </mrow>
+                        </msup>
+                        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+                        <mo stretchy="false">(</mo>
+                        <mi>κ</mi>
+                        <mi>a</mi>
+                        <mo stretchy="false">)</mo>
+                      </mrow>
+                      <mrow>
+                        <mn>4</mn>
+                        <mi>E</mi>
+                        <mo stretchy="false">(</mo>
+                        <msub>
+                          <mi>V</mi>
+                          <mn>0</mn>
+                        </msub>
+                        <mo>−</mo>
+                        <mi>E</mi>
+                        <mo stretchy="false">)</mo>
+                      </mrow>
+                    </mfrac>
+                    <mstyle scriptlevel="0">
+                      <mspace width="0.167em" />
+                    </mstyle>
+                    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">]</mo>
+                  </mrow>
+                  <mrow data-mjx-texclass="ORD">
+                    <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+                    <mn>1</mn>
+                  </mrow>
+                </msup>
+                <mo>,</mo>
+                <mstyle scriptlevel="0">
+                  <mspace width="2em" />
+                </mstyle>
+                <mi>κ</mi>
+                <mo>=</mo>
+                <mfrac>
+                  <msqrt>
+                    <mn>2</mn>
+                    <mi>m</mi>
+                    <mo stretchy="false">(</mo>
+                    <msub>
+                      <mi>V</mi>
+                      <mn>0</mn>
+                    </msub>
+                    <mo>−</mo>
+                    <mi>E</mi>
+                    <mo stretchy="false">)</mo>
+                  </msqrt>
+                  <mi data-mjx-alternate="1">ℏ</mi>
+                </mfrac>
+                <mo>.</mo>
+                <mstyle scriptlevel="0">
+                  <mspace width="0.278em" />
+                </mstyle>
+              </mrow>
+            </mstyle>
+          </mrow>
+        </mrow>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:T">(16)</span></div>
+<p><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>T</mi>
+</math></span> is non-zero for every <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>E</mi>
+  <mo>&gt;</mo>
+  <mn>0</mn>
+</math></span>, however far below <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>V</mi>
+    <mn>0</mn>
+  </msub>
+</math></span>: that is tunnelling, and here it is a property of a formula rather than an observation about a particular run.</p>
+<h3 id="sec-900-r-t-1-is-an-identity"><span class="sec-number">5.1</span><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>R</mi>
+  <mo>+</mo>
+  <mi>T</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span> is an identity</h3>
+<p>The same calculation applied to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+</math></span> gives</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>R</mi>
+        <mo>=</mo>
+        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mi>r</mi>
+        <msup>
+          <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mn>2</mn>
+          </mrow>
+        </msup>
+        <mo>=</mo>
+        <msup>
+          <mrow data-mjx-texclass="INNER">
+            <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">[</mo>
+            <mstyle scriptlevel="0">
+              <mspace width="0.167em" />
+            </mstyle>
+            <mn>1</mn>
+            <mo>+</mo>
+            <mfrac>
+              <mrow>
+                <mn>4</mn>
+                <mi>E</mi>
+                <mo stretchy="false">(</mo>
+                <msub>
+                  <mi>V</mi>
+                  <mn>0</mn>
+                </msub>
+                <mo>−</mo>
+                <mi>E</mi>
+                <mo stretchy="false">)</mo>
+              </mrow>
+              <mrow>
+                <msubsup>
+                  <mi>V</mi>
+                  <mn>0</mn>
+                  <mrow data-mjx-texclass="ORD">
+                    <mn>2</mn>
+                  </mrow>
+                </msubsup>
+                <msup>
+                  <mi>sinh</mi>
+                  <mrow data-mjx-texclass="ORD">
+                    <mn>2</mn>
+                  </mrow>
+                </msup>
+                <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+                <mo stretchy="false">(</mo>
+                <mi>κ</mi>
+                <mi>a</mi>
+                <mo stretchy="false">)</mo>
+              </mrow>
+            </mfrac>
+            <mstyle scriptlevel="0">
+              <mspace width="0.167em" />
+            </mstyle>
+            <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">]</mo>
+          </mrow>
+          <mrow data-mjx-texclass="ORD">
+            <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+            <mn>1</mn>
+          </mrow>
+        </msup>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:R">(17)</span></div>
+<p>Writing <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>u</mi>
+  <mo>=</mo>
+  <msubsup>
+    <mi>V</mi>
+    <mn>0</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msubsup>
+  <msup>
+    <mi>sinh</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mo stretchy="false">(</mo>
+  <mi>κ</mi>
+  <mi>a</mi>
+  <mo stretchy="false">)</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>4</mn>
+  <mi>E</mi>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>V</mi>
+    <mn>0</mn>
+  </msub>
+  <mo>−</mo>
+  <mi>E</mi>
+  <mo stretchy="false">)</mo>
+</math></span>, equations <a class="eqn-ref" href="#mjx-eqn:eq:T">(16)</a> and <a class="eqn-ref" href="#mjx-eqn:eq:R">(17)</a> are <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>T</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo>+</mo>
+  <mi>u</mi>
+  <mo stretchy="false">)</mo>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>R</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo>+</mo>
+  <msup>
+    <mi>u</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mi>u</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo>+</mo>
+  <mi>u</mi>
+  <mo stretchy="false">)</mo>
+</math></span>, so</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>R</mi>
+        <mo>+</mo>
+        <mi>T</mi>
+        <mo>=</mo>
+        <mfrac>
+          <mi>u</mi>
+          <mrow>
+            <mn>1</mn>
+            <mo>+</mo>
+            <mi>u</mi>
+          </mrow>
+        </mfrac>
+        <mo>+</mo>
+        <mfrac>
+          <mn>1</mn>
+          <mrow>
+            <mn>1</mn>
+            <mo>+</mo>
+            <mi>u</mi>
+          </mrow>
+        </mfrac>
+        <mo>=</mo>
+        <mn>1</mn>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:18">(18)</span></div>
+<p>for every <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>u</mi>
+</math></span> — that is, at every energy, for every barrier height and every width. Conservation of probability is therefore not a check to be performed on this solution but a property of it. Evaluating <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mi>r</mi>
+  <msup>
+    <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mo>+</mo>
+  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mi>t</mi>
+  <msup>
+    <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mo>−</mo>
+  <mn>1</mn>
+</math></span> numerically across the range of energies used below returns <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>9</mn>
+  <mo>×</mo>
+  <msup>
+    <mn>10</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>16</mn>
+    </mrow>
+  </msup>
+</math></span>, which measures the arithmetic of the computer and not the correctness of the physics.</p>
 <h3 id="sec-900-above-the-barrier"><span class="sec-number">5.2</span>Above the barrier</h3>
-<p>Equation <span class="math-inline">\(\eqref{eq:T}\)</span> was derived assuming <span class="math-inline">\(E &lt; V_0\)</span>, but nothing in the final expression requires it. For <span class="math-inline">\(E &gt; V_0\)</span>, <span class="math-inline">\(\kappa\)</span> becomes imaginary: writing <span class="math-inline">\(\kappa = iq\)</span> with <span class="math-inline">\(q = \sqrt{2m(E-V_0)}/\hbar\)</span> and using <span class="math-inline">\(\sinh(iqa) = i\sin(qa)\)</span> turns <span class="math-inline">\(\sinh^{2}(\kappa a)\)</span> into <span class="math-inline">\(-\sin^{2}(qa)\)</span>, so</p>
-<div class="math-block">\begin{equation}
-  T(E) = \left[\,1 - \frac{V_0^{2}\sin^{2}(qa)}{4E(V_0-E)}\,\right]^{-1}
-       = \left[\,1 + \frac{V_0^{2}\sin^{2}(qa)}{4E(E-V_0)}\,\right]^{-1},
-  \qquad E &gt; V_0 .
-  \label{eq:Tabove}
-\end{equation}</div>
-<p>This is a substitution, not a second derivation, and it is available only because the solutions were written as exponentials in the first place (Chapter 2). It predicts <span class="math-inline">\(T = 1\)</span> exactly whenever <span class="math-inline">\(qa = n\pi\)</span> — a barrier whose width is a whole number of half-wavelengths is perfectly transparent, the same interference condition that makes an anti-reflection coating work.</p>
-<figure id="fig-2" class="figure"><img src="assets/img/fig_transmission.png" alt="Equations eq:T and eq:Tabove, plotted with R = 1-T. Transmission is non-zero throughout the classically forbidden region E&amp;lt;V0, and reaches exactly 1 at the resonances above the barrier. The marked point is the mean energy of the wave packet used in Step 6." loading="lazy" style="--figure-width: 95%;"><figcaption>Figure 2. Equations <span class="math-inline">\(\eqref{eq:T}\)</span> and <span class="math-inline">\(\eqref{eq:Tabove}\)</span>, plotted with
-    <span class="math-inline">\(R = 1-T\)</span>. Transmission is non-zero throughout the classically forbidden
-    region <span class="math-inline">\(E&lt;V_0\)</span>, and reaches exactly <span class="math-inline">\(1\)</span> at the resonances above the barrier.
+<p>Equation <a class="eqn-ref" href="#mjx-eqn:eq:T">(16)</a> was derived assuming <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>E</mi>
+  <mo>&lt;</mo>
+  <msub>
+    <mi>V</mi>
+    <mn>0</mn>
+  </msub>
+</math></span>, but nothing in the final expression requires it. For <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>E</mi>
+  <mo>&gt;</mo>
+  <msub>
+    <mi>V</mi>
+    <mn>0</mn>
+  </msub>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>κ</mi>
+</math></span> becomes imaginary: writing <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>κ</mi>
+  <mo>=</mo>
+  <mi>i</mi>
+  <mi>q</mi>
+</math></span> with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+  <mo>=</mo>
+  <msqrt>
+    <mn>2</mn>
+    <mi>m</mi>
+    <mo stretchy="false">(</mo>
+    <mi>E</mi>
+    <mo>−</mo>
+    <msub>
+      <mi>V</mi>
+      <mn>0</mn>
+    </msub>
+    <mo stretchy="false">)</mo>
+  </msqrt>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi data-mjx-alternate="1">ℏ</mi>
+</math></span> and using <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>sinh</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mo stretchy="false">(</mo>
+  <mi>i</mi>
+  <mi>q</mi>
+  <mi>a</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mi>i</mi>
+  <mi>sin</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mo stretchy="false">(</mo>
+  <mi>q</mi>
+  <mi>a</mi>
+  <mo stretchy="false">)</mo>
+</math></span> turns <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>sinh</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mo stretchy="false">(</mo>
+  <mi>κ</mi>
+  <mi>a</mi>
+  <mo stretchy="false">)</mo>
+</math></span> into <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <msup>
+    <mi>sin</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mo stretchy="false">(</mo>
+  <mi>q</mi>
+  <mi>a</mi>
+  <mo stretchy="false">)</mo>
+</math></span>, so</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>T</mi>
+        <mo stretchy="false">(</mo>
+        <mi>E</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <msup>
+          <mrow data-mjx-texclass="INNER">
+            <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">[</mo>
+            <mstyle scriptlevel="0">
+              <mspace width="0.167em" />
+            </mstyle>
+            <mn>1</mn>
+            <mo>−</mo>
+            <mfrac>
+              <mrow>
+                <msubsup>
+                  <mi>V</mi>
+                  <mn>0</mn>
+                  <mrow data-mjx-texclass="ORD">
+                    <mn>2</mn>
+                  </mrow>
+                </msubsup>
+                <msup>
+                  <mi>sin</mi>
+                  <mrow data-mjx-texclass="ORD">
+                    <mn>2</mn>
+                  </mrow>
+                </msup>
+                <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+                <mo stretchy="false">(</mo>
+                <mi>q</mi>
+                <mi>a</mi>
+                <mo stretchy="false">)</mo>
+              </mrow>
+              <mrow>
+                <mn>4</mn>
+                <mi>E</mi>
+                <mo stretchy="false">(</mo>
+                <msub>
+                  <mi>V</mi>
+                  <mn>0</mn>
+                </msub>
+                <mo>−</mo>
+                <mi>E</mi>
+                <mo stretchy="false">)</mo>
+              </mrow>
+            </mfrac>
+            <mstyle scriptlevel="0">
+              <mspace width="0.167em" />
+            </mstyle>
+            <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">]</mo>
+          </mrow>
+          <mrow data-mjx-texclass="ORD">
+            <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+            <mn>1</mn>
+          </mrow>
+        </msup>
+        <mo>=</mo>
+        <msup>
+          <mrow data-mjx-texclass="INNER">
+            <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">[</mo>
+            <mstyle scriptlevel="0">
+              <mspace width="0.167em" />
+            </mstyle>
+            <mn>1</mn>
+            <mo>+</mo>
+            <mfrac>
+              <mrow>
+                <msubsup>
+                  <mi>V</mi>
+                  <mn>0</mn>
+                  <mrow data-mjx-texclass="ORD">
+                    <mn>2</mn>
+                  </mrow>
+                </msubsup>
+                <msup>
+                  <mi>sin</mi>
+                  <mrow data-mjx-texclass="ORD">
+                    <mn>2</mn>
+                  </mrow>
+                </msup>
+                <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+                <mo stretchy="false">(</mo>
+                <mi>q</mi>
+                <mi>a</mi>
+                <mo stretchy="false">)</mo>
+              </mrow>
+              <mrow>
+                <mn>4</mn>
+                <mi>E</mi>
+                <mo stretchy="false">(</mo>
+                <mi>E</mi>
+                <mo>−</mo>
+                <msub>
+                  <mi>V</mi>
+                  <mn>0</mn>
+                </msub>
+                <mo stretchy="false">)</mo>
+              </mrow>
+            </mfrac>
+            <mstyle scriptlevel="0">
+              <mspace width="0.167em" />
+            </mstyle>
+            <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">]</mo>
+          </mrow>
+          <mrow data-mjx-texclass="ORD">
+            <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+            <mn>1</mn>
+          </mrow>
+        </msup>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <mi>E</mi>
+        <mo>&gt;</mo>
+        <msub>
+          <mi>V</mi>
+          <mn>0</mn>
+        </msub>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:Tabove">(19)</span></div>
+<p>This is a substitution, not a second derivation, and it is available only because the solutions were written as exponentials in the first place (Chapter 2). It predicts <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>T</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span> exactly whenever <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+  <mi>a</mi>
+  <mo>=</mo>
+  <mi>n</mi>
+  <mi>π</mi>
+</math></span> — a barrier whose width is a whole number of half-wavelengths is perfectly transparent, the same interference condition that makes an anti-reflection coating work.</p>
+<figure id="fig-2" class="figure"><img src="assets/img/fig_transmission.png" class="diagram" alt="Equations eq:T and eq:Tabove, plotted with R = 1-T. Transmission is non-zero throughout the classically forbidden region E&amp;lt;V0, and reaches exactly 1 at the resonances above the barrier. The marked point is the mean energy of the wave packet used in Step 6." loading="lazy" style="--figure-width: 95%;"><figcaption>Figure 2. Equations <a class="eqn-ref" href="#mjx-eqn:eq:T">(16)</a> and <a class="eqn-ref" href="#mjx-eqn:eq:Tabove">(19)</a>, plotted with
+    <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>R</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+  <mo>−</mo>
+  <mi>T</mi>
+</math></span>. Transmission is non-zero throughout the classically forbidden
+    region <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>E</mi>
+  <mo>&lt;</mo>
+  <msub>
+    <mi>V</mi>
+    <mn>0</mn>
+  </msub>
+</math></span>, and reaches exactly <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> at the resonances above the barrier.
     The marked point is the mean energy of the wave packet used in Step 6.</figcaption></figure>
-<p>At the energy used below, <span class="math-inline">\(E = 1.28 = 0.64\,V_0\)</span>, equation <span class="math-inline">\(\eqref{eq:T}\)</span> gives <span class="math-inline">\(T = 0.288\)</span>.</p>
+<p>At the energy used below, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>E</mi>
+  <mo>=</mo>
+  <mn>1.28</mn>
+  <mo>=</mo>
+  <mn>0.64</mn>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msub>
+    <mi>V</mi>
+    <mn>0</mn>
+  </msub>
+</math></span>, equation <a class="eqn-ref" href="#mjx-eqn:eq:T">(16)</a> gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>T</mi>
+  <mo>=</mo>
+  <mn>0.288</mn>
+</math></span>.</p>
 <h2 id="sec-900-the-wave-packet-chapter-7"><span class="sec-number">6</span>The wave packet (Chapter 7)</h2>
 <p>A stationary state has a single energy and is spread over the whole line; a particle that is somewhere and moving is a superposition of them. Building that superposition is a Fourier transform, and it introduces no approximation.</p>
-<p>The packet at <span class="math-inline">\(t = 0\)</span> is the Gaussian</p>
-<div class="math-block">\begin{equation}
-  \psi(x,0) = (2\pi\sigma^{2})^{-1/4}
-    \exp\!\left[-\frac{(x-x_0)^{2}}{4\sigma^{2}}\right] e^{\,ik_0(x-x_0)} .
-  \label{eq:packet}
-\end{equation}</div>
+<p>The packet at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> is the Gaussian</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>ψ</mi>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo>,</mo>
+        <mn>0</mn>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mo stretchy="false">(</mo>
+        <mn>2</mn>
+        <mi>π</mi>
+        <msup>
+          <mi>σ</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mn>2</mn>
+          </mrow>
+        </msup>
+        <msup>
+          <mo stretchy="false">)</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+            <mn>1</mn>
+            <mrow data-mjx-texclass="ORD">
+              <mo>/</mo>
+            </mrow>
+            <mn>4</mn>
+          </mrow>
+        </msup>
+        <mi>exp</mi>
+        <mstyle scriptlevel="0">
+          <mspace width="-0.167em" />
+        </mstyle>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">[</mo>
+          <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+          <mfrac>
+            <mrow>
+              <mo stretchy="false">(</mo>
+              <mi>x</mi>
+              <mo>−</mo>
+              <msub>
+                <mi>x</mi>
+                <mn>0</mn>
+              </msub>
+              <msup>
+                <mo stretchy="false">)</mo>
+                <mrow data-mjx-texclass="ORD">
+                  <mn>2</mn>
+                </mrow>
+              </msup>
+            </mrow>
+            <mrow>
+              <mn>4</mn>
+              <msup>
+                <mi>σ</mi>
+                <mrow data-mjx-texclass="ORD">
+                  <mn>2</mn>
+                </mrow>
+              </msup>
+            </mrow>
+          </mfrac>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">]</mo>
+        </mrow>
+        <msup>
+          <mi>e</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mstyle scriptlevel="0">
+              <mspace width="0.167em" />
+            </mstyle>
+            <mi>i</mi>
+            <msub>
+              <mi>k</mi>
+              <mn>0</mn>
+            </msub>
+            <mo stretchy="false">(</mo>
+            <mi>x</mi>
+            <mo>−</mo>
+            <msub>
+              <mi>x</mi>
+              <mn>0</mn>
+            </msub>
+            <mo stretchy="false">)</mo>
+          </mrow>
+        </msup>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:packet">(20)</span></div>
 <p>Its Fourier transform is obtained by completing the square in the exponent, one of the few transforms that can be done in a single line:</p>
-<div class="math-block">\begin{equation}
-  A(k) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty} \psi(x,0)\,e^{-ik(x-x_0)}\,dx
-       = \left(\frac{2\sigma^{2}}{\pi}\right)^{1/4} e^{-\sigma^{2}(k-k_0)^{2}} ,
-  \label{eq:Ak}
-\end{equation}</div>
-<p>a Gaussian in <span class="math-inline">\(k\)</span> centred on <span class="math-inline">\(k_0\)</span> with width <span class="math-inline">\(\Delta k = 1/2\sigma = 0.1\)</span>, narrow compared with <span class="math-inline">\(k_0 = 1.6\)</span>.</p>
-<p>Equation <span class="math-inline">\(\eqref{eq:Ak}\)</span> expresses the initial packet as a sum of plane waves. Each plane wave <span class="math-inline">\(e^{ikx}\)</span> in that sum is replaced by the exact scattering state <span class="math-inline">\(\varphi_k(x)\)</span> of <span class="math-inline">\(\eqref{eq:ansatz}\)</span>, which is what that plane wave becomes in the presence of the barrier, and each evolves with its own phase <span class="math-inline">\(e^{-iE_kt/\hbar}\)</span>. The exact solution of the original time-dependent problem is therefore</p>
-<div class="math-block">\begin{equation}
-  \psi(x,t) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty} dk\;
-    A(k)\,e^{-ikx_0}\,\varphi_k(x)\,e^{-i\hbar k^{2}t/2m} .
-  \label{eq:evolution}
-\end{equation}</div>
-<p>Every ingredient of <span class="math-inline">\(\eqref{eq:evolution}\)</span> is a closed-form expression. The integral over <span class="math-inline">\(k\)</span> is not: <span class="math-inline">\(\varphi_k\)</span> depends on <span class="math-inline">\(k\)</span> through <span class="math-inline">\(\cosh\)</span> and <span class="math-inline">\(\sinh\)</span> of <span class="math-inline">\(\kappa(k)a\)</span>, and no elementary antiderivative exists. It is evaluated numerically, and it is the only step of this report that is. The distinction matters — no grid carries the differential equation, no time step is taken, and <span class="math-inline">\(\psi\)</span> at <span class="math-inline">\(t = 55\)</span> is obtained without first obtaining <span class="math-inline">\(\psi\)</span> at <span class="math-inline">\(t = 54\)</span>. Each frame of the animation below is <span class="math-inline">\(\eqref{eq:evolution}\)</span> evaluated at one time, independently of every other.</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>A</mi>
+        <mo stretchy="false">(</mo>
+        <mi>k</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mfrac>
+          <mn>1</mn>
+          <msqrt>
+            <mn>2</mn>
+            <mi>π</mi>
+          </msqrt>
+        </mfrac>
+        <msubsup>
+          <mo data-mjx-texclass="OP">∫</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+            <mi mathvariant="normal">∞</mi>
+          </mrow>
+          <mrow data-mjx-texclass="ORD">
+            <mi mathvariant="normal">∞</mi>
+          </mrow>
+        </msubsup>
+        <mi>ψ</mi>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo>,</mo>
+        <mn>0</mn>
+        <mo stretchy="false">)</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <msup>
+          <mi>e</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+            <mi>i</mi>
+            <mi>k</mi>
+            <mo stretchy="false">(</mo>
+            <mi>x</mi>
+            <mo>−</mo>
+            <msub>
+              <mi>x</mi>
+              <mn>0</mn>
+            </msub>
+            <mo stretchy="false">)</mo>
+          </mrow>
+        </msup>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <mi>d</mi>
+        <mi>x</mi>
+        <mo>=</mo>
+        <msup>
+          <mrow data-mjx-texclass="INNER">
+            <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+            <mfrac>
+              <mrow>
+                <mn>2</mn>
+                <msup>
+                  <mi>σ</mi>
+                  <mrow data-mjx-texclass="ORD">
+                    <mn>2</mn>
+                  </mrow>
+                </msup>
+              </mrow>
+              <mi>π</mi>
+            </mfrac>
+            <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+          </mrow>
+          <mrow data-mjx-texclass="ORD">
+            <mn>1</mn>
+            <mrow data-mjx-texclass="ORD">
+              <mo>/</mo>
+            </mrow>
+            <mn>4</mn>
+          </mrow>
+        </msup>
+        <msup>
+          <mi>e</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+            <msup>
+              <mi>σ</mi>
+              <mrow data-mjx-texclass="ORD">
+                <mn>2</mn>
+              </mrow>
+            </msup>
+            <mo stretchy="false">(</mo>
+            <mi>k</mi>
+            <mo>−</mo>
+            <msub>
+              <mi>k</mi>
+              <mn>0</mn>
+            </msub>
+            <msup>
+              <mo stretchy="false">)</mo>
+              <mrow data-mjx-texclass="ORD">
+                <mn>2</mn>
+              </mrow>
+            </msup>
+          </mrow>
+        </msup>
+        <mo>,</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:Ak">(21)</span></div>
+<p>a Gaussian in <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> centred on <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>k</mi>
+    <mn>0</mn>
+  </msub>
+</math></span> with width <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Δ</mi>
+  <mi>k</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+  <mi>σ</mi>
+  <mo>=</mo>
+  <mn>0.1</mn>
+</math></span>, narrow compared with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>k</mi>
+    <mn>0</mn>
+  </msub>
+  <mo>=</mo>
+  <mn>1.6</mn>
+</math></span>.</p>
+<p>Equation <a class="eqn-ref" href="#mjx-eqn:eq:Ak">(21)</a> expresses the initial packet as a sum of plane waves. Each plane wave <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>i</mi>
+      <mi>k</mi>
+      <mi>x</mi>
+    </mrow>
+  </msup>
+</math></span> in that sum is replaced by the exact scattering state <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>φ</mi>
+    <mi>k</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+</math></span> of <a class="eqn-ref" href="#mjx-eqn:eq:ansatz">(5)</a>, which is what that plane wave becomes in the presence of the barrier, and each evolves with its own phase <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi>i</mi>
+      <msub>
+        <mi>E</mi>
+        <mi>k</mi>
+      </msub>
+      <mi>t</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mi data-mjx-alternate="1">ℏ</mi>
+    </mrow>
+  </msup>
+</math></span>. The exact solution of the original time-dependent problem is therefore</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>ψ</mi>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo>,</mo>
+        <mi>t</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mfrac>
+          <mn>1</mn>
+          <msqrt>
+            <mn>2</mn>
+            <mi>π</mi>
+          </msqrt>
+        </mfrac>
+        <msubsup>
+          <mo data-mjx-texclass="OP">∫</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+            <mi mathvariant="normal">∞</mi>
+          </mrow>
+          <mrow data-mjx-texclass="ORD">
+            <mi mathvariant="normal">∞</mi>
+          </mrow>
+        </msubsup>
+        <mi>d</mi>
+        <mi>k</mi>
+        <mstyle scriptlevel="0">
+          <mspace width="0.278em" />
+        </mstyle>
+        <mi>A</mi>
+        <mo stretchy="false">(</mo>
+        <mi>k</mi>
+        <mo stretchy="false">)</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <msup>
+          <mi>e</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+            <mi>i</mi>
+            <mi>k</mi>
+            <msub>
+              <mi>x</mi>
+              <mn>0</mn>
+            </msub>
+          </mrow>
+        </msup>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <msub>
+          <mi>φ</mi>
+          <mi>k</mi>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <msup>
+          <mi>e</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+            <mi>i</mi>
+            <mi data-mjx-alternate="1">ℏ</mi>
+            <msup>
+              <mi>k</mi>
+              <mrow data-mjx-texclass="ORD">
+                <mn>2</mn>
+              </mrow>
+            </msup>
+            <mi>t</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mo>/</mo>
+            </mrow>
+            <mn>2</mn>
+            <mi>m</mi>
+          </mrow>
+        </msup>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:evolution">(22)</span></div>
+<p>Every ingredient of <a class="eqn-ref" href="#mjx-eqn:eq:evolution">(22)</a> is a closed-form expression. The integral over <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> is not: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>φ</mi>
+    <mi>k</mi>
+  </msub>
+</math></span> depends on <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> through <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>cosh</mi>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>sinh</mi>
+</math></span> of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>κ</mi>
+  <mo stretchy="false">(</mo>
+  <mi>k</mi>
+  <mo stretchy="false">)</mo>
+  <mi>a</mi>
+</math></span>, and no elementary antiderivative exists. It is evaluated numerically, and it is the only step of this report that is. The distinction matters — no grid carries the differential equation, no time step is taken, and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ψ</mi>
+</math></span> at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+  <mo>=</mo>
+  <mn>55</mn>
+</math></span> is obtained without first obtaining <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ψ</mi>
+</math></span> at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+  <mo>=</mo>
+  <mn>54</mn>
+</math></span>. Each frame of the animation below is <a class="eqn-ref" href="#mjx-eqn:eq:evolution">(22)</a> evaluated at one time, independently of every other.</p>
 <h3 id="sec-900-predicting-the-result-in-advance"><span class="sec-number">6.1</span>Predicting the result in advance</h3>
-<p>Because the plane waves evolve independently, each is transmitted with probability <span class="math-inline">\(T(E_k)\)</span>, and the transmitted fraction of the whole packet is the average of <span class="math-inline">\(T\)</span> over the packet's own spectrum:</p>
-<div class="math-block">\begin{equation}
-  T_{\text{packet}} = \int_{0}^{\infty} |A(k)|^{2}\,
-      T\!\left(\frac{\hbar^{2}k^{2}}{2m}\right) dk = 0.2901 .
-  \label{eq:Tpacket}
-\end{equation}</div>
+<p>Because the plane waves evolve independently, each is transmitted with probability <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>T</mi>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>E</mi>
+    <mi>k</mi>
+  </msub>
+  <mo stretchy="false">)</mo>
+</math></span>, and the transmitted fraction of the whole packet is the average of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>T</mi>
+</math></span> over the packet's own spectrum:</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <msub>
+          <mi>T</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mtext>packet</mtext>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <msubsup>
+          <mo data-mjx-texclass="OP">∫</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mn>0</mn>
+          </mrow>
+          <mrow data-mjx-texclass="ORD">
+            <mi mathvariant="normal">∞</mi>
+          </mrow>
+        </msubsup>
+        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mi>A</mi>
+        <mo stretchy="false">(</mo>
+        <mi>k</mi>
+        <mo stretchy="false">)</mo>
+        <msup>
+          <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mn>2</mn>
+          </mrow>
+        </msup>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <mi>T</mi>
+        <mstyle scriptlevel="0">
+          <mspace width="-0.167em" />
+        </mstyle>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mfrac>
+            <mrow>
+              <msup>
+                <mi data-mjx-alternate="1">ℏ</mi>
+                <mrow data-mjx-texclass="ORD">
+                  <mn>2</mn>
+                </mrow>
+              </msup>
+              <msup>
+                <mi>k</mi>
+                <mrow data-mjx-texclass="ORD">
+                  <mn>2</mn>
+                </mrow>
+              </msup>
+            </mrow>
+            <mrow>
+              <mn>2</mn>
+              <mi>m</mi>
+            </mrow>
+          </mfrac>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
+        <mi>d</mi>
+        <mi>k</mi>
+        <mo>=</mo>
+        <mn>0.2901</mn>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:Tpacket">(23)</span></div>
 <p>This is a prediction made before any evolution is carried out.</p>
 <h2 id="sec-900-results"><span class="sec-number">7</span>Results</h2>
-<p>Evaluating <span class="math-inline">\(\eqref{eq:evolution}\)</span> on a grid of times and integrating <span class="math-inline">\(|\psi|^{2}\)</span> on each side of the barrier at <span class="math-inline">\(t = 55\)</span>, when the reflected and transmitted parts have fully separated, gives</p>
-<div class="math-block">\begin{equation}
-  R = 0.7099, \qquad T = 0.2901, \qquad R + T = 1.0000 .
-  \label{eq:results}
-\end{equation}</div>
-<p>The transmitted fraction agrees with the prediction <span class="math-inline">\(\eqref{eq:Tpacket}\)</span> to four decimal places, as it must: the two are the same integral evaluated in a different order.</p>
-<figure id="fig-3" class="figure"><img src="assets/img/fig_snapshots.png" alt="Four instants of the collision, each computed directly from eq:evolution. The packet approaches; the ripples in the second panel are the incident and reflected waves superposed on one another in front of the barrier; the two parts then separate, leaving a large reflected packet moving left and a smaller transmitted packet moving right. All four panels share one vertical scale." loading="lazy" style="--figure-width: 98%;"><figcaption>Figure 3. Four instants of the collision, each computed directly from
-    <span class="math-inline">\(\eqref{eq:evolution}\)</span>. The packet approaches; the ripples in the second panel
+<p>Evaluating <a class="eqn-ref" href="#mjx-eqn:eq:evolution">(22)</a> on a grid of times and integrating <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mi>ψ</mi>
+  <msup>
+    <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+</math></span> on each side of the barrier at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+  <mo>=</mo>
+  <mn>55</mn>
+</math></span>, when the reflected and transmitted parts have fully separated, gives</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>R</mi>
+        <mo>=</mo>
+        <mn>0.7099</mn>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <mi>T</mi>
+        <mo>=</mo>
+        <mn>0.2901</mn>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <mi>R</mi>
+        <mo>+</mo>
+        <mi>T</mi>
+        <mo>=</mo>
+        <mn>1.0000</mn>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:results">(24)</span></div>
+<p>The transmitted fraction agrees with the prediction <a class="eqn-ref" href="#mjx-eqn:eq:Tpacket">(23)</a> to four decimal places, as it must: the two are the same integral evaluated in a different order.</p>
+<figure id="fig-3" class="figure"><img src="assets/img/fig_snapshots.png" class="diagram" alt="Four instants of the collision, each computed directly from eq:evolution. The packet approaches; the ripples in the second panel are the incident and reflected waves superposed on one another in front of the barrier; the two parts then separate, leaving a large reflected packet moving left and a smaller transmitted packet moving right. All four panels share one vertical scale." loading="lazy" style="--figure-width: 98%;"><figcaption>Figure 3. Four instants of the collision, each computed directly from
+    <a class="eqn-ref" href="#mjx-eqn:eq:evolution">(22)</a>. The packet approaches; the ripples in the second panel
     are the incident and reflected waves superposed on one another in front of
     the barrier; the two parts then separate, leaving a large reflected packet
     moving left and a smaller transmitted packet moving right. All four panels
     share one vertical scale.</figcaption></figure>
-<figure id="fig-4" class="figure animation"><img src="assets/img/anim.gif" alt="The collision in full. Above, the probability density |(x,t)|^2 with the barrier marked; below, the probability on each side of the barrier as it accumulates, so that R and T are watched forming rather than quoted at the end. Nothing crosses until the packet arrives near t=20, the transfer is complete by t35, and both curves are flat afterwards because the two parts have separated for good." loading="lazy"><figcaption>Figure 4. The collision in full. Above, the probability density <span class="math-inline">\(|\psi(x,t)|^{2}\)</span> with
+<figure id="fig-4" class="figure animation"><img class="animated-gif diagram" src="assets/img/anim.gif" alt="The collision in full. Above, the probability density |(x,t)|^2 with the barrier marked; below, the probability on each side of the barrier as it accumulates, so that R and T are watched forming rather than quoted at the end. Nothing crosses until the packet arrives near t=20, the transfer is complete by t35, and both curves are flat afterwards because the two parts have separated for good." loading="lazy"><figcaption>Figure 4. The collision in full. Above, the probability density <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mi>ψ</mi>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo>,</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+  <msup>
+    <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+</math></span> with
    the barrier marked; below, the probability on each side of the barrier as it
-   accumulates, so that <span class="math-inline">\(R\)</span> and <span class="math-inline">\(T\)</span> are watched forming rather than quoted at
-   the end. Nothing crosses until the packet arrives near <span class="math-inline">\(t=20\)</span>, the transfer
-   is complete by <span class="math-inline">\(t\approx35\)</span>, and both curves are flat afterwards because the
+   accumulates, so that <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>R</mi>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>T</mi>
+</math></span> are watched forming rather than quoted at
+   the end. Nothing crosses until the packet arrives near <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+  <mo>=</mo>
+  <mn>20</mn>
+</math></span>, the transfer
+   is complete by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+  <mo>≈</mo>
+  <mn>35</mn>
+</math></span>, and both curves are flat afterwards because the
    two parts have separated for good.</figcaption></figure>
 <h3 id="sec-900-why-the-packet-does-not-transmit-like-a-plane-wave"><span class="sec-number">7.1</span>Why the packet does not transmit like a plane wave</h3>
-<p>Equation <span class="math-inline">\(\eqref{eq:Tpacket}\)</span> gives <span class="math-inline">\(0.2901\)</span>, while <span class="math-inline">\(\eqref{eq:T}\)</span> evaluated at the packet's mean energy alone gives <span class="math-inline">\(0.288\)</span>. The difference is not an error; it is the answer to part (d) of the problem.</p>
-<p>The packet contains a spread of energies, and <span class="math-inline">\(T(E)\)</span> is not constant over that spread — it rises by a factor of <span class="math-inline">\(11\)</span> between the slowest and the fastest components present. Transmission therefore acts as a filter on the packet's spectrum,</p>
-<div class="math-block">\begin{equation}
-  |A_{\text{transmitted}}(k)|^{2} \;\propto\; |A(k)|^{2}\,T(E_k),
-  \label{eq:filter}
-\end{equation}</div>
-<p>weighting it towards larger <span class="math-inline">\(k\)</span>. Two consequences follow. First, <span class="math-inline">\(\langle T(E)\rangle &gt; T(\langle E\rangle)\)</span>, because <span class="math-inline">\(T\)</span> is convex across the packet: the fast half of the packet gains more than the slow half loses. Second, the transmitted packet is measurably faster than the incident one, its mean wavenumber rising from <span class="math-inline">\(1.600\)</span> to <span class="math-inline">\(1.616\)</span>. Nothing accelerated; the barrier simply passed the fast components preferentially and reflected the slow ones.</p>
-<figure id="fig-5" class="figure"><img src="assets/img/fig_filter.png" alt="Above: the transmission of each plane wave present in the packet, which rises by a factor of 11 across the packet&#x27;s own width. Below: the packet&#x27;s spectrum before and after the barrier, the second being the first multiplied by that curve and renormalised, with the shift in k marked." loading="lazy" style="--figure-width: 98%;"><figcaption>Figure 5. Above: the transmission of each plane wave present in the packet,
-    which rises by a factor of <span class="math-inline">\(11\)</span> across the packet's own width. Below: the
+<p>Equation <a class="eqn-ref" href="#mjx-eqn:eq:Tpacket">(23)</a> gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0.2901</mn>
+</math></span>, while <a class="eqn-ref" href="#mjx-eqn:eq:T">(16)</a> evaluated at the packet's mean energy alone gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0.288</mn>
+</math></span>. The difference is not an error; it is the answer to part (d) of the problem.</p>
+<p>The packet contains a spread of energies, and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>T</mi>
+  <mo stretchy="false">(</mo>
+  <mi>E</mi>
+  <mo stretchy="false">)</mo>
+</math></span> is not constant over that spread — it rises by a factor of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>11</mn>
+</math></span> between the slowest and the fastest components present. Transmission therefore acts as a filter on the packet's spectrum,</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <msub>
+          <mi>A</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mtext>transmitted</mtext>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>k</mi>
+        <mo stretchy="false">)</mo>
+        <msup>
+          <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mn>2</mn>
+          </mrow>
+        </msup>
+        <mstyle scriptlevel="0">
+          <mspace width="0.278em" />
+        </mstyle>
+        <mo>∝</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="0.278em" />
+        </mstyle>
+        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mi>A</mi>
+        <mo stretchy="false">(</mo>
+        <mi>k</mi>
+        <mo stretchy="false">)</mo>
+        <msup>
+          <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mn>2</mn>
+          </mrow>
+        </msup>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <mi>T</mi>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>E</mi>
+          <mi>k</mi>
+        </msub>
+        <mo stretchy="false">)</mo>
+        <mo>,</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:filter">(25)</span></div>
+<p>weighting it towards larger <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span>. Two consequences follow. First, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo fence="false" stretchy="false">⟨</mo>
+  <mi>T</mi>
+  <mo stretchy="false">(</mo>
+  <mi>E</mi>
+  <mo stretchy="false">)</mo>
+  <mo fence="false" stretchy="false">⟩</mo>
+  <mo>&gt;</mo>
+  <mi>T</mi>
+  <mo stretchy="false">(</mo>
+  <mo fence="false" stretchy="false">⟨</mo>
+  <mi>E</mi>
+  <mo fence="false" stretchy="false">⟩</mo>
+  <mo stretchy="false">)</mo>
+</math></span>, because <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>T</mi>
+</math></span> is convex across the packet: the fast half of the packet gains more than the slow half loses. Second, the transmitted packet is measurably faster than the incident one, its mean wavenumber rising from <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1.600</mn>
+</math></span> to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1.616</mn>
+</math></span>. Nothing accelerated; the barrier simply passed the fast components preferentially and reflected the slow ones.</p>
+<figure id="fig-5" class="figure"><img src="assets/img/fig_filter.png" class="diagram" alt="Above: the transmission of each plane wave present in the packet, which rises by a factor of 11 across the packet&#x27;s own width. Below: the packet&#x27;s spectrum before and after the barrier, the second being the first multiplied by that curve and renormalised, with the shift in k marked." loading="lazy" style="--figure-width: 98%;"><figcaption>Figure 5. Above: the transmission of each plane wave present in the packet,
+    which rises by a factor of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>11</mn>
+</math></span> across the packet's own width. Below: the
     packet's spectrum before and after the barrier, the second being the first
     multiplied by that curve and renormalised, with the shift in
-    <span class="math-inline">\(\langle k\rangle\)</span> marked.</figcaption></figure>
+    <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo fence="false" stretchy="false">⟨</mo>
+  <mi>k</mi>
+  <mo fence="false" stretchy="false">⟩</mo>
+</math></span> marked.</figcaption></figure>
 <h2 id="sec-900-which-course-methods-were-used"><span class="sec-number">8</span>Which course methods were used</h2>
-<ul><li><p><strong>Partial differential equations (Chapter 10).</strong> Separation of variables reduces the time-dependent Schrödinger equation to the ordinary differential equation <span class="math-inline">\(\eqref{eq:ode}\)</span>, and works because <span class="math-inline">\(V\)</span> does not depend on time.</p></li><li><p><strong>Ordinary differential equations (Chapter 8).</strong> Equation <span class="math-inline">\(\eqref{eq:ode}\)</span> is linear with constant coefficients in each region; its characteristic equation has imaginary roots outside the barrier and real roots inside, which is the whole difference between an oscillation and a decay.</p></li><li><p><strong>Complex numbers (Chapter 2).</strong> The solutions are written as complex exponentials throughout, and the continuation <span class="math-inline">\(\kappa \to iq\)</span> turns <span class="math-inline">\(\eqref{eq:T}\)</span> into <span class="math-inline">\(\eqref{eq:Tabove}\)</span> and produces the above-barrier resonances without a second calculation.</p></li><li><p><strong>Linear algebra (Chapter 3).</strong> The four matching conditions <span class="math-inline">\(\eqref{eq:m1}\)</span>–<span class="math-inline">\(\eqref{eq:m4}\)</span> are assembled into the matrix equations <span class="math-inline">\(\eqref{eq:matchleft}\)</span>–<span class="math-inline">\(\eqref{eq:matchright}\)</span>, and eliminating the interior amplitudes becomes the matrix product <span class="math-inline">\(\eqref{eq:transfer}\)</span>.</p></li><li><p><strong>Fourier series and transforms (Chapter 7).</strong> The packet is decomposed by <span class="math-inline">\(\eqref{eq:Ak}\)</span> and reassembled by <span class="math-inline">\(\eqref{eq:evolution}\)</span>; the transform of a Gaussian is evaluated by completing the square.</p></li></ul>
+<ul><li><p><strong>Partial differential equations (Chapter 10).</strong> Separation of variables reduces the time-dependent Schrödinger equation to the ordinary differential equation <a class="eqn-ref" href="#mjx-eqn:eq:ode">(2)</a>, and works because <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>V</mi>
+</math></span> does not depend on time.</p></li><li><p><strong>Ordinary differential equations (Chapter 8).</strong> Equation <a class="eqn-ref" href="#mjx-eqn:eq:ode">(2)</a> is linear with constant coefficients in each region; its characteristic equation has imaginary roots outside the barrier and real roots inside, which is the whole difference between an oscillation and a decay.</p></li><li><p><strong>Complex numbers (Chapter 2).</strong> The solutions are written as complex exponentials throughout, and the continuation <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>κ</mi>
+  <mo accent="false" stretchy="false">→</mo>
+  <mi>i</mi>
+  <mi>q</mi>
+</math></span> turns <a class="eqn-ref" href="#mjx-eqn:eq:T">(16)</a> into <a class="eqn-ref" href="#mjx-eqn:eq:Tabove">(19)</a> and produces the above-barrier resonances without a second calculation.</p></li><li><p><strong>Linear algebra (Chapter 3).</strong> The four matching conditions <a class="eqn-ref" href="#mjx-eqn:eq:m1">(6)</a>–<a class="eqn-ref" href="#mjx-eqn:eq:m4">(9)</a> are assembled into the matrix equations <a class="eqn-ref" href="#mjx-eqn:eq:matchleft">(11)</a>–<a class="eqn-ref" href="#mjx-eqn:eq:matchright">(12)</a>, and eliminating the interior amplitudes becomes the matrix product <a class="eqn-ref" href="#mjx-eqn:eq:transfer">(13)</a>.</p></li><li><p><strong>Fourier series and transforms (Chapter 7).</strong> The packet is decomposed by <a class="eqn-ref" href="#mjx-eqn:eq:Ak">(21)</a> and reassembled by <a class="eqn-ref" href="#mjx-eqn:eq:evolution">(22)</a>; the transform of a Gaussian is evaluated by completing the square.</p></li></ul>
 <h2 id="sec-900-conclusion"><span class="sec-number">9</span>Conclusion</h2>
-<p>Matching exponential solutions across the two walls of a rectangular barrier gives the transmission coefficient in closed form, equation <span class="math-inline">\(\eqref{eq:T}\)</span>, valid at every energy. From that single expression follow three results that require no further calculation: transmission is non-zero at every energy below the barrier, <span class="math-inline">\(R+T=1\)</span> holds identically rather than approximately, and the barrier becomes perfectly transparent above its top whenever its width is a whole number of half-wavelengths.</p>
-<p>Expanding a Gaussian wave packet in these exact stationary states and evolving it by superposition reproduces the full collision, with <span class="math-inline">\(T = 0.290\)</span> and <span class="math-inline">\(R = 0.710\)</span> summing to unity, and the transmitted fraction is predicted exactly by averaging <span class="math-inline">\(T(E)\)</span> over the packet's spectrum before any evolution is performed. That spectral view also explains why a packet does not transmit like a plane wave of its mean energy: the barrier is a high-pass filter, and what emerges from it is faster than what arrived.</p>
+<p>Matching exponential solutions across the two walls of a rectangular barrier gives the transmission coefficient in closed form, equation <a class="eqn-ref" href="#mjx-eqn:eq:T">(16)</a>, valid at every energy. From that single expression follow three results that require no further calculation: transmission is non-zero at every energy below the barrier, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>R</mi>
+  <mo>+</mo>
+  <mi>T</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span> holds identically rather than approximately, and the barrier becomes perfectly transparent above its top whenever its width is a whole number of half-wavelengths.</p>
+<p>Expanding a Gaussian wave packet in these exact stationary states and evolving it by superposition reproduces the full collision, with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>T</mi>
+  <mo>=</mo>
+  <mn>0.290</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>R</mi>
+  <mo>=</mo>
+  <mn>0.710</mn>
+</math></span> summing to unity, and the transmitted fraction is predicted exactly by averaging <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>T</mi>
+  <mo stretchy="false">(</mo>
+  <mi>E</mi>
+  <mo stretchy="false">)</mo>
+</math></span> over the packet's spectrum before any evolution is performed. That spectral view also explains why a packet does not transmit like a plane wave of its mean energy: the barrier is a high-pass filter, and what emerges from it is faster than what arrived.</p>
 <p>The method generalises directly. Any potential that is piecewise constant can be solved the same way, with one factor in the transfer-matrix product per layer, and a smoothly varying potential can be approximated to any accuracy by enough layers.</p>
 <h2 id="sec-900-references">References</h2>
 <ul><li><p>M. L. Boas, <em>Mathematical Methods in the Physical Sciences</em>, Wiley, 3rd ed., 2006 (Chapters 3, 7, 8 and 13).</p></li><li><p>D. J. Griffiths, <em>Introduction to Quantum Mechanics</em>, Cambridge, 3rd ed., 2018 (the rectangular barrier and the transfer matrix).</p></li><li><p>E. Merzbacher, <em>Quantum Mechanics</em>, Wiley, 3rd ed., 1998 (wave-packet scattering and the spectral decomposition of transmission).</p></li></ul>

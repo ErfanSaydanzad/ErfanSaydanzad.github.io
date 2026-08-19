@@ -6,49 +6,9 @@
   <title>Projects | Mathematical Methods in the Physical Sciences</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
   <link rel="preload" href="assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/site.css?v=4c167578">
-  <script>
-    window.MathJax = {
-      // tagformat is an optional TeX extension, not part of the combined
-      // tex-chtml build. Without these two lines the tagformat block below is
-      // read and silently ignored, and every equation numbers from 1 with no
-      // chapter in front of it.
-      loader: { load: ['[tex]/tagformat'] },
-      tex: {
-        packages: { '[+]': ['tagformat'] },
-        inlineMath: [['\\(', '\\)']],
-        displayMath: [['\\[', '\\]']],
-        processEnvironments: true,
-        tags: 'ams',
-        // The PDF numbers equations within the chapter (\numberwithin
-        // {equation}{chapter}), so "1.8" is the eighth equation of
-        // chapter 1. MathJax counts from 1 on every page, which would have
-        // shown that same equation as "8". Prefixing the chapter number
-        // keeps a reference valid against either version.
-        tagformat: {
-          number: function (n) { return ''  + n; }
-        },
-        macros: {
-          pdv: ['{\\frac{\\partial #1}{\\partial #2}}', 2],
-          dv: ['{\\frac{d #1}{d #2}}', 2],
-          abs: ['{\\left|#1\\right|}', 1],
-          norm: ['{\\left\\|#1\\right\\|}', 1],
-          curl: '{\\vec{\\nabla}\\times}',
-          div: '{\\vec{\\nabla}\\cdot}',
-          grad: '{\\vec{\\nabla}}',
-          sech: '{\\operatorname{sech}}',
-          csch: '{\\operatorname{csch}}',
-          coth: '{\\operatorname{coth}}',
-          circnum: ['{\\boxed{#1}}', 1],
-          vb: ['{\\mathbf{#1}}', 1],
-          eval: ['{\\left.#1\\right|}', 1],
-          dd: '{\\,d}'
-        }
-      }
-    };
-  </script>
-  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-  <script defer src="assets/js/main.js?v=4c167578"></script>
+  <link rel="stylesheet" href="assets/css/site.css?v=f86ec6ce">
+  <link rel="preload" href="assets/fonts/latinmodern-math.woff2" as="font" type="font/woff2" crossorigin>
+  <script defer src="assets/js/main.js?v=f86ec6ce"></script>
 
 <style>
 .site-header { justify-content: flex-start; gap: 16px; }
@@ -94,22 +54,22 @@
 </section>
   <section class="home-grid project-grid" aria-label="Worked examples">
 <a class="project-card" href="projects/examples/Drum/index.html">
-  <img class="project-card-preview" src="projects/examples/Drum/assets/img/anim.gif" alt="" loading="lazy">
+  <img class="project-card-preview animated-gif" src="projects/examples/Drum/assets/img/anim.gif" alt="" loading="lazy">
   <strong>Why a Drum Has No Pitch: Modes of a Circular Membrane</strong>
   <span class="project-card-author">PHYS 3260, Mathematical Methods — worked example</span>
 </a>
 <a class="project-card" href="projects/examples/Maxwell/index.html">
-  <img class="project-card-preview" src="projects/examples/Maxwell/assets/img/anim.gif" alt="" loading="lazy">
+  <img class="project-card-preview animated-gif" src="projects/examples/Maxwell/assets/img/anim.gif" alt="" loading="lazy">
   <strong>A Standing Electromagnetic Wave in a Square Cavity</strong>
   <span class="project-card-author">PHYS 3260, Mathematical Methods — worked example</span>
 </a>
 <a class="project-card" href="projects/examples/schrodinger-barrier/index.html">
-  <img class="project-card-preview" src="projects/examples/schrodinger-barrier/assets/img/anim.gif" alt="" loading="lazy">
+  <img class="project-card-preview animated-gif" src="projects/examples/schrodinger-barrier/assets/img/anim.gif" alt="" loading="lazy">
   <strong>Quantum Tunnelling of a Wave Packet through a Rectangular Barrier (Numerical)</strong>
   <span class="project-card-author">PHYS 3260, Mathematical Methods — worked example</span>
 </a>
 <a class="project-card" href="projects/examples/tunnelling-exact/index.html">
-  <img class="project-card-preview" src="projects/examples/tunnelling-exact/assets/img/anim.gif" alt="" loading="lazy">
+  <img class="project-card-preview animated-gif" src="projects/examples/tunnelling-exact/assets/img/anim.gif" alt="" loading="lazy">
   <strong>Quantum Tunnelling of a Wave Packet through a Rectangular Barrier (Analytical)</strong>
   <span class="project-card-author">PHYS 3260, Mathematical Methods — worked example</span>
 </a>
@@ -160,22 +120,548 @@
     <p class="suggestion-meta">Quantum mechanics &middot; Chapters 2, 3, 7, 8 and 10</p>
     <section class="project-problem" aria-label="The problem">
       <p class="project-problem-kicker">The problem</p>
-      <p>A particle of mass \(m\) moves in one dimension along a line carrying two identical rectangular barriers, each of height \(V_0\) and width \(a\), separated by a gap of width \(d\):</p>
-      <p>\[ V(x) = \begin{cases} V_0, & -\tfrac{d}{2}-a < x < -\tfrac{d}{2} \ \text{ or }\ \tfrac{d}{2} < x < \tfrac{d}{2}+a, \\[2pt] 0, & \text{everywhere else.} \end{cases} \]</p>
-      <p>Work in units with \(\hbar = m = 1\), and take \(V_0 = 2\), \(a = 1\), \(d = 6\). The particle is described by a complex function \(\psi(x,t)\) obeying the Schr&ouml;dinger equation</p>
-      <p>\[ i\hbar\,\frac{\partial \psi}{\partial t} = -\frac{\hbar^{2}}{2m}\,\frac{\partial^{2}\psi}{\partial x^{2}} + V(x)\,\psi , \]</p>
-      <p>and \(|\psi(x,t)|^{2}\) is the probability density for finding it at \(x\). Separating the variables (Chapter&nbsp;10) with \(\psi = \varphi(x)\,e^{-iEt/\hbar}\) leaves an ordinary differential equation for \(\varphi\),</p>
-      <p>\[ \frac{d^{2}\varphi}{dx^{2}} + \frac{2m}{\hbar^{2}}\bigl(E - V(x)\bigr)\varphi = 0 , \]</p>
-      <p>which has constant coefficients in each of the five regions where \(V\) is constant. No quantum mechanics is needed past this point: everything below is solving that equation, matching the pieces, and adding them up.</p>
+      <p>A particle of mass <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span> moves in one dimension along a line carrying two identical rectangular barriers, each of height <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>V</mi>
+    <mn>0</mn>
+  </msub>
+</math></span> and width <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+</math></span>, separated by a gap of width <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+</math></span>:</p>
+      <p><div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>V</mi>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">{</mo>
+    <mtable columnalign="left left" columnspacing="1em" rowspacing="0.4em 0.2em">
+      <mtr>
+        <mtd style="text-align: left">
+          <msub>
+            <mi>V</mi>
+            <mn>0</mn>
+          </msub>
+          <mo>,</mo>
+        </mtd>
+        <mtd style="text-align: left">
+          <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+          <mstyle displaystyle="false" scriptlevel="0">
+            <mfrac>
+              <mi>d</mi>
+              <mn>2</mn>
+            </mfrac>
+          </mstyle>
+          <mo>−</mo>
+          <mi>a</mi>
+          <mo>&lt;</mo>
+          <mi>x</mi>
+          <mo>&lt;</mo>
+          <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+          <mstyle displaystyle="false" scriptlevel="0">
+            <mfrac>
+              <mi>d</mi>
+              <mn>2</mn>
+            </mfrac>
+          </mstyle>
+          <mtext> </mtext>
+          <mtext> or </mtext>
+          <mtext> </mtext>
+          <mstyle displaystyle="false" scriptlevel="0">
+            <mfrac>
+              <mi>d</mi>
+              <mn>2</mn>
+            </mfrac>
+          </mstyle>
+          <mo>&lt;</mo>
+          <mi>x</mi>
+          <mo>&lt;</mo>
+          <mstyle displaystyle="false" scriptlevel="0">
+            <mfrac>
+              <mi>d</mi>
+              <mn>2</mn>
+            </mfrac>
+          </mstyle>
+          <mo>+</mo>
+          <mi>a</mi>
+          <mo>,</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd style="text-align: left">
+          <mn>0</mn>
+          <mo>,</mo>
+        </mtd>
+        <mtd style="text-align: left">
+          <mtext>everywhere else.</mtext>
+        </mtd>
+      </mtr>
+    </mtable>
+    <mo data-mjx-texclass="CLOSE" fence="true" stretchy="true" symmetric="true" form="postfix" lspace="0em" rspace="0em" />
+  </mrow>
+</math></div></p>
+      <p>Work in units with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi data-mjx-alternate="1">ℏ</mi>
+  <mo>=</mo>
+  <mi>m</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>, and take <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>V</mi>
+    <mn>0</mn>
+  </msub>
+  <mo>=</mo>
+  <mn>2</mn>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mo>=</mo>
+  <mn>6</mn>
+</math></span>. The particle is described by a complex function <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ψ</mi>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo>,</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+</math></span> obeying the Schr&ouml;dinger equation</p>
+      <p><div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>i</mi>
+  <mi data-mjx-alternate="1">ℏ</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mfrac>
+    <mrow>
+      <mi>∂</mi>
+      <mi>ψ</mi>
+    </mrow>
+    <mrow>
+      <mi>∂</mi>
+      <mi>t</mi>
+    </mrow>
+  </mfrac>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mfrac>
+    <msup>
+      <mi data-mjx-alternate="1">ℏ</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mn>2</mn>
+      </mrow>
+    </msup>
+    <mrow>
+      <mn>2</mn>
+      <mi>m</mi>
+    </mrow>
+  </mfrac>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mfrac>
+    <mrow>
+      <msup>
+        <mi>∂</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mn>2</mn>
+        </mrow>
+      </msup>
+      <mi>ψ</mi>
+    </mrow>
+    <mrow>
+      <mi>∂</mi>
+      <msup>
+        <mi>x</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mn>2</mn>
+        </mrow>
+      </msup>
+    </mrow>
+  </mfrac>
+  <mo>+</mo>
+  <mi>V</mi>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mi>ψ</mi>
+  <mo>,</mo>
+</math></div></p>
+      <p>and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mi>ψ</mi>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo>,</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+  <msup>
+    <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+</math></span> is the probability density for finding it at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span>. Separating the variables (Chapter&nbsp;10) with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ψ</mi>
+  <mo>=</mo>
+  <mi>φ</mi>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi>i</mi>
+      <mi>E</mi>
+      <mi>t</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mi data-mjx-alternate="1">ℏ</mi>
+    </mrow>
+  </msup>
+</math></span> leaves an ordinary differential equation for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>φ</mi>
+</math></span>,</p>
+      <p><div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mfrac>
+    <mrow>
+      <msup>
+        <mi>d</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mn>2</mn>
+        </mrow>
+      </msup>
+      <mi>φ</mi>
+    </mrow>
+    <mrow>
+      <mi>d</mi>
+      <msup>
+        <mi>x</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mn>2</mn>
+        </mrow>
+      </msup>
+    </mrow>
+  </mfrac>
+  <mo>+</mo>
+  <mfrac>
+    <mrow>
+      <mn>2</mn>
+      <mi>m</mi>
+    </mrow>
+    <msup>
+      <mi data-mjx-alternate="1">ℏ</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mn>2</mn>
+      </mrow>
+    </msup>
+  </mfrac>
+  <mrow data-mjx-texclass="OPEN">
+    <mo minsize="1.2em" maxsize="1.2em">(</mo>
+  </mrow>
+  <mi>E</mi>
+  <mo>−</mo>
+  <mi>V</mi>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+  <mrow data-mjx-texclass="CLOSE">
+    <mo minsize="1.2em" maxsize="1.2em">)</mo>
+  </mrow>
+  <mi>φ</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+  <mo>,</mo>
+</math></div></p>
+      <p>which has constant coefficients in each of the five regions where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>V</mi>
+</math></span> is constant. No quantum mechanics is needed past this point: everything below is solving that equation, matching the pieces, and adding them up.</p>
       <ol class="problem-parts">
-        <li>Solve the equation in each of the five regions. For an energy \(E < V_0\) the solution outside the barriers is a pair of complex exponentials \(e^{\pm ikx}\) and inside them a pair of real ones \(e^{\pm\kappa x}\) (Chapter&nbsp;8); give \(k\) and \(\kappa\) in terms of \(E\). Write down the conditions that \(\varphi\) and \(\varphi'\) are continuous at each of the four interfaces, and count your equations against your unknowns.</li>
-        <li>Rewrite each interface, and each stretch between interfaces, as a \(2\times2\) matrix acting on the pair of amplitudes in a region. Multiply the five of them into one transfer matrix \(M(E)\) for the whole structure (Chapter&nbsp;3), and read the transmission probability \(T(E)\) off it in closed form. Check the formula by setting \(d \to 0\): the two barriers merge into one of width \(2a\), and your \(T(E)\) must collapse to the single-barrier result.</li>
-        <li>Show that \(T(E) = 1\) exactly &mdash; perfect transmission, with nothing reflected &mdash; at a handful of energies below the barrier top, and find the equation that fixes them. Say what those energies have to do with the gap between the barriers. Then plot \(T(E)\) for \(0 < E < V_0\) and, on the same axes, the transmission of a <em>single</em> barrier of width \(2a\): at a resonance the pair of barriers is transparent where the one solid barrier of the same thickness is not. Quote both numbers.</li>
-        <li>Now the packet. Take a Gaussian, starting well to the left of the structure and moving right, \(\psi(x,0) = (2\pi\sigma^{2})^{-1/4} e^{-(x-x_0)^{2}/4\sigma^{2}}\,e^{ik_0x}\). Expand it in the stationary solutions of&nbsp;(b) &mdash; that expansion is a Fourier transform (Chapter&nbsp;7), and for a Gaussian it is one you can do by hand &mdash; and write the exact evolution \(\psi(x,t) = \int \frac{dk}{\sqrt{2\pi}}\,A(k)\,\varphi_k(x)\,e^{-iE_kt/\hbar}\). Pick \(k_0\) to sit on one of the resonances you found, and \(\sigma\) big enough that the packet's spread in energy is narrower than that resonance is wide. Say what you chose and why.</li>
+        <li>Solve the equation in each of the five regions. For an energy <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>E</mi>
+  <mo>&lt;</mo>
+  <msub>
+    <mi>V</mi>
+    <mn>0</mn>
+  </msub>
+</math></span> the solution outside the barriers is a pair of complex exponentials <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">±</mo>
+      <mi>i</mi>
+      <mi>k</mi>
+      <mi>x</mi>
+    </mrow>
+  </msup>
+</math></span> and inside them a pair of real ones <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">±</mo>
+      <mi>κ</mi>
+      <mi>x</mi>
+    </mrow>
+  </msup>
+</math></span> (Chapter&nbsp;8); give <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>κ</mi>
+</math></span> in terms of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>E</mi>
+</math></span>. Write down the conditions that <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>φ</mi>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>φ</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+</math></span> are continuous at each of the four interfaces, and count your equations against your unknowns.</li>
+        <li>Rewrite each interface, and each stretch between interfaces, as a <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mo>×</mo>
+  <mn>2</mn>
+</math></span> matrix acting on the pair of amplitudes in a region. Multiply the five of them into one transfer matrix <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>M</mi>
+  <mo stretchy="false">(</mo>
+  <mi>E</mi>
+  <mo stretchy="false">)</mo>
+</math></span> for the whole structure (Chapter&nbsp;3), and read the transmission probability <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>T</mi>
+  <mo stretchy="false">(</mo>
+  <mi>E</mi>
+  <mo stretchy="false">)</mo>
+</math></span> off it in closed form. Check the formula by setting <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mo accent="false" stretchy="false">→</mo>
+  <mn>0</mn>
+</math></span>: the two barriers merge into one of width <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mi>a</mi>
+</math></span>, and your <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>T</mi>
+  <mo stretchy="false">(</mo>
+  <mi>E</mi>
+  <mo stretchy="false">)</mo>
+</math></span> must collapse to the single-barrier result.</li>
+        <li>Show that <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>T</mi>
+  <mo stretchy="false">(</mo>
+  <mi>E</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span> exactly &mdash; perfect transmission, with nothing reflected &mdash; at a handful of energies below the barrier top, and find the equation that fixes them. Say what those energies have to do with the gap between the barriers. Then plot <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>T</mi>
+  <mo stretchy="false">(</mo>
+  <mi>E</mi>
+  <mo stretchy="false">)</mo>
+</math></span> for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+  <mo>&lt;</mo>
+  <mi>E</mi>
+  <mo>&lt;</mo>
+  <msub>
+    <mi>V</mi>
+    <mn>0</mn>
+  </msub>
+</math></span> and, on the same axes, the transmission of a <em>single</em> barrier of width <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mi>a</mi>
+</math></span>: at a resonance the pair of barriers is transparent where the one solid barrier of the same thickness is not. Quote both numbers.</li>
+        <li>Now the packet. Take a Gaussian, starting well to the left of the structure and moving right, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ψ</mi>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo>,</mo>
+  <mn>0</mn>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mo stretchy="false">(</mo>
+  <mn>2</mn>
+  <mi>π</mi>
+  <msup>
+    <mi>σ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <msup>
+    <mo stretchy="false">)</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mn>4</mn>
+    </mrow>
+  </msup>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mo stretchy="false">(</mo>
+      <mi>x</mi>
+      <mo>−</mo>
+      <msub>
+        <mi>x</mi>
+        <mn>0</mn>
+      </msub>
+      <msup>
+        <mo stretchy="false">)</mo>
+        <mrow data-mjx-texclass="ORD">
+          <mn>2</mn>
+        </mrow>
+      </msup>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mn>4</mn>
+      <msup>
+        <mi>σ</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mn>2</mn>
+        </mrow>
+      </msup>
+    </mrow>
+  </msup>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>i</mi>
+      <msub>
+        <mi>k</mi>
+        <mn>0</mn>
+      </msub>
+      <mi>x</mi>
+    </mrow>
+  </msup>
+</math></span>. Expand it in the stationary solutions of&nbsp;(b) &mdash; that expansion is a Fourier transform (Chapter&nbsp;7), and for a Gaussian it is one you can do by hand &mdash; and write the exact evolution <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ψ</mi>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo>,</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mo data-mjx-texclass="OP">∫</mo>
+  <mfrac>
+    <mrow>
+      <mi>d</mi>
+      <mi>k</mi>
+    </mrow>
+    <msqrt>
+      <mn>2</mn>
+      <mi>π</mi>
+    </msqrt>
+  </mfrac>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mi>A</mi>
+  <mo stretchy="false">(</mo>
+  <mi>k</mi>
+  <mo stretchy="false">)</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msub>
+    <mi>φ</mi>
+    <mi>k</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi>i</mi>
+      <msub>
+        <mi>E</mi>
+        <mi>k</mi>
+      </msub>
+      <mi>t</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mi data-mjx-alternate="1">ℏ</mi>
+    </mrow>
+  </msup>
+</math></span>. Pick <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>k</mi>
+    <mn>0</mn>
+  </msub>
+</math></span> to sit on one of the resonances you found, and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>σ</mi>
+</math></span> big enough that the packet's spread in energy is narrower than that resonance is wide. Say what you chose and why.</li>
       </ol>
     </section>
-    <p><strong>Solve it on paper.</strong> Parts (a)&ndash;(c) are pencil work from end to end: a constant-coefficient ordinary differential equation solved in five regions, eight matching equations, five \(2\times2\) matrices multiplied, and algebra. Nothing is put on a grid and no differential equation is ever stepped forward in time &mdash; if you find yourself discretising the Schr&ouml;dinger equation, you have left the assignment. Part&nbsp;(d) is exact too, but the \(k\)-integral in it has no closed form for this potential, so evaluating that one integral is the only thing your program does. That is the same act as summing a Fourier series to draw a square wave.</p>
-    <p><strong>What has to move.</strong> <strong>The packet.</strong> \(|\psi(x,t)|^{2}\) through the collision, with the two barriers marked on the axis: the packet arrives, part of it is thrown straight back, and part of it fills the gap between the barriers and stays there, leaking out both sides long after the reflected piece has gone. Underneath, three running curves &mdash; the probability to the left of the structure, between the barriers, and to the right &mdash; so that the filling and the draining are numbers and not an impression. Run a free packet (no barriers, and that one <em>does</em> have a closed form) alongside as a ghost, so the delay can be seen. <br><strong>And the cheap one.</strong> No packet at all: sweep \(E\) slowly through a resonance and show \(|\varphi_E(x)|^{2}\). Off resonance the gap is dark; on it the amplitude between the barriers stands up by orders of magnitude. Every frame of this second animation is a formula from&nbsp;(b) evaluated at one energy.</p>
+    <p><strong>Solve it on paper.</strong> Parts (a)&ndash;(c) are pencil work from end to end: a constant-coefficient ordinary differential equation solved in five regions, eight matching equations, five <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mo>×</mo>
+  <mn>2</mn>
+</math></span> matrices multiplied, and algebra. Nothing is put on a grid and no differential equation is ever stepped forward in time &mdash; if you find yourself discretising the Schr&ouml;dinger equation, you have left the assignment. Part&nbsp;(d) is exact too, but the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span>-integral in it has no closed form for this potential, so evaluating that one integral is the only thing your program does. That is the same act as summing a Fourier series to draw a square wave.</p>
+    <p><strong>What has to move.</strong> <strong>The packet.</strong> <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mi>ψ</mi>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo>,</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+  <msup>
+    <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+</math></span> through the collision, with the two barriers marked on the axis: the packet arrives, part of it is thrown straight back, and part of it fills the gap between the barriers and stays there, leaking out both sides long after the reflected piece has gone. Underneath, three running curves &mdash; the probability to the left of the structure, between the barriers, and to the right &mdash; so that the filling and the draining are numbers and not an impression. Run a free packet (no barriers, and that one <em>does</em> have a closed form) alongside as a ghost, so the delay can be seen. <br><strong>And the cheap one.</strong> No packet at all: sweep <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>E</mi>
+</math></span> slowly through a resonance and show <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <msub>
+    <mi>φ</mi>
+    <mi>E</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+  <msup>
+    <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+</math></span>. Off resonance the gap is dark; on it the amplitude between the barriers stands up by orders of magnitude. Every frame of this second animation is a formula from&nbsp;(b) evaluated at one energy.</p>
     <p class="suggestion-defend"><strong>Be ready to answer, live.</strong> &ldquo;One of your barriers on its own reflects almost everything at that energy. Two of them, with a gap, let all of it through. Where in the matrix product does the reflection cancel, and what decides how long the packet is held before it leaves?&rdquo;</p>
   </li>
   </ol>

@@ -6,68 +6,9 @@
   <title>Home | Direct Method</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
   <link rel="preload" href="assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/site.css?v=db81423d">
-  <script>
-    window.MathJax = {
-      // tagformat is an optional TeX extension, not part of the combined
-      // tex-chtml build. Without these two lines the tagformat block below is
-      // read and silently ignored, and every equation numbers from 1 with no
-      // chapter in front of it.
-      loader: { load: ['[tex]/tagformat'] },
-      tex: {
-        packages: { '[+]': ['tagformat'] },
-        inlineMath: [['\\(', '\\)']],
-        displayMath: [['\\[', '\\]']],
-        processEnvironments: true,
-        tags: 'ams',
-        // The PDF numbers equations within the chapter (\numberwithin
-        // {equation}{chapter}), so "1.8" is the eighth equation of
-        // chapter 1. MathJax counts from 1 on every page, which would have
-        // shown that same equation as "8". Prefixing the chapter number
-        // keeps a reference valid against either version.
-        tagformat: {
-          number: function (n) { return ''  + n; }
-        },
-        macros: {
-          pdv: ['{\\frac{\\partial #1}{\\partial #2}}', 2],
-          dv: ['{\\frac{d #1}{d #2}}', 2],
-          abs: ['{\\left|#1\\right|}', 1],
-          norm: ['{\\left\\|#1\\right\\|}', 1],
-          curl: '{\\vec{\\nabla}\\times}',
-          div: '{\\vec{\\nabla}\\cdot}',
-          grad: '{\\vec{\\nabla}}',
-          sech: '{\\operatorname{sech}}',
-          csch: '{\\operatorname{csch}}',
-          coth: '{\\operatorname{coth}}',
-          circnum: ['{\\boxed{#1}}', 1],
-          vb: ['{\\mathbf{#1}}', 1],
-          eval: ['{\\left.#1\\right|}', 1],
-          dd: '{\\,d}',
-          // Dirac notation. The chapters are written with the physics
-          // package, which MathJax does not have, so every bra-ket command
-          // the notes use has to be defined here or it renders as red text.
-          // \braket is always given two arguments in these sources.
-          ket: ['{\\left|#1\\right\\rangle}', 1],
-          bra: ['{\\left\\langle#1\\right|}', 1],
-          braket: ['{\\left\\langle#1\\middle|#2\\right\\rangle}', 2],
-          ketbra: ['{\\left|#1\\right\\rangle\\!\\left\\langle#2\\right|}', 2],
-          dyad: ['{\\left|#1\\right\\rangle\\!\\left\\langle#2\\right|}', 2],
-          op: ['{\\left|#1\\right\\rangle\\!\\left\\langle#1\\right|}', 1],
-          mel: ['{\\left\\langle#1\\right|#2\\left|#3\\right\\rangle}', 3],
-          expval: ['{\\left\\langle#1\\right\\rangle}', 1],
-          ev: ['{\\left\\langle#1\\right\\rangle}', 1],
-          comm: ['{\\left[#1,#2\\right]}', 2],
-          acomm: ['{\\left\\{#1,#2\\right\\}}', 2],
-          anticommutator: ['{\\left\\{#1,#2\\right\\}}', 2],
-          Tr: '{\\operatorname{Tr}}',
-          tr: '{\\operatorname{tr}}',
-          bm: ['{\\boldsymbol{#1}}', 1]
-        }
-      }
-    };
-  </script>
-  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-  <script defer src="assets/js/main.js?v=db81423d"></script>
+  <link rel="stylesheet" href="assets/css/site.css?v=423ea16a">
+  <link rel="preload" href="assets/fonts/latinmodern-math.woff2" as="font" type="font/woff2" crossorigin>
+  <script defer src="assets/js/main.js?v=423ea16a"></script>
 
 <style>
 .site-header { justify-content: flex-start; gap: 16px; }
@@ -151,29 +92,216 @@
 </a>
 <a class="chapter-card" href="chapters/chapter-11/index.html">
   <span>Chapter 11</span>
-  <strong>Time-Dependent Rydberg–Fano Dynamics in CO<span class="math-inline">\(_2\)</span></strong>
+  <strong>Time-Dependent Rydberg–Fano Dynamics in CO<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span></strong>
 </a>
   </section>
   <section class="overview content">
     <h2 id="quantum-mechanics-roadmap">Quantum Mechanics Roadmap</h2>
 <div class="centered"></div>
-<p>Quantum mechanics, atomic structure, and molecular spectroscopy are presented in these notes with a single guiding goal: to take the reader from basic model systems to a time–dependent Rydberg–Fano description of XUV+IR dynamics in CO<span class="math-inline">\(_2\)</span>. This page summarizes the main learning targets and the logical flow of chapters.</p>
+<p>Quantum mechanics, atomic structure, and molecular spectroscopy are presented in these notes with a single guiding goal: to take the reader from basic model systems to a time–dependent Rydberg–Fano description of XUV+IR dynamics in CO<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span>. This page summarizes the main learning targets and the logical flow of chapters.</p>
 <p><strong>Learning outcomes.</strong> After completing this part of the book, the reader should be able to:</p>
-<ul><li><p>work comfortably with Hilbert–space methods, Dirac notation, and operators;</p></li><li><p>solve the Schrödinger equation for simple one–dimensional and central–potential systems and interpret their spectra;</p></li><li><p>describe orbital and spin angular momentum at the level needed for atomic orbitals and molecular rotation;</p></li><li><p>explain the structure of hydrogen and many–electron atoms using quantum numbers and the Pauli principle;</p></li><li><p>use semiclassical light–matter interaction (time–dependent potentials, dipole approximation) to describe transitions and selection rules;</p></li><li><p>apply harmonic–oscillator and rigid–rotor models to vibrational and rotational motion and relate them to observed spectra;</p></li><li><p>understand the essentials of electronic spectroscopy and the role of potential–energy curves and Franck–Condon factors;</p></li><li><p>distinguish between bound, Rydberg, and continuum states in molecules and apply the Fano formalism to discrete–continuum coupling;</p></li><li><p>follow the derivation and physical meaning of time–dependent Rydberg–Fano models for molecular systems such as CO<span class="math-inline">\(_2\)</span>.</p></li></ul>
+<ul><li><p>work comfortably with Hilbert–space methods, Dirac notation, and operators;</p></li><li><p>solve the Schrödinger equation for simple one–dimensional and central–potential systems and interpret their spectra;</p></li><li><p>describe orbital and spin angular momentum at the level needed for atomic orbitals and molecular rotation;</p></li><li><p>explain the structure of hydrogen and many–electron atoms using quantum numbers and the Pauli principle;</p></li><li><p>use semiclassical light–matter interaction (time–dependent potentials, dipole approximation) to describe transitions and selection rules;</p></li><li><p>apply harmonic–oscillator and rigid–rotor models to vibrational and rotational motion and relate them to observed spectra;</p></li><li><p>understand the essentials of electronic spectroscopy and the role of potential–energy curves and Franck–Condon factors;</p></li><li><p>distinguish between bound, Rydberg, and continuum states in molecules and apply the Fano formalism to discrete–continuum coupling;</p></li><li><p>follow the derivation and physical meaning of time–dependent Rydberg–Fano models for molecular systems such as CO<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span>.</p></li></ul>
 <p><strong>Notation conventions used in these notes.</strong> To keep formulas consistent from Chapter 1 to Chapter 11, we use:</p>
-<ul><li><p><span class="math-inline">\(\ket{n}\)</span>, <span class="math-inline">\(E_n\)</span> for generic stationary states and energies of a time-independent Hamiltonian;</p></li><li><p><span class="math-inline">\(a,b\)</span> for electronic-state labels, <span class="math-inline">\(\mathcal{E}_a(\vec R)\)</span> for electronic energy surfaces, and <span class="math-inline">\(V_a(\vec R)\)</span> for the full Born–Oppenheimer potential including nuclear repulsion;</p></li><li><p><span class="math-inline">\(v\)</span> for vibrational quantum number, <span class="math-inline">\(J\)</span> for rotational quantum number, <span class="math-inline">\(M_J\)</span> for its space-fixed projection, and <span class="math-inline">\(\Lambda\)</span> for the molecular-axis projection of electronic orbital angular momentum;</p></li><li><p>molecular basis states are written as <span class="math-inline">\(\ket{a,v,J,M_J}\)</span>, with coordinate-space functions used as representations of kets (for example, <span class="math-inline">\(\Psi(\vec r,\vec R)=\braket{\vec r,\vec R}{\Psi}\)</span>);</p></li><li><p><span class="math-inline">\(\varepsilon\)</span> for continuum-electron kinetic energy, <span class="math-inline">\(\omega_{fi}=(E_f-E_i)/\hbar\)</span> for transition angular frequencies, and <span class="math-inline">\(\tilde\nu\)</span> (cm<span class="math-inline">\(^{-1}\)</span>) for spectroscopic wavenumbers.</p></li></ul>
+<ul><li><p><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+    </mrow>
+    <mo fence="false" stretchy="false">⟩</mo>
+  </mrow>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>E</mi>
+    <mi>n</mi>
+  </msub>
+</math></span> for generic stationary states and energies of a time-independent Hamiltonian;</p></li><li><p><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mo>,</mo>
+  <mi>b</mi>
+</math></span> for electronic-state labels, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mi data-mjx-variant="-tex-calligraphic" mathvariant="script">E</mi>
+    </mrow>
+    <mi>a</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mi>R</mi>
+      <mo stretchy="false">→</mo>
+    </mover>
+  </mrow>
+  <mo stretchy="false">)</mo>
+</math></span> for electronic energy surfaces, and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>V</mi>
+    <mi>a</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mi>R</mi>
+      <mo stretchy="false">→</mo>
+    </mover>
+  </mrow>
+  <mo stretchy="false">)</mo>
+</math></span> for the full Born–Oppenheimer potential including nuclear repulsion;</p></li><li><p><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>v</mi>
+</math></span> for vibrational quantum number, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>J</mi>
+</math></span> for rotational quantum number, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>M</mi>
+    <mi>J</mi>
+  </msub>
+</math></span> for its space-fixed projection, and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Λ</mi>
+</math></span> for the molecular-axis projection of electronic orbital angular momentum;</p></li><li><p>molecular basis states are written as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>a</mi>
+      <mo>,</mo>
+      <mi>v</mi>
+      <mo>,</mo>
+      <mi>J</mi>
+      <mo>,</mo>
+      <msub>
+        <mi>M</mi>
+        <mi>J</mi>
+      </msub>
+    </mrow>
+    <mo fence="false" stretchy="false">⟩</mo>
+  </mrow>
+</math></span>, with coordinate-space functions used as representations of kets (for example, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Ψ</mi>
+  <mo stretchy="false">(</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mi>r</mi>
+      <mo stretchy="false">→</mo>
+    </mover>
+  </mrow>
+  <mo>,</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mi>R</mi>
+      <mo stretchy="false">→</mo>
+    </mover>
+  </mrow>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" stretchy="false" form="prefix" lspace="0em" rspace="0em">⟨</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mover>
+        <mi>r</mi>
+        <mo stretchy="false">→</mo>
+      </mover>
+    </mrow>
+    <mo>,</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mover>
+        <mi>R</mi>
+        <mo stretchy="false">→</mo>
+      </mover>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" stretchy="false" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+  <mrow data-mjx-texclass="ORD">
+    <mi mathvariant="normal">Ψ</mi>
+  </mrow>
+</math></span>);</p></li><li><p><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ε</mi>
+</math></span> for continuum-electron kinetic energy, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ω</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>f</mi>
+      <mi>i</mi>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>E</mi>
+    <mi>f</mi>
+  </msub>
+  <mo>−</mo>
+  <msub>
+    <mi>E</mi>
+    <mi>i</mi>
+  </msub>
+  <mo stretchy="false">)</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi data-mjx-alternate="1">ℏ</mi>
+</math></span> for transition angular frequencies, and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mi>ν</mi>
+      <mo stretchy="false">~</mo>
+    </mover>
+  </mrow>
+</math></span> (cm<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+</math></span>) for spectroscopic wavenumbers.</p></li></ul>
 <p><strong>Conceptual roadmap.</strong> The chapters are organized as follows:</p>
-<ul><li><p><em>Ch. 1: Foundations.</em> Mathematical tools (Hilbert space, kets and bras, operators, representations) and the postulates of quantum mechanics.</p></li><li><p><em>Ch. 2: One-dimensional model systems.</em> Free particle, wells, tunnelling, and harmonic oscillator.</p></li><li><p><em>Ch. 3: Angular momentum and central potentials.</em> Operator algebra, spherical harmonics, parity, and selection rules.</p></li><li><p><em>Ch. 4: Hydrogen atom.</em> Exact Coulomb problem, hydrogenic levels and orbitals; prototype for Rydberg states.</p></li><li><p><em>Ch. 5: Many-electron atoms.</em> Spin, antisymmetry, Pauli principle, qualitative structure of many–electron atoms.</p></li><li><p><em>Ch. 6: Time–dependent potentials and light–matter interaction.</em> TDSE with time–dependent Hamiltonians, dipole interaction with classical fields, and time–dependent perturbation theory.</p></li><li><p><em>Ch. 7: Molecular structure, vibration, and rotation.</em> Born–Oppenheimer separation, molecular orbitals, normal modes, and molecular energy scales.</p></li><li><p><em>Ch. 8: Rotational and vibrational spectroscopy.</em> Selection rules, infrared and Raman activity, and rovibrational band structure.</p></li><li><p><em>Ch. 9: Electronic spectroscopy.</em> Electronic excitation, potential–energy curves, Franck–Condon principle, and basic radiative processes.</p></li><li><p><em>Ch. 10: Rydberg and continuum states; Fano resonances.</em> Discrete–continuum coupling, Fano line shapes, and series behavior.</p></li><li><p><em>Ch. 11: Time–dependent Rydberg–Fano dynamics in CO<span class="math-inline">\(_2\)</span>.</em> Coupled-channel equations for XUV+IR-driven molecular dynamics and the interpretation of time-domain observables.</p></li></ul>
-<figure id="chapter--1-fig-1" class="figure"><img src="assets/img/roadmap_map.png" alt="The chapters of these notes and how they connect." loading="lazy" style="--figure-width: 98%;"><figcaption>The chapters of these notes and how they connect.</figcaption></figure>
-<p> This visual map is meant to be a quick reference: whenever a later chapter feels abstract, the reader can return here to see how each topic fits into the overall progression from basic quantum mechanics to Rydberg–Fano dynamics in CO<span class="math-inline">\(_2\)</span>.</p>
+<ul><li><p><em>Ch. 1: Foundations.</em> Mathematical tools (Hilbert space, kets and bras, operators, representations) and the postulates of quantum mechanics.</p></li><li><p><em>Ch. 2: One-dimensional model systems.</em> Free particle, wells, tunnelling, and harmonic oscillator.</p></li><li><p><em>Ch. 3: Angular momentum and central potentials.</em> Operator algebra, spherical harmonics, parity, and selection rules.</p></li><li><p><em>Ch. 4: Hydrogen atom.</em> Exact Coulomb problem, hydrogenic levels and orbitals; prototype for Rydberg states.</p></li><li><p><em>Ch. 5: Many-electron atoms.</em> Spin, antisymmetry, Pauli principle, qualitative structure of many–electron atoms.</p></li><li><p><em>Ch. 6: Time–dependent potentials and light–matter interaction.</em> TDSE with time–dependent Hamiltonians, dipole interaction with classical fields, and time–dependent perturbation theory.</p></li><li><p><em>Ch. 7: Molecular structure, vibration, and rotation.</em> Born–Oppenheimer separation, molecular orbitals, normal modes, and molecular energy scales.</p></li><li><p><em>Ch. 8: Rotational and vibrational spectroscopy.</em> Selection rules, infrared and Raman activity, and rovibrational band structure.</p></li><li><p><em>Ch. 9: Electronic spectroscopy.</em> Electronic excitation, potential–energy curves, Franck–Condon principle, and basic radiative processes.</p></li><li><p><em>Ch. 10: Rydberg and continuum states; Fano resonances.</em> Discrete–continuum coupling, Fano line shapes, and series behavior.</p></li><li><p><em>Ch. 11: Time–dependent Rydberg–Fano dynamics in CO<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span>.</em> Coupled-channel equations for XUV+IR-driven molecular dynamics and the interpretation of time-domain observables.</p></li></ul>
+<figure id="chapter--1-fig-1" class="figure"><img src="assets/img/roadmap_map.png" class="diagram" alt="The chapters of these notes and how they connect." loading="lazy" style="--figure-width: 98%;"><figcaption>The chapters of these notes and how they connect.</figcaption></figure>
+<p> This visual map is meant to be a quick reference: whenever a later chapter feels abstract, the reader can return here to see how each topic fits into the overall progression from basic quantum mechanics to Rydberg–Fano dynamics in CO<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span>.</p>
   </section>
   <section class="preface content">
     <h2 id="preface">Preface</h2>
 <p>Quantum mechanics stands at the core of modern physics. It provides the framework through which we understand atoms, molecules, light–matter interaction, and the structure of matter on the smallest scales. Yet the theory is not merely a collection of equations; it is a way of thinking about nature in which probability, superposition, and interference play central roles.</p>
-<p>These notes were developed to guide students from the foundations of quantum theory to the threshold of contemporary research, with a particular focus on Rydberg states, continuum coupling, and Fano interference. The long–term goal is concrete: to take the reader from basic model systems, through atomic and molecular structure and spectroscopy, to a time–dependent Rydberg–Fano description of XUV+IR dynamics in CO<span class="math-inline">\(_2\)</span>.</p>
+<p>These notes were developed to guide students from the foundations of quantum theory to the threshold of contemporary research, with a particular focus on Rydberg states, continuum coupling, and Fano interference. The long–term goal is concrete: to take the reader from basic model systems, through atomic and molecular structure and spectroscopy, to a time–dependent Rydberg–Fano description of XUV+IR dynamics in CO<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span>.</p>
 <p>The philosophy of the text is deliberately minimal. We do <em>not</em> attempt to reproduce a complete quantum–mechanics curriculum. Instead, we follow a focused path that introduces only those concepts and techniques that are needed later in the research–oriented chapters. Whenever possible, derivations are streamlined and unnecessary generality is avoided; the emphasis is on clarity, physical interpretation, and readiness to read and use the underlying research articles.</p>
 <p>In broad terms, the material is organized as follows. The opening chapters introduce the conceptual and mathematical structure of the theory: quantum states in Hilbert space, observables as operators, the meaning of probability amplitudes, and the formulation of time evolution. We then move through the simplest model systems—the free particle, one–dimensional wells and barriers, the harmonic oscillator, and central potentials—to build intuition for discrete spectra and continuum states within a unified framework. Subsequent chapters treat real atoms, first the hydrogen atom and then many–electron systems, including spin, antisymmetry, and the Pauli principle. A dedicated chapter on time–dependent potentials and semiclassical light–matter interaction provides the bridge from stationary states to driven dynamics.</p>
-<p>After this foundation is in place, the focus shifts to molecules: quantum models for vibrational and rotational motion, together with rotational, vibrational, and electronic spectroscopy, are developed at a level sufficient to interpret key experimental observables. The final chapters introduce Rydberg and continuum states in molecules, the Fano formalism for discrete–continuum coupling, and a concrete application to XUV+IR–driven Rydberg dynamics in CO<span class="math-inline">\(_2\)</span>.</p>
+<p>After this foundation is in place, the focus shifts to molecules: quantum models for vibrational and rotational motion, together with rotational, vibrational, and electronic spectroscopy, are developed at a level sufficient to interpret key experimental observables. The final chapters introduce Rydberg and continuum states in molecules, the Fano formalism for discrete–continuum coupling, and a concrete application to XUV+IR–driven Rydberg dynamics in CO<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span>.</p>
 <p>Throughout these notes, the goal is clarity: to explain not only how the formalism works, but why each step matters physically. Wave functions, operators, and amplitudes are presented side by side with their interpretation in experiments and simulations. Derivations are shown in detail where they illuminate key ideas, and theorems, definitions, and examples are highlighted to support mastery of the material. The aim is to build intuition without sacrificing rigor, and to connect the quantum formalism to the dynamical phenomena that students will encounter in modern atomic, molecular, and optical physics.</p>
 <p>A separate roadmap page, placed immediately after this preface, provides a concise overview of the learning outcomes and a visual map of how the chapters are connected. Readers are encouraged to refer back to that roadmap whenever they wish to see how a particular topic fits into the overall progression from basic quantum mechanics to Rydberg–Fano dynamics.</p>
 <p>These notes are written with advanced undergraduates and beginning graduate students in mind, particularly those who have completed a course in mathematical methods in physics and are interested in connecting quantum–mechanical formalism with current research topics. The later chapters may also serve as a bridge for students transitioning from a standard quantum–mechanics syllabus to the specialized literature on ultrafast and strong–field phenomena.</p>

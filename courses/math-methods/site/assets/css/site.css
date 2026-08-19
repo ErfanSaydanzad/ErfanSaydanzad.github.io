@@ -24,7 +24,7 @@
   --ink-soft: #4a5057;
   /* A shade darker than it looks like it needs to be: this grey also has to
      clear 4.5:1 against --wash, not only against --paper. */
-  --muted: #69707e;
+  --muted: #4d525c;
   --line: #e3e6ea;
   --line-strong: #cfd4da;
   --paper: #fbfbfc;
@@ -33,25 +33,25 @@
   --on-accent: #ffffff;
 
   /* One accent, used sparingly: links and the current-section marker. */
-  --accent: #0f5f66;
+  --accent: #0e585f;
   --accent-soft: #e8f2f2;
 
   /* --- Semantic colours. Change a kind here and it changes everywhere. --- */
-  --c-definition: #1d4ed8;
+  --c-definition: #1a46c3;
   --c-definition-bg: #f2f6fe;
-  --c-theorem: #6d28d9;
+  --c-theorem: #6725cc;
   --c-theorem-bg: #f7f4fe;
   /* Examples share the solution green: a solution now lives inside its
      example, so one colour covers the worked-problem material. */
-  --c-example: #15803d;
+  --c-example: #10612e;
   --c-example-bg: #f2f9f4;
-  --c-solution: #15803d;
+  --c-solution: #10612e;
   --c-solution-bg: #f2f9f4;
   --c-remark: #475569;
   --c-remark-bg: #f7f8fa;
   --c-proof: #475569;
   --c-proof-bg: #fcfcfd;
-  --c-context: #0f766e;
+  --c-context: #0c5d56;
   --c-context-bg: #f0f7f7;
 
   /* Type
@@ -95,14 +95,14 @@
   :root {
     --ink: #e4e7ec;
     --ink-soft: #b3bac5;
-    --muted: #868e9c;
+    --muted: #a3a9b4;
     --line: #272c34;
     --line-strong: #39404b;
     --paper: #14161a;
     --wash: #1b1e24;
     --on-accent: #0b0e11;
 
-    --accent: #5fb6bd;
+    --accent: #71bec4;
     --accent-soft: #14292c;
 
     --c-definition: #86a9ff;
@@ -113,20 +113,35 @@
     --c-example-bg: #13221a;
     --c-solution: #5fc98c;
     --c-solution-bg: #13221a;
-    --c-remark: #99a4b4;
+    --c-remark: #9ea9b8;
     --c-remark-bg: #1a1d23;
-    --c-proof: #99a4b4;
+    --c-proof: #9aa5b5;
     --c-proof-bg: #17191e;
     --c-context: #58bdb3;
     --c-context-bg: #122322;
   }
 
-  /* Every figure on this site is drawn by matplotlib on white paper, and the
-     colour in them is carrying meaning -- the sign of a displacement, which
-     mode is which. Dimming them with a filter would be a lie told for the
-     sake of the theme, so they keep their white and are given an edge, which
-     reads as a plate laid on the page rather than as a hole burned in it. */
-  .figure img, figure img, .project-card-preview {
+  /* Every figure on this site is drawn on white paper -- matplotlib for the
+     plots, TikZ for the diagrams -- and a white plate in a dark page reads as
+     a hole burned in it.
+
+     The colour in these figures carries meaning: the sign of a displacement,
+     which mode is which. So the paper is flipped without touching the hues.
+     invert() alone would turn the blue curve orange; following it with a
+     180-degree hue rotation puts every hue back where it started, and only
+     the lightness ends up reversed. Black ink on white becomes white ink on
+     black, and the blue curve stays blue.
+
+     Photographs are the one thing this must not touch -- a face or a piece of
+     apparatus comes out as a negative -- so it is opt-in per image, set by
+     the builder from the file type. */
+  .figure img.diagram, figure img.diagram {
+    filter: invert(1) hue-rotate(180deg);
+  }
+
+  /* Anything left on white paper -- photographs, screenshots -- keeps it, and
+     is given an edge so it reads as a plate laid on the page. */
+  .figure img:not(.diagram), figure img:not(.diagram), .project-card-preview {
     box-shadow: 0 0 0 1px var(--line-strong);
   }
 }
@@ -251,6 +266,10 @@ a:hover { text-decoration-thickness: 0.12em; }
   left: 12px;
   top: 12px;
   z-index: 50;
+  /* SC 2.5.5 Target Size, once it is on screen. */
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   padding: 10px 14px;
   background: var(--paper);
   border: 1px solid var(--accent);
@@ -274,6 +293,8 @@ a:hover { text-decoration-thickness: 0.12em; }
 .brand {
   display: inline-flex;
   align-items: center;
+  /* SC 2.5.5 Target Size. */
+  min-height: 44px;
   gap: 10px;
   color: var(--ink);
   font-weight: 600;
@@ -298,8 +319,22 @@ a:hover { text-decoration-thickness: 0.12em; }
   font-family: var(--sans);
   font-size: 0.88rem;
 }
-.top-nav a { color: var(--muted); text-decoration: none; }
-.top-nav a:hover { color: var(--ink); }
+.top-nav a {
+  /* Was ~20px tall, under even the AA threshold. Padding takes it to 44px
+     (SC 2.5.5), and the negative margin keeps the header the same height. */
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 4px;
+  margin: -12px 0;
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+.top-nav a:hover, .top-nav a:focus-visible {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
 
 /* ----------------------------------------------------------------- home -- */
 
@@ -501,7 +536,10 @@ pre.code {
 .muted { color: var(--muted); }
 
 .download-link {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  /* SC 2.5.5 Target Size. */
+  min-height: 44px;
   padding: 8px 14px;
   border: 1px solid var(--accent);
   border-radius: 6px;
@@ -556,7 +594,13 @@ pre.code {
 }
 
 .chapter-toc a {
-  padding: 5px 10px;
+  /* 44px minimum height, for SC 2.5.5 Target Size. The links sit in a dense
+     list, so the extra height is bought with padding rather than with type
+     size, and the flex centring keeps a two-line entry looking right. */
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 7px 10px;
   border-left: 2px solid transparent;
   color: var(--ink-soft);
   text-decoration: none;
@@ -666,9 +710,98 @@ pre.code {
   padding: 0.15rem 0;
 }
 
-.math-block mjx-container[display="true"] { margin: 0 !important; }
-
 .math-inline { overflow-wrap: anywhere; }
+
+/* Equations are real MathML, laid out by the browser rather than by MathJax
+   in the page. That is what lets them survive a reading mode, which rebuilds
+   the page from its own stylesheet and would otherwise drop the layout and
+   leave every formula as a vertical stack of its parts.
+
+   Latin Modern Math is the OpenType cut of the Computer Modern the PDF is set
+   in, and it carries the OpenType MATH table that native MathML layout needs
+   for stretchy brackets, radicals and fraction rules. Without a MATH font the
+   browser falls back to Cambria Math on Windows and STIX Two Math on macOS,
+   and to something unsuitable elsewhere. */
+@font-face {
+  font-family: "Latin Modern Math";
+  src: url("../fonts/latinmodern-math.woff2") format("woff2");
+  font-display: swap;
+}
+
+math {
+  font-family: "Latin Modern Math", "STIX Two Math", "Cambria Math", math;
+  /* Latin Modern runs small next to Source Serif; this brings the x-heights
+     together so an inline symbol sits on the line with the words. */
+  font-size: 1.06em;
+}
+
+/* \\boxed, which these notes use to ring a result worth carrying forward.
+   MathML Core has no <menclose>, so prerender.py rewrites it to an <mrow> and
+   the box is drawn here. */
+.mml-boxed {
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  padding: 0.3em 0.45em;
+}
+
+/* The equation number. MathML Core has no <mlabeledtr> either, so the tag is
+   lifted out into an HTML element and set against the right margin the way
+   the PDF sets it. In a reading mode the grid collapses and the number simply
+   follows the equation as text, which is the right outcome. */
+.math-block--numbered {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.eqn-number {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* \eqref. MathML Core has no href on any element, so MathJax's in-formula
+   cross-reference would render as a number that does not go anywhere; it is
+   lifted out to a real anchor instead. */
+.eqn-ref { font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* ----------------------------------------------------------- animations -- */
+
+/* A GIF plays itself and never stops, which fails SC 2.2.2 (Pause, Stop,
+   Hide) on its own. main.js pairs each one with this control and a canvas
+   holding the frame it was stopped on. Both are sized by the image, so the
+   page does not jump when one is swapped for the other. */
+.animation-still {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-inline: auto;
+}
+
+.animation-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* SC 2.5.5 Target Size. */
+  min-height: 44px;
+  padding: 0 16px;
+  margin: 8px auto 0;
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  background: var(--paper);
+  color: var(--ink-soft);
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.animation-toggle:hover {
+  color: var(--ink);
+  border-color: var(--accent);
+}
+
+figure.animation { display: flex; flex-direction: column; align-items: center; }
 
 /* -------------------------------------------------------------- figures -- */
 

@@ -6,68 +6,9 @@
   <title>Table of Contents | Direct Method</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
   <link rel="preload" href="assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/site.css?v=db81423d">
-  <script>
-    window.MathJax = {
-      // tagformat is an optional TeX extension, not part of the combined
-      // tex-chtml build. Without these two lines the tagformat block below is
-      // read and silently ignored, and every equation numbers from 1 with no
-      // chapter in front of it.
-      loader: { load: ['[tex]/tagformat'] },
-      tex: {
-        packages: { '[+]': ['tagformat'] },
-        inlineMath: [['\\(', '\\)']],
-        displayMath: [['\\[', '\\]']],
-        processEnvironments: true,
-        tags: 'ams',
-        // The PDF numbers equations within the chapter (\numberwithin
-        // {equation}{chapter}), so "1.8" is the eighth equation of
-        // chapter 1. MathJax counts from 1 on every page, which would have
-        // shown that same equation as "8". Prefixing the chapter number
-        // keeps a reference valid against either version.
-        tagformat: {
-          number: function (n) { return ''  + n; }
-        },
-        macros: {
-          pdv: ['{\\frac{\\partial #1}{\\partial #2}}', 2],
-          dv: ['{\\frac{d #1}{d #2}}', 2],
-          abs: ['{\\left|#1\\right|}', 1],
-          norm: ['{\\left\\|#1\\right\\|}', 1],
-          curl: '{\\vec{\\nabla}\\times}',
-          div: '{\\vec{\\nabla}\\cdot}',
-          grad: '{\\vec{\\nabla}}',
-          sech: '{\\operatorname{sech}}',
-          csch: '{\\operatorname{csch}}',
-          coth: '{\\operatorname{coth}}',
-          circnum: ['{\\boxed{#1}}', 1],
-          vb: ['{\\mathbf{#1}}', 1],
-          eval: ['{\\left.#1\\right|}', 1],
-          dd: '{\\,d}',
-          // Dirac notation. The chapters are written with the physics
-          // package, which MathJax does not have, so every bra-ket command
-          // the notes use has to be defined here or it renders as red text.
-          // \braket is always given two arguments in these sources.
-          ket: ['{\\left|#1\\right\\rangle}', 1],
-          bra: ['{\\left\\langle#1\\right|}', 1],
-          braket: ['{\\left\\langle#1\\middle|#2\\right\\rangle}', 2],
-          ketbra: ['{\\left|#1\\right\\rangle\\!\\left\\langle#2\\right|}', 2],
-          dyad: ['{\\left|#1\\right\\rangle\\!\\left\\langle#2\\right|}', 2],
-          op: ['{\\left|#1\\right\\rangle\\!\\left\\langle#1\\right|}', 1],
-          mel: ['{\\left\\langle#1\\right|#2\\left|#3\\right\\rangle}', 3],
-          expval: ['{\\left\\langle#1\\right\\rangle}', 1],
-          ev: ['{\\left\\langle#1\\right\\rangle}', 1],
-          comm: ['{\\left[#1,#2\\right]}', 2],
-          acomm: ['{\\left\\{#1,#2\\right\\}}', 2],
-          anticommutator: ['{\\left\\{#1,#2\\right\\}}', 2],
-          Tr: '{\\operatorname{Tr}}',
-          tr: '{\\operatorname{tr}}',
-          bm: ['{\\boldsymbol{#1}}', 1]
-        }
-      }
-    };
-  </script>
-  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-  <script defer src="assets/js/main.js?v=db81423d"></script>
+  <link rel="stylesheet" href="assets/css/site.css?v=423ea16a">
+  <link rel="preload" href="assets/fonts/latinmodern-math.woff2" as="font" type="font/woff2" crossorigin>
+  <script defer src="assets/js/main.js?v=423ea16a"></script>
 
 <style>
 .site-header { justify-content: flex-start; gap: 16px; }
@@ -231,7 +172,12 @@
 <li><a href="chapters/chapter-10/index.html#sec-10-exercises">10.9 Exercises</a></li>
 <li><a href="chapters/chapter-10/index.html#sec-10-project-fano-profiles-from-a-measured-series">10.10 Project: Fano Profiles from a Measured Series</a></li></ol>
 </section><section class="toc-chapter">
-  <h2><a href="chapters/chapter-11/index.html">Chapter 11. Time-Dependent Rydberg–Fano Dynamics in CO<span class="math-inline">\(_2\)</span></a></h2>
+  <h2><a href="chapters/chapter-11/index.html">Chapter 11. Time-Dependent Rydberg–Fano Dynamics in CO<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span></a></h2>
   <ol><li><a href="chapters/chapter-11/index.html#sec-11-introduction">11.1 Introduction</a></li>
 <li><a href="chapters/chapter-11/index.html#sec-11-the-physical-setup">11.2 The Physical Setup</a></li>
 <li><a href="chapters/chapter-11/index.html#sec-11-the-channel-basis">11.3 The Channel Basis</a></li>

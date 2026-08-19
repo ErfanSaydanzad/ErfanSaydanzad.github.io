@@ -23,14 +23,14 @@
      over a long read that is a cost, not a virtue. */
   --ink: #1a1c1e;
   --ink-soft: #4a5057;
-  --muted: #69707e;
+  --muted: #4d525c;
   --line: #e3e6ea;
   --line-strong: #cfd4da;
   --paper: #fbfbfc;
   --wash: #f2f4f7;
   --on-accent: #ffffff;
 
-  --accent: #0f5f66;
+  --accent: #0e585f;
   --accent-soft: #e8f2f2;
   --accent-line: #a9cfd2;
 
@@ -56,18 +56,58 @@
   :root {
     --ink: #e4e7ec;
     --ink-soft: #b3bac5;
-    --muted: #868e9c;
+    --muted: #a3a9b4;
     --line: #272c34;
     --line-strong: #39404b;
     --paper: #14161a;
     --wash: #1b1e24;
     --on-accent: #0b0e11;
 
-    --accent: #5fb6bd;
+    --accent: #71bec4;
     --accent-soft: #14292c;
     --accent-line: #2b555a;
   }
 }
+
+/* ----------------------------------------------------------------- math -- */
+
+/* Equations are real MathML, built at build time rather than laid out by
+   MathJax in the browser, so they survive a reading mode -- which rebuilds a
+   page from its own stylesheet and would drop MathJax's. Latin Modern Math is
+   the OpenType cut of Computer Modern and carries the MATH table that native
+   MathML layout needs for stretchy brackets and fraction rules. */
+@font-face {
+  font-family: "Latin Modern Math";
+  src: url("../fonts/latinmodern-math.woff2") format("woff2");
+  font-display: swap;
+}
+
+math {
+  font-family: "Latin Modern Math", "STIX Two Math", "Cambria Math", math;
+  font-size: 1.06em;
+}
+
+.math-block { margin: 1.3rem 0; overflow-x: auto; overflow-y: hidden; }
+.math-inline { overflow-wrap: anywhere; }
+
+/* oxed: MathML Core has no <menclose>, so it is drawn with CSS. */
+.mml-boxed {
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  padding: 0.3em 0.45em;
+}
+
+/* MathML Core has no <mlabeledtr>, so an equation number is lifted out into
+   an HTML element and set against the right margin. */
+.math-block--numbered {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.eqn-number, .eqn-ref { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.eqn-number { color: var(--muted); }
 
 /* ----------------------------------------------------------------- type -- */
 
@@ -189,7 +229,13 @@ code, kbd, pre { font-family: var(--mono); font-size: 0.9em; }
   z-index: 100;
   border-radius: 0 0 var(--radius-sm) 0;
 }
-.skip-link:focus { left: 0; }
+.skip-link:focus {
+  left: 0;
+  /* SC 2.5.5 Target Size, once it is on screen. */
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
 
 /* ------------------------------------------------------------- header ---- */
 
@@ -211,6 +257,8 @@ code, kbd, pre { font-family: var(--mono); font-size: 0.9em; }
 .brand {
   display: inline-flex;
   align-items: center;
+  /* SC 2.5.5 Target Size. */
+  min-height: 44px;
   gap: 0.6rem;
   color: var(--ink);
   text-decoration: none;
@@ -230,7 +278,12 @@ code, kbd, pre { font-family: var(--mono); font-size: 0.9em; }
 .top-nav a {
   color: var(--ink-soft);
   text-decoration: none;
-  padding: 0.35rem 0.7rem;
+  /* SC 2.5.5 Target Size: 44px minimum, bought with padding so the header
+     keeps its height and the pills keep their shape. */
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.35rem 0.85rem;
   border-radius: 999px;
   white-space: nowrap;
 }
@@ -260,6 +313,20 @@ main {
   text-transform: uppercase;
   color: var(--accent);
   margin: 0 0 0.7rem;
+}
+
+/* A page whose kicker and title were the same word now has one heading doing
+   both jobs, so it takes the kicker's voice at a size that can head a page.
+   Bigger than a kicker, and with the letter-spacing eased off -- tracking set
+   for 12px reads as gappy at 30. */
+.page-head h1.kicker-title {
+  font-family: var(--sans);
+  font-size: clamp(1.5rem, 1.2rem + 1.4vw, 2rem);
+  font-weight: 600;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0;
 }
 
 .lede {
@@ -358,6 +425,17 @@ main {
 
 @media screen and (prefers-color-scheme: dark) {
   .figure img { border-color: var(--line-strong); }
+
+  /* A figure drawn on white paper reads as a hole burned in a dark page. The
+     colour in these carries meaning, so the paper is flipped without touching
+     the hues: invert() alone would turn a blue curve orange, and following it
+     with a 180-degree hue rotation puts every hue back, leaving only the
+     lightness reversed. Photographs are excluded -- a face comes out as a
+     negative -- which the builder marks from the file type. */
+  .figure img.diagram {
+    background: transparent;
+    filter: invert(1) hue-rotate(180deg);
+  }
 }
 
 .hero-figure { margin-bottom: 2.5rem; }

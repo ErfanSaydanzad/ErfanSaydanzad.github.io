@@ -6,49 +6,9 @@
   <title>Why a Drum Has No Pitch: Modes of a Circular Membrane | Mathematical Methods in the Physical Sciences</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
   <link rel="preload" href="../../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../../../assets/css/site.css?v=4c167578">
-  <script>
-    window.MathJax = {
-      // tagformat is an optional TeX extension, not part of the combined
-      // tex-chtml build. Without these two lines the tagformat block below is
-      // read and silently ignored, and every equation numbers from 1 with no
-      // chapter in front of it.
-      loader: { load: ['[tex]/tagformat'] },
-      tex: {
-        packages: { '[+]': ['tagformat'] },
-        inlineMath: [['\\(', '\\)']],
-        displayMath: [['\\[', '\\]']],
-        processEnvironments: true,
-        tags: 'ams',
-        // The PDF numbers equations within the chapter (\numberwithin
-        // {equation}{chapter}), so "1.8" is the eighth equation of
-        // chapter 1. MathJax counts from 1 on every page, which would have
-        // shown that same equation as "8". Prefixing the chapter number
-        // keeps a reference valid against either version.
-        tagformat: {
-          number: function (n) { return ''  + n; }
-        },
-        macros: {
-          pdv: ['{\\frac{\\partial #1}{\\partial #2}}', 2],
-          dv: ['{\\frac{d #1}{d #2}}', 2],
-          abs: ['{\\left|#1\\right|}', 1],
-          norm: ['{\\left\\|#1\\right\\|}', 1],
-          curl: '{\\vec{\\nabla}\\times}',
-          div: '{\\vec{\\nabla}\\cdot}',
-          grad: '{\\vec{\\nabla}}',
-          sech: '{\\operatorname{sech}}',
-          csch: '{\\operatorname{csch}}',
-          coth: '{\\operatorname{coth}}',
-          circnum: ['{\\boxed{#1}}', 1],
-          vb: ['{\\mathbf{#1}}', 1],
-          eval: ['{\\left.#1\\right|}', 1],
-          dd: '{\\,d}'
-        }
-      }
-    };
-  </script>
-  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-  <script defer src="../../../assets/js/main.js?v=4c167578"></script>
+  <link rel="stylesheet" href="../../../assets/css/site.css?v=f86ec6ce">
+  <link rel="preload" href="../../../assets/fonts/latinmodern-math.woff2" as="font" type="font/woff2" crossorigin>
+  <script defer src="../../../assets/js/main.js?v=f86ec6ce"></script>
   <script defer src="../../../assets/js/visualizations/examples-Drum.js"></script>
 <style>
 .site-header { justify-content: flex-start; gap: 16px; }
@@ -85,19 +45,140 @@
 </header>
 <main class="content project" id="main">
 <header class="project-head"><p class="project-kicker">Worked example · solved on paper</p><h1>Why a Drum Has No Pitch: Modes of a Circular Membrane</h1><p class="project-author">PHYS 3260, Mathematical Methods — worked example</p></header>
-<section class="project-problem" aria-label="The problem"><p class="project-problem-kicker">The problem</p><p>A drumhead of radius <span class="math-inline">\(R\)</span> is a membrane held at tension <span class="math-inline">\(\tau\)</span> with areal density <span class="math-inline">\(\sigma\)</span>, clamped so that its rim cannot move. Its small transverse displacements <span class="math-inline">\(\psi(r,\theta,t)\)</span> satisfy the two-dimensional wave equation with a fixed boundary,</p>
-<div class="math-block">\[
-  \frac{\partial ^2\psi}{\partial t^2} = c^2\nabla^2\psi ,
-  \qquad
-  \psi(R,\theta,t) = 0 ,
-  \qquad
-  c = \sqrt{\tau/\sigma} .
-\]</div>
-<ul><li class="labeled"><span class="item-label">(a)</span><p>Separate the variables in polar coordinates. Show that the radial factor obeys Bessel's equation, and use the clamped rim together with regularity at the centre to obtain the normal modes of the drumhead and their frequencies <span class="math-inline">\(\omega_{nm}\)</span>.</p></li><li class="labeled"><span class="item-label">(b)</span><p>Show that the <span class="math-inline">\(\omega_{nm}\)</span> are not integer multiples of the lowest of them, and account for what that does to the sound: why a plucked string has a pitch and a struck drum has not.</p></li><li class="labeled"><span class="item-label">(c)</span><p>The drum is struck off centre. At <span class="math-inline">\(t=0\)</span> the membrane is flat but carries a localised patch of upward velocity. Expand that initial condition in the modes of (a), state the orthogonality relation the expansion relies on, and animate the motion that follows.</p></li></ul></section>
+<section class="project-problem" aria-label="The problem"><p class="project-problem-kicker">The problem</p><p>A drumhead of radius <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>R</mi>
+</math></span> is a membrane held at tension <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>τ</mi>
+</math></span> with areal density <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>σ</mi>
+</math></span>, clamped so that its rim cannot move. Its small transverse displacements <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ψ</mi>
+  <mo stretchy="false">(</mo>
+  <mi>r</mi>
+  <mo>,</mo>
+  <mi>θ</mi>
+  <mo>,</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+</math></span> satisfy the two-dimensional wave equation with a fixed boundary,</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mfrac>
+    <mrow>
+      <msup>
+        <mi>∂</mi>
+        <mn>2</mn>
+      </msup>
+      <mi>ψ</mi>
+    </mrow>
+    <mrow>
+      <mi>∂</mi>
+      <msup>
+        <mi>t</mi>
+        <mn>2</mn>
+      </msup>
+    </mrow>
+  </mfrac>
+  <mo>=</mo>
+  <msup>
+    <mi>c</mi>
+    <mn>2</mn>
+  </msup>
+  <msup>
+    <mi mathvariant="normal">∇</mi>
+    <mn>2</mn>
+  </msup>
+  <mi>ψ</mi>
+  <mo>,</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="2em" />
+  </mstyle>
+  <mi>ψ</mi>
+  <mo stretchy="false">(</mo>
+  <mi>R</mi>
+  <mo>,</mo>
+  <mi>θ</mi>
+  <mo>,</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mn>0</mn>
+  <mo>,</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="2em" />
+  </mstyle>
+  <mi>c</mi>
+  <mo>=</mo>
+  <msqrt>
+    <mi>τ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo>/</mo>
+    </mrow>
+    <mi>σ</mi>
+  </msqrt>
+  <mo>.</mo>
+</math></div>
+<ul><li class="labeled"><span class="item-label">(a)</span><p>Separate the variables in polar coordinates. Show that the radial factor obeys Bessel's equation, and use the clamped rim together with regularity at the centre to obtain the normal modes of the drumhead and their frequencies <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ω</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+      <mi>m</mi>
+    </mrow>
+  </msub>
+</math></span>.</p></li><li class="labeled"><span class="item-label">(b)</span><p>Show that the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ω</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+      <mi>m</mi>
+    </mrow>
+  </msub>
+</math></span> are not integer multiples of the lowest of them, and account for what that does to the sound: why a plucked string has a pitch and a struck drum has not.</p></li><li class="labeled"><span class="item-label">(c)</span><p>The drum is struck off centre. At <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> the membrane is flat but carries a localised patch of upward velocity. Expand that initial condition in the modes of (a), state the orthogonality relation the expansion relies on, and animate the motion that follows.</p></li></ul></section>
 <p class="project-abstract"><strong>Abstract.</strong> The wave equation on a disc with a clamped rim is separated in polar
    coordinates, which turns the radial part into Bessel's equation. The rim
-   condition then selects the zeros <span class="math-inline">\(\rho_{nm}\)</span> of <span class="math-inline">\(J_n\)</span>, and the mode
-   frequencies come out as <span class="math-inline">\(\omega_{nm} = c\,\rho_{nm}/R\)</span>. Because those zeros
+   condition then selects the zeros <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ρ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+      <mi>m</mi>
+    </mrow>
+  </msub>
+</math></span> of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>J</mi>
+    <mi>n</mi>
+  </msub>
+</math></span>, and the mode
+   frequencies come out as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ω</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+      <mi>m</mi>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mi>c</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msub>
+    <mi>ρ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+      <mi>m</mi>
+    </mrow>
+  </msub>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>R</mi>
+</math></span>. Because those zeros
    are not evenly spaced, a drum's overtones are not integer multiples of its
    fundamental — the reason a drum sounds like a drum and not like a string.
    The modes are then used as a basis: a mallet strike is expanded in them with
@@ -106,105 +187,1043 @@
    differential equations (Ch. 9), partial differential equations (Ch. 10),
    orthogonal expansions (Ch. 7) and integration in polar coordinates (Ch. 5).</p>
 <h2 id="sec-900-the-physics-question"><span class="sec-number">1</span>The physics question</h2>
-<p>Strike a guitar string and you hear a note. Strike a drum and you hear a thud: loud, definite, but hard to sing back. The difference is not in how the two are played but in the shape of the boundary that holds them. A string is clamped at two points and vibrates at frequencies <span class="math-inline">\(f, 2f, 3f, \dots\)</span>; those integer multiples are what the ear fuses into a pitch. A drumhead is clamped around a circle, and this project works out what that circular boundary allows.</p>
+<p>Strike a guitar string and you hear a note. Strike a drum and you hear a thud: loud, definite, but hard to sing back. The difference is not in how the two are played but in the shape of the boundary that holds them. A string is clamped at two points and vibrates at frequencies <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>f</mi>
+  <mo>,</mo>
+  <mn>2</mn>
+  <mi>f</mi>
+  <mo>,</mo>
+  <mn>3</mn>
+  <mi>f</mi>
+  <mo>,</mo>
+  <mo>…</mo>
+</math></span>; those integer multiples are what the ear fuses into a pitch. A drumhead is clamped around a circle, and this project works out what that circular boundary allows.</p>
 <p>Parts (a) and (b) settle what that boundary allows and what the ear then makes of it. Part (c) is the harder half, and the one a real drum poses: a mallet does not set a single mode going, so the motion you actually see has to be assembled out of all of them.</p>
 <h2 id="sec-900-the-mathematical-model"><span class="sec-number">2</span>The mathematical model</h2>
-<p>Let <span class="math-inline">\(\psi(r,\theta,t)\)</span> be the vertical displacement of a membrane of radius <span class="math-inline">\(R\)</span>, held fixed at the rim. Small transverse vibrations obey the two-dimensional wave equation</p>
-<div class="math-block">\begin{equation}
-  \frac{\partial ^2 \psi}{\partial t^2} = c^2 \nabla^2 \psi,
-  \label{eq:wave}
-\end{equation}</div>
-<p>where <span class="math-inline">\(c = \sqrt{\tau/\sigma}\)</span> is set by the tension <span class="math-inline">\(\tau\)</span> and the areal density <span class="math-inline">\(\sigma\)</span>. The geometry is circular, so the Laplacian is used in polar coordinates,</p>
-<div class="math-block">\begin{equation}
-  \nabla^2 \psi
-  = \frac{1}{r}\frac{\partial}{\partial r}\!\left( r\,\frac{\partial \psi}{\partial r} \right)
-  + \frac{1}{r^2}\,\frac{\partial ^2 \psi}{\partial \theta^2}.
-  \label{eq:laplacian}
-\end{equation}</div>
+<p>Let <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ψ</mi>
+  <mo stretchy="false">(</mo>
+  <mi>r</mi>
+  <mo>,</mo>
+  <mi>θ</mi>
+  <mo>,</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+</math></span> be the vertical displacement of a membrane of radius <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>R</mi>
+</math></span>, held fixed at the rim. Small transverse vibrations obey the two-dimensional wave equation</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mfrac>
+          <mrow>
+            <msup>
+              <mi>∂</mi>
+              <mn>2</mn>
+            </msup>
+            <mi>ψ</mi>
+          </mrow>
+          <mrow>
+            <mi>∂</mi>
+            <msup>
+              <mi>t</mi>
+              <mn>2</mn>
+            </msup>
+          </mrow>
+        </mfrac>
+        <mo>=</mo>
+        <msup>
+          <mi>c</mi>
+          <mn>2</mn>
+        </msup>
+        <msup>
+          <mi mathvariant="normal">∇</mi>
+          <mn>2</mn>
+        </msup>
+        <mi>ψ</mi>
+        <mo>,</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:wave">(1)</span></div>
+<p>where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mo>=</mo>
+  <msqrt>
+    <mi>τ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo>/</mo>
+    </mrow>
+    <mi>σ</mi>
+  </msqrt>
+</math></span> is set by the tension <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>τ</mi>
+</math></span> and the areal density <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>σ</mi>
+</math></span>. The geometry is circular, so the Laplacian is used in polar coordinates,</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <msup>
+          <mi mathvariant="normal">∇</mi>
+          <mn>2</mn>
+        </msup>
+        <mi>ψ</mi>
+        <mo>=</mo>
+        <mfrac>
+          <mn>1</mn>
+          <mi>r</mi>
+        </mfrac>
+        <mfrac>
+          <mi>∂</mi>
+          <mrow>
+            <mi>∂</mi>
+            <mi>r</mi>
+          </mrow>
+        </mfrac>
+        <mstyle scriptlevel="0">
+          <mspace width="-0.167em" />
+        </mstyle>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mi>r</mi>
+          <mstyle scriptlevel="0">
+            <mspace width="0.167em" />
+          </mstyle>
+          <mfrac>
+            <mrow>
+              <mi>∂</mi>
+              <mi>ψ</mi>
+            </mrow>
+            <mrow>
+              <mi>∂</mi>
+              <mi>r</mi>
+            </mrow>
+          </mfrac>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
+        <mo>+</mo>
+        <mfrac>
+          <mn>1</mn>
+          <msup>
+            <mi>r</mi>
+            <mn>2</mn>
+          </msup>
+        </mfrac>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <mfrac>
+          <mrow>
+            <msup>
+              <mi>∂</mi>
+              <mn>2</mn>
+            </msup>
+            <mi>ψ</mi>
+          </mrow>
+          <mrow>
+            <mi>∂</mi>
+            <msup>
+              <mi>θ</mi>
+              <mn>2</mn>
+            </msup>
+          </mrow>
+        </mfrac>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:laplacian">(2)</span></div>
 <p>The boundary condition is that the rim never moves,</p>
-<div class="math-block">\begin{equation}
-  \psi(R, \theta, t) = 0 \quad\text{for all } \theta, t,
-  \label{eq:bc}
-\end{equation}</div>
-<p>and the solution must also be finite and single-valued at every interior point, including the centre <span class="math-inline">\(r = 0\)</span> where <span class="math-inline">\(\eqref{eq:laplacian}\)</span> is singular. That regularity requirement is not a technicality: it is what removes half of the solutions below.</p>
-<p>Throughout the calculations <span class="math-inline">\(R = c = 1\)</span>, so frequencies are quoted in units of <span class="math-inline">\(c/R\)</span> and lengths in units of <span class="math-inline">\(R\)</span>.</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>ψ</mi>
+        <mo stretchy="false">(</mo>
+        <mi>R</mi>
+        <mo>,</mo>
+        <mi>θ</mi>
+        <mo>,</mo>
+        <mi>t</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mn>0</mn>
+        <mstyle scriptlevel="0">
+          <mspace width="1em" />
+        </mstyle>
+        <mtext>for all </mtext>
+        <mi>θ</mi>
+        <mo>,</mo>
+        <mi>t</mi>
+        <mo>,</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:bc">(3)</span></div>
+<p>and the solution must also be finite and single-valued at every interior point, including the centre <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> where <a class="eqn-ref" href="#mjx-eqn:eq:laplacian">(2)</a> is singular. That regularity requirement is not a technicality: it is what removes half of the solutions below.</p>
+<p>Throughout the calculations <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>R</mi>
+  <mo>=</mo>
+  <mi>c</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>, so frequencies are quoted in units of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>R</mi>
+</math></span> and lengths in units of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>R</mi>
+</math></span>.</p>
 <h2 id="sec-900-separating-the-variables-chapter-10"><span class="sec-number">3</span>Separating the variables (Chapter 10)</h2>
 <p>This is the method of <strong>Chapter 10</strong> applied to a circular boundary. Look for solutions of the product form</p>
-<div class="math-block">\begin{equation}
-  \psi(r,\theta,t) = P(r)\,\Theta(\theta)\,T(t).
-\end{equation}</div>
-<p>Substituting into <span class="math-inline">\(\eqref{eq:wave}\)</span> and dividing by <span class="math-inline">\(P\Theta T\)</span> gives</p>
-<div class="math-block">\begin{equation}
-  \frac{1}{c^2}\frac{T&#x27;&#x27;}{T}
-  = \frac{1}{P}\left( P&#x27;&#x27; + \frac{1}{r}P&#x27; \right) + \frac{1}{r^2}\frac{\Theta&#x27;&#x27;}{\Theta}.
-\end{equation}</div>
-<p>The left side depends only on <span class="math-inline">\(t\)</span> and the right side only on <span class="math-inline">\(r\)</span> and <span class="math-inline">\(\theta\)</span>, so both equal a constant. Calling it <span class="math-inline">\(-k^2\)</span> — negative, because a positive constant would give solutions growing without bound in time, which a membrane with a fixed rim cannot do — gives</p>
-<div class="math-block">\begin{equation}
-  T&#x27;&#x27; + \omega^2 T = 0, \qquad \omega = c\,k .
-  \label{eq:time}
-\end{equation}</div>
-<p>Separating <span class="math-inline">\(r\)</span> from <span class="math-inline">\(\theta\)</span> in the remainder introduces a second constant,</p>
-<div class="math-block">\begin{equation}
-  \frac{\Theta&#x27;&#x27;}{\Theta} = -n^2 ,
-  \qquad
-  r^2 P&#x27;&#x27; + r P&#x27; + \left( k^2 r^2 - n^2 \right) P = 0 .
-  \label{eq:radial}
-\end{equation}</div>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>ψ</mi>
+        <mo stretchy="false">(</mo>
+        <mi>r</mi>
+        <mo>,</mo>
+        <mi>θ</mi>
+        <mo>,</mo>
+        <mi>t</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mi>P</mi>
+        <mo stretchy="false">(</mo>
+        <mi>r</mi>
+        <mo stretchy="false">)</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <mi mathvariant="normal">Θ</mi>
+        <mo stretchy="false">(</mo>
+        <mi>θ</mi>
+        <mo stretchy="false">)</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <mi>T</mi>
+        <mo stretchy="false">(</mo>
+        <mi>t</mi>
+        <mo stretchy="false">)</mo>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:4">(4)</span></div>
+<p>Substituting into <a class="eqn-ref" href="#mjx-eqn:eq:wave">(1)</a> and dividing by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>P</mi>
+  <mi mathvariant="normal">Θ</mi>
+  <mi>T</mi>
+</math></span> gives</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mfrac>
+          <mn>1</mn>
+          <msup>
+            <mi>c</mi>
+            <mn>2</mn>
+          </msup>
+        </mfrac>
+        <mfrac>
+          <msup>
+            <mi>T</mi>
+            <mo data-mjx-alternate="1">″</mo>
+          </msup>
+          <mi>T</mi>
+        </mfrac>
+        <mo>=</mo>
+        <mfrac>
+          <mn>1</mn>
+          <mi>P</mi>
+        </mfrac>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <msup>
+            <mi>P</mi>
+            <mo data-mjx-alternate="1">″</mo>
+          </msup>
+          <mo>+</mo>
+          <mfrac>
+            <mn>1</mn>
+            <mi>r</mi>
+          </mfrac>
+          <msup>
+            <mi>P</mi>
+            <mo data-mjx-alternate="1">′</mo>
+          </msup>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
+        <mo>+</mo>
+        <mfrac>
+          <mn>1</mn>
+          <msup>
+            <mi>r</mi>
+            <mn>2</mn>
+          </msup>
+        </mfrac>
+        <mfrac>
+          <msup>
+            <mi mathvariant="normal">Θ</mi>
+            <mo data-mjx-alternate="1">″</mo>
+          </msup>
+          <mi mathvariant="normal">Θ</mi>
+        </mfrac>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:5">(5)</span></div>
+<p>The left side depends only on <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+</math></span> and the right side only on <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>θ</mi>
+</math></span>, so both equal a constant. Calling it <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <msup>
+    <mi>k</mi>
+    <mn>2</mn>
+  </msup>
+</math></span> — negative, because a positive constant would give solutions growing without bound in time, which a membrane with a fixed rim cannot do — gives</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <msup>
+          <mi>T</mi>
+          <mo data-mjx-alternate="1">″</mo>
+        </msup>
+        <mo>+</mo>
+        <msup>
+          <mi>ω</mi>
+          <mn>2</mn>
+        </msup>
+        <mi>T</mi>
+        <mo>=</mo>
+        <mn>0</mn>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <mi>ω</mi>
+        <mo>=</mo>
+        <mi>c</mi>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <mi>k</mi>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:time">(6)</span></div>
+<p>Separating <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+</math></span> from <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>θ</mi>
+</math></span> in the remainder introduces a second constant,</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mfrac>
+          <msup>
+            <mi mathvariant="normal">Θ</mi>
+            <mo data-mjx-alternate="1">″</mo>
+          </msup>
+          <mi mathvariant="normal">Θ</mi>
+        </mfrac>
+        <mo>=</mo>
+        <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+        <msup>
+          <mi>n</mi>
+          <mn>2</mn>
+        </msup>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <msup>
+          <mi>r</mi>
+          <mn>2</mn>
+        </msup>
+        <msup>
+          <mi>P</mi>
+          <mo data-mjx-alternate="1">″</mo>
+        </msup>
+        <mo>+</mo>
+        <mi>r</mi>
+        <msup>
+          <mi>P</mi>
+          <mo data-mjx-alternate="1">′</mo>
+        </msup>
+        <mo>+</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <msup>
+            <mi>k</mi>
+            <mn>2</mn>
+          </msup>
+          <msup>
+            <mi>r</mi>
+            <mn>2</mn>
+          </msup>
+          <mo>−</mo>
+          <msup>
+            <mi>n</mi>
+            <mn>2</mn>
+          </msup>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
+        <mi>P</mi>
+        <mo>=</mo>
+        <mn>0</mn>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:radial">(7)</span></div>
 <h3 id="sec-900-the-angular-equation"><span class="sec-number">3.1</span>The angular equation</h3>
-<p>The solution of <span class="math-inline">\(\Theta&#x27;&#x27; + n^2\Theta = 0\)</span> is <span class="math-inline">\(\Theta(\theta) = A\cos n\theta + B\sin n\theta\)</span>. Going once around the membrane must return to the same displacement, <span class="math-inline">\(\Theta(\theta + 2\pi) = \Theta(\theta)\)</span>, which forces <span class="math-inline">\(n\)</span> to be an integer. The integer <span class="math-inline">\(n\)</span> counts <em>nodal diameters</em>: straight lines across the drumhead that never move. Taking the strike to lie on the <span class="math-inline">\(x\)</span>-axis makes the motion symmetric about that line, so only the <span class="math-inline">\(\cos n\theta\)</span> terms are needed below.</p>
+<p>The solution of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi mathvariant="normal">Θ</mi>
+    <mo data-mjx-alternate="1">″</mo>
+  </msup>
+  <mo>+</mo>
+  <msup>
+    <mi>n</mi>
+    <mn>2</mn>
+  </msup>
+  <mi mathvariant="normal">Θ</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Θ</mi>
+  <mo stretchy="false">(</mo>
+  <mi>θ</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mi>A</mi>
+  <mi>cos</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mi>n</mi>
+  <mi>θ</mi>
+  <mo>+</mo>
+  <mi>B</mi>
+  <mi>sin</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mi>n</mi>
+  <mi>θ</mi>
+</math></span>. Going once around the membrane must return to the same displacement, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Θ</mi>
+  <mo stretchy="false">(</mo>
+  <mi>θ</mi>
+  <mo>+</mo>
+  <mn>2</mn>
+  <mi>π</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mi mathvariant="normal">Θ</mi>
+  <mo stretchy="false">(</mo>
+  <mi>θ</mi>
+  <mo stretchy="false">)</mo>
+</math></span>, which forces <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> to be an integer. The integer <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> counts <em>nodal diameters</em>: straight lines across the drumhead that never move. Taking the strike to lie on the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span>-axis makes the motion symmetric about that line, so only the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>cos</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mi>n</mi>
+  <mi>θ</mi>
+</math></span> terms are needed below.</p>
 <h3 id="sec-900-the-radial-equation-bessel-s-equation-chapter-9"><span class="sec-number">3.2</span>The radial equation: Bessel's equation (Chapter 9)</h3>
-<p>Equation <span class="math-inline">\(\eqref{eq:radial}\)</span> is Bessel's equation of order <span class="math-inline">\(n\)</span> in the variable <span class="math-inline">\(kr\)</span>. It has a regular singular point at <span class="math-inline">\(r=0\)</span>, so it is solved by the Frobenius series of <strong>Chapter 9</strong> rather than by an ordinary power series. Its general solution is</p>
-<div class="math-block">\begin{equation}
-  P(r) = C\,J_n(kr) + D\,Y_n(kr),
-\end{equation}</div>
-<p>where <span class="math-inline">\(J_n\)</span> and <span class="math-inline">\(Y_n\)</span> are the Bessel functions of the first and second kind — exactly the functions Chapter 9 obtains by solving <span class="math-inline">\(\eqref{eq:radial}\)</span> as a power series about the regular singular point <span class="math-inline">\(r=0\)</span>. Since <span class="math-inline">\(Y_n(kr) \to -\infty\)</span> as <span class="math-inline">\(r \to 0\)</span> and a real drumhead has a finite displacement at its centre, <span class="math-inline">\(D = 0\)</span>.</p>
+<p>Equation <a class="eqn-ref" href="#mjx-eqn:eq:radial">(7)</a> is Bessel's equation of order <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> in the variable <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+  <mi>r</mi>
+</math></span>. It has a regular singular point at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>, so it is solved by the Frobenius series of <strong>Chapter 9</strong> rather than by an ordinary power series. Its general solution is</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>P</mi>
+        <mo stretchy="false">(</mo>
+        <mi>r</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mi>C</mi>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <msub>
+          <mi>J</mi>
+          <mi>n</mi>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>k</mi>
+        <mi>r</mi>
+        <mo stretchy="false">)</mo>
+        <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+        <mi>D</mi>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <msub>
+          <mi>Y</mi>
+          <mi>n</mi>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>k</mi>
+        <mi>r</mi>
+        <mo stretchy="false">)</mo>
+        <mo>,</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:8">(8)</span></div>
+<p>where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>J</mi>
+    <mi>n</mi>
+  </msub>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>Y</mi>
+    <mi>n</mi>
+  </msub>
+</math></span> are the Bessel functions of the first and second kind — exactly the functions Chapter 9 obtains by solving <a class="eqn-ref" href="#mjx-eqn:eq:radial">(7)</a> as a power series about the regular singular point <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>. Since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>Y</mi>
+    <mi>n</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>k</mi>
+  <mi>r</mi>
+  <mo stretchy="false">)</mo>
+  <mo accent="false" stretchy="false">→</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mi mathvariant="normal">∞</mi>
+</math></span> as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mo accent="false" stretchy="false">→</mo>
+  <mn>0</mn>
+</math></span> and a real drumhead has a finite displacement at its centre, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>D</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>.</p>
 <h3 id="sec-900-the-clamped-rim-quantises-the-frequency"><span class="sec-number">3.3</span>The clamped rim quantises the frequency</h3>
-<p>The boundary condition <span class="math-inline">\(\eqref{eq:bc}\)</span> now bites: <span class="math-inline">\(J_n(kR) = 0\)</span>, so <span class="math-inline">\(kR\)</span> must be a zero of <span class="math-inline">\(J_n\)</span>. Writing <span class="math-inline">\(\rho_{nm}\)</span> for the <span class="math-inline">\(m\)</span>-th positive zero of <span class="math-inline">\(J_n\)</span> (Figure <a href="#fig-1">1</a>),</p>
-<div class="math-block">\begin{equation}
-  k_{nm} = \frac{\rho_{nm}}{R},
-  \qquad
-  \boxed{\;\omega_{nm} = \frac{c\,\rho_{nm}}{R}\;}
-  \label{eq:omega}
-\end{equation}</div>
-<p>This is the same logic as a string, where the fixed ends force <span class="math-inline">\(\sin(kL)=0\)</span> and hence <span class="math-inline">\(k = m\pi/L\)</span>. The difference is entirely in which function has to vanish: <span class="math-inline">\(\sin\)</span> for the string, <span class="math-inline">\(J_n\)</span> for the drum.</p>
-<figure id="fig-1" class="figure"><img src="assets/img/fig_bessel.png" alt="The first four Bessel functions of the first kind. The dots mark their zeros nm, and those are the only radial wavenumbers a clamped circular rim allows. Unlike the zeros of , they are not evenly spaced — and their spacing is not the same from one Jn to the next." loading="lazy" style="--figure-width: 95%;"><figcaption>Figure 1. The first four Bessel functions of the first kind. The dots mark
-    their zeros <span class="math-inline">\(\rho_{nm}\)</span>, and those are the only radial wavenumbers a
-    clamped circular rim allows. Unlike the zeros of <span class="math-inline">\(\sin\)</span>, they are not
-    evenly spaced — and their spacing is not the same from one <span class="math-inline">\(J_n\)</span> to the
+<p>The boundary condition <a class="eqn-ref" href="#mjx-eqn:eq:bc">(3)</a> now bites: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>J</mi>
+    <mi>n</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>k</mi>
+  <mi>R</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>, so <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+  <mi>R</mi>
+</math></span> must be a zero of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>J</mi>
+    <mi>n</mi>
+  </msub>
+</math></span>. Writing <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ρ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+      <mi>m</mi>
+    </mrow>
+  </msub>
+</math></span> for the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span>-th positive zero of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>J</mi>
+    <mi>n</mi>
+  </msub>
+</math></span> (Figure <a href="#fig-1">1</a>),</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <msub>
+          <mi>k</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mi>n</mi>
+            <mi>m</mi>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <mfrac>
+          <msub>
+            <mi>ρ</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mi>n</mi>
+              <mi>m</mi>
+            </mrow>
+          </msub>
+          <mi>R</mi>
+        </mfrac>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <mrow class="mml-boxed">
+          <mrow data-mjx-texclass="ORD">
+            <mstyle displaystyle="true" scriptlevel="0">
+              <mrow data-mjx-texclass="ORD">
+                <mstyle scriptlevel="0">
+                  <mspace width="0.278em" />
+                </mstyle>
+                <msub>
+                  <mi>ω</mi>
+                  <mrow data-mjx-texclass="ORD">
+                    <mi>n</mi>
+                    <mi>m</mi>
+                  </mrow>
+                </msub>
+                <mo>=</mo>
+                <mfrac>
+                  <mrow>
+                    <mi>c</mi>
+                    <mstyle scriptlevel="0">
+                      <mspace width="0.167em" />
+                    </mstyle>
+                    <msub>
+                      <mi>ρ</mi>
+                      <mrow data-mjx-texclass="ORD">
+                        <mi>n</mi>
+                        <mi>m</mi>
+                      </mrow>
+                    </msub>
+                  </mrow>
+                  <mi>R</mi>
+                </mfrac>
+                <mstyle scriptlevel="0">
+                  <mspace width="0.278em" />
+                </mstyle>
+              </mrow>
+            </mstyle>
+          </mrow>
+        </mrow>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:omega">(9)</span></div>
+<p>This is the same logic as a string, where the fixed ends force <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>sin</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mo stretchy="false">(</mo>
+  <mi>k</mi>
+  <mi>L</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> and hence <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+  <mo>=</mo>
+  <mi>m</mi>
+  <mi>π</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>L</mi>
+</math></span>. The difference is entirely in which function has to vanish: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>sin</mi>
+</math></span> for the string, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>J</mi>
+    <mi>n</mi>
+  </msub>
+</math></span> for the drum.</p>
+<figure id="fig-1" class="figure"><img src="assets/img/fig_bessel.png" class="diagram" alt="The first four Bessel functions of the first kind. The dots mark their zeros nm, and those are the only radial wavenumbers a clamped circular rim allows. Unlike the zeros of , they are not evenly spaced — and their spacing is not the same from one Jn to the next." loading="lazy" style="--figure-width: 95%;"><figcaption>Figure 1. The first four Bessel functions of the first kind. The dots mark
+    their zeros <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ρ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+      <mi>m</mi>
+    </mrow>
+  </msub>
+</math></span>, and those are the only radial wavenumbers a
+    clamped circular rim allows. Unlike the zeros of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>sin</mi>
+</math></span>, they are not
+    evenly spaced — and their spacing is not the same from one <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>J</mi>
+    <mi>n</mi>
+  </msub>
+</math></span> to the
     next.</figcaption></figure>
 <h3 id="sec-900-the-normal-modes"><span class="sec-number">3.4</span>The normal modes</h3>
 <p>Collecting the three factors, the normal modes of the drumhead are</p>
-<div class="math-block">\begin{equation}
-  \psi_{nm}(r,\theta,t)
-  = J_n\!\left( \rho_{nm}\frac{r}{R} \right)\cos(n\theta)\,
-    \left[\, a_{nm}\cos \omega_{nm} t + b_{nm}\sin \omega_{nm} t \,\right],
-  \qquad n \ge 0,\; m \ge 1 .
-  \label{eq:modes}
-\end{equation}</div>
-<p>Each mode has <span class="math-inline">\(n\)</span> nodal diameters and <span class="math-inline">\(m-1\)</span> interior nodal circles, the circles sitting at the radii where <span class="math-inline">\(J_n(\rho_{nm} r/R)\)</span> passes through its earlier zeros. Figure <a href="#fig-3">3</a> shows the six lowest.</p>
-<p>What a normal mode <em>is</em> shows up better in motion than on the page: the pattern is fixed for all time and only its amplitude oscillates, so the nodes never move. Figure <a href="#fig-2">2</a> runs three modes side by side. Because each carries its own <span class="math-inline">\(\omega_{nm}\)</span>, they start together and immediately drift apart — and that drift is the whole reason a struck drum does not repeat itself.</p>
-<figure id="fig-2" class="figure animation"><img src="assets/img/anim_modes.gif" alt="Three normal modes as surfaces, each oscillating at its own frequency: (0,1) at 01, (1,1) at 1.59\,01 and (0,2) at 2.30\,01. The membrane rises and falls, but the shape is fixed: the dashed nodal lines never leave the plane, and every point of the membrane passes through zero at the same instant. After one period of the fundamental the left surface has returned to where it began and the other two have not." loading="lazy"><figcaption>Figure 2. Three normal modes as surfaces, each oscillating at its own frequency:
-   <span class="math-inline">\((0,1)\)</span> at <span class="math-inline">\(\omega_{01}\)</span>, <span class="math-inline">\((1,1)\)</span> at <span class="math-inline">\(1.59\,\omega_{01}\)</span> and <span class="math-inline">\((0,2)\)</span> at
-   <span class="math-inline">\(2.30\,\omega_{01}\)</span>. The membrane rises and falls, but the shape is fixed:
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <msub>
+          <mi>ψ</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mi>n</mi>
+            <mi>m</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>r</mi>
+        <mo>,</mo>
+        <mi>θ</mi>
+        <mo>,</mo>
+        <mi>t</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <msub>
+          <mi>J</mi>
+          <mi>n</mi>
+        </msub>
+        <mstyle scriptlevel="0">
+          <mspace width="-0.167em" />
+        </mstyle>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <msub>
+            <mi>ρ</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mi>n</mi>
+              <mi>m</mi>
+            </mrow>
+          </msub>
+          <mfrac>
+            <mi>r</mi>
+            <mi>R</mi>
+          </mfrac>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
+        <mi>cos</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+        <mo stretchy="false">(</mo>
+        <mi>n</mi>
+        <mi>θ</mi>
+        <mo stretchy="false">)</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">[</mo>
+          <mstyle scriptlevel="0">
+            <mspace width="0.167em" />
+          </mstyle>
+          <msub>
+            <mi>a</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mi>n</mi>
+              <mi>m</mi>
+            </mrow>
+          </msub>
+          <mi>cos</mi>
+          <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+          <msub>
+            <mi>ω</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mi>n</mi>
+              <mi>m</mi>
+            </mrow>
+          </msub>
+          <mi>t</mi>
+          <mo>+</mo>
+          <msub>
+            <mi>b</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mi>n</mi>
+              <mi>m</mi>
+            </mrow>
+          </msub>
+          <mi>sin</mi>
+          <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+          <msub>
+            <mi>ω</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mi>n</mi>
+              <mi>m</mi>
+            </mrow>
+          </msub>
+          <mi>t</mi>
+          <mstyle scriptlevel="0">
+            <mspace width="0.167em" />
+          </mstyle>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">]</mo>
+        </mrow>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <mi>n</mi>
+        <mo>≥</mo>
+        <mn>0</mn>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="0.278em" />
+        </mstyle>
+        <mi>m</mi>
+        <mo>≥</mo>
+        <mn>1</mn>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:modes">(10)</span></div>
+<p>Each mode has <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> nodal diameters and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mo>−</mo>
+  <mn>1</mn>
+</math></span> interior nodal circles, the circles sitting at the radii where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>J</mi>
+    <mi>n</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>ρ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+      <mi>m</mi>
+    </mrow>
+  </msub>
+  <mi>r</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>R</mi>
+  <mo stretchy="false">)</mo>
+</math></span> passes through its earlier zeros. Figure <a href="#fig-3">3</a> shows the six lowest.</p>
+<p>What a normal mode <em>is</em> shows up better in motion than on the page: the pattern is fixed for all time and only its amplitude oscillates, so the nodes never move. Figure <a href="#fig-2">2</a> runs three modes side by side. Because each carries its own <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ω</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+      <mi>m</mi>
+    </mrow>
+  </msub>
+</math></span>, they start together and immediately drift apart — and that drift is the whole reason a struck drum does not repeat itself.</p>
+<figure id="fig-2" class="figure animation"><img class="animated-gif diagram" src="assets/img/anim_modes.gif" alt="Three normal modes as surfaces, each oscillating at its own frequency: (0,1) at 01, (1,1) at 1.59\,01 and (0,2) at 2.30\,01. The membrane rises and falls, but the shape is fixed: the dashed nodal lines never leave the plane, and every point of the membrane passes through zero at the same instant. After one period of the fundamental the left surface has returned to where it began and the other two have not." loading="lazy"><figcaption>Figure 2. Three normal modes as surfaces, each oscillating at its own frequency:
+   <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mn>0</mn>
+  <mo>,</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span> at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ω</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>01</mn>
+    </mrow>
+  </msub>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span> at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1.59</mn>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msub>
+    <mi>ω</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>01</mn>
+    </mrow>
+  </msub>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mn>0</mn>
+  <mo>,</mo>
+  <mn>2</mn>
+  <mo stretchy="false">)</mo>
+</math></span> at
+   <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2.30</mn>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msub>
+    <mi>ω</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>01</mn>
+    </mrow>
+  </msub>
+</math></span>. The membrane rises and falls, but the shape is fixed:
    the dashed nodal lines never leave the plane, and every point of the
    membrane passes through zero at the same instant. After one period of the
    fundamental the left surface has returned to where it began and the other
    two have not.</figcaption></figure>
-<figure id="fig-3" class="figure"><img src="assets/img/fig_modes.png" alt="The six lowest modes, ordered by frequency rather than by index. Red and blue are opposite directions of displacement; the dashed lines are the nodes, which stay still for all time. The ordering by pitch mixes the two indices: (2,1) is lower than (0,2)." loading="lazy" style="--figure-width: 98%;"><figcaption>Figure 3. The six lowest modes, ordered by frequency rather than by index.
+<figure id="fig-3" class="figure"><img src="assets/img/fig_modes.png" class="diagram" alt="The six lowest modes, ordered by frequency rather than by index. Red and blue are opposite directions of displacement; the dashed lines are the nodes, which stay still for all time. The ordering by pitch mixes the two indices: (2,1) is lower than (0,2)." loading="lazy" style="--figure-width: 98%;"><figcaption>Figure 3. The six lowest modes, ordered by frequency rather than by index.
     Red and blue are opposite directions of displacement; the dashed lines are
     the nodes, which stay still for all time. The ordering by pitch mixes the
-    two indices: <span class="math-inline">\((2,1)\)</span> is lower than <span class="math-inline">\((0,2)\)</span>.</figcaption></figure>
+    two indices: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mn>2</mn>
+  <mo>,</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span> is lower than <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mn>0</mn>
+  <mo>,</mo>
+  <mn>2</mn>
+  <mo stretchy="false">)</mo>
+</math></span>.</figcaption></figure>
 <h2 id="sec-900-why-the-drum-has-no-pitch"><span class="sec-number">4</span>Why the drum has no pitch</h2>
-<p>The frequencies <span class="math-inline">\(\eqref{eq:omega}\)</span> in units of the fundamental <span class="math-inline">\(\omega_{01}\)</span> are</p>
-<div class="math-block">\begin{equation}
-  \frac{\omega_{nm}}{\omega_{01}} = \frac{\rho_{nm}}{\rho_{01}}
-  = 1,\; 1.593,\; 2.136,\; 2.295,\; 2.653,\; 2.917,\; \dots
-  \label{eq:ratios}
-\end{equation}</div>
-<p>and not one of them after the first is an integer. A string would give <span class="math-inline">\(1, 2, 3, 4, \dots\)</span>. The ear reads an integer series as a single note with a timbre; a non-integer series it reads as a noise with a rough centre of gravity. That is the whole difference between a drum and a string, and it comes from the spacing of the zeros of <span class="math-inline">\(J_n\)</span> — from the geometry of the boundary, not from the material of the membrane. Figure <a href="#fig-4">4</a> puts the two ladders side by side.</p>
-<figure id="fig-4" class="figure"><img src="assets/img/fig_spectrum.png" alt="The eight lowest drum frequencies against the harmonic series a string would produce (grey). Only the fundamental lands on a harmonic." loading="lazy" style="--figure-width: 95%;"><figcaption>Figure 4. The eight lowest drum frequencies against the harmonic series a
+<p>The frequencies <a class="eqn-ref" href="#mjx-eqn:eq:omega">(9)</a> in units of the fundamental <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ω</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>01</mn>
+    </mrow>
+  </msub>
+</math></span> are</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mfrac>
+          <msub>
+            <mi>ω</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mi>n</mi>
+              <mi>m</mi>
+            </mrow>
+          </msub>
+          <msub>
+            <mi>ω</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mn>01</mn>
+            </mrow>
+          </msub>
+        </mfrac>
+        <mo>=</mo>
+        <mfrac>
+          <msub>
+            <mi>ρ</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mi>n</mi>
+              <mi>m</mi>
+            </mrow>
+          </msub>
+          <msub>
+            <mi>ρ</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mn>01</mn>
+            </mrow>
+          </msub>
+        </mfrac>
+        <mo>=</mo>
+        <mn>1</mn>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="0.278em" />
+        </mstyle>
+        <mn>1.593</mn>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="0.278em" />
+        </mstyle>
+        <mn>2.136</mn>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="0.278em" />
+        </mstyle>
+        <mn>2.295</mn>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="0.278em" />
+        </mstyle>
+        <mn>2.653</mn>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="0.278em" />
+        </mstyle>
+        <mn>2.917</mn>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="0.278em" />
+        </mstyle>
+        <mo>…</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:ratios">(11)</span></div>
+<p>and not one of them after the first is an integer. A string would give <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+  <mo>,</mo>
+  <mn>2</mn>
+  <mo>,</mo>
+  <mn>3</mn>
+  <mo>,</mo>
+  <mn>4</mn>
+  <mo>,</mo>
+  <mo>…</mo>
+</math></span>. The ear reads an integer series as a single note with a timbre; a non-integer series it reads as a noise with a rough centre of gravity. That is the whole difference between a drum and a string, and it comes from the spacing of the zeros of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>J</mi>
+    <mi>n</mi>
+  </msub>
+</math></span> — from the geometry of the boundary, not from the material of the membrane. Figure <a href="#fig-4">4</a> puts the two ladders side by side.</p>
+<figure id="fig-4" class="figure"><img src="assets/img/fig_spectrum.png" class="diagram" alt="The eight lowest drum frequencies against the harmonic series a string would produce (grey). Only the fundamental lands on a harmonic." loading="lazy" style="--figure-width: 95%;"><figcaption>Figure 4. The eight lowest drum frequencies against the harmonic series a
     string would produce (grey). Only the fundamental lands on a harmonic.</figcaption></figure>
-<p>All of this is an argument about hearing, made on paper. The panel below settles it by ear. Both sounds are built from the modes derived above — one partial per <span class="math-inline">\(\omega_{nm}\)</span>, each given the amplitude the mallet delivers to that mode — and the second is the same mallet striking a clamped <em>string</em> as long as the drum is wide, hit the same distance off centre. The two are then transposed to a common fundamental, so that the one difference left between them is the ladder <span class="math-inline">\(\eqref{eq:ratios}\)</span> against <span class="math-inline">\(1, 2, 3, \dots\)</span>.</p>
+<p>All of this is an argument about hearing, made on paper. The panel below settles it by ear. Both sounds are built from the modes derived above — one partial per <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ω</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+      <mi>m</mi>
+    </mrow>
+  </msub>
+</math></span>, each given the amplitude the mallet delivers to that mode — and the second is the same mallet striking a clamped <em>string</em> as long as the drum is wide, hit the same distance off centre. The two are then transposed to a common fundamental, so that the one difference left between them is the ladder <a class="eqn-ref" href="#mjx-eqn:eq:ratios">(11)</a> against <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+  <mo>,</mo>
+  <mn>2</mn>
+  <mo>,</mo>
+  <mn>3</mn>
+  <mo>,</mo>
+  <mo>…</mo>
+</math></span>.</p>
 <section class="interactive-figure" id="interactive-drum-sound">
   <header>
     <span>Listen</span>
@@ -216,59 +1235,484 @@
   <p class="interactive-caption">Seven seconds of each, and the button plays them back to back, since a
    difference in pitch is far easier to name across four seconds than across
    half a minute. The circular rim gives a thud the ear cannot pin a note to:
-   with partials at <span class="math-inline">\(1, 1.59, 2.14, 2.30, \dots\)</span> there is no fundamental they
-   all belong to. The two fixed ends give a note, because <span class="math-inline">\(1, 2, 3, \dots\)</span> is
+   with partials at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+  <mo>,</mo>
+  <mn>1.59</mn>
+  <mo>,</mo>
+  <mn>2.14</mn>
+  <mo>,</mo>
+  <mn>2.30</mn>
+  <mo>,</mo>
+  <mo>…</mo>
+</math></span> there is no fundamental they
+   all belong to. The two fixed ends give a note, because <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+  <mo>,</mo>
+  <mn>2</mn>
+  <mo>,</mo>
+  <mn>3</mn>
+  <mo>,</mo>
+  <mo>…</mo>
+</math></span> is
    the pattern the ear fuses into a single pitch. Both sounds are matched in
    loudness and transposed to the same fundamental, so neither of those can be
    what you are hearing. The amplitudes are the Fourier–Bessel coefficients of
-   Figure <a href="#fig-5">5</a>, weighted by <span class="math-inline">\(\omega_{nm}\)</span> because a source small
+   Figure <a href="#fig-5">5</a>, weighted by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ω</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+      <mi>m</mi>
+    </mrow>
+  </msub>
+</math></span> because a source small
    compared with a wavelength radiates in proportion to its acceleration; the
    damping is lighter than a real drumhead's, so that there is something left
    to listen to after seven seconds.</p>
 </section>
-<p>A second feature of <span class="math-inline">\(\eqref{eq:ratios}\)</span> is worth naming: every mode with <span class="math-inline">\(n \ge 1\)</span> is doubly degenerate. Replacing <span class="math-inline">\(\cos n\theta\)</span> by <span class="math-inline">\(\sin n\theta\)</span> gives a different pattern — the same shape rotated by half a nodal sector — at exactly the same frequency. Which of the pair is excited depends only on where the drum is struck.</p>
+<p>A second feature of <a class="eqn-ref" href="#mjx-eqn:eq:ratios">(11)</a> is worth naming: every mode with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>≥</mo>
+  <mn>1</mn>
+</math></span> is doubly degenerate. Replacing <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>cos</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mi>n</mi>
+  <mi>θ</mi>
+</math></span> by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>sin</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mi>n</mi>
+  <mi>θ</mi>
+</math></span> gives a different pattern — the same shape rotated by half a nodal sector — at exactly the same frequency. Which of the pair is excited depends only on where the drum is struck.</p>
 <h2 id="sec-900-striking-the-drum-an-initial-value-problem"><span class="sec-number">5</span>Striking the drum: an initial-value problem</h2>
-<p>Equation <span class="math-inline">\(\eqref{eq:modes}\)</span> describes what the membrane <em>can</em> do. What it actually does is fixed by how it is started. A drum is struck, not plucked: the mallet leaves the membrane flat but moving,</p>
-<div class="math-block">\begin{equation}
-  \psi(r,\theta,0) = 0,
-  \qquad
-  \left.\frac{\partial \psi}{\partial t}\right|_{t=0} = v(r,\theta),
-  \label{eq:ic}
-\end{equation}</div>
-<p>with <span class="math-inline">\(v\)</span> a localised patch of velocity where the mallet landed. Here <span class="math-inline">\(v\)</span> is a Gaussian of width <span class="math-inline">\(0.24R\)</span> centred at <span class="math-inline">\(r = 0.4R\)</span> on the <span class="math-inline">\(x\)</span>-axis.</p>
-<p>The initial displacement being zero kills every <span class="math-inline">\(a_{nm}\)</span> in <span class="math-inline">\(\eqref{eq:modes}\)</span>, leaving</p>
-<div class="math-block">\begin{equation}
-  \psi(r,\theta,t)
-  = \sum_{n,m} \frac{B_{nm}}{\omega_{nm}}\,
-    J_n\!\left( \rho_{nm}\frac{r}{R} \right)\cos(n\theta)\,
-    \sin(\omega_{nm} t),
-  \label{eq:solution}
-\end{equation}</div>
-<p>where the <span class="math-inline">\(B_{nm}\)</span> are the coefficients of <span class="math-inline">\(v\)</span> in the mode basis. Finding them is an orthogonal expansion of exactly the kind <strong>Chapter 7</strong> performs with sines and cosines — the only differences are that the basis functions are Bessel functions instead of sinusoids and that the inner product carries a weight. The modes are orthogonal on the disc under</p>
-<div class="math-block">\begin{equation}
-  \langle u, w \rangle = \int_0^{R}\!\!\int_0^{2\pi} u\,w\; r\,d\theta\,dr,
-  \label{eq:inner}
-\end{equation}</div>
-<p>in which the factor <span class="math-inline">\(r\)</span> is the Jacobian of polar coordinates (<strong>Chapter 5</strong>) and is what makes the orthogonality work. Projecting,</p>
-<div class="math-block">\begin{equation}
-  B_{nm} = \frac{\langle v,\, \psi_{nm}\rangle}{\langle \psi_{nm},\, \psi_{nm}\rangle}.
-  \label{eq:coefficients}
-\end{equation}</div>
+<p>Equation <a class="eqn-ref" href="#mjx-eqn:eq:modes">(10)</a> describes what the membrane <em>can</em> do. What it actually does is fixed by how it is started. A drum is struck, not plucked: the mallet leaves the membrane flat but moving,</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>ψ</mi>
+        <mo stretchy="false">(</mo>
+        <mi>r</mi>
+        <mo>,</mo>
+        <mi>θ</mi>
+        <mo>,</mo>
+        <mn>0</mn>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mn>0</mn>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <msub>
+          <mrow data-mjx-texclass="INNER">
+            <mo data-mjx-texclass="OPEN" fence="true" stretchy="true" symmetric="true" form="prefix" lspace="0em" rspace="0em" />
+            <mfrac>
+              <mrow>
+                <mi>∂</mi>
+                <mi>ψ</mi>
+              </mrow>
+              <mrow>
+                <mi>∂</mi>
+                <mi>t</mi>
+              </mrow>
+            </mfrac>
+            <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
+          </mrow>
+          <mrow data-mjx-texclass="ORD">
+            <mi>t</mi>
+            <mo>=</mo>
+            <mn>0</mn>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <mi>v</mi>
+        <mo stretchy="false">(</mo>
+        <mi>r</mi>
+        <mo>,</mo>
+        <mi>θ</mi>
+        <mo stretchy="false">)</mo>
+        <mo>,</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:ic">(12)</span></div>
+<p>with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>v</mi>
+</math></span> a localised patch of velocity where the mallet landed. Here <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>v</mi>
+</math></span> is a Gaussian of width <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0.24</mn>
+  <mi>R</mi>
+</math></span> centred at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mo>=</mo>
+  <mn>0.4</mn>
+  <mi>R</mi>
+</math></span> on the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span>-axis.</p>
+<p>The initial displacement being zero kills every <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>a</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+      <mi>m</mi>
+    </mrow>
+  </msub>
+</math></span> in <a class="eqn-ref" href="#mjx-eqn:eq:modes">(10)</a>, leaving</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>ψ</mi>
+        <mo stretchy="false">(</mo>
+        <mi>r</mi>
+        <mo>,</mo>
+        <mi>θ</mi>
+        <mo>,</mo>
+        <mi>t</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <munder>
+          <mo data-mjx-texclass="OP">∑</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mi>n</mi>
+            <mo>,</mo>
+            <mi>m</mi>
+          </mrow>
+        </munder>
+        <mfrac>
+          <msub>
+            <mi>B</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mi>n</mi>
+              <mi>m</mi>
+            </mrow>
+          </msub>
+          <msub>
+            <mi>ω</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mi>n</mi>
+              <mi>m</mi>
+            </mrow>
+          </msub>
+        </mfrac>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <msub>
+          <mi>J</mi>
+          <mi>n</mi>
+        </msub>
+        <mstyle scriptlevel="0">
+          <mspace width="-0.167em" />
+        </mstyle>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <msub>
+            <mi>ρ</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mi>n</mi>
+              <mi>m</mi>
+            </mrow>
+          </msub>
+          <mfrac>
+            <mi>r</mi>
+            <mi>R</mi>
+          </mfrac>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
+        <mi>cos</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+        <mo stretchy="false">(</mo>
+        <mi>n</mi>
+        <mi>θ</mi>
+        <mo stretchy="false">)</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <mi>sin</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>ω</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mi>n</mi>
+            <mi>m</mi>
+          </mrow>
+        </msub>
+        <mi>t</mi>
+        <mo stretchy="false">)</mo>
+        <mo>,</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:solution">(13)</span></div>
+<p>where the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>B</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+      <mi>m</mi>
+    </mrow>
+  </msub>
+</math></span> are the coefficients of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>v</mi>
+</math></span> in the mode basis. Finding them is an orthogonal expansion of exactly the kind <strong>Chapter 7</strong> performs with sines and cosines — the only differences are that the basis functions are Bessel functions instead of sinusoids and that the inner product carries a weight. The modes are orthogonal on the disc under</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mo fence="false" stretchy="false">⟨</mo>
+        <mi>u</mi>
+        <mo>,</mo>
+        <mi>w</mi>
+        <mo fence="false" stretchy="false">⟩</mo>
+        <mo>=</mo>
+        <msubsup>
+          <mo data-mjx-texclass="OP">∫</mo>
+          <mn>0</mn>
+          <mrow data-mjx-texclass="ORD">
+            <mi>R</mi>
+          </mrow>
+        </msubsup>
+        <mstyle scriptlevel="0">
+          <mspace width="-0.167em" />
+        </mstyle>
+        <mstyle scriptlevel="0">
+          <mspace width="-0.167em" />
+        </mstyle>
+        <msubsup>
+          <mo data-mjx-texclass="OP">∫</mo>
+          <mn>0</mn>
+          <mrow data-mjx-texclass="ORD">
+            <mn>2</mn>
+            <mi>π</mi>
+          </mrow>
+        </msubsup>
+        <mi>u</mi>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <mi>w</mi>
+        <mstyle scriptlevel="0">
+          <mspace width="0.278em" />
+        </mstyle>
+        <mi>r</mi>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <mi>d</mi>
+        <mi>θ</mi>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <mi>d</mi>
+        <mi>r</mi>
+        <mo>,</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:inner">(14)</span></div>
+<p>in which the factor <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+</math></span> is the Jacobian of polar coordinates (<strong>Chapter 5</strong>) and is what makes the orthogonality work. Projecting,</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <msub>
+          <mi>B</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mi>n</mi>
+            <mi>m</mi>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mo fence="false" stretchy="false">⟨</mo>
+            <mi>v</mi>
+            <mo>,</mo>
+            <mstyle scriptlevel="0">
+              <mspace width="0.167em" />
+            </mstyle>
+            <msub>
+              <mi>ψ</mi>
+              <mrow data-mjx-texclass="ORD">
+                <mi>n</mi>
+                <mi>m</mi>
+              </mrow>
+            </msub>
+            <mo fence="false" stretchy="false">⟩</mo>
+          </mrow>
+          <mrow>
+            <mo fence="false" stretchy="false">⟨</mo>
+            <msub>
+              <mi>ψ</mi>
+              <mrow data-mjx-texclass="ORD">
+                <mi>n</mi>
+                <mi>m</mi>
+              </mrow>
+            </msub>
+            <mo>,</mo>
+            <mstyle scriptlevel="0">
+              <mspace width="0.167em" />
+            </mstyle>
+            <msub>
+              <mi>ψ</mi>
+              <mrow data-mjx-texclass="ORD">
+                <mi>n</mi>
+                <mi>m</mi>
+              </mrow>
+            </msub>
+            <mo fence="false" stretchy="false">⟩</mo>
+          </mrow>
+        </mfrac>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:coefficients">(15)</span></div>
 <p>This is the Fourier–Bessel series, the circular counterpart of a Fourier sine series.</p>
-<p>Figure <a href="#fig-5">5</a> checks the expansion: 36 modes (<span class="math-inline">\(n \le 5\)</span>, <span class="math-inline">\(m \le 6\)</span>) reproduce the strike to within <span class="math-inline">\(4.4\%\)</span> of its peak. The error is concentrated at the sharp edge of the patch, as it always is when a truncated orthogonal series meets a steep feature.</p>
-<figure id="fig-5" class="figure"><img src="assets/img/fig_initial.png" alt="The mallet&#x27;s velocity patch (left), the sum of 36 modes fitted to it (centre), and the difference (right, on a five-times finer colour scale). The residual sits at the rim of the patch, where the truncated series cannot follow the sharp gradient." loading="lazy" style="--figure-width: 98%;"><figcaption>Figure 5. The mallet's velocity patch (left), the sum of 36 modes fitted to it
+<p>Figure <a href="#fig-5">5</a> checks the expansion: 36 modes (<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>≤</mo>
+  <mn>5</mn>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mo>≤</mo>
+  <mn>6</mn>
+</math></span>) reproduce the strike to within <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>4.4</mn>
+  <mi mathvariant="normal">%</mi>
+</math></span> of its peak. The error is concentrated at the sharp edge of the patch, as it always is when a truncated orthogonal series meets a steep feature.</p>
+<figure id="fig-5" class="figure"><img src="assets/img/fig_initial.png" class="diagram" alt="The mallet&#x27;s velocity patch (left), the sum of 36 modes fitted to it (centre), and the difference (right, on a five-times finer colour scale). The residual sits at the rim of the patch, where the truncated series cannot follow the sharp gradient." loading="lazy" style="--figure-width: 98%;"><figcaption>Figure 5. The mallet's velocity patch (left), the sum of 36 modes fitted to it
     (centre), and the difference (right, on a five-times finer colour scale).
     The residual sits at the rim of the patch, where the truncated series
     cannot follow the sharp gradient.</figcaption></figure>
-<p>The factor <span class="math-inline">\(1/\omega_{nm}\)</span> in <span class="math-inline">\(\eqref{eq:solution}\)</span> is worth a comment. A kick of a given size sets a stiff, high-frequency mode swinging through a smaller displacement than a floppy one, so the visible motion is dominated by the lowest few modes even though the strike deposits energy across many. This is why Figure <a href="#fig-6">6</a> stays smooth despite starting from a sharply localised strike.</p>
-<figure id="fig-6" class="figure animation"><img src="assets/img/anim.gif" alt="The struck membrane over one period of the fundamental. The dent from the mallet spreads outward, reflects off the clamped rim, and returns; the higher modes ride on top of the fundamental at their own, unrelated, frequencies, so the surface never repeats exactly." loading="lazy"><figcaption>Figure 6. The struck membrane over one period of the fundamental. The dent from the
+<p>The factor <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msub>
+    <mi>ω</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+      <mi>m</mi>
+    </mrow>
+  </msub>
+</math></span> in <a class="eqn-ref" href="#mjx-eqn:eq:solution">(13)</a> is worth a comment. A kick of a given size sets a stiff, high-frequency mode swinging through a smaller displacement than a floppy one, so the visible motion is dominated by the lowest few modes even though the strike deposits energy across many. This is why Figure <a href="#fig-6">6</a> stays smooth despite starting from a sharply localised strike.</p>
+<figure id="fig-6" class="figure animation"><img class="animated-gif diagram" src="assets/img/anim.gif" alt="The struck membrane over one period of the fundamental. The dent from the mallet spreads outward, reflects off the clamped rim, and returns; the higher modes ride on top of the fundamental at their own, unrelated, frequencies, so the surface never repeats exactly." loading="lazy"><figcaption>Figure 6. The struck membrane over one period of the fundamental. The dent from the
    mallet spreads outward, reflects off the clamped rim, and returns; the higher
    modes ride on top of the fundamental at their own, unrelated, frequencies, so
    the surface never repeats exactly.</figcaption></figure>
 <h2 id="sec-900-which-course-methods-were-used"><span class="sec-number">6</span>Which course methods were used</h2>
-<ul><li><p><strong>Series solutions of differential equations (Chapter 9).</strong> The radial equation <span class="math-inline">\(\eqref{eq:radial}\)</span> is Bessel's equation; <span class="math-inline">\(J_n\)</span> and <span class="math-inline">\(Y_n\)</span> are its two series solutions about the regular singular point at the origin, and discarding <span class="math-inline">\(Y_n\)</span> on grounds of regularity is the step that halves the solution space.</p></li><li><p><strong>Partial differential equations (Chapter 10).</strong> Separation of variables turns one PDE in three variables into three ordinary differential equations, and the boundary conditions — periodicity in <span class="math-inline">\(\theta\)</span>, regularity at <span class="math-inline">\(r=0\)</span>, clamping at <span class="math-inline">\(r=R\)</span> — are what quantise <span class="math-inline">\(n\)</span> and <span class="math-inline">\(\omega_{nm}\)</span>.</p></li><li><p><strong>Fourier series and orthogonal expansions (Chapter 7).</strong> The Fourier–Bessel expansion <span class="math-inline">\(\eqref{eq:coefficients}\)</span> is the same projection onto an orthogonal basis, with <span class="math-inline">\(J_n\)</span> in place of sines and the weight <span class="math-inline">\(r\)</span> in the inner product.</p></li><li><p><strong>Multiple integrals (Chapter 5).</strong> The inner product <span class="math-inline">\(\eqref{eq:inner}\)</span> is an area integral in polar coordinates, and the factor <span class="math-inline">\(r\)</span> in it is the Jacobian.</p></li></ul>
+<ul><li><p><strong>Series solutions of differential equations (Chapter 9).</strong> The radial equation <a class="eqn-ref" href="#mjx-eqn:eq:radial">(7)</a> is Bessel's equation; <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>J</mi>
+    <mi>n</mi>
+  </msub>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>Y</mi>
+    <mi>n</mi>
+  </msub>
+</math></span> are its two series solutions about the regular singular point at the origin, and discarding <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>Y</mi>
+    <mi>n</mi>
+  </msub>
+</math></span> on grounds of regularity is the step that halves the solution space.</p></li><li><p><strong>Partial differential equations (Chapter 10).</strong> Separation of variables turns one PDE in three variables into three ordinary differential equations, and the boundary conditions — periodicity in <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>θ</mi>
+</math></span>, regularity at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>, clamping at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mo>=</mo>
+  <mi>R</mi>
+</math></span> — are what quantise <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ω</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+      <mi>m</mi>
+    </mrow>
+  </msub>
+</math></span>.</p></li><li><p><strong>Fourier series and orthogonal expansions (Chapter 7).</strong> The Fourier–Bessel expansion <a class="eqn-ref" href="#mjx-eqn:eq:coefficients">(15)</a> is the same projection onto an orthogonal basis, with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>J</mi>
+    <mi>n</mi>
+  </msub>
+</math></span> in place of sines and the weight <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+</math></span> in the inner product.</p></li><li><p><strong>Multiple integrals (Chapter 5).</strong> The inner product <a class="eqn-ref" href="#mjx-eqn:eq:inner">(14)</a> is an area integral in polar coordinates, and the factor <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+</math></span> in it is the Jacobian.</p></li></ul>
 <h2 id="sec-900-conclusion"><span class="sec-number">7</span>Conclusion</h2>
-<p>Separating the wave equation on a disc gives modes <span class="math-inline">\(J_n(\rho_{nm}r/R)\cos(n\theta)\)</span> with frequencies <span class="math-inline">\(\omega_{nm} = c\rho_{nm}/R\)</span>, where the <span class="math-inline">\(\rho_{nm}\)</span> are the zeros of the Bessel functions. Those zeros are not evenly spaced, so the overtones are not harmonics — the drum has a sound but no pitch, and the reason is the shape of its boundary. Treating the modes as a basis then solves the real problem: a strike is expanded in them by Fourier–Bessel projection, and the resulting sum reproduces the visible motion of a struck drumhead.</p>
+<p>Separating the wave equation on a disc gives modes <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>J</mi>
+    <mi>n</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>ρ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+      <mi>m</mi>
+    </mrow>
+  </msub>
+  <mi>r</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>R</mi>
+  <mo stretchy="false">)</mo>
+  <mi>cos</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mi>θ</mi>
+  <mo stretchy="false">)</mo>
+</math></span> with frequencies <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ω</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+      <mi>m</mi>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mi>c</mi>
+  <msub>
+    <mi>ρ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+      <mi>m</mi>
+    </mrow>
+  </msub>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>R</mi>
+</math></span>, where the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ρ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+      <mi>m</mi>
+    </mrow>
+  </msub>
+</math></span> are the zeros of the Bessel functions. Those zeros are not evenly spaced, so the overtones are not harmonics — the drum has a sound but no pitch, and the reason is the shape of its boundary. Treating the modes as a basis then solves the real problem: a strike is expanded in them by Fourier–Bessel projection, and the resulting sum reproduces the visible motion of a struck drumhead.</p>
 <p>The same machinery carries over unchanged to a circular waveguide, a vibrating plate, or the orbitals of the hydrogen atom: whenever the boundary is circular or spherical, separation of variables produces a special function whose zeros the boundary condition selects.</p>
 <h2 id="sec-900-references">References</h2>
 <ul><li><p>M. L. Boas, <em>Mathematical Methods in the Physical Sciences</em>, Wiley, 3rd ed., 2006 (Chapters 12 and 13).</p></li><li><p>P. M. Morse, <em>Vibration and Sound</em>, McGraw–Hill, 2nd ed., 1948 (the circular membrane and its inharmonicity).</p></li><li><p>SciPy documentation, scipy.special.jv and scipy.special.jn\_zeros.</p></li></ul>

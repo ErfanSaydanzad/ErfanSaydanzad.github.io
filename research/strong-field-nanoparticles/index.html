@@ -12,19 +12,8 @@
   <link rel="canonical" href="https://saydanzad.com/research/strong-field-nanoparticles/">
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
   <link rel="preload" href="../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../../assets/css/site.css?v=b0e05998">
-  <script defer src="../../assets/js/main.js?v=b0e05998"></script>
-  <script>
-    window.MathJax = {
-      tex: {
-        inlineMath: [['\\(', '\\)']],
-        displayMath: [['\\[', '\\]']],
-        processEscapes: true
-      },
-      options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
-    };
-  </script>
-  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <link rel="stylesheet" href="../../assets/css/site.css?v=3d9edb4f">
+  <script defer src="../../assets/js/main.js?v=3d9edb4f"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -48,10 +37,17 @@
   <h1>Strong-field physics of nanoparticles</h1>
   <p class="lede">Photoelectron emission from nanoparticles in intense laser fields, where the atomic three-step picture stops predicting the measured cutoff energies.</p>
 </header>
-<figure class="figure hero-figure"><img src="../../figures/research/strong-field-nanoparticles/vmi-experiment.png" alt="Schematic of the velocity-map imaging experiment: nanoparticles delivered by an aerodynamic lens meet an infrared laser pulse between a repeller and an extractor, and the emitted photoelectrons are projected onto a microchannel-plate and phosphor detector, which records a ring-shaped momentum image." loading="lazy" decoding="async"><figcaption>The measurement the models have to reproduce. Nanoparticles are delivered into the laser focus by an aerodynamic lens, an infrared pulse ionizes them, and a velocity-map imaging spectrometer projects the emitted electrons onto the detector, so one image carries the full momentum distribution.</figcaption></figure>
+<figure class="figure hero-figure"><img src="../../figures/research/strong-field-nanoparticles/vmi-experiment.png" class="diagram" alt="Schematic of the velocity-map imaging experiment: nanoparticles delivered by an aerodynamic lens meet an infrared laser pulse between a repeller and an extractor, and the emitted photoelectrons are projected onto a microchannel-plate and phosphor detector, which records a ring-shaped momentum image." loading="lazy" decoding="async"><figcaption>The measurement the models have to reproduce. Nanoparticles are delivered into the laser focus by an aerodynamic lens, an infrared pulse ionizes them, and a velocity-map imaging spectrometer projects the emitted electrons onto the detector, so one image carries the full momentum distribution.</figcaption></figure>
 <div class="tags tags-lg"><span>Strong-field ionization</span><span>Photoelectron spectroscopy</span><span>Nanoplasmonics</span><span>Rescattering</span></div>
 <div class="prose"><h2 id="the-question">The question</h2>
-<p>Above roughly \(10^{13}\) W/cm², a laser field distorts the binding potential
+<p>Above roughly <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>10</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>13</mn>
+    </mrow>
+  </msup>
+</math></span> W/cm², a laser field distorts the binding potential
 enough that electron motion is no longer a small correction. In atoms this
 regime is well described by the semiclassical three-step model: an electron
 tunnels out, is accelerated by the field, and can be driven back to rescatter
@@ -77,8 +73,26 @@ emitted photoelectrons, the residual charge accumulating on the nanoparticle,
 and the interaction of each electron with the induced plasmonic field.</p>
 <h2 id="results">Results</h2>
 <p>We simulated momentum distributions from gold nanoparticles of 5 to 70 nm
-diameter, driven by short pulses at peak intensities of \(8.0\times10^{12}\) and
-\(1.2\times10^{13}\) W/cm², in support of experiments at the James R. Macdonald
+diameter, driven by short pulses at peak intensities of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>8.0</mn>
+  <mo>×</mo>
+  <msup>
+    <mn>10</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>12</mn>
+    </mrow>
+  </msup>
+</math></span> and
+<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1.2</mn>
+  <mo>×</mo>
+  <msup>
+    <mn>10</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>13</mn>
+    </mrow>
+  </msup>
+</math></span> W/cm², in support of experiments at the James R. Macdonald
 Laboratory.</p>
 <p>Two findings stand out. Measured and simulated cutoff energies exceed the
 gas-phase atomic result by about two orders of magnitude. And the balance

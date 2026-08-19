@@ -6,68 +6,9 @@
   <title>Chapter 6: Time-Dependent Potentials and Light–Matter Interaction | Direct Method</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
   <link rel="preload" href="../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../../assets/css/site.css?v=db81423d">
-  <script>
-    window.MathJax = {
-      // tagformat is an optional TeX extension, not part of the combined
-      // tex-chtml build. Without these two lines the tagformat block below is
-      // read and silently ignored, and every equation numbers from 1 with no
-      // chapter in front of it.
-      loader: { load: ['[tex]/tagformat'] },
-      tex: {
-        packages: { '[+]': ['tagformat'] },
-        inlineMath: [['\\(', '\\)']],
-        displayMath: [['\\[', '\\]']],
-        processEnvironments: true,
-        tags: 'ams',
-        // The PDF numbers equations within the chapter (\numberwithin
-        // {equation}{chapter}), so "1.8" is the eighth equation of
-        // chapter 1. MathJax counts from 1 on every page, which would have
-        // shown that same equation as "8". Prefixing the chapter number
-        // keeps a reference valid against either version.
-        tagformat: {
-          number: function (n) { return '6.' + n; }
-        },
-        macros: {
-          pdv: ['{\\frac{\\partial #1}{\\partial #2}}', 2],
-          dv: ['{\\frac{d #1}{d #2}}', 2],
-          abs: ['{\\left|#1\\right|}', 1],
-          norm: ['{\\left\\|#1\\right\\|}', 1],
-          curl: '{\\vec{\\nabla}\\times}',
-          div: '{\\vec{\\nabla}\\cdot}',
-          grad: '{\\vec{\\nabla}}',
-          sech: '{\\operatorname{sech}}',
-          csch: '{\\operatorname{csch}}',
-          coth: '{\\operatorname{coth}}',
-          circnum: ['{\\boxed{#1}}', 1],
-          vb: ['{\\mathbf{#1}}', 1],
-          eval: ['{\\left.#1\\right|}', 1],
-          dd: '{\\,d}',
-          // Dirac notation. The chapters are written with the physics
-          // package, which MathJax does not have, so every bra-ket command
-          // the notes use has to be defined here or it renders as red text.
-          // \braket is always given two arguments in these sources.
-          ket: ['{\\left|#1\\right\\rangle}', 1],
-          bra: ['{\\left\\langle#1\\right|}', 1],
-          braket: ['{\\left\\langle#1\\middle|#2\\right\\rangle}', 2],
-          ketbra: ['{\\left|#1\\right\\rangle\\!\\left\\langle#2\\right|}', 2],
-          dyad: ['{\\left|#1\\right\\rangle\\!\\left\\langle#2\\right|}', 2],
-          op: ['{\\left|#1\\right\\rangle\\!\\left\\langle#1\\right|}', 1],
-          mel: ['{\\left\\langle#1\\right|#2\\left|#3\\right\\rangle}', 3],
-          expval: ['{\\left\\langle#1\\right\\rangle}', 1],
-          ev: ['{\\left\\langle#1\\right\\rangle}', 1],
-          comm: ['{\\left[#1,#2\\right]}', 2],
-          acomm: ['{\\left\\{#1,#2\\right\\}}', 2],
-          anticommutator: ['{\\left\\{#1,#2\\right\\}}', 2],
-          Tr: '{\\operatorname{Tr}}',
-          tr: '{\\operatorname{tr}}',
-          bm: ['{\\boldsymbol{#1}}', 1]
-        }
-      }
-    };
-  </script>
-  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-  <script defer src="../../assets/js/main.js?v=db81423d"></script>
+  <link rel="stylesheet" href="../../assets/css/site.css?v=423ea16a">
+  <link rel="preload" href="../../assets/fonts/latinmodern-math.woff2" as="font" type="font/woff2" crossorigin>
+  <script defer src="../../assets/js/main.js?v=423ea16a"></script>
 
 <style>
 .site-header { justify-content: flex-start; gap: 16px; }
@@ -138,313 +79,4853 @@
 <p>If these five steps are clear, the light–matter formalism in the rest of the book is transparent rather than memorized.</p>
 <h2 id="sec-6-the-coupled-amplitude-equations"><span class="sec-number">6.2</span>The Coupled Amplitude Equations</h2>
 <p>Let the Hamiltonian split into a solved part and a time-dependent part,</p>
-<div class="math-block" id="eq-eq-td-hamiltonian">\begin{equation}
-	\label{eq:TD-hamiltonian}
-	\hat H(t)=\hat H_0+\hat V(t),
-	\qquad
-	\hat H_0\ket{n}=E_n\ket{n},
-	\qquad
-	\braket{m}{n}=\delta_{mn} .
-\end{equation}</div>
-<p>The eigenstates <span class="math-inline">\(\ket{n}\)</span> form a complete basis, so any state expands in them. We pull out the free-evolution phase explicitly:</p>
-<div class="math-block" id="eq-eq-td-expansion">\begin{equation}
-	\label{eq:TD-expansion}
-	\ket{\Psi(t)}=\sum_n c_n(t)\,e^{-iE_nt/\hbar}\ket{n} .
-\end{equation}</div>
+<div class="math-block math-block--numbered" id="eq-eq-td-hamiltonian"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mrow data-mjx-texclass="ORD">
+          <mover>
+            <mi>H</mi>
+            <mo stretchy="false">^</mo>
+          </mover>
+        </mrow>
+        <mo stretchy="false">(</mo>
+        <mi>t</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <msub>
+          <mrow data-mjx-texclass="ORD">
+            <mover>
+              <mi>H</mi>
+              <mo stretchy="false">^</mo>
+            </mover>
+          </mrow>
+          <mn>0</mn>
+        </msub>
+        <mo>+</mo>
+        <mrow data-mjx-texclass="ORD">
+          <mover>
+            <mi>V</mi>
+            <mo stretchy="false">^</mo>
+          </mover>
+        </mrow>
+        <mo stretchy="false">(</mo>
+        <mi>t</mi>
+        <mo stretchy="false">)</mo>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <msub>
+          <mrow data-mjx-texclass="ORD">
+            <mover>
+              <mi>H</mi>
+              <mo stretchy="false">^</mo>
+            </mover>
+          </mrow>
+          <mn>0</mn>
+        </msub>
+        <mrow data-mjx-texclass="ORD">
+          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mi>n</mi>
+          </mrow>
+          <mo fence="false" stretchy="false">⟩</mo>
+        </mrow>
+        <mo>=</mo>
+        <msub>
+          <mi>E</mi>
+          <mi>n</mi>
+        </msub>
+        <mrow data-mjx-texclass="ORD">
+          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mi>n</mi>
+          </mrow>
+          <mo fence="false" stretchy="false">⟩</mo>
+        </mrow>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" stretchy="false" form="prefix" lspace="0em" rspace="0em">⟨</mo>
+          <mi>m</mi>
+          <mo data-mjx-texclass="CLOSE" stretchy="false" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+        </mrow>
+        <mrow data-mjx-texclass="ORD">
+          <mi>n</mi>
+        </mrow>
+        <mo>=</mo>
+        <msub>
+          <mi>δ</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mi>m</mi>
+            <mi>n</mi>
+          </mrow>
+        </msub>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:TD-hamiltonian">(6.1)</span></div>
+<p>The eigenstates <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+    </mrow>
+    <mo fence="false" stretchy="false">⟩</mo>
+  </mrow>
+</math></span> form a complete basis, so any state expands in them. We pull out the free-evolution phase explicitly:</p>
+<div class="math-block math-block--numbered" id="eq-eq-td-expansion"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mrow data-mjx-texclass="ORD">
+          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mi mathvariant="normal">Ψ</mi>
+            <mo stretchy="false">(</mo>
+            <mi>t</mi>
+            <mo stretchy="false">)</mo>
+          </mrow>
+          <mo fence="false" stretchy="false">⟩</mo>
+        </mrow>
+        <mo>=</mo>
+        <munder>
+          <mo data-mjx-texclass="OP">∑</mo>
+          <mi>n</mi>
+        </munder>
+        <msub>
+          <mi>c</mi>
+          <mi>n</mi>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>t</mi>
+        <mo stretchy="false">)</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <msup>
+          <mi>e</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+            <mi>i</mi>
+            <msub>
+              <mi>E</mi>
+              <mi>n</mi>
+            </msub>
+            <mi>t</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mo>/</mo>
+            </mrow>
+            <mi data-mjx-alternate="1">ℏ</mi>
+          </mrow>
+        </msup>
+        <mrow data-mjx-texclass="ORD">
+          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mi>n</mi>
+          </mrow>
+          <mo fence="false" stretchy="false">⟩</mo>
+        </mrow>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:TD-expansion">(6.2)</span></div>
 <section class="callout theorem" id="theorem-thm-td-coupled"><header>Theorem 6.2.1 - Coupled amplitude equations</header><p> The coefficients in Eq. <a href="../chapter-06/index.html#eq-eq-td-expansion">(6.2)</a> obey, exactly,</p>
-<div class="math-block" id="eq-eq-td-coupled">\begin{equation}
-		\label{eq:TD-coupled}
-		\boxed{\;
-			i\hbar\,\dot c_k(t)
-			=\sum_n c_n(t)\,V_{kn}(t)\,e^{i\omega_{kn}t}\;}
-	\end{equation}</div>
+<div class="math-block math-block--numbered" id="eq-eq-td-coupled"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mrow class="mml-boxed">
+          <mrow data-mjx-texclass="ORD">
+            <mstyle displaystyle="true" scriptlevel="0">
+              <mrow data-mjx-texclass="ORD">
+                <mstyle scriptlevel="0">
+                  <mspace width="0.278em" />
+                </mstyle>
+                <mi>i</mi>
+                <mi data-mjx-alternate="1">ℏ</mi>
+                <mstyle scriptlevel="0">
+                  <mspace width="0.167em" />
+                </mstyle>
+                <msub>
+                  <mrow data-mjx-texclass="ORD">
+                    <mover>
+                      <mi>c</mi>
+                      <mo>˙</mo>
+                    </mover>
+                  </mrow>
+                  <mi>k</mi>
+                </msub>
+                <mo stretchy="false">(</mo>
+                <mi>t</mi>
+                <mo stretchy="false">)</mo>
+                <mo>=</mo>
+                <munder>
+                  <mo data-mjx-texclass="OP">∑</mo>
+                  <mi>n</mi>
+                </munder>
+                <msub>
+                  <mi>c</mi>
+                  <mi>n</mi>
+                </msub>
+                <mo stretchy="false">(</mo>
+                <mi>t</mi>
+                <mo stretchy="false">)</mo>
+                <mstyle scriptlevel="0">
+                  <mspace width="0.167em" />
+                </mstyle>
+                <msub>
+                  <mi>V</mi>
+                  <mrow data-mjx-texclass="ORD">
+                    <mi>k</mi>
+                    <mi>n</mi>
+                  </mrow>
+                </msub>
+                <mo stretchy="false">(</mo>
+                <mi>t</mi>
+                <mo stretchy="false">)</mo>
+                <mstyle scriptlevel="0">
+                  <mspace width="0.167em" />
+                </mstyle>
+                <msup>
+                  <mi>e</mi>
+                  <mrow data-mjx-texclass="ORD">
+                    <mi>i</mi>
+                    <msub>
+                      <mi>ω</mi>
+                      <mrow data-mjx-texclass="ORD">
+                        <mi>k</mi>
+                        <mi>n</mi>
+                      </mrow>
+                    </msub>
+                    <mi>t</mi>
+                  </mrow>
+                </msup>
+                <mstyle scriptlevel="0">
+                  <mspace width="0.278em" />
+                </mstyle>
+              </mrow>
+            </mstyle>
+          </mrow>
+        </mrow>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:TD-coupled">(6.3)</span></div>
 <p>where</p>
-<div class="math-block" id="eq-eq-td-matrix-elements">\begin{equation}
-		\label{eq:TD-matrix-elements}
-		V_{kn}(t)=\bra{k}\hat V(t)\ket{n},
-		\qquad
-		\omega_{kn}=\frac{E_k-E_n}{\hbar} .
-	\end{equation}</div></section>
-<div class="proof" data-lead="Proof."><p>Substitute Eq. <a href="../chapter-06/index.html#eq-eq-td-expansion">(6.2)</a> into <span class="math-inline">\(i\hbar\,\partial_t\ket{\Psi}=(\hat H_0+\hat V)\ket{\Psi}\)</span>. The left-hand side, by the product rule, is</p>
-<div class="math-block">\[
-	i\hbar\sum_n\left[\dot c_n e^{-iE_nt/\hbar}
-	+c_n\left(-\frac{iE_n}{\hbar}\right)e^{-iE_nt/\hbar}\right]\ket{n}
-	=\sum_n\left[i\hbar\dot c_n+E_nc_n\right]e^{-iE_nt/\hbar}\ket{n} .
-	\]</div>
+<div class="math-block math-block--numbered" id="eq-eq-td-matrix-elements"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <msub>
+          <mi>V</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mi>k</mi>
+            <mi>n</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>t</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mrow data-mjx-texclass="ORD">
+          <mo fence="false" stretchy="false">⟨</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mi>k</mi>
+          </mrow>
+          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        </mrow>
+        <mrow data-mjx-texclass="ORD">
+          <mover>
+            <mi>V</mi>
+            <mo stretchy="false">^</mo>
+          </mover>
+        </mrow>
+        <mo stretchy="false">(</mo>
+        <mi>t</mi>
+        <mo stretchy="false">)</mo>
+        <mrow data-mjx-texclass="ORD">
+          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mi>n</mi>
+          </mrow>
+          <mo fence="false" stretchy="false">⟩</mo>
+        </mrow>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <msub>
+          <mi>ω</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mi>k</mi>
+            <mi>n</mi>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <msub>
+              <mi>E</mi>
+              <mi>k</mi>
+            </msub>
+            <mo>−</mo>
+            <msub>
+              <mi>E</mi>
+              <mi>n</mi>
+            </msub>
+          </mrow>
+          <mi data-mjx-alternate="1">ℏ</mi>
+        </mfrac>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:TD-matrix-elements">(6.4)</span></div></section>
+<div class="proof" data-lead="Proof."><p>Substitute Eq. <a href="../chapter-06/index.html#eq-eq-td-expansion">(6.2)</a> into <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+  <mi data-mjx-alternate="1">ℏ</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msub>
+    <mi>∂</mi>
+    <mi>t</mi>
+  </msub>
+  <mrow data-mjx-texclass="ORD">
+    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi mathvariant="normal">Ψ</mi>
+    </mrow>
+    <mo fence="false" stretchy="false">⟩</mo>
+  </mrow>
+  <mo>=</mo>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover>
+        <mi>H</mi>
+        <mo stretchy="false">^</mo>
+      </mover>
+    </mrow>
+    <mn>0</mn>
+  </msub>
+  <mo>+</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mi>V</mi>
+      <mo stretchy="false">^</mo>
+    </mover>
+  </mrow>
+  <mo stretchy="false">)</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi mathvariant="normal">Ψ</mi>
+    </mrow>
+    <mo fence="false" stretchy="false">⟩</mo>
+  </mrow>
+</math></span>. The left-hand side, by the product rule, is</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>i</mi>
+  <mi data-mjx-alternate="1">ℏ</mi>
+  <munder>
+    <mo data-mjx-texclass="OP">∑</mo>
+    <mi>n</mi>
+  </munder>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">[</mo>
+    <msub>
+      <mrow data-mjx-texclass="ORD">
+        <mover>
+          <mi>c</mi>
+          <mo>˙</mo>
+        </mover>
+      </mrow>
+      <mi>n</mi>
+    </msub>
+    <msup>
+      <mi>e</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+        <mi>i</mi>
+        <msub>
+          <mi>E</mi>
+          <mi>n</mi>
+        </msub>
+        <mi>t</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mo>/</mo>
+        </mrow>
+        <mi data-mjx-alternate="1">ℏ</mi>
+      </mrow>
+    </msup>
+    <mo>+</mo>
+    <msub>
+      <mi>c</mi>
+      <mi>n</mi>
+    </msub>
+    <mrow data-mjx-texclass="INNER">
+      <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mfrac>
+        <mrow>
+          <mi>i</mi>
+          <msub>
+            <mi>E</mi>
+            <mi>n</mi>
+          </msub>
+        </mrow>
+        <mi data-mjx-alternate="1">ℏ</mi>
+      </mfrac>
+      <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+    </mrow>
+    <msup>
+      <mi>e</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+        <mi>i</mi>
+        <msub>
+          <mi>E</mi>
+          <mi>n</mi>
+        </msub>
+        <mi>t</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mo>/</mo>
+        </mrow>
+        <mi data-mjx-alternate="1">ℏ</mi>
+      </mrow>
+    </msup>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">]</mo>
+  </mrow>
+  <mrow data-mjx-texclass="ORD">
+    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+    </mrow>
+    <mo fence="false" stretchy="false">⟩</mo>
+  </mrow>
+  <mo>=</mo>
+  <munder>
+    <mo data-mjx-texclass="OP">∑</mo>
+    <mi>n</mi>
+  </munder>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">[</mo>
+    <mi>i</mi>
+    <mi data-mjx-alternate="1">ℏ</mi>
+    <msub>
+      <mrow data-mjx-texclass="ORD">
+        <mover>
+          <mi>c</mi>
+          <mo>˙</mo>
+        </mover>
+      </mrow>
+      <mi>n</mi>
+    </msub>
+    <mo>+</mo>
+    <msub>
+      <mi>E</mi>
+      <mi>n</mi>
+    </msub>
+    <msub>
+      <mi>c</mi>
+      <mi>n</mi>
+    </msub>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">]</mo>
+  </mrow>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi>i</mi>
+      <msub>
+        <mi>E</mi>
+        <mi>n</mi>
+      </msub>
+      <mi>t</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mi data-mjx-alternate="1">ℏ</mi>
+    </mrow>
+  </msup>
+  <mrow data-mjx-texclass="ORD">
+    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+    </mrow>
+    <mo fence="false" stretchy="false">⟩</mo>
+  </mrow>
+  <mo>.</mo>
+</math></div>
 <p>The right-hand side is</p>
-<div class="math-block">\[
-	\sum_nc_ne^{-iE_nt/\hbar}\left[E_n\ket{n}+\hat V\ket{n}\right].
-	\]</div>
-<p>The terms <span class="math-inline">\(E_nc_n\)</span> appear on both sides and cancel — which is the whole point of extracting the phase in Eq. <a href="../chapter-06/index.html#eq-eq-td-expansion">(6.2)</a>. What remains is</p>
-<div class="math-block">\[
-	\sum_n i\hbar\dot c_ne^{-iE_nt/\hbar}\ket{n}
-	=\sum_nc_ne^{-iE_nt/\hbar}\hat V\ket{n} .
-	\]</div>
-<p>Project onto <span class="math-inline">\(\bra{k}\)</span> and use orthonormality on the left:</p>
-<div class="math-block">\[
-	i\hbar\dot c_ke^{-iE_kt/\hbar}
-	=\sum_nc_ne^{-iE_nt/\hbar}V_{kn} .
-	\]</div>
-<p>Multiplying by <span class="math-inline">\(e^{+iE_kt/\hbar}\)</span> gives Eq. <a href="../chapter-06/index.html#eq-eq-td-coupled">(6.3)</a>.</p></div>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <munder>
+    <mo data-mjx-texclass="OP">∑</mo>
+    <mi>n</mi>
+  </munder>
+  <msub>
+    <mi>c</mi>
+    <mi>n</mi>
+  </msub>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi>i</mi>
+      <msub>
+        <mi>E</mi>
+        <mi>n</mi>
+      </msub>
+      <mi>t</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mi data-mjx-alternate="1">ℏ</mi>
+    </mrow>
+  </msup>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">[</mo>
+    <msub>
+      <mi>E</mi>
+      <mi>n</mi>
+    </msub>
+    <mrow data-mjx-texclass="ORD">
+      <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+      <mrow data-mjx-texclass="ORD">
+        <mi>n</mi>
+      </mrow>
+      <mo fence="false" stretchy="false">⟩</mo>
+    </mrow>
+    <mo>+</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mover>
+        <mi>V</mi>
+        <mo stretchy="false">^</mo>
+      </mover>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+      <mrow data-mjx-texclass="ORD">
+        <mi>n</mi>
+      </mrow>
+      <mo fence="false" stretchy="false">⟩</mo>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">]</mo>
+  </mrow>
+  <mo>.</mo>
+</math></div>
+<p>The terms <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>E</mi>
+    <mi>n</mi>
+  </msub>
+  <msub>
+    <mi>c</mi>
+    <mi>n</mi>
+  </msub>
+</math></span> appear on both sides and cancel — which is the whole point of extracting the phase in Eq. <a href="../chapter-06/index.html#eq-eq-td-expansion">(6.2)</a>. What remains is</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <munder>
+    <mo data-mjx-texclass="OP">∑</mo>
+    <mi>n</mi>
+  </munder>
+  <mi>i</mi>
+  <mi data-mjx-alternate="1">ℏ</mi>
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover>
+        <mi>c</mi>
+        <mo>˙</mo>
+      </mover>
+    </mrow>
+    <mi>n</mi>
+  </msub>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi>i</mi>
+      <msub>
+        <mi>E</mi>
+        <mi>n</mi>
+      </msub>
+      <mi>t</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mi data-mjx-alternate="1">ℏ</mi>
+    </mrow>
+  </msup>
+  <mrow data-mjx-texclass="ORD">
+    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+    </mrow>
+    <mo fence="false" stretchy="false">⟩</mo>
+  </mrow>
+  <mo>=</mo>
+  <munder>
+    <mo data-mjx-texclass="OP">∑</mo>
+    <mi>n</mi>
+  </munder>
+  <msub>
+    <mi>c</mi>
+    <mi>n</mi>
+  </msub>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi>i</mi>
+      <msub>
+        <mi>E</mi>
+        <mi>n</mi>
+      </msub>
+      <mi>t</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mi data-mjx-alternate="1">ℏ</mi>
+    </mrow>
+  </msup>
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mi>V</mi>
+      <mo stretchy="false">^</mo>
+    </mover>
+  </mrow>
+  <mrow data-mjx-texclass="ORD">
+    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+    </mrow>
+    <mo fence="false" stretchy="false">⟩</mo>
+  </mrow>
+  <mo>.</mo>
+</math></div>
+<p>Project onto <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mo fence="false" stretchy="false">⟨</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>k</mi>
+    </mrow>
+    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  </mrow>
+</math></span> and use orthonormality on the left:</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>i</mi>
+  <mi data-mjx-alternate="1">ℏ</mi>
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover>
+        <mi>c</mi>
+        <mo>˙</mo>
+      </mover>
+    </mrow>
+    <mi>k</mi>
+  </msub>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi>i</mi>
+      <msub>
+        <mi>E</mi>
+        <mi>k</mi>
+      </msub>
+      <mi>t</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mi data-mjx-alternate="1">ℏ</mi>
+    </mrow>
+  </msup>
+  <mo>=</mo>
+  <munder>
+    <mo data-mjx-texclass="OP">∑</mo>
+    <mi>n</mi>
+  </munder>
+  <msub>
+    <mi>c</mi>
+    <mi>n</mi>
+  </msub>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi>i</mi>
+      <msub>
+        <mi>E</mi>
+        <mi>n</mi>
+      </msub>
+      <mi>t</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mi data-mjx-alternate="1">ℏ</mi>
+    </mrow>
+  </msup>
+  <msub>
+    <mi>V</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>k</mi>
+      <mi>n</mi>
+    </mrow>
+  </msub>
+  <mo>.</mo>
+</math></div>
+<p>Multiplying by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+      <mi>i</mi>
+      <msub>
+        <mi>E</mi>
+        <mi>k</mi>
+      </msub>
+      <mi>t</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mi data-mjx-alternate="1">ℏ</mi>
+    </mrow>
+  </msup>
+</math></span> gives Eq. <a href="../chapter-06/index.html#eq-eq-td-coupled">(6.3)</a>.</p></div>
 <p>Three remarks on this result, since it is the skeleton of everything below.</p>
-<section class="callout remark" id="remark-rem-td-exact"><header>Remark 6.2.1 - It is exact</header><p> No approximation has been made: one partial differential equation has been rewritten as an infinite set of coupled ordinary differential equations. Approximations enter only later, when we truncate the basis or simplify <span class="math-inline">\(\hat V(t)\)</span>. That separation is useful: convergence can be tested by adding states and checking how much the observables change.</p></section>
-<section class="callout remark" id="remark-rem-td-resonance"><header>Remark 6.2.2 - The phase factor is where resonance lives</header><p> The factor <span class="math-inline">\(e^{i\omega_{kn}t}\)</span> carries the energy difference between the two states. If <span class="math-inline">\(\hat V(t)\)</span> oscillates at a frequency near <span class="math-inline">\(\omega_{kn}\)</span>, the product <span class="math-inline">\(V_{kn}e^{i\omega_{kn}t}\)</span> contains a slowly varying piece whose time integral accumulates; otherwise the product oscillates rapidly and averages to nearly nothing. That observation <em>is</em> resonance, and it is the mechanism behind every selection rule and every bandwidth argument in the rest of the book.</p></section>
-<section class="callout remark" id="remark-rem-td-norm"><header>Remark 6.2.3 - Probability conservation as a numerical test</header><p> <span class="math-inline">\(P_n(t)=|c_n(t)|^{2}\)</span> is the probability of finding the system in <span class="math-inline">\(\ket{n}\)</span>, and unitarity guarantees <span class="math-inline">\(\sum_n|c_n|^{2}=1\)</span> for all time. When Eq. <a href="../chapter-06/index.html#eq-eq-td-coupled">(6.3)</a> is integrated numerically, monitoring that sum is the single most useful check available.</p></section>
+<section class="callout remark" id="remark-rem-td-exact"><header>Remark 6.2.1 - It is exact</header><p> No approximation has been made: one partial differential equation has been rewritten as an infinite set of coupled ordinary differential equations. Approximations enter only later, when we truncate the basis or simplify <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mi>V</mi>
+      <mo stretchy="false">^</mo>
+    </mover>
+  </mrow>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+</math></span>. That separation is useful: convergence can be tested by adding states and checking how much the observables change.</p></section>
+<section class="callout remark" id="remark-rem-td-resonance"><header>Remark 6.2.2 - The phase factor is where resonance lives</header><p> The factor <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>i</mi>
+      <msub>
+        <mi>ω</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mi>k</mi>
+          <mi>n</mi>
+        </mrow>
+      </msub>
+      <mi>t</mi>
+    </mrow>
+  </msup>
+</math></span> carries the energy difference between the two states. If <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mi>V</mi>
+      <mo stretchy="false">^</mo>
+    </mover>
+  </mrow>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+</math></span> oscillates at a frequency near <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ω</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>k</mi>
+      <mi>n</mi>
+    </mrow>
+  </msub>
+</math></span>, the product <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>V</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>k</mi>
+      <mi>n</mi>
+    </mrow>
+  </msub>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>i</mi>
+      <msub>
+        <mi>ω</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mi>k</mi>
+          <mi>n</mi>
+        </mrow>
+      </msub>
+      <mi>t</mi>
+    </mrow>
+  </msup>
+</math></span> contains a slowly varying piece whose time integral accumulates; otherwise the product oscillates rapidly and averages to nearly nothing. That observation <em>is</em> resonance, and it is the mechanism behind every selection rule and every bandwidth argument in the rest of the book.</p></section>
+<section class="callout remark" id="remark-rem-td-norm"><header>Remark 6.2.3 - Probability conservation as a numerical test</header><p> <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>P</mi>
+    <mi>n</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <msub>
+    <mi>c</mi>
+    <mi>n</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+  <msup>
+    <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+</math></span> is the probability of finding the system in <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+    </mrow>
+    <mo fence="false" stretchy="false">⟩</mo>
+  </mrow>
+</math></span>, and unitarity guarantees <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <munder>
+    <mo data-mjx-texclass="OP">∑</mo>
+    <mi>n</mi>
+  </munder>
+  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <msub>
+    <mi>c</mi>
+    <mi>n</mi>
+  </msub>
+  <msup>
+    <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span> for all time. When Eq. <a href="../chapter-06/index.html#eq-eq-td-coupled">(6.3)</a> is integrated numerically, monitoring that sum is the single most useful check available.</p></section>
 <h2 id="sec-6-how-light-couples-to-an-atom"><span class="sec-number">6.3</span>How Light Couples to an Atom</h2>
-<p>We treat the field classically — a given <span class="math-inline">\(\vec E(t)\)</span>, not a quantised photon field. This is the <em>semiclassical</em> approximation, excellent for lasers, where the photon number is enormous.</p>
-<p>A charge distribution in a uniform field has interaction energy <span class="math-inline">\(-\hat{\vec d}\cdot\vec E\)</span>, where for an electron at <span class="math-inline">\(\hat{\vec r}\)</span> the dipole moment operator is <span class="math-inline">\(\hat{\vec d}=-e\hat{\vec r}\)</span>. Hence</p>
-<div class="math-block" id="eq-eq-td-dipole-interaction">\begin{equation}
-	\label{eq:TD-dipole-interaction}
-	\boxed{\;\hat V(t)=-\hat{\vec d}\cdot\vec E(t)
-		=e\,\hat{\vec r}\cdot\vec E(t)\;}
-\end{equation}</div>
-<section class="callout definition" id="definition-def-td-dipole-approx"><header>Definition 6.3.1 - Dipole approximation</header><p> The <em>dipole approximation</em> replaces the field at the electron's position by its value at the nucleus, <span class="math-inline">\(\vec E(\vec r,t)\to\vec E(t)\)</span>. It is valid when the wavelength of the radiation greatly exceeds the size of the atom.</p></section>
-<section class="callout example" id="example-ex-td-dipole-check"><header>Example 6.3.1 - Checking the dipole approximation</header><p> Is Def. <a href="../chapter-06/index.html#definition-def-td-dipole-approx">6.3.1</a> safe for <span class="math-inline">\(800\)</span> nm infrared light and for <span class="math-inline">\(17.6\)</span> eV extreme ultraviolet light?</p>
+<p>We treat the field classically — a given <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mi>E</mi>
+      <mo stretchy="false">→</mo>
+    </mover>
+  </mrow>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+</math></span>, not a quantised photon field. This is the <em>semiclassical</em> approximation, excellent for lasers, where the photon number is enormous.</p>
+<p>A charge distribution in a uniform field has interaction energy <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mrow data-mjx-texclass="ORD">
+        <mover>
+          <mi>d</mi>
+          <mo stretchy="false">→</mo>
+        </mover>
+      </mrow>
+      <mo stretchy="false">^</mo>
+    </mover>
+  </mrow>
+  <mo>⋅</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mi>E</mi>
+      <mo stretchy="false">→</mo>
+    </mover>
+  </mrow>
+</math></span>, where for an electron at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mrow data-mjx-texclass="ORD">
+        <mover>
+          <mi>r</mi>
+          <mo stretchy="false">→</mo>
+        </mover>
+      </mrow>
+      <mo stretchy="false">^</mo>
+    </mover>
+  </mrow>
+</math></span> the dipole moment operator is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mrow data-mjx-texclass="ORD">
+        <mover>
+          <mi>d</mi>
+          <mo stretchy="false">→</mo>
+        </mover>
+      </mrow>
+      <mo stretchy="false">^</mo>
+    </mover>
+  </mrow>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mi>e</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mrow data-mjx-texclass="ORD">
+        <mover>
+          <mi>r</mi>
+          <mo stretchy="false">→</mo>
+        </mover>
+      </mrow>
+      <mo stretchy="false">^</mo>
+    </mover>
+  </mrow>
+</math></span>. Hence</p>
+<div class="math-block math-block--numbered" id="eq-eq-td-dipole-interaction"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mrow class="mml-boxed">
+          <mrow data-mjx-texclass="ORD">
+            <mstyle displaystyle="true" scriptlevel="0">
+              <mrow data-mjx-texclass="ORD">
+                <mstyle scriptlevel="0">
+                  <mspace width="0.278em" />
+                </mstyle>
+                <mrow data-mjx-texclass="ORD">
+                  <mover>
+                    <mi>V</mi>
+                    <mo stretchy="false">^</mo>
+                  </mover>
+                </mrow>
+                <mo stretchy="false">(</mo>
+                <mi>t</mi>
+                <mo stretchy="false">)</mo>
+                <mo>=</mo>
+                <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+                <mrow data-mjx-texclass="ORD">
+                  <mover>
+                    <mrow data-mjx-texclass="ORD">
+                      <mover>
+                        <mi>d</mi>
+                        <mo stretchy="false">→</mo>
+                      </mover>
+                    </mrow>
+                    <mo stretchy="false">^</mo>
+                  </mover>
+                </mrow>
+                <mo>⋅</mo>
+                <mrow data-mjx-texclass="ORD">
+                  <mover>
+                    <mi>E</mi>
+                    <mo stretchy="false">→</mo>
+                  </mover>
+                </mrow>
+                <mo stretchy="false">(</mo>
+                <mi>t</mi>
+                <mo stretchy="false">)</mo>
+                <mo>=</mo>
+                <mi>e</mi>
+                <mstyle scriptlevel="0">
+                  <mspace width="0.167em" />
+                </mstyle>
+                <mrow data-mjx-texclass="ORD">
+                  <mover>
+                    <mrow data-mjx-texclass="ORD">
+                      <mover>
+                        <mi>r</mi>
+                        <mo stretchy="false">→</mo>
+                      </mover>
+                    </mrow>
+                    <mo stretchy="false">^</mo>
+                  </mover>
+                </mrow>
+                <mo>⋅</mo>
+                <mrow data-mjx-texclass="ORD">
+                  <mover>
+                    <mi>E</mi>
+                    <mo stretchy="false">→</mo>
+                  </mover>
+                </mrow>
+                <mo stretchy="false">(</mo>
+                <mi>t</mi>
+                <mo stretchy="false">)</mo>
+                <mstyle scriptlevel="0">
+                  <mspace width="0.278em" />
+                </mstyle>
+              </mrow>
+            </mstyle>
+          </mrow>
+        </mrow>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:TD-dipole-interaction">(6.5)</span></div>
+<section class="callout definition" id="definition-def-td-dipole-approx"><header>Definition 6.3.1 - Dipole approximation</header><p> The <em>dipole approximation</em> replaces the field at the electron's position by its value at the nucleus, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mi>E</mi>
+      <mo stretchy="false">→</mo>
+    </mover>
+  </mrow>
+  <mo stretchy="false">(</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mi>r</mi>
+      <mo stretchy="false">→</mo>
+    </mover>
+  </mrow>
+  <mo>,</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+  <mo accent="false" stretchy="false">→</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mi>E</mi>
+      <mo stretchy="false">→</mo>
+    </mover>
+  </mrow>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+</math></span>. It is valid when the wavelength of the radiation greatly exceeds the size of the atom.</p></section>
+<section class="callout example" id="example-ex-td-dipole-check"><header>Example 6.3.1 - Checking the dipole approximation</header><p> Is Def. <a href="../chapter-06/index.html#definition-def-td-dipole-approx">6.3.1</a> safe for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>800</mn>
+</math></span> nm infrared light and for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>17.6</mn>
+</math></span> eV extreme ultraviolet light?</p>
 <p class="solution-head">Solution.</p>
-<p>The relevant atomic size is <span class="math-inline">\(\expval{r}=1.5\,a_0=0.079\)</span> nm for a ground state (Chapter 4, Example <a href="../chapter-04/index.html#example-ex-h-most-probable">4.7.1</a>).</p>
-<p>For <span class="math-inline">\(800\)</span> nm the ratio is <span class="math-inline">\(800/0.079\approx10^{4}\)</span>: the field varies by one part in ten thousand across the atom. Entirely safe.</p>
-<p>For <span class="math-inline">\(17.6\)</span> eV, <span class="math-inline">\(\lambda=hc/E=1239.8/17.6=70.4\)</span> nm, and the ratio is <span class="math-inline">\(70.4/0.079\approx900\)</span>. Still safe, though by three orders of magnitude rather than four.</p>
-<p>The approximation fails only for hard X-rays, where <span class="math-inline">\(\lambda\)</span> approaches <span class="math-inline">\(a_0\)</span>. Note however that a Rydberg state with <span class="math-inline">\(n=20\)</span> has <span class="math-inline">\(\expval{r}\approx600\,a_0=32\)</span> nm, comparable to the XUV wavelength — so “the atom is small compared with the wavelength” is a statement about the <em>state</em>, not just the atom.</p></section>
+<p>The relevant atomic size is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathcolor="red">\expval</mtext>
+  <mrow data-mjx-texclass="ORD">
+    <mi>r</mi>
+  </mrow>
+  <mo>=</mo>
+  <mn>1.5</mn>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msub>
+    <mi>a</mi>
+    <mn>0</mn>
+  </msub>
+  <mo>=</mo>
+  <mn>0.079</mn>
+</math></span> nm for a ground state (Chapter 4, Example <a href="../chapter-04/index.html#example-ex-h-most-probable">4.7.1</a>).</p>
+<p>For <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>800</mn>
+</math></span> nm the ratio is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>800</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>0.079</mn>
+  <mo>≈</mo>
+  <msup>
+    <mn>10</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>4</mn>
+    </mrow>
+  </msup>
+</math></span>: the field varies by one part in ten thousand across the atom. Entirely safe.</p>
+<p>For <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>17.6</mn>
+</math></span> eV, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>λ</mi>
+  <mo>=</mo>
+  <mi>h</mi>
+  <mi>c</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>E</mi>
+  <mo>=</mo>
+  <mn>1239.8</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>17.6</mn>
+  <mo>=</mo>
+  <mn>70.4</mn>
+</math></span> nm, and the ratio is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>70.4</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>0.079</mn>
+  <mo>≈</mo>
+  <mn>900</mn>
+</math></span>. Still safe, though by three orders of magnitude rather than four.</p>
+<p>The approximation fails only for hard X-rays, where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>λ</mi>
+</math></span> approaches <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>a</mi>
+    <mn>0</mn>
+  </msub>
+</math></span>. Note however that a Rydberg state with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>=</mo>
+  <mn>20</mn>
+</math></span> has <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathcolor="red">\expval</mtext>
+  <mrow data-mjx-texclass="ORD">
+    <mi>r</mi>
+  </mrow>
+  <mo>≈</mo>
+  <mn>600</mn>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msub>
+    <mi>a</mi>
+    <mn>0</mn>
+  </msub>
+  <mo>=</mo>
+  <mn>32</mn>
+</math></span> nm, comparable to the XUV wavelength — so “the atom is small compared with the wavelength” is a statement about the <em>state</em>, not just the atom.</p></section>
 <p>Combining Eqs. <a href="../chapter-06/index.html#eq-eq-td-dipole-interaction">(6.5)</a> and <a href="../chapter-06/index.html#eq-eq-td-matrix-elements">(6.4)</a>, every transition is governed by the <em>dipole matrix element</em></p>
-<div class="math-block" id="eq-eq-td-dipole-matrix">\begin{equation}
-	\label{eq:TD-dipole-matrix}
-	\vec d_{kn}=\bra{k}\hat{\vec d}\ket{n}=-e\bra{k}\hat{\vec r}\ket{n},
-\end{equation}</div>
-<p>and for fixed polarization this reduces to the scalar form <span class="math-inline">\(V_{kn}(t)=-d_{kn}E(t)\)</span>.</p>
-<p>This is exactly the object analysed in Chapter 3: <span class="math-inline">\(\hat{\vec r}\)</span> is odd, so <span class="math-inline">\(\vec d_{kn}\)</span> vanishes unless the states differ in parity (Thm. <a href="../chapter-03/index.html#theorem-thm-am-laporte">3.6.1</a>), giving <span class="math-inline">\(\Delta l=\pm1\)</span> and <span class="math-inline">\(\Delta m=0,\pm1\)</span>.</p>
+<div class="math-block math-block--numbered" id="eq-eq-td-dipole-matrix"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <msub>
+          <mrow data-mjx-texclass="ORD">
+            <mover>
+              <mi>d</mi>
+              <mo stretchy="false">→</mo>
+            </mover>
+          </mrow>
+          <mrow data-mjx-texclass="ORD">
+            <mi>k</mi>
+            <mi>n</mi>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <mrow data-mjx-texclass="ORD">
+          <mo fence="false" stretchy="false">⟨</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mi>k</mi>
+          </mrow>
+          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        </mrow>
+        <mrow data-mjx-texclass="ORD">
+          <mover>
+            <mrow data-mjx-texclass="ORD">
+              <mover>
+                <mi>d</mi>
+                <mo stretchy="false">→</mo>
+              </mover>
+            </mrow>
+            <mo stretchy="false">^</mo>
+          </mover>
+        </mrow>
+        <mrow data-mjx-texclass="ORD">
+          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mi>n</mi>
+          </mrow>
+          <mo fence="false" stretchy="false">⟩</mo>
+        </mrow>
+        <mo>=</mo>
+        <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+        <mi>e</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mo fence="false" stretchy="false">⟨</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mi>k</mi>
+          </mrow>
+          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        </mrow>
+        <mrow data-mjx-texclass="ORD">
+          <mover>
+            <mrow data-mjx-texclass="ORD">
+              <mover>
+                <mi>r</mi>
+                <mo stretchy="false">→</mo>
+              </mover>
+            </mrow>
+            <mo stretchy="false">^</mo>
+          </mover>
+        </mrow>
+        <mrow data-mjx-texclass="ORD">
+          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mi>n</mi>
+          </mrow>
+          <mo fence="false" stretchy="false">⟩</mo>
+        </mrow>
+        <mo>,</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:TD-dipole-matrix">(6.6)</span></div>
+<p>and for fixed polarization this reduces to the scalar form <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>V</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>k</mi>
+      <mi>n</mi>
+    </mrow>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <msub>
+    <mi>d</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>k</mi>
+      <mi>n</mi>
+    </mrow>
+  </msub>
+  <mi>E</mi>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+</math></span>.</p>
+<p>This is exactly the object analysed in Chapter 3: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mrow data-mjx-texclass="ORD">
+        <mover>
+          <mi>r</mi>
+          <mo stretchy="false">→</mo>
+        </mover>
+      </mrow>
+      <mo stretchy="false">^</mo>
+    </mover>
+  </mrow>
+</math></span> is odd, so <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover>
+        <mi>d</mi>
+        <mo stretchy="false">→</mo>
+      </mover>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mi>k</mi>
+      <mi>n</mi>
+    </mrow>
+  </msub>
+</math></span> vanishes unless the states differ in parity (Thm. <a href="../chapter-03/index.html#theorem-thm-am-laporte">3.6.1</a>), giving <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Δ</mi>
+  <mi>l</mi>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">±</mo>
+  <mn>1</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Δ</mi>
+  <mi>m</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+  <mo>,</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">±</mo>
+  <mn>1</mn>
+</math></span>.</p>
 <h3 id="sec-6-what-a-pulse-is"><span class="sec-number">6.3.1</span>What a Pulse Is</h3>
 <section class="callout definition" id="definition-def-td-pulse"><header>Definition 6.3.2 - Laser pulse</header><p> A pulse is a carrier wave inside an envelope,</p>
-<div class="math-block" id="eq-eq-td-pulse">\begin{equation}
-		\label{eq:TD-pulse}
-		\vec E(t)=\hat\epsilon\,E_0\,h(t)\cos(\omega t+\phi),
-	\end{equation}</div>
-<p>with <span class="math-inline">\(\hat\epsilon\)</span> the polarization direction, <span class="math-inline">\(E_0\)</span> the peak field amplitude, <span class="math-inline">\(h(t)\)</span> a dimensionless envelope of peak value <span class="math-inline">\(1\)</span>, <span class="math-inline">\(\omega\)</span> the carrier frequency and <span class="math-inline">\(\phi\)</span> the carrier–envelope phase. A common choice is the Gaussian</p>
-<div class="math-block" id="eq-eq-td-gaussian">\begin{equation}
-		\label{eq:TD-gaussian}
-		h(t)=e^{-t^{2}/2\tau^{2}} .
-	\end{equation}</div></section>
+<div class="math-block math-block--numbered" id="eq-eq-td-pulse"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mrow data-mjx-texclass="ORD">
+          <mover>
+            <mi>E</mi>
+            <mo stretchy="false">→</mo>
+          </mover>
+        </mrow>
+        <mo stretchy="false">(</mo>
+        <mi>t</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mrow data-mjx-texclass="ORD">
+          <mover>
+            <mi>ϵ</mi>
+            <mo stretchy="false">^</mo>
+          </mover>
+        </mrow>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <msub>
+          <mi>E</mi>
+          <mn>0</mn>
+        </msub>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <mi>h</mi>
+        <mo stretchy="false">(</mo>
+        <mi>t</mi>
+        <mo stretchy="false">)</mo>
+        <mi>cos</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+        <mo stretchy="false">(</mo>
+        <mi>ω</mi>
+        <mi>t</mi>
+        <mo>+</mo>
+        <mi>ϕ</mi>
+        <mo stretchy="false">)</mo>
+        <mo>,</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:TD-pulse">(6.7)</span></div>
+<p>with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mi>ϵ</mi>
+      <mo stretchy="false">^</mo>
+    </mover>
+  </mrow>
+</math></span> the polarization direction, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>E</mi>
+    <mn>0</mn>
+  </msub>
+</math></span> the peak field amplitude, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>h</mi>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+</math></span> a dimensionless envelope of peak value <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ω</mi>
+</math></span> the carrier frequency and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ϕ</mi>
+</math></span> the carrier–envelope phase. A common choice is the Gaussian</p>
+<div class="math-block math-block--numbered" id="eq-eq-td-gaussian"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>h</mi>
+        <mo stretchy="false">(</mo>
+        <mi>t</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <msup>
+          <mi>e</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+            <msup>
+              <mi>t</mi>
+              <mrow data-mjx-texclass="ORD">
+                <mn>2</mn>
+              </mrow>
+            </msup>
+            <mrow data-mjx-texclass="ORD">
+              <mo>/</mo>
+            </mrow>
+            <mn>2</mn>
+            <msup>
+              <mi>τ</mi>
+              <mrow data-mjx-texclass="ORD">
+                <mn>2</mn>
+              </mrow>
+            </msup>
+          </mrow>
+        </msup>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:TD-gaussian">(6.8)</span></div></section>
 <p>Experiments report intensity, theory needs field; they are related by</p>
-<div class="math-block" id="eq-eq-td-intensity">\begin{equation}
-	\label{eq:TD-intensity}
-	I=\tfrac12\epsilon_0cE_0^{2},
-\end{equation}</div>
-<p>and one atomic unit of field (<span class="math-inline">\(5.14\times10^{11}\)</span> V/m) corresponds to <span class="math-inline">\(I=3.51\times10^{16}\)</span> W/cm<span class="math-inline">\(^{2}\)</span>.</p>
+<div class="math-block math-block--numbered" id="eq-eq-td-intensity"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>I</mi>
+        <mo>=</mo>
+        <mstyle displaystyle="false" scriptlevel="0">
+          <mfrac>
+            <mn>1</mn>
+            <mn>2</mn>
+          </mfrac>
+        </mstyle>
+        <msub>
+          <mi>ϵ</mi>
+          <mn>0</mn>
+        </msub>
+        <mi>c</mi>
+        <msubsup>
+          <mi>E</mi>
+          <mn>0</mn>
+          <mrow data-mjx-texclass="ORD">
+            <mn>2</mn>
+          </mrow>
+        </msubsup>
+        <mo>,</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:TD-intensity">(6.9)</span></div>
+<p>and one atomic unit of field (<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>5.14</mn>
+  <mo>×</mo>
+  <msup>
+    <mn>10</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>11</mn>
+    </mrow>
+  </msup>
+</math></span> V/m) corresponds to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>I</mi>
+  <mo>=</mo>
+  <mn>3.51</mn>
+  <mo>×</mo>
+  <msup>
+    <mn>10</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>16</mn>
+    </mrow>
+  </msup>
+</math></span> W/cm<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+</math></span>.</p>
 <p>Duration and bandwidth are conjugate. For Gaussian pulses the full-width-at-half-maximum values satisfy</p>
-<div class="math-block" id="eq-eq-td-bandwidth">\begin{equation}
-	\label{eq:TD-bandwidth}
-	\Delta E\,\Delta t\approx1.8~\mathrm{eV\,fs},
-\end{equation}</div>
+<div class="math-block math-block--numbered" id="eq-eq-td-bandwidth"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi mathvariant="normal">Δ</mi>
+        <mi>E</mi>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <mi mathvariant="normal">Δ</mi>
+        <mi>t</mi>
+        <mo>≈</mo>
+        <mn>1.8</mn>
+        <mtext> </mtext>
+        <mrow data-mjx-texclass="ORD">
+          <mi data-mjx-auto-op="false">eV</mi>
+          <mstyle scriptlevel="0">
+            <mspace width="0.167em" />
+          </mstyle>
+          <mi data-mjx-auto-op="false">fs</mi>
+        </mrow>
+        <mo>,</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:TD-bandwidth">(6.10)</span></div>
 <p>a relation derived in Example <a href="../chapter-06/index.html#example-ex-td-fourier">6.5.1</a> rather than assumed.</p>
 <h3 id="sec-6-a-practical-workflow"><span class="sec-number">6.3.2</span>A Practical Workflow</h3>
 <p>For most light–matter calculations in this course, the steps are:</p>
-<ol><li><p>Choose the active basis states <span class="math-inline">\(\{\ket{n}\}\)</span> and energies <span class="math-inline">\(E_n\)</span>.</p></li><li><p>Compute the relevant dipole elements <span class="math-inline">\(d_{kn}\)</span> and apply selection rules early to discard forbidden channels.</p></li><li><p>Specify the field <span class="math-inline">\(E(t)=E_0h(t)\cos(\omega t+\phi)\)</span> and convert given intensity to <span class="math-inline">\(E_0\)</span> with Eq. <a href="../chapter-06/index.html#eq-eq-td-intensity">(6.9)</a>.</p></li><li><p>Build Eq. <a href="../chapter-06/index.html#eq-eq-td-coupled">(6.3)</a> and choose the model by regime: two-level near resonance <span class="math-inline">\(\to\)</span> Rabi; weak excitation to many states <span class="math-inline">\(\to\)</span> first-order perturbation; otherwise integrate the coupled equations numerically.</p></li><li><p>Extract populations <span class="math-inline">\(P_n(t)=|c_n(t)|^2\)</span> and phases <span class="math-inline">\(\arg c_n(t)\)</span>, then compare directly with measured line strengths, widths, and beats.</p></li></ol>
+<ol><li><p>Choose the active basis states <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo fence="false" stretchy="false">{</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+    </mrow>
+    <mo fence="false" stretchy="false">⟩</mo>
+  </mrow>
+  <mo fence="false" stretchy="false">}</mo>
+</math></span> and energies <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>E</mi>
+    <mi>n</mi>
+  </msub>
+</math></span>.</p></li><li><p>Compute the relevant dipole elements <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>d</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>k</mi>
+      <mi>n</mi>
+    </mrow>
+  </msub>
+</math></span> and apply selection rules early to discard forbidden channels.</p></li><li><p>Specify the field <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>E</mi>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <msub>
+    <mi>E</mi>
+    <mn>0</mn>
+  </msub>
+  <mi>h</mi>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+  <mi>cos</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mo stretchy="false">(</mo>
+  <mi>ω</mi>
+  <mi>t</mi>
+  <mo>+</mo>
+  <mi>ϕ</mi>
+  <mo stretchy="false">)</mo>
+</math></span> and convert given intensity to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>E</mi>
+    <mn>0</mn>
+  </msub>
+</math></span> with Eq. <a href="../chapter-06/index.html#eq-eq-td-intensity">(6.9)</a>.</p></li><li><p>Build Eq. <a href="../chapter-06/index.html#eq-eq-td-coupled">(6.3)</a> and choose the model by regime: two-level near resonance <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo accent="false" stretchy="false">→</mo>
+</math></span> Rabi; weak excitation to many states <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo accent="false" stretchy="false">→</mo>
+</math></span> first-order perturbation; otherwise integrate the coupled equations numerically.</p></li><li><p>Extract populations <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>P</mi>
+    <mi>n</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <msub>
+    <mi>c</mi>
+    <mi>n</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+  <msup>
+    <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mn>2</mn>
+  </msup>
+</math></span> and phases <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>arg</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <msub>
+    <mi>c</mi>
+    <mi>n</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+</math></span>, then compare directly with measured line strengths, widths, and beats.</p></li></ol>
 <h2 id="sec-6-two-levels-solved-exactly"><span class="sec-number">6.4</span>Two Levels, Solved Exactly</h2>
-<p>Truncate Eq. <a href="../chapter-06/index.html#eq-eq-td-coupled">(6.3)</a> to two states, <span class="math-inline">\(\ket{1}\)</span> and <span class="math-inline">\(\ket{2}\)</span>, separated by <span class="math-inline">\(\hbar\omega_0=E_2-E_1\)</span>. Since the dipole operator has no diagonal elements between parity eigenstates, <span class="math-inline">\(V_{11}=V_{22}=0\)</span>, and writing <span class="math-inline">\(d\equiv d_{21}=d_{12}^{*}\)</span> (real, by convention) with a constant envelope <span class="math-inline">\(h=1\)</span> and <span class="math-inline">\(\phi=0\)</span>, Eq. <a href="../chapter-06/index.html#eq-eq-td-coupled">(6.3)</a> reads</p>
-<div class="math-block" id="eq-eq-td-two-level-raw">\begin{equation}
-	\label{eq:TD-two-level-raw}
-	\begin{aligned}
-		i\hbar\dot c_1&amp;=d\,E_0\cos(\omega t)\,e^{-i\omega_0t}\,c_2 ,\\
-		i\hbar\dot c_2&amp;=d\,E_0\cos(\omega t)\,e^{+i\omega_0t}\,c_1 .
-	\end{aligned}
-\end{equation}</div>
+<p>Truncate Eq. <a href="../chapter-06/index.html#eq-eq-td-coupled">(6.3)</a> to two states, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>1</mn>
+    </mrow>
+    <mo fence="false" stretchy="false">⟩</mo>
+  </mrow>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+    <mo fence="false" stretchy="false">⟩</mo>
+  </mrow>
+</math></span>, separated by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi data-mjx-alternate="1">ℏ</mi>
+  <msub>
+    <mi>ω</mi>
+    <mn>0</mn>
+  </msub>
+  <mo>=</mo>
+  <msub>
+    <mi>E</mi>
+    <mn>2</mn>
+  </msub>
+  <mo>−</mo>
+  <msub>
+    <mi>E</mi>
+    <mn>1</mn>
+  </msub>
+</math></span>. Since the dipole operator has no diagonal elements between parity eigenstates, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>V</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>11</mn>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <msub>
+    <mi>V</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>22</mn>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>, and writing <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mo>≡</mo>
+  <msub>
+    <mi>d</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>21</mn>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <msubsup>
+    <mi>d</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>12</mn>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mo>∗</mo>
+    </mrow>
+  </msubsup>
+</math></span> (real, by convention) with a constant envelope <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>h</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ϕ</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>, Eq. <a href="../chapter-06/index.html#eq-eq-td-coupled">(6.3)</a> reads</p>
+<div class="math-block math-block--numbered" id="eq-eq-td-two-level-raw"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mtable displaystyle="true" columnalign="right left" columnspacing="0em" rowspacing="3pt">
+          <mtr>
+            <mtd>
+              <mi>i</mi>
+              <mi data-mjx-alternate="1">ℏ</mi>
+              <msub>
+                <mrow data-mjx-texclass="ORD">
+                  <mover>
+                    <mi>c</mi>
+                    <mo>˙</mo>
+                  </mover>
+                </mrow>
+                <mn>1</mn>
+              </msub>
+            </mtd>
+            <mtd style="text-align: left">
+              <mi />
+              <mo>=</mo>
+              <mi>d</mi>
+              <mstyle scriptlevel="0">
+                <mspace width="0.167em" />
+              </mstyle>
+              <msub>
+                <mi>E</mi>
+                <mn>0</mn>
+              </msub>
+              <mi>cos</mi>
+              <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+              <mo stretchy="false">(</mo>
+              <mi>ω</mi>
+              <mi>t</mi>
+              <mo stretchy="false">)</mo>
+              <mstyle scriptlevel="0">
+                <mspace width="0.167em" />
+              </mstyle>
+              <msup>
+                <mi>e</mi>
+                <mrow data-mjx-texclass="ORD">
+                  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+                  <mi>i</mi>
+                  <msub>
+                    <mi>ω</mi>
+                    <mn>0</mn>
+                  </msub>
+                  <mi>t</mi>
+                </mrow>
+              </msup>
+              <mstyle scriptlevel="0">
+                <mspace width="0.167em" />
+              </mstyle>
+              <msub>
+                <mi>c</mi>
+                <mn>2</mn>
+              </msub>
+              <mo>,</mo>
+            </mtd>
+          </mtr>
+          <mtr>
+            <mtd>
+              <mi>i</mi>
+              <mi data-mjx-alternate="1">ℏ</mi>
+              <msub>
+                <mrow data-mjx-texclass="ORD">
+                  <mover>
+                    <mi>c</mi>
+                    <mo>˙</mo>
+                  </mover>
+                </mrow>
+                <mn>2</mn>
+              </msub>
+            </mtd>
+            <mtd style="text-align: left">
+              <mi />
+              <mo>=</mo>
+              <mi>d</mi>
+              <mstyle scriptlevel="0">
+                <mspace width="0.167em" />
+              </mstyle>
+              <msub>
+                <mi>E</mi>
+                <mn>0</mn>
+              </msub>
+              <mi>cos</mi>
+              <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+              <mo stretchy="false">(</mo>
+              <mi>ω</mi>
+              <mi>t</mi>
+              <mo stretchy="false">)</mo>
+              <mstyle scriptlevel="0">
+                <mspace width="0.167em" />
+              </mstyle>
+              <msup>
+                <mi>e</mi>
+                <mrow data-mjx-texclass="ORD">
+                  <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+                  <mi>i</mi>
+                  <msub>
+                    <mi>ω</mi>
+                    <mn>0</mn>
+                  </msub>
+                  <mi>t</mi>
+                </mrow>
+              </msup>
+              <mstyle scriptlevel="0">
+                <mspace width="0.167em" />
+              </mstyle>
+              <msub>
+                <mi>c</mi>
+                <mn>1</mn>
+              </msub>
+              <mo>.</mo>
+            </mtd>
+          </mtr>
+        </mtable>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:TD-two-level-raw">(6.11)</span></div>
 <h3 id="sec-6-the-rotating-wave-approximation"><span class="sec-number">6.4.1</span>The Rotating-Wave Approximation</h3>
-<p>Expand the cosine as <span class="math-inline">\(\cos\omega t=\tfrac12\bigl(e^{i\omega t}+e^{-i\omega t}\bigr)\)</span> and look at the second equation:</p>
-<div class="math-block" id="eq-eq-td-rwa-expansion">\begin{equation}
-	\label{eq:TD-RWA-expansion}
-	i\hbar\dot c_2
-	=\frac{dE_0}{2}
-	\Bigl[
-	\underbrace{e^{i(\omega_0+\omega)t}}_{\text{fast}}
-	+\underbrace{e^{i(\omega_0-\omega)t}}_{\text{slow near resonance}}
-	\Bigr]c_1 .
-\end{equation}</div>
+<p>Expand the cosine as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>cos</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mi>ω</mi>
+  <mi>t</mi>
+  <mo>=</mo>
+  <mstyle displaystyle="false" scriptlevel="0">
+    <mfrac>
+      <mn>1</mn>
+      <mn>2</mn>
+    </mfrac>
+  </mstyle>
+  <mrow data-mjx-texclass="OPEN">
+    <mo minsize="1.2em" maxsize="1.2em">(</mo>
+  </mrow>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>i</mi>
+      <mi>ω</mi>
+      <mi>t</mi>
+    </mrow>
+  </msup>
+  <mo>+</mo>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi>i</mi>
+      <mi>ω</mi>
+      <mi>t</mi>
+    </mrow>
+  </msup>
+  <mrow data-mjx-texclass="CLOSE">
+    <mo minsize="1.2em" maxsize="1.2em">)</mo>
+  </mrow>
+</math></span> and look at the second equation:</p>
+<div class="math-block math-block--numbered" id="eq-eq-td-rwa-expansion"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>i</mi>
+        <mi data-mjx-alternate="1">ℏ</mi>
+        <msub>
+          <mrow data-mjx-texclass="ORD">
+            <mover>
+              <mi>c</mi>
+              <mo>˙</mo>
+            </mover>
+          </mrow>
+          <mn>2</mn>
+        </msub>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mi>d</mi>
+            <msub>
+              <mi>E</mi>
+              <mn>0</mn>
+            </msub>
+          </mrow>
+          <mn>2</mn>
+        </mfrac>
+        <mrow data-mjx-texclass="OPEN">
+          <mo minsize="1.623em" maxsize="1.623em">[</mo>
+        </mrow>
+        <munder>
+          <mrow data-mjx-texclass="OP">
+            <munder>
+              <msup>
+                <mi>e</mi>
+                <mrow data-mjx-texclass="ORD">
+                  <mi>i</mi>
+                  <mo stretchy="false">(</mo>
+                  <msub>
+                    <mi>ω</mi>
+                    <mn>0</mn>
+                  </msub>
+                  <mo>+</mo>
+                  <mi>ω</mi>
+                  <mo stretchy="false">)</mo>
+                  <mi>t</mi>
+                </mrow>
+              </msup>
+              <mo>⏟</mo>
+            </munder>
+          </mrow>
+          <mrow data-mjx-texclass="ORD">
+            <mtext>fast</mtext>
+          </mrow>
+        </munder>
+        <mo>+</mo>
+        <munder>
+          <mrow data-mjx-texclass="OP">
+            <munder>
+              <msup>
+                <mi>e</mi>
+                <mrow data-mjx-texclass="ORD">
+                  <mi>i</mi>
+                  <mo stretchy="false">(</mo>
+                  <msub>
+                    <mi>ω</mi>
+                    <mn>0</mn>
+                  </msub>
+                  <mo>−</mo>
+                  <mi>ω</mi>
+                  <mo stretchy="false">)</mo>
+                  <mi>t</mi>
+                </mrow>
+              </msup>
+              <mo>⏟</mo>
+            </munder>
+          </mrow>
+          <mrow data-mjx-texclass="ORD">
+            <mtext>slow near resonance</mtext>
+          </mrow>
+        </munder>
+        <mrow data-mjx-texclass="CLOSE">
+          <mo minsize="1.623em" maxsize="1.623em">]</mo>
+        </mrow>
+        <msub>
+          <mi>c</mi>
+          <mn>1</mn>
+        </msub>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:TD-RWA-expansion">(6.12)</span></div>
 <p>Define the <em>detuning</em></p>
-<div class="math-block" id="eq-eq-td-detuning">\begin{equation}
-	\label{eq:TD-detuning}
-	\Delta=\omega_0-\omega .
-\end{equation}</div>
-<p>Near resonance <span class="math-inline">\(|\Delta|\ll\omega_0\)</span>, so the two exponents are wildly different: the first oscillates at about <span class="math-inline">\(2\omega_0\)</span> and the second at the small frequency <span class="math-inline">\(\Delta\)</span>.</p>
-<section class="callout definition" id="definition-def-td-rwa"><header>Definition 6.4.1 - Rotating-wave approximation</header><p> The <em>rotating-wave approximation</em> (RWA) discards the counter-rotating term <span class="math-inline">\(e^{i(\omega_0+\omega)t}\)</span>, retaining only the term oscillating at the detuning.</p></section>
-<p>The justification is that integrating <span class="math-inline">\(e^{2i\omega_0t}\)</span> over any interval long compared with an optical cycle gives a contribution smaller by <span class="math-inline">\(\sim\Delta/\omega_0\)</span> than the retained term. It fails when the field is strong enough that <span class="math-inline">\(\Omega\)</span> (below) approaches <span class="math-inline">\(\omega_0\)</span>, or when the detuning is comparable to the carrier frequency.</p>
-<section class="callout definition" id="definition-def-td-rabi"><header>Definition 6.4.2 - Rabi frequency</header><div class="math-block" id="eq-eq-td-rabi-def">\begin{equation}
-		\label{eq:TD-rabi-def}
-		\Omega=\frac{dE_0}{\hbar} .
-	\end{equation}</div></section>
+<div class="math-block math-block--numbered" id="eq-eq-td-detuning"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi mathvariant="normal">Δ</mi>
+        <mo>=</mo>
+        <msub>
+          <mi>ω</mi>
+          <mn>0</mn>
+        </msub>
+        <mo>−</mo>
+        <mi>ω</mi>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:TD-detuning">(6.13)</span></div>
+<p>Near resonance <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mi mathvariant="normal">Δ</mi>
+  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo>≪</mo>
+  <msub>
+    <mi>ω</mi>
+    <mn>0</mn>
+  </msub>
+</math></span>, so the two exponents are wildly different: the first oscillates at about <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <msub>
+    <mi>ω</mi>
+    <mn>0</mn>
+  </msub>
+</math></span> and the second at the small frequency <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Δ</mi>
+</math></span>.</p>
+<section class="callout definition" id="definition-def-td-rwa"><header>Definition 6.4.1 - Rotating-wave approximation</header><p> The <em>rotating-wave approximation</em> (RWA) discards the counter-rotating term <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>i</mi>
+      <mo stretchy="false">(</mo>
+      <msub>
+        <mi>ω</mi>
+        <mn>0</mn>
+      </msub>
+      <mo>+</mo>
+      <mi>ω</mi>
+      <mo stretchy="false">)</mo>
+      <mi>t</mi>
+    </mrow>
+  </msup>
+</math></span>, retaining only the term oscillating at the detuning.</p></section>
+<p>The justification is that integrating <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+      <mi>i</mi>
+      <msub>
+        <mi>ω</mi>
+        <mn>0</mn>
+      </msub>
+      <mi>t</mi>
+    </mrow>
+  </msup>
+</math></span> over any interval long compared with an optical cycle gives a contribution smaller by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>∼</mo>
+  <mi mathvariant="normal">Δ</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msub>
+    <mi>ω</mi>
+    <mn>0</mn>
+  </msub>
+</math></span> than the retained term. It fails when the field is strong enough that <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Ω</mi>
+</math></span> (below) approaches <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ω</mi>
+    <mn>0</mn>
+  </msub>
+</math></span>, or when the detuning is comparable to the carrier frequency.</p>
+<section class="callout definition" id="definition-def-td-rabi"><header>Definition 6.4.2 - Rabi frequency</header><div class="math-block math-block--numbered" id="eq-eq-td-rabi-def"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi mathvariant="normal">Ω</mi>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mi>d</mi>
+            <msub>
+              <mi>E</mi>
+              <mn>0</mn>
+            </msub>
+          </mrow>
+          <mi data-mjx-alternate="1">ℏ</mi>
+        </mfrac>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:TD-rabi-def">(6.14)</span></div></section>
 <p>Within the RWA, Eq. <a href="../chapter-06/index.html#eq-eq-td-two-level-raw">(6.11)</a> becomes</p>
-<div class="math-block" id="eq-eq-td-rwa-equations">\begin{equation}
-	\label{eq:TD-RWA-equations}
-	i\dot c_1=\frac{\Omega}{2}e^{-i\Delta t}c_2 ,
-	\qquad
-	i\dot c_2=\frac{\Omega}{2}e^{+i\Delta t}c_1 .
-\end{equation}</div>
+<div class="math-block math-block--numbered" id="eq-eq-td-rwa-equations"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>i</mi>
+        <msub>
+          <mrow data-mjx-texclass="ORD">
+            <mover>
+              <mi>c</mi>
+              <mo>˙</mo>
+            </mover>
+          </mrow>
+          <mn>1</mn>
+        </msub>
+        <mo>=</mo>
+        <mfrac>
+          <mi mathvariant="normal">Ω</mi>
+          <mn>2</mn>
+        </mfrac>
+        <msup>
+          <mi>e</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+            <mi>i</mi>
+            <mi mathvariant="normal">Δ</mi>
+            <mi>t</mi>
+          </mrow>
+        </msup>
+        <msub>
+          <mi>c</mi>
+          <mn>2</mn>
+        </msub>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <mi>i</mi>
+        <msub>
+          <mrow data-mjx-texclass="ORD">
+            <mover>
+              <mi>c</mi>
+              <mo>˙</mo>
+            </mover>
+          </mrow>
+          <mn>2</mn>
+        </msub>
+        <mo>=</mo>
+        <mfrac>
+          <mi mathvariant="normal">Ω</mi>
+          <mn>2</mn>
+        </mfrac>
+        <msup>
+          <mi>e</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+            <mi>i</mi>
+            <mi mathvariant="normal">Δ</mi>
+            <mi>t</mi>
+          </mrow>
+        </msup>
+        <msub>
+          <mi>c</mi>
+          <mn>1</mn>
+        </msub>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:TD-RWA-equations">(6.15)</span></div>
 <h3 id="sec-6-solving-the-two-level-problem"><span class="sec-number">6.4.2</span>Solving the Two-Level Problem</h3>
-<section class="callout theorem" id="theorem-thm-td-rabi"><header>Theorem 6.4.1 - Rabi oscillation</header><p> With <span class="math-inline">\(c_1(0)=1\)</span> and <span class="math-inline">\(c_2(0)=0\)</span>, the solution of Eq. <a href="../chapter-06/index.html#eq-eq-td-rwa-equations">(6.15)</a> gives</p>
-<div class="math-block" id="eq-eq-td-rabi-solution">\begin{equation}
-		\label{eq:TD-rabi-solution}
-		\boxed{\;
-			P_2(t)=|c_2(t)|^{2}
-			=\frac{\Omega^{2}}{\Omega^{2}+\Delta^{2}}
-			\,\sin^{2}\!\left(\frac{\Omega_R t}{2}\right),
-			\qquad
-			\Omega_R=\sqrt{\Omega^{2}+\Delta^{2}} \;}
-	\end{equation}</div>
-<p><span class="math-inline">\(\Omega_R\)</span> is the <em>generalized Rabi frequency</em>.</p></section>
+<section class="callout theorem" id="theorem-thm-td-rabi"><header>Theorem 6.4.1 - Rabi oscillation</header><p> With <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>c</mi>
+    <mn>1</mn>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mn>0</mn>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>c</mi>
+    <mn>2</mn>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mn>0</mn>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>, the solution of Eq. <a href="../chapter-06/index.html#eq-eq-td-rwa-equations">(6.15)</a> gives</p>
+<div class="math-block math-block--numbered" id="eq-eq-td-rabi-solution"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mrow class="mml-boxed">
+          <mrow data-mjx-texclass="ORD">
+            <mstyle displaystyle="true" scriptlevel="0">
+              <mrow data-mjx-texclass="ORD">
+                <mstyle scriptlevel="0">
+                  <mspace width="0.278em" />
+                </mstyle>
+                <msub>
+                  <mi>P</mi>
+                  <mn>2</mn>
+                </msub>
+                <mo stretchy="false">(</mo>
+                <mi>t</mi>
+                <mo stretchy="false">)</mo>
+                <mo>=</mo>
+                <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+                <msub>
+                  <mi>c</mi>
+                  <mn>2</mn>
+                </msub>
+                <mo stretchy="false">(</mo>
+                <mi>t</mi>
+                <mo stretchy="false">)</mo>
+                <msup>
+                  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+                  <mrow data-mjx-texclass="ORD">
+                    <mn>2</mn>
+                  </mrow>
+                </msup>
+                <mo>=</mo>
+                <mfrac>
+                  <msup>
+                    <mi mathvariant="normal">Ω</mi>
+                    <mrow data-mjx-texclass="ORD">
+                      <mn>2</mn>
+                    </mrow>
+                  </msup>
+                  <mrow>
+                    <msup>
+                      <mi mathvariant="normal">Ω</mi>
+                      <mrow data-mjx-texclass="ORD">
+                        <mn>2</mn>
+                      </mrow>
+                    </msup>
+                    <mo>+</mo>
+                    <msup>
+                      <mi mathvariant="normal">Δ</mi>
+                      <mrow data-mjx-texclass="ORD">
+                        <mn>2</mn>
+                      </mrow>
+                    </msup>
+                  </mrow>
+                </mfrac>
+                <mstyle scriptlevel="0">
+                  <mspace width="0.167em" />
+                </mstyle>
+                <msup>
+                  <mi>sin</mi>
+                  <mrow data-mjx-texclass="ORD">
+                    <mn>2</mn>
+                  </mrow>
+                </msup>
+                <mstyle scriptlevel="0">
+                  <mspace width="-0.167em" />
+                </mstyle>
+                <mrow data-mjx-texclass="INNER">
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                  <mfrac>
+                    <mrow>
+                      <msub>
+                        <mi mathvariant="normal">Ω</mi>
+                        <mi>R</mi>
+                      </msub>
+                      <mi>t</mi>
+                    </mrow>
+                    <mn>2</mn>
+                  </mfrac>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+                </mrow>
+                <mo>,</mo>
+                <mstyle scriptlevel="0">
+                  <mspace width="2em" />
+                </mstyle>
+                <msub>
+                  <mi mathvariant="normal">Ω</mi>
+                  <mi>R</mi>
+                </msub>
+                <mo>=</mo>
+                <msqrt>
+                  <msup>
+                    <mi mathvariant="normal">Ω</mi>
+                    <mrow data-mjx-texclass="ORD">
+                      <mn>2</mn>
+                    </mrow>
+                  </msup>
+                  <mo>+</mo>
+                  <msup>
+                    <mi mathvariant="normal">Δ</mi>
+                    <mrow data-mjx-texclass="ORD">
+                      <mn>2</mn>
+                    </mrow>
+                  </msup>
+                </msqrt>
+                <mstyle scriptlevel="0">
+                  <mspace width="0.278em" />
+                </mstyle>
+              </mrow>
+            </mstyle>
+          </mrow>
+        </mrow>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:TD-rabi-solution">(6.16)</span></div>
+<p><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi mathvariant="normal">Ω</mi>
+    <mi>R</mi>
+  </msub>
+</math></span> is the <em>generalized Rabi frequency</em>.</p></section>
 <div class="proof" data-lead="Proof."><p>Differentiate the second equation of Eq. <a href="../chapter-06/index.html#eq-eq-td-rwa-equations">(6.15)</a>:</p>
-<div class="math-block">\[
-	i\ddot c_2=\frac{\Omega}{2}\left[i\Delta e^{i\Delta t}c_1
-	+e^{i\Delta t}\dot c_1\right].
-	\]</div>
-<p>From the second equation, <span class="math-inline">\(e^{i\Delta t}c_1=2i\dot c_2/\Omega\)</span>; from the first, <span class="math-inline">\(\dot c_1=-i\tfrac{\Omega}{2}e^{-i\Delta t}c_2\)</span>. Substituting both,</p>
-<div class="math-block">\[
-	i\ddot c_2
-	=\frac{\Omega}{2}\left[i\Delta\cdot\frac{2i\dot c_2}{\Omega}
-	+e^{i\Delta t}\left(-\frac{i\Omega}{2}e^{-i\Delta t}c_2\right)\right]
-	=-i\Delta\dot c_2-\frac{i\Omega^{2}}{4}c_2 .
-	\]</div>
-<p>Dividing by <span class="math-inline">\(i\)</span> gives a linear equation with constant coefficients,</p>
-<div class="math-block">\[
-	\ddot c_2+i\Delta\dot c_2+\frac{\Omega^{2}}{4}c_2=0 .
-	\]</div>
-<p>Trying <span class="math-inline">\(c_2\propto e^{i\lambda t}\)</span> gives <span class="math-inline">\(-\lambda^{2}-\Delta\lambda+\Omega^{2}/4=0\)</span>, hence</p>
-<div class="math-block">\[
-	\lambda=\frac{-\Delta\pm\sqrt{\Delta^{2}+\Omega^{2}}}{2}
-	=\frac{-\Delta\pm\Omega_R}{2} .
-	\]</div>
-<p>The general solution is therefore <span class="math-inline">\(c_2=e^{-i\Delta t/2}\bigl[A\sin(\Omega_Rt/2)+B\cos(\Omega_Rt/2)\bigr]\)</span>. The initial condition <span class="math-inline">\(c_2(0)=0\)</span> forces <span class="math-inline">\(B=0\)</span>, and <span class="math-inline">\(\dot c_2(0)=-i\Omega/2\)</span> (from the second equation with <span class="math-inline">\(c_1(0)=1\)</span>) fixes <span class="math-inline">\(A=-i\Omega/\Omega_R\)</span>. Hence</p>
-<div class="math-block">\[
-	c_2(t)=-\frac{i\Omega}{\Omega_R}e^{-i\Delta t/2}
-	\sin\!\left(\frac{\Omega_Rt}{2}\right),
-	\]</div>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>i</mi>
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover>
+        <mi>c</mi>
+        <mo>¨</mo>
+      </mover>
+    </mrow>
+    <mn>2</mn>
+  </msub>
+  <mo>=</mo>
+  <mfrac>
+    <mi mathvariant="normal">Ω</mi>
+    <mn>2</mn>
+  </mfrac>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">[</mo>
+    <mi>i</mi>
+    <mi mathvariant="normal">Δ</mi>
+    <msup>
+      <mi>e</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mi>i</mi>
+        <mi mathvariant="normal">Δ</mi>
+        <mi>t</mi>
+      </mrow>
+    </msup>
+    <msub>
+      <mi>c</mi>
+      <mn>1</mn>
+    </msub>
+    <mo>+</mo>
+    <msup>
+      <mi>e</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mi>i</mi>
+        <mi mathvariant="normal">Δ</mi>
+        <mi>t</mi>
+      </mrow>
+    </msup>
+    <msub>
+      <mrow data-mjx-texclass="ORD">
+        <mover>
+          <mi>c</mi>
+          <mo>˙</mo>
+        </mover>
+      </mrow>
+      <mn>1</mn>
+    </msub>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">]</mo>
+  </mrow>
+  <mo>.</mo>
+</math></div>
+<p>From the second equation, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>i</mi>
+      <mi mathvariant="normal">Δ</mi>
+      <mi>t</mi>
+    </mrow>
+  </msup>
+  <msub>
+    <mi>c</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>=</mo>
+  <mn>2</mn>
+  <mi>i</mi>
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover>
+        <mi>c</mi>
+        <mo>˙</mo>
+      </mover>
+    </mrow>
+    <mn>2</mn>
+  </msub>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi mathvariant="normal">Ω</mi>
+</math></span>; from the first, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover>
+        <mi>c</mi>
+        <mo>˙</mo>
+      </mover>
+    </mrow>
+    <mn>1</mn>
+  </msub>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mi>i</mi>
+  <mstyle displaystyle="false" scriptlevel="0">
+    <mfrac>
+      <mi mathvariant="normal">Ω</mi>
+      <mn>2</mn>
+    </mfrac>
+  </mstyle>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi>i</mi>
+      <mi mathvariant="normal">Δ</mi>
+      <mi>t</mi>
+    </mrow>
+  </msup>
+  <msub>
+    <mi>c</mi>
+    <mn>2</mn>
+  </msub>
+</math></span>. Substituting both,</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>i</mi>
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover>
+        <mi>c</mi>
+        <mo>¨</mo>
+      </mover>
+    </mrow>
+    <mn>2</mn>
+  </msub>
+  <mo>=</mo>
+  <mfrac>
+    <mi mathvariant="normal">Ω</mi>
+    <mn>2</mn>
+  </mfrac>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">[</mo>
+    <mi>i</mi>
+    <mi mathvariant="normal">Δ</mi>
+    <mo>⋅</mo>
+    <mfrac>
+      <mrow>
+        <mn>2</mn>
+        <mi>i</mi>
+        <msub>
+          <mrow data-mjx-texclass="ORD">
+            <mover>
+              <mi>c</mi>
+              <mo>˙</mo>
+            </mover>
+          </mrow>
+          <mn>2</mn>
+        </msub>
+      </mrow>
+      <mi mathvariant="normal">Ω</mi>
+    </mfrac>
+    <mo>+</mo>
+    <msup>
+      <mi>e</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mi>i</mi>
+        <mi mathvariant="normal">Δ</mi>
+        <mi>t</mi>
+      </mrow>
+    </msup>
+    <mrow data-mjx-texclass="INNER">
+      <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mfrac>
+        <mrow>
+          <mi>i</mi>
+          <mi mathvariant="normal">Ω</mi>
+        </mrow>
+        <mn>2</mn>
+      </mfrac>
+      <msup>
+        <mi>e</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+          <mi>i</mi>
+          <mi mathvariant="normal">Δ</mi>
+          <mi>t</mi>
+        </mrow>
+      </msup>
+      <msub>
+        <mi>c</mi>
+        <mn>2</mn>
+      </msub>
+      <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">]</mo>
+  </mrow>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mi>i</mi>
+  <mi mathvariant="normal">Δ</mi>
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover>
+        <mi>c</mi>
+        <mo>˙</mo>
+      </mover>
+    </mrow>
+    <mn>2</mn>
+  </msub>
+  <mo>−</mo>
+  <mfrac>
+    <mrow>
+      <mi>i</mi>
+      <msup>
+        <mi mathvariant="normal">Ω</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mn>2</mn>
+        </mrow>
+      </msup>
+    </mrow>
+    <mn>4</mn>
+  </mfrac>
+  <msub>
+    <mi>c</mi>
+    <mn>2</mn>
+  </msub>
+  <mo>.</mo>
+</math></div>
+<p>Dividing by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> gives a linear equation with constant coefficients,</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover>
+        <mi>c</mi>
+        <mo>¨</mo>
+      </mover>
+    </mrow>
+    <mn>2</mn>
+  </msub>
+  <mo>+</mo>
+  <mi>i</mi>
+  <mi mathvariant="normal">Δ</mi>
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover>
+        <mi>c</mi>
+        <mo>˙</mo>
+      </mover>
+    </mrow>
+    <mn>2</mn>
+  </msub>
+  <mo>+</mo>
+  <mfrac>
+    <msup>
+      <mi mathvariant="normal">Ω</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mn>2</mn>
+      </mrow>
+    </msup>
+    <mn>4</mn>
+  </mfrac>
+  <msub>
+    <mi>c</mi>
+    <mn>2</mn>
+  </msub>
+  <mo>=</mo>
+  <mn>0</mn>
+  <mo>.</mo>
+</math></div>
+<p>Trying <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>c</mi>
+    <mn>2</mn>
+  </msub>
+  <mo>∝</mo>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>i</mi>
+      <mi>λ</mi>
+      <mi>t</mi>
+    </mrow>
+  </msup>
+</math></span> gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <msup>
+    <mi>λ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mo>−</mo>
+  <mi mathvariant="normal">Δ</mi>
+  <mi>λ</mi>
+  <mo>+</mo>
+  <msup>
+    <mi mathvariant="normal">Ω</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>4</mn>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>, hence</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>λ</mi>
+  <mo>=</mo>
+  <mfrac>
+    <mrow>
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi mathvariant="normal">Δ</mi>
+      <mo>±</mo>
+      <msqrt>
+        <msup>
+          <mi mathvariant="normal">Δ</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mn>2</mn>
+          </mrow>
+        </msup>
+        <mo>+</mo>
+        <msup>
+          <mi mathvariant="normal">Ω</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mn>2</mn>
+          </mrow>
+        </msup>
+      </msqrt>
+    </mrow>
+    <mn>2</mn>
+  </mfrac>
+  <mo>=</mo>
+  <mfrac>
+    <mrow>
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi mathvariant="normal">Δ</mi>
+      <mo>±</mo>
+      <msub>
+        <mi mathvariant="normal">Ω</mi>
+        <mi>R</mi>
+      </msub>
+    </mrow>
+    <mn>2</mn>
+  </mfrac>
+  <mo>.</mo>
+</math></div>
+<p>The general solution is therefore <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>c</mi>
+    <mn>2</mn>
+  </msub>
+  <mo>=</mo>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi>i</mi>
+      <mi mathvariant="normal">Δ</mi>
+      <mi>t</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mrow data-mjx-texclass="OPEN">
+    <mo minsize="1.2em" maxsize="1.2em">[</mo>
+  </mrow>
+  <mi>A</mi>
+  <mi>sin</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi mathvariant="normal">Ω</mi>
+    <mi>R</mi>
+  </msub>
+  <mi>t</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+  <mo stretchy="false">)</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+  <mi>B</mi>
+  <mi>cos</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi mathvariant="normal">Ω</mi>
+    <mi>R</mi>
+  </msub>
+  <mi>t</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+  <mo stretchy="false">)</mo>
+  <mrow data-mjx-texclass="CLOSE">
+    <mo minsize="1.2em" maxsize="1.2em">]</mo>
+  </mrow>
+</math></span>. The initial condition <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>c</mi>
+    <mn>2</mn>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mn>0</mn>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> forces <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>B</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>, and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover>
+        <mi>c</mi>
+        <mo>˙</mo>
+      </mover>
+    </mrow>
+    <mn>2</mn>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mn>0</mn>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mi>i</mi>
+  <mi mathvariant="normal">Ω</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+</math></span> (from the second equation with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>c</mi>
+    <mn>1</mn>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mn>0</mn>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>) fixes <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>A</mi>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mi>i</mi>
+  <mi mathvariant="normal">Ω</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msub>
+    <mi mathvariant="normal">Ω</mi>
+    <mi>R</mi>
+  </msub>
+</math></span>. Hence</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <msub>
+    <mi>c</mi>
+    <mn>2</mn>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mfrac>
+    <mrow>
+      <mi>i</mi>
+      <mi mathvariant="normal">Ω</mi>
+    </mrow>
+    <msub>
+      <mi mathvariant="normal">Ω</mi>
+      <mi>R</mi>
+    </msub>
+  </mfrac>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi>i</mi>
+      <mi mathvariant="normal">Δ</mi>
+      <mi>t</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mi>sin</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="-0.167em" />
+  </mstyle>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <mfrac>
+      <mrow>
+        <msub>
+          <mi mathvariant="normal">Ω</mi>
+          <mi>R</mi>
+        </msub>
+        <mi>t</mi>
+      </mrow>
+      <mn>2</mn>
+    </mfrac>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+  </mrow>
+  <mo>,</mo>
+</math></div>
 <p>whose squared modulus is Eq. <a href="../chapter-06/index.html#eq-eq-td-rabi-solution">(6.16)</a>.</p></div>
 <p>Three consequences follow, each worth stating separately.</p>
-<p><strong>On resonance the transfer is complete.</strong> With <span class="math-inline">\(\Delta=0\)</span>, <span class="math-inline">\(\Omega_R=\Omega\)</span> and <span class="math-inline">\(P_2=\sin^{2}(\Omega t/2)\)</span>, which reaches <span class="math-inline">\(1\)</span> at <span class="math-inline">\(t=\pi/\Omega\)</span>. The atom is then certainly excited. Continue driving and it returns. This is coherent, reversible oscillation, not decay: a pulse delivering <span class="math-inline">\(\Omega t=\pi\)</span> — a “<span class="math-inline">\(\pi\)</span> pulse” — inverts the population exactly.</p>
-<p><strong>Off resonance the transfer is incomplete.</strong> The prefactor <span class="math-inline">\(\Omega^{2}/(\Omega^{2}+\Delta^{2})\)</span> is a Lorentzian in the detuning of half-width <span class="math-inline">\(\Omega\)</span>. For <span class="math-inline">\(|\Delta|\gg\Omega\)</span> the maximum transfer is only <span class="math-inline">\(\Omega^{2}/\Delta^{2}\)</span>, however long one waits.</p>
-<p><strong>Strong driving broadens the resonance.</strong> The width of that Lorentzian is <span class="math-inline">\(\Omega\propto E_0\)</span>: a strong field drives a transition it is badly detuned from. “Resonant” is a statement about field strength as well as frequency.</p>
-<section class="callout example" id="example-ex-td-pi-pulse"><header>Example 6.4.1 - Field required for a <span class="math-inline">\(\pi\)</span> pulse</header><p> A transition has dipole matrix element <span class="math-inline">\(d=1\)</span> a.u. What peak field and intensity invert the population in <span class="math-inline">\(10\)</span> fs?</p>
+<p><strong>On resonance the transfer is complete.</strong> With <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Δ</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi mathvariant="normal">Ω</mi>
+    <mi>R</mi>
+  </msub>
+  <mo>=</mo>
+  <mi mathvariant="normal">Ω</mi>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>P</mi>
+    <mn>2</mn>
+  </msub>
+  <mo>=</mo>
+  <msup>
+    <mi>sin</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mo stretchy="false">(</mo>
+  <mi mathvariant="normal">Ω</mi>
+  <mi>t</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+  <mo stretchy="false">)</mo>
+</math></span>, which reaches <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+  <mo>=</mo>
+  <mi>π</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi mathvariant="normal">Ω</mi>
+</math></span>. The atom is then certainly excited. Continue driving and it returns. This is coherent, reversible oscillation, not decay: a pulse delivering <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Ω</mi>
+  <mi>t</mi>
+  <mo>=</mo>
+  <mi>π</mi>
+</math></span> — a “<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>π</mi>
+</math></span> pulse” — inverts the population exactly.</p>
+<p><strong>Off resonance the transfer is incomplete.</strong> The prefactor <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi mathvariant="normal">Ω</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mo stretchy="false">(</mo>
+  <msup>
+    <mi mathvariant="normal">Ω</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mo>+</mo>
+  <msup>
+    <mi mathvariant="normal">Δ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mo stretchy="false">)</mo>
+</math></span> is a Lorentzian in the detuning of half-width <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Ω</mi>
+</math></span>. For <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mi mathvariant="normal">Δ</mi>
+  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo>≫</mo>
+  <mi mathvariant="normal">Ω</mi>
+</math></span> the maximum transfer is only <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi mathvariant="normal">Ω</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msup>
+    <mi mathvariant="normal">Δ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+</math></span>, however long one waits.</p>
+<p><strong>Strong driving broadens the resonance.</strong> The width of that Lorentzian is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Ω</mi>
+  <mo>∝</mo>
+  <msub>
+    <mi>E</mi>
+    <mn>0</mn>
+  </msub>
+</math></span>: a strong field drives a transition it is badly detuned from. “Resonant” is a statement about field strength as well as frequency.</p>
+<section class="callout example" id="example-ex-td-pi-pulse"><header>Example 6.4.1 - Field required for a <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>π</mi>
+</math></span> pulse</header><p> A transition has dipole matrix element <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span> a.u. What peak field and intensity invert the population in <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>10</mn>
+</math></span> fs?</p>
 <p class="solution-head">Solution.</p>
-<p>A <span class="math-inline">\(\pi\)</span> pulse requires <span class="math-inline">\(\Omega t=\pi\)</span>, so with <span class="math-inline">\(t=10\)</span> fs <span class="math-inline">\(=10/0.02419=413.4\)</span> a.u.,</p>
-<div class="math-block">\[
-	\Omega=\frac{\pi}{413.4}=7.60\times10^{-3}~\text{a.u.}
-	\]</div>
-<p>With <span class="math-inline">\(d=1\)</span>, Eq. <a href="../chapter-06/index.html#eq-eq-td-rabi-def">(6.14)</a> in atomic units (<span class="math-inline">\(\hbar=1\)</span>) gives <span class="math-inline">\(E_0=\Omega=7.60\times10^{-3}\)</span> a.u., that is</p>
-<div class="math-block">\[
-	E_0=7.60\times10^{-3}\times5.14\times10^{11}=3.91\times10^{9}~\mathrm{V/m}.
-	\]</div>
+<p>A <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>π</mi>
+</math></span> pulse requires <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Ω</mi>
+  <mi>t</mi>
+  <mo>=</mo>
+  <mi>π</mi>
+</math></span>, so with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+  <mo>=</mo>
+  <mn>10</mn>
+</math></span> fs <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>=</mo>
+  <mn>10</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>0.02419</mn>
+  <mo>=</mo>
+  <mn>413.4</mn>
+</math></span> a.u.,</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi mathvariant="normal">Ω</mi>
+  <mo>=</mo>
+  <mfrac>
+    <mi>π</mi>
+    <mn>413.4</mn>
+  </mfrac>
+  <mo>=</mo>
+  <mn>7.60</mn>
+  <mo>×</mo>
+  <msup>
+    <mn>10</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>3</mn>
+    </mrow>
+  </msup>
+  <mtext> </mtext>
+  <mtext>a.u.</mtext>
+</math></div>
+<p>With <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>, Eq. <a href="../chapter-06/index.html#eq-eq-td-rabi-def">(6.14)</a> in atomic units (<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi data-mjx-alternate="1">ℏ</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>) gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>E</mi>
+    <mn>0</mn>
+  </msub>
+  <mo>=</mo>
+  <mi mathvariant="normal">Ω</mi>
+  <mo>=</mo>
+  <mn>7.60</mn>
+  <mo>×</mo>
+  <msup>
+    <mn>10</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>3</mn>
+    </mrow>
+  </msup>
+</math></span> a.u., that is</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <msub>
+    <mi>E</mi>
+    <mn>0</mn>
+  </msub>
+  <mo>=</mo>
+  <mn>7.60</mn>
+  <mo>×</mo>
+  <msup>
+    <mn>10</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>3</mn>
+    </mrow>
+  </msup>
+  <mo>×</mo>
+  <mn>5.14</mn>
+  <mo>×</mo>
+  <msup>
+    <mn>10</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>11</mn>
+    </mrow>
+  </msup>
+  <mo>=</mo>
+  <mn>3.91</mn>
+  <mo>×</mo>
+  <msup>
+    <mn>10</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>9</mn>
+    </mrow>
+  </msup>
+  <mtext> </mtext>
+  <mrow data-mjx-texclass="ORD">
+    <mi mathvariant="normal">V</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo>/</mo>
+    </mrow>
+    <mi mathvariant="normal">m</mi>
+  </mrow>
+  <mo>.</mo>
+</math></div>
 <p>The intensity follows from Eq. <a href="../chapter-06/index.html#eq-eq-td-intensity">(6.9)</a>:</p>
-<div class="math-block">\[
-	I=\tfrac12(8.854\times10^{-12})(3\times10^{8})(3.91\times10^{9})^{2}
-	=2.0\times10^{16}~\mathrm{W/m^{2}}=2.0\times10^{12}~\mathrm{W/cm^{2}}.
-	\]</div>
-<p>This is a readily available laboratory intensity, and it is well below the <span class="math-inline">\(3.5\times10^{16}\)</span> W/cm<span class="math-inline">\(^{2}\)</span> at which the field reaches one atomic unit — so the RWA and the two-level truncation are both defensible here.</p></section>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>I</mi>
+  <mo>=</mo>
+  <mstyle displaystyle="false" scriptlevel="0">
+    <mfrac>
+      <mn>1</mn>
+      <mn>2</mn>
+    </mfrac>
+  </mstyle>
+  <mo stretchy="false">(</mo>
+  <mn>8.854</mn>
+  <mo>×</mo>
+  <msup>
+    <mn>10</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>12</mn>
+    </mrow>
+  </msup>
+  <mo stretchy="false">)</mo>
+  <mo stretchy="false">(</mo>
+  <mn>3</mn>
+  <mo>×</mo>
+  <msup>
+    <mn>10</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>8</mn>
+    </mrow>
+  </msup>
+  <mo stretchy="false">)</mo>
+  <mo stretchy="false">(</mo>
+  <mn>3.91</mn>
+  <mo>×</mo>
+  <msup>
+    <mn>10</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>9</mn>
+    </mrow>
+  </msup>
+  <msup>
+    <mo stretchy="false">)</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mo>=</mo>
+  <mn>2.0</mn>
+  <mo>×</mo>
+  <msup>
+    <mn>10</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>16</mn>
+    </mrow>
+  </msup>
+  <mtext> </mtext>
+  <mrow data-mjx-texclass="ORD">
+    <mi mathvariant="normal">W</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo>/</mo>
+    </mrow>
+    <msup>
+      <mi mathvariant="normal">m</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mn>2</mn>
+      </mrow>
+    </msup>
+  </mrow>
+  <mo>=</mo>
+  <mn>2.0</mn>
+  <mo>×</mo>
+  <msup>
+    <mn>10</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>12</mn>
+    </mrow>
+  </msup>
+  <mtext> </mtext>
+  <mrow data-mjx-texclass="ORD">
+    <mi mathvariant="normal">W</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo>/</mo>
+    </mrow>
+    <msup>
+      <mi data-mjx-auto-op="false">cm</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mn>2</mn>
+      </mrow>
+    </msup>
+  </mrow>
+  <mo>.</mo>
+</math></div>
+<p>This is a readily available laboratory intensity, and it is well below the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>3.5</mn>
+  <mo>×</mo>
+  <msup>
+    <mn>10</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>16</mn>
+    </mrow>
+  </msup>
+</math></span> W/cm<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+</math></span> at which the field reaches one atomic unit — so the RWA and the two-level truncation are both defensible here.</p></section>
 <h2 id="sec-6-perturbation-theory-and-the-golden-rule"><span class="sec-number">6.5</span>Perturbation Theory and the Golden Rule</h2>
 <p>When many states participate, the two-level truncation fails. The alternative is to assume the transfer out of the initial state is <em>small</em> and iterate Eq. <a href="../chapter-06/index.html#eq-eq-td-coupled">(6.3)</a>.</p>
-<p>Set <span class="math-inline">\(c_1\approx1\)</span> and all other <span class="math-inline">\(c_n\approx0\)</span> on the right-hand side. Then for any <span class="math-inline">\(k\neq1\)</span>,</p>
-<div class="math-block" id="eq-eq-td-first-order-int">\begin{equation}
-	\label{eq:TD-first-order-int}
-	i\hbar\dot c_k\simeq V_{k1}(t)e^{i\omega_{k1}t}
-\end{equation}</div>
+<p>Set <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>c</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>≈</mo>
+  <mn>1</mn>
+</math></span> and all other <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>c</mi>
+    <mi>n</mi>
+  </msub>
+  <mo>≈</mo>
+  <mn>0</mn>
+</math></span> on the right-hand side. Then for any <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+  <mo>≠</mo>
+  <mn>1</mn>
+</math></span>,</p>
+<div class="math-block math-block--numbered" id="eq-eq-td-first-order-int"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>i</mi>
+        <mi data-mjx-alternate="1">ℏ</mi>
+        <msub>
+          <mrow data-mjx-texclass="ORD">
+            <mover>
+              <mi>c</mi>
+              <mo>˙</mo>
+            </mover>
+          </mrow>
+          <mi>k</mi>
+        </msub>
+        <mo>≃</mo>
+        <msub>
+          <mi>V</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mi>k</mi>
+            <mn>1</mn>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>t</mi>
+        <mo stretchy="false">)</mo>
+        <msup>
+          <mi>e</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mi>i</mi>
+            <msub>
+              <mi>ω</mi>
+              <mrow data-mjx-texclass="ORD">
+                <mi>k</mi>
+                <mn>1</mn>
+              </mrow>
+            </msub>
+            <mi>t</mi>
+          </mrow>
+        </msup>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:TD-first-order-int">(6.17)</span></div>
 <p>which integrates immediately:</p>
-<div class="math-block" id="eq-eq-td-first-order">\begin{equation}
-	\label{eq:TD-first-order}
-	\boxed{\;
-		c_k(t)\simeq\frac{1}{i\hbar}\int_{-\infty}^{t}
-		V_{k1}(t&#x27;)\,e^{i\omega_{k1}t&#x27;}\,dt&#x27; \;}
-\end{equation}</div>
-<p>The formula is physically direct: <em>the amplitude to reach state <span class="math-inline">\(k\)</span> is the Fourier component of the perturbation at the transition frequency</em>. This is the basic selection mechanism of ultrafast spectroscopy.</p>
+<div class="math-block math-block--numbered" id="eq-eq-td-first-order"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mrow class="mml-boxed">
+          <mrow data-mjx-texclass="ORD">
+            <mstyle displaystyle="true" scriptlevel="0">
+              <mrow data-mjx-texclass="ORD">
+                <mstyle scriptlevel="0">
+                  <mspace width="0.278em" />
+                </mstyle>
+                <msub>
+                  <mi>c</mi>
+                  <mi>k</mi>
+                </msub>
+                <mo stretchy="false">(</mo>
+                <mi>t</mi>
+                <mo stretchy="false">)</mo>
+                <mo>≃</mo>
+                <mfrac>
+                  <mn>1</mn>
+                  <mrow>
+                    <mi>i</mi>
+                    <mi data-mjx-alternate="1">ℏ</mi>
+                  </mrow>
+                </mfrac>
+                <msubsup>
+                  <mo data-mjx-texclass="OP">∫</mo>
+                  <mrow data-mjx-texclass="ORD">
+                    <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+                    <mi mathvariant="normal">∞</mi>
+                  </mrow>
+                  <mrow data-mjx-texclass="ORD">
+                    <mi>t</mi>
+                  </mrow>
+                </msubsup>
+                <msub>
+                  <mi>V</mi>
+                  <mrow data-mjx-texclass="ORD">
+                    <mi>k</mi>
+                    <mn>1</mn>
+                  </mrow>
+                </msub>
+                <mo stretchy="false">(</mo>
+                <msup>
+                  <mi>t</mi>
+                  <mo data-mjx-alternate="1">′</mo>
+                </msup>
+                <mo stretchy="false">)</mo>
+                <mstyle scriptlevel="0">
+                  <mspace width="0.167em" />
+                </mstyle>
+                <msup>
+                  <mi>e</mi>
+                  <mrow data-mjx-texclass="ORD">
+                    <mi>i</mi>
+                    <msub>
+                      <mi>ω</mi>
+                      <mrow data-mjx-texclass="ORD">
+                        <mi>k</mi>
+                        <mn>1</mn>
+                      </mrow>
+                    </msub>
+                    <msup>
+                      <mi>t</mi>
+                      <mo data-mjx-alternate="1">′</mo>
+                    </msup>
+                  </mrow>
+                </msup>
+                <mstyle scriptlevel="0">
+                  <mspace width="0.167em" />
+                </mstyle>
+                <mi>d</mi>
+                <msup>
+                  <mi>t</mi>
+                  <mo data-mjx-alternate="1">′</mo>
+                </msup>
+                <mstyle scriptlevel="0">
+                  <mspace width="0.278em" />
+                </mstyle>
+              </mrow>
+            </mstyle>
+          </mrow>
+        </mrow>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:TD-first-order">(6.18)</span></div>
+<p>The formula is physically direct: <em>the amplitude to reach state <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> is the Fourier component of the perturbation at the transition frequency</em>. This is the basic selection mechanism of ultrafast spectroscopy.</p>
 <section class="callout example" id="example-ex-td-fourier"><header>Example 6.5.1 - The pulse spectrum decides what is excited</header><p> Evaluate Eq. <a href="../chapter-06/index.html#eq-eq-td-first-order">(6.18)</a> for the Gaussian pulse of Def. <a href="../chapter-06/index.html#definition-def-td-pulse">6.3.2</a>, and deduce Eq. <a href="../chapter-06/index.html#eq-eq-td-bandwidth">(6.10)</a>.</p>
 <p class="solution-head">Solution.</p>
-<p>With <span class="math-inline">\(V_{k1}=d_{k1}E_0h(t)\cos\omega t\)</span> and the RWA retaining only the <span class="math-inline">\(e^{-i\omega t}\)</span> half of the cosine,</p>
-<div class="math-block">\[
-	c_k(\infty)\simeq\frac{d_{k1}E_0}{2i\hbar}
-	\int_{-\infty}^{\infty}e^{-t^{2}/2\tau^{2}}
-	e^{i(\omega_{k1}-\omega)t}\,dt .
-	\]</div>
+<p>With <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>V</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>k</mi>
+      <mn>1</mn>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <msub>
+    <mi>d</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>k</mi>
+      <mn>1</mn>
+    </mrow>
+  </msub>
+  <msub>
+    <mi>E</mi>
+    <mn>0</mn>
+  </msub>
+  <mi>h</mi>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+  <mi>cos</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mi>ω</mi>
+  <mi>t</mi>
+</math></span> and the RWA retaining only the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi>i</mi>
+      <mi>ω</mi>
+      <mi>t</mi>
+    </mrow>
+  </msup>
+</math></span> half of the cosine,</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <msub>
+    <mi>c</mi>
+    <mi>k</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi mathvariant="normal">∞</mi>
+  <mo stretchy="false">)</mo>
+  <mo>≃</mo>
+  <mfrac>
+    <mrow>
+      <msub>
+        <mi>d</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mi>k</mi>
+          <mn>1</mn>
+        </mrow>
+      </msub>
+      <msub>
+        <mi>E</mi>
+        <mn>0</mn>
+      </msub>
+    </mrow>
+    <mrow>
+      <mn>2</mn>
+      <mi>i</mi>
+      <mi data-mjx-alternate="1">ℏ</mi>
+    </mrow>
+  </mfrac>
+  <msubsup>
+    <mo data-mjx-texclass="OP">∫</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi mathvariant="normal">∞</mi>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mi mathvariant="normal">∞</mi>
+    </mrow>
+  </msubsup>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <msup>
+        <mi>t</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mn>2</mn>
+        </mrow>
+      </msup>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mn>2</mn>
+      <msup>
+        <mi>τ</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mn>2</mn>
+        </mrow>
+      </msup>
+    </mrow>
+  </msup>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>i</mi>
+      <mo stretchy="false">(</mo>
+      <msub>
+        <mi>ω</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mi>k</mi>
+          <mn>1</mn>
+        </mrow>
+      </msub>
+      <mo>−</mo>
+      <mi>ω</mi>
+      <mo stretchy="false">)</mo>
+      <mi>t</mi>
+    </mrow>
+  </msup>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mi>d</mi>
+  <mi>t</mi>
+  <mo>.</mo>
+</math></div>
 <p>The integral is the Fourier transform of a Gaussian, a standard result:</p>
-<div class="math-block">\[
-	\int_{-\infty}^{\infty}e^{-t^{2}/2\tau^{2}}e^{i\Delta_kt}\,dt
-	=\tau\sqrt{2\pi}\,e^{-\Delta_k^{2}\tau^{2}/2},
-	\qquad \Delta_k=\omega_{k1}-\omega .
-	\]</div>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <msubsup>
+    <mo data-mjx-texclass="OP">∫</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi mathvariant="normal">∞</mi>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mi mathvariant="normal">∞</mi>
+    </mrow>
+  </msubsup>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <msup>
+        <mi>t</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mn>2</mn>
+        </mrow>
+      </msup>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mn>2</mn>
+      <msup>
+        <mi>τ</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mn>2</mn>
+        </mrow>
+      </msup>
+    </mrow>
+  </msup>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>i</mi>
+      <msub>
+        <mi mathvariant="normal">Δ</mi>
+        <mi>k</mi>
+      </msub>
+      <mi>t</mi>
+    </mrow>
+  </msup>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mi>d</mi>
+  <mi>t</mi>
+  <mo>=</mo>
+  <mi>τ</mi>
+  <msqrt>
+    <mn>2</mn>
+    <mi>π</mi>
+  </msqrt>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <msubsup>
+        <mi mathvariant="normal">Δ</mi>
+        <mi>k</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mn>2</mn>
+        </mrow>
+      </msubsup>
+      <msup>
+        <mi>τ</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mn>2</mn>
+        </mrow>
+      </msup>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mo>,</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="2em" />
+  </mstyle>
+  <msub>
+    <mi mathvariant="normal">Δ</mi>
+    <mi>k</mi>
+  </msub>
+  <mo>=</mo>
+  <msub>
+    <mi>ω</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>k</mi>
+      <mn>1</mn>
+    </mrow>
+  </msub>
+  <mo>−</mo>
+  <mi>ω</mi>
+  <mo>.</mo>
+</math></div>
 <p>Hence</p>
-<div class="math-block">\[
-	P_k=|c_k(\infty)|^{2}
-	=\frac{|d_{k1}|^{2}E_0^{2}\tau^{2}\pi}{2\hbar^{2}}
-	\,e^{-\Delta_k^{2}\tau^{2}} .
-	\]</div>
-<p>The probability falls as a Gaussian in the detuning, with <span class="math-inline">\(1/e\)</span> half-width <span class="math-inline">\(\Delta_k=1/\tau\)</span> in angular frequency. Converting to an energy FWHM and pairing it with the intensity FWHM of the pulse (itself <span class="math-inline">\(2\tau\sqrt{\ln2}\)</span>) gives the product quoted in Eq. <a href="../chapter-06/index.html#eq-eq-td-bandwidth">(6.10)</a>, <span class="math-inline">\(\Delta E\,\Delta t\approx1.8\)</span> eV fs.</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <msub>
+    <mi>P</mi>
+    <mi>k</mi>
+  </msub>
+  <mo>=</mo>
+  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <msub>
+    <mi>c</mi>
+    <mi>k</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi mathvariant="normal">∞</mi>
+  <mo stretchy="false">)</mo>
+  <msup>
+    <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mo>=</mo>
+  <mfrac>
+    <mrow>
+      <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+      <msub>
+        <mi>d</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mi>k</mi>
+          <mn>1</mn>
+        </mrow>
+      </msub>
+      <msup>
+        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mrow data-mjx-texclass="ORD">
+          <mn>2</mn>
+        </mrow>
+      </msup>
+      <msubsup>
+        <mi>E</mi>
+        <mn>0</mn>
+        <mrow data-mjx-texclass="ORD">
+          <mn>2</mn>
+        </mrow>
+      </msubsup>
+      <msup>
+        <mi>τ</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mn>2</mn>
+        </mrow>
+      </msup>
+      <mi>π</mi>
+    </mrow>
+    <mrow>
+      <mn>2</mn>
+      <msup>
+        <mi data-mjx-alternate="1">ℏ</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mn>2</mn>
+        </mrow>
+      </msup>
+    </mrow>
+  </mfrac>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <msubsup>
+        <mi mathvariant="normal">Δ</mi>
+        <mi>k</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mn>2</mn>
+        </mrow>
+      </msubsup>
+      <msup>
+        <mi>τ</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mn>2</mn>
+        </mrow>
+      </msup>
+    </mrow>
+  </msup>
+  <mo>.</mo>
+</math></div>
+<p>The probability falls as a Gaussian in the detuning, with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>e</mi>
+</math></span> half-width <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi mathvariant="normal">Δ</mi>
+    <mi>k</mi>
+  </msub>
+  <mo>=</mo>
+  <mn>1</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>τ</mi>
+</math></span> in angular frequency. Converting to an energy FWHM and pairing it with the intensity FWHM of the pulse (itself <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mi>τ</mi>
+  <msqrt>
+    <mi>ln</mi>
+    <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+    <mn>2</mn>
+  </msqrt>
+</math></span>) gives the product quoted in Eq. <a href="../chapter-06/index.html#eq-eq-td-bandwidth">(6.10)</a>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Δ</mi>
+  <mi>E</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mi mathvariant="normal">Δ</mi>
+  <mi>t</mi>
+  <mo>≈</mo>
+  <mn>1.8</mn>
+</math></span> eV fs.</p>
 <p>Two lessons. A short pulse populates a <em>band</em> of states, each weighted by its own dipole matrix element <em>times</em> the pulse spectrum at its own frequency — so two states with equal dipoles but different detunings receive different amplitudes. And this is why a research calculation must use the measured pump bandwidth: it weights every state that gets excited.</p></section>
-<section class="callout example" id="example-ex-td-pulse-spec"><header>Example 6.5.2 - Reading a pulse specification</header><p> An attosecond XUV pulse has bandwidth <span class="math-inline">\(0.4\)</span> eV centred at <span class="math-inline">\(17.6\)</span> eV. How long is it, and how many states can it excite at once if the levels are spaced by <span class="math-inline">\(0.1\)</span> eV?</p>
+<section class="callout example" id="example-ex-td-pulse-spec"><header>Example 6.5.2 - Reading a pulse specification</header><p> An attosecond XUV pulse has bandwidth <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0.4</mn>
+</math></span> eV centred at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>17.6</mn>
+</math></span> eV. How long is it, and how many states can it excite at once if the levels are spaced by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0.1</mn>
+</math></span> eV?</p>
 <p class="solution-head">Solution.</p>
 <p>From Eq. <a href="../chapter-06/index.html#eq-eq-td-bandwidth">(6.10)</a>,</p>
-<div class="math-block">\[
-	\Delta t\approx\frac{1.8~\mathrm{eV\,fs}}{0.4~\mathrm{eV}}=4.5~\mathrm{fs}.
-	\]</div>
-<p>A bandwidth of <span class="math-inline">\(0.4\)</span> eV covers states within roughly <span class="math-inline">\(\pm0.2\)</span> eV of the carrier, so with <span class="math-inline">\(0.1\)</span> eV spacing it reaches four or five levels <em>simultaneously and coherently</em>.</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi mathvariant="normal">Δ</mi>
+  <mi>t</mi>
+  <mo>≈</mo>
+  <mfrac>
+    <mrow>
+      <mn>1.8</mn>
+      <mtext> </mtext>
+      <mrow data-mjx-texclass="ORD">
+        <mi data-mjx-auto-op="false">eV</mi>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <mi data-mjx-auto-op="false">fs</mi>
+      </mrow>
+    </mrow>
+    <mrow>
+      <mn>0.4</mn>
+      <mtext> </mtext>
+      <mrow data-mjx-texclass="ORD">
+        <mi data-mjx-auto-op="false">eV</mi>
+      </mrow>
+    </mrow>
+  </mfrac>
+  <mo>=</mo>
+  <mn>4.5</mn>
+  <mtext> </mtext>
+  <mrow data-mjx-texclass="ORD">
+    <mi data-mjx-auto-op="false">fs</mi>
+  </mrow>
+  <mo>.</mo>
+</math></div>
+<p>A bandwidth of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0.4</mn>
+</math></span> eV covers states within roughly <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo form="prefix" lspace="0em" rspace="0em">±</mo>
+  <mn>0.2</mn>
+</math></span> eV of the carrier, so with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0.1</mn>
+</math></span> eV spacing it reaches four or five levels <em>simultaneously and coherently</em>.</p>
 <p>This inverts the usual spectroscopic picture. A narrowband laser selects one level and measures it; a broadband pulse creates a superposition of several, whose relative phases then advance at different rates so that the system <em>beats</em>. Chapter 11 is about reading those beats.</p></section>
 <h3 id="sec-6-transitions-into-a-continuum"><span class="sec-number">6.5.1</span>Transitions into a Continuum</h3>
-<p>Now let the final states form a continuum — the situation whenever the atom ionizes, since the freed electron may carry away any energy. Chapter 3 flagged the normalization this requires, <span class="math-inline">\(\braket{\varepsilon}{\varepsilon&#x27;}=\delta(\varepsilon-\varepsilon&#x27;)\)</span>.</p>
-<section class="callout theorem" id="theorem-thm-td-golden-rule"><header>Theorem 6.5.1 - Fermi's golden rule</header><p> For a perturbation of constant strength <span class="math-inline">\(\hat V\)</span> switched on at <span class="math-inline">\(t=0\)</span>, the transition rate from a discrete state <span class="math-inline">\(\ket{i}\)</span> into a continuum of final states is</p>
-<div class="math-block" id="eq-eq-td-golden-rule">\begin{equation}
-		\label{eq:TD-golden-rule}
-		\Gamma=\frac{2\pi}{\hbar}\bigl|\bra{f}\hat V\ket{i}\bigr|^{2}\rho(E_f),
-	\end{equation}</div>
-<p>evaluated at the energy-conserving final energy, with <span class="math-inline">\(\rho\)</span> the density of final states per unit energy.</p></section>
-<div class="proof" data-lead="Proof."><p>From Eq. <a href="../chapter-06/index.html#eq-eq-td-first-order">(6.18)</a> with <span class="math-inline">\(V_{fi}\)</span> constant for <span class="math-inline">\(0&lt;t&#x27;&lt;t\)</span>,</p>
-<div class="math-block">\[
-	c_f(t)=\frac{V_{fi}}{i\hbar}\int_0^{t}e^{i\omega_{fi}t&#x27;}dt&#x27;
-	=\frac{V_{fi}}{i\hbar}\,
-	\frac{e^{i\omega_{fi}t}-1}{i\omega_{fi}} ,
-	\]</div>
+<p>Now let the final states form a continuum — the situation whenever the atom ionizes, since the freed electron may carry away any energy. Chapter 3 flagged the normalization this requires, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" stretchy="false" form="prefix" lspace="0em" rspace="0em">⟨</mo>
+    <mi>ε</mi>
+    <mo data-mjx-texclass="CLOSE" stretchy="false" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+  <mrow data-mjx-texclass="ORD">
+    <msup>
+      <mi>ε</mi>
+      <mo data-mjx-alternate="1">′</mo>
+    </msup>
+  </mrow>
+  <mo>=</mo>
+  <mi>δ</mi>
+  <mo stretchy="false">(</mo>
+  <mi>ε</mi>
+  <mo>−</mo>
+  <msup>
+    <mi>ε</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+  <mo stretchy="false">)</mo>
+</math></span>.</p>
+<section class="callout theorem" id="theorem-thm-td-golden-rule"><header>Theorem 6.5.1 - Fermi's golden rule</header><p> For a perturbation of constant strength <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mi>V</mi>
+      <mo stretchy="false">^</mo>
+    </mover>
+  </mrow>
+</math></span> switched on at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>, the transition rate from a discrete state <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>i</mi>
+    </mrow>
+    <mo fence="false" stretchy="false">⟩</mo>
+  </mrow>
+</math></span> into a continuum of final states is</p>
+<div class="math-block math-block--numbered" id="eq-eq-td-golden-rule"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi mathvariant="normal">Γ</mi>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mn>2</mn>
+            <mi>π</mi>
+          </mrow>
+          <mi data-mjx-alternate="1">ℏ</mi>
+        </mfrac>
+        <mrow data-mjx-texclass="OPEN">
+          <mo minsize="1.2em" maxsize="1.2em">|</mo>
+        </mrow>
+        <mrow data-mjx-texclass="ORD">
+          <mo fence="false" stretchy="false">⟨</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mi>f</mi>
+          </mrow>
+          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        </mrow>
+        <mrow data-mjx-texclass="ORD">
+          <mover>
+            <mi>V</mi>
+            <mo stretchy="false">^</mo>
+          </mover>
+        </mrow>
+        <mrow data-mjx-texclass="ORD">
+          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mi>i</mi>
+          </mrow>
+          <mo fence="false" stretchy="false">⟩</mo>
+        </mrow>
+        <msup>
+          <mrow data-mjx-texclass="CLOSE">
+            <mo minsize="1.2em" maxsize="1.2em">|</mo>
+          </mrow>
+          <mrow data-mjx-texclass="ORD">
+            <mn>2</mn>
+          </mrow>
+        </msup>
+        <mi>ρ</mi>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>E</mi>
+          <mi>f</mi>
+        </msub>
+        <mo stretchy="false">)</mo>
+        <mo>,</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:TD-golden-rule">(6.19)</span></div>
+<p>evaluated at the energy-conserving final energy, with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ρ</mi>
+</math></span> the density of final states per unit energy.</p></section>
+<div class="proof" data-lead="Proof."><p>From Eq. <a href="../chapter-06/index.html#eq-eq-td-first-order">(6.18)</a> with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>V</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>f</mi>
+      <mi>i</mi>
+    </mrow>
+  </msub>
+</math></span> constant for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+  <mo>&lt;</mo>
+  <msup>
+    <mi>t</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+  <mo>&lt;</mo>
+  <mi>t</mi>
+</math></span>,</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <msub>
+    <mi>c</mi>
+    <mi>f</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mfrac>
+    <msub>
+      <mi>V</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mi>f</mi>
+        <mi>i</mi>
+      </mrow>
+    </msub>
+    <mrow>
+      <mi>i</mi>
+      <mi data-mjx-alternate="1">ℏ</mi>
+    </mrow>
+  </mfrac>
+  <msubsup>
+    <mo data-mjx-texclass="OP">∫</mo>
+    <mn>0</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mi>t</mi>
+    </mrow>
+  </msubsup>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>i</mi>
+      <msub>
+        <mi>ω</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mi>f</mi>
+          <mi>i</mi>
+        </mrow>
+      </msub>
+      <msup>
+        <mi>t</mi>
+        <mo data-mjx-alternate="1">′</mo>
+      </msup>
+    </mrow>
+  </msup>
+  <mi>d</mi>
+  <msup>
+    <mi>t</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+  <mo>=</mo>
+  <mfrac>
+    <msub>
+      <mi>V</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mi>f</mi>
+        <mi>i</mi>
+      </mrow>
+    </msub>
+    <mrow>
+      <mi>i</mi>
+      <mi data-mjx-alternate="1">ℏ</mi>
+    </mrow>
+  </mfrac>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mfrac>
+    <mrow>
+      <msup>
+        <mi>e</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mi>i</mi>
+          <msub>
+            <mi>ω</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mi>f</mi>
+              <mi>i</mi>
+            </mrow>
+          </msub>
+          <mi>t</mi>
+        </mrow>
+      </msup>
+      <mo>−</mo>
+      <mn>1</mn>
+    </mrow>
+    <mrow>
+      <mi>i</mi>
+      <msub>
+        <mi>ω</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mi>f</mi>
+          <mi>i</mi>
+        </mrow>
+      </msub>
+    </mrow>
+  </mfrac>
+  <mo>,</mo>
+</math></div>
 <p>so</p>
-<div class="math-block">\[
-	P_f(t)=|c_f|^{2}
-	=\frac{|V_{fi}|^{2}}{\hbar^{2}}
-	\cdot\frac{4\sin^{2}(\omega_{fi}t/2)}{\omega_{fi}^{2}}
-	=\frac{|V_{fi}|^{2}t^{2}}{\hbar^{2}}
-	\,\mathrm{sinc}^{2}\!\left(\frac{\omega_{fi}t}{2}\right).
-	\]</div>
-<p>This function of <span class="math-inline">\(\omega_{fi}\)</span> has height <span class="math-inline">\(\propto t^{2}\)</span> and width <span class="math-inline">\(\propto1/t\)</span>, so its integral grows as <span class="math-inline">\(t\)</span>. Summing over the continuum, <span class="math-inline">\(\sum_f\to\int\rho(E_f)dE_f=\hbar\int\rho\,d\omega_{fi}\)</span>, and using</p>
-<div class="math-block">\[
-	\int_{-\infty}^{\infty}\frac{4\sin^{2}(\omega t/2)}{\omega^{2}}d\omega
-	=2\pi t ,
-	\]</div>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <msub>
+    <mi>P</mi>
+    <mi>f</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <msub>
+    <mi>c</mi>
+    <mi>f</mi>
+  </msub>
+  <msup>
+    <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mo>=</mo>
+  <mfrac>
+    <mrow>
+      <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+      <msub>
+        <mi>V</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mi>f</mi>
+          <mi>i</mi>
+        </mrow>
+      </msub>
+      <msup>
+        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mrow data-mjx-texclass="ORD">
+          <mn>2</mn>
+        </mrow>
+      </msup>
+    </mrow>
+    <msup>
+      <mi data-mjx-alternate="1">ℏ</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mn>2</mn>
+      </mrow>
+    </msup>
+  </mfrac>
+  <mo>⋅</mo>
+  <mfrac>
+    <mrow>
+      <mn>4</mn>
+      <msup>
+        <mi>sin</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mn>2</mn>
+        </mrow>
+      </msup>
+      <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+      <mo stretchy="false">(</mo>
+      <msub>
+        <mi>ω</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mi>f</mi>
+          <mi>i</mi>
+        </mrow>
+      </msub>
+      <mi>t</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mn>2</mn>
+      <mo stretchy="false">)</mo>
+    </mrow>
+    <msubsup>
+      <mi>ω</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mi>f</mi>
+        <mi>i</mi>
+      </mrow>
+      <mrow data-mjx-texclass="ORD">
+        <mn>2</mn>
+      </mrow>
+    </msubsup>
+  </mfrac>
+  <mo>=</mo>
+  <mfrac>
+    <mrow>
+      <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+      <msub>
+        <mi>V</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mi>f</mi>
+          <mi>i</mi>
+        </mrow>
+      </msub>
+      <msup>
+        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mrow data-mjx-texclass="ORD">
+          <mn>2</mn>
+        </mrow>
+      </msup>
+      <msup>
+        <mi>t</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mn>2</mn>
+        </mrow>
+      </msup>
+    </mrow>
+    <msup>
+      <mi data-mjx-alternate="1">ℏ</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mn>2</mn>
+      </mrow>
+    </msup>
+  </mfrac>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msup>
+    <mrow data-mjx-texclass="ORD">
+      <mi data-mjx-auto-op="false">sinc</mi>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mstyle scriptlevel="0">
+    <mspace width="-0.167em" />
+  </mstyle>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <mfrac>
+      <mrow>
+        <msub>
+          <mi>ω</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mi>f</mi>
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mi>t</mi>
+      </mrow>
+      <mn>2</mn>
+    </mfrac>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+  </mrow>
+  <mo>.</mo>
+</math></div>
+<p>This function of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ω</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>f</mi>
+      <mi>i</mi>
+    </mrow>
+  </msub>
+</math></span> has height <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>∝</mo>
+  <msup>
+    <mi>t</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+</math></span> and width <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>∝</mo>
+  <mn>1</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>t</mi>
+</math></span>, so its integral grows as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+</math></span>. Summing over the continuum, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <munder>
+    <mo data-mjx-texclass="OP">∑</mo>
+    <mi>f</mi>
+  </munder>
+  <mo accent="false" stretchy="false">→</mo>
+  <mo data-mjx-texclass="OP">∫</mo>
+  <mi>ρ</mi>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>E</mi>
+    <mi>f</mi>
+  </msub>
+  <mo stretchy="false">)</mo>
+  <mi>d</mi>
+  <msub>
+    <mi>E</mi>
+    <mi>f</mi>
+  </msub>
+  <mo>=</mo>
+  <mi data-mjx-alternate="1">ℏ</mi>
+  <mo data-mjx-texclass="OP">∫</mo>
+  <mi>ρ</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mi>d</mi>
+  <msub>
+    <mi>ω</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>f</mi>
+      <mi>i</mi>
+    </mrow>
+  </msub>
+</math></span>, and using</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <msubsup>
+    <mo data-mjx-texclass="OP">∫</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi mathvariant="normal">∞</mi>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mi mathvariant="normal">∞</mi>
+    </mrow>
+  </msubsup>
+  <mfrac>
+    <mrow>
+      <mn>4</mn>
+      <msup>
+        <mi>sin</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mn>2</mn>
+        </mrow>
+      </msup>
+      <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+      <mo stretchy="false">(</mo>
+      <mi>ω</mi>
+      <mi>t</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mn>2</mn>
+      <mo stretchy="false">)</mo>
+    </mrow>
+    <msup>
+      <mi>ω</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mn>2</mn>
+      </mrow>
+    </msup>
+  </mfrac>
+  <mi>d</mi>
+  <mi>ω</mi>
+  <mo>=</mo>
+  <mn>2</mn>
+  <mi>π</mi>
+  <mi>t</mi>
+  <mo>,</mo>
+</math></div>
 <p>the total probability is</p>
-<div class="math-block">\[
-	P(t)=\frac{|V_{fi}|^{2}}{\hbar^{2}}\,\hbar\,\rho(E_f)\,2\pi t
-	=\frac{2\pi}{\hbar}|V_{fi}|^{2}\rho(E_f)\,t ,
-	\]</div>
-<p>assuming <span class="math-inline">\(\rho\)</span> and <span class="math-inline">\(V_{fi}\)</span> vary slowly over the narrow width of the sinc. Since <span class="math-inline">\(P\)</span> grows linearly, the rate <span class="math-inline">\(\Gamma=dP/dt\)</span> is constant and equal to Eq. <a href="../chapter-06/index.html#eq-eq-td-golden-rule">(6.19)</a>.</p></div>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>P</mi>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mfrac>
+    <mrow>
+      <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+      <msub>
+        <mi>V</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mi>f</mi>
+          <mi>i</mi>
+        </mrow>
+      </msub>
+      <msup>
+        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mrow data-mjx-texclass="ORD">
+          <mn>2</mn>
+        </mrow>
+      </msup>
+    </mrow>
+    <msup>
+      <mi data-mjx-alternate="1">ℏ</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mn>2</mn>
+      </mrow>
+    </msup>
+  </mfrac>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mi data-mjx-alternate="1">ℏ</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mi>ρ</mi>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>E</mi>
+    <mi>f</mi>
+  </msub>
+  <mo stretchy="false">)</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mn>2</mn>
+  <mi>π</mi>
+  <mi>t</mi>
+  <mo>=</mo>
+  <mfrac>
+    <mrow>
+      <mn>2</mn>
+      <mi>π</mi>
+    </mrow>
+    <mi data-mjx-alternate="1">ℏ</mi>
+  </mfrac>
+  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <msub>
+    <mi>V</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>f</mi>
+      <mi>i</mi>
+    </mrow>
+  </msub>
+  <msup>
+    <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mi>ρ</mi>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>E</mi>
+    <mi>f</mi>
+  </msub>
+  <mo stretchy="false">)</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mi>t</mi>
+  <mo>,</mo>
+</math></div>
+<p>assuming <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ρ</mi>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>V</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>f</mi>
+      <mi>i</mi>
+    </mrow>
+  </msub>
+</math></span> vary slowly over the narrow width of the sinc. Since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>P</mi>
+</math></span> grows linearly, the rate <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Γ</mi>
+  <mo>=</mo>
+  <mi>d</mi>
+  <mi>P</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>d</mi>
+  <mi>t</mi>
+</math></span> is constant and equal to Eq. <a href="../chapter-06/index.html#eq-eq-td-golden-rule">(6.19)</a>.</p></div>
 <p>Two features of this result are used directly at the end of the book.</p>
-<section class="callout remark" id="remark-rem-td-energy-norm"><header>Remark 6.5.1 - Energy normalization absorbs <span class="math-inline">\(\rho\)</span></header><p> If the continuum states are normalized as <span class="math-inline">\(\braket{\varepsilon}{\varepsilon&#x27;}=\delta(\varepsilon-\varepsilon&#x27;)\)</span> then the density of states is already carried by the states themselves, <span class="math-inline">\(\rho=1\)</span>, and in atomic units Eq. <a href="../chapter-06/index.html#eq-eq-td-golden-rule">(6.19)</a> reduces to</p>
-<div class="math-block" id="eq-eq-td-golden-normalized">\begin{equation}
-		\label{eq:TD-golden-normalized}
-		\Gamma=2\pi\bigl|\bra{\varepsilon}\hat V\ket{i}\bigr|^{2} .
-	\end{equation}</div>
+<section class="callout remark" id="remark-rem-td-energy-norm"><header>Remark 6.5.1 - Energy normalization absorbs <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ρ</mi>
+</math></span></header><p> If the continuum states are normalized as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" stretchy="false" form="prefix" lspace="0em" rspace="0em">⟨</mo>
+    <mi>ε</mi>
+    <mo data-mjx-texclass="CLOSE" stretchy="false" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+  <mrow data-mjx-texclass="ORD">
+    <msup>
+      <mi>ε</mi>
+      <mo data-mjx-alternate="1">′</mo>
+    </msup>
+  </mrow>
+  <mo>=</mo>
+  <mi>δ</mi>
+  <mo stretchy="false">(</mo>
+  <mi>ε</mi>
+  <mo>−</mo>
+  <msup>
+    <mi>ε</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+  <mo stretchy="false">)</mo>
+</math></span> then the density of states is already carried by the states themselves, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ρ</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>, and in atomic units Eq. <a href="../chapter-06/index.html#eq-eq-td-golden-rule">(6.19)</a> reduces to</p>
+<div class="math-block math-block--numbered" id="eq-eq-td-golden-normalized"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi mathvariant="normal">Γ</mi>
+        <mo>=</mo>
+        <mn>2</mn>
+        <mi>π</mi>
+        <mrow data-mjx-texclass="OPEN">
+          <mo minsize="1.2em" maxsize="1.2em">|</mo>
+        </mrow>
+        <mrow data-mjx-texclass="ORD">
+          <mo fence="false" stretchy="false">⟨</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mi>ε</mi>
+          </mrow>
+          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        </mrow>
+        <mrow data-mjx-texclass="ORD">
+          <mover>
+            <mi>V</mi>
+            <mo stretchy="false">^</mo>
+          </mover>
+        </mrow>
+        <mrow data-mjx-texclass="ORD">
+          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mi>i</mi>
+          </mrow>
+          <mo fence="false" stretchy="false">⟩</mo>
+        </mrow>
+        <msup>
+          <mrow data-mjx-texclass="CLOSE">
+            <mo minsize="1.2em" maxsize="1.2em">|</mo>
+          </mrow>
+          <mrow data-mjx-texclass="ORD">
+            <mn>2</mn>
+          </mrow>
+        </msup>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:TD-golden-normalized">(6.20)</span></div>
 <p>This is why the research literature uses that convention: it removes a bookkeeping factor that is otherwise easy to get wrong.</p></section>
-<section class="callout remark" id="remark-rem-td-not-light"><header>Remark 6.5.2 - The perturbation need not be light</header><p> Nothing in the proof assumed <span class="math-inline">\(\hat V\)</span> was a laser field. <em>Any</em> coupling between a discrete state and a degenerate continuum gives a rate of this form — including the electron–electron repulsion that autoionized helium's <span class="math-inline">\(2s2p\)</span> state in Chapter 5. Reading Eq. <a href="../chapter-06/index.html#eq-eq-td-golden-normalized">(6.20)</a> backwards, <span class="math-inline">\(|\bra{\varepsilon}\hat V\ket{i}|=\sqrt{\Gamma/2\pi}\)</span>, converts a measured width into a coupling strength. That is exactly how autoionization enters the model in Chapter 10.</p></section>
+<section class="callout remark" id="remark-rem-td-not-light"><header>Remark 6.5.2 - The perturbation need not be light</header><p> Nothing in the proof assumed <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mi>V</mi>
+      <mo stretchy="false">^</mo>
+    </mover>
+  </mrow>
+</math></span> was a laser field. <em>Any</em> coupling between a discrete state and a degenerate continuum gives a rate of this form — including the electron–electron repulsion that autoionized helium's <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mi>s</mi>
+  <mn>2</mn>
+  <mi>p</mi>
+</math></span> state in Chapter 5. Reading Eq. <a href="../chapter-06/index.html#eq-eq-td-golden-normalized">(6.20)</a> backwards, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mo fence="false" stretchy="false">⟨</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>ε</mi>
+    </mrow>
+    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  </mrow>
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mi>V</mi>
+      <mo stretchy="false">^</mo>
+    </mover>
+  </mrow>
+  <mrow data-mjx-texclass="ORD">
+    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>i</mi>
+    </mrow>
+    <mo fence="false" stretchy="false">⟩</mo>
+  </mrow>
+  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo>=</mo>
+  <msqrt>
+    <mi mathvariant="normal">Γ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo>/</mo>
+    </mrow>
+    <mn>2</mn>
+    <mi>π</mi>
+  </msqrt>
+</math></span>, converts a measured width into a coupling strength. That is exactly how autoionization enters the model in Chapter 10.</p></section>
 <h3 id="sec-6-where-these-methods-fail"><span class="sec-number">6.5.2</span>Where These Methods Fail</h3>
-<p>Perturbation theory assumed <span class="math-inline">\(c_1\approx1\)</span>; the golden rule assumed further that the initial state persists while the rate acts. Both fail, and the two failures define the research frontier this course points at.</p>
-<p><strong>Strong fields.</strong> When <span class="math-inline">\(E_0\)</span> approaches one atomic unit (<span class="math-inline">\(5.14\times10^{11}\)</span> V/m, <span class="math-inline">\(I\sim10^{16}\)</span> W/cm<span class="math-inline">\(^{2}\)</span>) the field rivals the atom's own binding and no expansion in it converges. The atom no longer absorbs one photon at a time; the barrier confining the electron is bent down until the electron tunnels through. Describing that requires the Keldysh parameter, tunnelling rates, and classical propagation of the freed electron — a subject of its own, not treated in these notes.</p>
+<p>Perturbation theory assumed <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>c</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>≈</mo>
+  <mn>1</mn>
+</math></span>; the golden rule assumed further that the initial state persists while the rate acts. Both fail, and the two failures define the research frontier this course points at.</p>
+<p><strong>Strong fields.</strong> When <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>E</mi>
+    <mn>0</mn>
+  </msub>
+</math></span> approaches one atomic unit (<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>5.14</mn>
+  <mo>×</mo>
+  <msup>
+    <mn>10</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>11</mn>
+    </mrow>
+  </msup>
+</math></span> V/m, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>I</mi>
+  <mo>∼</mo>
+  <msup>
+    <mn>10</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>16</mn>
+    </mrow>
+  </msup>
+</math></span> W/cm<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+</math></span>) the field rivals the atom's own binding and no expansion in it converges. The atom no longer absorbs one photon at a time; the barrier confining the electron is bent down until the electron tunnels through. Describing that requires the Keldysh parameter, tunnelling rates, and classical propagation of the freed electron — a subject of its own, not treated in these notes.</p>
 <p><strong>Decaying states.</strong> The golden rule gives a constant rate, hence exponential decay and a Lorentzian line. But if the state being driven is <em>itself</em> decaying into the same continuum the laser ionizes into, the two routes to that continuum interfere. The line is then not Lorentzian and no rate equation describes it: the amplitudes must be kept and their phases tracked. That is Eq. <a href="../chapter-06/index.html#eq-eq-td-coupled">(6.3)</a> with no perturbative expansion at all, and it is the subject of Chapters 10 and 11.</p>
 <h2 id="sec-6-summary"><span class="sec-number">6.6</span>Summary</h2>
 <p>The chapter reduces light–matter interaction to one working pipeline:</p>
-<ul><li><p>Start from Eq. <a href="../chapter-06/index.html#eq-eq-td-coupled">(6.3)</a>: it is an exact rewrite of the TDSE in the stationary basis of <span class="math-inline">\(\hat H_0\)</span>.</p></li><li><p>Insert the dipole interaction, Eq. <a href="../chapter-06/index.html#eq-eq-td-dipole-interaction">(6.5)</a>, and evaluate dipole matrix elements to determine allowed channels.</p></li><li><p>Encode the driving pulse with amplitude, envelope, carrier frequency, and phase; use Eq. <a href="../chapter-06/index.html#eq-eq-td-intensity">(6.9)</a> to connect theory and experiment.</p></li><li><p>Use a two-level truncation near resonance to obtain Rabi oscillation and <span class="math-inline">\(\pi\)</span>-pulse control (Thm. <a href="../chapter-06/index.html#theorem-thm-td-rabi">6.4.1</a>).</p></li><li><p>Use first-order perturbation theory for weak excitation of many states; for continua this gives Fermi's golden rule (Thm. <a href="../chapter-06/index.html#theorem-thm-td-golden-rule">6.5.1</a>).</p></li><li><p>Check validity every time: perturbation theory fails at large population transfer, and rate equations fail when coherent interference between decay paths is important.</p></li></ul>
+<ul><li><p>Start from Eq. <a href="../chapter-06/index.html#eq-eq-td-coupled">(6.3)</a>: it is an exact rewrite of the TDSE in the stationary basis of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover>
+        <mi>H</mi>
+        <mo stretchy="false">^</mo>
+      </mover>
+    </mrow>
+    <mn>0</mn>
+  </msub>
+</math></span>.</p></li><li><p>Insert the dipole interaction, Eq. <a href="../chapter-06/index.html#eq-eq-td-dipole-interaction">(6.5)</a>, and evaluate dipole matrix elements to determine allowed channels.</p></li><li><p>Encode the driving pulse with amplitude, envelope, carrier frequency, and phase; use Eq. <a href="../chapter-06/index.html#eq-eq-td-intensity">(6.9)</a> to connect theory and experiment.</p></li><li><p>Use a two-level truncation near resonance to obtain Rabi oscillation and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>π</mi>
+</math></span>-pulse control (Thm. <a href="../chapter-06/index.html#theorem-thm-td-rabi">6.4.1</a>).</p></li><li><p>Use first-order perturbation theory for weak excitation of many states; for continua this gives Fermi's golden rule (Thm. <a href="../chapter-06/index.html#theorem-thm-td-golden-rule">6.5.1</a>).</p></li><li><p>Check validity every time: perturbation theory fails at large population transfer, and rate equations fail when coherent interference between decay paths is important.</p></li></ul>
 <h2 id="sec-6-exercises"><span class="sec-number">6.7</span>Exercises</h2>
-<ol><li><p><strong>The coupled equations.</strong> Reproduce the proof of Theorem <a href="../chapter-06/index.html#theorem-thm-td-coupled">6.2.1</a>, showing explicitly where the <span class="math-inline">\(E_nc_n\)</span> terms cancel. Then explain in one sentence what would change if the phase <span class="math-inline">\(e^{-iE_nt/\hbar}\)</span> had <em>not</em> been extracted in Eq. <a href="../chapter-06/index.html#eq-eq-td-expansion">(6.2)</a>.</p></li><li><p><strong>The RWA, term by term.</strong> Starting from Eq. <a href="../chapter-06/index.html#eq-eq-td-two-level-raw">(6.11)</a>, expand both cosines and write out all four resulting terms with their exponents. Identify which two are discarded by Def. <a href="../chapter-06/index.html#definition-def-td-rwa">6.4.1</a> and estimate the size of the error for <span class="math-inline">\(\omega_0=0.4\)</span> a.u. and <span class="math-inline">\(\Omega=0.01\)</span> a.u.</p></li><li><p><strong>Rabi, checked.</strong></p>
-<ol><li><p>Verify that Eq. <a href="../chapter-06/index.html#eq-eq-td-rabi-solution">(6.16)</a> satisfies <span class="math-inline">\(P_2(0)=0\)</span>, reaches <span class="math-inline">\(1\)</span> on resonance, and has maximum <span class="math-inline">\(\Omega^{2}/\Delta^{2}\)</span> for <span class="math-inline">\(\Delta\gg\Omega\)</span>.</p></li><li><p>Show that <span class="math-inline">\(P_1+P_2=1\)</span> at all times, using the explicit <span class="math-inline">\(c_2(t)\)</span> from the proof and the first equation of Eq. <a href="../chapter-06/index.html#eq-eq-td-rwa-equations">(6.15)</a>.</p></li><li><p>Repeat Example <a href="../chapter-06/index.html#example-ex-td-pi-pulse">6.4.1</a> for a <span class="math-inline">\(100\)</span> fs pulse. By what factor does the required intensity change, and why?</p></li></ol></li><li><p><strong>The golden rule.</strong> Fill in the two steps of Theorem <a href="../chapter-06/index.html#theorem-thm-td-golden-rule">6.5.1</a>'s proof that are quoted: the elementary integral giving the sinc form, and <span class="math-inline">\(\int 4\sin^{2}(\omega t/2)/\omega^{2}\,d\omega=2\pi t\)</span>. Then explain why the rate is constant even though <span class="math-inline">\(P_f(t)\)</span> for a <em>single</em> final state oscillates.</p></li><li><p><strong>Bandwidth in practice.</strong> An XUV pulse has a Gaussian envelope with <span class="math-inline">\(\tau=2\)</span> fs.</p>
-<ol><li><p>Using Example <a href="../chapter-06/index.html#example-ex-td-fourier">6.5.1</a>, find the spectral width in eV over which it can excite states.</p></li><li><p>Two states lie <span class="math-inline">\(0.15\)</span> eV apart, both within the bandwidth and with equal dipole matrix elements. Compute the ratio of their final amplitudes if the carrier is tuned exactly to the lower one.</p></li><li><p>How long after the pulse do the two amplitudes return to their initial relative phase?</p></li></ol></li></ol>
+<ol><li><p><strong>The coupled equations.</strong> Reproduce the proof of Theorem <a href="../chapter-06/index.html#theorem-thm-td-coupled">6.2.1</a>, showing explicitly where the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>E</mi>
+    <mi>n</mi>
+  </msub>
+  <msub>
+    <mi>c</mi>
+    <mi>n</mi>
+  </msub>
+</math></span> terms cancel. Then explain in one sentence what would change if the phase <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi>i</mi>
+      <msub>
+        <mi>E</mi>
+        <mi>n</mi>
+      </msub>
+      <mi>t</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mi data-mjx-alternate="1">ℏ</mi>
+    </mrow>
+  </msup>
+</math></span> had <em>not</em> been extracted in Eq. <a href="../chapter-06/index.html#eq-eq-td-expansion">(6.2)</a>.</p></li><li><p><strong>The RWA, term by term.</strong> Starting from Eq. <a href="../chapter-06/index.html#eq-eq-td-two-level-raw">(6.11)</a>, expand both cosines and write out all four resulting terms with their exponents. Identify which two are discarded by Def. <a href="../chapter-06/index.html#definition-def-td-rwa">6.4.1</a> and estimate the size of the error for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ω</mi>
+    <mn>0</mn>
+  </msub>
+  <mo>=</mo>
+  <mn>0.4</mn>
+</math></span> a.u. and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Ω</mi>
+  <mo>=</mo>
+  <mn>0.01</mn>
+</math></span> a.u.</p></li><li><p><strong>Rabi, checked.</strong></p>
+<ol><li><p>Verify that Eq. <a href="../chapter-06/index.html#eq-eq-td-rabi-solution">(6.16)</a> satisfies <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>P</mi>
+    <mn>2</mn>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mn>0</mn>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>, reaches <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> on resonance, and has maximum <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi mathvariant="normal">Ω</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msup>
+    <mi mathvariant="normal">Δ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+</math></span> for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Δ</mi>
+  <mo>≫</mo>
+  <mi mathvariant="normal">Ω</mi>
+</math></span>.</p></li><li><p>Show that <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>P</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>+</mo>
+  <msub>
+    <mi>P</mi>
+    <mn>2</mn>
+  </msub>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span> at all times, using the explicit <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>c</mi>
+    <mn>2</mn>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+</math></span> from the proof and the first equation of Eq. <a href="../chapter-06/index.html#eq-eq-td-rwa-equations">(6.15)</a>.</p></li><li><p>Repeat Example <a href="../chapter-06/index.html#example-ex-td-pi-pulse">6.4.1</a> for a <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>100</mn>
+</math></span> fs pulse. By what factor does the required intensity change, and why?</p></li></ol></li><li><p><strong>The golden rule.</strong> Fill in the two steps of Theorem <a href="../chapter-06/index.html#theorem-thm-td-golden-rule">6.5.1</a>'s proof that are quoted: the elementary integral giving the sinc form, and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="OP">∫</mo>
+  <mn>4</mn>
+  <msup>
+    <mi>sin</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mo stretchy="false">(</mo>
+  <mi>ω</mi>
+  <mi>t</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+  <mo stretchy="false">)</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msup>
+    <mi>ω</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mi>d</mi>
+  <mi>ω</mi>
+  <mo>=</mo>
+  <mn>2</mn>
+  <mi>π</mi>
+  <mi>t</mi>
+</math></span>. Then explain why the rate is constant even though <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>P</mi>
+    <mi>f</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+</math></span> for a <em>single</em> final state oscillates.</p></li><li><p><strong>Bandwidth in practice.</strong> An XUV pulse has a Gaussian envelope with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>τ</mi>
+  <mo>=</mo>
+  <mn>2</mn>
+</math></span> fs.</p>
+<ol><li><p>Using Example <a href="../chapter-06/index.html#example-ex-td-fourier">6.5.1</a>, find the spectral width in eV over which it can excite states.</p></li><li><p>Two states lie <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0.15</mn>
+</math></span> eV apart, both within the bandwidth and with equal dipole matrix elements. Compute the ratio of their final amplitudes if the carrier is tuned exactly to the lower one.</p></li><li><p>How long after the pulse do the two amplitudes return to their initial relative phase?</p></li></ol></li></ol>
 <h2 id="sec-6-project-driving-a-two-level-atom"><span class="sec-number">6.8</span>Project: Driving a Two-Level Atom</h2>
 <p><strong>The problem.</strong> Integrate the coupled amplitude equations numerically for a two-level atom driven by a Gaussian pulse, and map out where perturbation theory works. This project builds the tool the last chapters need: the research code is this same integration with more amplitudes.</p>
 <p>Work in atomic units. The exact equations, with the envelope restored, are</p>
-<div class="math-block">\[
-i\dot c_1=d\,E_0\,h(t)\cos(\omega t)\,e^{-i\omega_0t}\,c_2 ,
-\qquad
-i\dot c_2=d\,E_0\,h(t)\cos(\omega t)\,e^{+i\omega_0t}\,c_1 ,
-\]</div>
-<p>with <span class="math-inline">\(h(t)=e^{-(t-t_0)^{2}/2\tau^{2}}\)</span>. Take <span class="math-inline">\(\omega_0=0.4\)</span>, <span class="math-inline">\(d=1\)</span>, <span class="math-inline">\(\tau=200\)</span>, and <span class="math-inline">\(t_0\)</span> large enough that the pulse begins from nothing.</p>
-<ol><li><p><strong>On paper.</strong> Apply the RWA by hand as in Sec. <a href="../chapter-06/index.html#sec-6-the-rotating-wave-approximation">6.4.1</a> and write down the resulting pair of equations.</p></li><li><p><strong>On paper.</strong> Predict the peak field for a <span class="math-inline">\(\pi\)</span> pulse from <span class="math-inline">\(\int\Omega(t)\,dt=\pi\)</span> with <span class="math-inline">\(\Omega(t)=dE_0h(t)\)</span> and <span class="math-inline">\(\int h\,dt=\tau\sqrt{2\pi}\)</span>. This is the number the simulation must confirm.</p></li><li><p><strong>On the computer.</strong> Integrate the <em>exact</em> equations from <span class="math-inline">\(c_1=1\)</span>, <span class="math-inline">\(c_2=0\)</span>. Plot <span class="math-inline">\(P_1(t)\)</span> and <span class="math-inline">\(P_2(t)\)</span> through the pulse and confirm <span class="math-inline">\(P_1+P_2=1\)</span>; report the actual deviation, since it is your error bar for everything else.</p></li><li><p><strong>On the computer.</strong> Scan <span class="math-inline">\(E_0\)</span> from far below your <span class="math-inline">\(\pi\)</span>-pulse value to several times it, and plot <span class="math-inline">\(P_2(\infty)\)</span> against <span class="math-inline">\(E_0\)</span>. Overlay the first-order prediction from Example <a href="../chapter-06/index.html#example-ex-td-fourier">6.5.1</a>. Identify the field at which the two part company by more than ten per cent.</p></li><li><p><strong>On the computer.</strong> Fix <span class="math-inline">\(E_0\)</span> weak and scan the detuning. Plot <span class="math-inline">\(P_2(\infty)\)</span> against <span class="math-inline">\(\Delta\)</span> and compare the width with both <span class="math-inline">\(1/\tau\)</span> and <span class="math-inline">\(\Omega\)</span>. Which sets it at weak field, and which takes over as <span class="math-inline">\(E_0\)</span> grows?</p></li><li><p><strong>On the computer.</strong> Integrate the RWA equations alongside the exact ones and plot the difference. Where does the RWA visibly fail — in detuning, in field strength, or in the fast wiggles?</p></li><li><p><strong>What has to move.</strong> One animation: the two populations against time with the pulse envelope drawn behind, played for increasing <span class="math-inline">\(E_0\)</span> so the flopping speeds up. Caption it with what to watch.</p></li></ol>
-<p><strong>The check.</strong> Part (c)'s norm conservation is the test that matters. Drift in <span class="math-inline">\(P_1+P_2\)</span> almost always means the time grid does not resolve the optical period <span class="math-inline">\(2\pi/\omega\)</span> — you must resolve the carrier, not merely the envelope.</p>
-<p><strong>Be ready to answer.</strong> Perturbation theory predicts <span class="math-inline">\(P_2\)</span> growing as <span class="math-inline">\(E_0^{2}\)</span> without limit, so it must eventually exceed <span class="math-inline">\(1\)</span>. Point at the specific step in the derivation of Eq. <a href="../chapter-06/index.html#eq-eq-td-first-order">(6.18)</a> that allows a probability greater than one, and say what the exact calculation does that the perturbative one cannot.</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>i</mi>
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover>
+        <mi>c</mi>
+        <mo>˙</mo>
+      </mover>
+    </mrow>
+    <mn>1</mn>
+  </msub>
+  <mo>=</mo>
+  <mi>d</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msub>
+    <mi>E</mi>
+    <mn>0</mn>
+  </msub>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mi>h</mi>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+  <mi>cos</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mo stretchy="false">(</mo>
+  <mi>ω</mi>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi>i</mi>
+      <msub>
+        <mi>ω</mi>
+        <mn>0</mn>
+      </msub>
+      <mi>t</mi>
+    </mrow>
+  </msup>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msub>
+    <mi>c</mi>
+    <mn>2</mn>
+  </msub>
+  <mo>,</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="2em" />
+  </mstyle>
+  <mi>i</mi>
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover>
+        <mi>c</mi>
+        <mo>˙</mo>
+      </mover>
+    </mrow>
+    <mn>2</mn>
+  </msub>
+  <mo>=</mo>
+  <mi>d</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msub>
+    <mi>E</mi>
+    <mn>0</mn>
+  </msub>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mi>h</mi>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+  <mi>cos</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mo stretchy="false">(</mo>
+  <mi>ω</mi>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+      <mi>i</mi>
+      <msub>
+        <mi>ω</mi>
+        <mn>0</mn>
+      </msub>
+      <mi>t</mi>
+    </mrow>
+  </msup>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msub>
+    <mi>c</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>,</mo>
+</math></div>
+<p>with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>h</mi>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mo stretchy="false">(</mo>
+      <mi>t</mi>
+      <mo>−</mo>
+      <msub>
+        <mi>t</mi>
+        <mn>0</mn>
+      </msub>
+      <msup>
+        <mo stretchy="false">)</mo>
+        <mrow data-mjx-texclass="ORD">
+          <mn>2</mn>
+        </mrow>
+      </msup>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mn>2</mn>
+      <msup>
+        <mi>τ</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mn>2</mn>
+        </mrow>
+      </msup>
+    </mrow>
+  </msup>
+</math></span>. Take <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ω</mi>
+    <mn>0</mn>
+  </msub>
+  <mo>=</mo>
+  <mn>0.4</mn>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>τ</mi>
+  <mo>=</mo>
+  <mn>200</mn>
+</math></span>, and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>t</mi>
+    <mn>0</mn>
+  </msub>
+</math></span> large enough that the pulse begins from nothing.</p>
+<ol><li><p><strong>On paper.</strong> Apply the RWA by hand as in Sec. <a href="../chapter-06/index.html#sec-6-the-rotating-wave-approximation">6.4.1</a> and write down the resulting pair of equations.</p></li><li><p><strong>On paper.</strong> Predict the peak field for a <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>π</mi>
+</math></span> pulse from <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="OP">∫</mo>
+  <mi mathvariant="normal">Ω</mi>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mi>d</mi>
+  <mi>t</mi>
+  <mo>=</mo>
+  <mi>π</mi>
+</math></span> with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Ω</mi>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mi>d</mi>
+  <msub>
+    <mi>E</mi>
+    <mn>0</mn>
+  </msub>
+  <mi>h</mi>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="OP">∫</mo>
+  <mi>h</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mi>d</mi>
+  <mi>t</mi>
+  <mo>=</mo>
+  <mi>τ</mi>
+  <msqrt>
+    <mn>2</mn>
+    <mi>π</mi>
+  </msqrt>
+</math></span>. This is the number the simulation must confirm.</p></li><li><p><strong>On the computer.</strong> Integrate the <em>exact</em> equations from <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>c</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>c</mi>
+    <mn>2</mn>
+  </msub>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>. Plot <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>P</mi>
+    <mn>1</mn>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>P</mi>
+    <mn>2</mn>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+</math></span> through the pulse and confirm <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>P</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>+</mo>
+  <msub>
+    <mi>P</mi>
+    <mn>2</mn>
+  </msub>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>; report the actual deviation, since it is your error bar for everything else.</p></li><li><p><strong>On the computer.</strong> Scan <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>E</mi>
+    <mn>0</mn>
+  </msub>
+</math></span> from far below your <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>π</mi>
+</math></span>-pulse value to several times it, and plot <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>P</mi>
+    <mn>2</mn>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi mathvariant="normal">∞</mi>
+  <mo stretchy="false">)</mo>
+</math></span> against <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>E</mi>
+    <mn>0</mn>
+  </msub>
+</math></span>. Overlay the first-order prediction from Example <a href="../chapter-06/index.html#example-ex-td-fourier">6.5.1</a>. Identify the field at which the two part company by more than ten per cent.</p></li><li><p><strong>On the computer.</strong> Fix <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>E</mi>
+    <mn>0</mn>
+  </msub>
+</math></span> weak and scan the detuning. Plot <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>P</mi>
+    <mn>2</mn>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi mathvariant="normal">∞</mi>
+  <mo stretchy="false">)</mo>
+</math></span> against <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Δ</mi>
+</math></span> and compare the width with both <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>τ</mi>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Ω</mi>
+</math></span>. Which sets it at weak field, and which takes over as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>E</mi>
+    <mn>0</mn>
+  </msub>
+</math></span> grows?</p></li><li><p><strong>On the computer.</strong> Integrate the RWA equations alongside the exact ones and plot the difference. Where does the RWA visibly fail — in detuning, in field strength, or in the fast wiggles?</p></li><li><p><strong>What has to move.</strong> One animation: the two populations against time with the pulse envelope drawn behind, played for increasing <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>E</mi>
+    <mn>0</mn>
+  </msub>
+</math></span> so the flopping speeds up. Caption it with what to watch.</p></li></ol>
+<p><strong>The check.</strong> Part (c)'s norm conservation is the test that matters. Drift in <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>P</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>+</mo>
+  <msub>
+    <mi>P</mi>
+    <mn>2</mn>
+  </msub>
+</math></span> almost always means the time grid does not resolve the optical period <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mi>π</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>ω</mi>
+</math></span> — you must resolve the carrier, not merely the envelope.</p>
+<p><strong>Be ready to answer.</strong> Perturbation theory predicts <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>P</mi>
+    <mn>2</mn>
+  </msub>
+</math></span> growing as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msubsup>
+    <mi>E</mi>
+    <mn>0</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msubsup>
+</math></span> without limit, so it must eventually exceed <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>. Point at the specific step in the derivation of Eq. <a href="../chapter-06/index.html#eq-eq-td-first-order">(6.18)</a> that allows a probability greater than one, and say what the exact calculation does that the perturbative one cannot.</p>
     <nav class="chapter-nav" aria-label="Chapter navigation">
       <a href="../chapter-05/index.html">Previous: Many-Electron Atoms</a>
       <a href="../../toc.html">Contents</a>

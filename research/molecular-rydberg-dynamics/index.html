@@ -12,19 +12,8 @@
   <link rel="canonical" href="https://saydanzad.com/research/molecular-rydberg-dynamics/">
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
   <link rel="preload" href="../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../../assets/css/site.css?v=b0e05998">
-  <script defer src="../../assets/js/main.js?v=b0e05998"></script>
-  <script>
-    window.MathJax = {
-      tex: {
-        inlineMath: [['\\(', '\\)']],
-        displayMath: [['\\[', '\\]']],
-        processEscapes: true
-      },
-      options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
-    };
-  </script>
-  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <link rel="stylesheet" href="../../assets/css/site.css?v=3d9edb4f">
+  <script defer src="../../assets/js/main.js?v=3d9edb4f"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -48,7 +37,25 @@
   <h1>Ultrafast dynamics of molecular Rydberg states</h1>
   <p class="lede">A time-domain Fano model for autoionizing Rydberg states in molecules, applied to CO₂ and compared against pump–probe measurements.</p>
 </header>
-<figure class="figure hero-figure"><img src="../../figures/research/molecular-rydberg-dynamics/co2-level-scheme.png" alt="Two panels. Left: an infrared and an XUV pulse separated by a delay t_d ionize a CO2 molecule, releasing an electron. Right: an energy level diagram running from the CO2 ground state up through the CO2+ X state at 13.78 eV to the B state at 18.08 eV and the infrared ionization threshold at 19.25 eV, showing the Henning sharp and diffuse Rydberg series, the direct-ionization and XUV-excitation pathways, and autoionization into the epsilon-p-pi-u continuum." loading="lazy" decoding="async"><figcaption>The two pathways that interfere. An XUV photon can ionize CO₂ directly into the continuum, or excite a Rydberg state below the \(B\,^2\Sigma_u^+\) threshold that then autoionizes into that same continuum. Because the final states are identical, the two routes interfere. The delay \(t_d\) to the infrared pulse resolves the process in time.</figcaption></figure>
+<figure class="figure hero-figure"><img src="../../figures/research/molecular-rydberg-dynamics/co2-level-scheme.png" class="diagram" alt="Two panels. Left: an infrared and an XUV pulse separated by a delay t_d ionize a CO2 molecule, releasing an electron. Right: an energy level diagram running from the CO2 ground state up through the CO2+ X state at 13.78 eV to the B state at 18.08 eV and the infrared ionization threshold at 19.25 eV, showing the Henning sharp and diffuse Rydberg series, the direct-ionization and XUV-excitation pathways, and autoionization into the epsilon-p-pi-u continuum." loading="lazy" decoding="async"><figcaption>The two pathways that interfere. An XUV photon can ionize CO₂ directly into the continuum, or excite a Rydberg state below the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>B</mi>
+  <msup>
+    <mstyle scriptlevel="0">
+      <mspace width="0.167em" />
+    </mstyle>
+    <mn>2</mn>
+  </msup>
+  <msubsup>
+    <mi mathvariant="normal">Σ</mi>
+    <mi>u</mi>
+    <mo>+</mo>
+  </msubsup>
+</math></span> threshold that then autoionizes into that same continuum. Because the final states are identical, the two routes interfere. The delay <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>t</mi>
+    <mi>d</mi>
+  </msub>
+</math></span> to the infrared pulse resolves the process in time.</figcaption></figure>
 <div class="tags tags-lg"><span>Molecular Rydberg states</span><span>Autoionization</span><span>Time-domain Fano theory</span><span>Nonadiabatic dynamics</span></div>
 <div class="prose"><h2 id="the-question">The question</h2>
 <p>A molecule excited into a Rydberg state above its ionization threshold is
@@ -69,9 +76,36 @@ wave packet and a delayed near-infrared pulse ionizes it while it decays;
 scanning the delay resolves the decay as it happens.</p>
 <p>CO₂ is the working case, because the relevant structure is well characterized
 and there are measurements to check against. Ground-state CO₂ is excited by an
-attosecond XUV pulse train into the \(nd\sigma_g\) Henning-sharp and
-\(ns\sigma_g\) Henning-diffuse Rydberg series, and a delayed near-infrared probe
-ionizes those states to the \(B\,^2\Sigma_u^+\) limit. Using Fano parameters and
+attosecond XUV pulse train into the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>d</mi>
+  <msub>
+    <mi>σ</mi>
+    <mi>g</mi>
+  </msub>
+</math></span> Henning-sharp and
+<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>s</mi>
+  <msub>
+    <mi>σ</mi>
+    <mi>g</mi>
+  </msub>
+</math></span> Henning-diffuse Rydberg series, and a delayed near-infrared probe
+ionizes those states to the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>B</mi>
+  <msup>
+    <mstyle scriptlevel="0">
+      <mspace width="0.167em" />
+    </mstyle>
+    <mn>2</mn>
+  </msup>
+  <msubsup>
+    <mi mathvariant="normal">Σ</mi>
+    <mi>u</mi>
+    <mo>+</mo>
+  </msubsup>
+</math></span> limit. Using Fano parameters and
 solving the time-dependent Schrödinger equation, we simulate the build-up and
 decay of the resonant states and the photoelectron yields measured as a
 function of delay.</p>
@@ -90,7 +124,7 @@ methods from each other.</p>
 <p>A manuscript on time-resolved Rydberg dynamics in molecules is in preparation.</p></div>
 <section class="figures">
 <h2>Figures</h2>
-<figure class="figure"><img src="../../figures/research/molecular-rydberg-dynamics/autoionization-delay-scan.png" alt="A three-dimensional contour plot of photoelectron yield against electron energy from 3.2 to 4.2 eV and time up to 300 femtoseconds, with line-outs drawn at 60, 150 and 300 femtoseconds showing progressively sharper and more structured peaks." loading="lazy" decoding="async"><figcaption>Why the time domain is worth the trouble. The same autoionizing resonance is shown as it builds up over 60, 150 and 300 fs: the structure is not present from the start but sharpens as the interference accumulates. A frequency-domain Fano profile is the last of these curves only, with no record of the order in which it formed.</figcaption></figure>
+<figure class="figure"><img src="../../figures/research/molecular-rydberg-dynamics/autoionization-delay-scan.png" class="diagram" alt="A three-dimensional contour plot of photoelectron yield against electron energy from 3.2 to 4.2 eV and time up to 300 femtoseconds, with line-outs drawn at 60, 150 and 300 femtoseconds showing progressively sharper and more structured peaks." loading="lazy" decoding="async"><figcaption>Why the time domain is worth the trouble. The same autoionizing resonance is shown as it builds up over 60, 150 and 300 fs: the structure is not present from the start but sharpens as the interference accumulates. A frequency-domain Fano profile is the last of these curves only, with no record of the order in which it formed.</figcaption></figure>
 </section>
 <p class="back"><a href="../../research.html">← All research</a></p>
 </main>
