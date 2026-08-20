@@ -96,10 +96,10 @@
 </a>
   </section>
   <section class="overview content">
-    <h2 id="why-these-methods-matter">Why These Methods Matter</h2>
-<p>Mathematics is the language of physics. From Newton's laws to Schrödinger's equation, every major physical theory is stated mathematically, and a physical idea is only as sharp as the mathematics used to express it. The methods in these notes are not a detour on the way to physics; they are how physics is done.</p>
-<p>Rather than meet those methods one at a time and wonder where each is going, it helps to see the destination first. The three areas below are ones you already know something about. Each raises a mathematical question, and each question is answered by a chapter of these notes. The same handful of tools keeps reappearing: series to approximate, linear algebra to handle many coupled quantities at once, and differential equations to describe change.</p>
-<section class="callout context"><header>1. Classical Mechanics</header><p>Mechanics begins with Newton's second law, which is a second-order ordinary differential equation:</p>
+    <h2 id="why-mathematics-is-important-for-learning-physics">Why Mathematics Is Important for Learning Physics</h2>
+<p>Mathematics is the working language of physics. From Newton's laws to Schrödinger's equation, every major physical theory is written in mathematical form, and a physical idea is only as precise as the mathematics used to express it. The methods in these notes are not a detour on the way to physics; they are part of the way physics is actually done.</p>
+<p>Instead of meeting these methods one at a time and wondering where each one leads, it is more useful to see the destination first. The three areas below will already be familiar. Each raises a concrete mathematical problem, and each problem is addressed by chapters in these notes. The same core tools appear repeatedly: series for approximation, linear algebra for coupled systems, and differential equations for change.</p>
+<section class="callout context"><header>1. Classical Mechanics</header><p>At its foundation, mechanics begins with Newton's second law, which is a second-order ordinary differential equation:</p>
 <div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <msub>
     <mrow data-mjx-texclass="ORD">
@@ -188,12 +188,12 @@
   </mfrac>
   <mo>.</mo>
 </math></div>
-<p>Solving it for a given force is the central problem of the subject.</p>
+<p>Given a force law, solving for the motion is the central task of the subject.</p>
 <figure class="figure figure-single"><img src="assets/img/Fig1.png" class="diagram" alt="Fig1" loading="lazy"></figure>
 <p><strong>Where this is developed:</strong></p>
 <ul><li><p><strong>Ordinary Differential Equations (Ch. 8):</strong> first- and second-order equations</p></li><li><p><strong>Linear Algebra (Ch. 3):</strong> systems of equations, eigenvalue problems, normal modes</p></li><li><p><strong>Infinite Series and Power Series (Ch. 1):</strong> approximating motion when no exact solution exists</p></li></ul>
-<p><strong>Applications:</strong> oscillators, planetary motion, variational principles</p></section>
-<section class="callout context"><header>2. Electromagnetism</header><p>Maxwell's equations describe how electric and magnetic fields behave in materials:</p>
+<p><strong>Applications:</strong> oscillators, planetary motion, variational formulations</p></section>
+<section class="callout context"><header>2. Electromagnetism</header><p>Maxwell's equations describe how electric and magnetic fields behave in matter:</p>
 <div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true" columnalign="right left right left" columnspacing="0em 2em 0em" rowspacing="3pt">
     <mtr>
@@ -324,12 +324,12 @@
     </mtr>
   </mtable>
 </math></div>
-<p>They are written in the language of vector calculus, so learning that language is a prerequisite for reading them at all.</p>
+<p>They are written in the language of vector calculus, so learning that language is essential for reading, interpreting, and applying them.</p>
 <figure class="figure figure-single"><img src="assets/img/Fig2.png" class="diagram" alt="Fig2" loading="lazy"></figure>
 <p><strong>Where this is developed:</strong></p>
 <ul><li><p><strong>Vector Analysis (Ch. 6):</strong> gradient, divergence, curl; Gauss's and Stokes's theorems</p></li><li><p><strong>Partial Differential Equations (Ch. 10):</strong> Laplace's, Poisson's, and wave equations</p></li><li><p><strong>Fourier Series and Transforms (Ch. 7):</strong> solving boundary value problems for fields</p></li><li><p><strong>Multiple Integrals (Ch. 5):</strong> charge and current distributions in space</p></li></ul>
-<p><strong>Applications:</strong> fields in dielectrics, waveguides, AC circuits</p></section>
-<section class="callout context"><header>3. Quantum Mechanics</header><p>Quantum mechanics describes a particle by a wavefunction, which evolves according to the Schrödinger equation:</p>
+<p><strong>Applications:</strong> fields in dielectrics, waveguides, and AC circuits</p></section>
+<section class="callout context"><header>3. Quantum Mechanics</header><p>In quantum mechanics, a particle is described by a wavefunction that evolves according to the Schrödinger equation:</p>
 <div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mi>i</mi>
   <mi data-mjx-alternate="1">ℏ</mi>
@@ -365,12 +365,12 @@
   <mi>ψ</mi>
   <mo>.</mo>
 </math></div>
-<p>Note that the equation is complex, and that it is again a partial differential equation: two of the threads running through these notes meet here.</p>
+<p>This equation is complex-valued and, once again, a partial differential equation. Two recurring threads of these notes meet here directly.</p>
 <figure class="figure figure-single"><img src="assets/img/Fig3.png" class="diagram" alt="Fig3" loading="lazy"></figure>
 <p><strong>Where this is developed:</strong></p>
 <ul><li><p><strong>Complex Numbers (Ch. 2):</strong> Euler's formula, complex amplitudes</p></li><li><p><strong>Linear Algebra (Ch. 3):</strong> operators, eigenvalues, Hilbert space</p></li><li><p><strong>Fourier Series and Transforms (Ch. 7):</strong> analysing wavefunctions in different bases</p></li><li><p><strong>Partial Differential Equations (Ch. 10):</strong> time-dependent and time-independent Schrödinger equations</p></li><li><p><strong>Series Solutions (Ch. 9):</strong> special functions such as Legendre and Bessel</p></li></ul>
-<p><strong>Applications:</strong> atomic structure, tunnelling, the harmonic oscillator</p></section>
-<p> Read across the three boxes and the pattern is hard to miss: the same few chapters keep being called on. That is the argument for studying these methods together rather than picking them up piecemeal. When a technique appears later in the notes and its purpose is not obvious, it is worth returning to this page to see which physical question it was meant to answer.</p>
+<p><strong>Applications:</strong> atomic structure, tunnelling, and the harmonic oscillator</p></section>
+<p> Read across the three boxes and a clear pattern appears: the same core chapters are called on repeatedly. That is why these methods are best studied as an integrated toolkit rather than learned piecemeal. When a technique appears later in the notes and its purpose is not immediately obvious, return to this page and connect it to the physical question it was designed to answer.</p>
   </section>
   <section class="preface content">
     <h2 id="preface">Preface</h2>
