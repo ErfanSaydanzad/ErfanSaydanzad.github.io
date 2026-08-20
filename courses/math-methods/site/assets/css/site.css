@@ -226,7 +226,7 @@ body {
 
 /* Captions are commentary on the text, not part of it, so they change voice:
    the sans, one step down, is the oldest editorial signal there is. */
-figcaption, .interactive-caption, .suggestion-meta {
+figcaption, .interactive-caption {
   font-family: var(--sans);
 }
 
@@ -234,7 +234,7 @@ figcaption, .interactive-caption, .suggestion-meta {
    final line, and even out the line lengths of a heading. Both degrade to
    ordinary wrapping where they are not supported. */
 p, li, figcaption, dd { text-wrap: pretty; }
-h1, h2, h3, h4, .project-card strong, .suggestion h3 { text-wrap: balance; }
+h1, h2, h3, h4, .project-card strong { text-wrap: balance; }
 
 /* Anchored links land under the sticky header without it. */
 :target { scroll-margin-top: 5rem; }
@@ -740,6 +740,42 @@ math {
   padding: 0.3em 0.45em;
 }
 
+/* \\overline, which chapter 2 sets every complex conjugate with. The bar is a
+   rule rather than a character because no math font carries a stretchable one
+   -- see _rule_bars in mmlcore.py -- and the browser was drawing MathJax's
+   fixed-width dash over the middle of the expression instead of across it.
+
+   The three numbers are Latin Modern's own OverbarVerticalGap,
+   OverbarRuleThickness and OverbarExtraAscender, so the rule lands where TeX
+   puts it and matches the weight of the fraction and radical rules the
+   browser draws from the same font. */
+.mml-overline,
+.mml-underline {
+  border-color: currentColor;
+  border-style: solid;
+  border-width: 0;
+}
+
+.mml-overline {
+  border-top-width: 0.04em;
+  padding-top: 0.12em;
+  margin-top: 0.04em;
+}
+
+.mml-underline {
+  border-bottom-width: 0.04em;
+  padding-bottom: 0.12em;
+  margin-bottom: 0.04em;
+}
+
+/* The bar character itself stays in the tree so the formula still says
+   "overbar" to a screen reader, and so a reading mode -- which drops this
+   stylesheet along with the rule above -- still shows a bar. It is only the
+   visible glyph that goes. */
+.mml-bar {
+  font-size: 0;
+}
+
 /* The equation number. MathML Core has no <mlabeledtr> either, so the tag is
    lifted out into an HTML element and set against the right margin the way
    the PDF sets it. In a reading mode the grid collapses and the number simply
@@ -872,107 +908,6 @@ figcaption {
   padding: 0 16px 14px;
   color: var(--ink-soft);
   font-size: 0.9rem;
-}
-
-/* ------------------------------------------------ suggested projects -- */
-
-/* Ten offers, each read in the same order: what is asked, what solves it,
-   what moves, and what will be asked back. The counter is drawn by hand and
-   pushed into the margin so that the four labelled lines of each entry stay
-   flush with one another and the list scans as a table would. */
-
-.suggestions {
-  counter-reset: suggestion;
-  margin: 1.6rem 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.suggestion {
-  counter-increment: suggestion;
-  position: relative;
-  margin: 0 0 1.4rem;
-  padding: 16px 18px 16px 62px;
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  background: var(--paper);
-  break-inside: avoid;
-}
-
-.suggestion::before {
-  content: counter(suggestion);
-  position: absolute;
-  top: 16px;
-  left: 18px;
-  width: 30px;
-  color: var(--accent);
-  font-family: var(--serif);
-  font-size: 1.5rem;
-  font-weight: 600;
-  line-height: 1;
-  text-align: right;
-}
-
-.suggestion h3 {
-  margin: 0;
-  font-family: var(--serif);
-  font-size: 1.16rem;
-  font-weight: 600;
-  line-height: 1.35;
-}
-
-.suggestion-meta {
-  margin: 2px 0 10px;
-  color: var(--muted);
-  font-size: 0.82rem;
-  letter-spacing: 0.01em;
-  text-transform: uppercase;
-}
-
-.suggestion p { margin: 0 0 0.6rem; font-size: 0.95rem; }
-.suggestion p strong { color: var(--ink); }
-.suggestion p:last-child { margin-bottom: 0; }
-
-/* The problem itself, quoted inside the card in the same ruled block a project
-   page gives it, so the thing a student is handed and the thing they hand back
-   look alike. */
-.suggestion .project-problem {
-  margin: 0 0 0.9rem;
-  padding: 2px 0 12px 16px;
-  font-size: 0.95rem;
-}
-.suggestion .project-problem-kicker { font-size: 0.72rem; }
-
-/* (a), (b), (c) -- lettered because the parts are referred to by letter in the
-   text around them, and because a numbered list inside a numbered list of
-   problems would be two counters saying different things. */
-.problem-parts { counter-reset: part; margin: 0.7rem 0 0; padding-left: 2.1em; list-style: none; }
-.problem-parts > li { counter-increment: part; position: relative; margin: 0 0 0.55rem; }
-.problem-parts > li:last-child { margin-bottom: 0; }
-.problem-parts > li::before {
-  content: "(" counter(part, lower-alpha) ")";
-  position: absolute;
-  left: -2.1em;
-  width: 1.8em;
-  color: var(--accent);
-  font-weight: 600;
-  text-align: left;
-}
-
-/* The question they will be asked in the talk. It is the part of the offer
-   that decides the grade, so it is set apart rather than buried at the end. */
-.suggestion-defend {
-  padding: 10px 12px;
-  border-left: 3px solid var(--accent);
-  background: var(--accent-soft);
-  font-style: italic;
-}
-
-.suggestion-defend strong { font-style: normal; }
-
-@media (max-width: 34rem) {
-  .suggestion { padding: 14px 14px 14px 14px; }
-  .suggestion::before { position: static; display: block; width: auto; text-align: left; }
 }
 
 /* ------------------------------------------------------ listening panel -- */

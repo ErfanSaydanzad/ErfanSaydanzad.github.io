@@ -97,6 +97,36 @@ math {
   padding: 0.3em 0.45em;
 }
 
+/* \overline: no math font carries a stretchable bar, so the rule is drawn in
+   CSS -- see _rule_bars in mmlcore.py. The numbers are Latin Modern's own
+   OverbarVerticalGap, OverbarRuleThickness and OverbarExtraAscender, which
+   put the rule where TeX puts it. */
+.mml-overline,
+.mml-underline {
+  border-color: currentColor;
+  border-style: solid;
+  border-width: 0;
+}
+
+.mml-overline {
+  border-top-width: 0.04em;
+  padding-top: 0.12em;
+  margin-top: 0.04em;
+}
+
+.mml-underline {
+  border-bottom-width: 0.04em;
+  padding-bottom: 0.12em;
+  margin-bottom: 0.04em;
+}
+
+/* The bar character stays in the tree so the formula still says "overbar" to
+   a screen reader, and so a reading mode -- which drops this stylesheet along
+   with the rule above -- still shows a bar. Only the visible glyph goes. */
+.mml-bar {
+  font-size: 0;
+}
+
 /* MathML Core has no <mlabeledtr>, so an equation number is lifted out into
    an HTML element and set against the right margin. */
 .math-block--numbered {
