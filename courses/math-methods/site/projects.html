@@ -76,72 +76,116 @@
 </section>
   <section class="content">
   <h2>The assignment</h2>
-  <p>Choose a problem in physics or engineering that interests you, solve it using
-  the mathematical methods from this course, and visualise the result. Then write it
-  up as a short report. The strongest reports are published here, on the course site,
-  for future students to learn from.</p>
+  <p>Pick a problem in physics or engineering that interests you. Solve it with
+  the mathematical methods from this course, visualize the result, and write it up
+  as a short report. The strongest reports are published on this page, where next
+  year's students will read them.</p>
 
-  <p>Bring me your problem &mdash; something from your major, your research group, or
-  your job &mdash; in a paragraph saying what the question is and which methods from
-  this course will answer it, and clear it with me before you start. The test a
-  proposal has to pass is the same one the worked examples above pass: the
+  <h2>Choosing your problem</h2>
+  <p>The problem is yours to choose, but clear it with me before you start.
+  Bring me one paragraph: what the question is, and which methods from this course
+  will answer it. Something from your major, your research group or your job is
+  ideal, because you already care how it comes out.</p>
+
+  <p>A proposal has to pass the same test the worked examples above pass: the
   mathematics of this course has to be doing the real work, not decorating a
-  simulation.</p>
+  simulation. A useful way to check is to ask what is left if you take the
+  computer away. If the answer is nothing &mdash; if the figures could have come
+  out of a library routine without your ever writing down an equation &mdash;
+  it is not a project for this course yet.</p>
 
   <h2>What it is worth</h2>
-  <p>The project is worth <strong>5%</strong>, added on top of the 100% of the
-  course. It is extra credit: not doing it costs you nothing, and doing it well is
-  the cheapest 5% you will ever earn.</p>
+  <p>The project is worth <strong>5%</strong> added on top of your course grade,
+  so a perfect score in the rest of the course plus a good project comes to 105%.
+  It is extra credit. Not doing it costs you nothing, and it is the cheapest 5%
+  in the course.</p>
 
-  <p>You may use AI on any part of this. I would rather you did, and said so &mdash;
-  it is how the work is done now. But it means the artefact cannot be what is
-  graded, so the grade lives in the <strong>ten-minute presentation</strong>. Each
-  problem below carries a question you should expect to be asked while you are
-  standing there, and each one is chosen so that it cannot be answered by anyone
-  who has not personally followed the derivation. Use whatever tools you like to
-  build the thing; be able to defend every line of it.</p>
+  <p>You may use AI for any part of this. I would rather you did, and said so
+  &mdash; it is how the work is done now. But that is exactly why the document
+  you hand in cannot be the thing I grade: I cannot tell from a finished report
+  who worked it out. So the grade comes from the <strong>ten-minute
+  presentation</strong>. Expect to be asked, while you are standing there, why a
+  particular step follows from the one above it, or what would change if some
+  quantity in the problem were doubled. Those questions are hard to answer unless
+  you have personally been through the derivation, and easy if you have. Build
+  the project with whatever tools you like; be ready to defend every line
+  of it.</p>
 </section>
   <section class="content">
-  <h2>What to submit</h2>
-  <p>Send a single <code>.zip</code> of one folder named after your project. Inside it:</p>
+  <h2>What to hand in</h2>
+  <p>Two things: the project folder and the presentation.</p>
+
+  <p>The <strong>project folder</strong> is a single <code>.zip</code> of one
+  folder named after your project. Inside it:</p>
   <ul>
-    <li><strong>&lt;Project&gt;.tex</strong> &mdash; your write-up in LaTeX, named after
-    the folder (<code>Maxwell/Maxwell.tex</code>). It should have a title, open with
-    the problem itself, work out the mathematics, and present your results.</li>
-    <li><strong>code/</strong> &mdash; the Python that produces every figure and the
+    <li><strong>&lt;Project&gt;.tex</strong> &mdash; the report, in LaTeX, named
+    after the folder: <code>Maxwell/Maxwell.tex</code>.</li>
+    <li><strong>code/</strong> &mdash; the Python that draws every figure and the
     animation, writing them into <code>figures/</code>.</li>
-    <li><strong>figures/</strong> &mdash; the plots (PNG) plus an animation (GIF) and a
-    still frame of it for the PDF.</li>
+    <li><strong>figures/</strong> &mdash; what that code produced: the plots as
+    PNG, the animation as a GIF, and one still frame of the animation for the
+    PDF to show in its place.</li>
   </ul>
-  <p>Separately, hand in a <strong>ten-minute presentation</strong> &mdash; PowerPoint,
-  Keynote or Beamer &mdash; covering the question, the mathematics, the figures and the
-  conclusion; roughly one slide per minute. Put the equations in it as they appear
-  in your report, and if your tool cannot set mathematics well, screenshot them
-  from your PDF. The presentation is not part of the project folder and is not
-  published here.</p>
+  <p>Download the template above and build your folder out of it rather than from
+  scratch. It is a complete project in exactly this layout, so anything you are
+  unsure of is already answered there by example.</p>
 
-  <p>Make the animation the best thing you build. It is the preview on this page,
-  and it is what decides whether anyone opens your project at all. Give it a
-  caption that says what to watch for.</p>
-  <p>Open with the problem. Under the title, before anything you wrote about it,
-  put a <code>problemstatement</code> block giving what is known and what is to be
-  found, in parts &mdash; the way the worked examples above open. It is what
-  tells a reader what you set out to do before they read how you did it, and
-  writing it first is the cheapest way to find out whether your project is one
-  problem or three. Your abstract goes under it, printed by
-  <code>\projectabstract</code>, and everything from there down is your report.</p>
-  <p>Your <code>.tex</code> must compile to a PDF on its own, and it should use only
-  standard constructs (sections, equations, figures, lists) plus the helper
-  commands <code>\projectinfo</code>, <code>problemstatement</code>,
-  <code>\projectabstract</code> and <code>\webanimation</code> shown in the
-  template, so it also renders correctly on this website. The report is for the
-  physics and the mathematics: keep source code out of it, and let the figures
-  carry the results.</p>
+  <p>The <strong>ten-minute presentation</strong> &mdash; PowerPoint, Keynote or
+  Beamer &mdash; covers the question, the mathematics, the figures and the
+  conclusion, at roughly one slide per minute. Show the equations as they appear
+  in your report; if your slide software sets mathematics badly, screenshot them
+  from your PDF instead. Hand the presentation in on its own: it is not part of
+  the project folder, and it is not published here.</p>
 
-  <p>Say which methods from this course you used, <em>where you use them</em> &mdash;
-  "separating the variables (Chapter 10)", "the Fourier transform (Chapter 7)" &mdash;
-  not only in a list at the end. Half of the point of the project is recognising
-  the course inside a problem it was not written for.</p>
+  <h2>Writing the report</h2>
+
+  <p><strong>Open with the problem.</strong> Directly under the title, before a
+  word of your own, put a <code>problemstatement</code> environment setting out
+  what is given and what is to be found, in lettered parts &mdash; the way every
+  worked example above opens. A reader needs to know what was asked before any of
+  the work below it means anything. Writing it first is also the cheapest way to
+  discover whether you have one problem or three. Your abstract goes immediately
+  under it, printed by <code>\projectabstract</code>, and everything from there
+  down is the report.</p>
+
+  <p><strong>Name the methods where you use them.</strong> Write "separating the
+  variables (Chapter 10)" or "the Fourier transform (Chapter 7)" at the line in
+  the derivation where you actually do it, not only in a list at the end. Half
+  the point of the project is recognizing this course inside a problem that was
+  not written for it.</p>
+
+  <p><strong>Make the animation the best thing you build.</strong> It is the
+  preview that stands for your project on this page, and it is what decides
+  whether anyone opens the project at all. Give it a caption that says what to
+  watch for, so a reader knows what they are looking at before it loops.</p>
+
+  <p><strong>Keep the code out of the report.</strong> The report is for the
+  physics and the mathematics. The code lives in <code>code/</code>, and the
+  figures are how the reader sees what it did.</p>
+
+  <p>Your <code>.tex</code> has to compile to a PDF on its own, and this website
+  renders that same file into the web page. So stay with ordinary LaTeX &mdash;
+  sections, equations, figures, lists &mdash; plus the four helper commands the
+  template defines. Do not rename them or change the order of their
+  arguments:</p>
+  <ul>
+    <li><code>\projectinfo</code> &mdash; your title, your name, and a one- or
+    two-sentence abstract. It prints the title and your name, and it is where
+    the heading of your card on this page comes from.</li>
+    <li><code>\projectabstract</code> &mdash; prints that abstract, directly
+    under the problem, where your report begins.</li>
+    <li><code>\webanimation</code> &mdash; your GIF and its still frame. The
+    animation plays on the website; the still frame stands in for it in the
+    PDF.</li>
+    <li><code>\projectmethod</code> &mdash; <code>analytic</code> or
+    <code>numerical</code>. It prints nothing in the PDF, because your report
+    says which it is in its own words. It is what labels your project
+    <em>solved on paper</em> or <em>solved on a computer</em> here.</li>
+  </ul>
+  <p>Anything more exotic may compile on your machine and still come out wrong
+  here. The <code>README.txt</code> inside the template is the full checklist:
+  what belongs in the folder, what to delete before you hand it in, and what
+  makes a figure worth including.</p>
 </section>
   <section class="content project-group">
   <h2>Student projects</h2>
