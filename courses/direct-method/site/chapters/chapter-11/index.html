@@ -6,9 +6,9 @@
   <title>Chapter 11: Time-Dependent Rydberg–Fano Dynamics in CO2 | Direct Method</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
   <link rel="preload" href="../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../../assets/css/site.css?v=d088bfac">
+  <link rel="stylesheet" href="../../assets/css/site.css?v=856ec339">
   <link rel="preload" href="../../assets/fonts/latinmodern-math.woff2" as="font" type="font/woff2" crossorigin>
-  <script defer src="../../assets/js/main.js?v=d088bfac"></script>
+  <script defer src="../../assets/js/main.js?v=856ec339"></script>
 
 <style>
 .site-header { justify-content: flex-start; gap: 16px; }
@@ -86,10 +86,10 @@
 <p>This is where the book arrives.</p>
 <p>Chapter 10 gave the Fano profile: the asymmetric line produced when a resonance and a direct route lead to the same continuum. That result is <em>stationary</em>. It describes the spectrum obtained after waiting long enough for everything to settle, and says nothing about how the profile came to be.</p>
 <p>But the profile is not present at the instant of excitation. It builds up over the autoionization lifetime, while the Rydberg population that feeds it decays. With attosecond pulses that construction can be watched, and watching it requires abandoning the stationary picture and keeping the amplitudes and their phases — Chapter 6's coupled equations, with no perturbative expansion.</p>
-<p>The chapter sets up the channel basis, derives the coupled equations by projection, states the approximations, and says what the calculation predicts. The equations of Sec. <a href="../chapter-11/index.html#sec-11-deriving-the-coupled-equations">11.4</a> are those of the research this course prepares for.<span class="footnote">(E. Saydanzad, V.-H. Hoang and U. Thumm,
+<p>The chapter sets up the channel basis, derives the coupled equations by projection, states the approximations, and says what the calculation predicts. The equations of Sec. <a class="xref" href="../chapter-11/index.html#sec-11-deriving-the-coupled-equations">11.4</a> are those of the research this course prepares for.<span class="footnote">(E. Saydanzad, V.-H. Hoang and U. Thumm,
 <em>Time-resolved Rydberg dynamics in molecules</em>, validated against the
 photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</strong>,
-043106 (2024).)</span> They look formidable; they are not. Every symbol has been defined in an earlier chapter, and the whole system is Theorem <a href="../chapter-06/index.html#theorem-thm-td-coupled">6.2.1</a> with the terms written out.</p>
+043106 (2024).)</span> They look formidable; they are not. Every symbol has been defined in an earlier chapter, and the whole system is Theorem <a class="xref" href="../chapter-06/index.html#theorem-thm-td-coupled">6.2.1</a> with the terms written out.</p>
 <p>We work in atomic units throughout, so <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi data-mjx-alternate="1">ℏ</mi>
   <mo>=</mo>
@@ -147,7 +147,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
   </msub>
 </math></span> (threshold <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>13.78</mn>
-</math></span> eV, Example <a href="../chapter-07/index.html#example-ex-mol-co2-ions">7.5.2</a>) plus a photoelectron. Since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> eV, Example <a class="xref" href="../chapter-07/index.html#example-ex-mol-co2-ions">7.5.2</a>) plus a photoelectron. Since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>17.6</mn>
   <mo>&gt;</mo>
   <mn>13.78</mn>
@@ -223,7 +223,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
   <mi>B</mi>
 </math></span>) shows quantum beats between coherently excited Rydberg states.</p>
 <h2 id="sec-11-the-channel-basis"><span class="sec-number">11.3</span>The Channel Basis</h2>
-<p>Expand the molecular state in the available states, exactly as Theorem <a href="../chapter-10/index.html#theorem-thm-fano-completeness">10.2.1</a> prescribes — a sum over discrete states and an integral over each continuum — with the free-evolution phases extracted as in Chapter 6:</p>
+<p>Expand the molecular state in the available states, exactly as Theorem <a class="xref" href="../chapter-10/index.html#theorem-thm-fano-completeness">10.2.1</a> prescribes — a sum over discrete states and an integral over each continuum — with the free-evolution phases extracted as in Chapter 6:</p>
 <p>Following the notation of the manuscript Supplementary, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mi data-mjx-variant="-tex-calligraphic" mathvariant="normal">𝒞</mi>
@@ -282,15 +282,15 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
                 <mtable displaystyle="true" columnalign="right left" columnspacing="0em" rowspacing="3pt">
                   <mtr>
                     <mtd>
-                      <mrow data-mjx-texclass="ORD">
-                        <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+                      <mrow data-mjx-texclass="INNER">
+                        <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
                         <mrow data-mjx-texclass="ORD">
                           <mi mathvariant="normal">Ψ</mi>
                           <mo stretchy="false">(</mo>
                           <mi>t</mi>
                           <mo stretchy="false">)</mo>
                         </mrow>
-                        <mo fence="false" stretchy="false">⟩</mo>
+                        <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
                       </mrow>
                       <mo>=</mo>
                       <mstyle scriptlevel="0">
@@ -320,12 +320,12 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
                           <mi>t</mi>
                         </mrow>
                       </msup>
-                      <mrow data-mjx-texclass="ORD">
-                        <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+                      <mrow data-mjx-texclass="INNER">
+                        <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
                         <mrow data-mjx-texclass="ORD">
                           <mi>g</mi>
                         </mrow>
-                        <mo fence="false" stretchy="false">⟩</mo>
+                        <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
                       </mrow>
                       <mo>+</mo>
                       <munder>
@@ -368,8 +368,8 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
                           <mi>t</mi>
                         </mrow>
                       </msup>
-                      <mrow data-mjx-texclass="ORD">
-                        <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+                      <mrow data-mjx-texclass="INNER">
+                        <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
                         <mrow data-mjx-texclass="ORD">
                           <msub>
                             <mrow data-mjx-texclass="ORD">
@@ -378,7 +378,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
                             <mi>n</mi>
                           </msub>
                         </mrow>
-                        <mo fence="false" stretchy="false">⟩</mo>
+                        <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
                       </mrow>
                     </mtd>
                   </mtr>
@@ -438,8 +438,8 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
                           <mi>t</mi>
                         </mrow>
                       </msup>
-                      <mrow data-mjx-texclass="ORD">
-                        <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+                      <mrow data-mjx-texclass="INNER">
+                        <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
                         <mrow data-mjx-texclass="ORD">
                           <mrow data-mjx-texclass="ORD">
                             <mi data-mjx-variant="-tex-calligraphic" mathvariant="normal">𝒞</mi>
@@ -450,7 +450,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
                             <mi>α</mi>
                           </msub>
                         </mrow>
-                        <mo fence="false" stretchy="false">⟩</mo>
+                        <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
                       </mrow>
                     </mtd>
                   </mtr>
@@ -510,8 +510,8 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
                           <mi>t</mi>
                         </mrow>
                       </msup>
-                      <mrow data-mjx-texclass="ORD">
-                        <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+                      <mrow data-mjx-texclass="INNER">
+                        <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
                         <mrow data-mjx-texclass="ORD">
                           <mrow data-mjx-texclass="ORD">
                             <mi data-mjx-variant="-tex-calligraphic" mathvariant="normal">𝒩</mi>
@@ -522,7 +522,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
                             <mi>β</mi>
                           </msub>
                         </mrow>
-                        <mo fence="false" stretchy="false">⟩</mo>
+                        <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
                       </mrow>
                     </mtd>
                   </mtr>
@@ -674,13 +674,13 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
   <mtable displaystyle="true">
     <mtr>
       <mtd>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <msub>
           <mi>c</mi>
           <mi>g</mi>
         </msub>
         <msup>
-          <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+          <mo stretchy="false">|</mo>
           <mrow data-mjx-texclass="ORD">
             <mn>2</mn>
           </mrow>
@@ -690,7 +690,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
           <mo data-mjx-texclass="OP" stretchy="true">∑</mo>
           <mi>n</mi>
         </munder>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <msub>
           <mi>c</mi>
           <mrow data-mjx-texclass="ORD">
@@ -703,7 +703,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
           </mrow>
         </msub>
         <msup>
-          <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+          <mo stretchy="false">|</mo>
           <mrow data-mjx-texclass="ORD">
             <mn>2</mn>
           </mrow>
@@ -715,7 +715,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
           <mi>ε</mi>
           <mi>α</mi>
         </msub>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <msub>
           <mi>c</mi>
           <mrow data-mjx-texclass="ORD">
@@ -725,7 +725,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
           </mrow>
         </msub>
         <msup>
-          <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+          <mo stretchy="false">|</mo>
           <mrow data-mjx-texclass="ORD">
             <mn>2</mn>
           </mrow>
@@ -737,7 +737,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
           <mi>ε</mi>
           <mi>β</mi>
         </msub>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <msub>
           <mi>c</mi>
           <mrow data-mjx-texclass="ORD">
@@ -747,7 +747,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
           </mrow>
         </msub>
         <msup>
-          <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+          <mo stretchy="false">|</mo>
           <mrow data-mjx-texclass="ORD">
             <mn>2</mn>
           </mrow>
@@ -759,16 +759,16 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:eq:CO2-normalization">(11.2)</span></div>
-<p>This is the check to apply to any numerical solution (Remark <a href="../chapter-06/index.html#remark-rem-td-norm">6.2.3</a>).</p>
+<p>This is the check to apply to any numerical solution (Remark <a class="xref" href="../chapter-06/index.html#remark-rem-td-norm">6.2.3</a>).</p>
 <h3 id="sec-11-the-hamiltonian"><span class="sec-number">11.3.1</span>The Hamiltonian</h3>
 <div class="math-block math-block--numbered" id="eq-eq-co2-hamiltonian"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
         <mrow data-mjx-texclass="ORD">
-          <mover>
+          <mover accent="true">
             <mi>H</mi>
-            <mo stretchy="false">^</mo>
+            <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
           </mover>
         </mrow>
         <mo stretchy="false">(</mo>
@@ -777,9 +777,9 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
         <mo>=</mo>
         <msub>
           <mrow data-mjx-texclass="ORD">
-            <mover>
+            <mover accent="true">
               <mi>K</mi>
-              <mo stretchy="false">^</mo>
+              <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
             </mover>
           </mrow>
           <mi>N</mi>
@@ -787,9 +787,9 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
         <mo>+</mo>
         <msub>
           <mrow data-mjx-texclass="ORD">
-            <mover>
+            <mover accent="true">
               <mi>V</mi>
-              <mo stretchy="false">^</mo>
+              <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
             </mover>
           </mrow>
           <mrow data-mjx-texclass="ORD">
@@ -800,18 +800,18 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
         <mo>+</mo>
         <msub>
           <mrow data-mjx-texclass="ORD">
-            <mover>
+            <mover accent="true">
               <mi>H</mi>
-              <mo stretchy="false">^</mo>
+              <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
             </mover>
           </mrow>
           <mi>e</mi>
         </msub>
         <mo>+</mo>
         <mrow data-mjx-texclass="ORD">
-          <mover>
+          <mover accent="true">
             <mi>D</mi>
-            <mo stretchy="false">^</mo>
+            <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
           </mover>
         </mrow>
         <mo stretchy="false">(</mo>
@@ -825,9 +825,9 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
 <p>with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mrow data-mjx-texclass="ORD">
-      <mover>
+      <mover accent="true">
         <mi>K</mi>
-        <mo stretchy="false">^</mo>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
       </mover>
     </mrow>
     <mi>N</mi>
@@ -835,9 +835,9 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
 </math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mrow data-mjx-texclass="ORD">
-      <mover>
+      <mover accent="true">
         <mi>V</mi>
-        <mo stretchy="false">^</mo>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
       </mover>
     </mrow>
     <mrow data-mjx-texclass="ORD">
@@ -845,12 +845,12 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
       <mi>N</mi>
     </mrow>
   </msub>
-</math></span> from Eq. <a href="../chapter-07/index.html#eq-eq-mol-h-parts">(7.2)</a>. The essential step is to split the electronic Hamiltonian according to whether it acts within a channel or between channels. Introducing projectors <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> from Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-h-parts">(7.2)</a>. The essential step is to split the electronic Hamiltonian according to whether it acts within a channel or between channels. Introducing projectors <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mrow data-mjx-texclass="ORD">
-      <mover>
+      <mover accent="true">
         <mi>P</mi>
-        <mo stretchy="false">^</mo>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
       </mover>
     </mrow>
     <mi>a</mi>
@@ -862,9 +862,9 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
       <mtd>
         <msub>
           <mrow data-mjx-texclass="ORD">
-            <mover>
+            <mover accent="true">
               <mi>H</mi>
-              <mo stretchy="false">^</mo>
+              <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
             </mover>
           </mrow>
           <mi>e</mi>
@@ -872,9 +872,9 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
         <mo>=</mo>
         <msub>
           <mrow data-mjx-texclass="ORD">
-            <mover>
+            <mover accent="true">
               <mi>H</mi>
-              <mo stretchy="false">^</mo>
+              <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
             </mover>
           </mrow>
           <mrow data-mjx-texclass="ORD">
@@ -886,9 +886,9 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
         <mo>+</mo>
         <msub>
           <mrow data-mjx-texclass="ORD">
-            <mover>
+            <mover accent="true">
               <mi>V</mi>
-              <mo stretchy="false">^</mo>
+              <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
             </mover>
           </mrow>
           <mrow data-mjx-texclass="ORD">
@@ -903,9 +903,9 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
         </mstyle>
         <msub>
           <mrow data-mjx-texclass="ORD">
-            <mover>
+            <mover accent="true">
               <mi>H</mi>
-              <mo stretchy="false">^</mo>
+              <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
             </mover>
           </mrow>
           <mrow data-mjx-texclass="ORD">
@@ -921,27 +921,27 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
         </munder>
         <msub>
           <mrow data-mjx-texclass="ORD">
-            <mover>
+            <mover accent="true">
               <mi>P</mi>
-              <mo stretchy="false">^</mo>
+              <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
             </mover>
           </mrow>
           <mi>a</mi>
         </msub>
         <msub>
           <mrow data-mjx-texclass="ORD">
-            <mover>
+            <mover accent="true">
               <mi>H</mi>
-              <mo stretchy="false">^</mo>
+              <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
             </mover>
           </mrow>
           <mi>e</mi>
         </msub>
         <msub>
           <mrow data-mjx-texclass="ORD">
-            <mover>
+            <mover accent="true">
               <mi>P</mi>
-              <mo stretchy="false">^</mo>
+              <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
             </mover>
           </mrow>
           <mi>a</mi>
@@ -952,9 +952,9 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
         </mstyle>
         <msub>
           <mrow data-mjx-texclass="ORD">
-            <mover>
+            <mover accent="true">
               <mi>V</mi>
-              <mo stretchy="false">^</mo>
+              <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
             </mover>
           </mrow>
           <mrow data-mjx-texclass="ORD">
@@ -974,27 +974,27 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
         </munder>
         <msub>
           <mrow data-mjx-texclass="ORD">
-            <mover>
+            <mover accent="true">
               <mi>P</mi>
-              <mo stretchy="false">^</mo>
+              <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
             </mover>
           </mrow>
           <mi>a</mi>
         </msub>
         <msub>
           <mrow data-mjx-texclass="ORD">
-            <mover>
+            <mover accent="true">
               <mi>H</mi>
-              <mo stretchy="false">^</mo>
+              <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
             </mover>
           </mrow>
           <mi>e</mi>
         </msub>
         <msub>
           <mrow data-mjx-texclass="ORD">
-            <mover>
+            <mover accent="true">
               <mi>P</mi>
-              <mo stretchy="false">^</mo>
+              <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
             </mover>
           </mrow>
           <mi>b</mi>
@@ -1007,9 +1007,9 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
 <p><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mrow data-mjx-texclass="ORD">
-      <mover>
+      <mover accent="true">
         <mi>H</mi>
-        <mo stretchy="false">^</mo>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
       </mover>
     </mrow>
     <mrow data-mjx-texclass="ORD">
@@ -1021,9 +1021,9 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
 </math></span> gives each channel its energies. <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mrow data-mjx-texclass="ORD">
-      <mover>
+      <mover accent="true">
         <mi>V</mi>
-        <mo stretchy="false">^</mo>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
       </mover>
     </mrow>
     <mrow data-mjx-texclass="ORD">
@@ -1036,16 +1036,16 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
   <mrow data-mjx-texclass="ORD">
     <mi data-mjx-variant="-tex-calligraphic" mathvariant="normal">𝒞</mi>
   </mrow>
-</math></span> continuum. It is the autoionization coupling of Chapter 10, Eq. <a href="../chapter-10/index.html#eq-eq-fano-coupling">(10.4)</a>, under its research name.</p>
+</math></span> continuum. It is the autoionization coupling of Chapter 10, Eq. <a class="xref" href="../chapter-10/index.html#eq-eq-fano-coupling">(10.4)</a>, under its research name.</p>
 <p>The laser term is Chapter 6's dipole interaction with two pulses:</p>
 <div class="math-block math-block--numbered" id="eq-eq-co2-dipole"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
         <mrow data-mjx-texclass="ORD">
-          <mover>
+          <mover accent="true">
             <mi>D</mi>
-            <mo stretchy="false">^</mo>
+            <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
           </mover>
         </mrow>
         <mo stretchy="false">(</mo>
@@ -1054,9 +1054,9 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
         <mo>=</mo>
         <msub>
           <mrow data-mjx-texclass="ORD">
-            <mover>
+            <mover accent="true">
               <mi>D</mi>
-              <mo stretchy="false">^</mo>
+              <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
             </mover>
           </mrow>
           <mrow data-mjx-texclass="ORD">
@@ -1111,9 +1111,9 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
         <mo>+</mo>
         <msub>
           <mrow data-mjx-texclass="ORD">
-            <mover>
+            <mover accent="true">
               <mi>D</mi>
-              <mo stretchy="false">^</mo>
+              <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
             </mover>
           </mrow>
           <mrow data-mjx-texclass="ORD">
@@ -1195,35 +1195,35 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
   </msub>
 </math></span> appearing in exactly one place — the argument of the infrared envelope. That is the knob the experiment turns.</p>
 <h2 id="sec-11-deriving-the-coupled-equations"><span class="sec-number">11.4</span>Deriving the Coupled Equations</h2>
-<p>The derivation is Theorem <a href="../chapter-06/index.html#theorem-thm-td-coupled">6.2.1</a> applied to Eq. <a href="../chapter-11/index.html#eq-eq-co2-expansion">(11.1)</a>, and it is worth following once because the result looks more complicated than the procedure.</p>
-<p><strong>Step 1: project.</strong> Substituting Eq. <a href="../chapter-11/index.html#eq-eq-co2-expansion">(11.1)</a> into <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>The derivation is Theorem <a class="xref" href="../chapter-06/index.html#theorem-thm-td-coupled">6.2.1</a> applied to Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-expansion">(11.1)</a>, and it is worth following once because the result looks more complicated than the procedure.</p>
+<p><strong>Step 1: project.</strong> Substituting Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-expansion">(11.1)</a> into <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>i</mi>
   <msub>
     <mi>∂</mi>
     <mi>t</mi>
   </msub>
-  <mrow data-mjx-texclass="ORD">
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
       <mi mathvariant="normal">Ψ</mi>
     </mrow>
-    <mo fence="false" stretchy="false">⟩</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
   <mo>=</mo>
   <mrow data-mjx-texclass="ORD">
-    <mover>
+    <mover accent="true">
       <mi>H</mi>
-      <mo stretchy="false">^</mo>
+      <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
     </mover>
   </mrow>
-  <mrow data-mjx-texclass="ORD">
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
       <mi mathvariant="normal">Ψ</mi>
     </mrow>
-    <mo fence="false" stretchy="false">⟩</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
-</math></span> and projecting onto each basis state gives, exactly as in the proof of Theorem <a href="../chapter-06/index.html#theorem-thm-td-coupled">6.2.1</a>, one equation per amplitude. Each term carries three factors: the amplitude it comes from, the matrix element connecting the two states, and a phase <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> and projecting onto each basis state gives, exactly as in the proof of Theorem <a class="xref" href="../chapter-06/index.html#theorem-thm-td-coupled">6.2.1</a>, one equation per amplitude. Each term carries three factors: the amplitude it comes from, the matrix element connecting the two states, and a phase <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>e</mi>
     <mrow data-mjx-texclass="ORD">
@@ -1253,18 +1253,18 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
 </math></span>.</p>
 <p><strong>Step 2: identify the matrix elements.</strong> Only three kinds are nonzero, and each was established earlier:</p>
 <ul><li><p><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow data-mjx-texclass="ORD">
-    <mo fence="false" stretchy="false">⟨</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
     <mrow data-mjx-texclass="ORD">
       <mi>g</mi>
     </mrow>
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
   </mrow>
   <msub>
     <mrow data-mjx-texclass="ORD">
-      <mover>
+      <mover accent="true">
         <mi>D</mi>
-        <mo stretchy="false">^</mo>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
       </mover>
     </mrow>
     <mrow data-mjx-texclass="ORD">
@@ -1273,8 +1273,8 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
       </mrow>
     </mrow>
   </msub>
-  <mrow data-mjx-texclass="ORD">
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
       <msub>
         <mrow data-mjx-texclass="ORD">
@@ -1283,21 +1283,21 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
         <mi>n</mi>
       </msub>
     </mrow>
-    <mo fence="false" stretchy="false">⟩</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
 </math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow data-mjx-texclass="ORD">
-    <mo fence="false" stretchy="false">⟨</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
     <mrow data-mjx-texclass="ORD">
       <mi>g</mi>
     </mrow>
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
   </mrow>
   <msub>
     <mrow data-mjx-texclass="ORD">
-      <mover>
+      <mover accent="true">
         <mi>D</mi>
-        <mo stretchy="false">^</mo>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
       </mover>
     </mrow>
     <mrow data-mjx-texclass="ORD">
@@ -1306,8 +1306,8 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
       </mrow>
     </mrow>
   </msub>
-  <mrow data-mjx-texclass="ORD">
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
       <mrow data-mjx-texclass="ORD">
         <mi data-mjx-variant="-tex-calligraphic" mathvariant="normal">𝒞</mi>
@@ -1318,11 +1318,11 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
         <mi>α</mi>
       </msub>
     </mrow>
-    <mo fence="false" stretchy="false">⟩</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
-</math></span> — XUV excitation and direct ionization, both allowed by Example <a href="../chapter-09/index.html#example-ex-elec-parity">9.7.1</a>;</p></li><li><p><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow data-mjx-texclass="ORD">
-    <mo fence="false" stretchy="false">⟨</mo>
+</math></span> — XUV excitation and direct ionization, both allowed by Example <a class="xref" href="../chapter-09/index.html#example-ex-elec-parity">9.7.1</a>;</p></li><li><p><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
     <mrow data-mjx-texclass="ORD">
       <msub>
         <mrow data-mjx-texclass="ORD">
@@ -1331,13 +1331,13 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
         <mi>n</mi>
       </msub>
     </mrow>
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
   </mrow>
   <msub>
     <mrow data-mjx-texclass="ORD">
-      <mover>
+      <mover accent="true">
         <mi>D</mi>
-        <mo stretchy="false">^</mo>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
       </mover>
     </mrow>
     <mrow data-mjx-texclass="ORD">
@@ -1346,8 +1346,8 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
       </mrow>
     </mrow>
   </msub>
-  <mrow data-mjx-texclass="ORD">
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
       <mrow data-mjx-texclass="ORD">
         <mi data-mjx-variant="-tex-calligraphic" mathvariant="normal">𝒩</mi>
@@ -1358,11 +1358,11 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
         <mi>β</mi>
       </msub>
     </mrow>
-    <mo fence="false" stretchy="false">⟩</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
 </math></span> — infrared probe ionization;</p></li><li><p><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow data-mjx-texclass="ORD">
-    <mo fence="false" stretchy="false">⟨</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
     <mrow data-mjx-texclass="ORD">
       <mrow data-mjx-texclass="ORD">
         <mi data-mjx-variant="-tex-calligraphic" mathvariant="normal">𝒞</mi>
@@ -1373,13 +1373,13 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
         <mi>α</mi>
       </msub>
     </mrow>
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
   </mrow>
   <msub>
     <mrow data-mjx-texclass="ORD">
-      <mover>
+      <mover accent="true">
         <mi>V</mi>
-        <mo stretchy="false">^</mo>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
       </mover>
     </mrow>
     <mrow data-mjx-texclass="ORD">
@@ -1388,8 +1388,8 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
       </mrow>
     </mrow>
   </msub>
-  <mrow data-mjx-texclass="ORD">
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
       <msub>
         <mrow data-mjx-texclass="ORD">
@@ -1398,7 +1398,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
         <mi>n</mi>
       </msub>
     </mrow>
-    <mo fence="false" stretchy="false">⟩</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
   <mo>=</mo>
   <msqrt>
@@ -1415,8 +1415,8 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
     <mn>2</mn>
     <mi>π</mi>
   </msqrt>
-</math></span> — autoionization, from Eq. <a href="../chapter-10/index.html#eq-eq-fano-effective-coupling">(10.9)</a>.</p></li></ul>
-<p><strong>Step 3: apply the rotating-wave approximation</strong> to the XUV pulse (Def. <a href="../chapter-06/index.html#definition-def-td-rwa">6.4.1</a>), discarding the counter-rotating terms.</p>
+</math></span> — autoionization, from Eq. <a class="xref" href="../chapter-10/index.html#eq-eq-fano-effective-coupling">(10.9)</a>.</p></li></ul>
+<p><strong>Step 3: apply the rotating-wave approximation</strong> to the XUV pulse (Def. <a class="xref" href="../chapter-06/index.html#definition-def-td-rwa">6.4.1</a>), discarding the counter-rotating terms.</p>
 <p><strong>Step 4: eliminate the coupled continuum.</strong> The <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mi data-mjx-variant="-tex-calligraphic" mathvariant="normal">𝒞</mi>
@@ -1460,7 +1460,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
   <mo stretchy="false">(</mo>
   <mi>E</mi>
   <mo stretchy="false">)</mo>
-</math></span> was in Sec. <a href="../chapter-10/index.html#sec-10-fano-s-diagonalisation">10.4</a>. This is the <em>Markov–Fano reduction</em>, and it is where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> was in Sec. <a class="xref" href="../chapter-10/index.html#sec-10-fano-s-diagonalisation">10.4</a>. This is the <em>Markov–Fano reduction</em>, and it is where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi mathvariant="normal">Γ</mi>
 </math></span> enters the time domain.</p>
 <p>The result is four equations.</p>
@@ -1580,18 +1580,18 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
               <mstyle scriptlevel="0">
                 <mspace width="0.167em" />
               </mstyle>
-              <mrow data-mjx-texclass="ORD">
-                <mo fence="false" stretchy="false">⟨</mo>
+              <mrow data-mjx-texclass="INNER">
+                <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
                 <mrow data-mjx-texclass="ORD">
                   <mi>g</mi>
                 </mrow>
-                <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+                <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
               </mrow>
               <msub>
                 <mrow data-mjx-texclass="ORD">
-                  <mover>
+                  <mover accent="true">
                     <mi>D</mi>
-                    <mo stretchy="false">^</mo>
+                    <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
                   </mover>
                 </mrow>
                 <mrow data-mjx-texclass="ORD">
@@ -1600,8 +1600,8 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
                   </mrow>
                 </mrow>
               </msub>
-              <mrow data-mjx-texclass="ORD">
-                <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+              <mrow data-mjx-texclass="INNER">
+                <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
                 <mrow data-mjx-texclass="ORD">
                   <msub>
                     <mrow data-mjx-texclass="ORD">
@@ -1610,7 +1610,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
                     <mi>n</mi>
                   </msub>
                 </mrow>
-                <mo fence="false" stretchy="false">⟩</mo>
+                <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
               </mrow>
             </mtd>
           </mtr>
@@ -1718,18 +1718,18 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
               <mstyle scriptlevel="0">
                 <mspace width="0.167em" />
               </mstyle>
-              <mrow data-mjx-texclass="ORD">
-                <mo fence="false" stretchy="false">⟨</mo>
+              <mrow data-mjx-texclass="INNER">
+                <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
                 <mrow data-mjx-texclass="ORD">
                   <mi>g</mi>
                 </mrow>
-                <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+                <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
               </mrow>
               <msub>
                 <mrow data-mjx-texclass="ORD">
-                  <mover>
+                  <mover accent="true">
                     <mi>D</mi>
-                    <mo stretchy="false">^</mo>
+                    <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
                   </mover>
                 </mrow>
                 <mrow data-mjx-texclass="ORD">
@@ -1738,8 +1738,8 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
                   </mrow>
                 </mrow>
               </msub>
-              <mrow data-mjx-texclass="ORD">
-                <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+              <mrow data-mjx-texclass="INNER">
+                <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
                 <mrow data-mjx-texclass="ORD">
                   <mrow data-mjx-texclass="ORD">
                     <mi data-mjx-variant="-tex-calligraphic" mathvariant="normal">𝒞</mi>
@@ -1750,7 +1750,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
                     <mi>α</mi>
                   </msub>
                 </mrow>
-                <mo fence="false" stretchy="false">⟩</mo>
+                <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
               </mrow>
               <mo>.</mo>
             </mtd>
@@ -2012,8 +2012,8 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
               <mstyle scriptlevel="0">
                 <mspace width="0.167em" />
               </mstyle>
-              <mrow data-mjx-texclass="ORD">
-                <mo fence="false" stretchy="false">⟨</mo>
+              <mrow data-mjx-texclass="INNER">
+                <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
                 <mrow data-mjx-texclass="ORD">
                   <msub>
                     <mrow data-mjx-texclass="ORD">
@@ -2022,13 +2022,13 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
                     <mi>n</mi>
                   </msub>
                 </mrow>
-                <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+                <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
               </mrow>
               <msub>
                 <mrow data-mjx-texclass="ORD">
-                  <mover>
+                  <mover accent="true">
                     <mi>D</mi>
-                    <mo stretchy="false">^</mo>
+                    <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
                   </mover>
                 </mrow>
                 <mrow data-mjx-texclass="ORD">
@@ -2037,8 +2037,8 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
                   </mrow>
                 </mrow>
               </msub>
-              <mrow data-mjx-texclass="ORD">
-                <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+              <mrow data-mjx-texclass="INNER">
+                <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
                 <mrow data-mjx-texclass="ORD">
                   <mrow data-mjx-texclass="ORD">
                     <mi data-mjx-variant="-tex-calligraphic" mathvariant="normal">𝒩</mi>
@@ -2049,7 +2049,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
                     <mi>β</mi>
                   </msub>
                 </mrow>
-                <mo fence="false" stretchy="false">⟩</mo>
+                <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
               </mrow>
               <mo>.</mo>
             </mtd>
@@ -2173,18 +2173,18 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
               <mstyle scriptlevel="0">
                 <mspace width="0.167em" />
               </mstyle>
-              <mrow data-mjx-texclass="ORD">
-                <mo fence="false" stretchy="false">⟨</mo>
+              <mrow data-mjx-texclass="INNER">
+                <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
                 <mrow data-mjx-texclass="ORD">
                   <mi>g</mi>
                 </mrow>
-                <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+                <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
               </mrow>
               <msub>
                 <mrow data-mjx-texclass="ORD">
-                  <mover>
+                  <mover accent="true">
                     <mi>D</mi>
-                    <mo stretchy="false">^</mo>
+                    <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
                   </mover>
                 </mrow>
                 <mrow data-mjx-texclass="ORD">
@@ -2193,8 +2193,8 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
                   </mrow>
                 </mrow>
               </msub>
-              <mrow data-mjx-texclass="ORD">
-                <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+              <mrow data-mjx-texclass="INNER">
+                <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
                 <mrow data-mjx-texclass="ORD">
                   <mrow data-mjx-texclass="ORD">
                     <mi data-mjx-variant="-tex-calligraphic" mathvariant="normal">𝒞</mi>
@@ -2205,7 +2205,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
                     <mi>α</mi>
                   </msub>
                 </mrow>
-                <mo fence="false" stretchy="false">⟩</mo>
+                <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
               </mrow>
             </mtd>
           </mtr>
@@ -2422,8 +2422,8 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
         <mstyle scriptlevel="0">
           <mspace width="0.167em" />
         </mstyle>
-        <mrow data-mjx-texclass="ORD">
-          <mo fence="false" stretchy="false">⟨</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
           <mrow data-mjx-texclass="ORD">
             <msub>
               <mrow data-mjx-texclass="ORD">
@@ -2432,13 +2432,13 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
               <mi>n</mi>
             </msub>
           </mrow>
-          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
         </mrow>
         <msub>
           <mrow data-mjx-texclass="ORD">
-            <mover>
+            <mover accent="true">
               <mi>D</mi>
-              <mo stretchy="false">^</mo>
+              <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
             </mover>
           </mrow>
           <mrow data-mjx-texclass="ORD">
@@ -2447,8 +2447,8 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
             </mrow>
           </mrow>
         </msub>
-        <mrow data-mjx-texclass="ORD">
-          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
           <mrow data-mjx-texclass="ORD">
             <mrow data-mjx-texclass="ORD">
               <mi data-mjx-variant="-tex-calligraphic" mathvariant="normal">𝒩</mi>
@@ -2459,7 +2459,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
               <mi>β</mi>
             </msub>
           </mrow>
-          <mo fence="false" stretchy="false">⟩</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
         </mrow>
         <mo>.</mo>
       </mtd>
@@ -2472,12 +2472,12 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
   <mo>×</mo>
 </math></span> phase <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo>×</mo>
-</math></span> dipole</span></header><p> That is the structure of Eq. <a href="../chapter-06/index.html#eq-eq-td-coupled">(6.3)</a>: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> dipole</span></header><p> That is the structure of Eq. <a class="xref" href="../chapter-06/index.html#eq-eq-td-coupled">(6.3)</a>: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>h</mi>
   <mo stretchy="false">(</mo>
   <mi>t</mi>
   <mo stretchy="false">)</mo>
-</math></span> says when the pulse is present, the exponential carries the energy mismatch, and the matrix element says how strongly the states are connected. By Remark <a href="../chapter-06/index.html#remark-rem-td-resonance">6.2.2</a> a term matters only when its exponent is small — when the photon energy nearly matches the transition.</p></section>
+</math></span> says when the pulse is present, the exponential carries the energy mismatch, and the matrix element says how strongly the states are connected. By Remark <a class="xref" href="../chapter-06/index.html#remark-rem-td-resonance">6.2.2</a> a term matters only when its exponent is small — when the photon energy nearly matches the transition.</p></section>
 <section class="callout remark" id="remark-rem-co2-decay"><header><span class="callout-kind">Remark 11.4.2</span><span class="callout-title">The decay term is not from the laser</span></header><p> The term <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>i</mi>
   <msub>
@@ -2502,7 +2502,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
     <mo>/</mo>
   </mrow>
   <mn>2</mn>
-</math></span> on the left of Eq. <a href="../chapter-11/index.html#eq-eq-co2-cr">(11.7)</a> carries no envelope and no dipole. It is autoionization, present whether or not any light is on, and it makes the effective Hamiltonian non-Hermitian in the Rydberg block. The factor <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> on the left of Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-cr">(11.7)</a> carries no envelope and no dipole. It is autoionization, present whether or not any light is on, and it makes the effective Hamiltonian non-Hermitian in the Rydberg block. The factor <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mstyle displaystyle="false" scriptlevel="0">
     <mfrac>
       <mn>1</mn>
@@ -2510,10 +2510,10 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
     </mfrac>
   </mstyle>
 </math></span> is because amplitudes decay at half the rate of populations: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <mi>c</mi>
   <msup>
-    <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mo stretchy="false">|</mo>
     <mrow data-mjx-texclass="ORD">
       <mn>2</mn>
     </mrow>
@@ -2543,7 +2543,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
     </mrow>
   </msup>
 </math></span>.</p></section>
-<section class="callout remark" id="remark-rem-co2-two-ends"><header><span class="callout-kind">Remark 11.4.3</span><span class="callout-title">The two ends of the same process</span></header><p> The second term of Eq. <a href="../chapter-11/index.html#eq-eq-co2-cx">(11.8)</a> is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout remark" id="remark-rem-co2-two-ends"><header><span class="callout-kind">Remark 11.4.3</span><span class="callout-title">The two ends of the same process</span></header><p> The second term of Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-cx">(11.8)</a> is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msqrt>
     <msub>
       <mi mathvariant="normal">Γ</mi>
@@ -2558,10 +2558,10 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
     <mn>2</mn>
     <mi>π</mi>
   </msqrt>
-</math></span> — Eq. <a href="../chapter-10/index.html#eq-eq-fano-effective-coupling">(10.9)</a> exactly. It and the decay term of Remark <a href="../chapter-11/index.html#remark-rem-co2-decay">11.4.2</a> are the same physics viewed from opposite ends: population leaving the Rydberg state arrives in the continuum. Together they conserve Eq. <a href="../chapter-11/index.html#eq-eq-co2-normalization">(11.2)</a>.</p></section>
-<section class="callout remark" id="remark-rem-co2-interference"><header><span class="callout-kind">Remark 11.4.4</span><span class="callout-title">Interference lives in Eq. <a href="../chapter-11/index.html#eq-eq-co2-cx">(11.8)</a></span></header><p> Its two terms add <em>amplitudes</em> into the same final state <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow data-mjx-texclass="ORD">
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+</math></span> — Eq. <a class="xref" href="../chapter-10/index.html#eq-eq-fano-effective-coupling">(10.9)</a> exactly. It and the decay term of Remark <a class="xref" href="../chapter-11/index.html#remark-rem-co2-decay">11.4.2</a> are the same physics viewed from opposite ends: population leaving the Rydberg state arrives in the continuum. Together they conserve Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-normalization">(11.2)</a>.</p></section>
+<section class="callout remark" id="remark-rem-co2-interference"><header><span class="callout-kind">Remark 11.4.4</span><span class="callout-title">Interference lives in Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-cx">(11.8)</a></span></header><p> Its two terms add <em>amplitudes</em> into the same final state <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
       <mrow data-mjx-texclass="ORD">
         <mi data-mjx-variant="-tex-calligraphic" mathvariant="normal">𝒞</mi>
@@ -2572,11 +2572,11 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
         <mi>α</mi>
       </msub>
     </mrow>
-    <mo fence="false" stretchy="false">⟩</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
 </math></span>. Squaring the sum produces a cross term, and that cross term is the Fano asymmetry — now time-dependent, because the two contributions arrive on different schedules. The direct term follows the pump envelope and stops when the pulse does; the resonant term keeps arriving for as long as the Rydberg states take to decay.</p></section>
 <h3 id="sec-11-the-effective-pump-amplitude"><span class="sec-number">11.4.2</span>The Effective Pump Amplitude</h3>
-<p>One symbol in Eq. <a href="../chapter-11/index.html#eq-eq-co2-cr">(11.7)</a> remains: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>One symbol in Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-cr">(11.7)</a> remains: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>ρ</mi>
     <mi>n</mi>
@@ -2624,18 +2624,18 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
                 <mstyle scriptlevel="0">
                   <mspace width="0.278em" />
                 </mstyle>
-                <mrow data-mjx-texclass="ORD">
-                  <mo fence="false" stretchy="false">⟨</mo>
+                <mrow data-mjx-texclass="INNER">
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
                   <mrow data-mjx-texclass="ORD">
                     <mi>g</mi>
                   </mrow>
-                  <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
                 </mrow>
                 <msub>
                   <mrow data-mjx-texclass="ORD">
-                    <mover>
+                    <mover accent="true">
                       <mi>D</mi>
-                      <mo stretchy="false">^</mo>
+                      <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
                     </mover>
                   </mrow>
                   <mrow data-mjx-texclass="ORD">
@@ -2644,8 +2644,8 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
                     </mrow>
                   </mrow>
                 </msub>
-                <mrow data-mjx-texclass="ORD">
-                  <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+                <mrow data-mjx-texclass="INNER">
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
                   <mrow data-mjx-texclass="ORD">
                     <mrow data-mjx-texclass="ORD">
                       <mi data-mjx-variant="-tex-calligraphic" mathvariant="normal">𝒞</mi>
@@ -2656,7 +2656,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
                       <mi>α</mi>
                     </msub>
                   </mrow>
-                  <mo fence="false" stretchy="false">⟩</mo>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
                 </mrow>
                 <msub>
                   <mrow data-mjx-texclass="ORD">
@@ -2716,7 +2716,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
     <mi>q</mi>
     <mi>n</mi>
   </msub>
-</math></span> measures their ratio, exactly as in Eq. <a href="../chapter-10/index.html#eq-eq-fano-q-def">(10.18)</a>. Setting <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> measures their ratio, exactly as in Eq. <a class="xref" href="../chapter-10/index.html#eq-eq-fano-q-def">(10.18)</a>. Setting <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>q</mi>
     <mi>n</mi>
@@ -2770,9 +2770,9 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
   <mi>A</mi>
 </math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>C</mi>
-</math></span> ionic states of Example <a href="../chapter-07/index.html#example-ex-mol-co2-ions">7.5.2</a> are dropped. Justified because the experiment resolves photoelectron energy and can separate the channels.</p></li><li><p><strong>One vibrational level and one partial wave per channel.</strong> Nuclear motion is frozen — the timescale argument of Sec. <a href="../chapter-07/index.html#sec-7-the-three-energy-scales">7.10</a>: the pump is a few femtoseconds, nuclear motion takes tens. This is the weakest assumption for the longest-lived resonances, which survive for picoseconds.</p></li><li><p><strong>Configuration interaction restricted to the resonant coupling.</strong> Only <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow data-mjx-texclass="ORD">
-    <mo fence="false" stretchy="false">⟨</mo>
+</math></span> ionic states of Example <a class="xref" href="../chapter-07/index.html#example-ex-mol-co2-ions">7.5.2</a> are dropped. Justified because the experiment resolves photoelectron energy and can separate the channels.</p></li><li><p><strong>One vibrational level and one partial wave per channel.</strong> Nuclear motion is frozen — the timescale argument of Sec. <a class="xref" href="../chapter-07/index.html#sec-7-the-three-energy-scales">7.10</a>: the pump is a few femtoseconds, nuclear motion takes tens. This is the weakest assumption for the longest-lived resonances, which survive for picoseconds.</p></li><li><p><strong>Configuration interaction restricted to the resonant coupling.</strong> Only <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
     <mrow data-mjx-texclass="ORD">
       <msub>
         <mrow data-mjx-texclass="ORD">
@@ -2781,13 +2781,13 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
         <mi>n</mi>
       </msub>
     </mrow>
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
   </mrow>
   <msub>
     <mrow data-mjx-texclass="ORD">
-      <mover>
+      <mover accent="true">
         <mi>V</mi>
-        <mo stretchy="false">^</mo>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
       </mover>
     </mrow>
     <mrow data-mjx-texclass="ORD">
@@ -2796,8 +2796,8 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
       </mrow>
     </mrow>
   </msub>
-  <mrow data-mjx-texclass="ORD">
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
       <mrow data-mjx-texclass="ORD">
         <mi data-mjx-variant="-tex-calligraphic" mathvariant="normal">𝒞</mi>
@@ -2808,7 +2808,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
         <mi>α</mi>
       </msub>
     </mrow>
-    <mo fence="false" stretchy="false">⟩</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
 </math></span> is kept, set to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msqrt>
@@ -2840,8 +2840,8 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
   <mo>≠</mo>
   <mi>n</mi>
 </math></span>, so each state decays at its own rate without coherent mixing through the shared continuum. Exercise <strong>E3</strong> tests this.</p></li><li><p><strong>No infrared coupling within the Rydberg manifold.</strong> <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow data-mjx-texclass="ORD">
-    <mo fence="false" stretchy="false">⟨</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
     <mrow data-mjx-texclass="ORD">
       <msub>
         <mrow data-mjx-texclass="ORD">
@@ -2850,13 +2850,13 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
         <mi>m</mi>
       </msub>
     </mrow>
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
   </mrow>
   <msub>
     <mrow data-mjx-texclass="ORD">
-      <mover>
+      <mover accent="true">
         <mi>D</mi>
-        <mo stretchy="false">^</mo>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
       </mover>
     </mrow>
     <mrow data-mjx-texclass="ORD">
@@ -2865,8 +2865,8 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
       </mrow>
     </mrow>
   </msub>
-  <mrow data-mjx-texclass="ORD">
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
       <msub>
         <mrow data-mjx-texclass="ORD">
@@ -2875,11 +2875,11 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
         <mi>n</mi>
       </msub>
     </mrow>
-    <mo fence="false" stretchy="false">⟩</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
   <mo>=</mo>
   <mn>0</mn>
-</math></span>, the parity argument of Example <a href="../chapter-09/index.html#example-ex-elec-parity">9.7.1</a>: both series are built on the same <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>, the parity argument of Example <a class="xref" href="../chapter-09/index.html#example-ex-elec-parity">9.7.1</a>: both series are built on the same <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>3</mn>
   <msub>
     <mi>σ</mi>
@@ -2892,13 +2892,13 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
 </math></span>, and one photon cannot connect two states of equal parity. Not an approximation so much as a symmetry.</p></li><li><p><strong>Predissociation neglected.</strong> The sharp states can also fall apart into neutral fragments, competing with autoionization. Omitting it makes the calculated autoionization yields upper bounds.</p></li></ol>
 <p>Assumption (v) illustrates what this course was for. It removes an entire block of the Hamiltonian and costs nothing — no fitting, no parameter, no error — because it follows from the inversion symmetry of a linear centrosymmetric molecule. A symmetry argument proved in Chapter 3, applied to labels earned in Chapter 7, simplifies a research calculation in Chapter 11.</p>
 <h2 id="sec-11-what-the-model-predicts"><span class="sec-number">11.6</span>What the Model Predicts</h2>
-<p>Solving Eqs. <a href="../chapter-11/index.html#eq-eq-co2-cg">(11.6)</a>–<a href="../chapter-11/index.html#eq-eq-co2-cb">(11.9)</a> for each delay <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>Solving Eqs. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-cg">(11.6)</a>–<a class="xref" href="../chapter-11/index.html#eq-eq-co2-cb">(11.9)</a> for each delay <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>t</mi>
     <mi>d</mi>
   </msub>
 </math></span> gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <msub>
     <mi>c</mi>
     <mrow data-mjx-texclass="ORD">
@@ -2916,13 +2916,13 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
   </msub>
   <mo stretchy="false">)</mo>
   <msup>
-    <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mo stretchy="false">|</mo>
     <mrow data-mjx-texclass="ORD">
       <mn>2</mn>
     </mrow>
   </msup>
 </math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <msub>
     <mi>c</mi>
     <mrow data-mjx-texclass="ORD">
@@ -2940,7 +2940,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
   </msub>
   <mo stretchy="false">)</mo>
   <msup>
-    <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mo stretchy="false">|</mo>
     <mrow data-mjx-texclass="ORD">
       <mn>2</mn>
     </mrow>
@@ -2957,13 +2957,13 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
   </mrow>
   <mi mathvariant="normal">Γ</mi>
 </math></span>.</em></p></div>
-<p>Chapter 10's stationary formula, Eq. <a href="../chapter-10/index.html#eq-eq-fano-profile">(10.16)</a>, is the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>Chapter 10's stationary formula, Eq. <a class="xref" href="../chapter-10/index.html#eq-eq-fano-profile">(10.16)</a>, is the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>t</mi>
   <mo accent="false" stretchy="false">→</mo>
   <mi mathvariant="normal">∞</mi>
 </math></span> limit of this.</p>
 <h3 id="sec-11-the-uncoupled-channel-n-here-b-quantum-beats">The uncoupled channel (N, here B): quantum beats</h3>
-<p>No XUV route reaches this continuum, so its population is proportional to the Rydberg population surviving when the probe arrives. The broadband pump excited several Rydberg states <em>coherently</em> (Example <a href="../chapter-06/index.html#example-ex-td-pulse-spec">6.5.2</a>), and their amplitudes carry phases advancing at different rates, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>No XUV route reaches this continuum, so its population is proportional to the Rydberg population surviving when the probe arrives. The broadband pump excited several Rydberg states <em>coherently</em> (Example <a class="xref" href="../chapter-06/index.html#example-ex-td-pulse-spec">6.5.2</a>), and their amplitudes carry phases advancing at different rates, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>e</mi>
     <mrow data-mjx-texclass="ORD">
@@ -3188,12 +3188,12 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
       <mo form="prefix" lspace="0em" rspace="0em">+</mo>
     </mrow>
   </msubsup>
-</math></span>), which no XUV route reaches.</p></li><li><p>The state is expanded as Eq. <a href="../chapter-11/index.html#eq-eq-co2-expansion">(11.1)</a>: two discrete kinds of amplitude and two continuum integrals, with probability conserved by Eq. <a href="../chapter-11/index.html#eq-eq-co2-normalization">(11.2)</a>.</p></li><li><p><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>), which no XUV route reaches.</p></li><li><p>The state is expanded as Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-expansion">(11.1)</a>: two discrete kinds of amplitude and two continuum integrals, with probability conserved by Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-normalization">(11.2)</a>.</p></li><li><p><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mrow data-mjx-texclass="ORD">
-      <mover>
+      <mover accent="true">
         <mi>H</mi>
-        <mo stretchy="false">^</mo>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
       </mover>
     </mrow>
     <mi>e</mi>
@@ -3201,9 +3201,9 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
 </math></span> splits into channel-diagonal blocks and the configuration interaction <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mrow data-mjx-texclass="ORD">
-      <mover>
+      <mover accent="true">
         <mi>V</mi>
-        <mo stretchy="false">^</mo>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
       </mover>
     </mrow>
     <mrow data-mjx-texclass="ORD">
@@ -3212,7 +3212,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
       </mrow>
     </mrow>
   </msub>
-</math></span>, which is the autoionization coupling of Chapter 10.</p></li><li><p>Projecting, applying the RWA and eliminating the coupled continuum in the Markov–Fano reduction gives Eqs. <a href="../chapter-11/index.html#eq-eq-co2-cg">(11.6)</a>–<a href="../chapter-11/index.html#eq-eq-co2-cb">(11.9)</a>: Chapter 6's <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>, which is the autoionization coupling of Chapter 10.</p></li><li><p>Projecting, applying the RWA and eliminating the coupled continuum in the Markov–Fano reduction gives Eqs. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-cg">(11.6)</a>–<a class="xref" href="../chapter-11/index.html#eq-eq-co2-cb">(11.9)</a>: Chapter 6's <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>i</mi>
   <msub>
     <mrow data-mjx-texclass="ORD">
@@ -3270,7 +3270,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
     <mo>/</mo>
   </mrow>
   <mn>2</mn>
-</math></span> carries neither and is autoionization.</p></li><li><p>Interference sits in Eq. <a href="../chapter-11/index.html#eq-eq-co2-cx">(11.8)</a>, whose two terms add amplitudes into one final state. The complex factor <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> carries neither and is autoionization.</p></li><li><p>Interference sits in Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-cx">(11.8)</a>, whose two terms add amplitudes into one final state. The complex factor <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo stretchy="false">(</mo>
   <msub>
     <mi>q</mi>
@@ -3304,9 +3304,9 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
   </mrow>
 </math></span> channel (here <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>B</mi>
-</math></span>) shows quantum beats at the Rydberg level spacings, Eq. <a href="../chapter-11/index.html#eq-eq-co2-beat">(11.11)</a>, so a Fourier transform of the delay dependence returns the spectrum of the wave packet.</p></li></ul>
+</math></span>) shows quantum beats at the Rydberg level spacings, Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-beat">(11.11)</a>, so a Fourier transform of the delay dependence returns the spectrum of the wave packet.</p></li></ul>
 <h2 id="sec-11-exercises"><span class="sec-number">11.8</span>Exercises</h2>
-<ol><li><p><strong>Account for every term.</strong> Take Eq. <a href="../chapter-11/index.html#eq-eq-co2-cr">(11.7)</a>. For each of its three terms state (a) which physical process it represents, (b) which pulse if any drives it, and (c) which earlier chapter defined the quantity in it. Then explain why the second term contains <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<ol><li><p><strong>Account for every term.</strong> Take Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-cr">(11.7)</a>. For each of its three terms state (a) which physical process it represents, (b) which pulse if any drives it, and (c) which earlier chapter defined the quantity in it. Then explain why the second term contains <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>c</mi>
     <mrow data-mjx-texclass="ORD">
@@ -3324,7 +3324,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
       </mrow>
     </mrow>
   </msub>
-</math></span>.</p></li><li><p><strong>Beats and lifetimes.</strong> Repeat Example <a href="../chapter-11/index.html#example-ex-co2-beats">11.6.1</a> for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>.</p></li><li><p><strong>Beats and lifetimes.</strong> Repeat Example <a class="xref" href="../chapter-11/index.html#example-ex-co2-beats">11.6.1</a> for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>7</mn>
   <mi>d</mi>
 </math></span> (<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -3363,7 +3363,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
       <mn>3</mn>
     </mrow>
   </msup>
-</math></span> (Thm. <a href="../chapter-10/index.html#theorem-thm-fano-scaling">10.6.1</a>) and the Rydberg level spacing <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> (Thm. <a class="xref" href="../chapter-10/index.html#theorem-thm-fano-scaling">10.6.1</a>) and the Rydberg level spacing <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi mathvariant="normal">Δ</mi>
   <mi>E</mi>
   <mo>∝</mo>
@@ -3381,7 +3381,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
       <mn>3</mn>
     </mrow>
   </msup>
-</math></span> (Eq. <a href="../chapter-04/index.html#eq-eq-h-spacing">(4.61)</a>), show that the ratio <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> (Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-spacing">(4.61)</a>), show that the ratio <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi mathvariant="normal">Γ</mi>
   <mrow data-mjx-texclass="ORD">
     <mo>/</mo>
@@ -3403,13 +3403,13 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
   <mi>d</mi>
 </math></span>.</p></li><li><p>Comment: does the assumption get better or worse as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>n</mi>
-</math></span> increases, and why is that answer surprising?</p></li></ol></li><li><p><strong>The pump amplitude.</strong> From Eq. <a href="../chapter-11/index.html#eq-eq-co2-rho">(11.10)</a>, compute <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+</math></span> increases, and why is that answer surprising?</p></li></ol></li><li><p><strong>The pump amplitude.</strong> From Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-rho">(11.10)</a>, compute <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">|</mo>
   <msub>
     <mi>ρ</mi>
     <mi>n</mi>
   </msub>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
 </math></span> in terms of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>q</mi>
@@ -3450,7 +3450,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
       <mo data-mjx-texclass="OP" stretchy="true">∑</mo>
       <mi>n</mi>
     </munder>
-    <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mo stretchy="false">|</mo>
     <msub>
       <mi>c</mi>
       <mrow data-mjx-texclass="ORD">
@@ -3463,7 +3463,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
       </mrow>
     </msub>
     <msup>
-      <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+      <mo stretchy="false">|</mo>
       <mrow data-mjx-texclass="ORD">
         <mn>2</mn>
       </mrow>
@@ -3475,7 +3475,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
       <mi>ε</mi>
       <mi>α</mi>
     </msub>
-    <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mo stretchy="false">|</mo>
     <msub>
       <mi>c</mi>
       <mrow data-mjx-texclass="ORD">
@@ -3485,7 +3485,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
       </mrow>
     </msub>
     <msup>
-      <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+      <mo stretchy="false">|</mo>
       <mrow data-mjx-texclass="ORD">
         <mn>2</mn>
       </mrow>
@@ -3496,9 +3496,9 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
   <mn>0</mn>
   <mo>.</mo>
 </math></div>
-<p>using Eqs. <a href="../chapter-11/index.html#eq-eq-co2-cr">(11.7)</a> and <a href="../chapter-11/index.html#eq-eq-co2-cx">(11.8)</a>. Identify which two terms cancel, and relate the result to Remark <a href="../chapter-11/index.html#remark-rem-co2-two-ends">11.4.3</a>.</p></li></ol>
+<p>using Eqs. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-cr">(11.7)</a> and <a class="xref" href="../chapter-11/index.html#eq-eq-co2-cx">(11.8)</a>. Identify which two terms cancel, and relate the result to Remark <a class="xref" href="../chapter-11/index.html#remark-rem-co2-two-ends">11.4.3</a>.</p></li></ol>
 <h2 id="sec-11-project-time-resolved-fano-buildup"><span class="sec-number">11.9</span>Project: Time-Resolved Fano Buildup</h2>
-<p><strong>The problem.</strong> Solve a reduced version of Eqs. <a href="../chapter-11/index.html#eq-eq-co2-cg">(11.6)</a>–<a href="../chapter-11/index.html#eq-eq-co2-cb">(11.9)</a> numerically and watch both signatures appear: the Fano profile assembling itself in the coupled channel (<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p><strong>The problem.</strong> Solve a reduced version of Eqs. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-cg">(11.6)</a>–<a class="xref" href="../chapter-11/index.html#eq-eq-co2-cb">(11.9)</a> numerically and watch both signatures appear: the Fano profile assembling itself in the coupled channel (<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mi data-mjx-variant="-tex-calligraphic" mathvariant="normal">𝒞</mi>
   </mrow>
@@ -3518,7 +3518,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
   </msub>
   <mo>≈</mo>
   <mn>1</mn>
-</math></span> throughout, which removes Eq. <a href="../chapter-11/index.html#eq-eq-co2-cg">(11.6)</a>.</p>
+</math></span> throughout, which removes Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-cg">(11.6)</a>.</p>
 <p>Use real parameters: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>E</mi>
@@ -3617,7 +3617,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
     </mrow>
   </msup>
 </math></span> once the pump has passed, so <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <msub>
     <mi>c</mi>
     <mrow data-mjx-texclass="ORD">
@@ -3630,7 +3630,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
     </mrow>
   </msub>
   <msup>
-    <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mo stretchy="false">|</mo>
     <mrow data-mjx-texclass="ORD">
       <mn>2</mn>
     </mrow>
@@ -3643,7 +3643,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
       <mi>n</mi>
     </mrow>
   </msub>
-</math></span>.</p></li><li><p><strong>On paper.</strong> Convert every parameter to atomic units and state the time step you will need. It must resolve the fastest phase in the problem — identify which exponent in Eqs. <a href="../chapter-11/index.html#eq-eq-co2-cr">(11.7)</a>–<a href="../chapter-11/index.html#eq-eq-co2-cb">(11.9)</a> that is.</p></li><li><p><strong>On the computer.</strong> With the probe off, integrate the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>.</p></li><li><p><strong>On paper.</strong> Convert every parameter to atomic units and state the time step you will need. It must resolve the fastest phase in the problem — identify which exponent in Eqs. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-cr">(11.7)</a>–<a class="xref" href="../chapter-11/index.html#eq-eq-co2-cb">(11.9)</a> that is.</p></li><li><p><strong>On the computer.</strong> With the probe off, integrate the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>c</mi>
     <mrow data-mjx-texclass="ORD">
@@ -3669,7 +3669,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
     <mi data-mjx-variant="-tex-calligraphic" mathvariant="normal">𝒞</mi>
   </mrow>
 </math></span>-channel spectrum <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <msub>
     <mi>c</mi>
     <mrow data-mjx-texclass="ORD">
@@ -3687,7 +3687,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
   </msub>
   <mo stretchy="false">)</mo>
   <msup>
-    <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mo stretchy="false">|</mo>
     <mrow data-mjx-texclass="ORD">
       <mn>2</mn>
     </mrow>
@@ -3703,7 +3703,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
 </math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>4</mn>
   <mi>τ</mi>
-</math></span> of the shorter-lived state. The asymmetric profile should grow out of a smooth background. Compare the final spectrum with Eq. <a href="../chapter-10/index.html#eq-eq-fano-profile">(10.16)</a> using the same <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> of the shorter-lived state. The asymmetric profile should grow out of a smooth background. Compare the final spectrum with Eq. <a class="xref" href="../chapter-10/index.html#eq-eq-fano-profile">(10.16)</a> using the same <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>q</mi>
 </math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi mathvariant="normal">Γ</mi>
@@ -3712,7 +3712,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
     <mo data-mjx-texclass="OP" stretchy="true">∑</mo>
     <mi>n</mi>
   </munder>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <msub>
     <mi>c</mi>
     <mrow data-mjx-texclass="ORD">
@@ -3725,7 +3725,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
     </mrow>
   </msub>
   <msup>
-    <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mo stretchy="false">|</mo>
     <mrow data-mjx-texclass="ORD">
       <mn>2</mn>
     </mrow>
@@ -3737,7 +3737,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
     <mi>ε</mi>
     <mi>α</mi>
   </msub>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <msub>
     <mi>c</mi>
     <mrow data-mjx-texclass="ORD">
@@ -3747,7 +3747,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
     </mrow>
   </msub>
   <msup>
-    <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mo stretchy="false">|</mo>
     <mrow data-mjx-texclass="ORD">
       <mn>2</mn>
     </mrow>
@@ -3768,7 +3768,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
     <mi>ε</mi>
     <mi>β</mi>
   </msub>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <msub>
     <mi>c</mi>
     <mrow data-mjx-texclass="ORD">
@@ -3786,7 +3786,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
   </msub>
   <mo stretchy="false">)</mo>
   <msup>
-    <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mo stretchy="false">|</mo>
     <mrow data-mjx-texclass="ORD">
       <mn>2</mn>
     </mrow>
@@ -3812,9 +3812,9 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
       <mi>d</mi>
     </mrow>
   </msub>
-</math></span> from Eq. <a href="../chapter-11/index.html#eq-eq-co2-beat">(11.11)</a> and with the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> from Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-beat">(11.11)</a> and with the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>25.5</mn>
-</math></span> fs period of Example <a href="../chapter-11/index.html#example-ex-co2-beats">11.6.1</a>.</p></li><li><p><strong>What has to move.</strong> Two animations. First, the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> fs period of Example <a class="xref" href="../chapter-11/index.html#example-ex-co2-beats">11.6.1</a>.</p></li><li><p><strong>What has to move.</strong> Two animations. First, the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mi data-mjx-variant="-tex-calligraphic" mathvariant="normal">𝒞</mi>
   </mrow>
@@ -3827,14 +3827,14 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
 </math></span>-channel yield (here <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>B</mi>
 </math></span>) as the delay is scanned, so the beating is visible as it is measured.</p></li></ol>
-<p><strong>The check.</strong> Part (c) is the one to get right and part (d) is how you know you have. If the built-up profile does not converge to Eq. <a href="../chapter-10/index.html#eq-eq-fano-profile">(10.16)</a>, the usual causes are a continuum grid too narrow to hold the resonance wings, or a grid spacing coarser than <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p><strong>The check.</strong> Part (c) is the one to get right and part (d) is how you know you have. If the built-up profile does not converge to Eq. <a class="xref" href="../chapter-10/index.html#eq-eq-fano-profile">(10.16)</a>, the usual causes are a continuum grid too narrow to hold the resonance wings, or a grid spacing coarser than <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi mathvariant="normal">Γ</mi>
 </math></span>. Both show up first as drift in (d).</p>
 <p><strong>Be ready to answer.</strong> Your part (c) spectra converge to the stationary Fano profile, which Chapter 10 derived without any reference to time. Explain what the time-dependent calculation tells you that the stationary one cannot — and identify one experimental observable that would be identical in both descriptions, and one that would not.</p>
     <nav class="chapter-nav" aria-label="Chapter navigation">
       <a href="../chapter-10/index.html">Previous: Rydberg and Continuum States; Fano Resonances</a>
       <a href="../../toc.html">Contents</a>
-      <span></span>
+      <a href="../chapter-12/index.html">Next: Quantum Information and Quantum Computing</a>
     </nav>
   </article>
 </main>

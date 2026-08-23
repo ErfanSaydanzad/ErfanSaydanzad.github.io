@@ -782,7 +782,35 @@ math {
 /* \eqref. MathML Core has no href on any element, so MathJax's in-formula
    cross-reference would render as a number that does not go anywhere; it is
    lifted out to a real anchor instead. */
+/* Cross-references -- (2.4), Fig. 3.1, Thm. 12.5.2, Sec. 1.7.4.
+
+   These are pointers within the book, not links off it, and a solid rule under
+   every one of them speckles a page that already carries a lot of numbers. So
+   they get a dotted hairline at rest and become a proper underline on hover
+   and on keyboard focus.
+
+   The mark cannot go away entirely, which is worth writing down because it
+   looks like it could. WCAG 1.4.1 lets a link drop its underline only if its
+   colour clears 3:1 against the text around it, and the accent does not:
+   2.10:1 in the light theme, 1.72:1 in the dark. Nor can the palette be pushed
+   -- it is already set at the smallest distance that clears AAA's 7:1 against
+   the page, and the two requirements have no overlap at AAA: the accent would
+   need a relative luminance both at most 0.096 and at least 0.134. A dotted
+   rule is the quietest cue that is still not a colour. */
 .eqn-ref { font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+.xref, .eqn-ref {
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 0.055em;
+  text-underline-offset: 0.22em;
+}
+
+.xref:hover, .eqn-ref:hover,
+.xref:focus-visible, .eqn-ref:focus-visible {
+  text-decoration-style: solid;
+  text-decoration-thickness: 0.09em;
+}
 
 /* A heading belongs to what follows it, so the space above it is larger
    than the space below. They were nearly equal, which left the page reading

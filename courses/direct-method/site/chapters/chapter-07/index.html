@@ -6,9 +6,9 @@
   <title>Chapter 7: Molecular Structure, Vibration and Rotation | Direct Method</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
   <link rel="preload" href="../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../../assets/css/site.css?v=d088bfac">
+  <link rel="stylesheet" href="../../assets/css/site.css?v=856ec339">
   <link rel="preload" href="../../assets/fonts/latinmodern-math.woff2" as="font" type="font/woff2" crossorigin>
-  <script defer src="../../assets/js/main.js?v=d088bfac"></script>
+  <script defer src="../../assets/js/main.js?v=856ec339"></script>
 
 <style>
 .site-header { justify-content: flex-start; gap: 16px; }
@@ -78,7 +78,7 @@
     </header>
     <h2 id="sec-7-introduction"><span class="sec-number">7.1</span>Introduction</h2>
 <p>A molecule is the first genuinely complicated system in this book. An atom has one heavy centre; a molecule has several that can move, and the electrons rearrange as they do.</p>
-<p>The subject is made tractable by one observation: nuclei are thousands of times heavier than electrons and therefore move thousands of times more slowly. The electrons see the nuclei as frozen; the nuclei see only an averaged electronic energy. Making that precise is the Born–Oppenheimer approximation of Sec. <a href="../chapter-07/index.html#sec-7-the-born-oppenheimer-separation">7.3</a>, and it converts one intractable problem into two solvable ones.</p>
+<p>The subject is made tractable by one observation: nuclei are thousands of times heavier than electrons and therefore move thousands of times more slowly. The electrons see the nuclei as frozen; the nuclei see only an averaged electronic energy. Making that precise is the Born–Oppenheimer approximation of Sec. <a class="xref" href="../chapter-07/index.html#sec-7-the-born-oppenheimer-separation">7.3</a>, and it converts one intractable problem into two solvable ones.</p>
 <p>Nothing in this chapter is new quantum mechanics. The electronic problem is the variational method of Chapter 5; molecular vibration is the harmonic oscillator of Chapter 2; molecular rotation is the angular momentum algebra of Chapter 3. That is precisely why those chapters came first.</p>
 <p>To keep notation consistent with Chapters 8–11, we use the following labels throughout:</p>
 <ul><li><p>electronic state: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -96,9 +96,9 @@
   </msub>
 </math></span>);</p></li><li><p>spectroscopic wavenumber: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
-    <mover>
+    <mover accent="true">
       <mi>ν</mi>
-      <mo stretchy="false">~</mo>
+      <mo stretchy="false" style="padding-bottom:0.06em">˜</mo>
     </mover>
   </mrow>
 </math></span> in cm<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -119,23 +119,24 @@
 </math></span> vibrational/rotational ladders <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo accent="false" stretchy="false">→</mo>
 </math></span> mode symmetry.</p>
+<p>Read this chapter as a workflow: first separate electronic and nuclear motion, then solve each part with familiar tools, and finally translate the result into spectroscopic language.</p>
 <h2 id="sec-7-the-molecular-hamiltonian"><span class="sec-number">7.2</span>The Molecular Hamiltonian</h2>
 <p>For a molecule of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>N</mi>
 </math></span> electrons at positions <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
-    <mover>
+    <mover accent="true">
       <mi>r</mi>
-      <mo stretchy="false">→</mo>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
     </mover>
   </mrow>
   <mo>=</mo>
   <mo fence="false" stretchy="false">{</mo>
   <msub>
     <mrow data-mjx-texclass="ORD">
-      <mover>
+      <mover accent="true">
         <mi>r</mi>
-        <mo stretchy="false">→</mo>
+        <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
       </mover>
     </mrow>
     <mi>i</mi>
@@ -155,18 +156,18 @@
   </msub>
 </math></span> at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
-    <mover>
+    <mover accent="true">
       <mi>R</mi>
-      <mo stretchy="false">→</mo>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
     </mover>
   </mrow>
   <mo>=</mo>
   <mo fence="false" stretchy="false">{</mo>
   <msub>
     <mrow data-mjx-texclass="ORD">
-      <mover>
+      <mover accent="true">
         <mi>R</mi>
-        <mo stretchy="false">→</mo>
+        <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
       </mover>
     </mrow>
     <mi>A</mi>
@@ -185,17 +186,17 @@
                   <mspace width="0.278em" />
                 </mstyle>
                 <mrow data-mjx-texclass="ORD">
-                  <mover>
+                  <mover accent="true">
                     <mi>H</mi>
-                    <mo stretchy="false">^</mo>
+                    <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
                   </mover>
                 </mrow>
                 <mo>=</mo>
                 <msub>
                   <mrow data-mjx-texclass="ORD">
-                    <mover>
+                    <mover accent="true">
                       <mi>K</mi>
-                      <mo stretchy="false">^</mo>
+                      <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
                     </mover>
                   </mrow>
                   <mi>N</mi>
@@ -203,9 +204,9 @@
                 <mo>+</mo>
                 <msub>
                   <mrow data-mjx-texclass="ORD">
-                    <mover>
+                    <mover accent="true">
                       <mi>V</mi>
-                      <mo stretchy="false">^</mo>
+                      <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
                     </mover>
                   </mrow>
                   <mrow data-mjx-texclass="ORD">
@@ -216,25 +217,25 @@
                 <mo>+</mo>
                 <msub>
                   <mrow data-mjx-texclass="ORD">
-                    <mover>
+                    <mover accent="true">
                       <mi>H</mi>
-                      <mo stretchy="false">^</mo>
+                      <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
                     </mover>
                   </mrow>
                   <mi>e</mi>
                 </msub>
                 <mo stretchy="false">(</mo>
                 <mrow data-mjx-texclass="ORD">
-                  <mover>
+                  <mover accent="true">
                     <mi>r</mi>
-                    <mo stretchy="false">→</mo>
+                    <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
                   </mover>
                 </mrow>
                 <mo>;</mo>
                 <mrow data-mjx-texclass="ORD">
-                  <mover>
+                  <mover accent="true">
                     <mi>R</mi>
-                    <mo stretchy="false">→</mo>
+                    <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
                   </mover>
                 </mrow>
                 <mo stretchy="false">)</mo>
@@ -259,9 +260,9 @@
             <mtd>
               <msub>
                 <mrow data-mjx-texclass="ORD">
-                  <mover>
+                  <mover accent="true">
                     <mi>K</mi>
-                    <mo stretchy="false">^</mo>
+                    <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
                   </mover>
                 </mrow>
                 <mi>N</mi>
@@ -303,9 +304,9 @@
             <mtd>
               <msub>
                 <mrow data-mjx-texclass="ORD">
-                  <mover>
+                  <mover accent="true">
                     <mi>V</mi>
-                    <mo stretchy="false">^</mo>
+                    <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
                   </mover>
                 </mrow>
                 <mrow data-mjx-texclass="ORD">
@@ -337,12 +338,12 @@
                   </msub>
                 </mrow>
                 <mrow>
-                  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+                  <mo stretchy="false">|</mo>
                   <msub>
                     <mrow data-mjx-texclass="ORD">
-                      <mover>
+                      <mover accent="true">
                         <mi>R</mi>
-                        <mo stretchy="false">→</mo>
+                        <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
                       </mover>
                     </mrow>
                     <mi>A</mi>
@@ -350,14 +351,14 @@
                   <mo>−</mo>
                   <msub>
                     <mrow data-mjx-texclass="ORD">
-                      <mover>
+                      <mover accent="true">
                         <mi>R</mi>
-                        <mo stretchy="false">→</mo>
+                        <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
                       </mover>
                     </mrow>
                     <mi>B</mi>
                   </msub>
-                  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+                  <mo stretchy="false">|</mo>
                 </mrow>
               </mfrac>
             </mtd>
@@ -371,9 +372,9 @@
             <mtd>
               <msub>
                 <mrow data-mjx-texclass="ORD">
-                  <mover>
+                  <mover accent="true">
                     <mi>H</mi>
-                    <mo stretchy="false">^</mo>
+                    <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
                   </mover>
                 </mrow>
                 <mi>e</mi>
@@ -413,12 +414,12 @@
                   <mi>A</mi>
                 </msub>
                 <mrow>
-                  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+                  <mo stretchy="false">|</mo>
                   <msub>
                     <mrow data-mjx-texclass="ORD">
-                      <mover>
+                      <mover accent="true">
                         <mi>r</mi>
-                        <mo stretchy="false">→</mo>
+                        <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
                       </mover>
                     </mrow>
                     <mi>i</mi>
@@ -426,14 +427,14 @@
                   <mo>−</mo>
                   <msub>
                     <mrow data-mjx-texclass="ORD">
-                      <mover>
+                      <mover accent="true">
                         <mi>R</mi>
-                        <mo stretchy="false">→</mo>
+                        <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
                       </mover>
                     </mrow>
                     <mi>A</mi>
                   </msub>
-                  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+                  <mo stretchy="false">|</mo>
                 </mrow>
               </mfrac>
               <mo>+</mo>
@@ -448,12 +449,12 @@
               <mfrac>
                 <mn>1</mn>
                 <mrow>
-                  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+                  <mo stretchy="false">|</mo>
                   <msub>
                     <mrow data-mjx-texclass="ORD">
-                      <mover>
+                      <mover accent="true">
                         <mi>r</mi>
-                        <mo stretchy="false">→</mo>
+                        <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
                       </mover>
                     </mrow>
                     <mi>i</mi>
@@ -461,14 +462,14 @@
                   <mo>−</mo>
                   <msub>
                     <mrow data-mjx-texclass="ORD">
-                      <mover>
+                      <mover accent="true">
                         <mi>r</mi>
-                        <mo stretchy="false">→</mo>
+                        <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
                       </mover>
                     </mrow>
                     <mi>j</mi>
                   </msub>
-                  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+                  <mo stretchy="false">|</mo>
                 </mrow>
               </mfrac>
             </mtd>
@@ -486,41 +487,41 @@
 <p>The notation <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mrow data-mjx-texclass="ORD">
-      <mover>
+      <mover accent="true">
         <mi>H</mi>
-        <mo stretchy="false">^</mo>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
       </mover>
     </mrow>
     <mi>e</mi>
   </msub>
   <mo stretchy="false">(</mo>
   <mrow data-mjx-texclass="ORD">
-    <mover>
+    <mover accent="true">
       <mi>r</mi>
-      <mo stretchy="false">→</mo>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
     </mover>
   </mrow>
   <mo>;</mo>
   <mrow data-mjx-texclass="ORD">
-    <mover>
+    <mover accent="true">
       <mi>R</mi>
-      <mo stretchy="false">→</mo>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
     </mover>
   </mrow>
   <mo stretchy="false">)</mo>
 </math></span> means that the nuclear positions enter as <em>parameters</em>: move the nuclei and the electrons feel a different potential, but <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
-    <mover>
+    <mover accent="true">
       <mi>R</mi>
-      <mo stretchy="false">→</mo>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
     </mover>
   </mrow>
 </math></span> carries no derivative in <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mrow data-mjx-texclass="ORD">
-      <mover>
+      <mover accent="true">
         <mi>H</mi>
-        <mo stretchy="false">^</mo>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
       </mover>
     </mrow>
     <mi>e</mi>
@@ -533,9 +534,9 @@
 </math></span> times, so <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mrow data-mjx-texclass="ORD">
-      <mover>
+      <mover accent="true">
         <mi>K</mi>
-        <mo stretchy="false">^</mo>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
       </mover>
     </mrow>
     <mi>N</mi>
@@ -544,9 +545,9 @@
 <h2 id="sec-7-the-born-oppenheimer-separation"><span class="sec-number">7.3</span>The Born–Oppenheimer Separation</h2>
 <p><strong>Step one: fix the nuclei.</strong> For each geometry <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
-    <mover>
+    <mover accent="true">
       <mi>R</mi>
-      <mo stretchy="false">→</mo>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
     </mover>
   </mrow>
 </math></span>, solve the electronic problem</p>
@@ -556,23 +557,23 @@
       <mtd>
         <msub>
           <mrow data-mjx-texclass="ORD">
-            <mover>
+            <mover accent="true">
               <mi>H</mi>
-              <mo stretchy="false">^</mo>
+              <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
             </mover>
           </mrow>
           <mi>e</mi>
         </msub>
         <mo stretchy="false">(</mo>
         <mrow data-mjx-texclass="ORD">
-          <mover>
+          <mover accent="true">
             <mi>R</mi>
-            <mo stretchy="false">→</mo>
+            <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
           </mover>
         </mrow>
         <mo stretchy="false">)</mo>
-        <mrow data-mjx-texclass="ORD">
-          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
           <mrow data-mjx-texclass="ORD">
             <msub>
               <mi>ψ</mi>
@@ -580,14 +581,14 @@
             </msub>
             <mo stretchy="false">(</mo>
             <mrow data-mjx-texclass="ORD">
-              <mover>
+              <mover accent="true">
                 <mi>R</mi>
-                <mo stretchy="false">→</mo>
+                <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
               </mover>
             </mrow>
             <mo stretchy="false">)</mo>
           </mrow>
-          <mo fence="false" stretchy="false">⟩</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
         </mrow>
         <mo>=</mo>
         <msub>
@@ -598,14 +599,14 @@
         </msub>
         <mo stretchy="false">(</mo>
         <mrow data-mjx-texclass="ORD">
-          <mover>
+          <mover accent="true">
             <mi>R</mi>
-            <mo stretchy="false">→</mo>
+            <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
           </mover>
         </mrow>
         <mo stretchy="false">)</mo>
-        <mrow data-mjx-texclass="ORD">
-          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
           <mrow data-mjx-texclass="ORD">
             <msub>
               <mi>ψ</mi>
@@ -613,14 +614,14 @@
             </msub>
             <mo stretchy="false">(</mo>
             <mrow data-mjx-texclass="ORD">
-              <mover>
+              <mover accent="true">
                 <mi>R</mi>
-                <mo stretchy="false">→</mo>
+                <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
               </mover>
             </mrow>
             <mo stretchy="false">)</mo>
           </mrow>
-          <mo fence="false" stretchy="false">⟩</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
         </mrow>
         <mo>.</mo>
       </mtd>
@@ -634,49 +635,52 @@
   </msub>
   <mo stretchy="false">(</mo>
   <mrow data-mjx-texclass="ORD">
-    <mover>
+    <mover accent="true">
       <mi>r</mi>
-      <mo stretchy="false">→</mo>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
     </mover>
   </mrow>
   <mo>;</mo>
   <mrow data-mjx-texclass="ORD">
-    <mover>
+    <mover accent="true">
       <mi>R</mi>
-      <mo stretchy="false">→</mo>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
     </mover>
   </mrow>
   <mo stretchy="false">)</mo>
   <mo>=</mo>
   <mrow data-mjx-texclass="INNER">
-    <mo data-mjx-texclass="OPEN" stretchy="false" form="prefix" lspace="0em" rspace="0em">⟨</mo>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
     <mrow data-mjx-texclass="ORD">
-      <mover>
-        <mi>r</mi>
-        <mo stretchy="false">→</mo>
-      </mover>
+      <mrow data-mjx-texclass="ORD">
+        <mover accent="true">
+          <mi>r</mi>
+          <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+        </mover>
+      </mrow>
     </mrow>
-    <mo data-mjx-texclass="CLOSE" stretchy="false" form="postfix" lspace="0em" rspace="0em">⟩</mo>
-  </mrow>
-  <mrow data-mjx-texclass="ORD">
-    <msub>
-      <mi>ψ</mi>
-      <mi>i</mi>
-    </msub>
-    <mo stretchy="false">(</mo>
+    <mo lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
-      <mover>
-        <mi>R</mi>
-        <mo stretchy="false">→</mo>
-      </mover>
+      <msub>
+        <mi>ψ</mi>
+        <mi>i</mi>
+      </msub>
+      <mo stretchy="false">(</mo>
+      <mrow data-mjx-texclass="ORD">
+        <mover accent="true">
+          <mi>R</mi>
+          <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+        </mover>
+      </mrow>
+      <mo stretchy="false">)</mo>
     </mrow>
-    <mo stretchy="false">)</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
 </math></span>. The eigenvalue is a <em>function of the geometry</em>, and the eigenfunctions at each <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
-    <mover>
+    <mover accent="true">
       <mi>R</mi>
-      <mo stretchy="false">→</mo>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
     </mover>
   </mrow>
 </math></span> form a complete orthonormal set in the electronic coordinates.</p>
@@ -693,9 +697,9 @@
         </msub>
         <mo stretchy="false">(</mo>
         <mrow data-mjx-texclass="ORD">
-          <mover>
+          <mover accent="true">
             <mi>R</mi>
-            <mo stretchy="false">→</mo>
+            <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
           </mover>
         </mrow>
         <mo stretchy="false">)</mo>
@@ -708,9 +712,9 @@
         </msub>
         <mo stretchy="false">(</mo>
         <mrow data-mjx-texclass="ORD">
-          <mover>
+          <mover accent="true">
             <mi>R</mi>
-            <mo stretchy="false">→</mo>
+            <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
           </mover>
         </mrow>
         <mo stretchy="false">)</mo>
@@ -724,9 +728,9 @@
         </msub>
         <mo stretchy="false">(</mo>
         <mrow data-mjx-texclass="ORD">
-          <mover>
+          <mover accent="true">
             <mi>R</mi>
-            <mo stretchy="false">→</mo>
+            <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
           </mover>
         </mrow>
         <mo stretchy="false">)</mo>
@@ -743,20 +747,20 @@
   <mtable displaystyle="true">
     <mtr>
       <mtd>
-        <mrow data-mjx-texclass="ORD">
-          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
           <mrow data-mjx-texclass="ORD">
             <mi mathvariant="normal">Ψ</mi>
           </mrow>
-          <mo fence="false" stretchy="false">⟩</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
         </mrow>
         <mo>=</mo>
         <munder>
           <mo data-mjx-texclass="OP" stretchy="true">∑</mo>
           <mi>i</mi>
         </munder>
-        <mrow data-mjx-texclass="ORD">
-          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
           <mrow data-mjx-texclass="ORD">
             <msub>
               <mi>ψ</mi>
@@ -764,24 +768,24 @@
             </msub>
             <mo stretchy="false">(</mo>
             <mrow data-mjx-texclass="ORD">
-              <mover>
+              <mover accent="true">
                 <mi>R</mi>
-                <mo stretchy="false">→</mo>
+                <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
               </mover>
             </mrow>
             <mo stretchy="false">)</mo>
           </mrow>
-          <mo fence="false" stretchy="false">⟩</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
         </mrow>
-        <mrow data-mjx-texclass="ORD">
-          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
           <mrow data-mjx-texclass="ORD">
             <msub>
               <mi>χ</mi>
               <mi>i</mi>
             </msub>
           </mrow>
-          <mo fence="false" stretchy="false">⟩</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
         </mrow>
         <mo>,</mo>
       </mtd>
@@ -790,8 +794,8 @@
 </math><span class="eqn-number" id="mjx-eqn:eq:MOL-exact-expansion">(7.5)</span></div>
 <p>which is exact because <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo fence="false" stretchy="false">{</mo>
-  <mrow data-mjx-texclass="ORD">
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
       <msub>
         <mi>ψ</mi>
@@ -799,21 +803,21 @@
       </msub>
       <mo stretchy="false">(</mo>
       <mrow data-mjx-texclass="ORD">
-        <mover>
+        <mover accent="true">
           <mi>R</mi>
-          <mo stretchy="false">→</mo>
+          <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
         </mover>
       </mrow>
       <mo stretchy="false">)</mo>
     </mrow>
-    <mo fence="false" stretchy="false">⟩</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
   <mo fence="false" stretchy="false">}</mo>
 </math></span> is complete at each <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
-    <mover>
+    <mover accent="true">
       <mi>R</mi>
-      <mo stretchy="false">→</mo>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
     </mover>
   </mrow>
 </math></span>. In coordinate space this is</p>
@@ -824,16 +828,16 @@
         <mi mathvariant="normal">Ψ</mi>
         <mo stretchy="false">(</mo>
         <mrow data-mjx-texclass="ORD">
-          <mover>
+          <mover accent="true">
             <mi>r</mi>
-            <mo stretchy="false">→</mo>
+            <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
           </mover>
         </mrow>
         <mo>,</mo>
         <mrow data-mjx-texclass="ORD">
-          <mover>
+          <mover accent="true">
             <mi>R</mi>
-            <mo stretchy="false">→</mo>
+            <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
           </mover>
         </mrow>
         <mo stretchy="false">)</mo>
@@ -848,16 +852,16 @@
         </msub>
         <mo stretchy="false">(</mo>
         <mrow data-mjx-texclass="ORD">
-          <mover>
+          <mover accent="true">
             <mi>r</mi>
-            <mo stretchy="false">→</mo>
+            <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
           </mover>
         </mrow>
         <mo>;</mo>
         <mrow data-mjx-texclass="ORD">
-          <mover>
+          <mover accent="true">
             <mi>R</mi>
-            <mo stretchy="false">→</mo>
+            <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
           </mover>
         </mrow>
         <mo stretchy="false">)</mo>
@@ -870,9 +874,9 @@
         </msub>
         <mo stretchy="false">(</mo>
         <mrow data-mjx-texclass="ORD">
-          <mover>
+          <mover accent="true">
             <mi>R</mi>
-            <mo stretchy="false">→</mo>
+            <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
           </mover>
         </mrow>
         <mo stretchy="false">)</mo>
@@ -886,28 +890,31 @@
         </msub>
         <mo stretchy="false">(</mo>
         <mrow data-mjx-texclass="ORD">
-          <mover>
+          <mover accent="true">
             <mi>R</mi>
-            <mo stretchy="false">→</mo>
+            <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
           </mover>
         </mrow>
         <mo stretchy="false">)</mo>
         <mo>=</mo>
         <mrow data-mjx-texclass="INNER">
-          <mo data-mjx-texclass="OPEN" stretchy="false" form="prefix" lspace="0em" rspace="0em">⟨</mo>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
           <mrow data-mjx-texclass="ORD">
-            <mover>
-              <mi>R</mi>
-              <mo stretchy="false">→</mo>
-            </mover>
+            <mrow data-mjx-texclass="ORD">
+              <mover accent="true">
+                <mi>R</mi>
+                <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+              </mover>
+            </mrow>
           </mrow>
-          <mo data-mjx-texclass="CLOSE" stretchy="false" form="postfix" lspace="0em" rspace="0em">⟩</mo>
-        </mrow>
-        <mrow data-mjx-texclass="ORD">
-          <msub>
-            <mi>χ</mi>
-            <mi>i</mi>
-          </msub>
+          <mo lspace="0em" rspace="0em">|</mo>
+          <mrow data-mjx-texclass="ORD">
+            <msub>
+              <mi>χ</mi>
+              <mi>i</mi>
+            </msub>
+          </mrow>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
         </mrow>
         <mo>.</mo>
       </mtd>
@@ -916,9 +923,9 @@
 </math><span class="eqn-number" id="mjx-eqn:eq:MOL-exact-expansion-coordinate">(7.6)</span></div>
 <p>Now act with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
-    <mover>
+    <mover accent="true">
       <mi>H</mi>
-      <mo stretchy="false">^</mo>
+      <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
     </mover>
   </mrow>
 </math></span> and see what the nuclear kinetic energy does.</p>
@@ -1025,30 +1032,30 @@
 <p>The first term is what we want. The second and third involve derivatives of the <em>electronic</em> wave function with respect to nuclear position — they measure how much the electronic state changes as the nuclei move.</p>
 <p>Projecting <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
-    <mover>
+    <mover accent="true">
       <mi>H</mi>
-      <mo stretchy="false">^</mo>
+      <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
     </mover>
   </mrow>
-  <mrow data-mjx-texclass="ORD">
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
       <mi mathvariant="normal">Ψ</mi>
     </mrow>
-    <mo fence="false" stretchy="false">⟩</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
   <mo>=</mo>
   <mi>E</mi>
-  <mrow data-mjx-texclass="ORD">
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
       <mi mathvariant="normal">Ψ</mi>
     </mrow>
-    <mo fence="false" stretchy="false">⟩</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
 </math></span> onto <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow data-mjx-texclass="ORD">
-    <mo fence="false" stretchy="false">⟨</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
     <mrow data-mjx-texclass="ORD">
       <msub>
         <mi>ψ</mi>
@@ -1056,16 +1063,16 @@
       </msub>
       <mo stretchy="false">(</mo>
       <mrow data-mjx-texclass="ORD">
-        <mover>
+        <mover accent="true">
           <mi>R</mi>
-          <mo stretchy="false">→</mo>
+          <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
         </mover>
       </mrow>
       <mo stretchy="false">)</mo>
     </mrow>
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
   </mrow>
-</math></span> and using Eqs. <a href="../chapter-07/index.html#eq-eq-mol-electronic">(7.3)</a> and <a href="../chapter-07/index.html#eq-eq-mol-kn-action">(7.7)</a>,</p>
+  </math></span> and using Eqs. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-electronic">(7.3)</a> and <a class="xref" href="../chapter-07/index.html#eq-eq-mol-kn-action">(7.7)</a>,</p>
 <div class="math-block math-block--numbered" id="eq-eq-mol-coupled-nuclear"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -1075,9 +1082,9 @@
         </mrow>
         <msub>
           <mrow data-mjx-texclass="ORD">
-            <mover>
+            <mover accent="true">
               <mi>K</mi>
-              <mo stretchy="false">^</mo>
+              <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
             </mover>
           </mrow>
           <mi>N</mi>
@@ -1089,9 +1096,9 @@
         </msub>
         <mo stretchy="false">(</mo>
         <mrow data-mjx-texclass="ORD">
-          <mover>
+          <mover accent="true">
             <mi>R</mi>
-            <mo stretchy="false">→</mo>
+            <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
           </mover>
         </mrow>
         <mo stretchy="false">)</mo>
@@ -1109,9 +1116,9 @@
         </munder>
         <msub>
           <mrow data-mjx-texclass="ORD">
-            <mover>
+            <mover accent="true">
               <mi mathvariant="normal">Λ</mi>
-              <mo stretchy="false">^</mo>
+              <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
             </mover>
           </mrow>
           <mrow data-mjx-texclass="ORD">
@@ -1144,9 +1151,9 @@
       <mtd>
         <msub>
           <mrow data-mjx-texclass="ORD">
-            <mover>
+            <mover accent="true">
               <mi mathvariant="normal">Λ</mi>
-              <mo stretchy="false">^</mo>
+              <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
             </mover>
           </mrow>
           <mrow data-mjx-texclass="ORD">
@@ -1173,29 +1180,29 @@
         <mrow data-mjx-texclass="INNER">
           <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">[</mo>
           <mn>2</mn>
-          <mrow data-mjx-texclass="ORD">
-            <mo fence="false" stretchy="false">⟨</mo>
+          <mrow data-mjx-texclass="INNER">
+            <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
             <mrow data-mjx-texclass="ORD">
               <msub>
                 <mi>ψ</mi>
                 <mi>j</mi>
               </msub>
             </mrow>
-            <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+            <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
           </mrow>
           <msub>
             <mi mathvariant="normal">∇</mi>
             <mi>A</mi>
           </msub>
-          <mrow data-mjx-texclass="ORD">
-            <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+          <mrow data-mjx-texclass="INNER">
+            <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
             <mrow data-mjx-texclass="ORD">
               <msub>
                 <mi>ψ</mi>
                 <mi>i</mi>
               </msub>
             </mrow>
-            <mo fence="false" stretchy="false">⟩</mo>
+            <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
           </mrow>
           <mstyle scriptlevel="0">
             <mspace width="-0.167em" />
@@ -1209,15 +1216,15 @@
             <mi>A</mi>
           </msub>
           <mo>+</mo>
-          <mrow data-mjx-texclass="ORD">
-            <mo fence="false" stretchy="false">⟨</mo>
+          <mrow data-mjx-texclass="INNER">
+            <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
             <mrow data-mjx-texclass="ORD">
               <msub>
                 <mi>ψ</mi>
                 <mi>j</mi>
               </msub>
             </mrow>
-            <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+            <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
           </mrow>
           <msubsup>
             <mi mathvariant="normal">∇</mi>
@@ -1226,15 +1233,15 @@
               <mn>2</mn>
             </mrow>
           </msubsup>
-          <mrow data-mjx-texclass="ORD">
-            <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+          <mrow data-mjx-texclass="INNER">
+            <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
             <mrow data-mjx-texclass="ORD">
               <msub>
                 <mi>ψ</mi>
                 <mi>i</mi>
               </msub>
             </mrow>
-            <mo fence="false" stretchy="false">⟩</mo>
+            <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
           </mrow>
           <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">]</mo>
         </mrow>
@@ -1247,9 +1254,9 @@
 <section class="callout definition" id="definition-def-mol-bo"><header><span class="callout-kind">Definition 7.3.2</span><span class="callout-title">Born–Oppenheimer approximation</span></header><p> The <em>Born–Oppenheimer approximation</em> sets <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mrow data-mjx-texclass="ORD">
-      <mover>
+      <mover accent="true">
         <mi mathvariant="normal">Λ</mi>
-        <mo stretchy="false">^</mo>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
       </mover>
     </mrow>
     <mrow data-mjx-texclass="ORD">
@@ -1276,9 +1283,9 @@
                 </mrow>
                 <msub>
                   <mrow data-mjx-texclass="ORD">
-                    <mover>
+                    <mover accent="true">
                       <mi>K</mi>
-                      <mo stretchy="false">^</mo>
+                      <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
                     </mover>
                   </mrow>
                   <mi>N</mi>
@@ -1290,9 +1297,9 @@
                 </msub>
                 <mo stretchy="false">(</mo>
                 <mrow data-mjx-texclass="ORD">
-                  <mover>
+                  <mover accent="true">
                     <mi>R</mi>
-                    <mo stretchy="false">→</mo>
+                    <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
                   </mover>
                 </mrow>
                 <mo stretchy="false">)</mo>
@@ -1312,9 +1319,9 @@
                 </msub>
                 <mo stretchy="false">(</mo>
                 <mrow data-mjx-texclass="ORD">
-                  <mover>
+                  <mover accent="true">
                     <mi>R</mi>
-                    <mo stretchy="false">→</mo>
+                    <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
                   </mover>
                 </mrow>
                 <mo stretchy="false">)</mo>
@@ -1346,9 +1353,9 @@
                 </msub>
                 <mo stretchy="false">(</mo>
                 <mrow data-mjx-texclass="ORD">
-                  <mover>
+                  <mover accent="true">
                     <mi>R</mi>
-                    <mo stretchy="false">→</mo>
+                    <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
                   </mover>
                 </mrow>
                 <mo stretchy="false">)</mo>
@@ -1368,8 +1375,8 @@
   <mtable displaystyle="true">
     <mtr>
       <mtd>
-        <mrow data-mjx-texclass="ORD">
-          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
           <mrow data-mjx-texclass="ORD">
             <msub>
               <mi mathvariant="normal">Ψ</mi>
@@ -1383,11 +1390,11 @@
               </mrow>
             </msub>
           </mrow>
-          <mo fence="false" stretchy="false">⟩</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
         </mrow>
         <mo>≃</mo>
-        <mrow data-mjx-texclass="ORD">
-          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
           <mrow data-mjx-texclass="ORD">
             <msub>
               <mi>ψ</mi>
@@ -1395,17 +1402,17 @@
             </msub>
             <mo stretchy="false">(</mo>
             <mrow data-mjx-texclass="ORD">
-              <mover>
+              <mover accent="true">
                 <mi>R</mi>
-                <mo stretchy="false">→</mo>
+                <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
               </mover>
             </mrow>
             <mo stretchy="false">)</mo>
           </mrow>
-          <mo fence="false" stretchy="false">⟩</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
         </mrow>
-        <mrow data-mjx-texclass="ORD">
-          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
           <mrow data-mjx-texclass="ORD">
             <msub>
               <mi>χ</mi>
@@ -1419,7 +1426,7 @@
               </mrow>
             </msub>
           </mrow>
-          <mo fence="false" stretchy="false">⟩</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
         </mrow>
         <mo>.</mo>
       </mtd>
@@ -1440,16 +1447,16 @@
   </msub>
   <mo stretchy="false">(</mo>
   <mrow data-mjx-texclass="ORD">
-    <mover>
+    <mover accent="true">
       <mi>r</mi>
-      <mo stretchy="false">→</mo>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
     </mover>
   </mrow>
   <mo>,</mo>
   <mrow data-mjx-texclass="ORD">
-    <mover>
+    <mover accent="true">
       <mi>R</mi>
-      <mo stretchy="false">→</mo>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
     </mover>
   </mrow>
   <mo stretchy="false">)</mo>
@@ -1460,16 +1467,16 @@
   </msub>
   <mo stretchy="false">(</mo>
   <mrow data-mjx-texclass="ORD">
-    <mover>
+    <mover accent="true">
       <mi>r</mi>
-      <mo stretchy="false">→</mo>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
     </mover>
   </mrow>
   <mo>;</mo>
   <mrow data-mjx-texclass="ORD">
-    <mover>
+    <mover accent="true">
       <mi>R</mi>
-      <mo stretchy="false">→</mo>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
     </mover>
   </mrow>
   <mo stretchy="false">)</mo>
@@ -1486,14 +1493,15 @@
   </msub>
   <mo stretchy="false">(</mo>
   <mrow data-mjx-texclass="ORD">
-    <mover>
+    <mover accent="true">
       <mi>R</mi>
-      <mo stretchy="false">→</mo>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
     </mover>
   </mrow>
   <mo stretchy="false">)</mo>
 </math></span>.</p></section>
-<section class="callout remark" id="remark-rem-mol-bo-validity"><header><span class="callout-kind">Remark 7.3.1</span><span class="callout-title">Why it works, and when it fails</span></header><p> Equation <a href="../chapter-07/index.html#eq-eq-mol-nonadiabatic">(7.9)</a> carries an explicit <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>So the approximation has a clear interpretation: solve electrons at fixed geometry, use the resulting potential as the nuclear potential, and keep one electronic surface at a time.</p>
+<section class="callout remark" id="remark-rem-mol-bo-validity"><header><span class="callout-kind">Remark 7.3.1</span><span class="callout-title">Why it works, and when it fails</span></header><p> Equation <a class="xref" href="../chapter-07/index.html#eq-eq-mol-nonadiabatic">(7.9)</a> carries an explicit <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>1</mn>
   <mrow data-mjx-texclass="ORD">
     <mo>/</mo>
@@ -1503,29 +1511,29 @@
     <mi>A</mi>
   </msub>
 </math></span>, which is why the approximation is good: the neglected terms are smaller than those retained by the mass ratio. The matrix elements <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow data-mjx-texclass="ORD">
-    <mo fence="false" stretchy="false">⟨</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
     <mrow data-mjx-texclass="ORD">
       <msub>
         <mi>ψ</mi>
         <mi>j</mi>
       </msub>
     </mrow>
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
   </mrow>
   <msub>
     <mi mathvariant="normal">∇</mi>
     <mi>A</mi>
   </msub>
-  <mrow data-mjx-texclass="ORD">
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
       <msub>
         <mi>ψ</mi>
         <mi>i</mi>
       </msub>
     </mrow>
-    <mo fence="false" stretchy="false">⟩</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
 </math></span> can be shown to carry a denominator <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
@@ -1549,9 +1557,9 @@
     <mi>ν</mi>
     <mi>i</mi>
   </msub>
-</math></span>. Energy can be stored in the electrons or in the motion of the nuclei, and the two ladders have very different rungs — the organising fact of molecular spectroscopy (Sec. <a href="../chapter-07/index.html#sec-7-the-three-energy-scales">7.10</a>).</p>
+</math></span>. Energy can be stored in the electrons or in the motion of the nuclei, and the two ladders have very different rungs — the organising fact of molecular spectroscopy (Sec. <a class="xref" href="../chapter-07/index.html#sec-7-the-three-energy-scales">7.10</a>).</p>
 <h2 id="sec-7-molecular-orbitals-the-lcao-method"><span class="sec-number">7.4</span>Molecular Orbitals: the LCAO Method</h2>
-<p>Solving Eq. <a href="../chapter-07/index.html#eq-eq-mol-electronic">(7.3)</a> in practice uses the independent-electron picture of Chapter 5, with orbitals now spread over the whole molecule. The standard construction builds them from atomic orbitals.</p>
+<p>Solving Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-electronic">(7.3)</a> in practice uses the independent-electron picture of Chapter 5, with orbitals now spread over the whole molecule. The standard construction builds them from atomic orbitals.</p>
 <p>Consider H<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msubsup>
     <mi />
@@ -1567,42 +1575,42 @@
   <mtable displaystyle="true">
     <mtr>
       <mtd>
-        <mrow data-mjx-texclass="ORD">
-          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
           <mrow data-mjx-texclass="ORD">
             <mi>ψ</mi>
           </mrow>
-          <mo fence="false" stretchy="false">⟩</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
         </mrow>
         <mo>=</mo>
         <msub>
           <mi>c</mi>
           <mi>A</mi>
         </msub>
-        <mrow data-mjx-texclass="ORD">
-          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
           <mrow data-mjx-texclass="ORD">
             <msub>
               <mi>ϕ</mi>
               <mi>A</mi>
             </msub>
           </mrow>
-          <mo fence="false" stretchy="false">⟩</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
         </mrow>
         <mo>+</mo>
         <msub>
           <mi>c</mi>
           <mi>B</mi>
         </msub>
-        <mrow data-mjx-texclass="ORD">
-          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
           <mrow data-mjx-texclass="ORD">
             <msub>
               <mi>ϕ</mi>
               <mi>B</mi>
             </msub>
           </mrow>
-          <mo fence="false" stretchy="false">⟩</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
         </mrow>
         <mo>,</mo>
       </mtd>
@@ -1613,9 +1621,9 @@
   <mi>ψ</mi>
   <mo stretchy="false">(</mo>
   <mrow data-mjx-texclass="ORD">
-    <mover>
+    <mover accent="true">
       <mi>r</mi>
-      <mo stretchy="false">→</mo>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
     </mover>
   </mrow>
   <mo stretchy="false">)</mo>
@@ -1630,9 +1638,9 @@
   </msub>
   <mo stretchy="false">(</mo>
   <mrow data-mjx-texclass="ORD">
-    <mover>
+    <mover accent="true">
       <mi>r</mi>
-      <mo stretchy="false">→</mo>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
     </mover>
   </mrow>
   <mo stretchy="false">)</mo>
@@ -1647,9 +1655,9 @@
   </msub>
   <mo stretchy="false">(</mo>
   <mrow data-mjx-texclass="ORD">
-    <mover>
+    <mover accent="true">
       <mi>r</mi>
-      <mo stretchy="false">→</mo>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
     </mover>
   </mrow>
   <mo stretchy="false">)</mo>
@@ -1674,100 +1682,103 @@
         <mi>S</mi>
         <mo>=</mo>
         <mrow data-mjx-texclass="INNER">
-          <mo data-mjx-texclass="OPEN" stretchy="false" form="prefix" lspace="0em" rspace="0em">⟨</mo>
-          <msub>
-            <mi>ϕ</mi>
-            <mi>A</mi>
-          </msub>
-          <mo data-mjx-texclass="CLOSE" stretchy="false" form="postfix" lspace="0em" rspace="0em">⟩</mo>
-        </mrow>
-        <mrow data-mjx-texclass="ORD">
-          <msub>
-            <mi>ϕ</mi>
-            <mi>B</mi>
-          </msub>
-        </mrow>
-        <mo>,</mo>
-        <mstyle scriptlevel="0">
-          <mspace width="2em" />
-        </mstyle>
-        <msub>
-          <mi>H</mi>
-          <mrow data-mjx-texclass="ORD">
-            <mi>A</mi>
-            <mi>A</mi>
-          </mrow>
-        </msub>
-        <mo>=</mo>
-        <mrow data-mjx-texclass="ORD">
-          <mo fence="false" stretchy="false">⟨</mo>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
           <mrow data-mjx-texclass="ORD">
             <msub>
               <mi>ϕ</mi>
               <mi>A</mi>
             </msub>
           </mrow>
-          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
-        </mrow>
-        <msub>
-          <mrow data-mjx-texclass="ORD">
-            <mover>
-              <mi>H</mi>
-              <mo stretchy="false">^</mo>
-            </mover>
-          </mrow>
-          <mi>e</mi>
-        </msub>
-        <mrow data-mjx-texclass="ORD">
-          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
-          <mrow data-mjx-texclass="ORD">
-            <msub>
-              <mi>ϕ</mi>
-              <mi>A</mi>
-            </msub>
-          </mrow>
-          <mo fence="false" stretchy="false">⟩</mo>
-        </mrow>
-        <mo>,</mo>
-        <mstyle scriptlevel="0">
-          <mspace width="2em" />
-        </mstyle>
-        <msub>
-          <mi>H</mi>
-          <mrow data-mjx-texclass="ORD">
-            <mi>A</mi>
-            <mi>B</mi>
-          </mrow>
-        </msub>
-        <mo>=</mo>
-        <mrow data-mjx-texclass="ORD">
-          <mo fence="false" stretchy="false">⟨</mo>
-          <mrow data-mjx-texclass="ORD">
-            <msub>
-              <mi>ϕ</mi>
-              <mi>A</mi>
-            </msub>
-          </mrow>
-          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
-        </mrow>
-        <msub>
-          <mrow data-mjx-texclass="ORD">
-            <mover>
-              <mi>H</mi>
-              <mo stretchy="false">^</mo>
-            </mover>
-          </mrow>
-          <mi>e</mi>
-        </msub>
-        <mrow data-mjx-texclass="ORD">
-          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+          <mo lspace="0em" rspace="0em">|</mo>
           <mrow data-mjx-texclass="ORD">
             <msub>
               <mi>ϕ</mi>
               <mi>B</mi>
             </msub>
           </mrow>
-          <mo fence="false" stretchy="false">⟩</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+        </mrow>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <msub>
+          <mi>H</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mi>A</mi>
+            <mi>A</mi>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
+          <mrow data-mjx-texclass="ORD">
+            <msub>
+              <mi>ϕ</mi>
+              <mi>A</mi>
+            </msub>
+          </mrow>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
+        </mrow>
+        <msub>
+          <mrow data-mjx-texclass="ORD">
+            <mover accent="true">
+              <mi>H</mi>
+              <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+            </mover>
+          </mrow>
+          <mi>e</mi>
+        </msub>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+          <mrow data-mjx-texclass="ORD">
+            <msub>
+              <mi>ϕ</mi>
+              <mi>A</mi>
+            </msub>
+          </mrow>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+        </mrow>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <msub>
+          <mi>H</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mi>A</mi>
+            <mi>B</mi>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
+          <mrow data-mjx-texclass="ORD">
+            <msub>
+              <mi>ϕ</mi>
+              <mi>A</mi>
+            </msub>
+          </mrow>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
+        </mrow>
+        <msub>
+          <mrow data-mjx-texclass="ORD">
+            <mover accent="true">
+              <mi>H</mi>
+              <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+            </mover>
+          </mrow>
+          <mi>e</mi>
+        </msub>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+          <mrow data-mjx-texclass="ORD">
+            <msub>
+              <mi>ϕ</mi>
+              <mi>B</mi>
+            </msub>
+          </mrow>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
         </mrow>
         <mo>,</mo>
       </mtd>
@@ -1791,7 +1802,7 @@
     </mrow>
   </msub>
 </math></span>.</p>
-<section class="callout theorem" id="theorem-thm-mol-lcao"><header><span class="callout-kind">Theorem 7.4.1</span><span class="callout-title">LCAO energies for a homonuclear diatomic</span></header><p> The variational method applied to Eq. <a href="../chapter-07/index.html#eq-eq-mol-lcao-trial">(7.12)</a> gives</p>
+<section class="callout theorem" id="theorem-thm-mol-lcao"><header><span class="callout-kind">Theorem 7.4.1</span><span class="callout-title">LCAO energies for a homonuclear diatomic</span></header><p> The variational method applied to Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-lcao-trial">(7.12)</a> gives</p>
 <div class="math-block math-block--numbered" id="eq-eq-mol-lcao-energies"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -1911,39 +1922,42 @@
 <div class="proof" data-lead="Proof."><p>Minimising <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>E</mi>
   <mo>=</mo>
-  <mrow data-mjx-texclass="ORD">
-    <mo fence="false" stretchy="false">⟨</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
     <mrow data-mjx-texclass="ORD">
       <mi>ψ</mi>
     </mrow>
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
   </mrow>
   <msub>
     <mrow data-mjx-texclass="ORD">
-      <mover>
+      <mover accent="true">
         <mi>H</mi>
-        <mo stretchy="false">^</mo>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
       </mover>
     </mrow>
     <mi>e</mi>
   </msub>
-  <mrow data-mjx-texclass="ORD">
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
       <mi>ψ</mi>
     </mrow>
-    <mo fence="false" stretchy="false">⟩</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
   <mrow data-mjx-texclass="ORD">
     <mo>/</mo>
   </mrow>
   <mrow data-mjx-texclass="INNER">
-    <mo data-mjx-texclass="OPEN" stretchy="false" form="prefix" lspace="0em" rspace="0em">⟨</mo>
-    <mi>ψ</mi>
-    <mo data-mjx-texclass="CLOSE" stretchy="false" form="postfix" lspace="0em" rspace="0em">⟩</mo>
-  </mrow>
-  <mrow data-mjx-texclass="ORD">
-    <mi>ψ</mi>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>ψ</mi>
+    </mrow>
+    <mo lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>ψ</mi>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
 </math></span> with respect to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
@@ -2173,7 +2187,7 @@
   </mfrac>
   <mo>,</mo>
 </math></div>
-<p>which is Eq. <a href="../chapter-07/index.html#eq-eq-mol-lcao-energies">(7.14)</a>. Substituting each root back into a secular equation gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>which is Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-lcao-energies">(7.14)</a>. Substituting each root back into a secular equation gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>c</mi>
     <mi>B</mi>
@@ -2186,12 +2200,15 @@
   </msub>
 </math></span>, and normalizing <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="INNER">
-    <mo data-mjx-texclass="OPEN" stretchy="false" form="prefix" lspace="0em" rspace="0em">⟨</mo>
-    <mi>ψ</mi>
-    <mo data-mjx-texclass="CLOSE" stretchy="false" form="postfix" lspace="0em" rspace="0em">⟩</mo>
-  </mrow>
-  <mrow data-mjx-texclass="ORD">
-    <mi>ψ</mi>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>ψ</mi>
+    </mrow>
+    <mo lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>ψ</mi>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
   <mo>=</mo>
   <msubsup>
@@ -2209,7 +2226,7 @@
   <mo stretchy="false">)</mo>
   <mo>=</mo>
   <mn>1</mn>
-</math></span> gives Eq. <a href="../chapter-07/index.html#eq-eq-mol-lcao-orbitals">(7.15)</a>.</p></div>
+</math></span> gives Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-lcao-orbitals">(7.15)</a>.</p></div>
 <section class="callout remark" id="remark-rem-mol-bonding"><header><span class="callout-kind">Remark 7.4.1</span><span class="callout-title">Where the bond comes from</span></header><p> The bonding combination <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>ϕ</mi>
@@ -2236,13 +2253,14 @@
     <mn>2</mn>
   </msub>
 </math></span> does not exist.</p></section>
+<p>This simple two-orbital model already captures the central chemical idea: bonding depends on where electron density sits between nuclei.</p>
 <h2 id="sec-7-molecular-orbital-labels"><span class="sec-number">7.5</span>Molecular Orbital Labels</h2>
 <p>In an atom <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mrow data-mjx-texclass="ORD">
-      <mover>
+      <mover accent="true">
         <mi>L</mi>
-        <mo stretchy="false">^</mo>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
       </mover>
     </mrow>
     <mrow data-mjx-texclass="ORD">
@@ -2251,9 +2269,9 @@
   </msup>
 </math></span> commutes with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
-    <mover>
+    <mover accent="true">
       <mi>H</mi>
-      <mo stretchy="false">^</mo>
+      <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
     </mover>
   </mrow>
 </math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -2262,9 +2280,9 @@
   <mo stretchy="false">[</mo>
   <msub>
     <mrow data-mjx-texclass="ORD">
-      <mover>
+      <mover accent="true">
         <mi>H</mi>
-        <mo stretchy="false">^</mo>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
       </mover>
     </mrow>
     <mi>e</mi>
@@ -2272,9 +2290,9 @@
   <mo>,</mo>
   <msup>
     <mrow data-mjx-texclass="ORD">
-      <mover>
+      <mover accent="true">
         <mi>L</mi>
-        <mo stretchy="false">^</mo>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
       </mover>
     </mrow>
     <mrow data-mjx-texclass="ORD">
@@ -2294,9 +2312,9 @@
   <mo stretchy="false">[</mo>
   <msub>
     <mrow data-mjx-texclass="ORD">
-      <mover>
+      <mover accent="true">
         <mi>H</mi>
-        <mo stretchy="false">^</mo>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
       </mover>
     </mrow>
     <mi>e</mi>
@@ -2304,9 +2322,9 @@
   <mo>,</mo>
   <msub>
     <mrow data-mjx-texclass="ORD">
-      <mover>
+      <mover accent="true">
         <mi>L</mi>
-        <mo stretchy="false">^</mo>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
       </mover>
     </mrow>
     <mi>z</mi>
@@ -2319,10 +2337,10 @@
 </math></span> for one electron and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi mathvariant="normal">Λ</mi>
   <mo>=</mo>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <mo data-mjx-texclass="OP">∑</mo>
   <mi>λ</mi>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
 </math></span> for the molecule, the letters are assigned by direct analogy with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>s</mi>
   <mo>,</mo>
@@ -2332,9 +2350,9 @@
 </math></span>:</p>
 <div class="centered"><div class="table-wrap"><table><tr><td>
 		<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <mi>λ</mi>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
 </math></span> or <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi mathvariant="normal">Λ</mi>
 </math></span></td><td>0</td><td>1</td><td>2</td><td></td></tr><tr><td>one electron</td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -2409,10 +2427,11 @@
   </mrow>
   <mi>u</mi>
 </math></span> label at all — its presence tells you the molecule is centrosymmetric.</p>
+<p>At this point the pattern is: symmetry that survives molecular geometry gives the labels that survive molecular physics.</p>
 <section class="callout remark" id="remark-rem-mol-parity-product"><header><span class="callout-kind">Remark 7.5.1</span><span class="callout-title">Orbital parity versus state parity</span></header><p> A subscript <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>g</mi>
-</math></span> on an <em>orbital</em> says that orbital is even. The parity of the whole electronic <em>state</em> is the <em>product</em> over all occupied orbitals. This distinction is easy to lose and it matters: a state built from one odd orbital and one even orbital is odd overall. We use exactly this product rule in Sec. <a href="../chapter-07/index.html#sec-7-ionization-several-thresholds">7.5.2</a> and again in Chapter 9.</p></section>
-<p>Since the dipole operator is odd (Chapter 3, Eq. <a href="../chapter-03/index.html#eq-eq-am-dipole-odd">(3.37)</a>), Laporte's rule survives intact in centrosymmetric molecules: a one-photon transition must connect <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> on an <em>orbital</em> says that orbital is even. The parity of the whole electronic <em>state</em> is the <em>product</em> over all occupied orbitals. This distinction is easy to lose and it matters: a state built from one odd orbital and one even orbital is odd overall. We use exactly this product rule in Sec. <a class="xref" href="../chapter-07/index.html#sec-7-ionization-several-thresholds">7.5.2</a> and again in Chapter 9.</p></section>
+<p>Since the dipole operator is odd (Chapter 3, Eq. <a class="xref" href="../chapter-03/index.html#eq-eq-am-dipole-odd">(3.37)</a>), Laporte's rule survives intact in centrosymmetric molecules: a one-photon transition must connect <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>g</mi>
 </math></span> to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>u</mi>
@@ -2469,7 +2488,7 @@
 </math></span> means lowest, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>B</mi>
 </math></span> means the third of that multiplicity. It is a name, and it is how every state in the literature is referred to.</p>
-<p>Chapter 5's two shortcuts (Thm. <a href="../chapter-05/index.html#theorem-thm-me-closed-shell">5.9.1</a>) apply unchanged: a closed shell contributes <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>Chapter 5's two shortcuts (Thm. <a class="xref" href="../chapter-05/index.html#theorem-thm-me-closed-shell">5.9.1</a>) apply unchanged: a closed shell contributes <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>S</mi>
   <mo>=</mo>
   <mn>0</mn>
@@ -2613,7 +2632,7 @@
   <mi>σ</mi>
 </math></span> orbitals hold two each and the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>π</mi>
-</math></span> orbitals four each, as Sec. <a href="../chapter-07/index.html#sec-7-molecular-orbital-labels">7.5</a> explained — so every orbital listed is completely full.</p>
+</math></span> orbitals four each, as Sec. <a class="xref" href="../chapter-07/index.html#sec-7-molecular-orbital-labels">7.5</a> explained — so every orbital listed is completely full.</p>
 <p><em>Spin.</em> Every orbital is doubly or quadruply occupied, so all spins are paired: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>S</mi>
   <mo>=</mo>
@@ -2651,7 +2670,7 @@
 </math></span>: a <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi mathvariant="normal">Σ</mi>
 </math></span> state.</p>
-<p><em>Parity.</em> By Remark <a href="../chapter-07/index.html#remark-rem-mol-parity-product">7.5.1</a>, take the product over occupied orbitals. Each orbital appears an even number of times (twice or four times), so each contributes its parity squared, which is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p><em>Parity.</em> By Remark <a class="xref" href="../chapter-07/index.html#remark-rem-mol-parity-product">7.5.1</a>, take the product over occupied orbitals. Each orbital appears an even number of times (twice or four times), so each contributes its parity squared, which is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo form="prefix" lspace="0em" rspace="0em">+</mo>
   <mn>1</mn>
 </math></span>. The product is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -2704,9 +2723,9 @@
       <mo form="prefix" lspace="0em" rspace="0em">+</mo>
     </mrow>
   </msubsup>
-</math></span></span></header><p> Derive the term symbol of the ion produced by removing one electron from each valence orbital in Eq. <a href="../chapter-07/index.html#eq-eq-mol-co2-config">(7.18)</a>.</p>
+</math></span></span></header><p> Derive the term symbol of the ion produced by removing one electron from each valence orbital in Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-co2-config">(7.18)</a>.</p>
 <p class="solution-head">Solution.</p>
-<p>By Theorem <a href="../chapter-05/index.html#theorem-thm-me-closed-shell">5.9.1</a>, one hole behaves like one electron. So in every case <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>By Theorem <a class="xref" href="../chapter-05/index.html#theorem-thm-me-closed-shell">5.9.1</a>, one hole behaves like one electron. So in every case <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>S</mi>
   <mo>=</mo>
   <mstyle displaystyle="false" scriptlevel="0">
@@ -2886,8 +2905,9 @@
 </math></span> eV, far above the first threshold at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>13.78</mn>
 </math></span> eV. Such a state is bound yet degenerate with a continuum — the autoionization of Chapter 5, which in a molecule is the normal situation rather than an exotic one.</p>
+<p>This threshold structure is the key bridge to Chapters 9–11.</p>
 <h2 id="sec-7-vibration"><span class="sec-number">7.6</span>Vibration</h2>
-<p>Now solve Eq. <a href="../chapter-07/index.html#eq-eq-mol-nuclear">(7.10)</a>. For a diatomic the geometry is one number <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>Now solve Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-nuclear">(7.10)</a>. For a diatomic the geometry is one number <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>R</mi>
 </math></span>, and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>V</mi>
@@ -3041,7 +3061,7 @@
     </mrow>
   </msup>
   <msub>
-    <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mo stretchy="false">|</mo>
     <mrow data-mjx-texclass="ORD">
       <msub>
         <mi>R</mi>
@@ -3074,7 +3094,7 @@
     <mi>B</mi>
   </msub>
   <mo stretchy="false">)</mo>
-</math></span>, so Theorem <a href="../chapter-02/index.html#theorem-thm-ms-ho-spectrum">2.7.2</a> gives</p>
+</math></span>, so Theorem <a class="xref" href="../chapter-02/index.html#theorem-thm-ms-ho-spectrum">2.7.2</a> gives</p>
 <div class="math-block math-block--numbered" id="eq-eq-mol-vib-levels"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -3154,9 +3174,9 @@
     <mtr>
       <mtd>
         <mrow data-mjx-texclass="ORD">
-          <mover>
+          <mover accent="true">
             <mi>G</mi>
-            <mo stretchy="false">~</mo>
+            <mo stretchy="false" style="padding-bottom:0.06em">˜</mo>
           </mover>
         </mrow>
         <mo stretchy="false">(</mo>
@@ -3263,7 +3283,7 @@
   <mi>v</mi>
 </math></span>.</p>
 <h3 id="sec-7-anharmonicity"><span class="sec-number">7.6.2</span>Anharmonicity</h3>
-<p>Equal spacing is an artefact of truncating Eq. <a href="../chapter-07/index.html#eq-eq-mol-taylor">(7.20)</a> at second order. A real curve flattens towards the dissociation limit, so the true levels crowd together as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>Equal spacing is an artefact of truncating Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-taylor">(7.20)</a> at second order. A real curve flattens towards the dissociation limit, so the true levels crowd together as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>v</mi>
 </math></span> grows and eventually stop.</p>
 <section class="callout definition" id="definition-def-mol-morse"><header><span class="callout-kind">Definition 7.6.1</span><span class="callout-title">Morse potential</span></header><div class="math-block math-block--numbered" id="eq-eq-mol-morse"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
@@ -3483,6 +3503,7 @@
     <mi>e</mi>
   </msub>
 </math></span>, the last bound level.</p>
+<p>So the harmonic model is best near the well minimum, while Morse captures the physics that matters near dissociation.</p>
 <section class="callout example" id="example-ex-mol-h2-vibration"><header><span class="callout-kind">Example 7.6.1</span><span class="callout-title">Vibrational parameters of H<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi />
@@ -3534,7 +3555,7 @@
   </msub>
 </math></span>, and estimate how many bound vibrational levels there are.</p>
 <p class="solution-head">Solution.</p>
-<p>Expanding Eq. <a href="../chapter-07/index.html#eq-eq-mol-morse">(7.23)</a> about <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>Expanding Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-morse">(7.23)</a> about <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>R</mi>
     <mi>e</mi>
@@ -3595,7 +3616,7 @@
   <mn>1.94</mn>
   <mtext> </mtext>
   <msup>
-    <mtext mathcolor="red">\AA</mtext>
+    <mtext>Å</mtext>
     <mrow data-mjx-texclass="ORD">
       <mo form="prefix" lspace="0em" rspace="0em">−</mo>
       <mn>1</mn>
@@ -3616,7 +3637,7 @@
       <mo>/</mo>
     </mrow>
     <msup>
-      <mtext mathcolor="red">\AA</mtext>
+      <mtext>Å</mtext>
       <mrow data-mjx-texclass="ORD">
         <mn>2</mn>
       </mrow>
@@ -3802,9 +3823,9 @@
       <mtd>
         <msub>
           <mrow data-mjx-texclass="ORD">
-            <mover>
+            <mover accent="true">
               <mi>H</mi>
-              <mo stretchy="false">^</mo>
+              <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
             </mover>
           </mrow>
           <mrow data-mjx-texclass="ORD">
@@ -3817,9 +3838,9 @@
         <mfrac>
           <msup>
             <mrow data-mjx-texclass="ORD">
-              <mover>
+              <mover accent="true">
                 <mi>J</mi>
-                <mo stretchy="false">^</mo>
+                <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
               </mover>
             </mrow>
             <mrow data-mjx-texclass="ORD">
@@ -3855,16 +3876,16 @@
 </math></span> the moment of inertia. But <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mrow data-mjx-texclass="ORD">
-      <mover>
+      <mover accent="true">
         <mi>J</mi>
-        <mo stretchy="false">^</mo>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
       </mover>
     </mrow>
     <mrow data-mjx-texclass="ORD">
       <mn>2</mn>
     </mrow>
   </msup>
-</math></span> is the operator whose spectrum Chapter 3 obtained from commutators alone (Thm. <a href="../chapter-03/index.html#theorem-thm-am-spectrum">3.3.1</a>), so the answer requires no new work:</p>
+</math></span> is the operator whose spectrum Chapter 3 obtained from commutators alone (Thm. <a class="xref" href="../chapter-03/index.html#theorem-thm-am-spectrum">3.3.1</a>), so the answer requires no new work:</p>
 <section class="callout theorem" id="theorem-thm-mol-rotor"><header><span class="callout-kind">Theorem 7.7.1</span><span class="callout-title">Rigid rotor spectrum</span></header><div class="math-block math-block--numbered" id="eq-eq-mol-rot-levels"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -4004,6 +4025,17 @@
   <mn>2</mn>
   <mi>B</mi>
 </math></span> — one of the most recognisable patterns in spectroscopy, and the subject of Chapter 8.</p>
+<p>This is one of the most useful practical inversions in spectroscopy: frequency spacing <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo accent="false" stretchy="false">→</mo>
+  <mi>B</mi>
+  <mo accent="false" stretchy="false">→</mo>
+  <mi>I</mi>
+  <mo accent="false" stretchy="false">→</mo>
+  <msub>
+    <mi>R</mi>
+    <mi>e</mi>
+  </msub>
+</math></span>.</p>
 <h3 id="sec-7-vibration-rotation-coupling"><span class="sec-number">7.7.1</span>Vibration–Rotation Coupling</h3>
 <p>The rigid-rotor constant is not exactly constant across vibrational levels: when <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>v</mi>
@@ -4135,7 +4167,7 @@
   </mrow>
   <mo>.</mo>
 </math></div>
-<p>From Eq. <a href="../chapter-07/index.html#eq-eq-mol-rot-levels">(7.26)</a>,</p>
+<p>From Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-rot-levels">(7.26)</a>,</p>
 <div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mi>I</mi>
   <mo>=</mo>
@@ -4272,13 +4304,13 @@
   <mo>=</mo>
   <mn>1.129</mn>
   <mtext> </mtext>
-  <mtext mathcolor="red">\AA</mtext>
+  <mtext>Å</mtext>
   <mo>,</mo>
 </math></div>
 <p>the accepted value. One measured line spacing gives the geometry of the molecule — among the cleanest inversions in physics.</p></section>
 <section class="callout remark" id="remark-rem-mol-distortion"><header><span class="callout-kind">Remark 7.7.1</span><span class="callout-title">Centrifugal distortion</span></header><p> A real bond stretches as the molecule spins faster, increasing <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>I</mi>
-</math></span> and lowering the levels below Eq. <a href="../chapter-07/index.html#eq-eq-mol-rot-levels">(7.26)</a>. The standard correction adds a term <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> and lowering the levels below Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-rot-levels">(7.26)</a>. The standard correction adds a term <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo form="prefix" lspace="0em" rspace="0em">−</mo>
   <mi>D</mi>
   <msup>
@@ -4505,9 +4537,9 @@
 <ul><li><p>The molecular Hamiltonian is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mrow data-mjx-texclass="ORD">
-      <mover>
+      <mover accent="true">
         <mi>K</mi>
-        <mo stretchy="false">^</mo>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
       </mover>
     </mrow>
     <mi>N</mi>
@@ -4515,9 +4547,9 @@
   <mo>+</mo>
   <msub>
     <mrow data-mjx-texclass="ORD">
-      <mover>
+      <mover accent="true">
         <mi>V</mi>
-        <mo stretchy="false">^</mo>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
       </mover>
     </mrow>
     <mrow data-mjx-texclass="ORD">
@@ -4528,39 +4560,39 @@
   <mo>+</mo>
   <msub>
     <mrow data-mjx-texclass="ORD">
-      <mover>
+      <mover accent="true">
         <mi>H</mi>
-        <mo stretchy="false">^</mo>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
       </mover>
     </mrow>
     <mi>e</mi>
   </msub>
   <mo stretchy="false">(</mo>
   <mrow data-mjx-texclass="ORD">
-    <mover>
+    <mover accent="true">
       <mi>r</mi>
-      <mo stretchy="false">→</mo>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
     </mover>
   </mrow>
   <mo>;</mo>
   <mrow data-mjx-texclass="ORD">
-    <mover>
+    <mover accent="true">
       <mi>R</mi>
-      <mo stretchy="false">→</mo>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
     </mover>
   </mrow>
   <mo stretchy="false">)</mo>
 </math></span>, with the nuclear positions entering <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mrow data-mjx-texclass="ORD">
-      <mover>
+      <mover accent="true">
         <mi>H</mi>
-        <mo stretchy="false">^</mo>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
       </mover>
     </mrow>
     <mi>e</mi>
   </msub>
-</math></span> as parameters.</p></li><li><p>Expanding in the electronic basis and projecting gives Eq. <a href="../chapter-07/index.html#eq-eq-mol-coupled-nuclear">(7.8)</a>; the Born–Oppenheimer approximation drops the non-adiabatic couplings Eq. <a href="../chapter-07/index.html#eq-eq-mol-nonadiabatic">(7.9)</a>, which carry an explicit <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> as parameters.</p></li><li><p>Expanding in the electronic basis and projecting gives Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-coupled-nuclear">(7.8)</a>; the Born–Oppenheimer approximation drops the non-adiabatic couplings Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-nonadiabatic">(7.9)</a>, which carry an explicit <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>1</mn>
   <mrow data-mjx-texclass="ORD">
     <mo>/</mo>
@@ -4602,7 +4634,7 @@
   <mo>±</mo>
   <mi>S</mi>
   <mo stretchy="false">)</mo>
-</math></span> (Thm. <a href="../chapter-07/index.html#theorem-thm-mol-lcao">7.4.1</a>); the bonding combination has no node between the nuclei.</p></li><li><p><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> (Thm. <a class="xref" href="../chapter-07/index.html#theorem-thm-mol-lcao">7.4.1</a>); the bonding combination has no node between the nuclei.</p></li><li><p><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>l</mi>
 </math></span> is not a good quantum number in a molecule. Linear molecules retain <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi mathvariant="normal">Λ</mi>
@@ -4762,9 +4794,9 @@
   </msqrt>
 </math></span>; anharmonicity (Morse) crowds the levels and makes the ladder finite. In spectroscopic units this becomes <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
-    <mover>
+    <mover accent="true">
       <mi>G</mi>
-      <mo stretchy="false">~</mo>
+      <mo stretchy="false" style="padding-bottom:0.06em">˜</mo>
     </mover>
   </mrow>
   <mo stretchy="false">(</mo>
@@ -4812,9 +4844,9 @@
 </math></span>.</p></li><li><p>Rotation is Chapter 3's <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mrow data-mjx-texclass="ORD">
-      <mover>
+      <mover accent="true">
         <mi>J</mi>
-        <mo stretchy="false">^</mo>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
       </mover>
     </mrow>
     <mrow data-mjx-texclass="ORD">
@@ -4902,7 +4934,7 @@
   <mo>≫</mo>
 </math></span> rotational by factors of about a hundred. A few-femtosecond pulse is fast compared with nuclear motion, which licenses fixed nuclei in Chapter 11.</p></li></ul>
 <h2 id="sec-7-exercises"><span class="sec-number">7.12</span>Exercises</h2>
-<ol><li><p><strong>The Born–Oppenheimer terms.</strong> Carry out Eq. <a href="../chapter-07/index.html#eq-eq-mol-kn-action">(7.7)</a> yourself and identify which term survives in Def. <a href="../chapter-07/index.html#definition-def-mol-bo">7.3.2</a>. Explain in two sentences why the neglected terms carry <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<ol><li><p><strong>The Born–Oppenheimer terms.</strong> Carry out Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-kn-action">(7.7)</a> yourself and identify which term survives in Def. <a class="xref" href="../chapter-07/index.html#definition-def-mol-bo">7.3.2</a>. Explain in two sentences why the neglected terms carry <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>1</mn>
   <mrow data-mjx-texclass="ORD">
     <mo>/</mo>
@@ -4911,7 +4943,7 @@
     <mi>M</mi>
     <mi>A</mi>
   </msub>
-</math></span> and why that makes the approximation good.</p></li><li><p><strong>The LCAO secular problem.</strong> Reproduce the proof of Theorem <a href="../chapter-07/index.html#theorem-thm-mol-lcao">7.4.1</a>. Then, taking <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> and why that makes the approximation good.</p></li><li><p><strong>The LCAO secular problem.</strong> Reproduce the proof of Theorem <a class="xref" href="../chapter-07/index.html#theorem-thm-mol-lcao">7.4.1</a>. Then, taking <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>H</mi>
     <mrow data-mjx-texclass="ORD">
@@ -4974,14 +5006,14 @@
     <mi>σ</mi>
     <mi>g</mi>
   </msub>
-</math></span> in Eq. <a href="../chapter-07/index.html#eq-eq-mol-co2-config">(7.18)</a>, giving the reasoning for multiplicity, Greek letter and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> in Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-co2-config">(7.18)</a>, giving the reasoning for multiplicity, Greek letter and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>g</mi>
   <mrow data-mjx-texclass="ORD">
     <mo>/</mo>
   </mrow>
   <mi>u</mi>
-</math></span> subscript separately. Check against Example <a href="../chapter-07/index.html#example-ex-mol-co2-ions">7.5.2</a>.</p></li><li><p><strong>Anharmonicity.</strong></p>
-<ol><li><p>Expand Eq. <a href="../chapter-07/index.html#eq-eq-mol-morse">(7.23)</a> about <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> subscript separately. Check against Example <a class="xref" href="../chapter-07/index.html#example-ex-mol-co2-ions">7.5.2</a>.</p></li><li><p><strong>Anharmonicity.</strong></p>
+<ol><li><p>Expand Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-morse">(7.23)</a> about <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>R</mi>
     <mi>e</mi>
@@ -5000,7 +5032,7 @@
       <mn>2</mn>
     </mrow>
   </msup>
-</math></span>.</p></li><li><p>Using Eq. <a href="../chapter-07/index.html#eq-eq-mol-morse-levels">(7.24)</a>, find the spacing <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>.</p></li><li><p>Using Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-morse-levels">(7.24)</a>, find the spacing <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>E</mi>
     <mrow data-mjx-texclass="ORD">
@@ -5052,7 +5084,7 @@
   <mi>v</mi>
   <mo>=</mo>
   <mn>11</mn>
-</math></span>?</p></li></ol></li><li><p><strong>Rotation.</strong> Repeat Example <a href="../chapter-07/index.html#example-ex-mol-bond-length">7.7.1</a> for HCl, which has <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>?</p></li></ol></li><li><p><strong>Rotation.</strong> Repeat Example <a class="xref" href="../chapter-07/index.html#example-ex-mol-bond-length">7.7.1</a> for HCl, which has <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>B</mi>
   <mo>=</mo>
   <mn>10.59</mn>
@@ -5091,7 +5123,7 @@
 </math></span> transitions and confirm they are spaced by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>2</mn>
   <mi>B</mi>
-</math></span>.</p></li><li><p><strong>Counting modes.</strong> Use Eq. <a href="../chapter-07/index.html#eq-eq-mol-mode-count">(7.29)</a> for CO<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>.</p></li><li><p><strong>Counting modes.</strong> Use Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-mode-count">(7.29)</a> for CO<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi />
     <mn>2</mn>
@@ -5168,7 +5200,7 @@
     <mi>B</mi>
     <mn>1</mn>
   </msub>
-</math></span> from Eq. <a href="../chapter-07/index.html#eq-eq-mol-bv">(7.28)</a>.</p></li><li><p>Estimate how much the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> from Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-bv">(7.28)</a>.</p></li><li><p>Estimate how much the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>J</mi>
   <mo>=</mo>
   <mn>5</mn>
@@ -5187,15 +5219,15 @@
     <mi />
     <mn>2</mn>
   </msub>
-</math></span>.</strong> Using the labels in Sec. <a href="../chapter-07/index.html#sec-7-symmetry-workflow-for-molecular-spectroscopy">7.9</a>, state for each mode whether it is IR-active, Raman-active, both, or neither, and give a one-line symmetry reason.</p></li></ol>
+</math></span>.</strong> Using the labels in Sec. <a class="xref" href="../chapter-07/index.html#sec-7-symmetry-workflow-for-molecular-spectroscopy">7.9</a>, state for each mode whether it is IR-active, Raman-active, both, or neither, and give a one-line symmetry reason.</p></li></ol>
 <h2 id="sec-7-project-a-potential-energy-curve-and-its-levels"><span class="sec-number">7.13</span>Project: A Potential Energy Curve and Its Levels</h2>
 <p><strong>The problem.</strong> Take a realistic potential energy curve, find its vibrational and rotational levels numerically, and confront the harmonic and rigid-rotor approximations with what the real curve gives.</p>
-<p>Use the Morse potential of Def. <a href="../chapter-07/index.html#definition-def-mol-morse">7.6.1</a> with the H<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>Use the Morse potential of Def. <a class="xref" href="../chapter-07/index.html#definition-def-mol-morse">7.6.1</a> with the H<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi />
     <mn>2</mn>
   </msub>
-</math></span> parameters of Example <a href="../chapter-07/index.html#example-ex-mol-h2-vibration">7.6.1</a>: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> parameters of Example <a class="xref" href="../chapter-07/index.html#example-ex-mol-h2-vibration">7.6.1</a>: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>D</mi>
     <mi>e</mi>
@@ -5233,7 +5265,7 @@
   </mrow>
   <mn>2</mn>
 </math></span>. Convert everything to atomic units before starting.</p>
-<ol><li><p><strong>On paper.</strong> Verify that Eq. <a href="../chapter-07/index.html#eq-eq-mol-morse">(7.23)</a> has its minimum at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<ol><li><p><strong>On paper.</strong> Verify that Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-morse">(7.23)</a> has its minimum at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>R</mi>
     <mi>e</mi>
@@ -5280,13 +5312,13 @@
   </msub>
 </math></span>.</p></li><li><p><strong>On paper.</strong> Compute <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>B</mi>
-</math></span> from Eq. <a href="../chapter-07/index.html#eq-eq-mol-rot-levels">(7.26)</a> and confirm it is roughly a hundred times smaller than <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> from Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-rot-levels">(7.26)</a> and confirm it is roughly a hundred times smaller than <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi data-mjx-alternate="1">ℏ</mi>
   <msub>
     <mi>ω</mi>
     <mi>e</mi>
   </msub>
-</math></span> — the hierarchy of Sec. <a href="../chapter-07/index.html#sec-7-the-three-energy-scales">7.10</a> for a real molecule.</p></li><li><p><strong>On the computer.</strong> Solve the nuclear radial equation with the solver from Chapter 2, changing only the potential and the mass. Report the lowest six vibrational energies.</p></li><li><p><strong>On the computer.</strong> Plot the six levels as horizontal lines inside the Morse curve. Fit <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> — the hierarchy of Sec. <a class="xref" href="../chapter-07/index.html#sec-7-the-three-energy-scales">7.10</a> for a real molecule.</p></li><li><p><strong>On the computer.</strong> Solve the nuclear radial equation with the solver from Chapter 2, changing only the potential and the mass. Report the lowest six vibrational energies.</p></li><li><p><strong>On the computer.</strong> Plot the six levels as horizontal lines inside the Morse curve. Fit <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>E</mi>
     <mi>v</mi>
@@ -5342,7 +5374,7 @@
     <mi>x</mi>
     <mi>e</mi>
   </msub>
-</math></span> with the analytic values in Eq. <a href="../chapter-07/index.html#eq-eq-mol-morse-levels">(7.24)</a>.</p></li><li><p><strong>On the computer.</strong> Add rotation by putting <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> with the analytic values in Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-morse-levels">(7.24)</a>.</p></li><li><p><strong>On the computer.</strong> Add rotation by putting <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>J</mi>
   <mo stretchy="false">(</mo>
   <mi>J</mi>
@@ -5396,7 +5428,7 @@
 </math></span> from (a): the harmonic approximation is good at the bottom of the well, which is where it should be. A large discrepancy almost always means a unit error — mixing eV with Å and atomic mass units is the usual cause, and converting everything to atomic units first is the cure.</p>
 <p><strong>Be ready to answer.</strong> Your spacings in (d) shrink as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>v</mi>
-</math></span> increases, while Eq. <a href="../chapter-07/index.html#eq-eq-mol-vib-levels">(7.21)</a> says they should be equal. Point at the step in Eq. <a href="../chapter-07/index.html#eq-eq-mol-taylor">(7.20)</a> responsible, and say what physical fact about a real bond the harmonic approximation throws away.</p>
+</math></span> increases, while Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-vib-levels">(7.21)</a> says they should be equal. Point at the step in Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-taylor">(7.20)</a> responsible, and say what physical fact about a real bond the harmonic approximation throws away.</p>
     <nav class="chapter-nav" aria-label="Chapter navigation">
       <a href="../chapter-06/index.html">Previous: Time-Dependent Potentials and Light–Matter Interaction</a>
       <a href="../../toc.html">Contents</a>

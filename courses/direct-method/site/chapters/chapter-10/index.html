@@ -6,9 +6,9 @@
   <title>Chapter 10: Rydberg and Continuum States; Fano Resonances | Direct Method</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
   <link rel="preload" href="../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../../assets/css/site.css?v=d088bfac">
+  <link rel="stylesheet" href="../../assets/css/site.css?v=856ec339">
   <link rel="preload" href="../../assets/fonts/latinmodern-math.woff2" as="font" type="font/woff2" crossorigin>
-  <script defer src="../../assets/js/main.js?v=d088bfac"></script>
+  <script defer src="../../assets/js/main.js?v=856ec339"></script>
 
 <style>
 .site-header { justify-content: flex-start; gap: 16px; }
@@ -97,12 +97,15 @@
 <h2 id="sec-10-continuum-normalization"><span class="sec-number">10.2</span>Continuum Normalization</h2>
 <p>A bound state is normalizable, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="INNER">
-    <mo data-mjx-texclass="OPEN" stretchy="false" form="prefix" lspace="0em" rspace="0em">⟨</mo>
-    <mi>ψ</mi>
-    <mo data-mjx-texclass="CLOSE" stretchy="false" form="postfix" lspace="0em" rspace="0em">⟩</mo>
-  </mrow>
-  <mrow data-mjx-texclass="ORD">
-    <mi>ψ</mi>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>ψ</mi>
+    </mrow>
+    <mo lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>ψ</mi>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
   <mo>=</mo>
   <mn>1</mn>
@@ -116,15 +119,18 @@
     <mtr>
       <mtd>
         <mrow data-mjx-texclass="INNER">
-          <mo data-mjx-texclass="OPEN" stretchy="false" form="prefix" lspace="0em" rspace="0em">⟨</mo>
-          <mi>ε</mi>
-          <mo data-mjx-texclass="CLOSE" stretchy="false" form="postfix" lspace="0em" rspace="0em">⟩</mo>
-        </mrow>
-        <mrow data-mjx-texclass="ORD">
-          <msup>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
+          <mrow data-mjx-texclass="ORD">
             <mi>ε</mi>
-            <mo data-mjx-alternate="1">′</mo>
-          </msup>
+          </mrow>
+          <mo lspace="0em" rspace="0em">|</mo>
+          <mrow data-mjx-texclass="ORD">
+            <msup>
+              <mi>ε</mi>
+              <mo data-mjx-alternate="1">′</mo>
+            </msup>
+          </mrow>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
         </mrow>
         <mo>=</mo>
         <mi>δ</mi>
@@ -147,12 +153,12 @@
   <mtable displaystyle="true">
     <mtr>
       <mtd>
-        <mrow data-mjx-texclass="ORD">
-          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
           <mrow data-mjx-texclass="ORD">
             <mi mathvariant="normal">Ψ</mi>
           </mrow>
-          <mo fence="false" stretchy="false">⟩</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
         </mrow>
         <mo>=</mo>
         <munder>
@@ -163,12 +169,12 @@
           <mi>c</mi>
           <mi>n</mi>
         </msub>
-        <mrow data-mjx-texclass="ORD">
-          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
           <mrow data-mjx-texclass="ORD">
             <mi>n</mi>
           </mrow>
-          <mo fence="false" stretchy="false">⟩</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
         </mrow>
         <mo>+</mo>
         <mo data-mjx-texclass="OP">∫</mo>
@@ -181,12 +187,12 @@
         <mo stretchy="false">(</mo>
         <mi>ε</mi>
         <mo stretchy="false">)</mo>
-        <mrow data-mjx-texclass="ORD">
-          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
           <mrow data-mjx-texclass="ORD">
             <mi>ε</mi>
           </mrow>
-          <mo fence="false" stretchy="false">⟩</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
         </mrow>
         <mo>,</mo>
         <mstyle scriptlevel="0">
@@ -196,13 +202,13 @@
           <mo data-mjx-texclass="OP" stretchy="true">∑</mo>
           <mi>n</mi>
         </munder>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <msub>
           <mi>c</mi>
           <mi>n</mi>
         </msub>
         <msup>
-          <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+          <mo stretchy="false">|</mo>
           <mrow data-mjx-texclass="ORD">
             <mn>2</mn>
           </mrow>
@@ -214,13 +220,13 @@
         <mstyle scriptlevel="0">
           <mspace width="0.167em" />
         </mstyle>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <mi>c</mi>
         <mo stretchy="false">(</mo>
         <mi>ε</mi>
         <mo stretchy="false">)</mo>
         <msup>
-          <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+          <mo stretchy="false">|</mo>
           <mrow data-mjx-texclass="ORD">
             <mn>2</mn>
           </mrow>
@@ -232,32 +238,32 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:eq:FANO-completeness">(10.2)</span></div></section>
-<p>Equation <a href="../chapter-10/index.html#eq-eq-fano-completeness">(10.2)</a> is the structure of the state vector in Chapter 11, and Def. <a href="../chapter-10/index.html#definition-def-fano-energy-norm">10.2.1</a> is what makes the two terms dimensionally compatible: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+<p>Equation <a class="xref" href="../chapter-10/index.html#eq-eq-fano-completeness">(10.2)</a> is the structure of the state vector in Chapter 11, and Def. <a class="xref" href="../chapter-10/index.html#definition-def-fano-energy-norm">10.2.1</a> is what makes the two terms dimensionally compatible: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">|</mo>
   <mi>c</mi>
   <mo stretchy="false">(</mo>
   <mi>ε</mi>
   <mo stretchy="false">)</mo>
   <msup>
-    <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mo stretchy="false">|</mo>
     <mrow data-mjx-texclass="ORD">
       <mn>2</mn>
     </mrow>
   </msup>
 </math></span> is a probability <em>density</em> per unit energy, while <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <msub>
     <mi>c</mi>
     <mi>n</mi>
   </msub>
   <msup>
-    <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mo stretchy="false">|</mo>
     <mrow data-mjx-texclass="ORD">
       <mn>2</mn>
     </mrow>
   </msup>
 </math></span> is a probability.</p>
-<p>The second consequence is Remark <a href="../chapter-06/index.html#remark-rem-td-energy-norm">6.5.1</a> of Chapter 6: the density of states is absorbed into the states themselves, so in atomic units Fermi's golden rule reduces to</p>
+<p>The second consequence is Remark <a class="xref" href="../chapter-06/index.html#remark-rem-td-energy-norm">6.5.1</a> of Chapter 6: the density of states is absorbed into the states themselves, so in atomic units Fermi's golden rule reduces to</p>
 <div class="math-block math-block--numbered" id="eq-eq-fano-golden-normalized"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -269,25 +275,25 @@
         <mrow data-mjx-texclass="OPEN">
           <mo minsize="1.2em" maxsize="1.2em" stretchy="true">|</mo>
         </mrow>
-        <mrow data-mjx-texclass="ORD">
-          <mo fence="false" stretchy="false">⟨</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
           <mrow data-mjx-texclass="ORD">
             <mi>ε</mi>
           </mrow>
-          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
         </mrow>
         <mrow data-mjx-texclass="ORD">
-          <mover>
+          <mover accent="true">
             <mi>V</mi>
-            <mo stretchy="false">^</mo>
+            <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
           </mover>
         </mrow>
-        <mrow data-mjx-texclass="ORD">
-          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
           <mrow data-mjx-texclass="ORD">
             <mi>i</mi>
           </mrow>
-          <mo fence="false" stretchy="false">⟩</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
         </mrow>
         <msup>
           <mrow data-mjx-texclass="CLOSE">
@@ -305,12 +311,12 @@
 <p>That is the reason for the convention: one fewer factor to get wrong.</p>
 <h2 id="sec-10-a-discrete-state-coupled-to-a-continuum"><span class="sec-number">10.3</span>A Discrete State Coupled to a Continuum</h2>
 <p>Here is the model, stripped to essentials. Two ingredients: a discrete state <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow data-mjx-texclass="ORD">
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
       <mi>a</mi>
     </mrow>
-    <mo fence="false" stretchy="false">⟩</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
 </math></span> at energy <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
@@ -318,19 +324,19 @@
     <mi>a</mi>
   </msub>
 </math></span> — an autoionizing Rydberg state — and a continuum <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow data-mjx-texclass="ORD">
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
       <mi>ε</mi>
     </mrow>
-    <mo fence="false" stretchy="false">⟩</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
 </math></span> spanning <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>E</mi>
     <mi>a</mi>
   </msub>
-</math></span>, normalized as in Def. <a href="../chapter-10/index.html#definition-def-fano-energy-norm">10.2.1</a>. Neither is an eigenstate of the full Hamiltonian, because a coupling connects them:</p>
+</math></span>, normalized as in Def. <a class="xref" href="../chapter-10/index.html#definition-def-fano-energy-norm">10.2.1</a>. Neither is an eigenstate of the full Hamiltonian, because a coupling connects them:</p>
 <div class="math-block math-block--numbered" id="eq-eq-fano-coupling"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -340,25 +346,25 @@
           <mi>ε</mi>
         </msub>
         <mo>=</mo>
-        <mrow data-mjx-texclass="ORD">
-          <mo fence="false" stretchy="false">⟨</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
           <mrow data-mjx-texclass="ORD">
             <mi>ε</mi>
           </mrow>
-          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
         </mrow>
         <mrow data-mjx-texclass="ORD">
-          <mover>
+          <mover accent="true">
             <mi>H</mi>
-            <mo stretchy="false">^</mo>
+            <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
           </mover>
         </mrow>
-        <mrow data-mjx-texclass="ORD">
-          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
           <mrow data-mjx-texclass="ORD">
             <mi>a</mi>
           </mrow>
-          <mo fence="false" stretchy="false">⟩</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
         </mrow>
         <mo>.</mo>
       </mtd>
@@ -367,9 +373,9 @@
 </math><span class="eqn-number" id="mjx-eqn:eq:FANO-coupling">(10.4)</span></div>
 <p>Physically <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
-    <mover>
+    <mover accent="true">
       <mi>H</mi>
-      <mo stretchy="false">^</mo>
+      <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
     </mover>
   </mrow>
 </math></span> here is the electron–electron repulsion of Chapter 5, called <em>configuration interaction</em> in this context.</p>
@@ -379,9 +385,9 @@
     <mtr>
       <mtd>
         <mrow data-mjx-texclass="ORD">
-          <mover>
+          <mover accent="true">
             <mi>H</mi>
-            <mo stretchy="false">^</mo>
+            <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
           </mover>
         </mrow>
         <mo>=</mo>
@@ -389,19 +395,19 @@
           <mi>E</mi>
           <mi>a</mi>
         </msub>
-        <mrow data-mjx-texclass="ORD">
-          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
           <mrow data-mjx-texclass="ORD">
             <mi>a</mi>
           </mrow>
-          <mo fence="false" stretchy="false">⟩</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
         </mrow>
-        <mrow data-mjx-texclass="ORD">
-          <mo fence="false" stretchy="false">⟨</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
           <mrow data-mjx-texclass="ORD">
             <mi>a</mi>
           </mrow>
-          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
         </mrow>
         <mo>+</mo>
         <mo data-mjx-texclass="OP">∫</mo>
@@ -411,19 +417,19 @@
           <mspace width="0.278em" />
         </mstyle>
         <mi>ε</mi>
-        <mrow data-mjx-texclass="ORD">
-          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
           <mrow data-mjx-texclass="ORD">
             <mi>ε</mi>
           </mrow>
-          <mo fence="false" stretchy="false">⟩</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
         </mrow>
-        <mrow data-mjx-texclass="ORD">
-          <mo fence="false" stretchy="false">⟨</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
           <mrow data-mjx-texclass="ORD">
             <mi>ε</mi>
           </mrow>
-          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
         </mrow>
         <mo>+</mo>
         <mo data-mjx-texclass="OP">∫</mo>
@@ -436,19 +442,19 @@
           <mi>V</mi>
           <mi>ε</mi>
         </msub>
-        <mrow data-mjx-texclass="ORD">
-          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
           <mrow data-mjx-texclass="ORD">
             <mi>ε</mi>
           </mrow>
-          <mo fence="false" stretchy="false">⟩</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
         </mrow>
-        <mrow data-mjx-texclass="ORD">
-          <mo fence="false" stretchy="false">⟨</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
           <mrow data-mjx-texclass="ORD">
             <mi>a</mi>
           </mrow>
-          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
         </mrow>
         <mo>+</mo>
         <msubsup>
@@ -458,19 +464,19 @@
             <mo>∗</mo>
           </mrow>
         </msubsup>
-        <mrow data-mjx-texclass="ORD">
-          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
           <mrow data-mjx-texclass="ORD">
             <mi>a</mi>
           </mrow>
-          <mo fence="false" stretchy="false">⟩</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
         </mrow>
-        <mrow data-mjx-texclass="ORD">
-          <mo fence="false" stretchy="false">⟨</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
           <mrow data-mjx-texclass="ORD">
             <mi>ε</mi>
           </mrow>
-          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
         </mrow>
         <mrow data-mjx-texclass="CLOSE">
           <mo minsize="1.623em" maxsize="1.623em" stretchy="true">]</mo>
@@ -481,12 +487,12 @@
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:eq:FANO-hamiltonian">(10.5)</span></div>
 <section class="callout theorem" id="theorem-thm-fano-width"><header><span class="callout-kind">Theorem 10.3.1</span><span class="callout-title">Autoionization width</span></header><p> Because the coupling is to a <em>continuum</em> rather than to a single state, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow data-mjx-texclass="ORD">
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
       <mi>a</mi>
     </mrow>
-    <mo fence="false" stretchy="false">⟩</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
 </math></span> does not shift and split — it decays, with</p>
 <div class="math-block math-block--numbered" id="eq-eq-fano-width"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
@@ -504,13 +510,13 @@
                 <mo>=</mo>
                 <mn>2</mn>
                 <mi>π</mi>
-                <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+                <mo stretchy="false">|</mo>
                 <msub>
                   <mi>V</mi>
                   <mi>ε</mi>
                 </msub>
                 <msup>
-                  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+                  <mo stretchy="false">|</mo>
                   <mrow data-mjx-texclass="ORD">
                     <mn>2</mn>
                   </mrow>
@@ -567,15 +573,15 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:eq:FANO-lifetime">(10.7)</span></div></section>
-<div class="proof" data-lead="Proof."><p>Apply Fermi's golden rule in the form Eq. <a href="../chapter-10/index.html#eq-eq-fano-golden-normalized">(10.3)</a>, with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="proof" data-lead="Proof."><p>Apply Fermi's golden rule in the form Eq. <a class="xref" href="../chapter-10/index.html#eq-eq-fano-golden-normalized">(10.3)</a>, with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
-    <mover>
+    <mover accent="true">
       <mi>V</mi>
-      <mo stretchy="false">^</mo>
+      <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
     </mover>
   </mrow>
-</math></span> the coupling term of Eq. <a href="../chapter-10/index.html#eq-eq-fano-hamiltonian">(10.5)</a> and the final states the continuum at the same energy. Remark <a href="../chapter-06/index.html#remark-rem-td-not-light">6.5.2</a> of Chapter 6 established that the golden rule holds for any coupling, not only a radiative one.</p></div>
-<p>In practical units, Eq. <a href="../chapter-10/index.html#eq-eq-fano-lifetime">(10.7)</a> reads</p>
+</math></span> the coupling term of Eq. <a class="xref" href="../chapter-10/index.html#eq-eq-fano-hamiltonian">(10.5)</a> and the final states the continuum at the same energy. Remark <a class="xref" href="../chapter-06/index.html#remark-rem-td-not-light">6.5.2</a> of Chapter 6 established that the golden rule holds for any coupling, not only a radiative one.</p></div>
+<p>In practical units, Eq. <a class="xref" href="../chapter-10/index.html#eq-eq-fano-lifetime">(10.7)</a> reads</p>
 <div class="math-block math-block--numbered" id="eq-eq-fano-units"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -629,7 +635,7 @@
   <mn>2</mn>
   <mi>p</mi>
 </math></span> resonance from Chapter 5), and a state living a picosecond has a width under a microelectronvolt. Widths and lifetimes are the same information.</p>
-<p>It is often convenient to read Eq. <a href="../chapter-10/index.html#eq-eq-fano-width">(10.6)</a> <em>backwards</em>: the width is what experiments measure, the coupling is what a calculation needs. Taking the coupling real and constant across the narrow resonance,</p>
+<p>It is often convenient to read Eq. <a class="xref" href="../chapter-10/index.html#eq-eq-fano-width">(10.6)</a> <em>backwards</em>: the width is what experiments measure, the coupling is what a calculation needs. Taking the coupling real and constant across the narrow resonance,</p>
 <div class="math-block math-block--numbered" id="eq-eq-fano-effective-coupling"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -641,25 +647,25 @@
                 <mstyle scriptlevel="0">
                   <mspace width="0.278em" />
                 </mstyle>
-                <mrow data-mjx-texclass="ORD">
-                  <mo fence="false" stretchy="false">⟨</mo>
+                <mrow data-mjx-texclass="INNER">
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
                   <mrow data-mjx-texclass="ORD">
                     <mi>ε</mi>
                   </mrow>
-                  <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
                 </mrow>
                 <mrow data-mjx-texclass="ORD">
-                  <mover>
+                  <mover accent="true">
                     <mi>H</mi>
-                    <mo stretchy="false">^</mo>
+                    <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
                   </mover>
                 </mrow>
-                <mrow data-mjx-texclass="ORD">
-                  <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+                <mrow data-mjx-texclass="INNER">
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
                   <mrow data-mjx-texclass="ORD">
                     <mi>a</mi>
                   </mrow>
-                  <mo fence="false" stretchy="false">⟩</mo>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
                 </mrow>
                 <mo>=</mo>
                 <msqrt>
@@ -684,21 +690,21 @@
 </math><span class="eqn-number" id="mjx-eqn:eq:FANO-effective-coupling">(10.9)</span></div>
 <p>This expression appears verbatim in the research equations of Chapter 11.</p>
 <h2 id="sec-10-fano-s-diagonalisation"><span class="sec-number">10.4</span>Fano's Diagonalisation</h2>
-<p>Now solve Eq. <a href="../chapter-10/index.html#eq-eq-fano-hamiltonian">(10.5)</a> exactly. The eigenstates of the full Hamiltonian are not <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow data-mjx-texclass="ORD">
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+<p>Now solve Eq. <a class="xref" href="../chapter-10/index.html#eq-eq-fano-hamiltonian">(10.5)</a> exactly. The eigenstates of the full Hamiltonian are not <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
       <mi>a</mi>
     </mrow>
-    <mo fence="false" stretchy="false">⟩</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
 </math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow data-mjx-texclass="ORD">
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
       <mi>ε</mi>
     </mrow>
-    <mo fence="false" stretchy="false">⟩</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
 </math></span> but mixtures of them. Write the eigenstate at energy <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>E</mi>
@@ -707,27 +713,27 @@
   <mtable displaystyle="true">
     <mtr>
       <mtd>
-        <mrow data-mjx-texclass="ORD">
-          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
           <mrow data-mjx-texclass="ORD">
             <msub>
               <mi mathvariant="normal">Ψ</mi>
               <mi>E</mi>
             </msub>
           </mrow>
-          <mo fence="false" stretchy="false">⟩</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
         </mrow>
         <mo>=</mo>
         <mi>α</mi>
         <mo stretchy="false">(</mo>
         <mi>E</mi>
         <mo stretchy="false">)</mo>
-        <mrow data-mjx-texclass="ORD">
-          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
           <mrow data-mjx-texclass="ORD">
             <mi>a</mi>
           </mrow>
-          <mo fence="false" stretchy="false">⟩</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
         </mrow>
         <mo>+</mo>
         <mo data-mjx-texclass="OP">∫</mo>
@@ -743,12 +749,12 @@
         <mo stretchy="false">(</mo>
         <mi>ε</mi>
         <mo stretchy="false">)</mo>
-        <mrow data-mjx-texclass="ORD">
-          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
           <mrow data-mjx-texclass="ORD">
             <mi>ε</mi>
           </mrow>
-          <mo fence="false" stretchy="false">⟩</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
         </mrow>
         <mo>,</mo>
       </mtd>
@@ -757,51 +763,51 @@
 </math><span class="eqn-number" id="mjx-eqn:eq:FANO-ansatz">(10.10)</span></div>
 <p>and impose <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
-    <mover>
+    <mover accent="true">
       <mi>H</mi>
-      <mo stretchy="false">^</mo>
+      <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
     </mover>
   </mrow>
-  <mrow data-mjx-texclass="ORD">
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
       <msub>
         <mi mathvariant="normal">Ψ</mi>
         <mi>E</mi>
       </msub>
     </mrow>
-    <mo fence="false" stretchy="false">⟩</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
   <mo>=</mo>
   <mi>E</mi>
-  <mrow data-mjx-texclass="ORD">
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
       <msub>
         <mi mathvariant="normal">Ψ</mi>
         <mi>E</mi>
       </msub>
     </mrow>
-    <mo fence="false" stretchy="false">⟩</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
 </math></span>.</p>
 <p>Projecting onto <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow data-mjx-texclass="ORD">
-    <mo fence="false" stretchy="false">⟨</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
     <mrow data-mjx-texclass="ORD">
       <mi>a</mi>
     </mrow>
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
   </mrow>
-</math></span> and onto <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow data-mjx-texclass="ORD">
-    <mo fence="false" stretchy="false">⟨</mo>
+  </math></span> and onto <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
     <mrow data-mjx-texclass="ORD">
       <mi>ε</mi>
     </mrow>
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
   </mrow>
-</math></span> gives two equations:</p>
+  </math></span> gives two equations:</p>
 <div class="math-block math-block--numbered" id="eq-eq-fano-eq-a"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true" columnalign="right left" columnspacing="0em" rowspacing="3pt">
     <mtr>
@@ -880,7 +886,7 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:eq:FANO-eq-a">(10.11)</span></div>
-<p>Equation <a href="../chapter-10/index.html#eq-eq-fano-eq-a">(10.12)</a> rearranges to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>Equation <a class="xref" href="../chapter-10/index.html#eq-eq-fano-eq-a">(10.12)</a> rearranges to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo stretchy="false">(</mo>
   <mi>E</mi>
   <mo>−</mo>
@@ -970,7 +976,7 @@
   <mo stretchy="false">(</mo>
   <mi>E</mi>
   <mo stretchy="false">)</mo>
-</math></span> fixed by substituting back into Eq. <a href="../chapter-10/index.html#eq-eq-fano-eq-a">(10.11)</a>:</p>
+</math></span> fixed by substituting back into Eq. <a class="xref" href="../chapter-10/index.html#eq-eq-fano-eq-a">(10.11)</a>:</p>
 <div class="math-block math-block--numbered" id="eq-eq-fano-z"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -995,13 +1001,13 @@
             <mo stretchy="false">)</mo>
           </mrow>
           <mrow>
-            <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+            <mo stretchy="false">|</mo>
             <msub>
               <mi>V</mi>
               <mi>E</mi>
             </msub>
             <msup>
-              <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+              <mo stretchy="false">|</mo>
               <mrow data-mjx-texclass="ORD">
                 <mn>2</mn>
               </mrow>
@@ -1031,13 +1037,13 @@
         </mstyle>
         <mfrac>
           <mrow>
-            <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+            <mo stretchy="false">|</mo>
             <msub>
               <mi>V</mi>
               <mi>ε</mi>
             </msub>
             <msup>
-              <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+              <mo stretchy="false">|</mo>
               <mrow data-mjx-texclass="ORD">
                 <mn>2</mn>
               </mrow>
@@ -1079,13 +1085,13 @@
   <mtable displaystyle="true">
     <mtr>
       <mtd>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <mi>α</mi>
         <mo stretchy="false">(</mo>
         <mi>E</mi>
         <mo stretchy="false">)</mo>
         <msup>
-          <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+          <mo stretchy="false">|</mo>
           <mrow data-mjx-texclass="ORD">
             <mn>2</mn>
           </mrow>
@@ -1093,13 +1099,13 @@
         <mo>=</mo>
         <mfrac>
           <mrow>
-            <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+            <mo stretchy="false">|</mo>
             <msub>
               <mi>V</mi>
               <mi>E</mi>
             </msub>
             <msup>
-              <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+              <mo stretchy="false">|</mo>
               <mrow data-mjx-texclass="ORD">
                 <mn>2</mn>
               </mrow>
@@ -1135,13 +1141,13 @@
                 <mn>2</mn>
               </mrow>
             </msup>
-            <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+            <mo stretchy="false">|</mo>
             <msub>
               <mi>V</mi>
               <mi>E</mi>
             </msub>
             <msup>
-              <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+              <mo stretchy="false">|</mo>
               <mrow data-mjx-texclass="ORD">
                 <mn>4</mn>
               </mrow>
@@ -1195,13 +1201,13 @@
   <mo>=</mo>
   <mn>2</mn>
   <mi>π</mi>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <msub>
     <mi>V</mi>
     <mi>E</mi>
   </msub>
   <msup>
-    <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mo stretchy="false">|</mo>
     <mrow data-mjx-texclass="ORD">
       <mn>2</mn>
     </mrow>
@@ -1221,112 +1227,112 @@
 </math></span>.</p></section>
 <p>So the discrete state is not destroyed — it is <em>spread</em> over a range of exact eigenstates of width <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi mathvariant="normal">Γ</mi>
-</math></span>. That is the spectral statement of a finite lifetime, and Eq. <a href="../chapter-10/index.html#eq-eq-fano-alpha">(10.15)</a> is where Theorem <a href="../chapter-10/index.html#theorem-thm-fano-width">10.3.1</a> comes from in an exact treatment rather than a perturbative one.</p>
+</math></span>. That is the spectral statement of a finite lifetime, and Eq. <a class="xref" href="../chapter-10/index.html#eq-eq-fano-alpha">(10.15)</a> is where Theorem <a class="xref" href="../chapter-10/index.html#theorem-thm-fano-width">10.3.1</a> comes from in an exact treatment rather than a perturbative one.</p>
 <h2 id="sec-10-the-fano-profile"><span class="sec-number">10.5</span>The Fano Profile</h2>
 <p>Now add the laser. Light can reach the continuum from the ground state <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow data-mjx-texclass="ORD">
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
       <mi>g</mi>
     </mrow>
-    <mo fence="false" stretchy="false">⟩</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
 </math></span> in <em>two</em> ways:</p>
 <ol><li><p><strong>directly</strong>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow data-mjx-texclass="ORD">
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
       <mi>g</mi>
     </mrow>
-    <mo fence="false" stretchy="false">⟩</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
   <mo accent="false" stretchy="false">→</mo>
-  <mrow data-mjx-texclass="ORD">
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
       <mi>ε</mi>
     </mrow>
-    <mo fence="false" stretchy="false">⟩</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
 </math></span>, with amplitude <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow data-mjx-texclass="ORD">
-    <mo fence="false" stretchy="false">⟨</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
     <mrow data-mjx-texclass="ORD">
       <mi>ε</mi>
     </mrow>
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
   </mrow>
   <mrow data-mjx-texclass="ORD">
-    <mover>
+    <mover accent="true">
       <mi>D</mi>
-      <mo stretchy="false">^</mo>
+      <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
     </mover>
   </mrow>
-  <mrow data-mjx-texclass="ORD">
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
       <mi>g</mi>
     </mrow>
-    <mo fence="false" stretchy="false">⟩</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
 </math></span>;</p></li><li><p><strong>resonantly</strong>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow data-mjx-texclass="ORD">
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
       <mi>g</mi>
     </mrow>
-    <mo fence="false" stretchy="false">⟩</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
   <mo accent="false" stretchy="false">→</mo>
-  <mrow data-mjx-texclass="ORD">
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
       <mi>a</mi>
     </mrow>
-    <mo fence="false" stretchy="false">⟩</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
   <mo accent="false" stretchy="false">→</mo>
-  <mrow data-mjx-texclass="ORD">
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
       <mi>ε</mi>
     </mrow>
-    <mo fence="false" stretchy="false">⟩</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
 </math></span>, via the discrete state, which then autoionizes.</p></li></ol>
 <p>Both end in the same final state at the same energy, so they are <em>indistinguishable</em> and their amplitudes add before squaring. The cross term is the entire Fano effect.</p>
 <p>The transition rate is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
-  <mrow data-mjx-texclass="ORD">
-    <mo fence="false" stretchy="false">⟨</mo>
+  <mo stretchy="false">|</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
     <mrow data-mjx-texclass="ORD">
       <msub>
         <mi mathvariant="normal">Ψ</mi>
         <mi>E</mi>
       </msub>
     </mrow>
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
   </mrow>
   <mrow data-mjx-texclass="ORD">
-    <mover>
+    <mover accent="true">
       <mi>D</mi>
-      <mo stretchy="false">^</mo>
+      <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
     </mover>
   </mrow>
-  <mrow data-mjx-texclass="ORD">
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
       <mi>g</mi>
     </mrow>
-    <mo fence="false" stretchy="false">⟩</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
   <msup>
-    <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mo stretchy="false">|</mo>
     <mrow data-mjx-texclass="ORD">
       <mn>2</mn>
     </mrow>
   </msup>
-</math></span>, and from Eq. <a href="../chapter-10/index.html#eq-eq-fano-ansatz">(10.10)</a> the matrix element has one piece from each route. Carrying the algebra through with Eqs. <a href="../chapter-10/index.html#eq-eq-fano-beta">(10.13)</a> and <a href="../chapter-10/index.html#eq-eq-fano-z">(10.14)</a> gives Fano's 1961 result.</p>
+</math></span>, and from Eq. <a class="xref" href="../chapter-10/index.html#eq-eq-fano-ansatz">(10.10)</a> the matrix element has one piece from each route. Carrying the algebra through with Eqs. <a class="xref" href="../chapter-10/index.html#eq-eq-fano-beta">(10.13)</a> and <a class="xref" href="../chapter-10/index.html#eq-eq-fano-z">(10.14)</a> gives Fano's 1961 result.</p>
 <section class="callout theorem" id="theorem-thm-fano-profile"><header><span class="callout-kind">Theorem 10.5.1</span><span class="callout-title">Fano profile</span></header><div class="math-block math-block--numbered" id="eq-eq-fano-profile"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -1442,30 +1448,30 @@
         <mo>=</mo>
         <mfrac>
           <mrow>
-            <mrow data-mjx-texclass="ORD">
-              <mo fence="false" stretchy="false">⟨</mo>
+            <mrow data-mjx-texclass="INNER">
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
               <mrow data-mjx-texclass="ORD">
                 <mrow data-mjx-texclass="ORD">
-                  <mover>
+                  <mover accent="true">
                     <mi>a</mi>
-                    <mo stretchy="false">~</mo>
+                    <mo stretchy="false" style="padding-bottom:0.06em">˜</mo>
                   </mover>
                 </mrow>
               </mrow>
-              <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
             </mrow>
             <mrow data-mjx-texclass="ORD">
-              <mover>
+              <mover accent="true">
                 <mi>D</mi>
-                <mo stretchy="false">^</mo>
+                <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
               </mover>
             </mrow>
-            <mrow data-mjx-texclass="ORD">
-              <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+            <mrow data-mjx-texclass="INNER">
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
               <mrow data-mjx-texclass="ORD">
                 <mi>g</mi>
               </mrow>
-              <mo fence="false" stretchy="false">⟩</mo>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
             </mrow>
           </mrow>
           <mrow>
@@ -1477,25 +1483,25 @@
                 <mo>∗</mo>
               </mrow>
             </msubsup>
-            <mrow data-mjx-texclass="ORD">
-              <mo fence="false" stretchy="false">⟨</mo>
+            <mrow data-mjx-texclass="INNER">
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
               <mrow data-mjx-texclass="ORD">
                 <mi>ε</mi>
               </mrow>
-              <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
             </mrow>
             <mrow data-mjx-texclass="ORD">
-              <mover>
+              <mover accent="true">
                 <mi>D</mi>
-                <mo stretchy="false">^</mo>
+                <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
               </mover>
             </mrow>
-            <mrow data-mjx-texclass="ORD">
-              <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+            <mrow data-mjx-texclass="INNER">
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
               <mrow data-mjx-texclass="ORD">
                 <mi>g</mi>
               </mrow>
-              <mo fence="false" stretchy="false">⟩</mo>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
             </mrow>
           </mrow>
         </mfrac>
@@ -1504,17 +1510,17 @@
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:eq:FANO-q-def">(10.18)</span></div>
 <p>is the <em>asymmetry parameter</em>: the ratio of the amplitude for exciting the (shifted, “dressed”) discrete state <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow data-mjx-texclass="ORD">
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
       <mrow data-mjx-texclass="ORD">
-        <mover>
+        <mover accent="true">
           <mi>a</mi>
-          <mo stretchy="false">~</mo>
+          <mo stretchy="false" style="padding-bottom:0.06em">˜</mo>
         </mover>
       </mrow>
     </mrow>
-    <mo fence="false" stretchy="false">⟩</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
 </math></span> to that for direct ionization.</p></section>
 <p>Read the formula by taking limits.</p>
@@ -1553,7 +1559,7 @@
       <mn>2</mn>
     </mrow>
   </msup>
-</math></span> directly.</p></li><li><p><strong>The true maximum</strong> sits slightly off centre. Differentiating Eq. <a href="../chapter-10/index.html#eq-eq-fano-profile">(10.16)</a>,</p>
+</math></span> directly.</p></li><li><p><strong>The true maximum</strong> sits slightly off centre. Differentiating Eq. <a class="xref" href="../chapter-10/index.html#eq-eq-fano-profile">(10.16)</a>,</p>
 <div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mfrac>
     <mi>d</mi>
@@ -1644,12 +1650,12 @@
   <mi>q</mi>
 </math></span> deserve names:</p>
 <ul><li><p><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <mi>q</mi>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <mo accent="false" stretchy="false">→</mo>
   <mi mathvariant="normal">∞</mi>
-</math></span>: the resonant route dominates, the direct one is negligible, and Eq. <a href="../chapter-10/index.html#eq-eq-fano-profile">(10.16)</a> reduces to a Lorentzian peak. No interference, no asymmetry.</p></li><li><p><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>: the resonant route dominates, the direct one is negligible, and Eq. <a class="xref" href="../chapter-10/index.html#eq-eq-fano-profile">(10.16)</a> reduces to a Lorentzian peak. No interference, no asymmetry.</p></li><li><p><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>q</mi>
   <mo>=</mo>
   <mn>0</mn>
@@ -1890,7 +1896,7 @@
   </mrow>
   <mo>,</mo>
 </math></div>
-<p>and by Eq. <a href="../chapter-10/index.html#eq-eq-fano-units">(10.8)</a> the lifetime is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>and by Eq. <a class="xref" href="../chapter-10/index.html#eq-eq-fano-units">(10.8)</a> the lifetime is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>τ</mi>
   <mo>=</mo>
   <mn>658</mn>
@@ -1948,9 +1954,9 @@
 <p>Autoionization happens <em>at the core</em>: the Rydberg electron must be close in for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mrow data-mjx-texclass="ORD">
-      <mover>
+      <mover accent="true">
         <mi>V</mi>
-        <mo stretchy="false">^</mo>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
       </mover>
     </mrow>
     <mrow data-mjx-texclass="ORD">
@@ -1958,7 +1964,7 @@
       <mi>e</mi>
     </mrow>
   </msub>
-</math></span> to transfer energy. Chapter 4's central result, Eq. <a href="../chapter-04/index.html#eq-eq-h-amplitude-scaling">(4.62)</a>, was that the probability of being near the core falls as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> to transfer energy. Chapter 4's central result, Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-amplitude-scaling">(4.62)</a>, was that the probability of being near the core falls as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo stretchy="false">(</mo>
   <msup>
     <mi>n</mi>
@@ -1973,7 +1979,7 @@
       <mn>3</mn>
     </mrow>
   </msup>
-</math></span>. Combining with Theorem <a href="../chapter-10/index.html#theorem-thm-fano-width">10.3.1</a>:</p>
+</math></span>. Combining with Theorem <a class="xref" href="../chapter-10/index.html#theorem-thm-fano-width">10.3.1</a>:</p>
 <section class="callout theorem" id="theorem-thm-fano-scaling"><header><span class="callout-kind">Theorem 10.6.1</span><span class="callout-title">Rydberg scaling of widths and dipoles</span></header><div class="math-block math-block--numbered" id="eq-eq-fano-gamma-scaling"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -1983,13 +1989,13 @@
           <mi>n</mi>
         </msub>
         <mo>∝</mo>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <msub>
           <mi>V</mi>
           <mi>ε</mi>
         </msub>
         <msup>
-          <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+          <mo stretchy="false">|</mo>
           <mrow data-mjx-texclass="ORD">
             <mn>2</mn>
           </mrow>
@@ -2041,8 +2047,8 @@
   <mtable displaystyle="true">
     <mtr>
       <mtd>
-        <mrow data-mjx-texclass="ORD">
-          <mo fence="false" stretchy="false">⟨</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
           <mrow data-mjx-texclass="ORD">
             <msub>
               <mrow data-mjx-texclass="ORD">
@@ -2051,20 +2057,20 @@
               <mi>n</mi>
             </msub>
           </mrow>
-          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
         </mrow>
         <mrow data-mjx-texclass="ORD">
-          <mover>
+          <mover accent="true">
             <mi>D</mi>
-            <mo stretchy="false">^</mo>
+            <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
           </mover>
         </mrow>
-        <mrow data-mjx-texclass="ORD">
-          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
           <mrow data-mjx-texclass="ORD">
             <mi>ε</mi>
           </mrow>
-          <mo fence="false" stretchy="false">⟩</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
         </mrow>
         <mo>∝</mo>
         <mo stretchy="false">(</mo>
@@ -2144,7 +2150,7 @@
       <mn>2</mn>
     </mrow>
   </msup>
-</math></span> from Chapter 5, Eq. <a href="../chapter-05/index.html#eq-eq-me-nstar-from-energy">(5.18)</a>. Since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> from Chapter 5, Eq. <a class="xref" href="../chapter-05/index.html#eq-eq-me-nstar-from-energy">(5.18)</a>. Since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo stretchy="false">(</mo>
   <msup>
     <mi>n</mi>
@@ -2325,8 +2331,8 @@
                 <mstyle scriptlevel="0">
                   <mspace width="0.278em" />
                 </mstyle>
-                <mrow data-mjx-texclass="ORD">
-                  <mo fence="false" stretchy="false">⟨</mo>
+                <mrow data-mjx-texclass="INNER">
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
                   <mrow data-mjx-texclass="ORD">
                     <msub>
                       <mrow data-mjx-texclass="ORD">
@@ -2335,24 +2341,24 @@
                       <mi>n</mi>
                     </msub>
                   </mrow>
-                  <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
                 </mrow>
                 <mrow data-mjx-texclass="ORD">
-                  <mover>
+                  <mover accent="true">
                     <mi>D</mi>
-                    <mo stretchy="false">^</mo>
+                    <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
                   </mover>
                 </mrow>
-                <mrow data-mjx-texclass="ORD">
-                  <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+                <mrow data-mjx-texclass="INNER">
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
                   <mrow data-mjx-texclass="ORD">
                     <mi>ε</mi>
                   </mrow>
-                  <mo fence="false" stretchy="false">⟩</mo>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
                 </mrow>
                 <mo>=</mo>
-                <mrow data-mjx-texclass="ORD">
-                  <mo fence="false" stretchy="false">⟨</mo>
+                <mrow data-mjx-texclass="INNER">
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
                   <mrow data-mjx-texclass="ORD">
                     <msub>
                       <mrow data-mjx-texclass="ORD">
@@ -2365,20 +2371,20 @@
                       </mrow>
                     </msub>
                   </mrow>
-                  <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
                 </mrow>
                 <mrow data-mjx-texclass="ORD">
-                  <mover>
+                  <mover accent="true">
                     <mi>D</mi>
-                    <mo stretchy="false">^</mo>
+                    <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
                   </mover>
                 </mrow>
-                <mrow data-mjx-texclass="ORD">
-                  <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+                <mrow data-mjx-texclass="INNER">
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
                   <mrow data-mjx-texclass="ORD">
                     <mi>ε</mi>
                   </mrow>
-                  <mo fence="false" stretchy="false">⟩</mo>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
                 </mrow>
                 <msup>
                   <mrow data-mjx-texclass="INNER">
@@ -2550,7 +2556,7 @@
   <mn>4</mn>
   <mi>d</mi>
 </math></span> state is more deeply bound, hence more compact, hence closer to the core — so it should autoionize <em>faster</em> and couple to the continuum <em>more strongly</em>.</p>
-<p>Lifetime, from Eq. <a href="../chapter-10/index.html#eq-eq-fano-tau-working">(10.21)</a>:</p>
+<p>Lifetime, from Eq. <a class="xref" href="../chapter-10/index.html#eq-eq-fano-tau-working">(10.21)</a>:</p>
 <div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <msub>
     <mi>τ</mi>
@@ -2605,15 +2611,15 @@
   </mrow>
   <mo>.</mo>
 </math></div>
-<p>Dipole, from Eq. <a href="../chapter-10/index.html#eq-eq-fano-dipole-working">(10.22)</a>, taking the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>Dipole, from Eq. <a class="xref" href="../chapter-10/index.html#eq-eq-fano-dipole-working">(10.22)</a>, taking the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>5</mn>
   <mi>d</mi>
 </math></span> value as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>1</mn>
 </math></span>:</p>
 <div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mrow data-mjx-texclass="ORD">
-    <mo fence="false" stretchy="false">⟨</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
     <mrow data-mjx-texclass="ORD">
       <msub>
         <mrow data-mjx-texclass="ORD">
@@ -2625,13 +2631,13 @@
         </mrow>
       </msub>
     </mrow>
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
   </mrow>
   <msub>
     <mrow data-mjx-texclass="ORD">
-      <mover>
+      <mover accent="true">
         <mi>D</mi>
-        <mo stretchy="false">^</mo>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
       </mover>
     </mrow>
     <mrow data-mjx-texclass="ORD">
@@ -2640,12 +2646,12 @@
       </mrow>
     </mrow>
   </msub>
-  <mrow data-mjx-texclass="ORD">
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
       <mi>ε</mi>
     </mrow>
-    <mo fence="false" stretchy="false">⟩</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
   <mo>=</mo>
   <msup>
@@ -2729,9 +2735,9 @@
 <h3 id="sec-10-how-q-varies-along-a-series"><span class="sec-number">10.6.1</span>How <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>q</mi>
 </math></span> Varies Along a Series</h3>
-<p>From Eq. <a href="../chapter-10/index.html#eq-eq-fano-q-def">(10.18)</a>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>From Eq. <a class="xref" href="../chapter-10/index.html#eq-eq-fano-q-def">(10.18)</a>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>q</mi>
-</math></span> is the ratio of resonant to direct excitation amplitude. The denominator involves the continuum coupling, fixed by the width through Eq. <a href="../chapter-10/index.html#eq-eq-fano-effective-coupling">(10.9)</a>, so</p>
+</math></span> is the ratio of resonant to direct excitation amplitude. The denominator involves the continuum coupling, fixed by the width through Eq. <a class="xref" href="../chapter-10/index.html#eq-eq-fano-effective-coupling">(10.9)</a>, so</p>
 <div class="math-block math-block--numbered" id="eq-eq-fano-q-scaling"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -2743,18 +2749,18 @@
         <mo>≃</mo>
         <mfrac>
           <mrow>
-            <mrow data-mjx-texclass="ORD">
-              <mo fence="false" stretchy="false">⟨</mo>
+            <mrow data-mjx-texclass="INNER">
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
               <mrow data-mjx-texclass="ORD">
                 <mi>g</mi>
               </mrow>
-              <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
             </mrow>
             <msub>
               <mrow data-mjx-texclass="ORD">
-                <mover>
+                <mover accent="true">
                   <mi>D</mi>
-                  <mo stretchy="false">^</mo>
+                  <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
                 </mover>
               </mrow>
               <mrow data-mjx-texclass="ORD">
@@ -2763,8 +2769,8 @@
                 </mrow>
               </mrow>
             </msub>
-            <mrow data-mjx-texclass="ORD">
-              <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+            <mrow data-mjx-texclass="INNER">
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
               <mrow data-mjx-texclass="ORD">
                 <msub>
                   <mrow data-mjx-texclass="ORD">
@@ -2773,7 +2779,7 @@
                   <mi>n</mi>
                 </msub>
               </mrow>
-              <mo fence="false" stretchy="false">⟩</mo>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
             </mrow>
           </mrow>
           <mrow>
@@ -2791,18 +2797,18 @@
             <mstyle scriptlevel="0">
               <mspace width="0.278em" />
             </mstyle>
-            <mrow data-mjx-texclass="ORD">
-              <mo fence="false" stretchy="false">⟨</mo>
+            <mrow data-mjx-texclass="INNER">
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
               <mrow data-mjx-texclass="ORD">
                 <mi>g</mi>
               </mrow>
-              <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
             </mrow>
             <msub>
               <mrow data-mjx-texclass="ORD">
-                <mover>
+                <mover accent="true">
                   <mi>D</mi>
-                  <mo stretchy="false">^</mo>
+                  <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
                 </mover>
               </mrow>
               <mrow data-mjx-texclass="ORD">
@@ -2811,12 +2817,12 @@
                 </mrow>
               </mrow>
             </msub>
-            <mrow data-mjx-texclass="ORD">
-              <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+            <mrow data-mjx-texclass="INNER">
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
               <mrow data-mjx-texclass="ORD">
                 <mi>ε</mi>
               </mrow>
-              <mo fence="false" stretchy="false">⟩</mo>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
             </mrow>
           </mrow>
         </mfrac>
@@ -2827,18 +2833,18 @@
         <mstyle scriptlevel="0">
           <mspace width="0.278em" />
         </mstyle>
-        <mrow data-mjx-texclass="ORD">
-          <mo fence="false" stretchy="false">⟨</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
           <mrow data-mjx-texclass="ORD">
             <mi>g</mi>
           </mrow>
-          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
         </mrow>
         <msub>
           <mrow data-mjx-texclass="ORD">
-            <mover>
+            <mover accent="true">
               <mi>D</mi>
-              <mo stretchy="false">^</mo>
+              <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
             </mover>
           </mrow>
           <mrow data-mjx-texclass="ORD">
@@ -2847,8 +2853,8 @@
             </mrow>
           </mrow>
         </msub>
-        <mrow data-mjx-texclass="ORD">
-          <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
           <mrow data-mjx-texclass="ORD">
             <msub>
               <mrow data-mjx-texclass="ORD">
@@ -2857,7 +2863,7 @@
               <mi>n</mi>
             </msub>
           </mrow>
-          <mo fence="false" stretchy="false">⟩</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
         </mrow>
         <msqrt>
           <msub>
@@ -2874,18 +2880,18 @@
   <mi>q</mi>
 </math></span>, hence a more peak-like, less asymmetric line. That is intuitive in hindsight: a narrow resonance concentrates the resonant amplitude into a small energy range where it dominates the smooth background.</p>
 <p>Notice which quantity obeys <em>no</em> scaling law: the bound–bound dipole <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow data-mjx-texclass="ORD">
-    <mo fence="false" stretchy="false">⟨</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
     <mrow data-mjx-texclass="ORD">
       <mi>g</mi>
     </mrow>
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
   </mrow>
   <msub>
     <mrow data-mjx-texclass="ORD">
-      <mover>
+      <mover accent="true">
         <mi>D</mi>
-        <mo stretchy="false">^</mo>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
       </mover>
     </mrow>
     <mrow data-mjx-texclass="ORD">
@@ -2894,8 +2900,8 @@
       </mrow>
     </mrow>
   </msub>
-  <mrow data-mjx-texclass="ORD">
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
       <msub>
         <mrow data-mjx-texclass="ORD">
@@ -2904,7 +2910,7 @@
         <mi>n</mi>
       </msub>
     </mrow>
-    <mo fence="false" stretchy="false">⟩</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
 </math></span> in the numerator. It depends on overlap with the ground state and on core details that no <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
@@ -3021,34 +3027,34 @@
   <mi data-mjx-alternate="1">ℏ</mi>
 </math></span>. Sharp means slow.</p>
 <h2 id="sec-10-summary"><span class="sec-number">10.8</span>Summary</h2>
-<ul><li><p>Continuum states are energy-normalized (Def. <a href="../chapter-10/index.html#definition-def-fano-energy-norm">10.2.1</a>), which lets a sum over bound states and an integral over the continuum appear in one expansion (Thm. <a href="../chapter-10/index.html#theorem-thm-fano-completeness">10.2.1</a>) and absorbs the density of states so that <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<ul><li><p>Continuum states are energy-normalized (Def. <a class="xref" href="../chapter-10/index.html#definition-def-fano-energy-norm">10.2.1</a>), which lets a sum over bound states and an integral over the continuum appear in one expansion (Thm. <a class="xref" href="../chapter-10/index.html#theorem-thm-fano-completeness">10.2.1</a>) and absorbs the density of states so that <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi mathvariant="normal">Γ</mi>
   <mo>=</mo>
   <mn>2</mn>
   <mi>π</mi>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
-  <mrow data-mjx-texclass="ORD">
-    <mo fence="false" stretchy="false">⟨</mo>
+  <mo stretchy="false">|</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
     <mrow data-mjx-texclass="ORD">
       <mi>ε</mi>
     </mrow>
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
   </mrow>
   <mrow data-mjx-texclass="ORD">
-    <mover>
+    <mover accent="true">
       <mi>V</mi>
-      <mo stretchy="false">^</mo>
+      <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
     </mover>
   </mrow>
-  <mrow data-mjx-texclass="ORD">
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
       <mi>a</mi>
     </mrow>
-    <mo fence="false" stretchy="false">⟩</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
   <msup>
-    <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mo stretchy="false">|</mo>
     <mrow data-mjx-texclass="ORD">
       <mn>2</mn>
     </mrow>
@@ -3058,13 +3064,13 @@
   <mo>=</mo>
   <mn>2</mn>
   <mi>π</mi>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <msub>
     <mi>V</mi>
     <mi>ε</mi>
   </msub>
   <msup>
-    <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mo stretchy="false">|</mo>
     <mrow data-mjx-texclass="ORD">
       <mn>2</mn>
     </mrow>
@@ -3099,7 +3105,7 @@
     <mn>2</mn>
     <mi>π</mi>
   </msqrt>
-</math></span>.</p></li><li><p>Diagonalising the coupled system exactly (Sec. <a href="../chapter-10/index.html#sec-10-fano-s-diagonalisation">10.4</a>) shows the discrete state is not destroyed but spread over the exact eigenstates in a Lorentzian of width <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>.</p></li><li><p>Diagonalising the coupled system exactly (Sec. <a class="xref" href="../chapter-10/index.html#sec-10-fano-s-diagonalisation">10.4</a>) shows the discrete state is not destroyed but spread over the exact eigenstates in a Lorentzian of width <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi mathvariant="normal">Γ</mi>
 </math></span>, shifted by the principal-value integral <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>F</mi>
@@ -3182,9 +3188,9 @@
   </mrow>
   <mi>q</mi>
 </math></span>. <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <mi>q</mi>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <mo accent="false" stretchy="false">→</mo>
   <mi mathvariant="normal">∞</mi>
 </math></span> gives a Lorentzian, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -3231,27 +3237,27 @@
       <mn>2</mn>
     </mrow>
   </msup>
-</math></span> (Thm. <a href="../chapter-10/index.html#theorem-thm-fano-scaling">10.6.1</a>); in terms of measured positions these become Eqs. <a href="../chapter-10/index.html#eq-eq-fano-tau-working">(10.21)</a> and <a href="../chapter-10/index.html#eq-eq-fano-dipole-working">(10.22)</a>, with the quantum defect cancelling. The asymmetry parameter follows, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> (Thm. <a class="xref" href="../chapter-10/index.html#theorem-thm-fano-scaling">10.6.1</a>); in terms of measured positions these become Eqs. <a class="xref" href="../chapter-10/index.html#eq-eq-fano-tau-working">(10.21)</a> and <a class="xref" href="../chapter-10/index.html#eq-eq-fano-dipole-working">(10.22)</a>, with the quantum defect cancelling. The asymmetry parameter follows, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>q</mi>
     <mi>n</mi>
   </msub>
   <mo>∝</mo>
-  <mrow data-mjx-texclass="ORD">
-    <mo fence="false" stretchy="false">⟨</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
     <mrow data-mjx-texclass="ORD">
       <mi>g</mi>
     </mrow>
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
   </mrow>
   <mrow data-mjx-texclass="ORD">
-    <mover>
+    <mover accent="true">
       <mi>D</mi>
-      <mo stretchy="false">^</mo>
+      <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
     </mover>
   </mrow>
-  <mrow data-mjx-texclass="ORD">
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
       <msub>
         <mrow data-mjx-texclass="ORD">
@@ -3260,7 +3266,7 @@
         <mi>n</mi>
       </msub>
     </mrow>
-    <mo fence="false" stretchy="false">⟩</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
   <msqrt>
     <msub>
@@ -3279,7 +3285,7 @@
   <mi>s</mi>
 </math></span>) series differ by an order of magnitude in lifetime for one reason: penetration of the core.</p></li></ul>
 <h2 id="sec-10-exercises"><span class="sec-number">10.9</span>Exercises</h2>
-<ol><li><p><strong>Widths and lifetimes.</strong> Verify Eq. <a href="../chapter-10/index.html#eq-eq-fano-units">(10.8)</a> from <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<ol><li><p><strong>Widths and lifetimes.</strong> Verify Eq. <a class="xref" href="../chapter-10/index.html#eq-eq-fano-units">(10.8)</a> from <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi mathvariant="normal">Γ</mi>
   <mi>τ</mi>
   <mo>=</mo>
@@ -3294,7 +3300,7 @@
   <mn>372.6</mn>
 </math></span> fs has what width, in meV and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>μ</mi>
-</math></span>eV?</p></li><li><p><strong>Anatomy of the profile.</strong> For Eq. <a href="../chapter-10/index.html#eq-eq-fano-profile">(10.16)</a>:</p>
+</math></span>eV?</p></li><li><p><strong>Anatomy of the profile.</strong> For Eq. <a class="xref" href="../chapter-10/index.html#eq-eq-fano-profile">(10.16)</a>:</p>
 <ol><li><p>Confirm the zero at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ϵ</mi>
   <mo>=</mo>
@@ -3311,7 +3317,7 @@
   <mi>ϵ</mi>
   <mo>=</mo>
   <mn>0</mn>
-</math></span>.</p></li><li><p>Carry out the differentiation in Sec. <a href="../chapter-10/index.html#sec-10-the-fano-profile">10.5</a> and confirm the maximum is at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>.</p></li><li><p>Carry out the differentiation in Sec. <a class="xref" href="../chapter-10/index.html#sec-10-the-fano-profile">10.5</a> and confirm the maximum is at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ϵ</mi>
   <mo>=</mo>
   <mn>1</mn>
@@ -3340,7 +3346,7 @@
   <mi>q</mi>
   <mo accent="false" stretchy="false">→</mo>
   <mi mathvariant="normal">∞</mi>
-</math></span> on one set of axes.</p></li></ol></li><li><p><strong>Extracting parameters.</strong> Repeat Example <a href="../chapter-10/index.html#example-ex-fano-extract">10.5.1</a> for a line whose minimum is at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> on one set of axes.</p></li></ol></li><li><p><strong>Extracting parameters.</strong> Repeat Example <a class="xref" href="../chapter-10/index.html#example-ex-fano-extract">10.5.1</a> for a line whose minimum is at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>60.05</mn>
 </math></span> eV, maximum at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>60.20</mn>
@@ -3378,7 +3384,7 @@
 </math></span> fs, dipole <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo>≡</mo>
   <mn>1.000</mn>
-</math></span>) and Eqs. <a href="../chapter-10/index.html#eq-eq-fano-tau-working">(10.21)</a>–<a href="../chapter-10/index.html#eq-eq-fano-dipole-working">(10.22)</a>, compute <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>) and Eqs. <a class="xref" href="../chapter-10/index.html#eq-eq-fano-tau-working">(10.21)</a>–<a class="xref" href="../chapter-10/index.html#eq-eq-fano-dipole-working">(10.22)</a>, compute <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>n</mi>
     <mrow data-mjx-texclass="ORD">
@@ -3436,7 +3442,7 @@
 </math></span> (<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>8</mn>
   <mi>d</mi>
-</math></span>), use Eq. <a href="../chapter-10/index.html#eq-eq-fano-q-scaling">(10.23)</a> to predict <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>), use Eq. <a class="xref" href="../chapter-10/index.html#eq-eq-fano-q-scaling">(10.23)</a> to predict <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>q</mi>
     <mrow data-mjx-texclass="ORD">
@@ -3470,7 +3476,7 @@
   <mi>d</mi>
 </math></span> lie only <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>0.06</mn>
-</math></span> eV apart yet their lifetimes differ by more than tenfold. Which quantity in Eq. <a href="../chapter-10/index.html#eq-eq-fano-tau-working">(10.21)</a> carries the difference, and which does not? Explain the physical origin in two sentences.</p></li></ol>
+</math></span> eV apart yet their lifetimes differ by more than tenfold. Which quantity in Eq. <a class="xref" href="../chapter-10/index.html#eq-eq-fano-tau-working">(10.21)</a> carries the difference, and which does not? Explain the physical origin in two sentences.</p></li></ol>
 <h2 id="sec-10-project-fano-profiles-from-a-measured-series"><span class="sec-number">10.10</span>Project: Fano Profiles from a Measured Series</h2>
 <p><strong>The problem.</strong> Build the absorption spectrum of a whole Rydberg series of autoionizing states from measured level positions and one anchor, and watch the interference structure emerge.</p>
 <p>The data are the CO<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -3539,12 +3545,12 @@
       <mo>∗</mo>
     </mrow>
   </msup>
-</math></span> for each state from Eq. <a href="../chapter-05/index.html#eq-eq-me-nstar-from-energy">(5.18)</a>, hence the quantum defect. Confirm <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> for each state from Eq. <a class="xref" href="../chapter-05/index.html#eq-eq-me-nstar-from-energy">(5.18)</a>, hence the quantum defect. Confirm <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>δ</mi>
     <mi>d</mi>
   </msub>
-</math></span> is small and roughly constant — that constancy is Chapter 5's claim, and this is the test of it.</p></li><li><p><strong>On paper.</strong> Using Eq. <a href="../chapter-10/index.html#eq-eq-fano-tau-working">(10.21)</a>, compute <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> is small and roughly constant — that constancy is Chapter 5's claim, and this is the test of it.</p></li><li><p><strong>On paper.</strong> Using Eq. <a class="xref" href="../chapter-10/index.html#eq-eq-fano-tau-working">(10.21)</a>, compute <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>τ</mi>
     <mi>n</mi>
@@ -3554,7 +3560,7 @@
     <mi mathvariant="normal">Γ</mi>
     <mi>n</mi>
   </msub>
-</math></span> in meV using Eq. <a href="../chapter-10/index.html#eq-eq-fano-units">(10.8)</a>.</p></li><li><p><strong>On the computer.</strong> Plot <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> in meV using Eq. <a class="xref" href="../chapter-10/index.html#eq-eq-fano-units">(10.8)</a>.</p></li><li><p><strong>On the computer.</strong> Plot <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi mathvariant="normal">Γ</mi>
     <mi>n</mi>
@@ -3574,7 +3580,7 @@
     <mi>q</mi>
     <mi>n</mi>
   </msub>
-</math></span> from Eq. <a href="../chapter-10/index.html#eq-eq-fano-q-scaling">(10.23)</a>, assuming for simplicity a common XUV bound dipole — an approximation the real calculation avoids, and one you should comment on. Plot the total spectrum</p>
+</math></span> from Eq. <a class="xref" href="../chapter-10/index.html#eq-eq-fano-q-scaling">(10.23)</a>, assuming for simplicity a common XUV bound dipole — an approximation the real calculation avoids, and one you should comment on. Plot the total spectrum</p>
 <div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mi>σ</mi>
   <mo stretchy="false">(</mo>

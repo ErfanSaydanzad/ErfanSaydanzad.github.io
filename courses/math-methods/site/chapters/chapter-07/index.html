@@ -6,9 +6,9 @@
   <title>Chapter 7: Fourier Series and Transforms | Mathematical Methods in the Physical Sciences</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
   <link rel="preload" href="../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../../assets/css/site.css?v=cc53b025">
+  <link rel="stylesheet" href="../../assets/css/site.css?v=9dea6c95">
   <link rel="preload" href="../../assets/fonts/latinmodern-math.woff2" as="font" type="font/woff2" crossorigin>
-  <script defer src="../../assets/js/main.js?v=cc53b025"></script>
+  <script defer src="../../assets/js/main.js?v=9dea6c95"></script>
 
 <style>
 .site-header { justify-content: flex-start; gap: 16px; }
@@ -2899,16 +2899,18 @@
   <mi>f</mi>
   <mi>cos</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mo stretchy="false">(</mo>
-  <mn>2</mn>
-  <mi>π</mi>
-  <mi>n</mi>
-  <mi>x</mi>
-  <mrow data-mjx-texclass="ORD">
-    <mo>/</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <mn>2</mn>
+    <mi>π</mi>
+    <mi>n</mi>
+    <mi>x</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo>/</mo>
+    </mrow>
+    <mi>L</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
   </mrow>
-  <mi>L</mi>
-  <mo stretchy="false">)</mo>
   <mstyle scriptlevel="0">
     <mspace width="0.167em" />
   </mstyle>
@@ -2987,12 +2989,12 @@
             <mn>2</mn>
           </mrow>
         </msubsup>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <mi>f</mi>
         <mo stretchy="false">(</mo>
         <mi>x</mi>
         <mo stretchy="false">)</mo>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <mstyle scriptlevel="0">
           <mspace width="0.167em" />
         </mstyle>
@@ -3215,27 +3217,31 @@
                 </msub>
                 <mi>cos</mi>
                 <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                <mo stretchy="false">(</mo>
-                <msub>
-                  <mi>k</mi>
-                  <mi>n</mi>
-                </msub>
-                <mi>x</mi>
-                <mo stretchy="false">)</mo>
-                <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+                <mrow>
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                  <msub>
+                    <mi>k</mi>
+                    <mi>n</mi>
+                  </msub>
+                  <mi>x</mi>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+                </mrow>
+                <mo>+</mo>
                 <msub>
                   <mi>b</mi>
                   <mi>n</mi>
                 </msub>
                 <mi>sin</mi>
                 <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                <mo stretchy="false">(</mo>
-                <msub>
-                  <mi>k</mi>
-                  <mi>n</mi>
-                </msub>
-                <mi>x</mi>
-                <mo stretchy="false">)</mo>
+                <mrow>
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                  <msub>
+                    <mi>k</mi>
+                    <mi>n</mi>
+                  </msub>
+                  <mi>x</mi>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+                </mrow>
                 <mrow data-mjx-texclass="ORD">
                   <mo minsize="1.2em" maxsize="1.2em" stretchy="true" lspace="0em" rspace="0em">]</mo>
                 </mrow>
@@ -3291,27 +3297,31 @@
                 </msub>
                 <mi>cos</mi>
                 <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                <mo stretchy="false">(</mo>
-                <msub>
-                  <mi>k</mi>
-                  <mi>n</mi>
-                </msub>
-                <mi>x</mi>
-                <mo stretchy="false">)</mo>
-                <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+                <mrow>
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                  <msub>
+                    <mi>k</mi>
+                    <mi>n</mi>
+                  </msub>
+                  <mi>x</mi>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+                </mrow>
+                <mo>+</mo>
                 <msub>
                   <mi>b</mi>
                   <mi>n</mi>
                 </msub>
                 <mi>sin</mi>
                 <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                <mo stretchy="false">(</mo>
-                <msub>
-                  <mi>k</mi>
-                  <mi>n</mi>
-                </msub>
-                <mi>x</mi>
-                <mo stretchy="false">)</mo>
+                <mrow>
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                  <msub>
+                    <mi>k</mi>
+                    <mi>n</mi>
+                  </msub>
+                  <mi>x</mi>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+                </mrow>
                 <mo>,</mo>
               </mrow>
             </mstyle>
@@ -3419,27 +3429,31 @@
               </msub>
               <mi>cos</mi>
               <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-              <mo stretchy="false">(</mo>
-              <msub>
-                <mi>k</mi>
-                <mn>1</mn>
-              </msub>
-              <mi>x</mi>
-              <mo stretchy="false">)</mo>
-              <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+              <mrow>
+                <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                <msub>
+                  <mi>k</mi>
+                  <mn>1</mn>
+                </msub>
+                <mi>x</mi>
+                <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+              </mrow>
+              <mo>+</mo>
               <msub>
                 <mi>b</mi>
                 <mn>1</mn>
               </msub>
               <mi>sin</mi>
               <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-              <mo stretchy="false">(</mo>
-              <msub>
-                <mi>k</mi>
-                <mn>1</mn>
-              </msub>
-              <mi>x</mi>
-              <mo stretchy="false">)</mo>
+              <mrow>
+                <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                <msub>
+                  <mi>k</mi>
+                  <mn>1</mn>
+                </msub>
+                <mi>x</mi>
+                <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+              </mrow>
               <mo>,</mo>
             </mtd>
             <mtd />
@@ -3466,29 +3480,33 @@
               </msub>
               <mi>cos</mi>
               <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-              <mo stretchy="false">(</mo>
-              <mn>2</mn>
-              <msub>
-                <mi>k</mi>
-                <mn>1</mn>
-              </msub>
-              <mi>x</mi>
-              <mo stretchy="false">)</mo>
-              <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+              <mrow>
+                <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                <mn>2</mn>
+                <msub>
+                  <mi>k</mi>
+                  <mn>1</mn>
+                </msub>
+                <mi>x</mi>
+                <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+              </mrow>
+              <mo>+</mo>
               <msub>
                 <mi>b</mi>
                 <mn>2</mn>
               </msub>
               <mi>sin</mi>
               <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-              <mo stretchy="false">(</mo>
-              <mn>2</mn>
-              <msub>
-                <mi>k</mi>
-                <mn>1</mn>
-              </msub>
-              <mi>x</mi>
-              <mo stretchy="false">)</mo>
+              <mrow>
+                <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                <mn>2</mn>
+                <msub>
+                  <mi>k</mi>
+                  <mn>1</mn>
+                </msub>
+                <mi>x</mi>
+                <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+              </mrow>
               <mo>,</mo>
             </mtd>
             <mtd />
@@ -3515,29 +3533,33 @@
               </msub>
               <mi>cos</mi>
               <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-              <mo stretchy="false">(</mo>
-              <mi>N</mi>
-              <msub>
-                <mi>k</mi>
-                <mn>1</mn>
-              </msub>
-              <mi>x</mi>
-              <mo stretchy="false">)</mo>
-              <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+              <mrow>
+                <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                <mi>N</mi>
+                <msub>
+                  <mi>k</mi>
+                  <mn>1</mn>
+                </msub>
+                <mi>x</mi>
+                <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+              </mrow>
+              <mo>+</mo>
               <msub>
                 <mi>b</mi>
                 <mi>N</mi>
               </msub>
               <mi>sin</mi>
               <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-              <mo stretchy="false">(</mo>
-              <mi>N</mi>
-              <msub>
-                <mi>k</mi>
-                <mn>1</mn>
-              </msub>
-              <mi>x</mi>
-              <mo stretchy="false">)</mo>
+              <mrow>
+                <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                <mi>N</mi>
+                <msub>
+                  <mi>k</mi>
+                  <mn>1</mn>
+                </msub>
+                <mi>x</mi>
+                <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+              </mrow>
               <mo>,</mo>
             </mtd>
             <mtd />
@@ -3690,14 +3712,12 @@
 <section class="callout remark"><header><span class="callout-kind">Remark</span><span class="callout-title">Applications</span></header><ul><li><p><strong>Signal processing:</strong> Decompose and reconstruct signals by frequency content.</p></li><li><p><strong>Noise reduction:</strong> Remove unwanted high-frequency components using low-pass filtering.</p></li><li><p><strong>Data compression:</strong> Approximate a signal using only the dominant harmonics.</p></li><li><p><strong>Physics:</strong> Analyze normal modes in vibrating strings, membranes, and quantum systems.</p></li></ul></section>
 <section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">Square step on <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo fence="false" stretchy="false">[</mo>
-  <mrow data-mjx-texclass="ORD" />
-  <mo>−</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
   <mi>π</mi>
   <mo>,</mo>
   <mi>π</mi>
   <mo fence="false" stretchy="false">]</mo>
-  <mrow data-mjx-texclass="ORD" />
-</math></span></span></header><p>Find the Fourier series of</p>
+  </math></span></span></header><p>Find the Fourier series of</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -3827,21 +3847,25 @@
         </msub>
         <mi>cos</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <mi>n</mi>
-        <mi>x</mi>
-        <mo stretchy="false">)</mo>
-        <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mi>n</mi>
+          <mi>x</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
+        <mo>+</mo>
         <msub>
           <mi>b</mi>
           <mi>n</mi>
         </msub>
         <mi>sin</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <mi>n</mi>
-        <mi>x</mi>
-        <mo stretchy="false">)</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mi>n</mi>
+          <mi>x</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
         <mrow data-mjx-texclass="ORD">
           <mo minsize="1.2em" maxsize="1.2em" stretchy="true" lspace="0em" rspace="0em">]</mo>
         </mrow>
@@ -3943,10 +3967,12 @@
         <mo stretchy="false">)</mo>
         <mi>cos</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <mi>n</mi>
-        <mi>x</mi>
-        <mo stretchy="false">)</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mi>n</mi>
+          <mi>x</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
         <mstyle scriptlevel="0">
           <mspace width="0.167em" />
         </mstyle>
@@ -3987,10 +4013,12 @@
         <mo stretchy="false">)</mo>
         <mi>sin</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <mi>n</mi>
-        <mi>x</mi>
-        <mo stretchy="false">)</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mi>n</mi>
+          <mi>x</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
         <mstyle scriptlevel="0">
           <mspace width="0.167em" />
         </mstyle>
@@ -4157,10 +4185,12 @@
         </mstyle>
         <mi>cos</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <mi>n</mi>
-        <mi>x</mi>
-        <mo stretchy="false">)</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mi>n</mi>
+          <mi>x</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
         <mstyle scriptlevel="0">
           <mspace width="0.167em" />
         </mstyle>
@@ -4176,10 +4206,12 @@
           <mrow>
             <mi>sin</mi>
             <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-            <mo stretchy="false">(</mo>
-            <mi>n</mi>
-            <mi>x</mi>
-            <mo stretchy="false">)</mo>
+            <mrow>
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+              <mi>n</mi>
+              <mi>x</mi>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+            </mrow>
           </mrow>
           <mi>n</mi>
         </mfrac>
@@ -4240,10 +4272,12 @@
         </mstyle>
         <mi>sin</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <mi>n</mi>
-        <mi>x</mi>
-        <mo stretchy="false">)</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mi>n</mi>
+          <mi>x</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
         <mstyle scriptlevel="0">
           <mspace width="0.167em" />
         </mstyle>
@@ -4260,10 +4294,12 @@
             <mo form="prefix" lspace="0em" rspace="0em">−</mo>
             <mi>cos</mi>
             <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-            <mo stretchy="false">(</mo>
-            <mi>n</mi>
-            <mi>x</mi>
-            <mo stretchy="false">)</mo>
+            <mrow>
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+              <mi>n</mi>
+              <mi>x</mi>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+            </mrow>
           </mrow>
           <mi>n</mi>
         </mfrac>
@@ -4293,10 +4329,12 @@
         <mo>−</mo>
         <mi>cos</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <mi>n</mi>
-        <mi>π</mi>
-        <mo stretchy="false">)</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mi>n</mi>
+          <mi>π</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
         <mrow data-mjx-texclass="ORD">
           <mo minsize="1.2em" maxsize="1.2em" stretchy="true" lspace="0em" rspace="0em">)</mo>
         </mrow>
@@ -4544,21 +4582,25 @@
         </msub>
         <mi>cos</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <mi>n</mi>
-        <mi>x</mi>
-        <mo stretchy="false">)</mo>
-        <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mi>n</mi>
+          <mi>x</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
+        <mo>+</mo>
         <msub>
           <mi>b</mi>
           <mi>n</mi>
         </msub>
         <mi>sin</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <mi>n</mi>
-        <mi>x</mi>
-        <mo stretchy="false">)</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mi>n</mi>
+          <mi>x</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
         <mrow data-mjx-texclass="ORD">
           <mo minsize="1.2em" maxsize="1.2em" stretchy="true" lspace="0em" rspace="0em">]</mo>
         </mrow>
@@ -4639,10 +4681,12 @@
               <mo stretchy="false">)</mo>
               <mi>cos</mi>
               <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-              <mo stretchy="false">(</mo>
-              <mi>n</mi>
-              <mi>x</mi>
-              <mo stretchy="false">)</mo>
+              <mrow>
+                <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                <mi>n</mi>
+                <mi>x</mi>
+                <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+              </mrow>
               <mstyle scriptlevel="0">
                 <mspace width="0.167em" />
               </mstyle>
@@ -4684,10 +4728,12 @@
               <mo stretchy="false">)</mo>
               <mi>sin</mi>
               <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-              <mo stretchy="false">(</mo>
-              <mi>n</mi>
-              <mi>x</mi>
-              <mo stretchy="false">)</mo>
+              <mrow>
+                <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                <mi>n</mi>
+                <mi>x</mi>
+                <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+              </mrow>
               <mstyle scriptlevel="0">
                 <mspace width="0.167em" />
               </mstyle>
@@ -4829,10 +4875,12 @@
         <mi>x</mi>
         <mi>cos</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <mi>n</mi>
-        <mi>x</mi>
-        <mo stretchy="false">)</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mi>n</mi>
+          <mi>x</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
         <mstyle scriptlevel="0">
           <mspace width="0.167em" />
         </mstyle>
@@ -4900,10 +4948,12 @@
           <mrow>
             <mi>sin</mi>
             <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-            <mo stretchy="false">(</mo>
-            <mi>n</mi>
-            <mi>x</mi>
-            <mo stretchy="false">)</mo>
+            <mrow>
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+              <mi>n</mi>
+              <mi>x</mi>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+            </mrow>
           </mrow>
           <mi>n</mi>
         </mfrac>
@@ -4936,10 +4986,12 @@
           <mrow>
             <mi>sin</mi>
             <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-            <mo stretchy="false">(</mo>
-            <mi>n</mi>
-            <mi>x</mi>
-            <mo stretchy="false">)</mo>
+            <mrow>
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+              <mi>n</mi>
+              <mi>x</mi>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+            </mrow>
           </mrow>
           <mi>n</mi>
         </mfrac>
@@ -5080,10 +5132,12 @@
         <mi>x</mi>
         <mi>sin</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <mi>n</mi>
-        <mi>x</mi>
-        <mo stretchy="false">)</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mi>n</mi>
+          <mi>x</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
         <mstyle scriptlevel="0">
           <mspace width="0.167em" />
         </mstyle>
@@ -5153,10 +5207,12 @@
           <mrow>
             <mi>cos</mi>
             <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-            <mo stretchy="false">(</mo>
-            <mi>n</mi>
-            <mi>x</mi>
-            <mo stretchy="false">)</mo>
+            <mrow>
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+              <mi>n</mi>
+              <mi>x</mi>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+            </mrow>
           </mrow>
           <mi>n</mi>
         </mfrac>
@@ -5189,10 +5245,12 @@
           <mrow>
             <mi>cos</mi>
             <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-            <mo stretchy="false">(</mo>
-            <mi>n</mi>
-            <mi>x</mi>
-            <mo stretchy="false">)</mo>
+            <mrow>
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+              <mi>n</mi>
+              <mi>x</mi>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+            </mrow>
           </mrow>
           <mi>n</mi>
         </mfrac>
@@ -5299,11 +5357,13 @@
                   </mfrac>
                   <mi>cos</mi>
                   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                  <mo stretchy="false">(</mo>
-                  <mi>n</mi>
-                  <mi>x</mi>
-                  <mo stretchy="false">)</mo>
-                  <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+                  <mrow>
+                    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                    <mi>n</mi>
+                    <mi>x</mi>
+                    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+                  </mrow>
+                  <mo>+</mo>
                   <mfrac>
                     <mrow>
                       <mo stretchy="false">(</mo>
@@ -5322,10 +5382,12 @@
                   </mfrac>
                   <mi>sin</mi>
                   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                  <mo stretchy="false">(</mo>
-                  <mi>n</mi>
-                  <mi>x</mi>
-                  <mo stretchy="false">)</mo>
+                  <mrow>
+                    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                    <mi>n</mi>
+                    <mi>x</mi>
+                    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+                  </mrow>
                   <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">]</mo>
                 </mrow>
               </mrow>
@@ -5430,10 +5492,12 @@
                 </mfrac>
                 <mi>sin</mi>
                 <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                <mo stretchy="false">(</mo>
-                <mi>n</mi>
-                <mi>x</mi>
-                <mo stretchy="false">)</mo>
+                <mrow>
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                  <mi>n</mi>
+                  <mi>x</mi>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+                </mrow>
                 <mo>.</mo>
               </mrow>
             </mstyle>
@@ -5614,27 +5678,31 @@
         </msub>
         <mi>cos</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <msub>
-          <mi>ω</mi>
-          <mi>n</mi>
-        </msub>
-        <mi>t</mi>
-        <mo stretchy="false">)</mo>
-        <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <msub>
+            <mi>ω</mi>
+            <mi>n</mi>
+          </msub>
+          <mi>t</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
+        <mo>+</mo>
         <msub>
           <mi>b</mi>
           <mi>n</mi>
         </msub>
         <mi>sin</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <msub>
-          <mi>ω</mi>
-          <mi>n</mi>
-        </msub>
-        <mi>t</mi>
-        <mo stretchy="false">)</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <msub>
+            <mi>ω</mi>
+            <mi>n</mi>
+          </msub>
+          <mi>t</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
         <mrow data-mjx-texclass="ORD">
           <mo minsize="1.623em" maxsize="1.623em" stretchy="true" lspace="0em" rspace="0em">]</mo>
         </mrow>
@@ -5828,13 +5896,15 @@
         <mo stretchy="false">)</mo>
         <mi>cos</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <msub>
-          <mi>ω</mi>
-          <mi>n</mi>
-        </msub>
-        <mi>t</mi>
-        <mo stretchy="false">)</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <msub>
+            <mi>ω</mi>
+            <mi>n</mi>
+          </msub>
+          <mi>t</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
         <mstyle scriptlevel="0">
           <mspace width="0.167em" />
         </mstyle>
@@ -5861,13 +5931,15 @@
         <mi>t</mi>
         <mi>cos</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <msub>
-          <mi>ω</mi>
-          <mi>n</mi>
-        </msub>
-        <mi>t</mi>
-        <mo stretchy="false">)</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <msub>
+            <mi>ω</mi>
+            <mi>n</mi>
+          </msub>
+          <mi>t</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
         <mstyle scriptlevel="0">
           <mspace width="0.167em" />
         </mstyle>
@@ -5888,13 +5960,15 @@
   <mo>=</mo>
   <mi>cos</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mo stretchy="false">(</mo>
-  <msub>
-    <mi>ω</mi>
-    <mi>n</mi>
-  </msub>
-  <mi>t</mi>
-  <mo stretchy="false">)</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <msub>
+      <mi>ω</mi>
+      <mi>n</mi>
+    </msub>
+    <mi>t</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+  </mrow>
   <mstyle scriptlevel="0">
     <mspace width="0.167em" />
   </mstyle>
@@ -5909,13 +5983,15 @@
         <mi>t</mi>
         <mi>cos</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <msub>
-          <mi>ω</mi>
-          <mi>n</mi>
-        </msub>
-        <mi>t</mi>
-        <mo stretchy="false">)</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <msub>
+            <mi>ω</mi>
+            <mi>n</mi>
+          </msub>
+          <mi>t</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
         <mstyle scriptlevel="0">
           <mspace width="0.167em" />
         </mstyle>
@@ -5927,13 +6003,15 @@
             <mi>t</mi>
             <mi>sin</mi>
             <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-            <mo stretchy="false">(</mo>
-            <msub>
-              <mi>ω</mi>
-              <mi>n</mi>
-            </msub>
-            <mi>t</mi>
-            <mo stretchy="false">)</mo>
+            <mrow>
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+              <msub>
+                <mi>ω</mi>
+                <mi>n</mi>
+              </msub>
+              <mi>t</mi>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+            </mrow>
           </mrow>
           <msub>
             <mi>ω</mi>
@@ -5945,13 +6023,15 @@
           <mrow>
             <mi>cos</mi>
             <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-            <mo stretchy="false">(</mo>
-            <msub>
-              <mi>ω</mi>
-              <mi>n</mi>
-            </msub>
-            <mi>t</mi>
-            <mo stretchy="false">)</mo>
+            <mrow>
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+              <msub>
+                <mi>ω</mi>
+                <mi>n</mi>
+              </msub>
+              <mi>t</mi>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+            </mrow>
           </mrow>
           <msubsup>
             <mi>ω</mi>
@@ -5992,13 +6072,15 @@
                       <mi>t</mi>
                       <mi>sin</mi>
                       <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                      <mo stretchy="false">(</mo>
-                      <msub>
-                        <mi>ω</mi>
-                        <mi>n</mi>
-                      </msub>
-                      <mi>t</mi>
-                      <mo stretchy="false">)</mo>
+                      <mrow>
+                        <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                        <msub>
+                          <mi>ω</mi>
+                          <mi>n</mi>
+                        </msub>
+                        <mi>t</mi>
+                        <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+                      </mrow>
                     </mrow>
                     <msub>
                       <mi>ω</mi>
@@ -6010,13 +6092,15 @@
                     <mrow>
                       <mi>cos</mi>
                       <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                      <mo stretchy="false">(</mo>
-                      <msub>
-                        <mi>ω</mi>
-                        <mi>n</mi>
-                      </msub>
-                      <mi>t</mi>
-                      <mo stretchy="false">)</mo>
+                      <mrow>
+                        <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                        <msub>
+                          <mi>ω</mi>
+                          <mi>n</mi>
+                        </msub>
+                        <mi>t</mi>
+                        <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+                      </mrow>
                     </mrow>
                     <msubsup>
                       <mi>ω</mi>
@@ -6055,17 +6139,19 @@
                     <mo stretchy="false">)</mo>
                     <mi>sin</mi>
                     <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                    <mo stretchy="false">(</mo>
-                    <msub>
-                      <mi>ω</mi>
-                      <mi>n</mi>
-                    </msub>
-                    <mi>T</mi>
-                    <mrow data-mjx-texclass="ORD">
-                      <mo>/</mo>
+                    <mrow>
+                      <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                      <msub>
+                        <mi>ω</mi>
+                        <mi>n</mi>
+                      </msub>
+                      <mi>T</mi>
+                      <mrow data-mjx-texclass="ORD">
+                        <mo>/</mo>
+                      </mrow>
+                      <mn>2</mn>
+                      <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
                     </mrow>
-                    <mn>2</mn>
-                    <mo stretchy="false">)</mo>
                   </mrow>
                   <msub>
                     <mi>ω</mi>
@@ -6077,18 +6163,20 @@
                   <mrow>
                     <mi>cos</mi>
                     <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                    <mo stretchy="false">(</mo>
-                    <msub>
-                      <mi>ω</mi>
-                      <mi>n</mi>
-                    </msub>
-                    <mi>T</mi>
-                    <mrow data-mjx-texclass="ORD">
-                      <mo>/</mo>
+                    <mrow>
+                      <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                      <msub>
+                        <mi>ω</mi>
+                        <mi>n</mi>
+                      </msub>
+                      <mi>T</mi>
+                      <mrow data-mjx-texclass="ORD">
+                        <mo>/</mo>
+                      </mrow>
+                      <mn>2</mn>
+                      <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
                     </mrow>
-                    <mn>2</mn>
-                    <mo stretchy="false">)</mo>
-                    <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+                    <mo>−</mo>
                     <mn>1</mn>
                   </mrow>
                   <msubsup>
@@ -6110,47 +6198,55 @@
 <p>Using <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>sin</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mo stretchy="false">(</mo>
-  <msub>
-    <mi>ω</mi>
-    <mi>n</mi>
-  </msub>
-  <mi>T</mi>
-  <mrow data-mjx-texclass="ORD">
-    <mo>/</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <msub>
+      <mi>ω</mi>
+      <mi>n</mi>
+    </msub>
+    <mi>T</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo>/</mo>
+    </mrow>
+    <mn>2</mn>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
   </mrow>
-  <mn>2</mn>
-  <mo stretchy="false">)</mo>
   <mo>=</mo>
   <mi>sin</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mo stretchy="false">(</mo>
-  <mi>n</mi>
-  <mi>π</mi>
-  <mo stretchy="false">)</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <mi>n</mi>
+    <mi>π</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+  </mrow>
   <mo>=</mo>
   <mn>0</mn>
 </math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>cos</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mo stretchy="false">(</mo>
-  <msub>
-    <mi>ω</mi>
-    <mi>n</mi>
-  </msub>
-  <mi>T</mi>
-  <mrow data-mjx-texclass="ORD">
-    <mo>/</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <msub>
+      <mi>ω</mi>
+      <mi>n</mi>
+    </msub>
+    <mi>T</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo>/</mo>
+    </mrow>
+    <mn>2</mn>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
   </mrow>
-  <mn>2</mn>
-  <mo stretchy="false">)</mo>
   <mo>=</mo>
   <mi>cos</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mo stretchy="false">(</mo>
-  <mi>n</mi>
-  <mi>π</mi>
-  <mo stretchy="false">)</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <mi>n</mi>
+    <mi>π</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+  </mrow>
   <mo>=</mo>
   <mo stretchy="false">(</mo>
   <mo form="prefix" lspace="0em" rspace="0em">−</mo>
@@ -6352,13 +6448,15 @@
         <mo stretchy="false">)</mo>
         <mi>sin</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <msub>
-          <mi>ω</mi>
-          <mi>n</mi>
-        </msub>
-        <mi>t</mi>
-        <mo stretchy="false">)</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <msub>
+            <mi>ω</mi>
+            <mi>n</mi>
+          </msub>
+          <mi>t</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
         <mstyle scriptlevel="0">
           <mspace width="0.167em" />
         </mstyle>
@@ -6385,13 +6483,15 @@
         <mi>t</mi>
         <mi>sin</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <msub>
-          <mi>ω</mi>
-          <mi>n</mi>
-        </msub>
-        <mi>t</mi>
-        <mo stretchy="false">)</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <msub>
+            <mi>ω</mi>
+            <mi>n</mi>
+          </msub>
+          <mi>t</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
         <mstyle scriptlevel="0">
           <mspace width="0.167em" />
         </mstyle>
@@ -6412,13 +6512,15 @@
   <mo>=</mo>
   <mi>sin</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mo stretchy="false">(</mo>
-  <msub>
-    <mi>ω</mi>
-    <mi>n</mi>
-  </msub>
-  <mi>t</mi>
-  <mo stretchy="false">)</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <msub>
+      <mi>ω</mi>
+      <mi>n</mi>
+    </msub>
+    <mi>t</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+  </mrow>
   <mstyle scriptlevel="0">
     <mspace width="0.167em" />
   </mstyle>
@@ -6433,13 +6535,15 @@
         <mi>t</mi>
         <mi>sin</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <msub>
-          <mi>ω</mi>
-          <mi>n</mi>
-        </msub>
-        <mi>t</mi>
-        <mo stretchy="false">)</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <msub>
+            <mi>ω</mi>
+            <mi>n</mi>
+          </msub>
+          <mi>t</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
         <mstyle scriptlevel="0">
           <mspace width="0.167em" />
         </mstyle>
@@ -6452,13 +6556,15 @@
             <mi>t</mi>
             <mi>cos</mi>
             <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-            <mo stretchy="false">(</mo>
-            <msub>
-              <mi>ω</mi>
-              <mi>n</mi>
-            </msub>
-            <mi>t</mi>
-            <mo stretchy="false">)</mo>
+            <mrow>
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+              <msub>
+                <mi>ω</mi>
+                <mi>n</mi>
+              </msub>
+              <mi>t</mi>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+            </mrow>
           </mrow>
           <msub>
             <mi>ω</mi>
@@ -6470,13 +6576,15 @@
           <mrow>
             <mi>sin</mi>
             <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-            <mo stretchy="false">(</mo>
-            <msub>
-              <mi>ω</mi>
-              <mi>n</mi>
-            </msub>
-            <mi>t</mi>
-            <mo stretchy="false">)</mo>
+            <mrow>
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+              <msub>
+                <mi>ω</mi>
+                <mi>n</mi>
+              </msub>
+              <mi>t</mi>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+            </mrow>
           </mrow>
           <msubsup>
             <mi>ω</mi>
@@ -6512,13 +6620,15 @@
                 <mi>t</mi>
                 <mi>cos</mi>
                 <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                <mo stretchy="false">(</mo>
-                <msub>
-                  <mi>ω</mi>
-                  <mi>n</mi>
-                </msub>
-                <mi>t</mi>
-                <mo stretchy="false">)</mo>
+                <mrow>
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                  <msub>
+                    <mi>ω</mi>
+                    <mi>n</mi>
+                  </msub>
+                  <mi>t</mi>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+                </mrow>
               </mrow>
               <msub>
                 <mi>ω</mi>
@@ -6530,13 +6640,15 @@
               <mrow>
                 <mi>sin</mi>
                 <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                <mo stretchy="false">(</mo>
-                <msub>
-                  <mi>ω</mi>
-                  <mi>n</mi>
-                </msub>
-                <mi>t</mi>
-                <mo stretchy="false">)</mo>
+                <mrow>
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                  <msub>
+                    <mi>ω</mi>
+                    <mi>n</mi>
+                  </msub>
+                  <mi>t</mi>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+                </mrow>
               </mrow>
               <msubsup>
                 <mi>ω</mi>
@@ -6575,17 +6687,19 @@
             <mo stretchy="false">)</mo>
             <mi>cos</mi>
             <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-            <mo stretchy="false">(</mo>
-            <msub>
-              <mi>ω</mi>
-              <mi>n</mi>
-            </msub>
-            <mi>T</mi>
-            <mrow data-mjx-texclass="ORD">
-              <mo>/</mo>
+            <mrow>
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+              <msub>
+                <mi>ω</mi>
+                <mi>n</mi>
+              </msub>
+              <mi>T</mi>
+              <mrow data-mjx-texclass="ORD">
+                <mo>/</mo>
+              </mrow>
+              <mn>2</mn>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
             </mrow>
-            <mn>2</mn>
-            <mo stretchy="false">)</mo>
           </mrow>
           <msub>
             <mi>ω</mi>
@@ -7408,17 +7522,19 @@
             <mn>2</mn>
             <mi>sin</mi>
             <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-            <mo stretchy="false">(</mo>
-            <msub>
-              <mi>k</mi>
-              <mi>n</mi>
-            </msub>
-            <mi>L</mi>
-            <mrow data-mjx-texclass="ORD">
-              <mo>/</mo>
+            <mrow>
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+              <msub>
+                <mi>k</mi>
+                <mi>n</mi>
+              </msub>
+              <mi>L</mi>
+              <mrow data-mjx-texclass="ORD">
+                <mo>/</mo>
+              </mrow>
+              <mn>2</mn>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
             </mrow>
-            <mn>2</mn>
-            <mo stretchy="false">)</mo>
           </mrow>
           <msub>
             <mi>k</mi>
@@ -7431,10 +7547,12 @@
             <mn>2</mn>
             <mi>sin</mi>
             <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-            <mo stretchy="false">(</mo>
-            <mi>π</mi>
-            <mi>n</mi>
-            <mo stretchy="false">)</mo>
+            <mrow>
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+              <mi>π</mi>
+              <mi>n</mi>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+            </mrow>
           </mrow>
           <msub>
             <mi>k</mi>
@@ -7451,10 +7569,12 @@
 <p>since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>sin</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mo stretchy="false">(</mo>
-  <mi>π</mi>
-  <mi>n</mi>
-  <mo stretchy="false">)</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <mi>π</mi>
+    <mi>n</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+  </mrow>
   <mo>=</mo>
   <mn>0</mn>
 </math></span> for all integer <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -7588,10 +7708,12 @@
               </mfrac>
               <mi>cos</mi>
               <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-              <mo stretchy="false">(</mo>
-              <mi>π</mi>
-              <mi>n</mi>
-              <mo stretchy="false">)</mo>
+              <mrow>
+                <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                <mi>π</mi>
+                <mi>n</mi>
+                <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+              </mrow>
               <mo>.</mo>
             </mtd>
           </mtr>
@@ -7603,10 +7725,12 @@
 <p>Using <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>cos</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mo stretchy="false">(</mo>
-  <mi>π</mi>
-  <mi>n</mi>
-  <mo stretchy="false">)</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <mi>π</mi>
+    <mi>n</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+  </mrow>
   <mo>=</mo>
   <mo stretchy="false">(</mo>
   <mo form="prefix" lspace="0em" rspace="0em">−</mo>
@@ -8816,10 +8940,12 @@
             <mn>2</mn>
             <mi>sin</mi>
             <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-            <mo stretchy="false">(</mo>
-            <mi>k</mi>
-            <mi>a</mi>
-            <mo stretchy="false">)</mo>
+            <mrow>
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+              <mi>k</mi>
+              <mi>a</mi>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+            </mrow>
           </mrow>
           <mi>k</mi>
         </mfrac>
@@ -8855,10 +8981,12 @@
                     <mn>2</mn>
                     <mi>sin</mi>
                     <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                    <mo stretchy="false">(</mo>
-                    <mi>k</mi>
-                    <mi>a</mi>
-                    <mo stretchy="false">)</mo>
+                    <mrow>
+                      <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                      <mi>k</mi>
+                      <mi>a</mi>
+                      <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+                    </mrow>
                   </mrow>
                   <mi>k</mi>
                 </mfrac>
@@ -8874,10 +9002,12 @@
                   <mrow>
                     <mi>sin</mi>
                     <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                    <mo stretchy="false">(</mo>
-                    <mi>k</mi>
-                    <mi>a</mi>
-                    <mo stretchy="false">)</mo>
+                    <mrow>
+                      <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                      <mi>k</mi>
+                      <mi>a</mi>
+                      <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+                    </mrow>
                   </mrow>
                   <mi>k</mi>
                 </mfrac>
@@ -9028,9 +9158,9 @@
     <mrow data-mjx-texclass="ORD">
       <mo form="prefix" lspace="0em" rspace="0em">−</mo>
       <mi>a</mi>
-      <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+      <mo stretchy="false">|</mo>
       <mi>t</mi>
-      <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+      <mo stretchy="false">|</mo>
     </mrow>
   </msup>
 </math></span></span></header><p>Let</p>
@@ -9048,9 +9178,9 @@
           <mrow data-mjx-texclass="ORD">
             <mo form="prefix" lspace="0em" rspace="0em">−</mo>
             <mi>a</mi>
-            <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+            <mo stretchy="false">|</mo>
             <mi>t</mi>
-            <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+            <mo stretchy="false">|</mo>
           </mrow>
         </msup>
         <mo>,</mo>
@@ -9080,9 +9210,9 @@
     <mrow data-mjx-texclass="ORD">
       <mo form="prefix" lspace="0em" rspace="0em">−</mo>
       <mi>a</mi>
-      <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+      <mo stretchy="false">|</mo>
       <mi>t</mi>
-      <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+      <mo stretchy="false">|</mo>
     </mrow>
   </msup>
 </math></span>, which decays on both sides of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -9437,9 +9567,9 @@
     <mrow data-mjx-texclass="ORD">
       <mo form="prefix" lspace="0em" rspace="0em">−</mo>
       <mi>a</mi>
-      <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+      <mo stretchy="false">|</mo>
       <mi>t</mi>
-      <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+      <mo stretchy="false">|</mo>
     </mrow>
   </msup>
 </math></span> is</p>

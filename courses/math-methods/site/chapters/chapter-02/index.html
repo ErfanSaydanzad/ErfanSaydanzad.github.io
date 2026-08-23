@@ -6,9 +6,9 @@
   <title>Chapter 2: Complex Numbers | Mathematical Methods in the Physical Sciences</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
   <link rel="preload" href="../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../../assets/css/site.css?v=cc53b025">
+  <link rel="stylesheet" href="../../assets/css/site.css?v=9dea6c95">
   <link rel="preload" href="../../assets/fonts/latinmodern-math.woff2" as="font" type="font/woff2" crossorigin>
-  <script defer src="../../assets/js/main.js?v=cc53b025"></script>
+  <script defer src="../../assets/js/main.js?v=9dea6c95"></script>
 
 <style>
 .site-header { justify-content: flex-start; gap: 16px; }
@@ -1082,9 +1082,9 @@
         <mstyle scriptlevel="0">
           <mspace width="2em" />
         </mstyle>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <mi>z</mi>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <mo>=</mo>
         <mi>r</mi>
         <mo>=</mo>
@@ -1177,9 +1177,9 @@
         </mstyle>
         <mi>z</mi>
         <mo>=</mo>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <mi>z</mi>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <mstyle scriptlevel="0">
           <mspace width="0.167em" />
         </mstyle>
@@ -1222,9 +1222,11 @@
         </mstyle>
         <mi>ln</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <mi>z</mi>
-        <mo stretchy="false">)</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mi>z</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
         <mo>=</mo>
         <mrow data-mjx-texclass="ORD">
           <mi data-mjx-auto-op="false">Ln</mi>
@@ -1254,10 +1256,12 @@
 <p>The distinction looks pedantic now, but it is exactly what makes <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ln</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mo stretchy="false">(</mo>
-  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
-  <mn>1</mn>
-  <mo stretchy="false">)</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+    <mn>1</mn>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+  </mrow>
 </math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>i</mi>
@@ -1272,13 +1276,15 @@
 <section class="callout remark"><header><span class="callout-kind">Remark</span><span class="callout-title">Getting the quadrant right</span></header><p>A calculator's <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>arctan</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mo stretchy="false">(</mo>
-  <mi>y</mi>
-  <mrow data-mjx-texclass="ORD">
-    <mo>/</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <mi>y</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo>/</mo>
+    </mrow>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
   </mrow>
-  <mi>x</mi>
-  <mo stretchy="false">)</mo>
 </math></span> always returns an angle in <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo stretchy="false">(</mo>
   <mo form="prefix" lspace="0em" rspace="0em">−</mo>
@@ -1398,10 +1404,10 @@
           </mrow><mo accent="true" class="mml-bar">―</mo>
         </mover>
         <mo>=</mo>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <mi>z</mi>
         <msup>
-          <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+          <mo stretchy="false">|</mo>
           <mn>2</mn>
         </msup>
         <mo>,</mo>
@@ -1549,9 +1555,9 @@
   <mtable displaystyle="true">
     <mtr>
       <mtd>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <mi>z</mi>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <mo>=</mo>
         <msqrt>
           <mo stretchy="false">(</mo>
@@ -1639,28 +1645,32 @@
         </mrow>
         <mi>cos</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <mo form="prefix" lspace="0em" rspace="0em">−</mo>
-        <mn>3</mn>
-        <mi>π</mi>
-        <mrow data-mjx-texclass="ORD">
-          <mo>/</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+          <mn>3</mn>
+          <mi>π</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mo>/</mo>
+          </mrow>
+          <mn>4</mn>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
         </mrow>
-        <mn>4</mn>
-        <mo stretchy="false">)</mo>
-        <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+        <mo>+</mo>
         <mi>i</mi>
         <mi>sin</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <mo form="prefix" lspace="0em" rspace="0em">−</mo>
-        <mn>3</mn>
-        <mi>π</mi>
-        <mrow data-mjx-texclass="ORD">
-          <mo>/</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+          <mn>3</mn>
+          <mi>π</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mo>/</mo>
+          </mrow>
+          <mn>4</mn>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
         </mrow>
-        <mn>4</mn>
-        <mo stretchy="false">)</mo>
         <mrow data-mjx-texclass="ORD">
           <mo minsize="1.2em" maxsize="1.2em" stretchy="true" lspace="0em" rspace="0em">)</mo>
         </mrow>
@@ -1688,9 +1698,9 @@
     </mfrac>
   </mstyle>
 </math></span>. Compute <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <mi>z</mi>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
 </math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>Re</mi>
   <mo stretchy="false">(</mo>
@@ -1822,9 +1832,9 @@
   <mtable displaystyle="true">
     <mtr>
       <mtd>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <mi>z</mi>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <mo>=</mo>
         <msqrt>
           <mrow data-mjx-texclass="ORD">
@@ -1880,9 +1890,9 @@
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:2.29">(2.29)</span></div>
 <p>(Alternatively, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <mi>z</mi>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <mo>=</mo>
   <msqrt>
     <mi>z</mi>
@@ -2314,13 +2324,13 @@
             </mover>
           </mrow>
           <mrow>
-            <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+            <mo stretchy="false">|</mo>
             <msub>
               <mi>z</mi>
               <mn>2</mn>
             </msub>
             <msup>
-              <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+              <mo stretchy="false">|</mo>
               <mn>2</mn>
             </msup>
           </mrow>
@@ -2633,9 +2643,9 @@
   <mtable displaystyle="true">
     <mtr>
       <mtd>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <mi>z</mi>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <mo>=</mo>
         <msqrt>
           <msup>
@@ -2663,20 +2673,20 @@
         <mstyle scriptlevel="0">
           <mspace width="2em" />
         </mstyle>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <mi>z</mi>
         <mi>w</mi>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <mo>=</mo>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <mi>z</mi>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <mstyle scriptlevel="0">
           <mspace width="0.167em" />
         </mstyle>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <mi>w</mi>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <mo>,</mo>
         <mstyle scriptlevel="0">
           <mspace width="2em" />
@@ -2694,14 +2704,14 @@
         <mo>=</mo>
         <mfrac>
           <mrow>
-            <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+            <mo stretchy="false">|</mo>
             <mi>z</mi>
-            <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+            <mo stretchy="false">|</mo>
           </mrow>
           <mrow>
-            <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+            <mo stretchy="false">|</mo>
             <mi>w</mi>
-            <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+            <mo stretchy="false">|</mo>
           </mrow>
         </mfrac>
         <mo>.</mo>
@@ -3187,9 +3197,9 @@
   <mi>i</mi>
   <mi>y</mi>
 </math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <mi>z</mi>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <mo>=</mo>
   <msqrt>
     <msup>
@@ -3207,11 +3217,11 @@
   <mtable displaystyle="true">
     <mtr>
       <mtd>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <mi>z</mi>
         <mo>−</mo>
         <mi>a</mi>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <mo>=</mo>
         <mi>R</mi>
         <mtext> </mtext>
@@ -3260,11 +3270,11 @@
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:2.40">(2.40)</span></div>
 <section class="callout example"><header>Example</header><ol><li><p><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <mi>z</mi>
   <mo>−</mo>
   <mn>1</mn>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <mo>=</mo>
   <mn>2</mn>
 </math></span> is the set of points at distance <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -3322,17 +3332,17 @@
   </mrow>
   <mn>4</mn>
 </math></span>.</p></li><li><p><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <mi>z</mi>
   <mo>−</mo>
   <mn>1</mn>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <mo>&lt;</mo>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <mi>z</mi>
   <mo>+</mo>
   <mn>1</mn>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
 </math></span> is the set of points closer to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>1</mn>
 </math></span> than to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -3637,12 +3647,12 @@
             <mi mathvariant="normal">∞</mi>
           </mrow>
         </munderover>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <msub>
           <mi>z</mi>
           <mi>n</mi>
         </msub>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
       </mtd>
     </mtr>
   </mtable>
@@ -3652,12 +3662,12 @@
   <mtable displaystyle="true">
     <mtr>
       <mtd>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <msub>
           <mi>z</mi>
           <mi>n</mi>
         </msub>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <mo>=</mo>
         <msqrt>
           <mo stretchy="false">(</mo>
@@ -3689,12 +3699,12 @@
 </math><span class="eqn-number" id="mjx-eqn:2.48">(2.48)</span></div>
 <p>If <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo data-mjx-texclass="OP">∑</mo>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <msub>
     <mi>z</mi>
     <mi>n</mi>
   </msub>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
 </math></span> converges, then the complex series <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo data-mjx-texclass="OP">∑</mo>
   <msub>
@@ -3718,12 +3728,12 @@
 </math><span class="eqn-number" id="mjx-eqn:2.49">(2.49)</span></div>
 <p>Moreover, any standard convergence test for real, non-negative series may be applied to the series <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo data-mjx-texclass="OP">∑</mo>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <msub>
     <mi>z</mi>
     <mi>n</mi>
   </msub>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
 </math></span>.</p></section>
 <h3 id="sec-2-worked-examples-21">Worked Examples</h3>
 <section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">Ratio Test</span></header><p>  Test</p>
@@ -3945,9 +3955,9 @@
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:2.53">(2.53)</span></div>
 <p>converges iff <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <mi>r</mi>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <mo>&lt;</mo>
   <mn>1</mn>
 </math></span>, in which case</p>
@@ -4167,14 +4177,14 @@
   <mtable displaystyle="true">
     <mtr>
       <mtd>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <mi>z</mi>
         <mo>−</mo>
         <msub>
           <mi>z</mi>
           <mn>0</mn>
         </msub>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <mo>&lt;</mo>
         <mi>R</mi>
         <mo>,</mo>
@@ -4187,14 +4197,14 @@
   <mtable displaystyle="true">
     <mtr>
       <mtd>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <mi>z</mi>
         <mo>−</mo>
         <msub>
           <mi>z</mi>
           <mn>0</mn>
         </msub>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <mo>&gt;</mo>
         <mi>R</mi>
         <mo>.</mo>
@@ -4217,14 +4227,14 @@
           <mi mathvariant="normal">ℂ</mi>
         </mrow>
         <mo>:</mo>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <mi>z</mi>
         <mo>−</mo>
         <msub>
           <mi>z</mi>
           <mn>0</mn>
         </msub>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <mo>&lt;</mo>
         <mi>R</mi>
         <mstyle scriptlevel="0">
@@ -4236,36 +4246,40 @@
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:2.60">(2.60)</span></div>
 <p>is called the <strong>disk of convergence</strong>. On the boundary <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <mi>z</mi>
   <mo>−</mo>
   <msub>
     <mi>z</mi>
     <mn>0</mn>
   </msub>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <mo>=</mo>
   <mi>R</mi>
 </math></span>, convergence must be tested separately.</p>
 <section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">Maclaurin Series for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ln</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mo stretchy="false">(</mo>
-  <mn>1</mn>
-  <mo>+</mo>
-  <mi>z</mi>
-  <mo stretchy="false">)</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <mn>1</mn>
+    <mo>+</mo>
+    <mi>z</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+  </mrow>
 </math></span></span></header><div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
         <mi>ln</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <mn>1</mn>
-        <mo>+</mo>
-        <mi>z</mi>
-        <mo stretchy="false">)</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mn>1</mn>
+          <mo>+</mo>
+          <mi>z</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
         <mo>=</mo>
         <munderover>
           <mo data-mjx-texclass="OP" stretchy="true">∑</mo>
@@ -4385,9 +4399,9 @@
         </munder>
         <mfrac>
           <mrow>
-            <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+            <mo stretchy="false">|</mo>
             <mi>z</mi>
-            <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+            <mo stretchy="false">|</mo>
             <mstyle scriptlevel="0">
               <mspace width="0.167em" />
             </mstyle>
@@ -4400,9 +4414,9 @@
           </mrow>
         </mfrac>
         <mo>=</mo>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <mi>z</mi>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <mo>.</mo>
       </mtd>
     </mtr>
@@ -4413,9 +4427,9 @@
   <mo>=</mo>
   <mn>1</mn>
 </math></span>, so the disk of convergence is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <mi>z</mi>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <mo>&lt;</mo>
   <mn>1</mn>
 </math></span>.</p></section>
@@ -4527,13 +4541,13 @@
         <mo>=</mo>
         <mfrac>
           <mrow>
-            <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+            <mo stretchy="false">|</mo>
             <mi>z</mi>
             <mo>+</mo>
             <mn>1</mn>
             <mo>−</mo>
             <mi>i</mi>
-            <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+            <mo stretchy="false">|</mo>
           </mrow>
           <mn>3</mn>
         </mfrac>
@@ -4543,13 +4557,13 @@
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:2.64">(2.64)</span></div>
 <p>Thus convergence requires <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <mi>z</mi>
   <mo>+</mo>
   <mn>1</mn>
   <mo>−</mo>
   <mi>i</mi>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <mo>&lt;</mo>
   <mn>3</mn>
 </math></span>. The disk is centered at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -4591,17 +4605,17 @@
 </math></span>.</p></li><li><p>For all <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>z</mi>
 </math></span> with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <mi>z</mi>
   <mo>−</mo>
   <msub>
     <mi>z</mi>
     <mn>0</mn>
   </msub>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <mo>&lt;</mo>
   <mi>R</mi>
-</math></span>, convergence is uniform on compact subsets of the disk. Term-by-term differentiation and integration are therefore valid within this region (see Theorem in Section <a href="../chapter-02/index.html#sec-2-complex-power-series-disk-of-convergence">2.4</a>).</p></li></ul></section>
+</math></span>, convergence is uniform on compact subsets of the disk. Term-by-term differentiation and integration are therefore valid within this region (see Theorem in Section <a class="xref" href="../chapter-02/index.html#sec-2-complex-power-series-disk-of-convergence">2.4</a>).</p></li></ul></section>
 <h2 id="sec-2-euler-s-formula"><span class="sec-number">2.5</span>Euler's Formula</h2>
 <section class="callout theorem"><header><span class="callout-kind">Theorem</span><span class="callout-title">Euler's Formula</span></header><p>For any real angle <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>θ</mi>
@@ -5746,7 +5760,7 @@
   <mtable displaystyle="true">
     <mtr>
       <mtd>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <msup>
           <mi>e</mi>
           <mrow data-mjx-texclass="ORD">
@@ -5754,7 +5768,7 @@
             <mi>θ</mi>
           </mrow>
         </msup>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <mo>=</mo>
         <mn>1</mn>
         <mo>,</mo>
@@ -5835,9 +5849,9 @@
         </mstyle>
         <mi>r</mi>
         <mo>=</mo>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <mi>z</mi>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <mo>,</mo>
         <mtext> </mtext>
         <mi>θ</mi>
@@ -6052,15 +6066,17 @@
         </msub>
         <mi>cos</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <mi>ω</mi>
-        <mi>t</mi>
-        <mo>+</mo>
-        <msub>
-          <mi>ϕ</mi>
-          <mn>1</mn>
-        </msub>
-        <mo stretchy="false">)</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mi>ω</mi>
+          <mi>t</mi>
+          <mo>+</mo>
+          <msub>
+            <mi>ϕ</mi>
+            <mn>1</mn>
+          </msub>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
         <mo>,</mo>
         <mstyle scriptlevel="0">
           <mspace width="2em" />
@@ -6079,15 +6095,17 @@
         </msub>
         <mi>cos</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <mi>ω</mi>
-        <mi>t</mi>
-        <mo>+</mo>
-        <msub>
-          <mi>ϕ</mi>
-          <mn>2</mn>
-        </msub>
-        <mo stretchy="false">)</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mi>ω</mi>
+          <mi>t</mi>
+          <mo>+</mo>
+          <msub>
+            <mi>ϕ</mi>
+            <mn>2</mn>
+          </msub>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
         <mo>.</mo>
       </mtd>
     </mtr>
@@ -6099,12 +6117,14 @@
   <mi>A</mi>
   <mi>cos</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mo stretchy="false">(</mo>
-  <mi>ω</mi>
-  <mi>t</mi>
-  <mo>+</mo>
-  <mi>ϕ</mi>
-  <mo stretchy="false">)</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <mi>ω</mi>
+    <mi>t</mi>
+    <mo>+</mo>
+    <mi>ϕ</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+  </mrow>
 </math></span> is the real part of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>A</mi>
   <msup>
@@ -6413,12 +6433,14 @@
   <mi>A</mi>
   <mi>cos</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mo stretchy="false">(</mo>
-  <mi>ω</mi>
-  <mi>t</mi>
-  <mo>+</mo>
-  <mi>ϕ</mi>
-  <mo stretchy="false">)</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <mi>ω</mi>
+    <mi>t</mi>
+    <mo>+</mo>
+    <mi>ϕ</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+  </mrow>
 </math></span>: the sum is another oscillation at the <em>same</em> frequency, with a new amplitude and phase.</p>
 <p>Two special cases are worth noting. If <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
@@ -6457,7 +6479,7 @@
 </math></span> they are antiparallel and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>A</mi>
   <mo>=</mo>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <msub>
     <mi>A</mi>
     <mn>1</mn>
@@ -6467,7 +6489,7 @@
     <mi>A</mi>
     <mn>2</mn>
   </msub>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
 </math></span> — <strong>destructive interference</strong>, which vanishes entirely when the amplitudes are equal.</p></section>
 <section class="callout example"><header>Example</header><p>Write <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>1</mn>
@@ -6562,7 +6584,7 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:2.88">(2.88)</span></div>
-<p>Polar form is what makes powers and roots easy; we use this result in Section <a href="../chapter-02/index.html#sec-2-powers-and-roots-of-complex-numbers">2.8</a>.</p></section>
+<p>Polar form is what makes powers and roots easy; we use this result in Section <a class="xref" href="../chapter-02/index.html#sec-2-powers-and-roots-of-complex-numbers">2.8</a>.</p></section>
 <section class="callout example"><header>Example</header><p>Compute <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo stretchy="false">(</mo>
   <mn>1</mn>
@@ -8254,10 +8276,12 @@
   </msub>
   <mi>cos</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mo stretchy="false">(</mo>
-  <mi>ω</mi>
-  <mi>t</mi>
-  <mo stretchy="false">)</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <mi>ω</mi>
+    <mi>t</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+  </mrow>
 </math></span>. Find the amplitude of the resulting current.</p>
 <p class="solution-head">Solution.</p>
 <p>The physical difficulty is that the three components respond differently: the voltage across a resistor is in phase with the current, across an inductor it leads by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -8471,9 +8495,9 @@
   <mrow data-mjx-texclass="ORD">
     <mo>/</mo>
   </mrow>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <mi>Z</mi>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
 </math></span>, so</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -8585,9 +8609,9 @@
         </mstyle>
         <mi>r</mi>
         <mo>=</mo>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <mi>z</mi>
-        <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+        <mo stretchy="false">|</mo>
         <mo>≥</mo>
         <mn>0</mn>
         <mo>,</mo>
@@ -8724,18 +8748,22 @@
                 <mo>=</mo>
                 <mi>cos</mi>
                 <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                <mo stretchy="false">(</mo>
-                <mi>n</mi>
-                <mi>θ</mi>
-                <mo stretchy="false">)</mo>
-                <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+                <mrow>
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                  <mi>n</mi>
+                  <mi>θ</mi>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+                </mrow>
+                <mo>+</mo>
                 <mi>i</mi>
                 <mi>sin</mi>
                 <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                <mo stretchy="false">(</mo>
-                <mi>n</mi>
-                <mi>θ</mi>
-                <mo stretchy="false">)</mo>
+                <mrow>
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                  <mi>n</mi>
+                  <mi>θ</mi>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+                </mrow>
                 <mo>.</mo>
               </mrow>
             </mstyle>
@@ -9874,10 +9902,12 @@
   <mstyle displaystyle="true" scriptlevel="0">
     <mi>cos</mi>
     <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-    <mo stretchy="false">(</mo>
-    <mn>2</mn>
-    <mi>i</mi>
-    <mo stretchy="false">)</mo>
+    <mrow>
+      <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+      <mn>2</mn>
+      <mi>i</mi>
+      <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+    </mrow>
     <mo>=</mo>
     <mfrac>
       <mrow>
@@ -9929,9 +9959,11 @@
     <mo>≡</mo>
     <mi>cosh</mi>
     <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-    <mo stretchy="false">(</mo>
-    <mn>2</mn>
-    <mo stretchy="false">)</mo>
+    <mrow>
+      <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+      <mn>2</mn>
+      <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+    </mrow>
     <mo>=</mo>
     <mn>3.762</mn>
     <mo>…</mo>
@@ -9953,9 +9985,11 @@
     <mi>i</mi>
     <mi>ln</mi>
     <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-    <mo stretchy="false">(</mo>
-    <mn>2</mn>
-    <mo stretchy="false">)</mo>
+    <mrow>
+      <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+      <mn>2</mn>
+      <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+    </mrow>
     <mrow data-mjx-texclass="ORD">
       <mo minsize="1.623em" maxsize="1.623em" stretchy="true" lspace="0em" rspace="0em">)</mo>
     </mrow>
@@ -9985,9 +10019,11 @@
               <mi>i</mi>
               <mi>ln</mi>
               <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-              <mo stretchy="false">(</mo>
-              <mn>2</mn>
-              <mo stretchy="false">)</mo>
+              <mrow>
+                <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                <mn>2</mn>
+                <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+              </mrow>
               <mrow data-mjx-texclass="ORD">
                 <mo minsize="1.623em" maxsize="1.623em" stretchy="true" lspace="0em" rspace="0em">)</mo>
               </mrow>
@@ -10014,9 +10050,11 @@
                       <mi>i</mi>
                       <mi>ln</mi>
                       <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                      <mo stretchy="false">(</mo>
-                      <mn>2</mn>
-                      <mo stretchy="false">)</mo>
+                      <mrow>
+                        <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                        <mn>2</mn>
+                        <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+                      </mrow>
                       <mo stretchy="false">)</mo>
                     </mrow>
                   </msup>
@@ -10039,9 +10077,11 @@
                       <mi>i</mi>
                       <mi>ln</mi>
                       <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                      <mo stretchy="false">(</mo>
-                      <mn>2</mn>
-                      <mo stretchy="false">)</mo>
+                      <mrow>
+                        <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                        <mn>2</mn>
+                        <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+                      </mrow>
                       <mo stretchy="false">)</mo>
                     </mrow>
                   </msup>
@@ -10075,9 +10115,11 @@
                       <mo>−</mo>
                       <mi>ln</mi>
                       <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                      <mo stretchy="false">(</mo>
-                      <mn>2</mn>
-                      <mo stretchy="false">)</mo>
+                      <mrow>
+                        <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                        <mn>2</mn>
+                        <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+                      </mrow>
                     </mrow>
                   </msup>
                   <mo>−</mo>
@@ -10097,9 +10139,11 @@
                       <mo>+</mo>
                       <mi>ln</mi>
                       <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                      <mo stretchy="false">(</mo>
-                      <mn>2</mn>
-                      <mo stretchy="false">)</mo>
+                      <mrow>
+                        <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                        <mn>2</mn>
+                        <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+                      </mrow>
                     </mrow>
                   </msup>
                 </mrow>
@@ -10127,9 +10171,9 @@
                       <mo form="prefix" lspace="0em" rspace="0em">−</mo>
                       <mi>ln</mi>
                       <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                      <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+                      <mo stretchy="false">|</mo>
                       <mn>2</mn>
-                      <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+                      <mo stretchy="false">|</mo>
                     </mrow>
                   </msup>
                   <mo>+</mo>
@@ -10145,9 +10189,11 @@
                     <mrow data-mjx-texclass="ORD">
                       <mi>ln</mi>
                       <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                      <mo stretchy="false">(</mo>
-                      <mn>2</mn>
-                      <mo stretchy="false">)</mo>
+                      <mrow>
+                        <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                        <mn>2</mn>
+                        <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+                      </mrow>
                     </mrow>
                   </msup>
                 </mrow>
@@ -10558,11 +10604,11 @@
 <p>Note this is now an <em>algebraic</em> fact about exponentials, with no triangles anywhere. It holds for all complex <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>z</mi>
 </math></span>, even where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <mi>sin</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
   <mi>z</mi>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
 </math></span> exceeds <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>1</mn>
 </math></span>.</p></section>
@@ -10578,16 +10624,20 @@
   </mstyle>
   <mi>cos</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mo stretchy="false">(</mo>
-  <mi>z</mi>
-  <mo stretchy="false">)</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <mi>z</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+  </mrow>
   <mo>=</mo>
   <mo form="prefix" lspace="0em" rspace="0em">−</mo>
   <mi>sin</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mo stretchy="false">(</mo>
-  <mi>z</mi>
-  <mo stretchy="false">)</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <mi>z</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+  </mrow>
 </math></span>.</p>
 <p class="solution-head">Solution.</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
@@ -10697,9 +10747,11 @@
         </mstyle>
         <mi>sin</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <mi>z</mi>
-        <mo stretchy="false">)</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mi>z</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
         <mo>.</mo>
       </mtd>
     </mtr>
@@ -10786,10 +10838,12 @@
       <mtd>
         <mi>sin</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <mi>i</mi>
-        <mi>y</mi>
-        <mo stretchy="false">)</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mi>i</mi>
+          <mi>y</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
         <mo>=</mo>
         <mfrac>
           <mrow>
@@ -10897,9 +10951,11 @@
         <mi>i</mi>
         <mi>sinh</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <mi>y</mi>
-        <mo stretchy="false">)</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mi>y</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
         <mo>,</mo>
       </mtd>
     </mtr>
@@ -10912,10 +10968,12 @@
       <mtd>
         <mi>cos</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <mi>i</mi>
-        <mi>y</mi>
-        <mo stretchy="false">)</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mi>i</mi>
+          <mi>y</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
         <mo>=</mo>
         <mfrac>
           <mrow>
@@ -10967,9 +11025,11 @@
         <mo>≡</mo>
         <mi>cosh</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <mi>y</mi>
-        <mo stretchy="false">)</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mi>y</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
         <mo>.</mo>
       </mtd>
     </mtr>
@@ -10988,17 +11048,21 @@
               <mrow data-mjx-texclass="ORD">
                 <mi>sin</mi>
                 <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                <mo stretchy="false">(</mo>
-                <mi>i</mi>
-                <mi>y</mi>
-                <mo stretchy="false">)</mo>
+                <mrow>
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                  <mi>i</mi>
+                  <mi>y</mi>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+                </mrow>
                 <mo>=</mo>
                 <mi>i</mi>
                 <mi>sinh</mi>
                 <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                <mo stretchy="false">(</mo>
-                <mi>y</mi>
-                <mo stretchy="false">)</mo>
+                <mrow>
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                  <mi>y</mi>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+                </mrow>
               </mrow>
             </mstyle>
           </mrow>
@@ -11013,16 +11077,20 @@
               <mrow data-mjx-texclass="ORD">
                 <mi>cos</mi>
                 <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                <mo stretchy="false">(</mo>
-                <mi>i</mi>
-                <mi>y</mi>
-                <mo stretchy="false">)</mo>
+                <mrow>
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                  <mi>i</mi>
+                  <mi>y</mi>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+                </mrow>
                 <mo>=</mo>
                 <mi>cosh</mi>
                 <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                <mo stretchy="false">(</mo>
-                <mi>y</mi>
-                <mo stretchy="false">)</mo>
+                <mrow>
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                  <mi>y</mi>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+                </mrow>
               </mrow>
             </mstyle>
           </mrow>
@@ -11043,17 +11111,21 @@
               <mrow data-mjx-texclass="ORD">
                 <mi>sinh</mi>
                 <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                <mo stretchy="false">(</mo>
-                <mi>i</mi>
-                <mi>y</mi>
-                <mo stretchy="false">)</mo>
+                <mrow>
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                  <mi>i</mi>
+                  <mi>y</mi>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+                </mrow>
                 <mo>=</mo>
                 <mi>i</mi>
                 <mi>sin</mi>
                 <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                <mo stretchy="false">(</mo>
-                <mi>y</mi>
-                <mo stretchy="false">)</mo>
+                <mrow>
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                  <mi>y</mi>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+                </mrow>
               </mrow>
             </mstyle>
           </mrow>
@@ -11068,16 +11140,20 @@
               <mrow data-mjx-texclass="ORD">
                 <mi>cosh</mi>
                 <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                <mo stretchy="false">(</mo>
-                <mi>i</mi>
-                <mi>y</mi>
-                <mo stretchy="false">)</mo>
+                <mrow>
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                  <mi>i</mi>
+                  <mi>y</mi>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+                </mrow>
                 <mo>=</mo>
                 <mi>cos</mi>
                 <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                <mo stretchy="false">(</mo>
-                <mi>y</mi>
-                <mo stretchy="false">)</mo>
+                <mrow>
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                  <mi>y</mi>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+                </mrow>
               </mrow>
             </mstyle>
           </mrow>
@@ -11100,9 +11176,11 @@
       <mtd>
         <mi>sinh</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <mi>z</mi>
-        <mo stretchy="false">)</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mi>z</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
         <mo>=</mo>
         <mfrac>
           <mrow>
@@ -11129,9 +11207,11 @@
         </mstyle>
         <mi>cosh</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <mi>z</mi>
-        <mo stretchy="false">)</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mi>z</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
         <mo>=</mo>
         <mfrac>
           <mrow>
@@ -11164,24 +11244,30 @@
       <mtd>
         <mi>tanh</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <mi>z</mi>
-        <mo stretchy="false">)</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mi>z</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
         <mo>=</mo>
         <mfrac>
           <mrow>
             <mi>sinh</mi>
             <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-            <mo stretchy="false">(</mo>
-            <mi>z</mi>
-            <mo stretchy="false">)</mo>
+            <mrow>
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+              <mi>z</mi>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+            </mrow>
           </mrow>
           <mrow>
             <mi>cosh</mi>
             <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-            <mo stretchy="false">(</mo>
-            <mi>z</mi>
-            <mo stretchy="false">)</mo>
+            <mrow>
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+              <mi>z</mi>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+            </mrow>
           </mrow>
         </mfrac>
         <mo>,</mo>
@@ -11197,16 +11283,20 @@
           <mrow>
             <mi>cosh</mi>
             <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-            <mo stretchy="false">(</mo>
-            <mi>z</mi>
-            <mo stretchy="false">)</mo>
+            <mrow>
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+              <mi>z</mi>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+            </mrow>
           </mrow>
           <mrow>
             <mi>sinh</mi>
             <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-            <mo stretchy="false">(</mo>
-            <mi>z</mi>
-            <mo stretchy="false">)</mo>
+            <mrow>
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+              <mi>z</mi>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+            </mrow>
           </mrow>
         </mfrac>
         <mo>,</mo>
@@ -11228,9 +11318,11 @@
           <mrow>
             <mi>cosh</mi>
             <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-            <mo stretchy="false">(</mo>
-            <mi>z</mi>
-            <mo stretchy="false">)</mo>
+            <mrow>
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+              <mi>z</mi>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+            </mrow>
           </mrow>
         </mfrac>
         <mo>,</mo>
@@ -11247,9 +11339,11 @@
           <mrow>
             <mi>sinh</mi>
             <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-            <mo stretchy="false">(</mo>
-            <mi>z</mi>
-            <mo stretchy="false">)</mo>
+            <mrow>
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+              <mi>z</mi>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+            </mrow>
           </mrow>
         </mfrac>
         <mo>.</mo>
@@ -11457,9 +11551,11 @@
 </math></span>, then we define the complex logarithm by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ln</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mo stretchy="false">(</mo>
-  <mi>z</mi>
-  <mo stretchy="false">)</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <mi>z</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+  </mrow>
   <mo>=</mo>
   <mi>ω</mi>
 </math></span>.</p>
@@ -11550,16 +11646,18 @@
         </mstyle>
         <mi>ln</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <msub>
-          <mi>z</mi>
-          <mn>1</mn>
-        </msub>
-        <msub>
-          <mi>z</mi>
-          <mn>2</mn>
-        </msub>
-        <mo stretchy="false">)</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <msub>
+            <mi>z</mi>
+            <mn>1</mn>
+          </msub>
+          <msub>
+            <mi>z</mi>
+            <mn>2</mn>
+          </msub>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
         <mo>=</mo>
         <msub>
           <mi>ω</mi>
@@ -11573,21 +11671,25 @@
         <mo>=</mo>
         <mi>ln</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <msub>
-          <mi>z</mi>
-          <mn>1</mn>
-        </msub>
-        <mo stretchy="false">)</mo>
-        <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <msub>
+            <mi>z</mi>
+            <mn>1</mn>
+          </msub>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
+        <mo>+</mo>
         <mi>ln</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <msub>
-          <mi>z</mi>
-          <mn>2</mn>
-        </msub>
-        <mo stretchy="false">)</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <msub>
+            <mi>z</mi>
+            <mn>2</mn>
+          </msub>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
         <mo>.</mo>
       </mtd>
     </mtr>
@@ -11607,9 +11709,9 @@
 </math></span> with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>r</mi>
   <mo>=</mo>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <mi>z</mi>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <mo>&gt;</mo>
   <mn>0</mn>
 </math></span>,</p>
@@ -11619,9 +11721,11 @@
       <mtd>
         <mi>ln</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <mi>z</mi>
-        <mo stretchy="false">)</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mi>z</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
         <mo>=</mo>
         <mi>ln</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
@@ -11642,10 +11746,12 @@
         <mo>=</mo>
         <mi>ln</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <mi>r</mi>
-        <mo stretchy="false">)</mo>
-        <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mi>r</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
+        <mo>+</mo>
         <mi>ln</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
         <mrow data-mjx-texclass="ORD">
@@ -11685,9 +11791,11 @@
       <mtd>
         <mi>ln</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <mi>z</mi>
-        <mo stretchy="false">)</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mi>z</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
         <mo>=</mo>
         <mi>ln</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
@@ -11783,10 +11891,12 @@
 <section class="callout example"><header>Example</header><ol><li><p>Find all values of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ln</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mo stretchy="false">(</mo>
-  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
-  <mn>1</mn>
-  <mo stretchy="false">)</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+    <mn>1</mn>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+  </mrow>
 </math></span>.</p>
 <p class="solution-head">Solution.</p>
 <p>Write <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -11840,17 +11950,21 @@
       <mtd>
         <mi>ln</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <mo form="prefix" lspace="0em" rspace="0em">−</mo>
-        <mn>1</mn>
-        <mo stretchy="false">)</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+          <mn>1</mn>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
         <mo>=</mo>
         <mi>ln</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <mn>1</mn>
-        <mo stretchy="false">)</mo>
-        <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mn>1</mn>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
+        <mo>+</mo>
         <mi>i</mi>
         <mo stretchy="false">(</mo>
         <mn>2</mn>
@@ -11889,10 +12003,12 @@
       <mtd>
         <mi>ln</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <mo form="prefix" lspace="0em" rspace="0em">−</mo>
-        <mn>1</mn>
-        <mo stretchy="false">)</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+          <mn>1</mn>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
         <mo>=</mo>
         <mo>…</mo>
         <mo>,</mo>
@@ -11958,10 +12074,12 @@
 </math></span>. Note that <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ln</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mo stretchy="false">(</mo>
-  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
-  <mn>1</mn>
-  <mo stretchy="false">)</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+    <mn>1</mn>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+  </mrow>
 </math></span> has no real values at all: the logarithm of a negative number does not exist in <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mi mathvariant="normal">ℝ</mi>
@@ -11973,19 +12091,21 @@
 </math></span>.</p></li><li><p>Find all values of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ln</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mo stretchy="false">(</mo>
-  <mn>1</mn>
-  <mo>+</mo>
-  <mi>i</mi>
-  <mo stretchy="false">)</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <mn>1</mn>
+    <mo>+</mo>
+    <mi>i</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+  </mrow>
 </math></span>.</p>
 <p class="solution-head">Solution.</p>
 <p>Here <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <mn>1</mn>
   <mo>+</mo>
   <mi>i</mi>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <mo>=</mo>
   <msqrt>
     <mn>2</mn>
@@ -12011,11 +12131,13 @@
       <mtd>
         <mi>ln</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <mn>1</mn>
-        <mo>+</mo>
-        <mi>i</mi>
-        <mo stretchy="false">)</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mn>1</mn>
+          <mo>+</mo>
+          <mi>i</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
         <mo>=</mo>
         <mi>ln</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
@@ -12083,21 +12205,25 @@
 <p>Consider <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ln</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mo stretchy="false">(</mo>
-  <msup>
-    <mi>a</mi>
-    <mrow data-mjx-texclass="ORD">
-      <mi>b</mi>
-    </mrow>
-  </msup>
-  <mo stretchy="false">)</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <msup>
+      <mi>a</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mi>b</mi>
+      </mrow>
+    </msup>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+  </mrow>
   <mo>=</mo>
   <mi>b</mi>
   <mi>ln</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mo stretchy="false">(</mo>
-  <mi>a</mi>
-  <mo stretchy="false">)</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <mi>a</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+  </mrow>
   <mo stretchy="false">⇒</mo>
   <msup>
     <mi>a</mi>
@@ -12115,9 +12241,11 @@
       <mi>b</mi>
       <mi>ln</mi>
       <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-      <mo stretchy="false">(</mo>
-      <mi>a</mi>
-      <mo stretchy="false">)</mo>
+      <mrow>
+        <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+        <mi>a</mi>
+        <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+      </mrow>
     </mrow>
   </msup>
 </math></span>.</p>
@@ -12152,9 +12280,11 @@
             <mi>i</mi>
             <mi>ln</mi>
             <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-            <mo stretchy="false">(</mo>
-            <mi>i</mi>
-            <mo stretchy="false">)</mo>
+            <mrow>
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+              <mi>i</mi>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+            </mrow>
           </mrow>
         </msup>
         <mo>=</mo>
@@ -12173,10 +12303,12 @@
             </mstyle>
             <mi>ln</mi>
             <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-            <mo stretchy="false">(</mo>
-            <mn>1</mn>
-            <mo stretchy="false">)</mo>
-            <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+            <mrow>
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+              <mn>1</mn>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+            </mrow>
+            <mo>+</mo>
             <mo stretchy="false">(</mo>
             <mstyle displaystyle="false" scriptlevel="0">
               <mfrac>
@@ -12284,9 +12416,11 @@
             <mo stretchy="false">)</mo>
             <mi>ln</mi>
             <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-            <mo stretchy="false">(</mo>
-            <mi>i</mi>
-            <mo stretchy="false">)</mo>
+            <mrow>
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+              <mi>i</mi>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+            </mrow>
           </mrow>
         </msup>
         <mo>=</mo>
@@ -12306,10 +12440,12 @@
             </mstyle>
             <mi>ln</mi>
             <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-            <mo stretchy="false">(</mo>
-            <mn>1</mn>
-            <mo stretchy="false">)</mo>
-            <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+            <mrow>
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+              <mn>1</mn>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+            </mrow>
+            <mo>+</mo>
             <mo stretchy="false">(</mo>
             <mstyle displaystyle="false" scriptlevel="0">
               <mfrac>
@@ -12409,9 +12545,11 @@
         <mo>=</mo>
         <mi>cos</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <mi>z</mi>
-        <mo stretchy="false">)</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mi>z</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
         <mo>=</mo>
         <mfrac>
           <mrow>
@@ -12734,24 +12872,28 @@
 </math></span>, so the two numbers are reciprocals and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ln</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mo stretchy="false">(</mo>
-  <mn>2</mn>
-  <mo>−</mo>
-  <msqrt>
-    <mn>3</mn>
-  </msqrt>
-  <mo stretchy="false">)</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <mn>2</mn>
+    <mo>−</mo>
+    <msqrt>
+      <mn>3</mn>
+    </msqrt>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+  </mrow>
   <mo>=</mo>
   <mo form="prefix" lspace="0em" rspace="0em">−</mo>
   <mi>ln</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mo stretchy="false">(</mo>
-  <mn>2</mn>
-  <mo>+</mo>
-  <msqrt>
-    <mn>3</mn>
-  </msqrt>
-  <mo stretchy="false">)</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <mn>2</mn>
+    <mo>+</mo>
+    <msqrt>
+      <mn>3</mn>
+    </msqrt>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+  </mrow>
 </math></span>. The two sign choices therefore collapse into a single <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo form="prefix" lspace="0em" rspace="0em">±</mo>
 </math></span>:</p>
@@ -12981,9 +13123,11 @@
         <mo>=</mo>
         <mi>sinh</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <mi>z</mi>
-        <mo stretchy="false">)</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mi>z</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
         <mo>=</mo>
         <mfrac>
           <mrow>
@@ -13328,9 +13472,11 @@
         <mo>−</mo>
         <mi>ln</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mo stretchy="false">(</mo>
-        <mi>a</mi>
-        <mo stretchy="false">)</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mi>a</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
         <mo>.</mo>
       </mtd>
     </mtr>
@@ -13355,12 +13501,14 @@
   <mi>A</mi>
   <mi>cos</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mo stretchy="false">(</mo>
-  <mi>ω</mi>
-  <mi>t</mi>
-  <mo>+</mo>
-  <mi>ϕ</mi>
-  <mo stretchy="false">)</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <mi>ω</mi>
+    <mi>t</mi>
+    <mo>+</mo>
+    <mi>ϕ</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+  </mrow>
 </math></span> is the real part of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>A</mi>
   <msup>
@@ -13378,7 +13526,7 @@
       <mi>t</mi>
     </mrow>
   </msup>
-</math></span>. Adding oscillations becomes adding complex numbers, as in the phasor example of Section <a href="../chapter-02/index.html#sec-2-euler-s-formula">2.5</a>.</p></li><li><p><strong>AC circuits.</strong> Differentiation becomes multiplication by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>. Adding oscillations becomes adding complex numbers, as in the phasor example of Section <a class="xref" href="../chapter-02/index.html#sec-2-euler-s-formula">2.5</a>.</p></li><li><p><strong>AC circuits.</strong> Differentiation becomes multiplication by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>i</mi>
   <mi>ω</mi>
 </math></span>, so differential equations become algebra and impedance replaces resistance.</p></li><li><p><strong>Quantum mechanics.</strong> The wavefunction is complex by nature, not by convenience. A free particle is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -13481,9 +13629,9 @@
   <mi>θ</mi>
   <mo stretchy="false">)</mo>
 </math></span></td><td>Best for multiplying, dividing, powers and roots.</td></tr><tr><td>Modulus</td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <mi>z</mi>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <mo>=</mo>
   <msqrt>
     <msup>
@@ -13507,7 +13655,7 @@
     </mrow>
   </msqrt>
 </math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <msub>
     <mi>z</mi>
     <mn>1</mn>
@@ -13516,20 +13664,20 @@
     <mi>z</mi>
     <mn>2</mn>
   </msub>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <mo>=</mo>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <msub>
     <mi>z</mi>
     <mn>1</mn>
   </msub>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
+  <mo stretchy="false">|</mo>
   <msub>
     <mi>z</mi>
     <mn>2</mn>
   </msub>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
 </math></span>.</td></tr><tr><td>Conjugate</td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mover>
@@ -13733,10 +13881,12 @@
 </math></span>.</td></tr><tr><td>Hyperbolic</td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>cos</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mo stretchy="false">(</mo>
-  <mi>i</mi>
-  <mi>y</mi>
-  <mo stretchy="false">)</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <mi>i</mi>
+    <mi>y</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+  </mrow>
   <mo>=</mo>
   <mi>cosh</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
@@ -13744,10 +13894,12 @@
 </math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>sin</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mo stretchy="false">(</mo>
-  <mi>i</mi>
-  <mi>y</mi>
-  <mo stretchy="false">)</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <mi>i</mi>
+    <mi>y</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+  </mrow>
   <mo>=</mo>
   <mi>i</mi>
   <mi>sinh</mi>
@@ -13760,9 +13912,9 @@
   <mo>=</mo>
   <mi>ln</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <mi>z</mi>
-  <mo data-mjx-texclass="ORD" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mo stretchy="false">|</mo>
   <mo form="prefix" lspace="0em" rspace="0em">+</mo>
   <mi>i</mi>
   <mi>arg</mi>
@@ -13790,10 +13942,10 @@
 <h2 id="sec-2-for-the-interested-reader">For the Interested Reader</h2>
 <p>Complex numbers are usually met first in an algebra course, where they can seem like a trick for writing down roots that do not exist. If that is how they still feel, the sources below are worth an hour. Everything listed is free.</p>
 <h3 id="sec-2-algebra-and-geometry-of-complex-numbers">Algebra and geometry of complex numbers</h3>
-<p><em>Sections <a href="../chapter-02/index.html#sec-2-introduction-to-complex-numbers">2.1</a> and <a href="../chapter-02/index.html#sec-2-complex-algebra">2.2</a>.</em></p>
+<p><em>Sections <a class="xref" href="../chapter-02/index.html#sec-2-introduction-to-complex-numbers">2.1</a> and <a class="xref" href="../chapter-02/index.html#sec-2-complex-algebra">2.2</a>.</em></p>
 <ul><li><p><strong>Paul's Online Math Notes — Complex Numbers Primer.</strong> The closest match to our treatment, and the most efficient source of extra practice: <a href="https://tutorial.math.lamar.edu/Extras/ComplexPrimer/ComplexNumbers.aspx">the basics</a>, <a href="https://tutorial.math.lamar.edu/Extras/ComplexPrimer/Arithmetic.aspx">arithmetic</a>, <a href="https://tutorial.math.lamar.edu/Extras/ComplexPrimer/PolarExp.aspx">polar and exponential form</a> and <a href="https://tutorial.math.lamar.edu/Extras/ComplexPrimer/PowersRoots.aspx">powers and roots</a>.</p></li><li><p><strong>OpenStax, <em>Precalculus</em>.</strong> <a href="https://openstax.org/books/precalculus-2e/pages/3-1-complex-numbers">3.1 Complex Numbers</a> and <a href="https://openstax.org/books/precalculus-2e/pages/8-5-polar-form-of-complex-numbers">8.5 Polar Form of Complex Numbers</a> — slower and more elementary than we are here, with many worked exercises.</p></li><li><p><strong>Khan Academy.</strong> <a href="https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:complex">Complex numbers</a> — short videos with practice, good for drilling arithmetic and polar conversion.</p></li></ul>
 <h3 id="sec-2-euler-s-formula-and-where-it-leads">Euler's formula and where it leads</h3>
-<p><em>Sections <a href="../chapter-02/index.html#sec-2-euler-s-formula">2.5</a> onward.</em></p>
+<p><em>Sections <a class="xref" href="../chapter-02/index.html#sec-2-euler-s-formula">2.5</a> onward.</em></p>
 <p>3Blue1Brown derives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>e</mi>

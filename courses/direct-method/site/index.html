@@ -6,9 +6,9 @@
   <title>Home | Direct Method</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
   <link rel="preload" href="assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/site.css?v=d088bfac">
+  <link rel="stylesheet" href="assets/css/site.css?v=856ec339">
   <link rel="preload" href="assets/fonts/latinmodern-math.woff2" as="font" type="font/woff2" crossorigin>
-  <script defer src="assets/js/main.js?v=d088bfac"></script>
+  <script defer src="assets/js/main.js?v=856ec339"></script>
 
 <style>
 .site-header { justify-content: flex-start; gap: 16px; }
@@ -99,6 +99,10 @@
   </msub>
 </math></span></strong>
 </a>
+<a class="chapter-card" href="chapters/chapter-12/index.html">
+  <span>Chapter 12</span>
+  <strong>Quantum Information and Quantum Computing</strong>
+</a>
   </section>
   <section class="overview content">
     <h2 id="quantum-mechanics-roadmap">Quantum Mechanics Roadmap</h2>
@@ -115,15 +119,15 @@
     <mi />
     <mn>2</mn>
   </msub>
-</math></span>.</p></li></ul>
+</math></span>;</p></li><li><p>(Chapter 12, elective) use the same two-level physics as the language of quantum information: qubits, gates as pulses, entanglement, and the impossibility theorems that bound what can be done with them.</p></li></ul>
 <p><strong>Notation conventions used in these notes.</strong> To keep formulas consistent from Chapter 1 to Chapter 11, we use:</p>
 <ul><li><p><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow data-mjx-texclass="ORD">
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
       <mi>n</mi>
     </mrow>
-    <mo fence="false" stretchy="false">⟩</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
 </math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
@@ -143,9 +147,9 @@
   </msub>
   <mo stretchy="false">(</mo>
   <mrow data-mjx-texclass="ORD">
-    <mover>
+    <mover accent="true">
       <mi>R</mi>
-      <mo stretchy="false">→</mo>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
     </mover>
   </mrow>
   <mo stretchy="false">)</mo>
@@ -156,9 +160,9 @@
   </msub>
   <mo stretchy="false">(</mo>
   <mrow data-mjx-texclass="ORD">
-    <mover>
+    <mover accent="true">
       <mi>R</mi>
-      <mo stretchy="false">→</mo>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
     </mover>
   </mrow>
   <mo stretchy="false">)</mo>
@@ -174,8 +178,8 @@
 </math></span> for its space-fixed projection, and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi mathvariant="normal">Λ</mi>
 </math></span> for the molecular-axis projection of electronic orbital angular momentum;</p></li><li><p>molecular basis states are written as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow data-mjx-texclass="ORD">
-    <mo data-mjx-texclass="ORD" fence="false" stretchy="false" lspace="0em" rspace="0em">|</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
       <mi>a</mi>
       <mo>,</mo>
@@ -188,45 +192,48 @@
         <mi>J</mi>
       </msub>
     </mrow>
-    <mo fence="false" stretchy="false">⟩</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
 </math></span>, with coordinate-space functions used as representations of kets (for example, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi mathvariant="normal">Ψ</mi>
   <mo stretchy="false">(</mo>
   <mrow data-mjx-texclass="ORD">
-    <mover>
+    <mover accent="true">
       <mi>r</mi>
-      <mo stretchy="false">→</mo>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
     </mover>
   </mrow>
   <mo>,</mo>
   <mrow data-mjx-texclass="ORD">
-    <mover>
+    <mover accent="true">
       <mi>R</mi>
-      <mo stretchy="false">→</mo>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
     </mover>
   </mrow>
   <mo stretchy="false">)</mo>
   <mo>=</mo>
   <mrow data-mjx-texclass="INNER">
-    <mo data-mjx-texclass="OPEN" stretchy="false" form="prefix" lspace="0em" rspace="0em">⟨</mo>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
     <mrow data-mjx-texclass="ORD">
-      <mover>
-        <mi>r</mi>
-        <mo stretchy="false">→</mo>
-      </mover>
+      <mrow data-mjx-texclass="ORD">
+        <mover accent="true">
+          <mi>r</mi>
+          <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+        </mover>
+      </mrow>
+      <mo>,</mo>
+      <mrow data-mjx-texclass="ORD">
+        <mover accent="true">
+          <mi>R</mi>
+          <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+        </mover>
+      </mrow>
     </mrow>
-    <mo>,</mo>
+    <mo lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
-      <mover>
-        <mi>R</mi>
-        <mo stretchy="false">→</mo>
-      </mover>
+      <mi mathvariant="normal">Ψ</mi>
     </mrow>
-    <mo data-mjx-texclass="CLOSE" stretchy="false" form="postfix" lspace="0em" rspace="0em">⟩</mo>
-  </mrow>
-  <mrow data-mjx-texclass="ORD">
-    <mi mathvariant="normal">Ψ</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
 </math></span>);</p></li><li><p><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ε</mi>
@@ -256,9 +263,9 @@
   <mi data-mjx-alternate="1">ℏ</mi>
 </math></span> for transition angular frequencies, and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
-    <mover>
+    <mover accent="true">
       <mi>ν</mi>
-      <mo stretchy="false">~</mo>
+      <mo stretchy="false" style="padding-bottom:0.06em">˜</mo>
     </mover>
   </mrow>
 </math></span> (cm<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -276,7 +283,7 @@
     <mi />
     <mn>2</mn>
   </msub>
-</math></span>.</em> Coupled-channel equations for XUV+IR-driven molecular dynamics and the interpretation of time-domain observables.</p></li></ul>
+</math></span>.</em> Coupled-channel equations for XUV+IR-driven molecular dynamics and the interpretation of time-domain observables.</p></li><li><p><em>Ch. 12: Quantum information and quantum computing (elective).</em> Off the main line and needed by nothing later: qubits, gates as the laser pulses of Chapter 6, entanglement and the Bell basis, circuits, teleportation, and the CHSH bound. It finishes what Chapter 1 began when it introduced the partial trace and deferred the rest.</p></li></ul>
 <figure id="chapter--1-fig-1" class="figure"><img src="assets/img/roadmap_map.png" class="diagram" alt="The chapters of these notes and how they connect." loading="lazy" style="--figure-width: 98%;"><figcaption>The chapters of these notes and how they connect.</figcaption></figure>
 <p> This visual map is meant to be a quick reference: whenever a later chapter feels abstract, the reader can return here to see how each topic fits into the overall progression from basic quantum mechanics to Rydberg–Fano dynamics in CO<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
