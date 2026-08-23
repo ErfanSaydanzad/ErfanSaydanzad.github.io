@@ -97,21 +97,21 @@
       <h1>Quantum Information and Quantum Computing</h1>
     </header>
     <h2 id="sec-12-introduction"><span class="sec-number">12.1</span>Introduction</h2>
-<p>Earlier chapters asked what a quantum system's energy levels are. This one asks what you can <em>compute</em> with it.</p>
+<p>Earlier chapters asked what a quantum system's energy levels are. This one asks what can be <em>computed</em> with it.</p>
 <p>No new postulates. States, operators, the Born rule and the tensor product are the same tools from Chapter 1. One simplification keeps the discussion clear: every Hilbert space here is finite-dimensional. A state is a complex column vector, an observable is a matrix, and each key claim can be verified by hand.</p>
 <p>Chapter 1 deferred density operators and entanglement to “advanced courses on quantum information” (Sec. <a class="xref" href="../chapter-01/index.html#sec-1-reduced-descriptions-and-partial-trace-minimal-use">1.7.4</a>). This chapter is that missing bridge.</p>
 <p>Skipped: Shor's algorithm (it needs the quantum Fourier transform), error correcting codes, and open-system theory beyond Sec. <a class="xref" href="../chapter-12/index.html#sec-12-the-density-operator">12.13</a>.</p>
-<p>By the end of the chapter, you should be able to do four things: distinguish a qubit from a classical random bit, read simple quantum circuits, understand why interference gives algorithmic advantage, and explain why decoherence is the main engineering bottleneck.</p>
-<section class="callout remark" id="remark-rem-qc-map"><header><span class="callout-kind">Remark 12.1.1</span><span class="callout-title">A map to keep beside you</span></header><p> Dominic Walliman's <em>Map of Quantum Computing</em> puts the whole field on one page. Worth having open while reading; see Sec. <a class="xref" href="../chapter-12/index.html#sec-12-for-the-interested-reader">12.17</a>.</p></section>
+<p>The chapter has four objectives: to distinguish a qubit from a classical random bit, to read simple quantum circuits, to establish why interference gives an algorithmic advantage, and to explain why decoherence is the main engineering bottleneck.</p>
+<section class="callout remark" id="remark-rem-qc-map"><header><span class="callout-kind">Remark 12.1.1</span><span class="callout-title">A map of the field</span></header><p> Dominic Walliman's <em>Map of Quantum Computing</em> puts the whole field on one page. It serves as a useful companion to this chapter; see Sec. <a class="xref" href="../chapter-12/index.html#sec-12-for-the-interested-reader">12.17</a>.</p></section>
 <h2 id="sec-12-classical-information"><span class="sec-number">12.2</span>Classical Information</h2>
 <section class="callout definition" id="definition-def-qc-bit"><header><span class="callout-kind">Definition 12.2.1</span><span class="callout-title">Bit</span></header><p> A <em>bit</em> is a system with two distinguishable states, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>0</mn>
 </math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>1</mn>
 </math></span>.</p></section>
-<p>A light switch. It is up or down, and looking tells you which. <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>A light switch is the simplest example. It is either up or down, and its state can be determined by inspection. A set of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>n</mi>
-</math></span> bits have <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> bits has <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mn>2</mn>
     <mrow data-mjx-texclass="ORD">
@@ -119,7 +119,7 @@
     </mrow>
   </msup>
 </math></span> possible configurations.</p>
-<p>When you do not know the state — a flipped coin under your hand — you use a <em>probability vector</em>:</p>
+<p>When the state is not known, as for a flipped coin covered by a hand, it is described by a <em>probability vector</em>:</p>
 <div class="math-block math-block--numbered" id="eq-eq-qc-prob-vector"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -372,11 +372,11 @@
   <mi>b</mi>
   <mo>=</mo>
   <mn>0</mn>
-</math></span> you cannot recover <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>, the values of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>a</mi>
 </math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>b</mi>
-</math></span>. So AND destroys information. By Landauer's principle, erasing one bit dissipates at least <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> cannot be recovered. AND therefore destroys information. By Landauer's principle, erasing one bit dissipates at least <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>k</mi>
     <mi>B</mi>
@@ -511,7 +511,7 @@
     <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
 </math></span>. Chapter 6's two-level atom does as well. Which system it is matters only in Sec. <a class="xref" href="../chapter-12/index.html#sec-12-coherence-and-hardware">12.8</a>.</p>
-<p>The chosen basis is part of the definition. A spin has no preferred axis until you choose one; a qubit is a two-level system together with that computational choice.</p>
+<p>The chosen basis is part of the definition. A spin has no preferred axis until one is chosen; a qubit is a two-level system together with that computational choice.</p>
 <div class="math-block math-block--numbered" id="eq-eq-qc-general-state"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -1202,7 +1202,7 @@
 </math></span> are orthogonal and therefore experimentally distinguishable. Keeping global and relative phase separate prevents many later mistakes.</p>
 <h2 id="sec-12-what-makes-quantum-information-useful"><span class="sec-number">12.4</span>What Makes Quantum Information Useful</h2>
 <p>The central mechanism is <em>interference</em>. Probabilities are non-negative, so classical paths only add. Complex amplitudes can add or cancel, and that controlled cancellation is what quantum algorithms exploit.</p>
-<section class="callout example" id="example-ex-qc-interference"><header><span class="callout-kind">Example 12.4.1</span><span class="callout-title">Randomising twice</span></header><p> Apply <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout example" id="example-ex-qc-interference"><header><span class="callout-kind">Example 12.4.1</span><span class="callout-title">Randomizing twice</span></header><p> Apply <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>M</mi>
 </math></span> of Eq. <a class="xref" href="../chapter-12/index.html#eq-eq-qc-classical-gates">(12.2)</a>, and the Hadamard gate <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
@@ -1256,7 +1256,7 @@
   </msup>
   <mo>=</mo>
   <mi>M</mi>
-</math></span>: randomising a random bit leaves it random. Both routes from “<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>: randomizing a random bit leaves it random. Both routes from “<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>0</mn>
 </math></span>” to “<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>1</mn>
@@ -1419,7 +1419,7 @@
       <mn>2</mn>
     </mfrac>
   </mstyle>
-</math></span> and cancelled. As matrices, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> and canceled. As matrices, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mrow data-mjx-texclass="ORD">
       <mover accent="true">
@@ -1516,7 +1516,7 @@
   </msup>
 </math></span> amplitudes, but measuring returns <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>n</mi>
-</math></span> bits — one random branch. The amplitudes are not an answer sheet; they are a medium in which interference can be engineered. Designing that interference, not “reading all branches,” is the heart of quantum algorithm design.</p></section>
+</math></span> bits, corresponding to one random branch. The amplitudes are not an answer sheet; they are a medium in which interference can be engineered. Designing that interference, not “reading all branches,” is the heart of quantum algorithm design.</p></section>
 <h2 id="sec-12-qubits-and-gates"><span class="sec-number">12.5</span>Qubits and Gates</h2>
 <h3 id="sec-12-the-bloch-sphere"><span class="sec-number">12.5.1</span>The Bloch Sphere</h3>
 <p>The Bloch sphere is the standard geometric picture for pure one-qubit states. Start from Eq. <a class="xref" href="../chapter-12/index.html#eq-eq-qc-general-state">(12.4)</a> and separate magnitude and phase:</p>
@@ -5111,7 +5111,7 @@
       <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
     </mover>
   </mrow>
-</math></span> towards the pole, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> toward the pole, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>T</mi>
     <mn>2</mn>
@@ -5225,7 +5225,7 @@
   </mrow>
 </math></span> with certainty; averaged over unknown <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ϕ</mi>
-</math></span> it is fifty-fifty. What is gone is the interference of Example <a class="xref" href="../chapter-12/index.html#example-ex-qc-interference">12.4.1</a> — the thing the subject runs on — while the populations look healthy. This is why <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> it is fifty-fifty. What is gone is the interference of Example <a class="xref" href="../chapter-12/index.html#example-ex-qc-interference">12.4.1</a>, on which the whole subject depends, while the populations remain unchanged. This is why <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>T</mi>
     <mn>2</mn>
@@ -5328,7 +5328,7 @@
 </math></span>s</td></tr><tr><td>[3pt]
 		Neutral atom</td><td>atomic levels;</td><td>lasers</td><td>seconds</td></tr><tr><td></td><td>Rydberg for coupling</td><td></td><td></td></tr><tr><td>[3pt]
 		Photonic</td><td>polarization or path</td><td>interferometers</td><td>loss, not decay</td></tr><tr><td>[3pt]
-		Spin</td><td>electron or nuclear</td><td>microwaves,</td><td>ms (NV centre)</td></tr><tr><td>(dot, donor, NV)</td><td>spin-<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+		Spin</td><td>electron or nuclear</td><td>microwaves,</td><td>ms (NV center)</td></tr><tr><td>(dot, donor, NV)</td><td>spin-<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mstyle displaystyle="false" scriptlevel="0">
     <mfrac>
       <mn>1</mn>
@@ -5864,7 +5864,7 @@
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:eq:QC-bell-states">(12.25)</span></div></section>
 <p>An intuitive picture is two perfectly correlated coins. Example <a class="xref" href="../chapter-12/index.html#example-ex-qc-bell-correlation">12.9.2</a> shows that this agreement survives a change of measurement basis.</p>
-<section class="callout remark" id="remark-rem-qc-singlet"><header><span class="callout-kind">Remark 12.9.2</span><span class="callout-title">You have met one already</span></header><p> Chapter 5's spin singlet is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout remark" id="remark-rem-qc-singlet"><header><span class="callout-kind">Remark 12.9.2</span><span class="callout-title">An entangled state met earlier</span></header><p> Chapter 5's spin singlet is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="INNER">
     <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
@@ -6142,7 +6142,7 @@
   <mo form="prefix" lspace="0em" rspace="0em">−</mo>
   <mn>1</mn>
   <mo stretchy="false">)</mo>
-</math></span>, which is symmetric — you cannot tell which qubit was the control.</p>
+</math></span>, which is symmetric, so that there is no way to tell which qubit was the control.</p>
 <section class="callout example" id="example-ex-qc-make-bell"><header><span class="callout-kind">Example 12.9.1</span><span class="callout-title">The simplest entangling circuit</span></header><p> Apply <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mover accent="true">
@@ -6324,8 +6324,8 @@
     <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
 </math></span>. Since an orthonormal basis maps to an orthonormal basis it is unitary. Run backward, it converts the Bell basis to the computational basis, i.e. a <em>Bell measurement</em>, which is the key primitive used throughout Sec. <a class="xref" href="../chapter-12/index.html#sec-12-what-entanglement-is-good-for">12.12</a>.</p></section>
-<figure id="chapter-12-fig-4" class="figure"><img src="assets/img/ch12_fig03_bell_circuit.png" class="diagram" alt="The circuit of Example 12.9.1. Read right to left it is a Bell measurement." loading="lazy" style="--figure-width: 72%;"><figcaption>Figure 12.4. The circuit of Example <a class="xref" href="../chapter-12/index.html#example-ex-qc-make-bell">12.9.1</a>. Read right to left
-		it is a Bell measurement.</figcaption></figure>
+<figure id="chapter-12-fig-4" class="figure"><img src="assets/img/ch12_fig03_bell_circuit.png" class="diagram" alt="The circuit of Example 12.9.1. Read right to left, the circuit performs a Bell measurement." loading="lazy" style="--figure-width: 72%;"><figcaption>Figure 12.4. The circuit of Example <a class="xref" href="../chapter-12/index.html#example-ex-qc-make-bell">12.9.1</a>. Read right to left, the circuit
+		performs a Bell measurement.</figcaption></figure>
 <section class="callout example" id="example-ex-qc-bell-correlation"><header><span class="callout-kind">Example 12.9.2</span><span class="callout-title">The correlation survives a change of basis</span></header><p> Both parties measure their half of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="INNER">
     <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
@@ -6495,7 +6495,7 @@
     </mrow>
     <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
-</math></span> are labelled by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> are labeled by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>n</mi>
 </math></span>-bit strings:</p>
 <div class="math-block math-block--numbered" id="eq-eq-qc-n-qubit"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
@@ -7701,7 +7701,7 @@
   <mo stretchy="false">(</mo>
   <mn>1</mn>
   <mo stretchy="false">)</mo>
-</math></span>, a <em>global</em> property, without learning either value. That is the shape of every speed-up here: not many answers at once, but one question about all of them.</p></section>
+</math></span>, a <em>global</em> property, without learning either value. This is the general form of the speed-ups considered here: not many answers at once, but a single question about all of them.</p></section>
 <h3 id="sec-12-bernstein-vazirani-n-bits-in-one-query"><span class="sec-number">12.11.3</span>Bernstein–Vazirani: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>n</mi>
 </math></span> Bits in One Query</h3>
@@ -8381,7 +8381,7 @@
     </mrow>
     <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
-</math></span>. Classically you would expect to open two or three of the four boxes.</p></section>
+</math></span>. Classically one would expect to open two or three of the four boxes.</p></section>
 <figure id="chapter-12-fig-5" class="figure"><img src="assets/img/ch12_fig07_grover.png" class="diagram" alt="Grover amplification: ^2((2k+1)) rises to near certainty after about 4N rounds, then falls again. Running too long is as bad as stopping too early." loading="lazy" style="--figure-width: 85%;"><figcaption>Figure 12.5. Grover amplification: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>sin</mi>
@@ -11083,7 +11083,7 @@
       <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
     </mover>
   </mrow>
-</math></span> the centre. Now <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> the center. Now <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>T</mi>
     <mn>1</mn>
@@ -11121,7 +11121,7 @@
 </math></span>. Dephasing is the Bloch vector collapsing onto the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>z</mi>
 </math></span> axis.</p>
-<p><strong>Reduced states.</strong> Tracing out what you cannot see,</p>
+<p><strong>Reduced states.</strong> Tracing out the subsystem that is not observed,</p>
 <div class="math-block math-block--numbered" id="eq-eq-qc-partial-trace"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
