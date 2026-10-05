@@ -47,12 +47,35 @@
   --c-example-bg: #f2f9f4;
   --c-solution: #10612e;
   --c-solution-bg: #f2f9f4;
+  /* A number written over one term of a sum. Dark enough for AAA at
+     superscript size; matches clrannot in methodsbook.sty. */
+  --c-annot: #991b1b;
   --c-remark: #475569;
   --c-remark-bg: #f7f8fa;
   --c-proof: #475569;
   --c-proof-bg: #fcfcfd;
   --c-context: #0c5d56;
   --c-context-bg: #f0f7f7;
+  /* The status disclaimer, and nothing else. Red is the one colour a
+     reader will not mistake for decoration, and this is the one notice on
+     the site that must be read before the text it introduces. Measured
+     8.0:1 on --paper and 7.6:1 on its own tint, so it clears AAA in the
+     body sizes it is used at. */
+  --c-alert: #991b1b;
+  --c-alert-bg: #fef2f2;
+
+  /* Foundational statements. An axiom is an assumption of the theory's
+     structure; a postulate is a physical assertion laid on top of it. They
+     are siblings, so they sit next to each other on the wheel -- crimson and
+     plum -- and neither is any of the hues already spoken for above. */
+  --c-axiom: #9f1239;
+  --c-axiom-bg: #fdf2f5;
+  --c-postulate: #86198f;
+  --c-postulate-bg: #fbf2fc;
+  /* A caution, not a category: the one box that says the reader is about to
+     get something wrong. */
+  --c-misreading: #9a4a08;
+  --c-misreading-bg: #fdf6ed;
 
   /* Type
      Serif for reading, sans for the chrome around it -- the reverse of what
@@ -113,12 +136,24 @@
     --c-example-bg: #13221a;
     --c-solution: #5fc98c;
     --c-solution-bg: #13221a;
+    --c-annot: #f2a0a0;
     --c-remark: #9ea9b8;
     --c-remark-bg: #1a1d23;
     --c-proof: #9aa5b5;
     --c-proof-bg: #17191e;
     --c-context: #58bdb3;
     --c-context-bg: #122322;
+    /* 8.9:1 on --paper, 8.5:1 on its own tint. A dark-mode red has to be
+       lightened this far to stay legible; a saturated one reads as brown. */
+    --c-alert: #f2a0a0;
+    --c-alert-bg: #2a1416;
+
+    --c-axiom: #f4a0b9;
+    --c-axiom-bg: #2a1219;
+    --c-postulate: #e79bea;
+    --c-postulate-bg: #251029;
+    --c-misreading: #eab063;
+    --c-misreading-bg: #241b10;
   }
 
   /* Every figure on this site is drawn by matplotlib on white paper, and the
@@ -1202,6 +1237,10 @@ figcaption {
 .callout.solution   { --callout-color: var(--c-solution);   --callout-bg: var(--c-solution-bg); }
 .callout.remark     { --callout-color: var(--c-remark);     --callout-bg: var(--c-remark-bg); }
 .callout.context    { --callout-color: var(--c-context);    --callout-bg: var(--c-context-bg); }
+.callout.alert      { --callout-color: var(--c-alert);      --callout-bg: var(--c-alert-bg); }
+.callout.axiom      { --callout-color: var(--c-axiom);      --callout-bg: var(--c-axiom-bg); }
+.callout.postulate  { --callout-color: var(--c-postulate);  --callout-bg: var(--c-postulate-bg); }
+.callout.misreading { --callout-color: var(--c-misreading); --callout-bg: var(--c-misreading-bg); }
 
 /* A proof is NOT boxed. It reads as running text opened by "Proof." and
    closed with a tombstone, the way a printed textbook sets it, which keeps
@@ -1297,6 +1336,26 @@ figcaption {
   font-weight: 600;
 }
 .solution-head + * { margin-top: 0; }
+
+/* The rungs of the escalation ladder: the simplest case, the next case, and
+   the general result. Set like .solution-head because they do the same job --
+   a heading inside running argument -- but the general case takes the theorem
+   colour, so the eye lands on the result being earned. Both colours are
+   already defined for light and dark, so these follow the theme. */
+.case-head {
+  margin: 1.35em 0 0.4em;
+  font-family: var(--serif);
+  font-size: 1.06rem;
+  font-weight: 600;
+}
+.case-head-example { color: var(--c-example); }
+.case-head-theorem { color: var(--c-theorem); }
+.case-head + * { margin-top: 0; }
+
+/* \termno numbers a term of a sum that is about to become a sigma. MathJax
+   emits the number inside <mrow class="termno">, so the colour lives here
+   rather than in the MathML, and follows the theme. */
+.termno { color: var(--c-annot); }
 
 /* --------------------------------------------------------------- tables -- */
 
@@ -1439,6 +1498,15 @@ tbody tr:last-child td { border-bottom: 1px solid var(--line); }
   font-size: 0.84rem;
 }
 .site-footer p { margin: 0; }
+/* The status disclaimer is meant to be read, so it is not muted like the rest
+   of the footer. Two class selectors so it outranks `.site-footer p`. */
+.site-footer .site-footer-notice {
+  margin-bottom: 10px;
+  padding-left: 10px;
+  border-left: 3px solid var(--c-alert);
+  color: var(--c-alert);
+  font-weight: 500;
+}
 
 /* ----------------------------------------------------------- responsive -- */
 
@@ -1566,6 +1634,7 @@ tbody tr:last-child td { border-bottom: 1px solid var(--line); }
 
   .proof { margin: 8pt 0; break-inside: avoid; }
   .solution-head { margin: 7pt 0 3pt; font-size: 11pt; }
+  .case-head { margin: 8pt 0 3pt; font-size: 11pt; break-after: avoid; }
 
   .callout {
     margin: 9pt 0;

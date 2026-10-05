@@ -6,9 +6,9 @@
   <title>Why a Drum Has No Pitch: Modes of a Circular Membrane | Mathematical Methods in the Physical Sciences</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
   <link rel="preload" href="../../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../../../assets/css/site.css?v=9dea6c95">
+  <link rel="stylesheet" href="../../../assets/css/site.css?v=a126620a">
   <link rel="preload" href="../../../assets/fonts/latinmodern-math.woff2" as="font" type="font/woff2" crossorigin>
-  <script defer src="../../../assets/js/main.js?v=9dea6c95"></script>
+  <script defer src="../../../assets/js/main.js?v=a126620a"></script>
   <script defer src="../../../assets/js/visualizations/examples-Drum.js"></script>
 <style>
 .site-header { justify-content: flex-start; gap: 16px; }
@@ -186,6 +186,14 @@
    to show the membrane moving. The work draws on series solutions of
    differential equations (Ch. 9), partial differential equations (Ch. 10),
    orthogonal expansions (Ch. 7) and integration in polar coordinates (Ch. 5).</p>
+<figure id="fig-1" class="figure movie"><video controls preload="metadata" playsinline poster="assets/img/drum3d_dark.png"><source src="assets/img/drum3d_dark_sound.mp4" type="video/mp4"></video><figcaption>Figure 1. The answer to the whole project, before any of the working. A mallet lands
+   off centre on a clamped circular membrane; the dent spreads outward,
+   reflects off the rim and interferes with itself, and the surface never quite
+   repeats. Gold is upward displacement, blue downward, and the pale tone marks
+   the nodes — the points that never move at all. The soundtrack is the same
+   solution heard rather than seen: every partial keeps its exact frequency
+   ratio and its strike amplitude, with only the overall time scale changed, so
+   what you hear is this membrane's timbre.</figcaption></figure>
 <h2 id="sec-900-the-physics-question"><span class="sec-number">1</span>The physics question</h2>
 <p>Strike a guitar string and you hear a note. Strike a drum and you hear a thud: loud, definite, but hard to sing back. The difference is not in how the two are played but in the shape of the boundary that holds them. A string is clamped at two points and vibrates at frequencies <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>f</mi>
@@ -618,13 +626,13 @@
   <mo stretchy="false">)</mo>
   <mo>=</mo>
   <mi>A</mi>
-  <mi>cos</mi>
+  <mspace width="0.167em" /><mi>cos</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
   <mi>n</mi>
   <mi>θ</mi>
   <mo>+</mo>
   <mi>B</mi>
-  <mi>sin</mi>
+  <mspace width="0.167em" /><mi>sin</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
   <mi>n</mi>
   <mi>θ</mi>
@@ -773,7 +781,7 @@
     <mi>J</mi>
     <mi>n</mi>
   </msub>
-</math></span> (Figure <a class="xref" href="#fig-1">1</a>),</p>
+</math></span> (Figure <a class="xref" href="#fig-2">2</a>),</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -844,12 +852,12 @@
 </math><span class="eqn-number" id="mjx-eqn:eq:omega">(9)</span></div>
 <p>This is the same logic as a string, where the fixed ends force <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>sin</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
   <mrow>
-    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
     <mi>k</mi>
     <mi>L</mi>
-    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
   </mrow>
   <mo>=</mo>
   <mn>0</mn>
@@ -870,7 +878,7 @@
     <mi>n</mi>
   </msub>
 </math></span> for the drum.</p>
-<figure id="fig-1" class="figure"><img src="assets/img/fig_bessel.png" class="diagram" alt="The first four Bessel functions of the first kind. The dots mark their zeros nm, and those are the only radial wavenumbers a clamped circular rim allows. Unlike the zeros of , they are not evenly spaced — and their spacing is not the same from one Jn to the next." loading="lazy" style="--figure-width: 95%;"><figcaption>Figure 1. The first four Bessel functions of the first kind. The dots mark
+<figure id="fig-2" class="figure"><img src="assets/img/fig_bessel.png" class="diagram" alt="The first four Bessel functions of the first kind. The dots mark their zeros nm, and those are the only radial wavenumbers a clamped circular rim allows. Unlike the zeros of , they are not evenly spaced — and their spacing is not the same from one Jn to the next." loading="lazy" style="--figure-width: 95%;"><figcaption>Figure 2. The first four Bessel functions of the first kind. The dots mark
     their zeros <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>ρ</mi>
@@ -933,13 +941,13 @@
           </mfrac>
           <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
         </mrow>
-        <mi>cos</mi>
-        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+        <mspace width="0.167em" /><mi>cos</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
         <mrow>
-          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
           <mi>n</mi>
           <mi>θ</mi>
-          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
         </mrow>
         <mstyle scriptlevel="0">
           <mspace width="0.167em" />
@@ -956,7 +964,7 @@
               <mi>m</mi>
             </mrow>
           </msub>
-          <mi>cos</mi>
+          <mspace width="0.167em" /><mi>cos</mi>
           <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
           <msub>
             <mi>ω</mi>
@@ -974,7 +982,7 @@
               <mi>m</mi>
             </mrow>
           </msub>
-          <mi>sin</mi>
+          <mspace width="0.167em" /><mi>sin</mi>
           <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
           <msub>
             <mi>ω</mi>
@@ -1033,8 +1041,8 @@
   </mrow>
   <mi>R</mi>
   <mo stretchy="false">)</mo>
-</math></span> passes through its earlier zeros. Figure <a class="xref" href="#fig-3">3</a> shows the six lowest.</p>
-<p>What a normal mode <em>is</em> shows up better in motion than on the page: the pattern is fixed for all time and only its amplitude oscillates, so the nodes never move. Figure <a class="xref" href="#fig-2">2</a> runs three modes side by side. Because each carries its own <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> passes through its earlier zeros. Figure <a class="xref" href="#fig-4">4</a> shows the six lowest.</p>
+<p>What a normal mode <em>is</em> shows up better in motion than on the page: the pattern is fixed for all time and only its amplitude oscillates, so the nodes never move. Figure <a class="xref" href="#fig-3">3</a> runs three modes side by side. Because each carries its own <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>ω</mi>
     <mrow data-mjx-texclass="ORD">
@@ -1043,7 +1051,7 @@
     </mrow>
   </msub>
 </math></span>, they start together and immediately drift apart — and that drift is the whole reason a struck drum does not repeat itself.</p>
-<figure id="fig-2" class="figure animation"><img class="diagram" src="assets/img/anim_modes.gif" alt="Three normal modes as surfaces, each oscillating at its own frequency: (0,1) at 01, (1,1) at 1.59\,01 and (0,2) at 2.30\,01. The membrane rises and falls, but the shape is fixed: the dashed nodal lines never leave the plane, and every point of the membrane passes through zero at the same instant. After one period of the fundamental the left surface has returned to where it began and the other two have not." loading="lazy"><figcaption>Figure 2. Three normal modes as surfaces, each oscillating at its own frequency:
+<figure id="fig-3" class="figure animation"><img class="diagram" src="assets/img/anim_modes.gif" alt="Three normal modes as surfaces, each oscillating at its own frequency: (0,1) at 01, (1,1) at 1.59\,01 and (0,2) at 2.30\,01. The membrane rises and falls, but the shape is fixed: the dashed nodal lines never leave the plane, and every point of the membrane passes through zero at the same instant. After one period of the fundamental the left surface has returned to where it began and the other two have not." loading="lazy"><figcaption>Figure 3. Three normal modes as surfaces, each oscillating at its own frequency:
    <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo stretchy="false">(</mo>
   <mn>0</mn>
@@ -1097,8 +1105,8 @@
    membrane passes through zero at the same instant. After one period of the
    fundamental the left surface has returned to where it began and the other
    two have not.</figcaption></figure>
-<figure id="fig-3" class="figure"><img src="assets/img/fig_modes.png" class="diagram" alt="The six lowest modes, ordered by frequency rather than by index. Red and blue are opposite directions of displacement; the dashed lines are the nodes, which stay still for all time. The ordering by pitch mixes the two indices: (2,1) is lower than (0,2)." loading="lazy" style="--figure-width: 98%;"><figcaption>Figure 3. The six lowest modes, ordered by frequency rather than by index.
-    Red and blue are opposite directions of displacement; the dashed lines are
+<figure id="fig-4" class="figure"><img src="assets/img/fig_modes.png" class="diagram" alt="The six lowest modes, ordered by frequency rather than by index. Gold and blue are opposite directions of displacement; the dashed lines are the nodes, which stay still for all time. The ordering by pitch mixes the two indices: (2,1) is lower than (0,2)." loading="lazy" style="--figure-width: 98%;"><figcaption>Figure 4. The six lowest modes, ordered by frequency rather than by index.
+    Gold and blue are opposite directions of displacement; the dashed lines are
     the nodes, which stay still for all time. The ordering by pitch mixes the
     two indices: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo stretchy="false">(</mo>
@@ -1208,8 +1216,8 @@
     <mi>J</mi>
     <mi>n</mi>
   </msub>
-</math></span> — from the geometry of the boundary, not from the material of the membrane. Figure <a class="xref" href="#fig-4">4</a> puts the two ladders side by side.</p>
-<figure id="fig-4" class="figure"><img src="assets/img/fig_spectrum.png" class="diagram" alt="The eight lowest drum frequencies against the harmonic series a string would produce (grey). Only the fundamental lands on a harmonic." loading="lazy" style="--figure-width: 95%;"><figcaption>Figure 4. The eight lowest drum frequencies against the harmonic series a
+</math></span> — from the geometry of the boundary, not from the material of the membrane. Figure <a class="xref" href="#fig-5">5</a> puts the two ladders side by side.</p>
+<figure id="fig-5" class="figure"><img src="assets/img/fig_spectrum.png" class="diagram" alt="The eight lowest drum frequencies against the harmonic series a string would produce (grey). Only the fundamental lands on a harmonic." loading="lazy" style="--figure-width: 95%;"><figcaption>Figure 5. The eight lowest drum frequencies against the harmonic series a
     string would produce (grey). Only the fundamental lands on a harmonic.</figcaption></figure>
 <p>All of this is an argument about hearing, made on paper. The panel below settles it by ear. Both sounds are built from the modes derived above — one partial per <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
@@ -1236,10 +1244,23 @@
   <div class="interactive-mount" id="drum-sound" data-interactive-id="drum-sound">
     <p>Interactive visualization placeholder.</p>
   </div>
-  <p class="interactive-caption">Seven seconds of each, and the button plays them back to back, since a
-   difference in pitch is far easier to name across four seconds than across
-   half a minute. The circular rim gives a thud the ear cannot pin a note to:
-   with partials at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <p class="interactive-caption">Each instrument plays three notes — do, mi, sol — and the button plays
+   the two phrases back to back. The three-note form is deliberate. Asked
+   whether a single struck sound has a pitch, most listeners cannot say; it is
+   a trained judgement, and both sounds are short and percussive. Asked whether
+   three notes made a tune, anyone can answer. The two fixed ends play a triad
+   you could sing back, because partials at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+  <mo>,</mo>
+  <mn>2</mn>
+  <mo>,</mo>
+  <mn>3</mn>
+  <mo>,</mo>
+  <mo>…</mo>
+</math></span> fuse into one
+   pitch that the ear can follow from note to note. The circular rim plays the
+   same three transpositions and they refuse to become a melody: with partials
+   at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>1</mn>
   <mo>,</mo>
   <mn>1.59</mn>
@@ -1249,20 +1270,11 @@
   <mn>2.30</mn>
   <mo>,</mo>
   <mo>…</mo>
-</math></span> there is no fundamental they
-   all belong to. The two fixed ends give a note, because <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mn>1</mn>
-  <mo>,</mo>
-  <mn>2</mn>
-  <mo>,</mo>
-  <mn>3</mn>
-  <mo>,</mo>
-  <mo>…</mo>
-</math></span> is
-   the pattern the ear fuses into a single pitch. Both sounds are matched in
-   loudness and transposed to the same fundamental, so neither of those can be
-   what you are hearing. The amplitudes are the Fourier–Bessel coefficients of
-   Figure <a class="xref" href="#fig-5">5</a>, weighted by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> there is no single frequency in the sound
+   for the ear to follow. Both are matched in loudness and start from the same
+   fundamental, so neither can be what you are hearing. The amplitudes are the
+   Fourier–Bessel coefficients of Figure <a class="xref" href="#fig-6">6</a>, weighted by
+   <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>ω</mi>
     <mrow data-mjx-texclass="ORD">
@@ -1270,10 +1282,10 @@
       <mi>m</mi>
     </mrow>
   </msub>
-</math></span> because a source small
-   compared with a wavelength radiates in proportion to its acceleration; the
-   damping is lighter than a real drumhead's, so that there is something left
-   to listen to after seven seconds.</p>
+</math></span> because a source small compared with a wavelength radiates in
+   proportion to its acceleration. The two decay at different rates, as the
+   real instruments do: the drum's notes die before the next one lands, while
+   the string's ring on and overlap.</p>
 </section>
 <p>A second feature of <a class="eqn-ref" href="#mjx-eqn:eq:ratios">(11)</a> is worth naming: every mode with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>n</mi>
@@ -1429,21 +1441,21 @@
           </mfrac>
           <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
         </mrow>
-        <mi>cos</mi>
-        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+        <mspace width="0.167em" /><mi>cos</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
         <mrow>
-          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
           <mi>n</mi>
           <mi>θ</mi>
-          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
         </mrow>
         <mstyle scriptlevel="0">
           <mspace width="0.167em" />
         </mstyle>
-        <mi>sin</mi>
-        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+        <mspace width="0.167em" /><mi>sin</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
         <mrow>
-          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
           <msub>
             <mi>ω</mi>
             <mrow data-mjx-texclass="ORD">
@@ -1452,7 +1464,7 @@
             </mrow>
           </msub>
           <mi>t</mi>
-          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
         </mrow>
         <mo>,</mo>
       </mtd>
@@ -1586,19 +1598,19 @@
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:eq:coefficients">(15)</span></div>
 <p>This is the Fourier–Bessel series, the circular counterpart of a Fourier sine series.</p>
-<p>Figure <a class="xref" href="#fig-5">5</a> checks the expansion: 36 modes (<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>Figure <a class="xref" href="#fig-6">6</a> checks the expansion: 112 modes (<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>n</mi>
   <mo>≤</mo>
-  <mn>5</mn>
+  <mn>13</mn>
 </math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>m</mi>
   <mo>≤</mo>
-  <mn>6</mn>
+  <mn>8</mn>
 </math></span>) reproduce the strike to within <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mn>4.4</mn>
+  <mn>0.09</mn>
   <mi mathvariant="normal">%</mi>
 </math></span> of its peak. The error is concentrated at the sharp edge of the patch, as it always is when a truncated orthogonal series meets a steep feature.</p>
-<figure id="fig-5" class="figure"><img src="assets/img/fig_initial.png" class="diagram" alt="The mallet&#x27;s velocity patch (left), the sum of 36 modes fitted to it (centre), and the difference (right, on a five-times finer colour scale). The residual sits at the rim of the patch, where the truncated series cannot follow the sharp gradient." loading="lazy" style="--figure-width: 98%;"><figcaption>Figure 5. The mallet's velocity patch (left), the sum of 36 modes fitted to it
+<figure id="fig-6" class="figure"><img src="assets/img/fig_initial.png" class="diagram" alt="The mallet&#x27;s velocity patch (left), the sum of 112 modes fitted to it (centre), and the difference (right, on a five-times finer colour scale). The residual sits at the rim of the patch, where the truncated series cannot follow the sharp gradient." loading="lazy" style="--figure-width: 98%;"><figcaption>Figure 6. The mallet's velocity patch (left), the sum of 112 modes fitted to it
     (centre), and the difference (right, on a five-times finer colour scale).
     The residual sits at the rim of the patch, where the truncated series
     cannot follow the sharp gradient.</figcaption></figure>
@@ -1614,11 +1626,8 @@
       <mi>m</mi>
     </mrow>
   </msub>
-</math></span> in <a class="eqn-ref" href="#mjx-eqn:eq:solution">(13)</a> is worth a comment. A kick of a given size sets a stiff, high-frequency mode swinging through a smaller displacement than a floppy one, so the visible motion is dominated by the lowest few modes even though the strike deposits energy across many. This is why Figure <a class="xref" href="#fig-6">6</a> stays smooth despite starting from a sharply localised strike.</p>
-<figure id="fig-6" class="figure animation"><img class="diagram" src="assets/img/anim.gif" alt="The struck membrane over one period of the fundamental. The dent from the mallet spreads outward, reflects off the clamped rim, and returns; the higher modes ride on top of the fundamental at their own, unrelated, frequencies, so the surface never repeats exactly." loading="lazy"><figcaption>Figure 6. The struck membrane over one period of the fundamental. The dent from the
-   mallet spreads outward, reflects off the clamped rim, and returns; the higher
-   modes ride on top of the fundamental at their own, unrelated, frequencies, so
-   the surface never repeats exactly.</figcaption></figure>
+</math></span> in <a class="eqn-ref" href="#mjx-eqn:eq:solution">(13)</a> is worth a comment. A kick of a given size sets a stiff, high-frequency mode swinging through a smaller displacement than a floppy one, so the visible motion is dominated by the lowest few modes even though the strike deposits energy across many. This is why Figure <a class="xref" href="#fig-1">1</a> stays smooth despite starting from a sharply localised strike.</p>
+<p>This is the motion shown at the head of the report: the dent from the mallet spreads outward, reflects off the clamped rim, and returns, while the higher modes ride on top of the fundamental at their own unrelated frequencies, so the surface never repeats exactly.</p>
 <h2 id="sec-900-which-course-methods-were-used"><span class="sec-number">6</span>Which course methods were used</h2>
 <ul><li><p><strong>Series solutions of differential equations (Chapter 9).</strong> The radial equation <a class="eqn-ref" href="#mjx-eqn:eq:radial">(7)</a> is Bessel's equation; <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
@@ -1686,12 +1695,12 @@
   <mi>R</mi>
   <mo stretchy="false">)</mo>
   <mi>cos</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
   <mrow>
-    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
     <mi>n</mi>
     <mi>θ</mi>
-    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
   </mrow>
 </math></span> with frequencies <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
@@ -1725,7 +1734,7 @@
 </math></span> are the zeros of the Bessel functions. Those zeros are not evenly spaced, so the overtones are not harmonics — the drum has a sound but no pitch, and the reason is the shape of its boundary. Treating the modes as a basis then solves the real problem: a strike is expanded in them by Fourier–Bessel projection, and the resulting sum reproduces the visible motion of a struck drumhead.</p>
 <p>The same machinery carries over unchanged to a circular waveguide, a vibrating plate, or the orbitals of the hydrogen atom: whenever the boundary is circular or spherical, separation of variables produces a special function whose zeros the boundary condition selects.</p>
 <h2 id="sec-900-references">References</h2>
-<ul><li><p>M. L. Boas, <em>Mathematical Methods in the Physical Sciences</em>, Wiley, 3rd ed., 2006 (Chapters 12 and 13).</p></li><li><p>P. M. Morse, <em>Vibration and Sound</em>, McGraw–Hill, 2nd ed., 1948 (the circular membrane and its inharmonicity).</p></li><li><p>SciPy documentation, scipy.special.jv and scipy.special.jn\_zeros.</p></li></ul>
+<ul><li><p>M. L. Boas, <em>Mathematical Methods in the Physical Sciences</em>, Wiley, 3rd ed., 2006 (Chapters 12 and 13).</p></li><li><p>P. M. Morse, <em>Vibration and Sound</em>, McGraw–Hill, 2nd ed., 1948 (the circular membrane and its inharmonicity).</p></li><li><p>SciPy documentation, <code>scipy.special.jv</code> and <code>scipy.special.jn_zeros</code>.</p></li></ul>
 <p class="project-back"><a href="../../../projects.html">← All projects</a></p>
 </main>
 <footer class="site-footer">

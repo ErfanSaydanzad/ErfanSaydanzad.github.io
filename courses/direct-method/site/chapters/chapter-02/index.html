@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Chapter 2: Simple Model Systems: Solving the Schrödinger Equation | Direct Method</title>
+  <title>Chapter 2: Simple Model Systems: Solving the Schrödinger Equation | Quantum Mechanics and Spectroscopy</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
   <link rel="preload" href="../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../../assets/css/site.css?v=856ec339">
+  <link rel="stylesheet" href="../../assets/css/site.css?v=ee8de383">
   <link rel="preload" href="../../assets/fonts/latinmodern-math.woff2" as="font" type="font/woff2" crossorigin>
-  <script defer src="../../assets/js/main.js?v=856ec339"></script>
+  <script defer src="../../assets/js/main.js?v=ee8de383"></script>
 
 <style>
 .site-header { justify-content: flex-start; gap: 16px; }
@@ -35,7 +35,7 @@
   <a class="site-up" href="../../../../../index.html"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.5 5.5 8l4.5 4.5"/></svg><span>Saydanzad Group</span></a>
   <a class="brand" href="../../index.html">
     <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M9 6.5V25.5M9 6.5H24M9 25.5H24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 16Q10.5 9.5 15.5 16T25.5 16" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/></svg>
-    <span>Direct Method</span>
+    <span>Quantum Mechanics and Spectroscopy</span>
   </a>
   <nav class="top-nav" aria-label="Primary">
     <a href="../../index.html">Home</a>
@@ -63,6 +63,7 @@
 <a class="toc-level-3" href="#sec-2-ladder-operators">2.7.1 Ladder Operators</a>
 <a class="toc-level-3" href="#sec-2-the-spectrum">2.7.2 The Spectrum</a>
 <a class="toc-level-3" href="#sec-2-position-representation">2.7.3 Position Representation</a>
+<a class="toc-level-3" href="#sec-2-first-pass-self-checks-boundaries-and-the-oscillator">2.7.4 First-Pass Self-Checks: Boundaries and the Oscillator</a>
 <a class="toc-level-2" href="#sec-2-summary">2.8 Summary</a>
 <a class="toc-level-2" href="#sec-2-exercises">2.9 Exercises</a>
 <a class="toc-level-2" href="#sec-2-project-solving-one-dimensional-problems-numerically">2.10 Project: Solving One-Dimensional Problems Numerically</a>
@@ -76,10 +77,69 @@
       <h1>Simple Model Systems: Solving the Schrödinger Equation</h1>
     </header>
     <h2 id="sec-2-introduction"><span class="sec-number">2.1</span>Introduction</h2>
-<p>Chapter 1 set out the postulates. This chapter applies them to the smallest set of problems that can be solved exactly, in one dimension, and it is worth being explicit about why these particular problems and no others.</p>
+<p>Chapter 1 set out the axioms. This chapter applies them to the smallest set of problems that can be solved exactly, in one dimension, and it is worth being explicit about why these particular problems and no others.</p>
 <p>Each one is a permanent tool rather than an exercise:</p>
 <ul><li><p>the <strong>free particle</strong> gives the continuum states that every ionization process ends in;</p></li><li><p>the <strong>infinite well</strong> gives quantization in its simplest form and the node-counting rule used to check every later solution;</p></li><li><p>the <strong>finite well</strong> gives the transcendental matching conditions that recur whenever a potential has more than one region;</p></li><li><p>the <strong>barrier</strong> gives tunnelling, and the exponential sensitivity that makes strong-field ionization possible;</p></li><li><p>the <strong>harmonic oscillator</strong> gives the ladder-operator method, which Chapter 3 reuses for angular momentum, and describes every molecular vibration in Chapter 7.</p></li></ul>
 <p>All five of these reappear later. The three-dimensional atoms of Chapters 4 and 5 reduce, after separating the angles, to a one-dimensional radial equation of exactly the form solved here.</p>
+<section class="callout remark" id="remark-rem-ms-first-pass"><header><span class="callout-kind">Remark 2.1.1</span><span class="callout-title">First-pass route</span></header><p> Read stationary states, the infinite well, and the harmonic oscillator. Work the three self-checks before the Summary. This route shows twice how quantization enters: walls restrict the allowed wavelengths, while the oscillator ladder must have a lowest state. The finite well, tunnelling, and numerical project are optional extensions on a first reading.</p></section>
+<section class="callout remark"><header><span class="callout-kind">Remark</span><span class="callout-title">Prerequisite recall: second-order equations</span></header><p>For <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>ψ</mi>
+    <mo data-mjx-alternate="1">″</mo>
+  </msup>
+  <mo>+</mo>
+  <msup>
+    <mi>k</mi>
+    <mn>2</mn>
+  </msup>
+  <mi>ψ</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>, the general solution is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>A</mi>
+  <mspace width="0.167em" /><mi>sin</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mi>k</mi>
+  <mi>x</mi>
+  <mo>+</mo>
+  <mi>B</mi>
+  <mspace width="0.167em" /><mi>cos</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mi>k</mi>
+  <mi>x</mi>
+</math></span>; for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>ψ</mi>
+    <mo data-mjx-alternate="1">″</mo>
+  </msup>
+  <mo>−</mo>
+  <msup>
+    <mi>κ</mi>
+    <mn>2</mn>
+  </msup>
+  <mi>ψ</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>, it is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>A</mi>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>κ</mi>
+      <mi>x</mi>
+    </mrow>
+  </msup>
+  <mo>+</mo>
+  <mi>B</mi>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi>κ</mi>
+      <mi>x</mi>
+    </mrow>
+  </msup>
+</math></span>. Boundary conditions select the allowed linear combinations and sometimes the allowed energies. The companion <em>Mathematical Methods</em> chapter on ordinary differential equations develops these facts; the two displayed solutions suffice here.</p></section>
 <h2 id="sec-2-stationary-states"><span class="sec-number">2.2</span>Stationary States</h2>
 <p>The time-dependent Schrödinger equation (TDSE) of Chapter 1 is</p>
 <div class="math-block math-block--numbered" id="eq-eq-ms-tdse"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
@@ -1234,13 +1294,13 @@
         <mo stretchy="false">)</mo>
         <mo>=</mo>
         <mi>A</mi>
-        <mi>sin</mi>
+        <mspace width="0.167em" /><mi>sin</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
         <mi>k</mi>
         <mi>x</mi>
         <mo>+</mo>
         <mi>B</mi>
-        <mi>cos</mi>
+        <mspace width="0.167em" /><mi>cos</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
         <mi>k</mi>
         <mi>x</mi>
@@ -1266,7 +1326,7 @@
   <mi>ψ</mi>
   <mo>=</mo>
   <mi>A</mi>
-  <mi>sin</mi>
+  <mspace width="0.167em" /><mi>sin</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
   <mi>k</mi>
   <mi>x</mi>
@@ -1280,7 +1340,7 @@
     <mtr>
       <mtd>
         <mi>A</mi>
-        <mi>sin</mi>
+        <mspace width="0.167em" /><mi>sin</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
         <mi>k</mi>
         <mi>a</mi>
@@ -1966,6 +2026,23 @@
   </msup>
 </math></span> differs.</p></section>
 <h2 id="sec-2-the-finite-square-well"><span class="sec-number">2.5</span>The Finite Square Well</h2>
+<figure id="chapter-02-fig-1" class="figure"><img src="assets/img/ch02_fig01_infinite_well.png" class="diagram" alt="The infinite well, and the two facts worth carrying forward: the levels rise as n^2, and n has n-1 interior nodes. Counting nodes is the check applied to every solution in this book." loading="lazy" style="--figure-width: 82%;"><figcaption>Figure 2.1. The infinite well, and the two facts worth carrying forward:
+	the levels rise as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>n</mi>
+    <mn>2</mn>
+  </msup>
+</math></span>, and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ψ</mi>
+    <mi>n</mi>
+  </msub>
+</math></span> has <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>−</mo>
+  <mn>1</mn>
+</math></span> interior nodes. Counting
+	nodes is the check applied to every solution in this book.</figcaption></figure>
 <p>Let</p>
 <div class="math-block math-block--numbered" id="eq-eq-ms-finite-well-v"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -2118,7 +2195,7 @@
             <mtr>
               <mtd style="text-align: left">
                 <mi>C</mi>
-                <mi>cos</mi>
+                <mspace width="0.167em" /><mi>cos</mi>
                 <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
                 <mi>k</mi>
                 <mi>x</mi>
@@ -2181,7 +2258,7 @@
     <mtr>
       <mtd>
         <mi>C</mi>
-        <mi>cos</mi>
+        <mspace width="0.167em" /><mi>cos</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
         <mi>k</mi>
         <mi>a</mi>
@@ -2202,7 +2279,7 @@
         <mo>−</mo>
         <mi>C</mi>
         <mi>k</mi>
-        <mi>sin</mi>
+        <mspace width="0.167em" /><mi>sin</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
         <mi>k</mi>
         <mi>a</mi>
@@ -2236,7 +2313,7 @@
                   <mspace width="0.278em" />
                 </mstyle>
                 <mi>k</mi>
-                <mi>tan</mi>
+                <mspace width="0.167em" /><mi>tan</mi>
                 <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
                 <mi>k</mi>
                 <mi>a</mi>
@@ -2258,7 +2335,7 @@
   <mi>ψ</mi>
   <mo>=</mo>
   <mi>C</mi>
-  <mi>sin</mi>
+  <mspace width="0.167em" /><mi>sin</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
   <mi>k</mi>
   <mi>x</mi>
@@ -2291,7 +2368,7 @@
                 </mstyle>
                 <mo>−</mo>
                 <mi>k</mi>
-                <mi>cot</mi>
+                <mspace width="0.167em" /><mi>cot</mi>
                 <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
                 <mi>k</mi>
                 <mi>a</mi>
@@ -2477,6 +2554,46 @@
 </math></span>. Plotting both sides against <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>z</mi>
 </math></span> and reading off the intersections gives the bound-state energies.</p>
+<figure id="chapter-02-fig-2" class="figure"><img src="assets/img/ch02_fig02_finite_well_graphical.png" class="diagram" alt="The intersections are the bound states. Each crossing of z0^2-z^2/z with z is an even state and with - z an odd one, so they alternate; the quarter-circle always meets the first branch of z, however small z0 is, which is Theorem 2.5.1." loading="lazy" style="--figure-width: 95%;"><figcaption>Figure 2.2. The intersections are the bound states. Each crossing of
+	<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msqrt>
+    <msubsup>
+      <mi>z</mi>
+      <mn>0</mn>
+      <mn>2</mn>
+    </msubsup>
+    <mo>−</mo>
+    <msup>
+      <mi>z</mi>
+      <mn>2</mn>
+    </msup>
+  </msqrt>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>z</mi>
+</math></span> with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>tan</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mi>z</mi>
+</math></span> is an even state and with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mi>cot</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mi>z</mi>
+</math></span> an
+	odd one, so they alternate; the quarter-circle always meets the first
+	branch of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>tan</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mi>z</mi>
+</math></span>, however small <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>z</mi>
+    <mn>0</mn>
+  </msub>
+</math></span> is, which is
+	Theorem <a class="xref" href="../chapter-02/index.html#theorem-thm-ms-count">2.5.1</a>.</figcaption></figure>
 <section class="callout theorem" id="theorem-thm-ms-count"><header><span class="callout-kind">Theorem 2.5.1</span><span class="callout-title">Number of bound states</span></header><p> The finite well of Eq. <a class="xref" href="../chapter-02/index.html#eq-eq-ms-finite-well-v">(2.18)</a> has</p>
 <div class="math-block math-block--numbered" id="eq-eq-ms-count"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -2536,6 +2653,16 @@
 </math></span>. This is the same exponential tail that becomes tunnelling in the next section, and — in Chapter 4 — the reason a low-<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>l</mi>
 </math></span> electron can reach a nucleus that a centrifugal barrier appears to exclude it from.</p></section>
+<figure id="chapter-02-fig-3" class="figure"><img src="assets/img/ch02_fig03_finite_well_penetration.png" class="diagram" alt="The wavefunction does not stop at the wall. It decays into the classically forbidden region over the depth 1/, which is the quantity Remark 2.5.1 names and the next section turns into tunnelling." loading="lazy" style="--figure-width: 90%;"><figcaption>Figure 2.3. The wavefunction does not stop at the wall. It decays into the
+	classically forbidden region over the depth <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>κ</mi>
+</math></span>, which is the
+	quantity Remark <a class="xref" href="../chapter-02/index.html#remark-rem-ms-penetration">2.5.1</a> names and the next section turns
+	into tunnelling.</figcaption></figure>
 <h2 id="sec-2-the-potential-barrier-and-tunnelling"><span class="sec-number">2.6</span>The Potential Barrier and Tunnelling</h2>
 <p>Now invert the well. Let</p>
 <div class="math-block math-block--numbered" id="eq-eq-ms-barrier-v"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
@@ -2731,6 +2858,26 @@
   <mo>&gt;</mo>
   <mi>L</mi>
 </math></span> encodes the physical setup: nothing comes back from the far side.</p>
+<figure id="chapter-02-fig-4" class="figure"><img src="assets/img/ch02_fig04_barrier.png" class="diagram" alt="Inside the barrier the wave decays rather than oscillates, and it decays without reaching zero. Whatever amplitude survives at x=L oscillates onward, and that surviving fraction is T. The three pieces are joined by imposing Theorem 2.2.2 — and &amp;#x27; continuous at both walls — so the curve has no kink and no step anywhere; solving those four conditions is what produces Eq. (2.29)." loading="lazy" style="--figure-width: 95%;"><figcaption>Figure 2.4. Inside the barrier the wave decays rather than oscillates, and
+	it decays without reaching zero. Whatever amplitude survives at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>=</mo>
+  <mi>L</mi>
+</math></span>
+	oscillates onward, and that surviving fraction is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>T</mi>
+</math></span>. The three pieces
+	are joined by imposing Theorem <a class="xref" href="../chapter-02/index.html#theorem-thm-ms-continuity">2.2.2</a> — <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ψ</mi>
+</math></span> and
+	<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>ψ</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+</math></span> continuous at both walls — so the curve has no kink and no
+	step anywhere; solving those four conditions is what produces
+	Eq. <a class="xref" href="../chapter-02/index.html#eq-eq-ms-transmission">(2.29)</a>.</figcaption></figure>
 <p>Matching <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ψ</mi>
 </math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -3208,6 +3355,11 @@
 <p>Doubling the width cut the transmission by a factor of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>170</mn>
 </math></span>. That is Remark <a class="xref" href="../chapter-02/index.html#remark-rem-ms-tunnelling-sensitivity">2.6.1</a> in numbers, and it is why a tunnelling current measures distance to a fraction of an atomic diameter.</p></section>
+<figure id="chapter-02-fig-5" class="figure"><img src="assets/img/ch02_fig05_transmission.png" class="diagram" alt="Left: across the whole range of energies the thick-barrier form of Eq. (2.30) is indistinguishable from the exact Eq. (2.29), which is why it is the one used. Right: the two numbers of Example 2.6.1, and the slope between them." loading="lazy" style="--figure-width: 98%;"><figcaption>Figure 2.5. Left: across the whole range of energies the thick-barrier form
+	of Eq. <a class="xref" href="../chapter-02/index.html#eq-eq-ms-transmission-thick">(2.30)</a> is indistinguishable from the
+	exact Eq. <a class="xref" href="../chapter-02/index.html#eq-eq-ms-transmission">(2.29)</a>, which is why it is the one used.
+	Right: the two numbers of Example <a class="xref" href="../chapter-02/index.html#example-ex-ms-tunnelling-numbers">2.6.1</a>, and the
+	slope between them.</figcaption></figure>
 <h2 id="sec-2-the-harmonic-oscillator"><span class="sec-number">2.7</span>The Harmonic Oscillator</h2>
 <p>Let</p>
 <div class="math-block math-block--numbered" id="eq-eq-ms-ho-v"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
@@ -3956,6 +4108,49 @@
 </math></div>
 <p>which rearranges to Eq. <a class="xref" href="../chapter-02/index.html#eq-eq-ms-h-ladder">(2.34)</a>.</p></div>
 <h3 id="sec-2-the-spectrum"><span class="sec-number">2.7.2</span>The Spectrum</h3>
+<figure id="chapter-02-fig-6" class="figure"><img src="assets/img/ch02_fig07_ladder.png" class="diagram" alt="Why the spectrum is what it is. a^ climbs and a descends in steps of ; the ladder would run down forever and give unbounded negative energies were it not for a0=0, which is the single fact that fixes the ground state and with it every level above it." loading="lazy" style="--figure-width: 72%;"><figcaption>Figure 2.6. Why the spectrum is what it is. <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mrow data-mjx-texclass="ORD">
+      <mover accent="true">
+        <mi>a</mi>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+      </mover>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mo>†</mo>
+    </mrow>
+  </msup>
+</math></span> climbs and
+	<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>a</mi>
+      <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+    </mover>
+  </mrow>
+</math></span> descends in steps of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi data-mjx-alternate="1">ℏ</mi>
+  <mi>ω</mi>
+</math></span>; the ladder would run down
+	forever and give unbounded negative energies were it not for
+	<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>a</mi>
+      <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+    </mover>
+  </mrow>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>0</mn>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>, which is the single fact that fixes the ground state
+	and with it every level above it.</figcaption></figure>
 <p>Let <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="INNER">
     <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
@@ -4525,6 +4720,22 @@
   <mi>ω</mi>
 </math></span>, not zero: the <em>zero-point energy</em>. A chemical bond is never still, even at absolute zero.</p></section>
 <h3 id="sec-2-position-representation"><span class="sec-number">2.7.3</span>Position Representation</h3>
+<figure id="chapter-02-fig-7" class="figure"><img src="assets/img/ch02_fig06_oscillator.png" class="diagram" alt="The levels are equally spaced, which no other potential in this chapter manages: the infinite well gave n^2. Each n still carries its n nodes, and each still leaks past the classical turning points where the level meets the parabola." loading="lazy" style="--figure-width: 86%;"><figcaption>Figure 2.7. The levels are equally spaced, which no other potential in this
+	chapter manages: the infinite well gave <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>n</mi>
+    <mn>2</mn>
+  </msup>
+</math></span>. Each <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ψ</mi>
+    <mi>n</mi>
+  </msub>
+</math></span> still carries
+	its <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> nodes, and each still leaks past the classical turning points
+	where the level meets the parabola.</figcaption></figure>
 <p>To obtain the wave functions, write <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mover accent="true">
@@ -5157,6 +5368,721 @@
     <mi>μ</mi>
   </msqrt>
 </math></span> and hence a lower zero-point energy, so it sits deeper in the same potential well and is harder to break. The potential curve is identical; only the nuclear mass differs.</p></section>
+<h3 id="sec-2-first-pass-self-checks-boundaries-and-the-oscillator"><span class="sec-number">2.7.4</span>First-Pass Self-Checks: Boundaries and the Oscillator</h3>
+<figure id="chapter-02-fig-8" class="figure"><img src="assets/img/learn_box_counting.png" class="diagram" alt="The same free particle in the same length, counted under two boundary conditions. Hard walls give n=1,2, and one state per level; periodicity gives m=0,1,2,, so every level except m=0 is doubly degenerate and the staircase climbs in steps of two. The two curves are enumerations of the allowed quantum numbers, not fits: at any energy they differ, yet their slopes agree in the limit of many states, which is why either box gives the same density of states. Self-check 2 does the counting that this figure draws, and the companion course Condensed Matter Physics starts from the periodic staircase." loading="lazy" style="--figure-width: 86%;"><figcaption>Figure 2.8. The same free particle in the same length, counted under two
+	boundary conditions. Hard walls give <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mn>2</mn>
+  <mo>,</mo>
+  <mo>…</mo>
+</math></span> and one state per
+	level; periodicity gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+  <mo>,</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">±</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">±</mo>
+  <mn>2</mn>
+  <mo>,</mo>
+  <mo>…</mo>
+</math></span>, so every level except
+	<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> is doubly degenerate and the staircase climbs in steps of two. The
+	two curves are enumerations of the allowed quantum numbers, not fits: at
+	any energy they differ, yet their slopes agree in the limit of many
+	states, which is why either box gives the same density of states.
+	Self-check 2 does the counting that this figure draws, and the companion
+	course <em>Condensed Matter Physics</em> starts from the periodic
+	staircase.</figcaption></figure>
+<section class="callout example" id="example-ex-ms-selfcheck-well-probability"><header><span class="callout-kind">Example 2.7.2</span><span class="callout-title">Self-check 1: a probability in the infinite well</span></header><p> For the ground state in a well on <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+  <mo>&lt;</mo>
+  <mi>x</mi>
+  <mo>&lt;</mo>
+  <mi>a</mi>
+</math></span>, find the probability of finding the particle in the left half.</p>
+<p class="solution-head">Solution.</p>
+<p>Using Eq. <a class="xref" href="../chapter-02/index.html#eq-eq-ms-well-states">(2.17)</a> with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>,</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>P</mi>
+  <mo stretchy="false">(</mo>
+  <mn>0</mn>
+  <mo>&lt;</mo>
+  <mi>x</mi>
+  <mo>&lt;</mo>
+  <mi>a</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mfrac>
+    <mn>2</mn>
+    <mi>a</mi>
+  </mfrac>
+  <msubsup>
+    <mo data-mjx-texclass="OP">∫</mo>
+    <mn>0</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mi>a</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mn>2</mn>
+    </mrow>
+  </msubsup>
+  <msup>
+    <mi>sin</mi>
+    <mn>2</mn>
+  </msup>
+  <mstyle scriptlevel="0">
+    <mspace width="-0.167em" />
+  </mstyle>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <mfrac>
+      <mrow>
+        <mi>π</mi>
+        <mi>x</mi>
+      </mrow>
+      <mi>a</mi>
+    </mfrac>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+  </mrow>
+  <mi>d</mi>
+  <mi>x</mi>
+  <mo>.</mo>
+</math></div>
+<p>Since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="OP">∫</mo>
+  <msup>
+    <mi>sin</mi>
+    <mn>2</mn>
+  </msup>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mo stretchy="false">(</mo>
+  <mi>b</mi>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+  <mi>d</mi>
+  <mi>x</mi>
+  <mo>=</mo>
+  <mi>x</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+  <mo>−</mo>
+  <mi>sin</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mn>2</mn>
+    <mi>b</mi>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mo stretchy="false">(</mo>
+  <mn>4</mn>
+  <mi>b</mi>
+  <mo stretchy="false">)</mo>
+</math></span>,</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>P</mi>
+  <mo>=</mo>
+  <mfrac>
+    <mn>2</mn>
+    <mi>a</mi>
+  </mfrac>
+  <msubsup>
+    <mrow data-mjx-texclass="INNER">
+      <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">[</mo>
+      <mfrac>
+        <mi>x</mi>
+        <mn>2</mn>
+      </mfrac>
+      <mo>−</mo>
+      <mfrac>
+        <mi>a</mi>
+        <mrow>
+          <mn>4</mn>
+          <mi>π</mi>
+        </mrow>
+      </mfrac>
+      <mi>sin</mi>
+      <mstyle scriptlevel="0">
+        <mspace width="-0.167em" />
+      </mstyle>
+      <mrow data-mjx-texclass="INNER">
+        <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+        <mfrac>
+          <mrow>
+            <mn>2</mn>
+            <mi>π</mi>
+            <mi>x</mi>
+          </mrow>
+          <mi>a</mi>
+        </mfrac>
+        <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+      </mrow>
+      <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">]</mo>
+    </mrow>
+    <mn>0</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mi>a</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mn>2</mn>
+    </mrow>
+  </msubsup>
+  <mo>=</mo>
+  <mfrac>
+    <mn>2</mn>
+    <mi>a</mi>
+  </mfrac>
+  <mfrac>
+    <mi>a</mi>
+    <mn>4</mn>
+  </mfrac>
+  <mo>=</mo>
+  <mfrac>
+    <mn>1</mn>
+    <mn>2</mn>
+  </mfrac>
+  <mo>.</mo>
+</math></div>
+<p>The answer also follows from the symmetry <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">|</mo>
+  <msub>
+    <mi>ψ</mi>
+    <mn>1</mn>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+  <msup>
+    <mo stretchy="false">|</mo>
+    <mn>2</mn>
+  </msup>
+  <mo>=</mo>
+  <mo stretchy="false">|</mo>
+  <msub>
+    <mi>ψ</mi>
+    <mn>1</mn>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>a</mi>
+  <mo>−</mo>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+  <msup>
+    <mo stretchy="false">|</mo>
+    <mn>2</mn>
+  </msup>
+</math></span>; the integral verifies it.</p></section>
+<section class="callout example" id="example-ex-ms-selfcheck-periodic-box"><header><span class="callout-kind">Example 2.7.3</span><span class="callout-title">Self-check 2: periodic boundaries and counting <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> states</span></header><p> Put a free particle in a one-dimensional box of length <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>L</mi>
+</math></span> with the periodic condition <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ψ</mi>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo>+</mo>
+  <mi>L</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mi>ψ</mi>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+</math></span>. Find the allowed <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> values and the number of states in an interval <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mi>k</mi>
+  <mo>,</mo>
+  <mi>k</mi>
+  <mo>+</mo>
+  <mi>d</mi>
+  <mi>k</mi>
+  <mo stretchy="false">]</mo>
+</math></span>.</p>
+<p class="solution-head">Solution.</p>
+<p>For <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ψ</mi>
+    <mi>k</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <msup>
+    <mi>L</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>i</mi>
+      <mi>k</mi>
+      <mi>x</mi>
+    </mrow>
+  </msup>
+</math></span>, periodicity requires</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>i</mi>
+      <mi>k</mi>
+      <mo stretchy="false">(</mo>
+      <mi>x</mi>
+      <mo>+</mo>
+      <mi>L</mi>
+      <mo stretchy="false">)</mo>
+    </mrow>
+  </msup>
+  <mo>=</mo>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>i</mi>
+      <mi>k</mi>
+      <mi>x</mi>
+    </mrow>
+  </msup>
+  <mstyle scriptlevel="0">
+    <mspace width="1em" />
+  </mstyle>
+  <mo stretchy="false">⟹</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="1em" />
+  </mstyle>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>i</mi>
+      <mi>k</mi>
+      <mi>L</mi>
+    </mrow>
+  </msup>
+  <mo>=</mo>
+  <mn>1</mn>
+  <mstyle scriptlevel="0">
+    <mspace width="1em" />
+  </mstyle>
+  <mo stretchy="false">⟹</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="1em" />
+  </mstyle>
+  <msub>
+    <mi>k</mi>
+    <mi>n</mi>
+  </msub>
+  <mo>=</mo>
+  <mfrac>
+    <mrow>
+      <mn>2</mn>
+      <mi>π</mi>
+      <mi>n</mi>
+    </mrow>
+    <mi>L</mi>
+  </mfrac>
+  <mo>,</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="2em" />
+  </mstyle>
+  <mi>n</mi>
+  <mo>∈</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mi mathvariant="normal">ℤ</mi>
+  </mrow>
+  <mo>.</mo>
+</math></div>
+<p>Adjacent values are separated by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Δ</mi>
+  <mi>k</mi>
+  <mo>=</mo>
+  <mn>2</mn>
+  <mi>π</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>L</mi>
+</math></span>. Therefore the number of one-particle states in <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mi>k</mi>
+</math></span> is</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>d</mi>
+  <mi>N</mi>
+  <mo>=</mo>
+  <mfrac>
+    <mrow>
+      <mi>d</mi>
+      <mi>k</mi>
+    </mrow>
+    <mrow>
+      <mi mathvariant="normal">Δ</mi>
+      <mi>k</mi>
+    </mrow>
+  </mfrac>
+  <mo>=</mo>
+  <mfrac>
+    <mi>L</mi>
+    <mrow>
+      <mn>2</mn>
+      <mi>π</mi>
+    </mrow>
+  </mfrac>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mi>d</mi>
+  <mi>k</mi>
+</math></div>
+<p>for one direction and one internal state. Counting both signs over a positive interval of magnitudes doubles this result; counting spin also doubles it. Say which of those choices has been made, every time: a density of states is meaningless until it is stated whether it counts one spin or both, and whether it is per sample, per volume or per cell.</p>
+<p>This short bridge from a box to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span>-space counting is used twice in the companion courses. <em>Condensed Matter Physics</em> Chapter 1 turns it into the free-electron density of states; <em>Statistical Physics</em> Chapter 11 turns the same count into the phase-space density <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <msubsup>
+    <mi>λ</mi>
+    <mi>T</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>3</mn>
+    </mrow>
+  </msubsup>
+</math></span> that decides whether a gas needs quantum statistics at all. The counting is identical in both; only the question asked of it differs.</p></section>
+<section class="callout example" id="example-ex-ms-selfcheck-oscillator-two-routes"><header><span class="callout-kind">Example 2.7.4</span><span class="callout-title">Self-check 3: the oscillator ground state by two routes</span></header><p> Derive the normalized oscillator ground state first from the differential Schrödinger equation and then from the ladder condition. Show that the two routes give the same function and energy.</p>
+<p class="solution-head">Solution.</p>
+<p>Try a normalizable Gaussian <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ψ</mi>
+    <mn>0</mn>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mi>A</mi>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi>α</mi>
+      <msup>
+        <mi>x</mi>
+        <mn>2</mn>
+      </msup>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mn>2</mn>
+    </mrow>
+  </msup>
+</math></span> in</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mfrac>
+    <msup>
+      <mi data-mjx-alternate="1">ℏ</mi>
+      <mn>2</mn>
+    </msup>
+    <mrow>
+      <mn>2</mn>
+      <mi>m</mi>
+    </mrow>
+  </mfrac>
+  <msubsup>
+    <mi>ψ</mi>
+    <mn>0</mn>
+    <mo data-mjx-alternate="1">″</mo>
+  </msubsup>
+  <mo>+</mo>
+  <mfrac>
+    <mn>1</mn>
+    <mn>2</mn>
+  </mfrac>
+  <mi>m</mi>
+  <msup>
+    <mi>ω</mi>
+    <mn>2</mn>
+  </msup>
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <msub>
+    <mi>ψ</mi>
+    <mn>0</mn>
+  </msub>
+  <mo>=</mo>
+  <msub>
+    <mi>E</mi>
+    <mn>0</mn>
+  </msub>
+  <msub>
+    <mi>ψ</mi>
+    <mn>0</mn>
+  </msub>
+  <mo>.</mo>
+</math></div>
+<p>Because <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msubsup>
+    <mi>ψ</mi>
+    <mn>0</mn>
+    <mo data-mjx-alternate="1">″</mo>
+  </msubsup>
+  <mo>=</mo>
+  <mo stretchy="false">(</mo>
+  <msup>
+    <mi>α</mi>
+    <mn>2</mn>
+  </msup>
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>−</mo>
+  <mi>α</mi>
+  <mo stretchy="false">)</mo>
+  <msub>
+    <mi>ψ</mi>
+    <mn>0</mn>
+  </msub>
+</math></span>, substitution gives</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">[</mo>
+    <mfrac>
+      <mrow>
+        <msup>
+          <mi data-mjx-alternate="1">ℏ</mi>
+          <mn>2</mn>
+        </msup>
+        <mi>α</mi>
+      </mrow>
+      <mrow>
+        <mn>2</mn>
+        <mi>m</mi>
+      </mrow>
+    </mfrac>
+    <mo>+</mo>
+    <mfrac>
+      <mn>1</mn>
+      <mn>2</mn>
+    </mfrac>
+    <mrow data-mjx-texclass="INNER">
+      <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+      <mi>m</mi>
+      <msup>
+        <mi>ω</mi>
+        <mn>2</mn>
+      </msup>
+      <mo>−</mo>
+      <mfrac>
+        <mrow>
+          <msup>
+            <mi data-mjx-alternate="1">ℏ</mi>
+            <mn>2</mn>
+          </msup>
+          <msup>
+            <mi>α</mi>
+            <mn>2</mn>
+          </msup>
+        </mrow>
+        <mi>m</mi>
+      </mfrac>
+      <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+    </mrow>
+    <msup>
+      <mi>x</mi>
+      <mn>2</mn>
+    </msup>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">]</mo>
+  </mrow>
+  <msub>
+    <mi>ψ</mi>
+    <mn>0</mn>
+  </msub>
+  <mo>=</mo>
+  <msub>
+    <mi>E</mi>
+    <mn>0</mn>
+  </msub>
+  <msub>
+    <mi>ψ</mi>
+    <mn>0</mn>
+  </msub>
+  <mo>.</mo>
+</math></div>
+<p>This must hold for every <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span>, so the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+</math></span> coefficient vanishes: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>α</mi>
+  <mo>=</mo>
+  <mi>m</mi>
+  <mi>ω</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi data-mjx-alternate="1">ℏ</mi>
+</math></span>. The constant part then gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>E</mi>
+    <mn>0</mn>
+  </msub>
+  <mo>=</mo>
+  <mi data-mjx-alternate="1">ℏ</mi>
+  <mi>ω</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+</math></span>. Normalization yields</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mn>1</mn>
+  <mo>=</mo>
+  <mo stretchy="false">|</mo>
+  <mi>A</mi>
+  <msup>
+    <mo stretchy="false">|</mo>
+    <mn>2</mn>
+  </msup>
+  <msubsup>
+    <mo data-mjx-texclass="OP">∫</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi mathvariant="normal">∞</mi>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mi mathvariant="normal">∞</mi>
+    </mrow>
+  </msubsup>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi>α</mi>
+      <msup>
+        <mi>x</mi>
+        <mn>2</mn>
+      </msup>
+    </mrow>
+  </msup>
+  <mi>d</mi>
+  <mi>x</mi>
+  <mo>=</mo>
+  <mo stretchy="false">|</mo>
+  <mi>A</mi>
+  <msup>
+    <mo stretchy="false">|</mo>
+    <mn>2</mn>
+  </msup>
+  <msqrt>
+    <mfrac>
+      <mi>π</mi>
+      <mi>α</mi>
+    </mfrac>
+  </msqrt>
+  <mo>,</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="2em" />
+  </mstyle>
+  <mi>A</mi>
+  <mo>=</mo>
+  <msup>
+    <mrow data-mjx-texclass="INNER">
+      <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+      <mfrac>
+        <mrow>
+          <mi>m</mi>
+          <mi>ω</mi>
+        </mrow>
+        <mrow>
+          <mi>π</mi>
+          <mi data-mjx-alternate="1">ℏ</mi>
+        </mrow>
+      </mfrac>
+      <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mn>1</mn>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mn>4</mn>
+    </mrow>
+  </msup>
+  <mo>.</mo>
+</math></div>
+<p>The ladder route starts from <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>a</mi>
+      <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+    </mover>
+  </mrow>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>0</mn>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>, which becomes Eq. <a class="xref" href="../chapter-02/index.html#eq-eq-ms-ground-ode">(2.39)</a> and integrates to the same Gaussian with the same normalization, Eq. <a class="xref" href="../chapter-02/index.html#eq-eq-ms-ground-state">(2.41)</a>. Finally, Eq. <a class="xref" href="../chapter-02/index.html#eq-eq-ms-h-ladder">(2.34)</a> gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>E</mi>
+    <mn>0</mn>
+  </msub>
+  <mo>=</mo>
+  <mi data-mjx-alternate="1">ℏ</mi>
+  <mi>ω</mi>
+  <mo stretchy="false">(</mo>
+  <mn>0</mn>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+  <mo stretchy="false">)</mo>
+</math></span>. Differential and algebraic methods have found the same normalized state, not merely the same energy.</p></section>
 <h2 id="sec-2-summary"><span class="sec-number">2.8</span>Summary</h2>
 <ul><li><p>A time-independent <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
@@ -5301,10 +6227,10 @@
     </mrow>
     <mi>a</mi>
   </msqrt>
-  <mi>sin</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mspace width="0.167em" /><mi>sin</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
   <mrow>
-    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
     <mi>n</mi>
     <mi>π</mi>
     <mi>x</mi>
@@ -5312,7 +6238,7 @@
       <mo>/</mo>
     </mrow>
     <mi>a</mi>
-    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
   </mrow>
 </math></span>. Confinement quantizes, and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
@@ -5323,7 +6249,7 @@
   <mn>0</mn>
 </math></span>.</p></li><li><p>Finite well: matching gives the transcendental conditions <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>k</mi>
-  <mi>tan</mi>
+  <mspace width="0.167em" /><mi>tan</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
   <mi>k</mi>
   <mi>a</mi>
@@ -5332,7 +6258,7 @@
 </math></span> (even) and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo form="prefix" lspace="0em" rspace="0em">−</mo>
   <mi>k</mi>
-  <mi>cot</mi>
+  <mspace width="0.167em" /><mi>cot</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
   <mi>k</mi>
   <mi>a</mi>
@@ -5982,6 +6908,7 @@
 </main>
 <footer class="site-footer">
   <div class="site-footer-inner">
+    <p class="site-footer-notice"><strong>Under development.</strong> These notes are a working draft and have not been fully checked. Concepts, derivations, worked solutions and numerical values may contain errors, so read them critically and verify anything you rely on.</p>
     <p>&copy; 2026 Erfan Saydanzad. All rights reserved. This material is published for reading and personal study; it may not be copied, redistributed, or reused in other work without written permission.</p>
   </div>
 </footer>

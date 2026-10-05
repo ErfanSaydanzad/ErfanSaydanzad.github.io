@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Chapter 5: Many-Electron Atoms | Direct Method</title>
+  <title>Chapter 5: Many-Electron Atoms | Quantum Mechanics and Spectroscopy</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
   <link rel="preload" href="../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../../assets/css/site.css?v=856ec339">
+  <link rel="stylesheet" href="../../assets/css/site.css?v=ee8de383">
   <link rel="preload" href="../../assets/fonts/latinmodern-math.woff2" as="font" type="font/woff2" crossorigin>
-  <script defer src="../../assets/js/main.js?v=856ec339"></script>
+  <script defer src="../../assets/js/main.js?v=ee8de383"></script>
 
 <style>
 .site-header { justify-content: flex-start; gap: 16px; }
@@ -35,7 +35,7 @@
   <a class="site-up" href="../../../../../index.html"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.5 5.5 8l4.5 4.5"/></svg><span>Saydanzad Group</span></a>
   <a class="brand" href="../../index.html">
     <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M9 6.5V25.5M9 6.5H24M9 25.5H24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 16Q10.5 9.5 15.5 16T25.5 16" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/></svg>
-    <span>Direct Method</span>
+    <span>Quantum Mechanics and Spectroscopy</span>
   </a>
   <nav class="top-nav" aria-label="Primary">
     <a href="../../index.html">Home</a>
@@ -59,6 +59,7 @@
 <a class="toc-level-2" href="#sec-5-heavier-atoms-screening-and-the-quantum-defect">5.8 Heavier Atoms: Screening and the Quantum Defect</a>
 <a class="toc-level-2" href="#sec-5-term-symbols">5.9 Term Symbols</a>
 <a class="toc-level-2" href="#sec-5-states-inside-a-continuum">5.10 States Inside a Continuum</a>
+<a class="toc-level-3" href="#sec-5-first-pass-self-checks-counting-improving-and-missing">5.10.1 First-Pass Self-Checks: Counting, Improving, and Missing</a>
 <a class="toc-level-2" href="#sec-5-summary">5.11 Summary</a>
 <a class="toc-level-2" href="#sec-5-exercises">5.12 Exercises</a>
 <a class="toc-level-2" href="#sec-5-project-screening-and-the-quantum-defect">5.13 Project: Screening and the Quantum Defect</a>
@@ -93,6 +94,56 @@
   </msub>
 </math></span> in which tables of atomic data are written.</p></li></ol>
 <p>The chapter closes with a state that can decay without absorbing radiation, namely a bound state degenerate with a continuum. Such states are the subject of the final chapters of this book, and helium provides the simplest example of one.</p>
+<section class="callout remark" id="remark-rem-me-first-pass"><header><span class="callout-kind">Remark 5.1.1</span><span class="callout-title">First-pass route</span></header><p> Read antisymmetry (Sec. <a class="xref" href="../chapter-05/index.html#sec-5-identical-particles-and-antisymmetry">5.2</a>), the helium Hamiltonian (Sec. <a class="xref" href="../chapter-05/index.html#sec-5-helium-the-hamiltonian">5.3</a>), and then the three successive treatments of the same atom in Secs. <a class="xref" href="../chapter-05/index.html#sec-5-first-approximation-independent-electrons">5.4</a>, <a class="xref" href="../chapter-05/index.html#sec-5-second-approximation-first-order-perturbation-theory">5.5</a> and <a class="xref" href="../chapter-05/index.html#sec-5-third-approximation-the-variational-method">5.6</a>, which are the core of the chapter: one problem solved three times, each time better, with the reason for the improvement visible. Add exchange (Sec. <a class="xref" href="../chapter-05/index.html#sec-5-exchange-singlet-and-triplet-helium">5.7</a>), then work the three self-checks in Sec. <a class="xref" href="../chapter-05/index.html#sec-5-first-pass-self-checks-counting-improving-and-missing">5.10.1</a> before the Summary. Screening and the quantum defect (Sec. <a class="xref" href="../chapter-05/index.html#sec-5-heavier-atoms-screening-and-the-quantum-defect">5.8</a>) are needed for Chapters 8–11 and for the companion course <em>Quantum Chemistry</em>; term symbols (Sec. <a class="xref" href="../chapter-05/index.html#sec-5-term-symbols">5.9</a>) are notation to consult rather than to learn in one pass; autoionization (Sec. <a class="xref" href="../chapter-05/index.html#sec-5-states-inside-a-continuum">5.10</a>) is the seed of Chapters 10 and 11 and may be postponed.</p></section>
+<section class="callout remark" id="remark-rem-me-variational-recall"><header><span class="callout-kind">Remark 5.1.2</span><span class="callout-title">Prerequisite recall: the variational principle is the same one</span></header><p> Chapter 1 minimized the Rayleigh quotient <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mrow data-mjx-texclass="ORD">
+        <mover accent="true">
+          <mi>H</mi>
+          <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+        </mover>
+      </mrow>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+  <mo>=</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>ψ</mi>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
+  </mrow>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>H</mi>
+      <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+    </mover>
+  </mrow>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>ψ</mi>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>ψ</mi>
+    </mrow>
+    <mo lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>ψ</mi>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+</math></span> over the two components of a vector, and the minimum was the exact lower eigenvalue because the two-dimensional trial space <em>was</em> the whole space. This chapter minimizes the same quotient over a one-parameter family of functions inside an infinite-dimensional space, so the minimum is an upper bound rather than the answer. Nothing about the principle changes; only the size of the search space does, and with it the meaning of the number that comes out. That distinction — exact diagonalization in a small space versus optimization within a restricted family — is the whole of what separates the methods catalogued in <em>Quantum Chemistry</em>.</p></section>
 <h2 id="sec-5-identical-particles-and-antisymmetry"><span class="sec-number">5.2</span>Identical Particles and Antisymmetry</h2>
 <p>Electrons are indistinguishable, in the sense that no measurement can determine which is which. Formally, the exchange operator <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
@@ -139,7 +190,7 @@
   <mo form="prefix" lspace="0em" rspace="0em">−</mo>
   <mn>1</mn>
 </math></span>.</p>
-<section class="callout definition" id="definition-def-me-antisymmetry"><header><span class="callout-kind">Definition 5.2.1</span><span class="callout-title">Antisymmetry postulate</span></header><p> The state of a system of identical fermions changes sign under exchange of any two of them:</p>
+<section class="callout postulate" id="postulate-def-me-antisymmetry"><header><span class="callout-kind">Postulate 5.2.1</span><span class="callout-title">Antisymmetry</span></header><p> The state of a system of identical fermions changes sign under exchange of any two of them:</p>
 <div class="math-block math-block--numbered" id="eq-eq-me-antisymmetry"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -204,6 +255,19 @@
   </msub>
   <mo stretchy="false">)</mo>
 </math></span> collects position and spin.</p></section>
+<p>A postulate, not an axiom, and the difference matters here. The six axioms of Chapter 1 say what quantum mechanics <em>is</em>; nothing in them forces the choice of sign above. Both eigenvalues of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover accent="true">
+        <mi>P</mi>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+      </mover>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mn>12</mn>
+    </mrow>
+  </msub>
+</math></span> are allowed by the formalism, and the symmetric choice describes a perfectly consistent world — one made of bosons. We take the antisymmetric one for electrons because that is what the world does, and the periodic table is the evidence.</p>
 <section class="callout theorem" id="theorem-thm-me-pauli"><header><span class="callout-kind">Theorem 5.2.1</span><span class="callout-title">Pauli exclusion principle</span></header><p> No two identical fermions can occupy the same one-particle spin-orbital.</p></section>
 <div class="proof" data-lead="Proof."><p>Setting <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
@@ -226,7 +290,7 @@
   <mn>0</mn>
 </math></span>. A state with two electrons in the same spin-orbital does not exist.</p></div>
 <p>The exclusion principle is thus not an additional rule imposed on quantum mechanics; it is a two-line consequence of antisymmetry.</p>
-<section class="callout definition" id="definition-def-me-slater"><header><span class="callout-kind">Definition 5.2.2</span><span class="callout-title">Slater determinant</span></header><p> For <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout definition" id="definition-def-me-slater"><header><span class="callout-kind">Definition 5.2.1</span><span class="callout-title">Slater determinant</span></header><p> For <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>N</mi>
 </math></span> electrons occupying spin-orbitals <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
@@ -820,7 +884,16 @@
   <mi>Z</mi>
   <mo>=</mo>
   <mn>2</mn>
-</math></span>. Working in atomic units (Chapter 4, Sec. <a class="xref" href="../chapter-04/index.html#sec-4-atomic-units">4.8</a>), the Hamiltonian is</p>
+</math></span>. Before writing a single symbol, it is worth drawing the object we are about to describe, because the drawing already contains the whole difficulty of the chapter. There are exactly three distances in this system. Two of them run from the nucleus to an electron. The third runs between the two electrons, and it is the one that will resist every method in this chapter.</p>
+<figure id="chapter-05-fig-1" class="figure"><img src="assets/img/ch05_fig00_helium_setup.png" class="diagram" alt="Helium, before any approximation is made. Every term of Eq. (5.3) is one of the distances marked in the drawing. The two blue terms each involve one electron and a fixed centre, which is what makes a product wavefunction thinkable at all; the red term is measured between two moving particles, which is what makes a product wavefunction wrong. Keep this picture in view: each successive approximation in this chapter is a different answer to the question of what to do about the red line." loading="lazy" style="--figure-width: 96%;"><figcaption>Figure 5.1. Helium, before any approximation is made. Every term of
+	Eq. <a class="xref" href="../chapter-05/index.html#eq-eq-me-helium-hamiltonian">(5.3)</a> is one of the distances marked in the
+	drawing. The two blue terms each involve one electron and a fixed centre,
+	which is what makes a product wavefunction thinkable at all; the red term
+	is measured between two moving particles, which is what makes a product
+	wavefunction wrong. Keep this picture in view: each successive
+	approximation in this chapter is a different answer to the question of
+	what to do about the red line.</figcaption></figure>
+<p>Working in atomic units (Chapter 4, Sec. <a class="xref" href="../chapter-04/index.html#sec-4-atomic-units">4.8</a>), the Hamiltonian is</p>
 <div class="math-block math-block--numbered" id="eq-eq-me-helium-hamiltonian"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -1213,10 +1286,10 @@
       <mn>0</mn>
     </mrow>
   </msubsup>
-</math></span> from Chapter 4, Eqs. <a class="xref" href="../chapter-04/index.html#eq-eq-h-rnl-table">(4.51)</a> and <a class="xref" href="../chapter-04/index.html#eq-eq-h-ylm-table">(4.31)</a>, collected into a single expression.</p>
+</math></span> from Chapter 4, Eqs. <a class="xref" href="../chapter-04/index.html#eq-eq-h-rnl-table">(4.52)</a> and <a class="xref" href="../chapter-04/index.html#eq-eq-h-ylm-table">(4.32)</a>, collected into a single expression.</p>
 <section class="callout example" id="example-ex-me-zeroth"><header><span class="callout-kind">Example 5.4.1</span><span class="callout-title">Zeroth-order energy of helium</span></header><p> Compute the ground-state energy of helium neglecting the electron–electron repulsion.</p>
 <p class="solution-head">Solution.</p>
-<p>Each electron has the hydrogenic energy of Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-energies-si">(4.47)</a> with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>Each electron has the hydrogenic energy of Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-energies-si">(4.48)</a> with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>n</mi>
   <mo>=</mo>
   <mn>1</mn>
@@ -2979,7 +3052,7 @@
     <mi>Z</mi>
     <mo data-mjx-alternate="1">′</mo>
   </msup>
-</math></span>, Chapter 4's results Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-expectation-values">(4.58)</a> give <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>, Chapter 4's results Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-expectation-values">(4.59)</a> give <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="INNER">
     <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
     <mrow data-mjx-texclass="ORD">
@@ -3474,6 +3547,15 @@
   </msub>
 </math></span> explicitly, which is where quantum chemistry proper begins and where this course stops.</p></section>
 <h2 id="sec-5-exchange-singlet-and-triplet-helium"><span class="sec-number">5.7</span>Exchange: Singlet and Triplet Helium</h2>
+<figure id="chapter-05-fig-2" class="figure"><img src="assets/img/ch05_fig01_singlet_triplet.png" class="diagram" alt="Two integrals with different jobs. J moves both states together and is ordinary electrostatics; K has no classical counterpart and splits them, because the spatial function is symmetric for the singlet and antisymmetric for the triplet. The splitting is a spin effect produced entirely by a spin-independent Hamiltonian." loading="lazy" style="--figure-width: 94%;"><figcaption>Figure 5.2. Two integrals with different jobs. <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>J</mi>
+</math></span> moves both states together
+	and is ordinary electrostatics; <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>K</mi>
+</math></span> has no classical counterpart and
+	splits them, because the spatial function is symmetric for the singlet
+	and antisymmetric for the triplet. The splitting is a spin effect
+	produced entirely by a spin-independent Hamiltonian.</figcaption></figure>
 <p>We now excite one electron, to the configuration <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>1</mn>
   <mi>s</mi>
@@ -4299,11 +4381,24 @@
   <mi>s</mi>
 </math></span> state in Example <a class="xref" href="../chapter-03/index.html#example-ex-am-integral">3.6.1</a>, which is a second instance of a forbidden route producing a long-lived state.</p></section>
 <h2 id="sec-5-heavier-atoms-screening-and-the-quantum-defect"><span class="sec-number">5.8</span>Heavier Atoms: Screening and the Quantum Defect</h2>
+<figure id="chapter-05-fig-3" class="figure"><img src="assets/img/ch05_fig02_screening.png" class="diagram" alt="The charge a valence electron feels is not a number but a function of where it is. The centrifugal barrier of Chapter 3 decides how far in each l can get, and therefore how much of the nucleus it sees — which is the entire mechanism behind the ordering s&amp;gt;p&amp;gt;d." loading="lazy" style="--figure-width: 88%;"><figcaption>Figure 5.3. The charge a valence electron feels is not a number but a
+	function of where it is. The centrifugal barrier of
+	Chapter 3 decides how far in each <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+</math></span> can get, and therefore how much of
+	the nucleus it sees — which is the entire mechanism behind the ordering
+	<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mo>&gt;</mo>
+  <mi>p</mi>
+  <mo>&gt;</mo>
+  <mi>d</mi>
+</math></span>.</figcaption></figure>
 <p>For atoms with more than two electrons, the practical approach is to retain the one-electron picture and to modify the potential. Each electron is taken to move in a central average field produced by the nucleus together with all the other electrons, so that the machinery of Chapter 3 applies unchanged: the states are labeled <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>n</mi>
   <mi>l</mi>
   <mi>m</mi>
-</math></span>, and Eq. <a class="xref" href="../chapter-03/index.html#eq-eq-am-radial">(3.43)</a> is solved with a modified <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>, and Eq. <a class="xref" href="../chapter-03/index.html#eq-eq-am-radial">(3.44)</a> is solved with a modified <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>V</mi>
   <mo stretchy="false">(</mo>
   <mi>r</mi>
@@ -4405,7 +4500,7 @@
       <mn>2</mn>
     </mrow>
   </msup>
-</math></span> in Eq. <a class="xref" href="../chapter-03/index.html#eq-eq-am-radial">(3.43)</a> excludes states of high <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> in Eq. <a class="xref" href="../chapter-03/index.html#eq-eq-am-radial">(3.44)</a> excludes states of high <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>l</mi>
 </math></span> from the core entirely, while <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>l</mi>
@@ -4856,6 +4951,12 @@
     <mi>l</mi>
   </msub>
 </math></span>, together with a single mechanism, penetration, thus accounts for the structure of the alkali spectrum. The same description applies to every Rydberg series in this book, including the molecular series of Chapter 9.</p></section>
+<figure id="chapter-05-fig-4" class="figure"><img src="assets/img/ch05_fig03_quantum_defect.png" class="diagram" alt="The three defects of Example 5.8.1, drawn against the hydrogen they are measured from. One number per l, held constant along the whole series, reproduces every level — which is what makes the quantum defect a tool rather than a description." loading="lazy" style="--figure-width: 90%;"><figcaption>Figure 5.4. The three defects of Example <a class="xref" href="../chapter-05/index.html#example-ex-me-sodium">5.8.1</a>, drawn against
+	the hydrogen they are measured from. One number per <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+</math></span>, held constant
+	along the whole series, reproduces every level — which is what makes
+	the quantum defect a tool rather than a description.</figcaption></figure>
 <h2 id="sec-5-term-symbols"><span class="sec-number">5.9</span>Term Symbols</h2>
 <p>A <em>configuration</em> lists which orbitals are occupied; carbon, for example, is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>1</mn>
@@ -5371,8 +5472,933 @@
     </mrow>
   </msub>
 </math></span> that made the ground state of helium impossible to compute exactly. The term that could not be handled in Remark <a class="xref" href="../chapter-05/index.html#remark-rem-me-not-separable">5.3.1</a> thus turns out to drive the physics at which this course is aimed.</p>
+<h3 id="sec-5-first-pass-self-checks-counting-improving-and-missing"><span class="sec-number">5.10.1</span>First-Pass Self-Checks: Counting, Improving, and Missing</h3>
+<section class="callout example" id="example-ex-me-selfcheck-counting"><header><span class="callout-kind">Example 5.10.1</span><span class="callout-title">Self-check 1: count the states of two electrons in two orbitals</span></header><p> Two orthonormal spatial orbitals <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ϕ</mi>
+    <mi>a</mi>
+  </msub>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ϕ</mi>
+    <mi>b</mi>
+  </msub>
+</math></span> are available to two electrons. How many antisymmetric states are there, and how do they sort by total spin?</p>
+<p class="solution-head">Solution.</p>
+<p>Two spatial orbitals carry two spin projections each, so there are four spin-orbitals. An antisymmetric state of two electrons is fixed by <em>which</em> two spin-orbitals are occupied — that is the content of Definition <a class="xref" href="../chapter-05/index.html#definition-def-me-slater">5.2.1</a> — so the count is the number of ways of choosing two of four:</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mrow data-mjx-texclass="ORD">
+    <mrow data-mjx-texclass="OPEN">
+      <mo minsize="2.047em" maxsize="2.047em" stretchy="true">(</mo>
+    </mrow>
+    <mfrac linethickness="0">
+      <mn>4</mn>
+      <mn>2</mn>
+    </mfrac>
+    <mrow data-mjx-texclass="CLOSE">
+      <mo minsize="2.047em" maxsize="2.047em" stretchy="true">)</mo>
+    </mrow>
+  </mrow>
+  <mo>=</mo>
+  <mn>6</mn>
+  <mo>.</mo>
+</math></div>
+<p>Sorting them by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>M</mi>
+    <mi>S</mi>
+  </msub>
+  <mo>=</mo>
+  <msub>
+    <mi>m</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>s</mi>
+      <mn>1</mn>
+    </mrow>
+  </msub>
+  <mo>+</mo>
+  <msub>
+    <mi>m</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>s</mi>
+      <mn>2</mn>
+    </mrow>
+  </msub>
+</math></span> is the fastest way to identify the spins, because <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>M</mi>
+    <mi>S</mi>
+  </msub>
+</math></span> is fixed for each determinant while <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>S</mi>
+</math></span> is not:</p>
+<div class="centered"><div class="table-wrap"><table><tr><td>
+			<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>M</mi>
+    <mi>S</mi>
+  </msub>
+</math></span></td><td>Determinants</td><td>Count</td></tr><tr><td>
+			<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+  <mn>1</mn>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>a</mi>
+      <mstyle scriptlevel="0">
+        <mspace width="-0.167em" />
+      </mstyle>
+      <mo stretchy="false">↑</mo>
+      <mi>b</mi>
+      <mstyle scriptlevel="0">
+        <mspace width="-0.167em" />
+      </mstyle>
+      <mo stretchy="false">↑</mo>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+</math></span></td><td>1</td></tr><tr><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>a</mi>
+      <mstyle scriptlevel="0">
+        <mspace width="-0.167em" />
+      </mstyle>
+      <mo stretchy="false">↑</mo>
+      <mi>a</mi>
+      <mstyle scriptlevel="0">
+        <mspace width="-0.167em" />
+      </mstyle>
+      <mo stretchy="false">↓</mo>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+</math></span>,
+			<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>b</mi>
+      <mstyle scriptlevel="0">
+        <mspace width="-0.167em" />
+      </mstyle>
+      <mo stretchy="false">↑</mo>
+      <mi>b</mi>
+      <mstyle scriptlevel="0">
+        <mspace width="-0.167em" />
+      </mstyle>
+      <mo stretchy="false">↓</mo>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+</math></span>,
+			<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>a</mi>
+      <mstyle scriptlevel="0">
+        <mspace width="-0.167em" />
+      </mstyle>
+      <mo stretchy="false">↑</mo>
+      <mi>b</mi>
+      <mstyle scriptlevel="0">
+        <mspace width="-0.167em" />
+      </mstyle>
+      <mo stretchy="false">↓</mo>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+</math></span>,
+			<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>a</mi>
+      <mstyle scriptlevel="0">
+        <mspace width="-0.167em" />
+      </mstyle>
+      <mo stretchy="false">↓</mo>
+      <mi>b</mi>
+      <mstyle scriptlevel="0">
+        <mspace width="-0.167em" />
+      </mstyle>
+      <mo stretchy="false">↑</mo>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+</math></span></td><td>4</td></tr><tr><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>1</mn>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>a</mi>
+      <mstyle scriptlevel="0">
+        <mspace width="-0.167em" />
+      </mstyle>
+      <mo stretchy="false">↓</mo>
+      <mi>b</mi>
+      <mstyle scriptlevel="0">
+        <mspace width="-0.167em" />
+      </mstyle>
+      <mo stretchy="false">↓</mo>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+</math></span></td><td>1</td></tr><tr><td></td></tr></table></div></div>
+<p>A triplet contributes one state to each of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>M</mi>
+    <mi>S</mi>
+  </msub>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mn>0</mn>
+  <mo>,</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>1</mn>
+</math></span>; a singlet contributes one state to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>M</mi>
+    <mi>S</mi>
+  </msub>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> only. The single states at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>M</mi>
+    <mi>S</mi>
+  </msub>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">±</mo>
+  <mn>1</mn>
+</math></span> therefore belong to one triplet, which takes one of the four <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>M</mi>
+    <mi>S</mi>
+  </msub>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> states with it. The remaining three <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>M</mi>
+    <mi>S</mi>
+  </msub>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> states are singlets. So</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mn>6</mn>
+  <mo>=</mo>
+  <munder>
+    <mrow data-mjx-texclass="OP">
+      <munder>
+        <mn>3</mn>
+        <mo>⏟</mo>
+      </munder>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mtext>one triplet</mtext>
+    </mrow>
+  </munder>
+  <mo>+</mo>
+  <munder>
+    <mrow data-mjx-texclass="OP">
+      <munder>
+        <mn>3</mn>
+        <mo>⏟</mo>
+      </munder>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mtext>three singlets</mtext>
+    </mrow>
+  </munder>
+  <mo>,</mo>
+</math></div>
+<p>and the triplet is the spatially antisymmetric combination of Eq. <a class="xref" href="../chapter-05/index.html#eq-eq-me-singlet-triplet">(5.11)</a>, lying <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mi>K</mi>
+</math></span> below its singlet partner by Theorem <a class="xref" href="../chapter-05/index.html#theorem-thm-me-splitting">5.7.1</a>.</p>
+<p>The three singlets are the two closed-shell determinants <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>a</mi>
+      <mstyle scriptlevel="0">
+        <mspace width="-0.167em" />
+      </mstyle>
+      <mo stretchy="false">↑</mo>
+      <mi>a</mi>
+      <mstyle scriptlevel="0">
+        <mspace width="-0.167em" />
+      </mstyle>
+      <mo stretchy="false">↓</mo>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>b</mi>
+      <mstyle scriptlevel="0">
+        <mspace width="-0.167em" />
+      </mstyle>
+      <mo stretchy="false">↑</mo>
+      <mi>b</mi>
+      <mstyle scriptlevel="0">
+        <mspace width="-0.167em" />
+      </mstyle>
+      <mo stretchy="false">↓</mo>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+</math></span> together with the open-shell combination, and in general the Hamiltonian mixes all three: the problem in this space is the diagonalization of one <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>3</mn>
+  <mo>×</mo>
+  <mn>3</mn>
+</math></span> matrix, which is nothing beyond Chapter 1. Spatial symmetry can cut it down further. If <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>b</mi>
+</math></span> are the gerade and ungerade orbitals of a homonuclear diatomic, then <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>a</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>b</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+</math></span> are both gerade while <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mi>b</mi>
+</math></span> is ungerade, so the open-shell singlet cannot mix with the other two and the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>3</mn>
+  <mo>×</mo>
+  <mn>3</mn>
+</math></span> falls apart into a <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mo>×</mo>
+  <mn>2</mn>
+</math></span> and a <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+  <mo>×</mo>
+  <mn>1</mn>
+</math></span>. Chapter 7 earns those labels; the point here is that the block structure comes from symmetry and not from the counting.</p>
+<p>This is a calculation the reader will meet three more times under three different names: it is the full configuration interaction problem in a two-orbital active space in <em>Quantum Chemistry</em>, the Hubbard dimer at half filling in <em>Condensed Matter Physics</em>, and a two-qubit state space in <em>Quantum Computing</em>. Counting it once here is what makes those three recognizable as the same object.</p></section>
+<figure id="chapter-05-fig-5" class="figure"><img src="assets/img/learn_helium_variation.png" class="diagram" alt="What varying one number buys. Left: the trial energy Eq. (5.10) for helium, minimized here rather than quoted. First-order perturbation theory is the single point Z&amp;#x27;=Z=2; the variational calculation is free to slide down the curve to Z&amp;#x27;=27/16 and gains 0.0977 hartree by doing so. Both lie above the exact value in grey, as Theorem 5.6.1 requires. Right: the same gain expressed as a percentage of the binding energy along the isoelectronic series. The gain in hartree never changes — it is exactly (5/16)^2 — while the binding grows as Z^2, so screening matters less and less as the nucleus wins. This is why perturbation theory in 1/Z is a good idea for highly charged ions and a poor one for helium." loading="lazy" style="--figure-width: 99%;"><figcaption>Figure 5.5. What varying one number buys. Left: the trial energy
+	Eq. <a class="xref" href="../chapter-05/index.html#eq-eq-me-ezprime">(5.10)</a> for helium, minimized here rather than quoted.
+	First-order perturbation theory is the single point <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>Z</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+  <mo>=</mo>
+  <mi>Z</mi>
+  <mo>=</mo>
+  <mn>2</mn>
+</math></span>; the
+	variational calculation is free to slide down the curve to
+	<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>Z</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+  <mo>=</mo>
+  <mn>27</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>16</mn>
+</math></span> and gains <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0.0977</mn>
+</math></span> hartree by doing so. Both lie above the
+	exact value in grey, as Theorem <a class="xref" href="../chapter-05/index.html#theorem-thm-me-variational">5.6.1</a> requires. Right:
+	the same gain expressed as a percentage of the binding energy along the
+	isoelectronic series. The gain in hartree never changes — it is exactly
+	<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mn>5</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>16</mn>
+  <msup>
+    <mo stretchy="false">)</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+</math></span> — while the binding grows as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>Z</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+</math></span>, so screening matters
+	less and less as the nucleus wins. This is why perturbation theory in
+	<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>Z</mi>
+</math></span> is a good idea for highly charged ions and a poor one for helium.</figcaption></figure>
+<section class="callout example" id="example-ex-me-selfcheck-gain"><header><span class="callout-kind">Example 5.10.2</span><span class="callout-title">Self-check 2: what did the variation actually buy?</span></header><p> Using Eq. <a class="xref" href="../chapter-05/index.html#eq-eq-me-ezprime">(5.10)</a>, compare first-order perturbation theory with the variational result for general <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>Z</mi>
+</math></span>, and evaluate the difference for He and for Li<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+    </mrow>
+  </msup>
+</math></span>.</p>
+<p class="solution-head">Solution.</p>
+<p>First-order perturbation theory keeps the unperturbed orbitals, so it is Eq. <a class="xref" href="../chapter-05/index.html#eq-eq-me-ezprime">(5.10)</a> evaluated at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>Z</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+  <mo>=</mo>
+  <mi>Z</mi>
+</math></span>:</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <msub>
+    <mi>E</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi mathvariant="normal">p</mi>
+      <mi mathvariant="normal">e</mi>
+      <mi mathvariant="normal">r</mi>
+      <mi mathvariant="normal">t</mi>
+    </mrow>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>Z</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <msup>
+    <mi>Z</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mo>−</mo>
+  <mn>2</mn>
+  <msup>
+    <mi>Z</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mo>+</mo>
+  <mfrac>
+    <mrow>
+      <mn>5</mn>
+      <mi>Z</mi>
+    </mrow>
+    <mn>8</mn>
+  </mfrac>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <msup>
+    <mi>Z</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mo>+</mo>
+  <mfrac>
+    <mrow>
+      <mn>5</mn>
+      <mi>Z</mi>
+    </mrow>
+    <mn>8</mn>
+  </mfrac>
+  <mo>.</mo>
+</math></div>
+<p>The variational result is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>E</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi mathvariant="normal">v</mi>
+      <mi mathvariant="normal">a</mi>
+      <mi mathvariant="normal">r</mi>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mo stretchy="false">(</mo>
+  <mi>Z</mi>
+  <mo>−</mo>
+  <mn>5</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>16</mn>
+  <msup>
+    <mo stretchy="false">)</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+</math></span>, which expands to</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <msub>
+    <mi>E</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi mathvariant="normal">v</mi>
+      <mi mathvariant="normal">a</mi>
+      <mi mathvariant="normal">r</mi>
+    </mrow>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>Z</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <msup>
+    <mi>Z</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mo>+</mo>
+  <mfrac>
+    <mrow>
+      <mn>5</mn>
+      <mi>Z</mi>
+    </mrow>
+    <mn>8</mn>
+  </mfrac>
+  <mo>−</mo>
+  <mfrac>
+    <mn>25</mn>
+    <mn>256</mn>
+  </mfrac>
+  <mo>.</mo>
+</math></div>
+<p>Subtracting,</p>
+<div class="math-block math-block--numbered" id="eq-eq-me-variational-gain"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <msub>
+          <mi>E</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mi mathvariant="normal">p</mi>
+            <mi mathvariant="normal">e</mi>
+            <mi mathvariant="normal">r</mi>
+            <mi mathvariant="normal">t</mi>
+          </mrow>
+        </msub>
+        <mo>−</mo>
+        <msub>
+          <mi>E</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mi mathvariant="normal">v</mi>
+            <mi mathvariant="normal">a</mi>
+            <mi mathvariant="normal">r</mi>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <mfrac>
+          <mn>25</mn>
+          <mn>256</mn>
+        </mfrac>
+        <mo>=</mo>
+        <mn>0.097656</mn>
+        <mtext> </mtext>
+        <mtext>a.u.</mtext>
+        <mo>=</mo>
+        <mn>2.657</mn>
+        <mtext> </mtext>
+        <mrow data-mjx-texclass="ORD">
+          <mi data-mjx-auto-op="false">eV</mi>
+        </mrow>
+        <mo>,</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:ME-variational-gain">(5.21)</span></div>
+<p><em>independent of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>Z</mi>
+</math></span></em>. Every term that depends on <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>Z</mi>
+</math></span> has cancelled.</p>
+<p>For helium, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>Z</mi>
+  <mo>=</mo>
+  <mn>2</mn>
+</math></span>: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>E</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi mathvariant="normal">p</mi>
+      <mi mathvariant="normal">e</mi>
+      <mi mathvariant="normal">r</mi>
+      <mi mathvariant="normal">t</mi>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>2.75</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>E</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi mathvariant="normal">v</mi>
+      <mi mathvariant="normal">a</mi>
+      <mi mathvariant="normal">r</mi>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>2.8477</mn>
+</math></span> a.u., so the gain is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>3.43</mn>
+  <mi mathvariant="normal">%</mi>
+</math></span> of the binding energy. For Li<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+    </mrow>
+  </msup>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>Z</mi>
+  <mo>=</mo>
+  <mn>3</mn>
+</math></span>: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>E</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi mathvariant="normal">p</mi>
+      <mi mathvariant="normal">e</mi>
+      <mi mathvariant="normal">r</mi>
+      <mi mathvariant="normal">t</mi>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>7.125</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>E</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi mathvariant="normal">v</mi>
+      <mi mathvariant="normal">a</mi>
+      <mi mathvariant="normal">r</mi>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mo stretchy="false">(</mo>
+  <mn>2.6875</mn>
+  <msup>
+    <mo stretchy="false">)</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>7.2227</mn>
+</math></span> a.u., the same <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0.0977</mn>
+</math></span> a.u. but now only <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1.35</mn>
+  <mi mathvariant="normal">%</mi>
+</math></span>. Figure <a class="xref" href="../chapter-05/index.html#chapter-05-fig-5">5.5</a> carries this out to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>Z</mi>
+  <mo>=</mo>
+  <mn>6</mn>
+</math></span>.</p>
+<p>The physical reading is that screening is an absolute effect of fixed size, while nuclear binding grows as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>Z</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+</math></span>. Relaxing the orbital is therefore essential for neutral helium and increasingly irrelevant for highly charged ions — which is precisely the statement that the electron–electron term is a genuine perturbation only when <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>Z</mi>
+</math></span> is large.</p></section>
+<section class="callout example" id="example-ex-me-selfcheck-correlation"><header><span class="callout-kind">Example 5.10.3</span><span class="callout-title">Self-check 3: the ionization energy, and what the model misses</span></header><p> Predict helium's first ionization energy from the variational model, and account for the difference from the true value.</p>
+<p class="solution-head">Solution.</p>
+<p>Ionizing helium leaves He<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+    </mrow>
+  </msup>
+</math></span>, a one-electron ion, whose energy Chapter 4 gives exactly: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>E</mi>
+  <mo stretchy="false">(</mo>
+  <msup>
+    <mrow data-mjx-texclass="ORD">
+      <mi data-mjx-auto-op="false">He</mi>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+    </mrow>
+  </msup>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <msup>
+    <mi>Z</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>2</mn>
+</math></span> a.u. So the model predicts</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>I</mi>
+  <mo>=</mo>
+  <mi>E</mi>
+  <mo stretchy="false">(</mo>
+  <msup>
+    <mrow data-mjx-texclass="ORD">
+      <mi data-mjx-auto-op="false">He</mi>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+    </mrow>
+  </msup>
+  <mo stretchy="false">)</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <msub>
+    <mi>E</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi mathvariant="normal">v</mi>
+      <mi mathvariant="normal">a</mi>
+      <mi mathvariant="normal">r</mi>
+    </mrow>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mi data-mjx-auto-op="false">He</mi>
+  </mrow>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>2</mn>
+  <mo>−</mo>
+  <mo stretchy="false">(</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>2.847656</mn>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mn>0.847656</mn>
+  <mtext> </mtext>
+  <mtext>a.u.</mtext>
+  <mo>=</mo>
+  <mn>23.07</mn>
+  <mtext> </mtext>
+  <mrow data-mjx-texclass="ORD">
+    <mi data-mjx-auto-op="false">eV</mi>
+  </mrow>
+  <mo>.</mo>
+</math></div>
+<p>The exact non-relativistic value, quoted rather than derived here, is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>E</mi>
+  <mo stretchy="false">(</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mi data-mjx-auto-op="false">He</mi>
+  </mrow>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>2.903724</mn>
+</math></span> a.u., giving <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>I</mi>
+  <mo>=</mo>
+  <mn>0.903724</mn>
+</math></span> a.u.<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mo>=</mo>
+  <mn>24.59</mn>
+</math></span> eV, in agreement with the measured <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>24.587</mn>
+</math></span> eV to within the relativistic and finite-nuclear-mass corrections this chapter has not included.</p>
+<p>The model is therefore short by</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mn>0.903724</mn>
+  <mo>−</mo>
+  <mn>0.847656</mn>
+  <mo>=</mo>
+  <mn>0.056068</mn>
+  <mtext> </mtext>
+  <mtext>a.u.</mtext>
+  <mo>=</mo>
+  <mn>1.526</mn>
+  <mtext> </mtext>
+  <mrow data-mjx-texclass="ORD">
+    <mi data-mjx-auto-op="false">eV</mi>
+  </mrow>
+  <mo>,</mo>
+</math></div>
+<p>and that shortfall splits into two pieces with different names. The best energy obtainable from <em>any</em> single product of identical orbitals — the Hartree–Fock limit, also quoted — is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>2.861680</mn>
+</math></span> a.u. So</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <munder>
+    <mrow data-mjx-texclass="OP">
+      <munder>
+        <mrow>
+          <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+          <mn>2.861680</mn>
+          <mo>−</mo>
+          <mo stretchy="false">(</mo>
+          <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+          <mn>2.847656</mn>
+          <mo stretchy="false">)</mo>
+        </mrow>
+        <mo>⏟</mo>
+      </munder>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mn>0.014024</mn>
+      <mtext> </mtext>
+      <mtext>a.u.</mtext>
+      <mo>,</mo>
+      <mtext> </mtext>
+      <mn>0.38</mn>
+      <mtext> </mtext>
+      <mrow data-mjx-texclass="ORD">
+        <mi data-mjx-auto-op="false">eV</mi>
+      </mrow>
+    </mrow>
+  </munder>
+  <mstyle scriptlevel="0">
+    <mspace width="1em" />
+  </mstyle>
+  <mtext>and</mtext>
+  <mstyle scriptlevel="0">
+    <mspace width="1em" />
+  </mstyle>
+  <munder>
+    <mrow data-mjx-texclass="OP">
+      <munder>
+        <mrow>
+          <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+          <mn>2.903724</mn>
+          <mo>−</mo>
+          <mo stretchy="false">(</mo>
+          <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+          <mn>2.861680</mn>
+          <mo stretchy="false">)</mo>
+        </mrow>
+        <mo>⏟</mo>
+      </munder>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mn>0.042044</mn>
+      <mtext> </mtext>
+      <mtext>a.u.</mtext>
+      <mo>,</mo>
+      <mtext> </mtext>
+      <mn>1.14</mn>
+      <mtext> </mtext>
+      <mrow data-mjx-texclass="ORD">
+        <mi data-mjx-auto-op="false">eV</mi>
+      </mrow>
+    </mrow>
+  </munder>
+  <mo>.</mo>
+</math></div>
+<p>The first is what a better <em>shape</em> for the orbital would recover, and it is small: the exponential guess was already close. The second cannot be recovered by any choice of orbital shape whatsoever, because it comes from the electrons avoiding each other instant by instant, which no product of one-electron functions can express. It is called the <em>correlation energy</em>, and recovering it is the subject of most of the companion course <em>Quantum Chemistry</em>. Notice its size: about <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> eV, which is a chemical bond's worth of energy out of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>79</mn>
+</math></span> eV of binding — small in relative terms and decisive in absolute ones.</p></section>
+<section class="callout misreading" id="misreading-mis-me-zeff"><header><span class="callout-kind">A common misreading 5.10.1</span><span class="callout-title">There is no such thing as <em>the</em> effective charge</span></header><p> Helium has now produced three different “effective nuclear charges”, and none of them is wrong:</p>
+<ul><li><p><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>Z</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+  <mo>=</mo>
+  <mn>1.6875</mn>
+</math></span>, the exponent that minimizes the total energy of the <em>two-electron</em> atom (Example <a class="xref" href="../chapter-05/index.html#example-ex-me-variational">5.6.1</a>);</p></li><li><p><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>Z</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi mathvariant="normal">e</mi>
+      <mi mathvariant="normal">f</mi>
+      <mi mathvariant="normal">f</mi>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <msqrt>
+    <mn>2</mn>
+    <mi>I</mi>
+  </msqrt>
+  <mo>=</mo>
+  <msqrt>
+    <mn>2</mn>
+    <mo stretchy="false">(</mo>
+    <mn>0.903724</mn>
+    <mo stretchy="false">)</mo>
+  </msqrt>
+  <mo>=</mo>
+  <mn>1.344</mn>
+</math></span>, the charge a hydrogenic orbital would need in order to be bound by helium's <em>measured ionization energy</em>;</p></li><li><p><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>Z</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi mathvariant="normal">e</mi>
+      <mi mathvariant="normal">f</mi>
+      <mi mathvariant="normal">f</mi>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mi>Z</mi>
+  <mo>−</mo>
+  <mn>0.30</mn>
+  <mo>=</mo>
+  <mn>1.70</mn>
+</math></span> from Slater's empirical screening rules, fitted to reproduce trends across the periodic table.</p></li></ul>
+<p>Each answers a different question, and the second differs from the first chiefly because removing one electron lets the other relax — an energy <em>difference</em> carries relaxation that an orbital exponent does not. Quoting one where another is meant is the most common way to be wrong by several eV while appearing to use the right idea. Whenever a <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>Z</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi mathvariant="normal">e</mi>
+      <mi mathvariant="normal">f</mi>
+      <mi mathvariant="normal">f</mi>
+    </mrow>
+  </msub>
+</math></span> appears in a table, the question it answers has to be read off with it.</p></section>
 <h2 id="sec-5-summary"><span class="sec-number">5.11</span>Summary</h2>
-<ul><li><p>Fermion states are antisymmetric under exchange (Def. <a class="xref" href="../chapter-05/index.html#definition-def-me-antisymmetry">5.2.1</a>); Pauli exclusion (Thm. <a class="xref" href="../chapter-05/index.html#theorem-thm-me-pauli">5.2.1</a>) and the Slater determinant (Def. <a class="xref" href="../chapter-05/index.html#definition-def-me-slater">5.2.2</a>) follow.</p></li><li><p>Helium's Hamiltonian, Eq. <a class="xref" href="../chapter-05/index.html#eq-eq-me-helium-hamiltonian">(5.3)</a>, is not separable because of the single term <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<ul><li><p>Fermion states are antisymmetric under exchange (Postulate <a class="xref" href="../chapter-05/index.html#postulate-def-me-antisymmetry">5.2.1</a>); Pauli exclusion (Thm. <a class="xref" href="../chapter-05/index.html#theorem-thm-me-pauli">5.2.1</a>) and the Slater determinant (Def. <a class="xref" href="../chapter-05/index.html#definition-def-me-slater">5.2.1</a>) follow.</p></li><li><p>Helium's Hamiltonian, Eq. <a class="xref" href="../chapter-05/index.html#eq-eq-me-helium-hamiltonian">(5.3)</a>, is not separable because of the single term <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>1</mn>
   <mrow data-mjx-texclass="ORD">
     <mo>/</mo>
@@ -5605,7 +6631,65 @@
   <mi>τ</mi>
   <mo>≈</mo>
   <mn>18</mn>
-</math></span> fs.</p></li></ul>
+</math></span> fs.</p></li><li><p>Two electrons in two orbitals have <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mrow data-mjx-texclass="OPEN">
+      <mo minsize="1.2em" maxsize="1.2em" stretchy="true">(</mo>
+    </mrow>
+    <mfrac linethickness="0">
+      <mn>4</mn>
+      <mn>2</mn>
+    </mfrac>
+    <mrow data-mjx-texclass="CLOSE">
+      <mo minsize="1.2em" maxsize="1.2em" stretchy="true">)</mo>
+    </mrow>
+  </mrow>
+  <mo>=</mo>
+  <mn>6</mn>
+</math></span> antisymmetric states, sorting as one triplet and three singlets (Example <a class="xref" href="../chapter-05/index.html#example-ex-me-selfcheck-counting">5.10.1</a>). The same six states reappear as a two-orbital active space in quantum chemistry, as the Hubbard dimer at half filling, and as a two-qubit register.</p></li><li><p>Optimizing the orbital exponent gains exactly <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mn>5</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>16</mn>
+  <msup>
+    <mo stretchy="false">)</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mo>=</mo>
+  <mn>0.0977</mn>
+</math></span> a.u. over first-order perturbation theory, for every <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>Z</mi>
+</math></span> (Eq. <a class="xref" href="../chapter-05/index.html#eq-eq-me-variational-gain">(5.21)</a> and Fig. <a class="xref" href="../chapter-05/index.html#chapter-05-fig-5">5.5</a>) — <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>3.4</mn>
+  <mi mathvariant="normal">%</mi>
+</math></span> of the binding for helium and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0.3</mn>
+  <mi mathvariant="normal">%</mi>
+</math></span> by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>Z</mi>
+  <mo>=</mo>
+  <mn>6</mn>
+</math></span>.</p></li><li><p>The model's ionization energy is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>23.07</mn>
+</math></span> eV against <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>24.59</mn>
+</math></span> eV exact. Of the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1.53</mn>
+</math></span> eV shortfall, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0.38</mn>
+</math></span> eV is imperfect orbital <em>shape</em> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1.14</mn>
+</math></span> eV is <em>correlation</em>, which no product of one-electron functions can supply (Example <a class="xref" href="../chapter-05/index.html#example-ex-me-selfcheck-correlation">5.10.3</a>). That second number is what the companion course <em>Quantum Chemistry</em> spends most of its length recovering.</p></li><li><p>Helium has at least three defensible effective charges — <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1.6875</mn>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1.344</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1.70</mn>
+</math></span> — because each answers a different question (Misreading <a class="xref" href="../chapter-05/index.html#misreading-mis-me-zeff">5.10.1</a>).</p></li></ul>
 <h2 id="sec-5-exercises"><span class="sec-number">5.12</span>Exercises</h2>
 <ol><li><p><strong>The determinant.</strong> Write out the Slater determinant for three electrons in orbitals <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
@@ -5885,7 +6969,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:ME-model-potential">(5.21)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:ME-model-potential">(5.22)</span></div>
 <p>in atomic units, with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>Z</mi>
   <mo>=</mo>
@@ -5893,7 +6977,7 @@
 </math></span> for sodium and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>d</mi>
 </math></span> a parameter setting the core size.</p>
-<ol><li><p><strong>On paper.</strong> Verify that Eq. <a class="xref" href="../chapter-05/index.html#eq-eq-me-model-potential">(5.21)</a> satisfies both limits of Eq. <a class="xref" href="../chapter-05/index.html#eq-eq-me-screened">(5.15)</a>. Sketch it against <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<ol><li><p><strong>On paper.</strong> Verify that Eq. <a class="xref" href="../chapter-05/index.html#eq-eq-me-model-potential">(5.22)</a> satisfies both limits of Eq. <a class="xref" href="../chapter-05/index.html#eq-eq-me-screened">(5.15)</a>. Sketch it against <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo form="prefix" lspace="0em" rspace="0em">−</mo>
   <mn>1</mn>
   <mrow data-mjx-texclass="ORD">
@@ -5919,7 +7003,7 @@
 </math></span>, and will <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>3</mn>
   <mi>d</mi>
-</math></span> move more or less? Justify the prediction with the centrifugal barrier in two sentences, and record it.</p></li><li><p><strong>On the computer.</strong> Solve Eq. <a class="xref" href="../chapter-03/index.html#eq-eq-am-radial">(3.43)</a> with Eq. <a class="xref" href="../chapter-05/index.html#eq-eq-me-model-potential">(5.21)</a> for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> move more or less? Justify the prediction with the centrifugal barrier in two sentences, and record it.</p></li><li><p><strong>On the computer.</strong> Solve Eq. <a class="xref" href="../chapter-03/index.html#eq-eq-am-radial">(3.44)</a> with Eq. <a class="xref" href="../chapter-05/index.html#eq-eq-me-model-potential">(5.22)</a> for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>l</mi>
   <mo>=</mo>
   <mn>0</mn>
@@ -6072,7 +7156,7 @@
   </mrow>
   <mn>18</mn>
 </math></span> a.u. and all three defects must vanish. If they do not, the error is in the solver rather than in the physics, and should be corrected before the screening is switched on.</p>
-<p><strong>Be ready to answer.</strong> The model has one adjustable parameter and three defects to reproduce. Suppose all three can be fitted by hand. What would that tell you, and what would it <em>not</em> tell you, about whether Eq. <a class="xref" href="../chapter-05/index.html#eq-eq-me-model-potential">(5.21)</a> is a good description of the sodium core?</p>
+<p><strong>Be ready to answer.</strong> The model has one adjustable parameter and three defects to reproduce. Suppose all three can be fitted by hand. What would that tell you, and what would it <em>not</em> tell you, about whether Eq. <a class="xref" href="../chapter-05/index.html#eq-eq-me-model-potential">(5.22)</a> is a good description of the sodium core?</p>
     <nav class="chapter-nav" aria-label="Chapter navigation">
       <a href="../chapter-04/index.html">Previous: The Hydrogen Atom</a>
       <a href="../../toc.html">Contents</a>
@@ -6082,6 +7166,7 @@
 </main>
 <footer class="site-footer">
   <div class="site-footer-inner">
+    <p class="site-footer-notice"><strong>Under development.</strong> These notes are a working draft and have not been fully checked. Concepts, derivations, worked solutions and numerical values may contain errors, so read them critically and verify anything you rely on.</p>
     <p>&copy; 2026 Erfan Saydanzad. All rights reserved. This material is published for reading and personal study; it may not be copied, redistributed, or reused in other work without written permission.</p>
   </div>
 </footer>

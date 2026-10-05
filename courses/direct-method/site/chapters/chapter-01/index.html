@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Chapter 1: Mathematical Tools of Quantum Mechanics | Direct Method</title>
+  <title>Chapter 1: Mathematical Tools of Quantum Mechanics | Quantum Mechanics and Spectroscopy</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
   <link rel="preload" href="../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../../assets/css/site.css?v=856ec339">
+  <link rel="stylesheet" href="../../assets/css/site.css?v=ee8de383">
   <link rel="preload" href="../../assets/fonts/latinmodern-math.woff2" as="font" type="font/woff2" crossorigin>
-  <script defer src="../../assets/js/main.js?v=856ec339"></script>
+  <script defer src="../../assets/js/main.js?v=ee8de383"></script>
 
 <style>
 .site-header { justify-content: flex-start; gap: 16px; }
@@ -35,7 +35,7 @@
   <a class="site-up" href="../../../../../index.html"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.5 5.5 8l4.5 4.5"/></svg><span>Saydanzad Group</span></a>
   <a class="brand" href="../../index.html">
     <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M9 6.5V25.5M9 6.5H24M9 25.5H24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 16Q10.5 9.5 15.5 16T25.5 16" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/></svg>
-    <span>Direct Method</span>
+    <span>Quantum Mechanics and Spectroscopy</span>
   </a>
   <nav class="top-nav" aria-label="Primary">
     <a href="../../index.html">Home</a>
@@ -50,13 +50,13 @@
     <h2>Mathematical Tools of Quantum Mechanics</h2>
     <nav class="chapter-toc" aria-label="Chapter contents">
       <a class="toc-level-2" href="#sec-1-introduction">1.1 Introduction</a>
-<a class="toc-level-2" href="#sec-1-postulate-i-states-and-hilbert-space">1.2 Postulate I: States and Hilbert Space</a>
-<a class="toc-level-3" href="#sec-1-statement-of-the-postulate">1.2.1 Statement of the Postulate</a>
+<a class="toc-level-2" href="#sec-1-axiom-i-states-and-hilbert-space">1.2 Axiom I: States and Hilbert Space</a>
+<a class="toc-level-3" href="#sec-1-statement-of-the-axiom">1.2.1 Statement of the Axiom</a>
 <a class="toc-level-3" href="#sec-1-hilbert-space-and-inner-product">1.2.2 Hilbert Space and Inner Product</a>
 <a class="toc-level-3" href="#sec-1-bases-orthonormality-and-completeness">1.2.3 Bases, Orthonormality, and Completeness</a>
 <a class="toc-level-3" href="#sec-1-dirac-notation-and-state-representations">1.2.4 Dirac Notation and State Representations</a>
-<a class="toc-level-2" href="#sec-1-postulate-ii-observables-as-operators">1.3 Postulate II: Observables as Operators</a>
-<a class="toc-level-3" href="#sec-1-statement-of-the-postulate-8">1.3.1 Statement of the Postulate</a>
+<a class="toc-level-2" href="#sec-1-axiom-ii-observables-as-operators">1.3 Axiom II: Observables as Operators</a>
+<a class="toc-level-3" href="#sec-1-statement-of-the-axiom-8">1.3.1 Statement of the Axiom</a>
 <a class="toc-level-3" href="#sec-1-linear-operators-and-the-adjoint">1.3.2 Linear Operators and the Adjoint</a>
 <a class="toc-level-3" href="#sec-1-hermitian-operators-observables">1.3.3 Hermitian Operators (Observables)</a>
 <a class="toc-level-3" href="#sec-1-identity-and-projection-operators">1.3.4 Identity and Projection Operators</a>
@@ -67,17 +67,20 @@
 <a class="toc-level-3" href="#sec-1-commutators-and-compatible-observables">1.4.1 Commutators and Compatible Observables</a>
 <a class="toc-level-3" href="#sec-1-uncertainties-and-standard-deviations">1.4.2 Uncertainties and Standard Deviations</a>
 <a class="toc-level-3" href="#sec-1-heisenberg-robertson-uncertainty-relation">1.4.3 Heisenberg (Robertson) Uncertainty Relation</a>
-<a class="toc-level-2" href="#sec-1-postulate-iii-and-iv-measurement-and-state-reduction">1.5 Postulate III and IV: Measurement and State Reduction</a>
+<a class="toc-level-2" href="#sec-1-axioms-iii-and-iv-measurement-and-state-reduction">1.5 Axioms III and IV: Measurement and State Reduction</a>
 <a class="toc-level-3" href="#sec-1-measurement-outcomes-and-probabilities">1.5.1 Measurement Outcomes and Probabilities</a>
 <a class="toc-level-3" href="#sec-1-state-reduction-collapse">1.5.2 State Reduction (Collapse)</a>
-<a class="toc-level-2" href="#sec-1-postulate-v-time-evolution">1.6 Postulate V: Time Evolution</a>
+<a class="toc-level-2" href="#sec-1-axiom-v-time-evolution">1.6 Axiom V: Time Evolution</a>
 <a class="toc-level-3" href="#sec-1-schr-odinger-equation-and-unitary-evolution">1.6.1 Schrödinger Equation and Unitary Evolution</a>
-<a class="toc-level-2" href="#sec-1-postulate-vi-composite-systems">1.7 Postulate VI: Composite Systems</a>
+<a class="toc-level-2" href="#sec-1-axiom-vi-composite-systems">1.7 Axiom VI: Composite Systems</a>
 <a class="toc-level-3" href="#sec-1-tensor-product-and-product-basis">1.7.1 Tensor Product and Product Basis</a>
 <a class="toc-level-3" href="#sec-1-product-states-vs-entangled-states">1.7.2 Product States vs. Entangled States</a>
 <a class="toc-level-3" href="#sec-1-operators-on-composite-systems">1.7.3 Operators on Composite Systems</a>
 <a class="toc-level-3" href="#sec-1-reduced-descriptions-and-partial-trace-minimal-use">1.7.4 Reduced Descriptions and Partial Trace (Minimal Use)</a>
-<a class="toc-level-2" href="#sec-1-homework">1.8 Homework</a>
+<a class="toc-level-2" href="#sec-1-first-pass-calculation-one-two-state-hamiltonian">1.8 First-Pass Calculation: One Two-State Hamiltonian</a>
+<a class="toc-level-2" href="#sec-1-summary">1.9 Summary</a>
+<a class="toc-level-2" href="#sec-1-exercises">1.10 Exercises</a>
+<a class="toc-level-2" href="#sec-1-optional-extension-problems">1.11 Optional Extension Problems</a>
 <a class="toc-level-3" href="#sec-1-hilbert-space-inner-products-and-bases">Hilbert Space, Inner Products, and Bases</a>
     </nav>
   </div>
@@ -89,6 +92,8 @@
       <h1>Mathematical Tools of Quantum Mechanics</h1>
     </header>
     <h2 id="sec-1-introduction"><span class="sec-number">1.1</span>Introduction</h2>
+<p>Quantum phenomena do not occur in a Hilbert space, they occur in a laboratory.Asher Peres, <em>Quantum Theory: Concepts and Methods</em> (1993)</p>
+<p>The machinery in this chapter is the Hilbert space of that remark. It is worth keeping the second half of the sentence in view while learning the first: every object built here exists to predict the reading on an instrument, and the axioms of Chapter 1 say exactly which object predicts which reading.</p>
 <p>In classical mechanics the state of a particle is specified by its position <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mover accent="true">
@@ -130,10 +135,91 @@
 </math></span>.</p></li><li><p>The time evolution of a state is governed by the (linear) Schrödinger equation.</p></li></ul>
 <p>Because of this linear structure, the language of <em>Hilbert spaces</em>, <em>Dirac bra–ket notation</em>, and <em>linear operators</em> is the natural mathematical framework of quantum mechanics.</p>
 <p>The goals of this chapter are:</p>
-<ol><li><p>to formulate the basic postulates of quantum mechanics;</p></li><li><p>to introduce the Hilbert–space structures that realize each postulate (states, operators, and representations);</p></li><li><p>to organize the material so that different representations (matrix, position, momentum) are seen as <em>the same physics</em> in different bases.</p></li></ol>
-<h2 id="sec-1-postulate-i-states-and-hilbert-space"><span class="sec-number">1.2</span>Postulate I: States and Hilbert Space</h2>
-<h3 id="sec-1-statement-of-the-postulate"><span class="sec-number">1.2.1</span>Statement of the Postulate</h3>
-<p><strong>Postulate I (State Postulate).</strong> Every isolated physical system is associated with a complex Hilbert space <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<ol><li><p>to formulate the basic axioms of quantum mechanics;</p></li><li><p>to introduce the Hilbert–space structures that realize each axiom (states, operators, and representations);</p></li><li><p>to organize the material so that different representations (matrix, position, momentum) are seen as <em>the same physics</em> in different bases.</p></li></ol>
+<section class="callout remark" id="remark-rem-qm-first-pass"><header><span class="callout-kind">Remark 1.1.1</span><span class="callout-title">First-pass route</span></header><p> On a first reading, learn only the state and basis language of Sec. <a class="xref" href="../chapter-01/index.html#sec-1-dirac-notation-and-state-representations">1.2.4</a>, the matrix language of Sec. <a class="xref" href="../chapter-01/index.html#sec-1-representations-of-operators">1.3.6</a>, and the measurement rule of Sec. <a class="xref" href="../chapter-01/index.html#sec-1-axioms-iii-and-iv-measurement-and-state-reduction">1.5</a>. Then work the two-state calculation near the end of the chapter. The sections on continuous bases, uncertainty, composite systems, and partial traces can be revisited when a later chapter calls for them.</p></section>
+<section class="callout remark"><header><span class="callout-kind">Remark</span><span class="callout-title">Prerequisite recall: complex vectors</span></header><p>A complex column <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>c</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+  <mo>=</mo>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>c</mi>
+    <mn>0</mn>
+  </msub>
+  <mo>,</mo>
+  <msub>
+    <mi>c</mi>
+    <mn>1</mn>
+  </msub>
+  <msup>
+    <mo stretchy="false">)</mo>
+    <mi>T</mi>
+  </msup>
+</math></span> has squared norm <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mrow data-mjx-texclass="ORD">
+      <mover accent="true">
+        <mi>c</mi>
+        <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+      </mover>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mo>†</mo>
+    </mrow>
+  </msup>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>c</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+  <mo>=</mo>
+  <mo stretchy="false">|</mo>
+  <msub>
+    <mi>c</mi>
+    <mn>0</mn>
+  </msub>
+  <msup>
+    <mo stretchy="false">|</mo>
+    <mn>2</mn>
+  </msup>
+  <mo>+</mo>
+  <mo stretchy="false">|</mo>
+  <msub>
+    <mi>c</mi>
+    <mn>1</mn>
+  </msub>
+  <msup>
+    <mo stretchy="false">|</mo>
+    <mn>2</mn>
+  </msup>
+</math></span>. A matrix is Hermitian when <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>H</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>m</mi>
+      <mi>n</mi>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <msubsup>
+    <mi>H</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+      <mi>m</mi>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mo>∗</mo>
+    </mrow>
+  </msubsup>
+</math></span>; such a matrix has real eigenvalues and orthogonal eigenvectors. These two facts are all the linear algebra needed for the first-pass route. For a fuller review, see the companion <em>Mathematical Methods</em> chapters on vectors, matrices, and eigenvalue problems.</p></section>
+<h2 id="sec-1-axiom-i-states-and-hilbert-space"><span class="sec-number">1.2</span>Axiom I: States and Hilbert Space</h2>
+<h3 id="sec-1-statement-of-the-axiom"><span class="sec-number">1.2.1</span>Statement of the Axiom</h3>
+<section class="callout axiom" id="axiom-ax-state"><header><span class="callout-kind">Axiom I</span><span class="callout-title">States</span></header><p> Every isolated physical system is associated with a complex Hilbert space <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mi data-mjx-variant="-tex-calligraphic" mathvariant="normal">ℋ</mi>
   </mrow>
@@ -179,7 +265,7 @@
     </mrow>
     <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
-</math></span> encodes all physically accessible information about the system. It is not directly observable; only probabilities and expectation values derived from it are measurable.</p>
+</math></span> encodes all physically accessible information about the system. It is not directly observable; only probabilities and expectation values derived from it are measurable.</p></section>
 <h3 id="sec-1-hilbert-space-and-inner-product"><span class="sec-number">1.2.2</span>Hilbert Space and Inner Product</h3>
 <section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Complex vector space</span></header><p>A (complex) <em>vector space</em> <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>V</mi>
@@ -689,6 +775,42 @@
 </math><span class="eqn-number" id="mjx-eqn:1.5">(1.5)</span></div>
 <p>describes nonrelativistic wave functions in position space.</p></li></ol></section>
 <h3 id="sec-1-bases-orthonormality-and-completeness"><span class="sec-number">1.2.3</span>Bases, Orthonormality, and Completeness</h3>
+<figure id="chapter-01-fig-1" class="figure"><img src="assets/img/ch01_fig01_state_in_basis.png" class="diagram" alt="A ket is its list of projections and nothing else. The completeness relation nenen= 1 is the statement that laying the components back end to end returns the vector you started with." loading="lazy" style="--figure-width: 56%;"><figcaption>Figure 1.1. A ket is its list of projections and nothing else. The
+	completeness relation <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <munder>
+    <mo data-mjx-texclass="OP" stretchy="true">∑</mo>
+    <mi>n</mi>
+  </munder>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <msub>
+        <mi>e</mi>
+        <mi>n</mi>
+      </msub>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
+    <mrow data-mjx-texclass="ORD">
+      <msub>
+        <mi>e</mi>
+        <mi>n</mi>
+      </msub>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
+  </mrow>
+  <mo>=</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mn>1</mn>
+      <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+    </mover>
+  </mrow>
+</math></span> is the statement
+	that laying the components back end to end returns the vector you
+	started with.</figcaption></figure>
 <section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Basis</span></header><p>A set of kets <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo fence="false" stretchy="false">{</mo>
   <mrow data-mjx-texclass="INNER">
@@ -2257,9 +2379,9 @@
     <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
 </math></span>.</p>
-<h2 id="sec-1-postulate-ii-observables-as-operators"><span class="sec-number">1.3</span>Postulate II: Observables as Operators</h2>
-<h3 id="sec-1-statement-of-the-postulate-8"><span class="sec-number">1.3.1</span>Statement of the Postulate</h3>
-<p><strong>Postulate II (Observable Postulate).</strong> Every physical observable <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<h2 id="sec-1-axiom-ii-observables-as-operators"><span class="sec-number">1.3</span>Axiom II: Observables as Operators</h2>
+<h3 id="sec-1-statement-of-the-axiom-8"><span class="sec-number">1.3.1</span>Statement of the Axiom</h3>
+<section class="callout axiom" id="axiom-ax-observable"><header><span class="callout-kind">Axiom II</span><span class="callout-title">Observables</span></header><p> Every physical observable <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>A</mi>
 </math></span> is represented by a linear Hermitian operator <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
@@ -2272,7 +2394,7 @@
   <mrow data-mjx-texclass="ORD">
     <mi data-mjx-variant="-tex-calligraphic" mathvariant="normal">ℋ</mi>
   </mrow>
-</math></span>.</p>
+</math></span>.</p></section>
 <p>The mathematical objects we need here are:</p>
 <ul><li><p>linear operators on <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
@@ -3259,7 +3381,7 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:1.42">(1.42)</span></div>
-<p>Projectors will appear naturally in the measurement postulate (state reduction) and in decomposing dynamics into discrete and continuum contributions (Rydberg vs. ionization channels).</p>
+<p>Projectors will appear naturally in the measurement axiom (state reduction) and in decomposing dynamics into discrete and continuum contributions (Rydberg vs. ionization channels).</p>
 <h3 id="sec-1-unitary-operators"><span class="sec-number">1.3.5</span>Unitary Operators</h3>
 <section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Unitary operator</span></header><p>An operator <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
@@ -3487,7 +3609,7 @@
     <mn>0</mn>
   </msub>
   <mo stretchy="false">)</mo>
-</math></span> generated by the Hamiltonian (Sec. <a class="xref" href="../chapter-01/index.html#sec-1-postulate-v-time-evolution">1.6</a>);</p></li><li><p>Rotation operators <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> generated by the Hamiltonian (Sec. <a class="xref" href="../chapter-01/index.html#sec-1-axiom-v-time-evolution">1.6</a>);</p></li><li><p>Rotation operators <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>e</mi>
     <mrow data-mjx-texclass="ORD">
@@ -4994,6 +5116,35 @@
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:1.59">(1.59)</span></div>
 <h3 id="sec-1-heisenberg-robertson-uncertainty-relation"><span class="sec-number">1.4.3</span>Heisenberg (Robertson) Uncertainty Relation</h3>
+<figure id="chapter-01-fig-2" class="figure"><img src="assets/img/ch01_fig03_uncertainty.png" class="diagram" alt="The relation is a statement about one state seen in two bases, not about a clumsy apparatus. Narrowing |(x)|^2 widens |(p)|^2 by the same factor, because the two are Fourier transforms of each other." loading="lazy" style="--figure-width: 96%;"><figcaption>Figure 1.2. The relation is a statement about one state seen in two bases,
+	not about a clumsy apparatus. Narrowing <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">|</mo>
+  <mi>ψ</mi>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+  <msup>
+    <mo stretchy="false">|</mo>
+    <mn>2</mn>
+  </msup>
+</math></span> widens
+	<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">|</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>ψ</mi>
+      <mo stretchy="false" style="padding-bottom:0.06em">˜</mo>
+    </mover>
+  </mrow>
+  <mo stretchy="false">(</mo>
+  <mi>p</mi>
+  <mo stretchy="false">)</mo>
+  <msup>
+    <mo stretchy="false">|</mo>
+    <mn>2</mn>
+  </msup>
+</math></span> by the same factor, because the two are Fourier
+	transforms of each other.</figcaption></figure>
 <section class="callout theorem"><header><span class="callout-kind">Theorem</span><span class="callout-title">Heisenberg–Robertson uncertainty relation</span></header><p>For any Hermitian operators <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mover accent="true">
@@ -5176,9 +5327,9 @@
 <p>Later, similar commutator structures appear in:</p>
 <ul><li><p>angular momentum algebra,</p></li><li><p>ladder operators for the harmonic oscillator,</p></li><li><p>generators of rotations and other symmetry transformations.</p></li></ul>
 <p>These will be built on top of the operator concepts introduced here.</p>
-<h2 id="sec-1-postulate-iii-and-iv-measurement-and-state-reduction"><span class="sec-number">1.5</span>Postulate III and IV: Measurement and State Reduction</h2>
+<h2 id="sec-1-axioms-iii-and-iv-measurement-and-state-reduction"><span class="sec-number">1.5</span>Axioms III and IV: Measurement and State Reduction</h2>
 <h3 id="sec-1-measurement-outcomes-and-probabilities"><span class="sec-number">1.5.1</span>Measurement Outcomes and Probabilities</h3>
-<p><strong>Postulate III (Measurement Postulate).</strong> Let <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout axiom" id="axiom-ax-measurement"><header><span class="callout-kind">Axiom III</span><span class="callout-title">Measurement outcomes and their probabilities</span></header><p> Let <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mover accent="true">
       <mi>A</mi>
@@ -5355,9 +5506,13 @@
   </mstyle>
   <mi>d</mi>
   <mi>a</mi>
-</math></span>.</p></li></ul>
+</math></span>.</p></li></ul></section>
 <h3 id="sec-1-state-reduction-collapse"><span class="sec-number">1.5.2</span>State Reduction (Collapse)</h3>
-<p><strong>Postulate IV (State Reduction).</strong> Immediately after an ideal measurement of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<figure id="chapter-01-fig-3" class="figure"><img src="assets/img/ch01_fig02_measurement.png" class="diagram" alt="Measurement is not the discovery of a value the system already had. The amplitudes that did not occur are gone from the state afterwards, which is what makes a second measurement of the same observable return the same answer with certainty." loading="lazy" style="--figure-width: 96%;"><figcaption>Figure 1.3. Measurement is not the discovery of a value the system already
+	had. The amplitudes that did not occur are gone from the state
+	afterwards, which is what makes a second measurement of the same
+	observable return the same answer with certainty.</figcaption></figure>
+<section class="callout axiom" id="axiom-ax-reduction"><header><span class="callout-kind">Axiom IV</span><span class="callout-title">State reduction</span></header><p> Immediately after an ideal measurement of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>A</mi>
 </math></span> yielding the value <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
@@ -5375,11 +5530,11 @@
     </mrow>
     <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
-</math></span> (or, more generally, the projection onto the eigensubspace for a degenerate eigenvalue).</p>
-<p>This postulate introduces intrinsically probabilistic, non-unitary evolution associated with measurement, in contrast to the unitary evolution governed by the Schrödinger equation.</p>
-<h2 id="sec-1-postulate-v-time-evolution"><span class="sec-number">1.6</span>Postulate V: Time Evolution</h2>
+</math></span> (or, more generally, the projection onto the eigensubspace for a degenerate eigenvalue).</p></section>
+<p>This axiom introduces intrinsically probabilistic, non-unitary evolution associated with measurement, in contrast to the unitary evolution governed by the Schrödinger equation.</p>
+<h2 id="sec-1-axiom-v-time-evolution"><span class="sec-number">1.6</span>Axiom V: Time Evolution</h2>
 <h3 id="sec-1-schr-odinger-equation-and-unitary-evolution"><span class="sec-number">1.6.1</span>Schrödinger Equation and Unitary Evolution</h3>
-<p><strong>Postulate V (Time Evolution).</strong> The time evolution of a closed quantum system is governed by the time-dependent Schrödinger equation</p>
+<section class="callout axiom" id="axiom-ax-evolution"><header><span class="callout-kind">Axiom V</span><span class="callout-title">Time evolution</span></header><p> The time evolution of a closed quantum system is governed by the time-dependent Schrödinger equation</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -5441,7 +5596,7 @@
   <mo stretchy="false">(</mo>
   <mi>t</mi>
   <mo stretchy="false">)</mo>
-</math></span> is the Hermitian Hamiltonian of the system.</p>
+</math></span> is the Hermitian Hamiltonian of the system.</p></section>
 <p>The formal solution can be written as</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -5844,8 +5999,8 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:1.69">(1.69)</span></div>
-<h2 id="sec-1-postulate-vi-composite-systems"><span class="sec-number">1.7</span>Postulate VI: Composite Systems</h2>
-<p><strong>Postulate VI (Composite Systems).</strong> For a composite system with subsystems <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<h2 id="sec-1-axiom-vi-composite-systems"><span class="sec-number">1.7</span>Axiom VI: Composite Systems</h2>
+<section class="callout axiom" id="axiom-ax-composite"><header><span class="callout-kind">Axiom VI</span><span class="callout-title">Composite systems</span></header><p> For a composite system with subsystems <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>1</mn>
 </math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>2</mn>
@@ -5894,7 +6049,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.70">(1.70)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.70">(1.70)</span></div></section>
 <p>A general state of the composite system is a ket <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="INNER">
     <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
@@ -6309,6 +6464,28 @@
 </math><span class="eqn-number" id="mjx-eqn:1.77">(1.77)</span></div>
 <p>for a normalized state.</p>
 <h3 id="sec-1-product-states-vs-entangled-states"><span class="sec-number">1.7.2</span>Product States vs. Entangled States</h3>
+<figure id="chapter-01-fig-4" class="figure"><img src="assets/img/ch01_fig04_entanglement.png" class="diagram" alt="Entanglement is defined by a negative — a state that cannot be factorized — and the coefficient matrix turns that into something one can check. A product state has cij=aibj, so every row is a multiple of every other and the matrix has rank one. Any other rank is entanglement." loading="lazy" style="--figure-width: 86%;"><figcaption>Figure 1.4. Entanglement is defined by a negative — a state that cannot be
+	factorized — and the coefficient matrix turns that into something one
+	can check. A product state has <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>c</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>i</mi>
+      <mi>j</mi>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <msub>
+    <mi>a</mi>
+    <mi>i</mi>
+  </msub>
+  <msub>
+    <mi>b</mi>
+    <mi>j</mi>
+  </msub>
+</math></span>, so every row is a
+	multiple of every other and the matrix has rank one. Any other rank is
+	entanglement.</figcaption></figure>
 <p>A state of the composite system is called a <em>product state</em> (separable state) if it can be written as</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -7675,8 +7852,1246 @@
 <ul><li><p>construct product bases,</p></li><li><p>distinguish product and entangled states,</p></li><li><p>interpret measurements on one part of a composite system.</p></li></ul>
 <p>A more systematic treatment of density operators and mixed states appears in advanced courses on quantum information or open quantum systems.</p>
 <p>minimally in the present notes.</p>
-<h2 id="sec-1-homework"><span class="sec-number">1.8</span>Homework</h2>
-<p>The following problems are designed to test your understanding of the material in this chapter. They range from basic exercises to more conceptual questions. Unless stated otherwise, work in Dirac notation.</p>
+<h2 id="sec-1-first-pass-calculation-one-two-state-hamiltonian"><span class="sec-number">1.8</span>First-Pass Calculation: One Two-State Hamiltonian</h2>
+<p>Use the ordered orthonormal basis <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo fence="false" stretchy="false">{</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>0</mn>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+  <mo>,</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>1</mn>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+  <mo fence="false" stretchy="false">}</mo>
+</math></span>. The order is part of the representation: it tells us which coefficient and which matrix row belongs to which ket. Consider the teaching Hamiltonian</p>
+<div class="math-block math-block--numbered" id="eq-eq-qm-two-state-h"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mrow data-mjx-texclass="ORD">
+          <mover accent="true">
+            <mi>H</mi>
+            <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+          </mover>
+        </mrow>
+        <mstyle scriptlevel="0">
+          <mspace width="0.278em" />
+        </mstyle>
+        <mrow data-mjx-texclass="ORD">
+          <mover>
+            <mo stretchy="true">=</mo>
+            <mo>^</mo>
+          </mover>
+        </mrow>
+        <mstyle scriptlevel="0">
+          <mspace width="0.278em" />
+        </mstyle>
+        <mi>H</mi>
+        <mo>=</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mtable columnspacing="1em" rowspacing="4pt">
+            <mtr>
+              <mtd>
+                <mn>0</mn>
+              </mtd>
+              <mtd>
+                <mi>g</mi>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <mi>g</mi>
+              </mtd>
+              <mtd>
+                <mi>D</mi>
+              </mtd>
+            </mtr>
+          </mtable>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <mi>D</mi>
+        <mo>&gt;</mo>
+        <mn>0</mn>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <mi>g</mi>
+        <mo>∈</mo>
+        <mrow data-mjx-texclass="ORD">
+          <mi mathvariant="normal">ℝ</mi>
+        </mrow>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:QM-two-state-H">(1.96)</span></div>
+<p>Here <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>D</mi>
+</math></span> is the uncoupled energy gap and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>g</mi>
+</math></span> is a real coupling. The symbol <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>D</mi>
+</math></span> is used for an energy gap; frequency detuning is a different quantity introduced in Chapter 6.</p>
+<section class="callout definition" id="definition-def-qm-state-matrix-distinction"><header><span class="callout-kind">Definition 1.8.1</span><span class="callout-title">State, coefficients, operator, and matrix</span></header><p> The ket <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>ψ</mi>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+</math></span> is the physical state. Once the ordered basis is chosen, its coefficients form a column:</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mi>ψ</mi>
+          </mrow>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+        </mrow>
+        <mo>=</mo>
+        <msub>
+          <mi>c</mi>
+          <mn>0</mn>
+        </msub>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mn>0</mn>
+          </mrow>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+        </mrow>
+        <mo>+</mo>
+        <msub>
+          <mi>c</mi>
+          <mn>1</mn>
+        </msub>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mn>1</mn>
+          </mrow>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+        </mrow>
+        <mstyle scriptlevel="0">
+          <mspace width="1em" />
+        </mstyle>
+        <mrow data-mjx-texclass="ORD">
+          <mover>
+            <mo stretchy="true">=</mo>
+            <mo>^</mo>
+          </mover>
+        </mrow>
+        <mstyle scriptlevel="0">
+          <mspace width="1em" />
+        </mstyle>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mtable columnspacing="1em" rowspacing="4pt">
+            <mtr>
+              <mtd>
+                <msub>
+                  <mi>c</mi>
+                  <mn>0</mn>
+                </msub>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <msub>
+                  <mi>c</mi>
+                  <mn>1</mn>
+                </msub>
+              </mtd>
+            </mtr>
+          </mtable>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:1.97">(1.97)</span></div>
+<p>Likewise, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>H</mi>
+      <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+    </mover>
+  </mrow>
+</math></span> is the operator and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>H</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>m</mi>
+      <mi>n</mi>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>m</mi>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
+  </mrow>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>H</mi>
+      <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+    </mover>
+  </mrow>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+</math></span> is its matrix in that basis. Changing basis changes the column and the matrix together; it does not change the state, operator, eigenvalues, or measurement probabilities.</p></section>
+<section class="callout theorem" id="theorem-thm-qm-two-state-spectrum"><header><span class="callout-kind">Theorem 1.8.1</span><span class="callout-title">Exact energies of the two-state model</span></header><p> The eigenvalues of Eq. <a class="xref" href="../chapter-01/index.html#eq-eq-qm-two-state-h">(1.96)</a> are</p>
+<div class="math-block math-block--numbered" id="eq-eq-qm-two-state-energies"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mrow class="mml-boxed">
+          <mrow data-mjx-texclass="ORD">
+            <mstyle displaystyle="true" scriptlevel="0">
+              <mrow data-mjx-texclass="ORD">
+                <msub>
+                  <mi>E</mi>
+                  <mrow data-mjx-texclass="ORD">
+                    <mo form="prefix" lspace="0em" rspace="0em">±</mo>
+                  </mrow>
+                </msub>
+                <mo>=</mo>
+                <mfrac>
+                  <mrow>
+                    <mi>D</mi>
+                    <mo>±</mo>
+                    <msqrt>
+                      <msup>
+                        <mi>D</mi>
+                        <mn>2</mn>
+                      </msup>
+                      <mo>+</mo>
+                      <mn>4</mn>
+                      <msup>
+                        <mi>g</mi>
+                        <mn>2</mn>
+                      </msup>
+                    </msqrt>
+                  </mrow>
+                  <mn>2</mn>
+                </mfrac>
+              </mrow>
+            </mstyle>
+          </mrow>
+        </mrow>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:QM-two-state-energies">(1.98)</span></div></section>
+<div class="proof" data-lead="Proof."><p>The eigenvalue equation has a nonzero solution only if</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mn>0</mn>
+  <mo>=</mo>
+  <mi>det</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>H</mi>
+    <mo>−</mo>
+    <mi>E</mi>
+    <mi>I</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+  <mo>=</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mtable columnspacing="1em" rowspacing="4pt">
+      <mtr>
+        <mtd>
+          <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+          <mi>E</mi>
+        </mtd>
+        <mtd>
+          <mi>g</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mi>g</mi>
+        </mtd>
+        <mtd>
+          <mi>D</mi>
+          <mo>−</mo>
+          <mi>E</mi>
+        </mtd>
+      </mtr>
+    </mtable>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
+  </mrow>
+  <mo>=</mo>
+  <mo stretchy="false">(</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mi>E</mi>
+  <mo stretchy="false">)</mo>
+  <mo stretchy="false">(</mo>
+  <mi>D</mi>
+  <mo>−</mo>
+  <mi>E</mi>
+  <mo stretchy="false">)</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <msup>
+    <mi>g</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>=</mo>
+  <msup>
+    <mi>E</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>−</mo>
+  <mi>D</mi>
+  <mi>E</mi>
+  <mo>−</mo>
+  <msup>
+    <mi>g</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>.</mo>
+</math></div>
+<p>The quadratic formula gives Eq. <a class="xref" href="../chapter-01/index.html#eq-eq-qm-two-state-energies">(1.98)</a>. At <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>g</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> the roots become <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>D</mi>
+</math></span>, which checks the uncoupled limit.</p></div>
+<p>For either root, the first row of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi>H</mi>
+  <mo>−</mo>
+  <mi>E</mi>
+  <mi>I</mi>
+  <mo stretchy="false">)</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>c</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>g</mi>
+  <msub>
+    <mi>c</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>=</mo>
+  <mi>E</mi>
+  <msub>
+    <mi>c</mi>
+    <mn>0</mn>
+  </msub>
+</math></span>. Choosing <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>c</mi>
+    <mn>0</mn>
+  </msub>
+  <mo>&gt;</mo>
+  <mn>0</mn>
+</math></span> fixes the irrelevant overall sign, and normalization gives</p>
+<div class="math-block math-block--numbered" id="eq-eq-qm-two-state-vector"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mi>E</mi>
+          </mrow>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+        </mrow>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mrow data-mjx-texclass="INNER">
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+              <mrow data-mjx-texclass="ORD">
+                <mn>0</mn>
+              </mrow>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+            </mrow>
+            <mo>+</mo>
+            <mo stretchy="false">(</mo>
+            <mi>E</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mo>/</mo>
+            </mrow>
+            <mi>g</mi>
+            <mo stretchy="false">)</mo>
+            <mrow data-mjx-texclass="INNER">
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+              <mrow data-mjx-texclass="ORD">
+                <mn>1</mn>
+              </mrow>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+            </mrow>
+          </mrow>
+          <msqrt>
+            <mn>1</mn>
+            <mo>+</mo>
+            <mo stretchy="false">(</mo>
+            <mi>E</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mo>/</mo>
+            </mrow>
+            <mi>g</mi>
+            <msup>
+              <mo stretchy="false">)</mo>
+              <mn>2</mn>
+            </msup>
+          </msqrt>
+        </mfrac>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <mo stretchy="false">(</mo>
+        <mi>g</mi>
+        <mo>≠</mo>
+        <mn>0</mn>
+        <mo stretchy="false">)</mo>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:QM-two-state-vector">(1.99)</span></div>
+<p>For <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>g</mi>
+  <mo>&gt;</mo>
+  <mn>0</mn>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>E</mi>
+    <mo>−</mo>
+  </msub>
+  <mo>&lt;</mo>
+  <mn>0</mn>
+</math></span>, so the two ground-state coefficients have opposite signs. This relative sign is physical because it controls the negative interference contribution <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mi>g</mi>
+  <msub>
+    <mi>c</mi>
+    <mn>0</mn>
+  </msub>
+  <msub>
+    <mi>c</mi>
+    <mn>1</mn>
+  </msub>
+</math></span> to the energy.</p>
+<figure id="chapter-01-fig-5" class="figure"><img src="assets/img/learn_two_state.png" class="diagram" alt="The three self-checks below, drawn. Left: the exact lower root of Eq. (1.98) against the second-order estimate -g^2/D. They are indistinguishable while g D and separate visibly once g approaches D/2 — the expansion parameter is g/D, and the figure shows where it stops being small. Right: the Rayleigh quotient H for the normalized trial state (,) at g/D=0.2. Its minimum over touches the exact lower eigenvalue and does not go below it, which is the variational principle in one picture. Both panels are computed by diagonalizing and by minimizing, not by plotting the formula." loading="lazy" style="--figure-width: 99%;"><figcaption>Figure 1.5. The three self-checks below, drawn. Left: the exact lower root
+	of Eq. <a class="xref" href="../chapter-01/index.html#eq-eq-qm-two-state-energies">(1.98)</a> against the second-order estimate
+	<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <msup>
+    <mi>g</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>D</mi>
+</math></span>. They are indistinguishable while <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>g</mi>
+  <mo>≪</mo>
+  <mi>D</mi>
+</math></span> and separate
+	visibly once <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>g</mi>
+</math></span> approaches <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>D</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+</math></span> — the expansion parameter is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>g</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>D</mi>
+</math></span>,
+	and the figure shows where it stops being small. Right: the Rayleigh
+	quotient <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>H</mi>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+</math></span> for the normalized trial state
+	<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi>cos</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mi>θ</mi>
+  <mo>,</mo>
+  <mi>sin</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mi>θ</mi>
+  <mo stretchy="false">)</mo>
+</math></span> at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>g</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>D</mi>
+  <mo>=</mo>
+  <mn>0.2</mn>
+</math></span>. Its minimum over <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>θ</mi>
+</math></span> touches
+	the exact lower eigenvalue and does not go below it, which is the
+	variational principle in one picture. Both panels are computed by
+	diagonalizing and by minimizing, not by plotting the formula.</figcaption></figure>
+<section class="callout example" id="example-ex-qm-selfcheck-exact"><header><span class="callout-kind">Example 1.8.1</span><span class="callout-title">Self-check 1: exact diagonalization</span></header><p> Take <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>D</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>g</mi>
+  <mo>=</mo>
+  <mn>0.2</mn>
+</math></span> in a declared energy unit. Find the two energies, the normalized ground state, and the probabilities of the two basis outcomes.</p>
+<p class="solution-head">Solution.</p>
+<p>Equation <a class="xref" href="../chapter-01/index.html#eq-eq-qm-two-state-energies">(1.98)</a> gives</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <msub>
+    <mi>E</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">±</mo>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mfrac>
+    <mrow>
+      <mn>1</mn>
+      <mo>±</mo>
+      <msqrt>
+        <mn>1</mn>
+        <mo>+</mo>
+        <mn>4</mn>
+        <mo stretchy="false">(</mo>
+        <mn>0.2</mn>
+        <msup>
+          <mo stretchy="false">)</mo>
+          <mn>2</mn>
+        </msup>
+      </msqrt>
+    </mrow>
+    <mn>2</mn>
+  </mfrac>
+  <mo>=</mo>
+  <mfrac>
+    <mrow>
+      <mn>1</mn>
+      <mo>±</mo>
+      <msqrt>
+        <mn>1.16</mn>
+      </msqrt>
+    </mrow>
+    <mn>2</mn>
+  </mfrac>
+  <mo>,</mo>
+</math></div>
+<p>so</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <msub>
+    <mi>E</mi>
+    <mo>−</mo>
+  </msub>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>0.0385164807</mn>
+  <mo>,</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="2em" />
+  </mstyle>
+  <msub>
+    <mi>E</mi>
+    <mo>+</mo>
+  </msub>
+  <mo>=</mo>
+  <mn>1.0385164807</mn>
+  <mo>.</mo>
+</math></div>
+<p>The coefficient ratio is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>c</mi>
+    <mn>1</mn>
+  </msub>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msub>
+    <mi>c</mi>
+    <mn>0</mn>
+  </msub>
+  <mo>=</mo>
+  <msub>
+    <mi>E</mi>
+    <mo>−</mo>
+  </msub>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>g</mi>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>0.192582404</mn>
+</math></span>. Normalizing,</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <msub>
+        <mi>E</mi>
+        <mo>−</mo>
+      </msub>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+  <mo>=</mo>
+  <mn>0.981956</mn>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>0</mn>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+  <mo>−</mo>
+  <mn>0.189108</mn>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>1</mn>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+  <mo>.</mo>
+</math></div>
+<p>Therefore a measurement in the ordered basis gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>P</mi>
+  <mo stretchy="false">(</mo>
+  <mn>0</mn>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mn>0.964238</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>P</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mn>0.035762</mn>
+</math></span>; their sum is one. The coupling lowers the ground energy below the smaller diagonal entry and mixes a small amount of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>1</mn>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+</math></span> into the ground state.</p></section>
+<p>The same answer can be obtained without solving a determinant. Every real, normalized state in this two-dimensional problem can be written</p>
+<div class="math-block math-block--numbered" id="eq-eq-qm-two-state-trial"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mi>ψ</mi>
+            <mo stretchy="false">(</mo>
+            <mi>θ</mi>
+            <mo stretchy="false">)</mo>
+          </mrow>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+        </mrow>
+        <mo>=</mo>
+        <mi>cos</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+        <mi>θ</mi>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mn>0</mn>
+          </mrow>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+        </mrow>
+        <mo>+</mo>
+        <mi>sin</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+        <mi>θ</mi>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mn>1</mn>
+          </mrow>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+        </mrow>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:QM-two-state-trial">(1.100)</span></div>
+<p>Its Rayleigh quotient is already normalized:</p>
+<div class="math-block math-block--numbered" id="eq-eq-qm-two-state-rayleigh"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>R</mi>
+        <mo stretchy="false">(</mo>
+        <mi>θ</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mi>ψ</mi>
+            <mo stretchy="false">(</mo>
+            <mi>θ</mi>
+            <mo stretchy="false">)</mo>
+          </mrow>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
+        </mrow>
+        <mrow data-mjx-texclass="ORD">
+          <mover accent="true">
+            <mi>H</mi>
+            <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+          </mover>
+        </mrow>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mi>ψ</mi>
+            <mo stretchy="false">(</mo>
+            <mi>θ</mi>
+            <mo stretchy="false">)</mo>
+          </mrow>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+        </mrow>
+        <mo>=</mo>
+        <mi>D</mi>
+        <msup>
+          <mi>sin</mi>
+          <mn>2</mn>
+        </msup>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+        <mi>θ</mi>
+        <mo>+</mo>
+        <mi>g</mi>
+        <mspace width="0.167em" /><mi>sin</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+        <mn>2</mn>
+        <mi>θ</mi>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:QM-two-state-rayleigh">(1.101)</span></div>
+<section class="callout example" id="example-ex-qm-selfcheck-variation"><header><span class="callout-kind">Example 1.8.2</span><span class="callout-title">Self-check 2: the variational route</span></header><p> Minimize Eq. <a class="xref" href="../chapter-01/index.html#eq-eq-qm-two-state-rayleigh">(1.101)</a> and compare with the exact ground state for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>D</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>g</mi>
+  <mo>=</mo>
+  <mn>0.2</mn>
+</math></span>.</p>
+<p class="solution-head">Solution.</p>
+<p>Differentiate rather than guess:</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mfrac>
+    <mrow>
+      <mi>d</mi>
+      <mi>R</mi>
+    </mrow>
+    <mrow>
+      <mi>d</mi>
+      <mi>θ</mi>
+    </mrow>
+  </mfrac>
+  <mo>=</mo>
+  <mi>D</mi>
+  <mspace width="0.167em" /><mi>sin</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mn>2</mn>
+  <mi>θ</mi>
+  <mo>+</mo>
+  <mn>2</mn>
+  <mi>g</mi>
+  <mspace width="0.167em" /><mi>cos</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mn>2</mn>
+  <mi>θ</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+  <mo>,</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="2em" />
+  </mstyle>
+  <mspace width="0.167em" /><mi>tan</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mn>2</mn>
+  <mi>θ</mi>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mfrac>
+    <mrow>
+      <mn>2</mn>
+      <mi>g</mi>
+    </mrow>
+    <mi>D</mi>
+  </mfrac>
+  <mo>.</mo>
+</math></div>
+<p>The minimum connected continuously to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>0</mn>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+</math></span> lies in <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mi>π</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>4</mn>
+  <mo>&lt;</mo>
+  <mi>θ</mi>
+  <mo>&lt;</mo>
+  <mn>0</mn>
+</math></span>, so</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <msub>
+    <mi>θ</mi>
+    <mo>−</mo>
+  </msub>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mfrac>
+    <mn>1</mn>
+    <mn>2</mn>
+  </mfrac>
+  <mspace width="0.167em" /><mi>arctan</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mn>0.4</mn>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>0.190253</mn>
+  <mtext> </mtext>
+  <mrow data-mjx-texclass="ORD">
+    <mi data-mjx-auto-op="false">rad</mi>
+  </mrow>
+  <mo>.</mo>
+</math></div>
+<p>Thus <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>cos</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <msub>
+    <mi>θ</mi>
+    <mo>−</mo>
+  </msub>
+  <mo>=</mo>
+  <mn>0.981956</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>sin</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <msub>
+    <mi>θ</mi>
+    <mo>−</mo>
+  </msub>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>0.189108</mn>
+</math></span>, exactly the coefficients found in Self-check 1. Substitution into <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>R</mi>
+</math></span> gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>R</mi>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>θ</mi>
+    <mo>−</mo>
+  </msub>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>0.0385164807</mn>
+</math></span>. The variational search is exact here because the one-parameter trial family contains every normalized real state in the two-dimensional space.</p></section>
+<p>When <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">|</mo>
+  <mi>g</mi>
+  <mo stretchy="false">|</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>D</mi>
+  <mo>≪</mo>
+  <mn>1</mn>
+</math></span>, expand <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msqrt>
+    <msup>
+      <mi>D</mi>
+      <mn>2</mn>
+    </msup>
+    <mo>+</mo>
+    <mn>4</mn>
+    <msup>
+      <mi>g</mi>
+      <mn>2</mn>
+    </msup>
+  </msqrt>
+  <mo>=</mo>
+  <mi>D</mi>
+  <msqrt>
+    <mn>1</mn>
+    <mo>+</mo>
+    <mn>4</mn>
+    <msup>
+      <mi>g</mi>
+      <mn>2</mn>
+    </msup>
+    <mrow data-mjx-texclass="ORD">
+      <mo>/</mo>
+    </mrow>
+    <msup>
+      <mi>D</mi>
+      <mn>2</mn>
+    </msup>
+  </msqrt>
+</math></span> with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msqrt>
+    <mn>1</mn>
+    <mo>+</mo>
+    <mi>x</mi>
+  </msqrt>
+  <mo>=</mo>
+  <mn>1</mn>
+  <mo>+</mo>
+  <mi>x</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+  <mo>−</mo>
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>8</mn>
+  <mo>+</mo>
+  <mo>⋯</mo>
+</math></span>. The lower root becomes</p>
+<div class="math-block math-block--numbered" id="eq-eq-qm-two-state-perturbative"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mrow class="mml-boxed">
+          <mrow data-mjx-texclass="ORD">
+            <mstyle displaystyle="true" scriptlevel="0">
+              <mrow data-mjx-texclass="ORD">
+                <msub>
+                  <mi>E</mi>
+                  <mo>−</mo>
+                </msub>
+                <mo>=</mo>
+                <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+                <mfrac>
+                  <msup>
+                    <mi>g</mi>
+                    <mn>2</mn>
+                  </msup>
+                  <mi>D</mi>
+                </mfrac>
+                <mo>+</mo>
+                <mfrac>
+                  <msup>
+                    <mi>g</mi>
+                    <mn>4</mn>
+                  </msup>
+                  <msup>
+                    <mi>D</mi>
+                    <mn>3</mn>
+                  </msup>
+                </mfrac>
+                <mo>+</mo>
+                <mi>O</mi>
+                <mstyle scriptlevel="0">
+                  <mspace width="-0.167em" />
+                </mstyle>
+                <mrow data-mjx-texclass="INNER">
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                  <mfrac>
+                    <msup>
+                      <mi>g</mi>
+                      <mn>6</mn>
+                    </msup>
+                    <msup>
+                      <mi>D</mi>
+                      <mn>5</mn>
+                    </msup>
+                  </mfrac>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+                </mrow>
+              </mrow>
+            </mstyle>
+          </mrow>
+        </mrow>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:QM-two-state-perturbative">(1.102)</span></div>
+<section class="callout example" id="example-ex-qm-selfcheck-perturbation"><header><span class="callout-kind">Example 1.8.3</span><span class="callout-title">Self-check 3: approximation and its failure</span></header><p> Use second order for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>D</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>g</mi>
+  <mo>=</mo>
+  <mn>0.2</mn>
+</math></span>, then explain what happens as the uncoupled gap closes.</p>
+<p class="solution-head">Solution.</p>
+<p>Keeping only the first term of Eq. <a class="xref" href="../chapter-01/index.html#eq-eq-qm-two-state-perturbative">(1.102)</a>,</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <msubsup>
+    <mi>E</mi>
+    <mo>−</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mo stretchy="false">(</mo>
+      <mn>2</mn>
+      <mo stretchy="false">)</mo>
+    </mrow>
+  </msubsup>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mfrac>
+    <mrow>
+      <mo stretchy="false">(</mo>
+      <mn>0.2</mn>
+      <msup>
+        <mo stretchy="false">)</mo>
+        <mn>2</mn>
+      </msup>
+    </mrow>
+    <mn>1</mn>
+  </mfrac>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>0.0400000</mn>
+  <mo>,</mo>
+</math></div>
+<p>which differs from the exact <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>0.0385165</mn>
+</math></span> by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0.0014835</mn>
+</math></span>, or <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>3.85</mn>
+  <mi mathvariant="normal">%</mi>
+</math></span> of the magnitude. Including <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>g</mi>
+    <mn>4</mn>
+  </msup>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msup>
+    <mi>D</mi>
+    <mn>3</mn>
+  </msup>
+  <mo>=</mo>
+  <mn>0.0016</mn>
+</math></span> gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>0.0384</mn>
+</math></span>.</p>
+<p>The expansion parameter is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">|</mo>
+  <mi>g</mi>
+  <mo stretchy="false">|</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>D</mi>
+</math></span>. If <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>D</mi>
+  <mo accent="false" stretchy="false">→</mo>
+  <mn>0</mn>
+</math></span> at fixed <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>g</mi>
+</math></span>, the second-order expression diverges, while the exact root remains finite:</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <msub>
+    <mi>E</mi>
+    <mo>−</mo>
+  </msub>
+  <mo stretchy="false">⟶</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mo stretchy="false">|</mo>
+  <mi>g</mi>
+  <mo stretchy="false">|</mo>
+  <mo>.</mo>
+</math></div>
+<p>The approximation therefore fails at gap closure. The failure is not a defect in the exact two-state model; it says that coupling cannot be treated as a small correction when the uncoupled levels are degenerate.</p></section>
+<h2 id="sec-1-summary"><span class="sec-number">1.9</span>Summary</h2>
+<ul><li><p>A ket and its coefficient column are one state in two levels of description; an operator and its matrix are related in the same way (Def. <a class="xref" href="../chapter-01/index.html#definition-def-qm-state-matrix-distinction">1.8.1</a>).</p></li><li><p>Inner products normalize states, projections give amplitudes, and their squared magnitudes give probabilities (Axiom <a class="xref" href="../chapter-01/index.html#axiom-ax-measurement">III</a>).</p></li><li><p>A Hermitian Hamiltonian has real energies. The two-state model has the exact spectrum in Eq. <a class="xref" href="../chapter-01/index.html#eq-eq-qm-two-state-energies">(1.98)</a>; determinant and Rayleigh-quotient methods give the same normalized ground state.</p></li><li><p>The small-coupling result <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>E</mi>
+    <mo>−</mo>
+  </msub>
+  <mo>≃</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <msup>
+    <mi>g</mi>
+    <mn>2</mn>
+  </msup>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>D</mi>
+</math></span> is controlled by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">|</mo>
+  <mi>g</mi>
+  <mo stretchy="false">|</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>D</mi>
+</math></span> and fails when the gap closes (Eq. <a class="xref" href="../chapter-01/index.html#eq-eq-qm-two-state-perturbative">(1.102)</a>).</p></li><li><p>Chapter 2 turns the abstract eigenvalue equation into differential equations and shows how boundary conditions select the allowed energies.</p></li></ul>
+<h2 id="sec-1-exercises"><span class="sec-number">1.10</span>Exercises</h2>
+<ol><li><p>For <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>D</mi>
+  <mo>=</mo>
+  <mn>2</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>g</mi>
+  <mo>=</mo>
+  <mn>0.1</mn>
+</math></span> in the same energy unit, compute <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>E</mi>
+    <mo>−</mo>
+  </msub>
+</math></span> exactly and from <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <msup>
+    <mi>g</mi>
+    <mn>2</mn>
+  </msup>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>D</mi>
+</math></span>. State the relative error.</p></li><li><p>For the state <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mn>3</mn>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>0</mn>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+  <mo>+</mo>
+  <mn>4</mn>
+  <mi>i</mi>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>1</mn>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+  <mo stretchy="false">)</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>5</mn>
+</math></span>, find <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>P</mi>
+  <mo stretchy="false">(</mo>
+  <mn>0</mn>
+  <mo stretchy="false">)</mo>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>P</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span> and verify normalization. Explain why the relative phase does not change these two probabilities.</p></li><li><p>Show directly that replacing <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>1</mn>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+</math></span> by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>1</mn>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+</math></span> changes the matrix entry <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>g</mi>
+</math></span> to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mi>g</mi>
+</math></span> but leaves Eq. <a class="xref" href="../chapter-01/index.html#eq-eq-qm-two-state-energies">(1.98)</a> unchanged. This is a basis change, not a new physical Hamiltonian.</p></li></ol>
+<h2 id="sec-1-optional-extension-problems"><span class="sec-number">1.11</span>Optional Extension Problems</h2>
+<p>The former homework set is retained as an optional, more advanced extension. It ranges from formal proofs to composite systems. Unless stated otherwise, work in Dirac notation.</p>
 <h3 id="sec-1-hilbert-space-inner-products-and-bases">Hilbert Space, Inner Products, and Bases</h3>
 <ol><li><p>Let <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
@@ -7754,7 +9169,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.96">(1.96)</span></div></li><li><p>Prove the Cauchy–Schwarz inequality:</p>
+</math><span class="eqn-number" id="mjx-eqn:1.103">(1.103)</span></div></li><li><p>Prove the Cauchy–Schwarz inequality:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -7798,7 +9213,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.97">(1.97)</span></div></li><li><p>Use the Cauchy–Schwarz inequality to show the triangle inequality for the norm:</p>
+</math><span class="eqn-number" id="mjx-eqn:1.104">(1.104)</span></div></li><li><p>Use the Cauchy–Schwarz inequality to show the triangle inequality for the norm:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -7844,7 +9259,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.98">(1.98)</span></div></li></ol></li><li><p>Let <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math><span class="eqn-number" id="mjx-eqn:1.105">(1.105)</span></div></li></ol></li><li><p>Let <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo fence="false" stretchy="false">{</mo>
   <mrow data-mjx-texclass="INNER">
     <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
@@ -7918,7 +9333,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.99">(1.99)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.106">(1.106)</span></div>
 <p>and identify <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>c</mi>
@@ -7973,7 +9388,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.100">(1.100)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.107">(1.107)</span></div>
 <p>by acting on an arbitrary state <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="INNER">
     <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
@@ -8101,7 +9516,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.101">(1.101)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.108">(1.108)</span></div>
 <ol><li><p>Write explicitly the Fourier transforms relating <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ψ</mi>
   <mo stretchy="false">(</mo>
@@ -8177,7 +9592,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.102">(1.102)</span></div></li><li><p>For the Gaussian wave function</p>
+</math><span class="eqn-number" id="mjx-eqn:1.109">(1.109)</span></div></li><li><p>For the Gaussian wave function</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -8234,7 +9649,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.103">(1.103)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.110">(1.110)</span></div>
 <p>compute <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ϕ</mi>
   <mo stretchy="false">(</mo>
@@ -8310,7 +9725,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.104">(1.104)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.111">(1.111)</span></div>
 <p>in this basis.</p></li><li><p>Suppose another orthonormal basis <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo fence="false" stretchy="false">{</mo>
   <mrow data-mjx-texclass="INNER">
@@ -8435,7 +9850,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.105">(1.105)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.112">(1.112)</span></div>
 <p>Find the unitary matrix <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>U</mi>
 </math></span> that transforms components from the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -8598,7 +10013,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.106">(1.106)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.113">(1.113)</span></div>
 <p>where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo stretchy="false">(</mo>
   <mi mathvariant="normal">Δ</mi>
@@ -8733,7 +10148,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.107">(1.107)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.114">(1.114)</span></div>
 <ol><li><p>Check whether <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mover accent="true">
@@ -8783,7 +10198,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.108">(1.108)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.115">(1.115)</span></div>
 <ol><li><p>Show that <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mover accent="true">
@@ -8995,7 +10410,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.109">(1.109)</span></div></li><li><p>Prove that if <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math><span class="eqn-number" id="mjx-eqn:1.116">(1.116)</span></div></li><li><p>Prove that if <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="INNER">
     <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
@@ -9450,7 +10865,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.110">(1.110)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.117">(1.117)</span></div>
 <ol><li><p>Compute <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo stretchy="false">(</mo>
   <mrow data-mjx-texclass="ORD">
@@ -9531,7 +10946,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.111">(1.111)</span></div></li></ol></li><li><p>Let <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math><span class="eqn-number" id="mjx-eqn:1.118">(1.118)</span></div></li></ol></li><li><p>Let <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mover accent="true">
       <mi>A</mi>
@@ -9637,7 +11052,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.112">(1.112)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.119">(1.119)</span></div>
 <p>Use the Cauchy–Schwarz inequality to derive the Robertson inequality</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -9694,7 +11109,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.113">(1.113)</span></div></li><li><p>Apply this to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math><span class="eqn-number" id="mjx-eqn:1.120">(1.120)</span></div></li><li><p>Apply this to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mover accent="true">
       <mi>A</mi>
@@ -9936,7 +11351,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.114">(1.114)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.121">(1.121)</span></div>
 <p>A normalized initial state at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>t</mi>
   <mo>=</mo>
@@ -9979,7 +11394,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.115">(1.115)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.122">(1.122)</span></div>
 <ol><li><p>Find <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="INNER">
     <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
@@ -10114,7 +11529,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.116">(1.116)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.123">(1.123)</span></div>
 <p>Show that <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="INNER">
     <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
@@ -10155,6 +11570,7 @@
 </main>
 <footer class="site-footer">
   <div class="site-footer-inner">
+    <p class="site-footer-notice"><strong>Under development.</strong> These notes are a working draft and have not been fully checked. Concepts, derivations, worked solutions and numerical values may contain errors, so read them critically and verify anything you rely on.</p>
     <p>&copy; 2026 Erfan Saydanzad. All rights reserved. This material is published for reading and personal study; it may not be copied, redistributed, or reused in other work without written permission.</p>
   </div>
 </footer>

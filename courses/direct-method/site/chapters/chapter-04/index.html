@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Chapter 4: The Hydrogen Atom | Direct Method</title>
+  <title>Chapter 4: The Hydrogen Atom | Quantum Mechanics and Spectroscopy</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
   <link rel="preload" href="../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../../assets/css/site.css?v=856ec339">
+  <link rel="stylesheet" href="../../assets/css/site.css?v=ee8de383">
   <link rel="preload" href="../../assets/fonts/latinmodern-math.woff2" as="font" type="font/woff2" crossorigin>
-  <script defer src="../../assets/js/main.js?v=856ec339"></script>
+  <script defer src="../../assets/js/main.js?v=ee8de383"></script>
 
 <style>
 .site-header { justify-content: flex-start; gap: 16px; }
@@ -35,7 +35,7 @@
   <a class="site-up" href="../../../../../index.html"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.5 5.5 8l4.5 4.5"/></svg><span>Saydanzad Group</span></a>
   <a class="brand" href="../../index.html">
     <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M9 6.5V25.5M9 6.5H24M9 25.5H24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 16Q10.5 9.5 15.5 16T25.5 16" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/></svg>
-    <span>Direct Method</span>
+    <span>Quantum Mechanics and Spectroscopy</span>
   </a>
   <nav class="top-nav" aria-label="Primary">
     <a href="../../index.html">Home</a>
@@ -72,6 +72,7 @@
 <a class="toc-level-3" href="#sec-4-expectation-values-and-the-size-of-an-orbital">4.7.2 Expectation Values and the Size of an Orbital</a>
 <a class="toc-level-2" href="#sec-4-atomic-units">4.8 Atomic Units</a>
 <a class="toc-level-2" href="#sec-4-rydberg-states">4.9 Rydberg States</a>
+<a class="toc-level-3" href="#sec-4-first-pass-self-checks-one-orbital-three-questions">4.9.1 First-Pass Self-Checks: One Orbital, Three Questions</a>
 <a class="toc-level-2" href="#sec-4-summary">4.10 Summary</a>
 <a class="toc-level-2" href="#sec-4-exercises">4.11 Exercises</a>
 <a class="toc-level-2" href="#sec-4-project-hydrogen-numerically-and-exactly">4.12 Project: Hydrogen, Numerically and Exactly</a>
@@ -87,6 +88,162 @@
     <h2 id="sec-4-introduction"><span class="sec-number">4.1</span>Introduction</h2>
 <p>The hydrogen atom is the only atom whose Schrödinger equation can be solved exactly in closed form. This chapter is therefore the analytical foundation of the course: every atom and molecule that follows is described by saying how it differs from this solution.</p>
 <p>We will carry the calculation out completely. The two-body problem is reduced to one body, the Laplacian is written in spherical coordinates, the variables are separated, both resulting ordinary differential equations are solved, and the quantization of the energy is obtained from the requirement that the radial solution remain finite. The complete normalized wave functions and the energy spectrum are collected in Sec. <a class="xref" href="../chapter-04/index.html#sec-4-the-complete-solution">4.7</a>.</p>
+<section class="callout remark" id="remark-rem-h-first-pass"><header><span class="callout-kind">Remark 4.1.1</span><span class="callout-title">First-pass route</span></header><p> Read the reduced-mass reduction (Sec. <a class="xref" href="../chapter-04/index.html#sec-4-the-two-body-problem-and-the-reduced-mass">4.2</a>), the separation of variables (Sec. <a class="xref" href="../chapter-04/index.html#sec-4-separation-of-variables">4.4</a>), and the collected solution (Sec. <a class="xref" href="../chapter-04/index.html#sec-4-the-complete-solution">4.7</a>); then work the three self-checks in Sec. <a class="xref" href="../chapter-04/index.html#sec-4-first-pass-self-checks-one-orbital-three-questions">4.9.1</a> before the Summary. Chapter 3 already solved the angular equation, so Sec. <a class="xref" href="../chapter-04/index.html#sec-4-solving-the-angular-equation">4.5</a> can be read on a first pass as a reminder of where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msubsup>
+    <mi>Y</mi>
+    <mi>l</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>m</mi>
+    </mrow>
+  </msubsup>
+</math></span> comes from. Two things on this route are used in every chapter that follows and in both companion courses: the normalized <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+  <mi>s</mi>
+</math></span> orbital, which is the atomic basis function of <em>Quantum Chemistry</em>, and atomic units (Sec. <a class="xref" href="../chapter-04/index.html#sec-4-atomic-units">4.8</a>), in which nearly every published number is quoted. Rydberg states (Sec. <a class="xref" href="../chapter-04/index.html#sec-4-rydberg-states">4.9</a>) prepare Chapters 10 and 11 and may be postponed.</p></section>
+<section class="callout remark" id="remark-rem-h-gamma-integral"><header><span class="callout-kind">Remark 4.1.2</span><span class="callout-title">Prerequisite recall: the only integral this chapter needs</span></header><p> Every radial integral below is a case of</p>
+<div class="math-block math-block--numbered" id="eq-eq-h-gamma-integral"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <msubsup>
+          <mo data-mjx-texclass="OP">∫</mo>
+          <mn>0</mn>
+          <mrow data-mjx-texclass="ORD">
+            <mi mathvariant="normal">∞</mi>
+          </mrow>
+        </msubsup>
+        <msup>
+          <mi>r</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mi>n</mi>
+          </mrow>
+        </msup>
+        <msup>
+          <mi>e</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+            <mi>α</mi>
+            <mi>r</mi>
+          </mrow>
+        </msup>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <mi>d</mi>
+        <mi>r</mi>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mi>n</mi>
+            <mo>!</mo>
+          </mrow>
+          <msup>
+            <mi>α</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mi>n</mi>
+              <mo>+</mo>
+              <mn>1</mn>
+            </mrow>
+          </msup>
+        </mfrac>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <mi>n</mi>
+        <mo>=</mo>
+        <mn>0</mn>
+        <mo>,</mo>
+        <mn>1</mn>
+        <mo>,</mo>
+        <mn>2</mn>
+        <mo>,</mo>
+        <mo>…</mo>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="1em" />
+        </mstyle>
+        <mi>α</mi>
+        <mo>&gt;</mo>
+        <mn>0</mn>
+        <mo>,</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-gamma-integral">(4.1)</span></div>
+<p>which follows from <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msubsup>
+    <mo data-mjx-texclass="OP">∫</mo>
+    <mn>0</mn>
+    <mi mathvariant="normal">∞</mi>
+  </msubsup>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi>α</mi>
+      <mi>r</mi>
+    </mrow>
+  </msup>
+  <mi>d</mi>
+  <mi>r</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>α</mi>
+</math></span> by differentiating <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> times with respect to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>α</mi>
+</math></span>. For a finite upper limit the same integrand gives an incomplete result, and the one used in Self-check 2 is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msubsup>
+    <mo data-mjx-texclass="OP">∫</mo>
+    <mn>0</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mi>b</mi>
+    </mrow>
+  </msubsup>
+  <msup>
+    <mi>x</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi>x</mi>
+    </mrow>
+  </msup>
+  <mi>d</mi>
+  <mi>x</mi>
+  <mo>=</mo>
+  <mn>2</mn>
+  <mo>−</mo>
+  <mo stretchy="false">(</mo>
+  <msup>
+    <mi>b</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mo>+</mo>
+  <mn>2</mn>
+  <mi>b</mi>
+  <mo>+</mo>
+  <mn>2</mn>
+  <mo stretchy="false">)</mo>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi>b</mi>
+    </mrow>
+  </msup>
+</math></span>, obtained by integrating by parts twice.</p></section>
 <h2 id="sec-4-the-two-body-problem-and-the-reduced-mass"><span class="sec-number">4.2</span>The Two-Body Problem and the Reduced Mass</h2>
 <p>A hydrogen atom is an electron of mass <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
@@ -224,7 +381,44 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-two-body">(4.1)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-two-body">(4.2)</span></div>
+<p>Two particles, two position vectors, and a potential that couples them: as written, this is not a problem any of the machinery of Chapters 1–3 can touch. What rescues it is that the coupling is of a particularly mild kind. The potential does not depend on <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover accent="true">
+        <mi>r</mi>
+        <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+      </mover>
+    </mrow>
+    <mi>e</mi>
+  </msub>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover accent="true">
+        <mi>r</mi>
+        <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+      </mover>
+    </mrow>
+    <mi>p</mi>
+  </msub>
+</math></span> separately, only on their difference, and a coordinate system built around that difference turns the two-body problem into a one-body one exactly, with nothing thrown away. Figure <a class="xref" href="../chapter-04/index.html#chapter-04-fig-1">4.1</a> is that change of variables, drawn.</p>
+<figure id="chapter-04-fig-1" class="figure"><img src="assets/img/ch04_fig00_two_body.png" class="diagram" alt="The same two particles, described twice. On the left, each is located from an origin chosen arbitrarily by us — and the Coulomb energy depends on neither vector by itself. On the right, one vector locates the pair as a whole and the other separates them. Only the second appears in the potential, which is why the equation splits: the first describes the atom drifting through the laboratory and can be discarded, and the second is the hydrogen atom. Note where R points — the centre of mass is inside the proton, and Eq. (4.7) is the small correction that follows from its not being exactly there." loading="lazy" style="--figure-width: 98%;"><figcaption>Figure 4.1. The same two particles, described twice. On the left, each is
+	located from an origin chosen arbitrarily by us — and the Coulomb
+	energy depends on neither vector by itself. On the right, one vector
+	locates the pair as a whole and the other separates them. Only the second
+	appears in the potential, which is why the equation splits: the first
+	describes the atom drifting through the laboratory and can be discarded,
+	and the second is the hydrogen atom. Note where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>R</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+</math></span> points — the
+	centre of mass is inside the proton, and Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-mu-number">(4.7)</a> is
+	the small correction that follows from its not being exactly there.</figcaption></figure>
 <p>Introduce center-of-mass and relative coordinates,</p>
 <div class="math-block math-block--numbered" id="eq-eq-h-coords"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -313,7 +507,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-coords">(4.2)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-coords">(4.3)</span></div>
 <p>and define the total and reduced masses</p>
 <div class="math-block math-block--numbered" id="eq-eq-h-masses"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -376,7 +570,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-masses">(4.3)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-masses">(4.4)</span></div>
 <p>In these coordinates the kinetic energy separates exactly,</p>
 <div class="math-block math-block--numbered" id="eq-eq-h-separated-kinetic"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -473,7 +667,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-separated-kinetic">(4.4)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-separated-kinetic">(4.5)</span></div>
 <p>and the potential depends on <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mover accent="true">
@@ -591,7 +785,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-hamiltonian-SI">(4.5)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-hamiltonian-SI">(4.6)</span></div>
 <p>where we have allowed a nuclear charge <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>Z</mi>
   <mi>e</mi>
@@ -685,7 +879,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-mu-number">(4.6)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-mu-number">(4.7)</span></div>
 <p>The correction is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>5.4</mn>
   <mo>×</mo>
@@ -783,7 +977,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-TISE">(4.7)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-TISE">(4.8)</span></div>
 <p>Because <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>V</mi>
 </math></span> depends only on <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -846,7 +1040,7 @@
                 <mn>2</mn>
               </mrow>
             </msup>
-            <mi>sin</mi>
+            <mspace width="0.167em" /><mi>sin</mi>
             <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
             <mi>θ</mi>
           </mrow>
@@ -916,8 +1110,8 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-laplacian">(4.8)</span></div>
-<p>Substituting Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-laplacian">(4.8)</a> into Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-tise">(4.7)</a> gives the equation in full:</p>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-laplacian">(4.9)</span></div>
+<p>Substituting Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-laplacian">(4.9)</a> into Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-tise">(4.8)</a> gives the equation in full:</p>
 <div class="math-block math-block--numbered" id="eq-eq-h-tise-full"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -992,7 +1186,7 @@
                       <mn>2</mn>
                     </mrow>
                   </msup>
-                  <mi>sin</mi>
+                  <mspace width="0.167em" /><mi>sin</mi>
                   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
                   <mi>θ</mi>
                 </mrow>
@@ -1111,8 +1305,8 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-TISE-full">(4.9)</span></div>
-<p>Comparing Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-laplacian">(4.8)</a> with the operator <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math><span class="eqn-number" id="mjx-eqn:eq:H-TISE-full">(4.10)</span></div>
+<p>Comparing Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-laplacian">(4.9)</a> with the operator <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mrow data-mjx-texclass="ORD">
       <mover accent="true">
@@ -1124,7 +1318,7 @@
       <mn>2</mn>
     </mrow>
   </msup>
-</math></span> of Chapter 3, Eq. <a class="xref" href="../chapter-03/index.html#eq-eq-am-l2-spherical">(3.31)</a>, the two angular terms are precisely <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> of Chapter 3, Eq. <a class="xref" href="../chapter-03/index.html#eq-eq-am-l2-spherical">(3.32)</a>, the two angular terms are precisely <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo form="prefix" lspace="0em" rspace="0em">−</mo>
   <msup>
     <mrow data-mjx-texclass="ORD">
@@ -1152,7 +1346,7 @@
       <mn>2</mn>
     </mrow>
   </msup>
-</math></span>. So Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-laplacian">(4.8)</a> can be written compactly as</p>
+</math></span>. So Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-laplacian">(4.9)</a> can be written compactly as</p>
 <div class="math-block math-block--numbered" id="eq-eq-h-laplacian-l2"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -1232,7 +1426,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-laplacian-L2">(4.10)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-laplacian-L2">(4.11)</span></div>
 <p>which is the form that makes the separation transparent.</p>
 <h2 id="sec-4-separation-of-variables"><span class="sec-number">4.4</span>Separation of Variables</h2>
 <p>Assume a product solution,</p>
@@ -1266,8 +1460,8 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-product">(4.11)</span></div>
-<p>Substitute Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-product">(4.11)</a> into Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-tise-full">(4.9)</a>. The radial derivative acts only on <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math><span class="eqn-number" id="mjx-eqn:eq:H-product">(4.12)</span></div>
+<p>Substitute Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-product">(4.12)</a> into Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-tise-full">(4.10)</a>. The radial derivative acts only on <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>R</mi>
 </math></span> and the angular derivatives only on <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>Y</mi>
@@ -1381,7 +1575,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-sep-step1">(4.12)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-sep-step1">(4.13)</span></div>
 <p>where for brevity</p>
 <div class="math-block math-block--numbered" id="eq-eq-h-angular-operator"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -1463,8 +1657,8 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-angular-operator">(4.13)</span></div>
-<p>Now multiply Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-sep-step1">(4.12)</a> through by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math><span class="eqn-number" id="mjx-eqn:eq:H-angular-operator">(4.14)</span></div>
+<p>Now multiply Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-sep-step1">(4.13)</a> through by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo form="prefix" lspace="0em" rspace="0em">−</mo>
   <mstyle displaystyle="true" scriptlevel="0">
     <mfrac>
@@ -1619,7 +1813,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-sep-step2">(4.14)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-sep-step2">(4.15)</span></div>
 <p>A function of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>r</mi>
 </math></span> can equal a function of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -1635,7 +1829,7 @@
   <mo>+</mo>
   <mn>1</mn>
   <mo stretchy="false">)</mo>
-</math></span> — a choice of name, justified in Sec. <a class="xref" href="../chapter-04/index.html#sec-4-solving-the-angular-equation">4.5</a> when the constant turns out to be forced into exactly that form. Equation <a class="xref" href="../chapter-04/index.html#eq-eq-h-sep-step2">(4.14)</a> then splits into two ordinary differential equations.</p>
+</math></span> — a choice of name, justified in Sec. <a class="xref" href="../chapter-04/index.html#sec-4-solving-the-angular-equation">4.5</a> when the constant turns out to be forced into exactly that form. Equation <a class="xref" href="../chapter-04/index.html#eq-eq-h-sep-step2">(4.15)</a> then splits into two ordinary differential equations.</p>
 <h3 id="sec-4-the-angular-equation">The angular equation</h3>
 <div class="math-block math-block--numbered" id="eq-eq-h-angular-eq"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -1727,7 +1921,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-angular-eq">(4.15)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-angular-eq">(4.16)</span></div>
 <h3 id="sec-4-the-radial-equation">The radial equation</h3>
 <div class="math-block math-block--numbered" id="eq-eq-h-radial-eq"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -1825,12 +2019,12 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-radial-eq">(4.16)</span></div>
-<p>Notice what the separation has achieved: the potential appears <em>only</em> in the radial equation. Equation <a class="xref" href="../chapter-04/index.html#eq-eq-h-angular-eq">(4.15)</a> contains no reference to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math><span class="eqn-number" id="mjx-eqn:eq:H-radial-eq">(4.17)</span></div>
+<p>Notice what the separation has achieved: the potential appears <em>only</em> in the radial equation. Equation <a class="xref" href="../chapter-04/index.html#eq-eq-h-angular-eq">(4.16)</a> contains no reference to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>V</mi>
 </math></span>, so its solutions are the same for <em>every</em> central potential. They are solved once, in Sec. <a class="xref" href="../chapter-04/index.html#sec-4-solving-the-angular-equation">4.5</a>, and reused for every atom in this book.</p>
 <h3 id="sec-4-reduction-to-one-dimensional-form"><span class="sec-number">4.4.3</span>Reduction to One-Dimensional Form</h3>
-<p>The radial equation <a class="xref" href="../chapter-04/index.html#eq-eq-h-radial-eq">(4.16)</a> has a first-derivative term, which is inconvenient. It is removed by the substitution</p>
+<p>The radial equation <a class="xref" href="../chapter-04/index.html#eq-eq-h-radial-eq">(4.17)</a> has a first-derivative term, which is inconvenient. It is removed by the substitution</p>
 <div class="math-block math-block--numbered" id="eq-eq-h-u-def"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -1865,7 +2059,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-u-def">(4.17)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-u-def">(4.18)</span></div>
 <p>Let us verify this explicitly, since the manipulation recurs throughout the book. From <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>R</mi>
   <mo>=</mo>
@@ -1956,7 +2150,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-u-step1">(4.18)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-u-step1">(4.19)</span></div>
 <p>Differentiating again,</p>
 <div class="math-block math-block--numbered" id="eq-eq-h-u-step2"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -2062,8 +2256,8 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-u-step2">(4.19)</span></div>
-<p>Substituting Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-u-step2">(4.19)</a> into Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-radial-eq">(4.16)</a> and multiplying by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math><span class="eqn-number" id="mjx-eqn:eq:H-u-step2">(4.20)</span></div>
+<p>Substituting Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-u-step2">(4.20)</a> into Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-radial-eq">(4.17)</a> and multiplying by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>r</mi>
 </math></span> gives the result:</p>
 <div class="math-block math-block--numbered" id="eq-eq-h-radial-1d"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
@@ -2163,7 +2357,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-radial-1D">(4.20)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-radial-1D">(4.21)</span></div>
 <p>This has exactly the form of the one-dimensional Schrödinger equation of Chapter 2, on the half-line <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>0</mn>
   <mo>&lt;</mo>
@@ -2222,7 +2416,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-Veff">(4.21)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-Veff">(4.22)</span></div>
 <p>The added term is the <em>centrifugal barrier</em>: repulsive, and divergent as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>r</mi>
   <mo accent="false" stretchy="false">→</mo>
@@ -2249,7 +2443,7 @@
   <mi>r</mi>
 </math></span> to remain finite at the origin.</p>
 <h2 id="sec-4-solving-the-angular-equation"><span class="sec-number">4.5</span>Solving the Angular Equation</h2>
-<p>Equation <a class="xref" href="../chapter-04/index.html#eq-eq-h-angular-eq">(4.15)</a> separates once more. Write</p>
+<p>Equation <a class="xref" href="../chapter-04/index.html#eq-eq-h-angular-eq">(4.16)</a> separates once more. Write</p>
 <div class="math-block math-block--numbered" id="eq-eq-h-y-product"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -2276,7 +2470,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-Y-product">(4.22)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-Y-product">(4.23)</span></div>
 <p>substitute, and multiply by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>sin</mi>
@@ -2409,7 +2603,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-theta-phi-sep">(4.23)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-theta-phi-sep">(4.24)</span></div>
 <p>introducing a second separation constant, written <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>m</mi>
@@ -2483,7 +2677,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-phi-eq">(4.24)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-phi-eq">(4.25)</span></div>
 <p>The physical requirement is that <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi mathvariant="normal">Φ</mi>
 </math></span> be single-valued: rotating by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -2533,7 +2727,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-m-integer">(4.25)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-m-integer">(4.26)</span></div>
 <p><em>This is where quantization first enters</em>, and it comes from a boundary condition, not from any postulate.</p>
 <h3 id="sec-4-the-polar-equation">The polar equation</h3>
 <p>With <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -2542,7 +2736,7 @@
   <mi>cos</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
   <mi>θ</mi>
-</math></span>, Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-theta-phi-sep">(4.23)</a> becomes the <em>associated Legendre equation</em></p>
+</math></span>, Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-theta-phi-sep">(4.24)</a> becomes the <em>associated Legendre equation</em></p>
 <div class="math-block math-block--numbered" id="eq-eq-h-legendre"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -2618,7 +2812,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-legendre">(4.26)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-legendre">(4.27)</span></div>
 <p>Solving this by power series — the same technique applied to the radial equation in Sec. <a class="xref" href="../chapter-04/index.html#sec-4-solving-the-radial-equation">4.6</a> — gives solutions that remain finite at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>x</mi>
   <mo>=</mo>
@@ -2660,7 +2854,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-l-m-values">(4.27)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-l-m-values">(4.28)</span></div>
 <p>This is why the separation constant was written <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>l</mi>
   <mo stretchy="false">(</mo>
@@ -2803,7 +2997,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-legendre-poly">(4.28)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-legendre-poly">(4.29)</span></div>
 <p>the second expression being Rodrigues' formula for the ordinary Legendre polynomials.</p>
 <h3 id="sec-4-the-spherical-harmonics">The spherical harmonics</h3>
 <p>Combining and normalizing on the unit sphere gives the standard result.</p>
@@ -2905,7 +3099,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-Ylm">(4.29)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-Ylm">(4.30)</span></div>
 <p>orthonormal in the sense</p>
 <div class="math-block math-block--numbered" id="eq-eq-h-ylm-ortho"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -2967,7 +3161,7 @@
         <mstyle scriptlevel="0">
           <mspace width="0.167em" />
         </mstyle>
-        <mi>sin</mi>
+        <mspace width="0.167em" /><mi>sin</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
         <mi>θ</mi>
         <mstyle scriptlevel="0">
@@ -3005,7 +3199,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-Ylm-ortho">(4.30)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-Ylm-ortho">(4.31)</span></div>
 <p>The lowest few, written out:</p>
 <div class="math-block math-block--numbered" id="eq-eq-h-ylm-table"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -3055,7 +3249,7 @@
                   </mrow>
                 </mfrac>
               </msqrt>
-              <mi>cos</mi>
+              <mspace width="0.167em" /><mi>cos</mi>
               <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
               <mi>θ</mi>
               <mo>,</mo>
@@ -3083,7 +3277,7 @@
                   </mrow>
                 </mfrac>
               </msqrt>
-              <mi>sin</mi>
+              <mspace width="0.167em" /><mi>sin</mi>
               <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
               <mi>θ</mi>
               <mstyle scriptlevel="0">
@@ -3160,10 +3354,10 @@
                   </mrow>
                 </mfrac>
               </msqrt>
-              <mi>sin</mi>
+              <mspace width="0.167em" /><mi>sin</mi>
               <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
               <mi>θ</mi>
-              <mi>cos</mi>
+              <mspace width="0.167em" /><mi>cos</mi>
               <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
               <mi>θ</mi>
               <mstyle scriptlevel="0">
@@ -3228,8 +3422,8 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-Ylm-table">(4.31)</span></div>
-<p>Comparing Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-angular-eq">(4.15)</a> with Eq. <a class="xref" href="../chapter-03/index.html#eq-eq-am-l2-spherical">(3.31)</a> of Chapter 3 identifies what has been solved: the angular equation is the eigenvalue equation for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math><span class="eqn-number" id="mjx-eqn:eq:H-Ylm-table">(4.32)</span></div>
+<p>Comparing Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-angular-eq">(4.16)</a> with Eq. <a class="xref" href="../chapter-03/index.html#eq-eq-am-l2-spherical">(3.32)</a> of Chapter 3 identifies what has been solved: the angular equation is the eigenvalue equation for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mrow data-mjx-texclass="ORD">
       <mover accent="true">
@@ -3241,9 +3435,9 @@
       <mn>2</mn>
     </mrow>
   </msup>
-</math></span>, and Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-l-m-values">(4.27)</a> is the spectrum obtained there by algebra alone. The two routes agree, as they must.</p>
+</math></span>, and Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-l-m-values">(4.28)</a> is the spectrum obtained there by algebra alone. The two routes agree, as they must.</p>
 <h2 id="sec-4-solving-the-radial-equation"><span class="sec-number">4.6</span>Solving the Radial Equation</h2>
-<p>Now put the Coulomb potential into Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-radial-1d">(4.20)</a>:</p>
+<p>Now put the Coulomb potential into Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-radial-1d">(4.21)</a>:</p>
 <div class="math-block math-block--numbered" id="eq-eq-h-radial-coulomb"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -3345,7 +3539,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-radial-coulomb">(4.32)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-radial-coulomb">(4.33)</span></div>
 <p>We seek <em>bound</em> states, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>E</mi>
   <mo>&lt;</mo>
@@ -3378,7 +3572,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-kappa">(4.33)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-kappa">(4.34)</span></div>
 <p>and the dimensionless variable and parameter</p>
 <div class="math-block math-block--numbered" id="eq-eq-h-rho"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -3428,8 +3622,8 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-rho">(4.34)</span></div>
-<p>Dividing Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-radial-coulomb">(4.32)</a> by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math><span class="eqn-number" id="mjx-eqn:eq:H-rho">(4.35)</span></div>
+<p>Dividing Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-radial-coulomb">(4.33)</a> by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>E</mi>
 </math></span> and rewriting in terms of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ρ</mi>
@@ -3494,7 +3688,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-radial-dimensionless">(4.35)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-radial-dimensionless">(4.36)</span></div>
 <h3 id="sec-4-step-1-the-asymptotic-behavior">Step 1: the asymptotic behavior</h3>
 <p>As <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ρ</mi>
@@ -3558,7 +3752,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-asymptotic-large">(4.36)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-asymptotic-large">(4.37)</span></div>
 <p>As <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ρ</mi>
   <mo accent="false" stretchy="false">→</mo>
@@ -3669,7 +3863,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-asymptotic-small">(4.37)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-asymptotic-small">(4.38)</span></div>
 <h3 id="sec-4-step-2-strip-out-both-limits">Step 2: strip out both limits</h3>
 <p>Write</p>
 <div class="math-block math-block--numbered" id="eq-eq-h-v-def"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
@@ -3707,10 +3901,10 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-v-def">(4.38)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-v-def">(4.39)</span></div>
 <p>which builds in both asymptotic forms and leaves <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>v</mi>
-</math></span> to be found. Substituting into Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-radial-dimensionless">(4.35)</a> and simplifying gives</p>
+</math></span> to be found. Substituting into Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-radial-dimensionless">(4.36)</a> and simplifying gives</p>
 <div class="math-block math-block--numbered" id="eq-eq-h-v-equation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -3780,7 +3974,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-v-equation">(4.39)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-v-equation">(4.40)</span></div>
 <h3 id="sec-4-step-3-power-series-and-the-recursion-relation">Step 3: power series and the recursion relation</h3>
 <p>Expand</p>
 <div class="math-block math-block--numbered" id="eq-eq-h-v-series"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
@@ -3817,8 +4011,8 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-v-series">(4.40)</span></div>
-<p>Substituting into Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-v-equation">(4.39)</a> and collecting the coefficient of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math><span class="eqn-number" id="mjx-eqn:eq:H-v-series">(4.41)</span></div>
+<p>Substituting into Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-v-equation">(4.40)</a> and collecting the coefficient of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>ρ</mi>
     <mrow data-mjx-texclass="ORD">
@@ -3895,11 +4089,11 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-recursion">(4.41)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-recursion">(4.42)</span></div>
 <h3 id="sec-4-step-4-the-series-must-terminate">Step 4: the series must terminate</h3>
 <p>For large <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>j</mi>
-</math></span>, Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-recursion">(4.41)</a> behaves as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>, Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-recursion">(4.42)</a> behaves as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>c</mi>
     <mrow data-mjx-texclass="ORD">
@@ -3977,7 +4171,7 @@
   </msub>
   <mo>=</mo>
   <mn>0</mn>
-</math></span>. From Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-recursion">(4.41)</a> that requires</p>
+</math></span>. From Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-recursion">(4.42)</a> that requires</p>
 <div class="math-block math-block--numbered" id="eq-eq-h-termination"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -4004,7 +4198,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-termination">(4.42)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-termination">(4.43)</span></div>
 <p>Define the <em>principal quantum number</em></p>
 <div class="math-block math-block--numbered" id="eq-eq-h-n-def"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -4041,7 +4235,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-n-def">(4.43)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-n-def">(4.44)</span></div>
 <p>Since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>j</mi>
@@ -4106,7 +4300,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-l-range">(4.44)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-l-range">(4.45)</span></div>
 <p>The restriction <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>l</mi>
   <mo>≤</mo>
@@ -4138,7 +4332,7 @@
   <mo>=</mo>
   <mn>2</mn>
   <mi>n</mi>
-</math></span> with the definitions in Eqs. <a class="xref" href="../chapter-04/index.html#eq-eq-h-kappa">(4.33)</a> and <a class="xref" href="../chapter-04/index.html#eq-eq-h-rho">(4.34)</a>,</p>
+</math></span> with the definitions in Eqs. <a class="xref" href="../chapter-04/index.html#eq-eq-h-kappa">(4.34)</a> and <a class="xref" href="../chapter-04/index.html#eq-eq-h-rho">(4.35)</a>,</p>
 <div class="math-block math-block--numbered" id="eq-eq-h-kappa-solve"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -4234,7 +4428,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-kappa-solve">(4.45)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-kappa-solve">(4.46)</span></div>
 <p>where the <em>Bohr radius</em> is</p>
 <div class="math-block math-block--numbered" id="eq-eq-h-bohr"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -4298,7 +4492,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-bohr">(4.46)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-bohr">(4.47)</span></div>
 <section class="callout remark" id="remark-rem-h-reduced-mass-care"><header><span class="callout-kind">Remark 4.6.1</span><span class="callout-title"><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>m</mi>
@@ -4339,7 +4533,7 @@
     <mi>m</mi>
     <mi>e</mi>
   </msub>
-</math></span>, as in Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-bohr">(4.46)</a>, and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>, as in Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-bohr">(4.47)</a>, and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>0.529</mn>
   <mstyle scriptlevel="0">
     <mspace width="0.167em" />
@@ -4389,7 +4583,7 @@
   <mn>1.000545</mn>
   <mo>,</mo>
 </math></div>
-<p>using Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-mu-number">(4.6)</a> — five parts in ten thousand. We write <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>using Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-mu-number">(4.7)</a> — five parts in ten thousand. We write <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>a</mi>
     <mn>0</mn>
@@ -4552,7 +4746,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-energies-SI">(4.47)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-energies-SI">(4.48)</span></div>
 <p>Setting <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>μ</mi>
   <mo accent="false" stretchy="false">→</mo>
@@ -4630,7 +4824,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-energies-eV">(4.48)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-energies-eV">(4.49)</span></div>
 <p><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mrow data-mjx-texclass="ORD">
@@ -4653,7 +4847,7 @@
   </msub>
   <mo>=</mo>
   <mn>0.999456</mn>
-</math></span> of Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-mu-number">(4.6)</a> reduces it to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> of Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-mu-number">(4.7)</a> reduces it to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>13.598</mn>
 </math></span> eV, which is the measured ionization energy. The two agree to four significant figures, and we use <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>13.606</mn>
@@ -4672,7 +4866,7 @@
   <mo stretchy="false">(</mo>
   <mi>ρ</mi>
   <mo stretchy="false">)</mo>
-</math></span> of Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-v-series">(4.40)</a> is, up to normalization, an <em>associated Laguerre polynomial</em> <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> of Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-v-series">(4.41)</a> is, up to normalization, an <em>associated Laguerre polynomial</em> <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msubsup>
     <mi>L</mi>
     <mrow data-mjx-texclass="ORD">
@@ -4774,7 +4968,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-laguerre">(4.49)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-laguerre">(4.50)</span></div>
 <p>Carrying out the normalization <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msubsup>
     <mo data-mjx-texclass="OP">∫</mo>
@@ -4966,7 +5160,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-Rnl">(4.50)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-Rnl">(4.51)</span></div>
 <p>For <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>Z</mi>
   <mo>=</mo>
@@ -5402,7 +5596,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-Rnl-table">(4.51)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-Rnl-table">(4.52)</span></div>
 <p>The polynomial factor in <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>R</mi>
@@ -5443,14 +5637,14 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-nodes">(4.52)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-nodes">(4.53)</span></div>
 <p>and the total number of nodes, radial plus angular, is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>n</mi>
   <mo>−</mo>
   <mn>1</mn>
 </math></span>.</p>
 <h2 id="sec-4-the-complete-solution"><span class="sec-number">4.7</span>The Complete Solution</h2>
-<p>Collecting Eqs. <a class="xref" href="../chapter-04/index.html#eq-eq-h-ylm">(4.29)</a> and <a class="xref" href="../chapter-04/index.html#eq-eq-h-rnl">(4.50)</a>, the normalized eigenfunctions of the hydrogen atom are</p>
+<p>Collecting Eqs. <a class="xref" href="../chapter-04/index.html#eq-eq-h-ylm">(4.30)</a> and <a class="xref" href="../chapter-04/index.html#eq-eq-h-rnl">(4.51)</a>, the normalized eigenfunctions of the hydrogen atom are</p>
 <div class="math-block math-block--numbered" id="eq-eq-h-psi-nlm"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -5513,7 +5707,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-psi-nlm">(4.53)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-psi-nlm">(4.54)</span></div>
 <p>or, written out in full,</p>
 <div class="math-block math-block--numbered" id="eq-eq-h-psi-explicit"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -5746,8 +5940,8 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-psi-explicit">(4.54)</span></div>
-<p>with energies given by Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-energies-si">(4.47)</a> and quantum numbers</p>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-psi-explicit">(4.55)</span></div>
+<p>with energies given by Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-energies-si">(4.48)</a> and quantum numbers</p>
 <div class="math-block math-block--numbered" id="eq-eq-h-quantum-numbers"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -5801,7 +5995,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-quantum-numbers">(4.55)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-quantum-numbers">(4.56)</span></div>
 <p>The three quantum numbers came from three separate places, and it is worth recording which:</p>
 <div class="centered"><div class="table-wrap"><table><tr><td>
 		Number</td><td>Arises from</td><td>Physical meaning</td></tr><tr><td>
@@ -5851,9 +6045,25 @@
 </math></span></td></tr><tr><td></td></tr></table></div></div>
 <p>Each is a boundary condition, not a postulate. Quantization in quantum mechanics is always of this kind.</p>
 <h3 id="sec-4-degeneracy"><span class="sec-number">4.7.1</span>Degeneracy</h3>
-<p>The energy in Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-energies-si">(4.47)</a> depends on <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<figure id="chapter-04-fig-2" class="figure"><img src="assets/img/ch04_fig02_degeneracy.png" class="diagram" alt="The degeneracy drawn. States of the same n but different l have visibly different shapes and identical energies, which no other central potential manages; the l-degeneracy is special to 1/r and is broken by the screening of Chapter 5." loading="lazy" style="--figure-width: 90%;"><figcaption>Figure 4.2. The degeneracy drawn. States of the same <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>n</mi>
-</math></span> alone. Counting the states that share it, using Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-quantum-numbers">(4.55)</a>,</p>
+</math></span> but different <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+</math></span>
+	have visibly different shapes and identical energies, which no other
+	central potential manages; the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+</math></span>-degeneracy is special to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>r</mi>
+</math></span> and is
+	broken by the screening of Chapter 5.</figcaption></figure>
+<p>The energy in Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-energies-si">(4.48)</a> depends on <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> alone. Counting the states that share it, using Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-quantum-numbers">(4.56)</a>,</p>
 <div class="math-block math-block--numbered" id="eq-eq-h-degeneracy"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -5915,7 +6125,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-degeneracy">(4.56)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-degeneracy">(4.57)</span></div>
 <p>so level <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>n</mi>
 </math></span> is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -5940,7 +6150,7 @@
   <mi>l</mi>
 </math></span>-degeneracy is not. Chapter 3 showed that different <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>l</mi>
-</math></span> means a different centrifugal barrier and hence a physically different radial equation — Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-radial-1d">(4.20)</a> literally changes — yet the energies coincide. This is special to the exact <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> means a different centrifugal barrier and hence a physically different radial equation — Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-radial-1d">(4.21)</a> literally changes — yet the energies coincide. This is special to the exact <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>1</mn>
   <mrow data-mjx-texclass="ORD">
     <mo>/</mo>
@@ -5948,6 +6158,20 @@
   <mi>r</mi>
 </math></span> potential. It is called the <em>accidental degeneracy</em>, and Chapter 5 shows it breaking as soon as a second electron is present.</p>
 <h3 id="sec-4-expectation-values-and-the-size-of-an-orbital"><span class="sec-number">4.7.2</span>Expectation Values and the Size of an Orbital</h3>
+<figure id="chapter-04-fig-3" class="figure"><img src="assets/img/ch04_fig01_radial_densities.png" class="diagram" alt="What “the size of an orbital” means. The 2s density reaches further in than the 2p and yet has the larger r, so a single number does not describe a shape — and it is the inner lobe, not the mean, that decides how strongly a state feels the nucleus." loading="lazy" style="--figure-width: 94%;"><figcaption>Figure 4.3. What “the size of an orbital” means. The <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mi>s</mi>
+</math></span> density reaches
+	further in than the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mi>p</mi>
+</math></span> and yet has the larger <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo fence="false" stretchy="false">⟨</mo>
+  <mi>r</mi>
+  <mo fence="false" stretchy="false">⟩</mo>
+</math></span>, so a
+	single number does not describe a shape — and it is the inner lobe, not
+	the mean, that decides how strongly a state feels the nucleus.</figcaption></figure>
 <p>The probability of finding the electron between <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>r</mi>
 </math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -6019,7 +6243,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-radial-density">(4.57)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-radial-density">(4.58)</span></div>
 <p>which is why <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>U</mi>
   <mo>=</mo>
@@ -6048,7 +6272,7 @@
   </mrow>
 </math></span>.</p>
 <p class="solution-head">Solution.</p>
-<p>From Eqs. <a class="xref" href="../chapter-04/index.html#eq-eq-h-rnl-table">(4.51)</a> and <a class="xref" href="../chapter-04/index.html#eq-eq-h-radial-density">(4.57)</a> with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>From Eqs. <a class="xref" href="../chapter-04/index.html#eq-eq-h-rnl-table">(4.52)</a> and <a class="xref" href="../chapter-04/index.html#eq-eq-h-radial-density">(4.58)</a> with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>Z</mi>
   <mo>=</mo>
   <mn>1</mn>
@@ -6507,7 +6731,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-expectation-values">(4.58)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-expectation-values">(4.59)</span></div>
 <p>The middle one is worth noting: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="INNER">
     <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
@@ -6609,7 +6833,7 @@
   <mn>30</mn>
 </math></span>.</p>
 <h2 id="sec-4-atomic-units"><span class="sec-number">4.8</span>Atomic Units</h2>
-<p>The constants in Eqs. <a class="xref" href="../chapter-04/index.html#eq-eq-h-energies-si">(4.47)</a> and <a class="xref" href="../chapter-04/index.html#eq-eq-h-rnl">(4.50)</a> are cumbersome, and research papers eliminate them by a choice of units. They state this once, usually in a single parenthetical sentence, and everything after it is unreadable if the sentence is skipped.</p>
+<p>The constants in Eqs. <a class="xref" href="../chapter-04/index.html#eq-eq-h-energies-si">(4.48)</a> and <a class="xref" href="../chapter-04/index.html#eq-eq-h-rnl">(4.51)</a> are cumbersome, and research papers eliminate them by a choice of units. They state this once, usually in a single parenthetical sentence, and everything after it is unreadable if the sentence is skipped.</p>
 <section class="callout definition" id="definition-def-h-au"><header><span class="callout-kind">Definition 4.8.1</span><span class="callout-title">Atomic units</span></header><p> Atomic units are defined by setting</p>
 <div class="math-block math-block--numbered" id="eq-eq-h-au-def"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -6641,13 +6865,13 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-au-def">(4.59)</span></div></section>
-<p>Every other unit follows. From Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-bohr">(4.46)</a>, the unit of length is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math><span class="eqn-number" id="mjx-eqn:eq:H-au-def">(4.60)</span></div></section>
+<p>Every other unit follows. From Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-bohr">(4.47)</a>, the unit of length is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>a</mi>
     <mn>0</mn>
   </msub>
-</math></span>; from Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-energies-si">(4.47)</a>, the unit of energy is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>; from Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-energies-si">(4.48)</a>, the unit of energy is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>μ</mi>
   <msup>
     <mi>e</mi>
@@ -6816,7 +7040,7 @@
     </mrow>
   </msup>
 </math></span> V/m</td></tr><tr><td></td></tr></table></div></div>
-<p>In these units Eqs. <a class="xref" href="../chapter-04/index.html#eq-eq-h-hamiltonian-si">(4.5)</a>, <a class="xref" href="../chapter-04/index.html#eq-eq-h-radial-1d">(4.20)</a> and <a class="xref" href="../chapter-04/index.html#eq-eq-h-energies-si">(4.47)</a> become simply</p>
+<p>In these units Eqs. <a class="xref" href="../chapter-04/index.html#eq-eq-h-hamiltonian-si">(4.6)</a>, <a class="xref" href="../chapter-04/index.html#eq-eq-h-radial-1d">(4.21)</a> and <a class="xref" href="../chapter-04/index.html#eq-eq-h-energies-si">(4.48)</a> become simply</p>
 <div class="math-block math-block--numbered" id="eq-eq-h-au-forms"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -6938,7 +7162,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-au-forms">(4.60)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-au-forms">(4.61)</span></div>
 <p>Two entries in the table carry physics rather than convenience. The atomic unit of time is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>24</mn>
 </math></span> attoseconds — the natural timescale of electronic motion, and the reason attosecond pulses are the tool of choice for watching electrons. And the atomic unit of field, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -7235,6 +7459,45 @@
   </msup>
 </math></span>, so the same laser is overwhelmingly strong for it. “Strong” is always relative to the state.</p></section>
 <h2 id="sec-4-rydberg-states"><span class="sec-number">4.9</span>Rydberg States</h2>
+<figure id="chapter-04-fig-4" class="figure"><img src="assets/img/ch04_fig03_rydberg_scaling.png" class="diagram" alt="Two consequences of one formula. r n^2 makes a high-n atom macroscopically large, and En-1/2n^2 makes its levels crowd as n^-3 — which is why a Rydberg series converges to a threshold and why Chapter 10 finds resonances piled up just below one." loading="lazy" style="--figure-width: 98%;"><figcaption>Figure 4.4. Two consequences of one formula. <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo fence="false" stretchy="false">⟨</mo>
+  <mi>r</mi>
+  <mo fence="false" stretchy="false">⟩</mo>
+  <mo>∼</mo>
+  <msup>
+    <mi>n</mi>
+    <mn>2</mn>
+  </msup>
+</math></span> makes
+	a high-<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> atom macroscopically large, and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>E</mi>
+    <mi>n</mi>
+  </msub>
+  <mo>∼</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>1</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+  <msup>
+    <mi>n</mi>
+    <mn>2</mn>
+  </msup>
+</math></span> makes its
+	levels crowd as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>n</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>3</mn>
+    </mrow>
+  </msup>
+</math></span> — which is why a Rydberg series converges to a
+	threshold and why Chapter 10 finds resonances piled up just below one.</figcaption></figure>
 <section class="callout definition" id="definition-def-h-rydberg"><header><span class="callout-kind">Definition 4.9.1</span><span class="callout-title">Rydberg state</span></header><p> A <em>Rydberg state</em> is a state of high principal quantum number, in which the electron is far from the nucleus and weakly bound.</p></section>
 <p>Four scalings follow directly from the results above, and all four are used later in this book.</p>
 <p><strong>Binding energy <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -7246,7 +7509,7 @@
       <mn>2</mn>
     </mrow>
   </msup>
-</math></span>.</strong> From Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-energies-ev">(4.48)</a>, the electron is bound by only <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>.</strong> From Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-energies-ev">(4.49)</a>, the electron is bound by only <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>13.606</mn>
   <mrow data-mjx-texclass="ORD">
     <mo>/</mo>
@@ -7272,7 +7535,7 @@
       <mn>2</mn>
     </mrow>
   </msup>
-</math></span>.</strong> From Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-expectation-values">(4.58)</a>.</p>
+</math></span>.</strong> From Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-expectation-values">(4.59)</a>.</p>
 <p><strong>Level spacing <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo>∝</mo>
   <msup>
@@ -7282,7 +7545,7 @@
       <mn>3</mn>
     </mrow>
   </msup>
-</math></span>.</strong> Differentiating Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-energies-si">(4.47)</a>,</p>
+</math></span>.</strong> Differentiating Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-energies-si">(4.48)</a>,</p>
 <div class="math-block math-block--numbered" id="eq-eq-h-spacing"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -7358,7 +7621,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-spacing">(4.61)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-spacing">(4.62)</span></div>
 <p>so levels crowd toward the ionization threshold and the density of states per unit energy grows as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>n</mi>
@@ -7400,7 +7663,7 @@
       <mn>2</mn>
     </mrow>
   </msup>
-</math></span>, the exponential and polynomial factors in Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-rnl">(4.50)</a> are both of order unity, and the normalization prefactor <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>, the exponential and polynomial factors in Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-rnl">(4.51)</a> are both of order unity, and the normalization prefactor <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo stretchy="false">(</mo>
   <mn>2</mn>
   <mi>Z</mi>
@@ -7497,8 +7760,8 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:H-amplitude-scaling">(4.62)</span></div>
-<p>Equation <a class="xref" href="../chapter-04/index.html#eq-eq-h-amplitude-scaling">(4.62)</a> deserves to be stated as a principle:</p>
+</math><span class="eqn-number" id="mjx-eqn:eq:H-amplitude-scaling">(4.63)</span></div>
+<p>Equation <a class="xref" href="../chapter-04/index.html#eq-eq-h-amplitude-scaling">(4.63)</a> deserves to be stated as a principle:</p>
 <div class="centered"><p><em>Any process requiring the electron to be near the nucleus runs at a rate proportional to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>n</mi>
@@ -7601,7 +7864,7 @@
   </mrow>
   <mo>.</mo>
 </math></div>
-<p>The spacing to the neighboring level, from Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-spacing">(4.61)</a>, is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>The spacing to the neighboring level, from Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-spacing">(4.62)</a>, is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi mathvariant="normal">Δ</mi>
   <mi>E</mi>
   <mo>=</mo>
@@ -7663,6 +7926,1138 @@
 </math></div>
 <p>which is the <em>same number</em>.</p>
 <p>This is the correspondence principle made quantitative: a superposition of a few neighboring Rydberg levels forms a localized packet that orbits the nucleus on the classical Kepler period and stays recognisable for many orbits. It is also the mechanism behind the quantum beats measured in Chapter 11 — there, between molecular Rydberg states, and on a timescale of tens of femtoseconds rather than a picosecond.</p></section>
+<h3 id="sec-4-first-pass-self-checks-one-orbital-three-questions"><span class="sec-number">4.9.1</span>First-Pass Self-Checks: One Orbital, Three Questions</h3>
+<p>The three checks below all concern the same object, the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+  <mi>s</mi>
+</math></span> orbital, and between them they fix the three things a later course will ask of it: its normalization, its size, and its energy in whatever units the question happens to be asked in.</p>
+<section class="callout example" id="example-ex-h-selfcheck-normalize"><header><span class="callout-kind">Example 4.9.2</span><span class="callout-title">Self-check 1: normalize the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+  <mi>s</mi>
+</math></span> orbital yourself</span></header><p> Take the shape of the ground state as given, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ψ</mi>
+  <mo stretchy="false">(</mo>
+  <mi>r</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mi>N</mi>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi>Z</mi>
+      <mi>r</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <msub>
+        <mi>a</mi>
+        <mn>0</mn>
+      </msub>
+    </mrow>
+  </msup>
+</math></span>, and determine <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>N</mi>
+</math></span>. Then check the answer against Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-rnl-table">(4.52)</a>.</p>
+<p class="solution-head">Solution.</p>
+<p>The state has no angular dependence, so the angular integral contributes the full solid angle <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>4</mn>
+  <mi>π</mi>
+</math></span> and</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mn>1</mn>
+  <mo>=</mo>
+  <mo data-mjx-texclass="OP">∫</mo>
+  <mo stretchy="false">|</mo>
+  <mi>ψ</mi>
+  <msup>
+    <mo stretchy="false">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <msup>
+    <mi>d</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>3</mn>
+    </mrow>
+  </msup>
+  <mi>r</mi>
+  <mo>=</mo>
+  <mn>4</mn>
+  <mi>π</mi>
+  <mo stretchy="false">|</mo>
+  <mi>N</mi>
+  <msup>
+    <mo stretchy="false">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <msubsup>
+    <mo data-mjx-texclass="OP">∫</mo>
+    <mn>0</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mi mathvariant="normal">∞</mi>
+    </mrow>
+  </msubsup>
+  <msup>
+    <mi>r</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>2</mn>
+      <mi>Z</mi>
+      <mi>r</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <msub>
+        <mi>a</mi>
+        <mn>0</mn>
+      </msub>
+    </mrow>
+  </msup>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mi>d</mi>
+  <mi>r</mi>
+  <mo>.</mo>
+</math></div>
+<p>Equation <a class="xref" href="../chapter-04/index.html#eq-eq-h-gamma-integral">(4.1)</a> with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>=</mo>
+  <mn>2</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>α</mi>
+  <mo>=</mo>
+  <mn>2</mn>
+  <mi>Z</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msub>
+    <mi>a</mi>
+    <mn>0</mn>
+  </msub>
+</math></span> gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mo>!</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mo stretchy="false">(</mo>
+  <mn>2</mn>
+  <mi>Z</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msub>
+    <mi>a</mi>
+    <mn>0</mn>
+  </msub>
+  <msup>
+    <mo stretchy="false">)</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>3</mn>
+    </mrow>
+  </msup>
+  <mo>=</mo>
+  <msubsup>
+    <mi>a</mi>
+    <mn>0</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>3</mn>
+    </mrow>
+  </msubsup>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>4</mn>
+  <msup>
+    <mi>Z</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>3</mn>
+    </mrow>
+  </msup>
+</math></span>, so</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mn>1</mn>
+  <mo>=</mo>
+  <mn>4</mn>
+  <mi>π</mi>
+  <mo stretchy="false">|</mo>
+  <mi>N</mi>
+  <msup>
+    <mo stretchy="false">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mfrac>
+    <msubsup>
+      <mi>a</mi>
+      <mn>0</mn>
+      <mrow data-mjx-texclass="ORD">
+        <mn>3</mn>
+      </mrow>
+    </msubsup>
+    <mrow>
+      <mn>4</mn>
+      <msup>
+        <mi>Z</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mn>3</mn>
+        </mrow>
+      </msup>
+    </mrow>
+  </mfrac>
+  <mo>=</mo>
+  <mfrac>
+    <mrow>
+      <mi>π</mi>
+      <msubsup>
+        <mi>a</mi>
+        <mn>0</mn>
+        <mrow data-mjx-texclass="ORD">
+          <mn>3</mn>
+        </mrow>
+      </msubsup>
+    </mrow>
+    <msup>
+      <mi>Z</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mn>3</mn>
+      </mrow>
+    </msup>
+  </mfrac>
+  <mo stretchy="false">|</mo>
+  <mi>N</mi>
+  <msup>
+    <mo stretchy="false">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mstyle scriptlevel="0">
+    <mspace width="2em" />
+  </mstyle>
+  <mo stretchy="false">⟹</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="2em" />
+  </mstyle>
+  <mi>N</mi>
+  <mo>=</mo>
+  <mfrac>
+    <mn>1</mn>
+    <msqrt>
+      <mi>π</mi>
+    </msqrt>
+  </mfrac>
+  <msup>
+    <mrow data-mjx-texclass="INNER">
+      <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+      <mfrac>
+        <mi>Z</mi>
+        <msub>
+          <mi>a</mi>
+          <mn>0</mn>
+        </msub>
+      </mfrac>
+      <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mn>3</mn>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mo>,</mo>
+</math></div>
+<p>the phase being free and taken real and positive. For <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>Z</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span> this is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ψ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>100</mn>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mo stretchy="false">(</mo>
+  <mi>π</mi>
+  <msubsup>
+    <mi>a</mi>
+    <mn>0</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>3</mn>
+    </mrow>
+  </msubsup>
+  <msup>
+    <mo stretchy="false">)</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi>r</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <msub>
+        <mi>a</mi>
+        <mn>0</mn>
+      </msub>
+    </mrow>
+  </msup>
+</math></span>, and Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-rnl-table">(4.52)</a> agrees: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>R</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>10</mn>
+    </mrow>
+  </msub>
+  <msubsup>
+    <mi>Y</mi>
+    <mn>0</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>0</mn>
+    </mrow>
+  </msubsup>
+  <mo>=</mo>
+  <mo stretchy="false">(</mo>
+  <mn>2</mn>
+  <msubsup>
+    <mi>a</mi>
+    <mn>0</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>3</mn>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mn>2</mn>
+    </mrow>
+  </msubsup>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi>r</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <msub>
+        <mi>a</mi>
+        <mn>0</mn>
+      </msub>
+    </mrow>
+  </msup>
+  <mo stretchy="false">)</mo>
+  <mo stretchy="false">(</mo>
+  <mn>4</mn>
+  <mi>π</mi>
+  <msup>
+    <mo stretchy="false">)</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mn>2</mn>
+    </mrow>
+  </msup>
+</math></span> is the same function.</p>
+<p>Two features of this function are worth naming now, because both are load-bearing later. It is finite and nonzero at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>, with a <em>cusp</em> there — its derivative is discontinuous, since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi>Z</mi>
+      <mi>r</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <msub>
+        <mi>a</mi>
+        <mn>0</mn>
+      </msub>
+    </mrow>
+  </msup>
+</math></span> is a function of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mo>=</mo>
+  <mo stretchy="false">|</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>r</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mo stretchy="false">|</mo>
+</math></span> — and it decays exponentially rather than as a Gaussian. A function of exactly this form is what the companion course <em>Quantum Chemistry</em> calls a Slater-type orbital, and its Chapter on basis sets is about the price paid for replacing it with a sum of Gaussians, which reproduce neither the cusp nor the tail.</p></section>
+<figure id="chapter-04-fig-5" class="figure"><img src="assets/img/learn_hydrogen_sizes.png" class="diagram" alt="One orbital has three different “sizes”, and all three are computed here from P(r)=4r^2e^-2r rather than quoted. Left: the most probable radius (mode) is exactly a0, the median is 1.337\,a0, and the mean is 1.5\,a0; the shaded area is the answer to Self-check 2. Right: the same information as enclosed probability. Read the marked points — a sphere of radius a0 contains only 32.3\% of the electron, and even a sphere of radius r contains 57.7\%. The Bohr radius is where the electron is most likely to be, not where most of it is." loading="lazy" style="--figure-width: 99%;"><figcaption>Figure 4.5. One orbital has three different “sizes”, and all three are
+	computed here from <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>P</mi>
+  <mo stretchy="false">(</mo>
+  <mi>r</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mn>4</mn>
+  <msup>
+    <mi>r</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>2</mn>
+      <mi>r</mi>
+    </mrow>
+  </msup>
+</math></span> rather than quoted. Left: the
+	most probable radius (mode) is exactly <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>a</mi>
+    <mn>0</mn>
+  </msub>
+</math></span>, the median is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1.337</mn>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msub>
+    <mi>a</mi>
+    <mn>0</mn>
+  </msub>
+</math></span>,
+	and the mean is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1.5</mn>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msub>
+    <mi>a</mi>
+    <mn>0</mn>
+  </msub>
+</math></span>; the shaded area is the answer to
+	Self-check 2. Right: the same information as enclosed probability. Read
+	the marked points — a sphere of radius <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>a</mi>
+    <mn>0</mn>
+  </msub>
+</math></span> contains only <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>32.3</mn>
+  <mi mathvariant="normal">%</mi>
+</math></span> of
+	the electron, and even a sphere of radius <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>r</mi>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+</math></span> contains <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>57.7</mn>
+  <mi mathvariant="normal">%</mi>
+</math></span>.
+	The Bohr radius is where the electron is most likely to be, not where
+	most of it is.</figcaption></figure>
+<section class="callout example" id="example-ex-h-selfcheck-inside-a0"><header><span class="callout-kind">Example 4.9.3</span><span class="callout-title">Self-check 2: how much of the atom is inside <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>a</mi>
+    <mn>0</mn>
+  </msub>
+</math></span>?</span></header><p> For hydrogen in its ground state, compute the probability of finding the electron within one Bohr radius of the nucleus.</p>
+<p class="solution-head">Solution.</p>
+<p>From Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-radial-density">(4.58)</a> with the normalized <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+  <mi>s</mi>
+</math></span> orbital and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>Z</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>P</mi>
+  <mo stretchy="false">(</mo>
+  <mi>r</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mo stretchy="false">(</mo>
+  <mn>4</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msubsup>
+    <mi>a</mi>
+    <mn>0</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>3</mn>
+    </mrow>
+  </msubsup>
+  <mo stretchy="false">)</mo>
+  <msup>
+    <mi>r</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>2</mn>
+      <mi>r</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <msub>
+        <mi>a</mi>
+        <mn>0</mn>
+      </msub>
+    </mrow>
+  </msup>
+</math></span>. Substituting <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>=</mo>
+  <mn>2</mn>
+  <mi>r</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msub>
+    <mi>a</mi>
+    <mn>0</mn>
+  </msub>
+</math></span> turns the finite integral into the one recalled in Remark <a class="xref" href="../chapter-04/index.html#remark-rem-h-gamma-integral">4.1.2</a>:</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>P</mi>
+  <mo stretchy="false">(</mo>
+  <mi>r</mi>
+  <mo>&lt;</mo>
+  <msub>
+    <mi>a</mi>
+    <mn>0</mn>
+  </msub>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mfrac>
+    <mn>4</mn>
+    <msubsup>
+      <mi>a</mi>
+      <mn>0</mn>
+      <mrow data-mjx-texclass="ORD">
+        <mn>3</mn>
+      </mrow>
+    </msubsup>
+  </mfrac>
+  <msubsup>
+    <mo data-mjx-texclass="OP">∫</mo>
+    <mn>0</mn>
+    <mrow data-mjx-texclass="ORD">
+      <msub>
+        <mi>a</mi>
+        <mn>0</mn>
+      </msub>
+    </mrow>
+  </msubsup>
+  <msup>
+    <mi>r</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>2</mn>
+      <mi>r</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <msub>
+        <mi>a</mi>
+        <mn>0</mn>
+      </msub>
+    </mrow>
+  </msup>
+  <mi>d</mi>
+  <mi>r</mi>
+  <mo>=</mo>
+  <mfrac>
+    <mn>1</mn>
+    <mn>2</mn>
+  </mfrac>
+  <msubsup>
+    <mo data-mjx-texclass="OP">∫</mo>
+    <mn>0</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msubsup>
+  <msup>
+    <mi>x</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi>x</mi>
+    </mrow>
+  </msup>
+  <mi>d</mi>
+  <mi>x</mi>
+  <mo>=</mo>
+  <mfrac>
+    <mn>1</mn>
+    <mn>2</mn>
+  </mfrac>
+  <mrow data-mjx-texclass="OPEN">
+    <mo minsize="1.623em" maxsize="1.623em" stretchy="true">[</mo>
+  </mrow>
+  <mn>2</mn>
+  <mo>−</mo>
+  <mo stretchy="false">(</mo>
+  <mn>4</mn>
+  <mo>+</mo>
+  <mn>4</mn>
+  <mo>+</mo>
+  <mn>2</mn>
+  <mo stretchy="false">)</mo>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mrow data-mjx-texclass="CLOSE">
+    <mo minsize="1.623em" maxsize="1.623em" stretchy="true">]</mo>
+  </mrow>
+  <mo>=</mo>
+  <mn>1</mn>
+  <mo>−</mo>
+  <mn>5</mn>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mo>.</mo>
+</math></div>
+<p>Numerically <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mo>=</mo>
+  <mn>0.135335</mn>
+</math></span>, so</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>P</mi>
+  <mo stretchy="false">(</mo>
+  <mi>r</mi>
+  <mo>&lt;</mo>
+  <msub>
+    <mi>a</mi>
+    <mn>0</mn>
+  </msub>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mn>1</mn>
+  <mo>−</mo>
+  <mn>0.676676</mn>
+  <mo>=</mo>
+  <mn>0.323324</mn>
+  <mo>.</mo>
+</math></div>
+<p>Just under a third. The same integral run out to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mo>=</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>r</mi>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+  <mo>=</mo>
+  <mn>1.5</mn>
+  <msub>
+    <mi>a</mi>
+    <mn>0</mn>
+  </msub>
+</math></span> gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+  <mo>−</mo>
+  <mn>8.5</mn>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>3</mn>
+    </mrow>
+  </msup>
+  <mo>=</mo>
+  <mn>0.576810</mn>
+</math></span>, and the radius that encloses exactly one half — the median — is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1.337</mn>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msub>
+    <mi>a</mi>
+    <mn>0</mn>
+  </msub>
+</math></span>, found numerically because the equation <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo>+</mo>
+  <mn>2</mn>
+  <mi>u</mi>
+  <mo>+</mo>
+  <mn>2</mn>
+  <msup>
+    <mi>u</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mo stretchy="false">)</mo>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>2</mn>
+      <mi>u</mi>
+    </mrow>
+  </msup>
+  <mo>=</mo>
+  <mstyle displaystyle="false" scriptlevel="0">
+    <mfrac>
+      <mn>1</mn>
+      <mn>2</mn>
+    </mfrac>
+  </mstyle>
+</math></span> has no closed-form root. Figure <a class="xref" href="../chapter-04/index.html#chapter-04-fig-5">4.5</a> shows all three.</p></section>
+<section class="callout misreading" id="misreading-mis-h-a0-size"><header><span class="callout-kind">A common misreading 4.9.1</span><span class="callout-title">The Bohr radius is not the size of the atom</span></header><p> Three different numbers are all called “the size” of the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+  <mi>s</mi>
+</math></span> orbital, and they are <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>a</mi>
+    <mn>0</mn>
+  </msub>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1.337</mn>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msub>
+    <mi>a</mi>
+    <mn>0</mn>
+  </msub>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1.5</mn>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msub>
+    <mi>a</mi>
+    <mn>0</mn>
+  </msub>
+</math></span>. They are the mode, the median and the mean of the same distribution, and no calculation is wrong because they disagree: a skewed distribution simply has no single width. Which one is wanted depends on the question. Chemistry that depends on the tail, such as the overlap of two atoms at a bond distance, is governed by neither — it is governed by the exponential decay constant <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>Z</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msub>
+    <mi>a</mi>
+    <mn>0</mn>
+  </msub>
+</math></span>, which is why Chapter 7 works with overlap integrals rather than radii, and why the companion course <em>Quantum Chemistry</em> adds diffuse basis functions when the tail matters. Conversely, hyperfine structure and every core-sensitive rate depend on <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">|</mo>
+  <mi>ψ</mi>
+  <mo stretchy="false">(</mo>
+  <mn>0</mn>
+  <mo stretchy="false">)</mo>
+  <msup>
+    <mo stretchy="false">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+</math></span>, at the other end of the same curve.</p></section>
+<section class="callout example" id="example-ex-h-selfcheck-units"><header><span class="callout-kind">Example 4.9.4</span><span class="callout-title">Self-check 3: one energy, five units</span></header><p> Express the ionization energy of ground-state hydrogen as an energy in hartree and in eV, as a spectroscopic wavenumber, as a wavelength, and as an angular frequency. Keep the reduced mass.</p>
+<p class="solution-head">Solution.</p>
+<p>In atomic units <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>E</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <msup>
+    <mi>Z</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>0.5</mn>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msub>
+    <mi>E</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi mathvariant="normal">h</mi>
+    </mrow>
+  </msub>
+</math></span> exactly, so the ionization energy is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0.5</mn>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msub>
+    <mi>E</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi mathvariant="normal">h</mi>
+    </mrow>
+  </msub>
+</math></span>. With <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>E</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi mathvariant="normal">h</mi>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mn>27.211386</mn>
+</math></span> eV that is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>13.605693</mn>
+</math></span> eV — but this is the infinite-mass value. The reduced-mass factor of Sec. <a class="xref" href="../chapter-04/index.html#sec-4-the-two-body-problem-and-the-reduced-mass">4.2</a>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>μ</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msub>
+    <mi>m</mi>
+    <mi>e</mi>
+  </msub>
+  <mo>=</mo>
+  <mn>0.9994556</mn>
+</math></span>, multiplies every hydrogen energy:</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <msub>
+    <mi>E</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi mathvariant="normal">i</mi>
+      <mi mathvariant="normal">o</mi>
+      <mi mathvariant="normal">n</mi>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mn>0.9994556</mn>
+  <mo>×</mo>
+  <mn>13.605693</mn>
+  <mtext> </mtext>
+  <mtext>eV</mtext>
+  <mo>=</mo>
+  <mn>13.5983</mn>
+  <mtext> </mtext>
+  <mtext>eV</mtext>
+  <mo>.</mo>
+</math></div>
+<p>As a spectroscopic wavenumber, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>ν</mi>
+      <mo stretchy="false" style="padding-bottom:0.06em">˜</mo>
+    </mover>
+  </mrow>
+  <mo>=</mo>
+  <mi>E</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>h</mi>
+  <mi>c</mi>
+</math></span>, which is the Rydberg constant for hydrogen:</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>ν</mi>
+      <mo stretchy="false" style="padding-bottom:0.06em">˜</mo>
+    </mover>
+  </mrow>
+  <mo>=</mo>
+  <msub>
+    <mi>R</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi mathvariant="normal">H</mi>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mn>109</mn>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mn>677.6</mn>
+  <mtext> </mtext>
+  <mrow data-mjx-texclass="ORD">
+    <msup>
+      <mi data-mjx-auto-op="false">cm</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+        <mn>1</mn>
+      </mrow>
+    </msup>
+  </mrow>
+  <mstyle scriptlevel="0">
+    <mspace width="2em" />
+  </mstyle>
+  <mtext>(against </mtext>
+  <msub>
+    <mi>R</mi>
+    <mi mathvariant="normal">∞</mi>
+  </msub>
+  <mo>=</mo>
+  <mn>109</mn>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mn>737.3</mn>
+  <mtext> </mtext>
+  <mrow data-mjx-texclass="ORD">
+    <msup>
+      <mi data-mjx-auto-op="false">cm</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+        <mn>1</mn>
+      </mrow>
+    </msup>
+  </mrow>
+  <mtext>)</mtext>
+  <mo>.</mo>
+</math></div>
+<p>The corresponding wavelength is its reciprocal,</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>λ</mi>
+  <mo>=</mo>
+  <mfrac>
+    <mn>1</mn>
+    <msub>
+      <mi>R</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mi mathvariant="normal">H</mi>
+      </mrow>
+    </msub>
+  </mfrac>
+  <mo>=</mo>
+  <mn>9.1176</mn>
+  <mo>×</mo>
+  <msup>
+    <mn>10</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>6</mn>
+    </mrow>
+  </msup>
+  <mtext> </mtext>
+  <mrow data-mjx-texclass="ORD">
+    <mi data-mjx-auto-op="false">cm</mi>
+  </mrow>
+  <mo>=</mo>
+  <mn>91.18</mn>
+  <mtext> </mtext>
+  <mrow data-mjx-texclass="ORD">
+    <mi data-mjx-auto-op="false">nm</mi>
+  </mrow>
+  <mo>,</mo>
+</math></div>
+<p>the series limit of the Lyman series. Finally</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>ω</mi>
+  <mo>=</mo>
+  <mfrac>
+    <mi>E</mi>
+    <mi data-mjx-alternate="1">ℏ</mi>
+  </mfrac>
+  <mo>=</mo>
+  <mn>2.0659</mn>
+  <mo>×</mo>
+  <msup>
+    <mn>10</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>16</mn>
+    </mrow>
+  </msup>
+  <mtext> </mtext>
+  <mrow data-mjx-texclass="ORD">
+    <msup>
+      <mi mathvariant="normal">s</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+        <mn>1</mn>
+      </mrow>
+    </msup>
+  </mrow>
+  <mo>,</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="2em" />
+  </mstyle>
+  <mi>ν</mi>
+  <mo>=</mo>
+  <mfrac>
+    <mi>ω</mi>
+    <mrow>
+      <mn>2</mn>
+      <mi>π</mi>
+    </mrow>
+  </mfrac>
+  <mo>=</mo>
+  <mi>c</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>ν</mi>
+      <mo stretchy="false" style="padding-bottom:0.06em">˜</mo>
+    </mover>
+  </mrow>
+  <mo>=</mo>
+  <mn>3.2880</mn>
+  <mo>×</mo>
+  <msup>
+    <mn>10</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>15</mn>
+    </mrow>
+  </msup>
+  <mtext> </mtext>
+  <mrow data-mjx-texclass="ORD">
+    <mi data-mjx-auto-op="false">Hz</mi>
+  </mrow>
+  <mo>.</mo>
+</math></div>
+<p>Five numbers, one physical fact. The traps are all in the last two lines. The spectroscopic wavenumber <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>ν</mi>
+      <mo stretchy="false" style="padding-bottom:0.06em">˜</mo>
+    </mover>
+  </mrow>
+  <mo>=</mo>
+  <mn>1</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>λ</mi>
+</math></span> is not the angular wavenumber <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+  <mo>=</mo>
+  <mn>2</mn>
+  <mi>π</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>λ</mi>
+</math></span> that appears in <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>i</mi>
+      <mi>k</mi>
+      <mi>x</mi>
+    </mrow>
+  </msup>
+</math></span>, and they differ by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mi>π</mi>
+</math></span>; the angular frequency <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ω</mi>
+</math></span> is not the ordinary frequency <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ν</mi>
+</math></span>, and they differ by the same factor. A source quoted in “cm<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+</math></span>” is quoting <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>ν</mi>
+      <mo stretchy="false" style="padding-bottom:0.06em">˜</mo>
+    </mover>
+  </mrow>
+</math></span>, and a laser quoted in THz is quoting <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ν</mi>
+</math></span>. Chapter 6 needs <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ω</mi>
+</math></span>, Chapter 8 quotes <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>ν</mi>
+      <mo stretchy="false" style="padding-bottom:0.06em">˜</mo>
+    </mover>
+  </mrow>
+</math></span>, and confusing them costs a factor of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mi>π</mi>
+</math></span> that is large enough to notice and small enough to survive a plausibility check.</p></section>
 <h2 id="sec-4-summary"><span class="sec-number">4.10</span>Summary</h2>
 <ul><li><p>The two-body problem reduces to one body of reduced mass <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>μ</mi>
@@ -7739,12 +9134,12 @@
   <mo>+</mo>
   <mn>1</mn>
   <mo stretchy="false">)</mo>
-</math></span> gives the angular equation <a class="xref" href="../chapter-04/index.html#eq-eq-h-angular-eq">(4.15)</a>, which contains no potential and so is solved once for all central problems, and the radial equation <a class="xref" href="../chapter-04/index.html#eq-eq-h-radial-eq">(4.16)</a>.</p></li><li><p>The substitution <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> gives the angular equation <a class="xref" href="../chapter-04/index.html#eq-eq-h-angular-eq">(4.16)</a>, which contains no potential and so is solved once for all central problems, and the radial equation <a class="xref" href="../chapter-04/index.html#eq-eq-h-radial-eq">(4.17)</a>.</p></li><li><p>The substitution <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>U</mi>
   <mo>=</mo>
   <mi>r</mi>
   <mi>R</mi>
-</math></span> removes the first derivative and yields the one-dimensional form <a class="xref" href="../chapter-04/index.html#eq-eq-h-radial-1d">(4.20)</a> with the centrifugal barrier <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> removes the first derivative and yields the one-dimensional form <a class="xref" href="../chapter-04/index.html#eq-eq-h-radial-1d">(4.21)</a> with the centrifugal barrier <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi data-mjx-alternate="1">ℏ</mi>
     <mrow data-mjx-texclass="ORD">
@@ -7783,7 +9178,7 @@
       <mi>m</mi>
     </mrow>
   </msubsup>
-</math></span>, Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-ylm">(4.29)</a>, built from associated Legendre polynomials; single-valuedness quantizes <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>, Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-ylm">(4.30)</a>, built from associated Legendre polynomials; single-valuedness quantizes <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>m</mi>
 </math></span> and finiteness at the poles quantizes <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>l</mi>
@@ -7904,7 +9299,7 @@
       <mn>2</mn>
     </mrow>
   </msup>
-</math></span> eV, radial functions Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-rnl">(4.50)</a> with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> eV, radial functions Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-rnl">(4.51)</a> with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>n</mi>
   <mo>−</mo>
   <mi>l</mi>
@@ -8017,7 +9412,31 @@
     <mi>a</mi>
     <mn>0</mn>
   </msub>
-</math></span>.</p></li><li><p>Atomic units set <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>, the median radius is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1.337</mn>
+  <msub>
+    <mi>a</mi>
+    <mn>0</mn>
+  </msub>
+</math></span>, and a sphere of radius <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>a</mi>
+    <mn>0</mn>
+  </msub>
+</math></span> encloses only <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+  <mo>−</mo>
+  <mn>5</mn>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mo>=</mo>
+  <mn>0.323</mn>
+</math></span> of the electron (Example <a class="xref" href="../chapter-04/index.html#example-ex-h-selfcheck-inside-a0">4.9.3</a> and Fig. <a class="xref" href="../chapter-04/index.html#chapter-04-fig-5">4.5</a>). Three numbers, one distribution, and Misreading <a class="xref" href="../chapter-04/index.html#misreading-mis-h-a0-size">4.9.1</a> says which to use when.</p></li><li><p>Atomic units set <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi data-mjx-alternate="1">ℏ</mi>
   <mo>=</mo>
   <msub>
@@ -8057,7 +9476,67 @@
       <mn>11</mn>
     </mrow>
   </msup>
-</math></span> V/m.</p></li><li><p>Rydberg scalings: binding <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> V/m. The same ionization energy is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0.5</mn>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msub>
+    <mi>E</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi mathvariant="normal">h</mi>
+    </mrow>
+  </msub>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>13.5983</mn>
+</math></span> eV, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>109</mn>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mn>677.6</mn>
+</math></span> cm<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>91.18</mn>
+</math></span> nm and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2.066</mn>
+  <mo>×</mo>
+  <msup>
+    <mn>10</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>16</mn>
+    </mrow>
+  </msup>
+</math></span> s<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+</math></span> (Example <a class="xref" href="../chapter-04/index.html#example-ex-h-selfcheck-units">4.9.4</a>); the last two differ from <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+  <mo>=</mo>
+  <mn>2</mn>
+  <mi>π</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>λ</mi>
+</math></span> and from <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ν</mi>
+</math></span> by factors of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mi>π</mi>
+</math></span>.</p></li><li><p>Rydberg scalings: binding <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>n</mi>
     <mrow data-mjx-texclass="ORD">
@@ -8102,7 +9581,7 @@
   </msup>
 </math></span>.</p></li></ul>
 <h2 id="sec-4-exercises"><span class="sec-number">4.11</span>Exercises</h2>
-<ol><li><p><strong>The substitution, verified.</strong> Carry out the steps of Eqs. <a class="xref" href="../chapter-04/index.html#eq-eq-h-u-step1">(4.18)</a>–<a class="xref" href="../chapter-04/index.html#eq-eq-h-u-step2">(4.19)</a> yourself, and confirm that Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-radial-eq">(4.16)</a> becomes Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-radial-1d">(4.20)</a>. State where the boundary condition <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<ol><li><p><strong>The substitution, verified.</strong> Carry out the steps of Eqs. <a class="xref" href="../chapter-04/index.html#eq-eq-h-u-step1">(4.19)</a>–<a class="xref" href="../chapter-04/index.html#eq-eq-h-u-step2">(4.20)</a> yourself, and confirm that Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-radial-eq">(4.17)</a> becomes Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-radial-1d">(4.21)</a>. State where the boundary condition <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>U</mi>
   <mo stretchy="false">(</mo>
   <mn>0</mn>
@@ -8144,7 +9623,7 @@
       </msub>
     </mrow>
   </msup>
-</math></span> from Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-rnl-table">(4.51)</a>, with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> from Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-rnl-table">(4.52)</a>, with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>Z</mi>
   <mo>=</mo>
   <mn>1</mn>
@@ -8164,7 +9643,7 @@
       <mn>10</mn>
     </mrow>
   </msub>
-</math></span> satisfies Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-radial-1d">(4.20)</a> with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> satisfies Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-radial-1d">(4.21)</a> with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>l</mi>
   <mo>=</mo>
   <mn>0</mn>
@@ -8209,7 +9688,7 @@
       <mn>21</mn>
     </mrow>
   </msub>
-</math></span>.</p></li></ol></li><li><p><strong>The recursion relation.</strong> Substitute the series <a class="xref" href="../chapter-04/index.html#eq-eq-h-v-series">(4.40)</a> into Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-v-equation">(4.39)</a> and derive the recursion <a class="xref" href="../chapter-04/index.html#eq-eq-h-recursion">(4.41)</a>. Then, for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>.</p></li></ol></li><li><p><strong>The recursion relation.</strong> Substitute the series <a class="xref" href="../chapter-04/index.html#eq-eq-h-v-series">(4.41)</a> into Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-v-equation">(4.40)</a> and derive the recursion <a class="xref" href="../chapter-04/index.html#eq-eq-h-recursion">(4.42)</a>. Then, for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>n</mi>
   <mo>=</mo>
   <mn>2</mn>
@@ -8264,8 +9743,8 @@
       <mn>20</mn>
     </mrow>
   </msub>
-</math></span> in Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-rnl-table">(4.51)</a> up to normalization.</p></li><li><p><strong>Degeneracy and expectation values.</strong></p>
-<ol><li><p>Prove Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-degeneracy">(4.56)</a> step by step.</p></li><li><p>Using Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-expectation-values">(4.58)</a>, compute <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> in Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-rnl-table">(4.52)</a> up to normalization.</p></li><li><p><strong>Degeneracy and expectation values.</strong></p>
+<ol><li><p>Prove Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-degeneracy">(4.57)</a> step by step.</p></li><li><p>Using Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-expectation-values">(4.59)</a>, compute <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="INNER">
     <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
     <mrow data-mjx-texclass="ORD">
@@ -8340,8 +9819,8 @@
   </mrow>
 </math></span> for the ground state.</p></li></ol>
 <h2 id="sec-4-project-hydrogen-numerically-and-exactly"><span class="sec-number">4.12</span>Project: Hydrogen, Numerically and Exactly</h2>
-<p><strong>The problem.</strong> Solve Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-radial-1d">(4.20)</a> on a computer and confirm every analytic result of this chapter. The same solver, with the potential changed, handles the screened atoms of Chapter 5 and the molecular vibrations of Chapter 7, so build it carefully.</p>
-<p>Work in atomic units, where the equation is the middle expression of Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-au-forms">(4.60)</a>.</p>
+<p><strong>The problem.</strong> Solve Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-radial-1d">(4.21)</a> on a computer and confirm every analytic result of this chapter. The same solver, with the potential changed, handles the screened atoms of Chapter 5 and the molecular vibrations of Chapter 7, so build it carefully.</p>
+<p>Work in atomic units, where the equation is the middle expression of Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-au-forms">(4.61)</a>.</p>
 <ol><li><p><strong>On paper.</strong> Discretize the equation. On a uniform grid <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>r</mi>
@@ -8528,7 +10007,7 @@
   <mo>,</mo>
   <mn>2</mn>
   <mo stretchy="false">)</mo>
-</math></span>, overlaying the analytic forms from Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-rnl-table">(4.51)</a>. Count the nodes and check Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-nodes">(4.52)</a>.</p></li><li><p><strong>On the computer.</strong> Compute <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>, overlaying the analytic forms from Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-rnl-table">(4.52)</a>. Count the nodes and check Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-nodes">(4.53)</a>.</p></li><li><p><strong>On the computer.</strong> Compute <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="INNER">
     <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
     <mrow data-mjx-texclass="ORD">
@@ -8536,7 +10015,7 @@
     </mrow>
     <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
-</math></span> numerically for each state in (d) and compare with Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-expectation-values">(4.58)</a>. Also locate the maximum of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> numerically for each state in (d) and compare with Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-expectation-values">(4.59)</a>. Also locate the maximum of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo stretchy="false">|</mo>
   <msub>
     <mi>U</mi>
@@ -8557,7 +10036,7 @@
     <mi>a</mi>
     <mn>0</mn>
   </msub>
-</math></span>, as Example <a class="xref" href="../chapter-04/index.html#example-ex-h-most-probable">4.7.1</a> predicts.</p></li><li><p><strong>On the computer.</strong> Test Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-amplitude-scaling">(4.62)</a>. For <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>, as Example <a class="xref" href="../chapter-04/index.html#example-ex-h-most-probable">4.7.1</a> predicts.</p></li><li><p><strong>On the computer.</strong> Test Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-amplitude-scaling">(4.63)</a>. For <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>l</mi>
   <mo>=</mo>
   <mn>0</mn>
@@ -8648,7 +10127,7 @@
 </math></span> almost always means the wave functions were normalized on a grid too short to hold the larger states, so their normalization is wrong. Fix the grid, not the exponent.</p>
 <p><strong>Be ready to answer.</strong> Your part (c) energies came out independent of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>l</mi>
-</math></span>, as Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-energies-si">(4.47)</a> says. But the equation you actually diagonalized, Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-radial-1d">(4.20)</a>, is visibly different for each <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>, as Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-energies-si">(4.48)</a> says. But the equation you actually diagonalized, Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-radial-1d">(4.21)</a>, is visibly different for each <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>l</mi>
 </math></span> — the centrifugal term changes the matrix. How can three different matrices share eigenvalues, and what single change to the potential in your code would destroy the coincidence?</p>
     <nav class="chapter-nav" aria-label="Chapter navigation">
@@ -8660,6 +10139,7 @@
 </main>
 <footer class="site-footer">
   <div class="site-footer-inner">
+    <p class="site-footer-notice"><strong>Under development.</strong> These notes are a working draft and have not been fully checked. Concepts, derivations, worked solutions and numerical values may contain errors, so read them critically and verify anything you rely on.</p>
     <p>&copy; 2026 Erfan Saydanzad. All rights reserved. This material is published for reading and personal study; it may not be copied, redistributed, or reused in other work without written permission.</p>
   </div>
 </footer>

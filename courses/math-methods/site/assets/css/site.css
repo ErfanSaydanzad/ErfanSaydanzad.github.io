@@ -54,6 +54,19 @@
   --c-context: #0c5d56;
   --c-context-bg: #f0f7f7;
 
+  /* Foundational statements. An axiom is an assumption of the theory's
+     structure; a postulate is a physical assertion laid on top of it. They
+     are siblings, so they sit next to each other on the wheel -- crimson and
+     plum -- and neither is any of the hues already spoken for above. */
+  --c-axiom: #9f1239;
+  --c-axiom-bg: #fdf2f5;
+  --c-postulate: #86198f;
+  --c-postulate-bg: #fbf2fc;
+  /* A caution, not a category: the one box that says the reader is about to
+     get something wrong. */
+  --c-misreading: #9a4a08;
+  --c-misreading-bg: #fdf6ed;
+
   /* Type
      Serif for reading, sans for the chrome around it -- the reverse of what
      this site started with, and the change is driven by the mathematics.
@@ -119,6 +132,13 @@
     --c-proof-bg: #17191e;
     --c-context: #58bdb3;
     --c-context-bg: #122322;
+
+    --c-axiom: #f4a0b9;
+    --c-axiom-bg: #2a1219;
+    --c-postulate: #e79bea;
+    --c-postulate-bg: #251029;
+    --c-misreading: #eab063;
+    --c-misreading-bg: #241b10;
   }
 
   /* Every figure on this site is drawn on white paper -- matplotlib for the
@@ -848,6 +868,21 @@ figure, .figure, .table-figure {
   border-radius: 4px;
 }
 
+/* A \webmovie figure. It gets the same sizing as an image but deliberately
+   none of the .diagram treatment below: that rule multiplies a figure's white
+   paper into the page and, in dark mode, inverts it. Both are right for a line
+   drawing on white and wrong for a lit 3-D render, which is closer to a
+   photograph -- inverting it would turn the shading inside out. The dark and
+   light versions of such a figure are rendered separately instead. */
+.figure video, figure video {
+  max-width: min(var(--figure-width, 100%), 100%);
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+  background: #0B1220;
+}
+
 /* Diagrams are drawn as black-on-white rasters, and a white rectangle sitting
    in the page is a box around something that should not have one. Rather than
    re-export every figure, the paper is blended away: multiply against a light
@@ -1115,6 +1150,9 @@ figcaption {
 .callout.solution   { --callout-color: var(--c-solution);   --callout-bg: var(--c-solution-bg); }
 .callout.remark     { --callout-color: var(--c-remark);     --callout-bg: var(--c-remark-bg); }
 .callout.context    { --callout-color: var(--c-context);    --callout-bg: var(--c-context-bg); }
+.callout.axiom      { --callout-color: var(--c-axiom);      --callout-bg: var(--c-axiom-bg); }
+.callout.postulate  { --callout-color: var(--c-postulate);  --callout-bg: var(--c-postulate-bg); }
+.callout.misreading { --callout-color: var(--c-misreading); --callout-bg: var(--c-misreading-bg); }
 
 /* A proof is NOT boxed. It reads as running text opened by "Proof." and
    closed with a tombstone, the way a printed textbook sets it, which keeps
@@ -1198,6 +1236,64 @@ figcaption {
 .video-preview:focus-visible {
   outline: 3px solid var(--accent);
   outline-offset: 3px;
+}
+
+/* Replay for an animation that has played once and stopped. */
+.animation-replay {
+  display: block;
+  margin: 0.4rem auto 0;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid var(--line, #cbd5e1);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--accent);
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.animation-replay:hover { background: var(--accent-soft); }
+.animation-replay:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+/* Link to the course's own lecture video, at the part that teaches this
+   section: one line under the heading, with a small play badge. */
+.lecture-video {
+  margin: 0.3rem 0;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+}
+.lecture-video a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.lecture-video a:hover { text-decoration: underline; }
+.lecture-video-play {
+  position: relative;
+  flex: none;
+  width: 26px;
+  height: 18px;
+  border-radius: 5px;
+  background: #dc2626;
+}
+.lecture-video-play::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  border-style: solid;
+  border-width: 4px 0 4px 7px;
+  border-color: transparent transparent transparent #fff;
+}
+.lecture-video-tag {
+  font-weight: 700;
+  color: #dc2626;
+}
+.lecture-video a:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
 }
 
 /* Heading that opens a solution inside its example box, so an example and
@@ -1469,6 +1565,8 @@ tbody tr:last-child td { border-bottom: 1px solid var(--line); }
      than a block of ink: tinted panels band badly on most printers. */
   /* A thumbnail cannot be played on paper, so print the address. */
   .video-preview { display: none; }
+  .animation-replay { display: none; }
+  .lecture-video a::after { content: " (" attr(href) ")"; font-size: 8pt; color: #555; }
 
   .site-footer {
     margin-top: 18pt;

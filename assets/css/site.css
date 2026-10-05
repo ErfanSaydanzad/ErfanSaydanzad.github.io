@@ -21,18 +21,18 @@
   /* Ink and paper. The paper is a shade off white and the ink stops short of
      black: black on #ffffff is the highest contrast a screen can make, and
      over a long read that is a cost, not a virtue. */
-  --ink: #1a1c1e;
-  --ink-soft: #4a5057;
-  --muted: #4d525c;
-  --line: #e3e6ea;
-  --line-strong: #cfd4da;
-  --paper: #fbfbfc;
-  --wash: #f2f4f7;
+  --ink: #1d1d1f;
+  --ink-soft: #55555b;
+  --muted: #64646b;
+  --line: #dedee3;
+  --line-strong: #bcbcc4;
+  --paper: #ffffff;
+  --wash: #f5f5f7;
   --on-accent: #ffffff;
 
-  --accent: #0e585f;
-  --accent-soft: #e8f2f2;
-  --accent-line: #a9cfd2;
+  --accent: #0066cc;
+  --accent-soft: #eef6ff;
+  --accent-line: #b7d5f0;
 
   --sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif;
   --serif: "Source Serif 4", Charter, "Iowan Old Style", Georgia, "Times New Roman", serif;
@@ -41,10 +41,28 @@
   /* One page width for everything wide, one for prose. Cards, headers and
      footers share the first; a paragraph never exceeds the second, because a
      72-character line is where reading speed stops improving. */
-  --page: 68rem;
+  --page: 82rem;
   --prose: 41rem;
 
-  --radius: 12px;
+  /* --- Title scale. Three steps, and the step says where you are. ---------
+     There were four page-title sizes before this, each written as its own
+     clamp() in a different part of the file, and they had drifted: a section
+     index came out at 52px against a course page's 75px, so the index of a
+     thing looked less important than one item inside it. Size is the only
+     signal a reader gets for depth before they have read a word, so it has to
+     be spent deliberately.
+
+       --title-site     the home page, and nothing else
+       --title-page     anything you navigate to: Courses, Research, Group,
+                        Publications, the CV, a course, a project
+       --title-section  a heading within a page
+
+     Change a step here and every page that uses it moves together. */
+  --title-site: clamp(3rem, 6vw, 5.25rem);
+  --title-page: clamp(2.5rem, 5.2vw, 4.75rem);
+  --title-section: clamp(1.6rem, 1.2rem + 1.4vw, 2.1rem);
+
+  --radius: 22px;
   --radius-sm: 8px;
 
   color-scheme: light dark;
@@ -216,7 +234,7 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: 1.0625rem;
   line-height: 1.65;
   font-variant-numeric: oldstyle-nums proportional-nums;
@@ -225,7 +243,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.011em;
@@ -380,6 +398,43 @@ main {
   padding: 0.8rem 1rem;
 }
 
+/* A group of courses on the Courses page, with the heading that says what the
+   group is for. The descriptive line is muted: it orients a reader who is
+   scanning, and must not compete with the course titles under it. */
+.course-group { margin: 2.5rem 0 0; }
+.course-group:first-of-type { margin-top: 1.5rem; }
+.course-group > h2 { margin: 0 0 0.25rem; }
+.course-group-text {
+  max-width: var(--prose);
+  margin: 0 0 1.25rem;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  color: var(--muted);
+  text-wrap: pretty;
+}
+
+/* The development warning on a course card and at the head of a course page.
+   Red and bold, because it is the one line on these pages that a reader has to
+   register before trusting anything else, and it used to be the tail of a
+   sentence of grey description -- where it read as a detail rather than a
+   warning.
+
+   #991b1b measures 8.2:1 on white and #f2a0a0 8.9:1 on the dark paper, so the
+   colour clears AAA and is not carrying the meaning on its own: the wording
+   says "under development" in as many words, for anyone who cannot see the
+   red at all. */
+.course-notice {
+  margin: 0 0 0.5rem;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #991b1b;
+  text-wrap: pretty;
+}
+@media screen and (prefers-color-scheme: dark) {
+  .course-notice { color: #f2a0a0; }
+}
+
 .back {
   margin-top: 3.5rem;
   padding-top: 1.5rem;
@@ -412,7 +467,7 @@ main {
   border-bottom: 1px solid var(--line);
 }
 .hero h1 {
-  font-size: clamp(2.3rem, 6vw, 3.6rem);
+  font-size: var(--title-site);
   line-height: 1.08;
   margin-bottom: 0;
 }
@@ -994,6 +1049,525 @@ th { font-family: var(--sans); font-size: 0.8rem; text-transform: uppercase; let
   font-size: 0.8rem;
 }
 
+/* ------------------------------------ recovered course-page layout layer -- */
+
+/* Generated 3D course illustrations are already on neutral backgrounds and
+   should not be dark-mode inverted like line-art diagrams. */
+.figure img.rendered-image {
+  mix-blend-mode: normal;
+  filter: none;
+  background: #edf4fa;
+  border-color: transparent;
+  border-radius: 24px;
+}
+
+main:has(.course-page) { padding-top: 0; }
+
+body:has(.course-page) .site-header {
+  position: relative;
+  top: auto;
+  padding-block: 0.65rem;
+  background: var(--paper);
+  backdrop-filter: none;
+}
+
+body:has(.course-page) .brand {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+body:has(.course-page) .top-nav {
+  font-size: 0.8125rem;
+}
+
+body:has(.course-page) .top-nav a {
+  padding-inline: 0.75rem;
+}
+
+body:has(.course-page) .top-nav a[aria-current="page"] {
+  background: transparent;
+  color: var(--ink);
+}
+
+body:has(.course-page) .top-nav a:hover {
+  background: transparent;
+  color: var(--accent);
+}
+
+.course-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 4.25rem;
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: color-mix(in srgb, var(--paper) 95%, transparent);
+  backdrop-filter: blur(16px);
+}
+
+.course-toolbar a { text-decoration: none; }
+
+.course-back {
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.course-toolbar-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.course-toolbar-actions > a {
+  font-size: 0.8125rem;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.course-toolbar-actions > a:not(.button) { color: var(--ink-soft); }
+.course-toolbar-actions > a:hover { color: var(--accent); }
+
+.course-toolbar-actions .button-primary {
+  padding: 0.45rem 1.2rem;
+  min-height: 36px;
+}
+
+.course-heading { padding: 2.5rem 0 2.25rem; }
+.course-heading .page-head { margin: 0; max-width: none; }
+
+.course-heading .kicker {
+  color: var(--ink);
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 1rem;
+  margin-bottom: 0.9rem;
+}
+
+.course-heading h1 {
+  max-width: 22ch;
+  font-size: var(--title-page);
+  font-weight: 650;
+  line-height: 1.06;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+  color: #123e5c;
+  background: linear-gradient(105deg, #082e46 4%, #326382 54%, #608eaf 94%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.course-heading .lede {
+  max-width: 47rem;
+  font-size: 1.12rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  margin-top: 1.1rem;
+}
+
+.course-learning {
+  display: grid;
+  grid-template-columns: minmax(20rem, 0.82fr) minmax(0, 1.18fr);
+  column-gap: clamp(2rem, 4vw, 4rem);
+  align-items: start;
+}
+
+.course-learning > :only-child { grid-column: 1 / -1; }
+
+.course-learning .chapter-list { margin: 0; }
+
+.contents-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.65rem;
+}
+
+.contents-head h2 {
+  font-size: 1.375rem;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: -0.03em;
+}
+
+.contents-head > span {
+  font-size: 0.8125rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.course-learning .chapters {
+  margin: 0;
+  border-top: 1px solid var(--line);
+}
+
+.course-learning .chapters li {
+  border-bottom: 1px solid var(--line);
+}
+
+.course-learning .chapters a {
+  display: grid;
+  grid-template-columns: 1.9rem minmax(0, 1fr) 1rem;
+  align-items: center;
+  column-gap: 0.7rem;
+  min-height: 3.45rem;
+  padding: 0.7rem 0.5rem;
+  margin: 0 -0.5rem;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.course-learning .chapters a:hover { background: var(--wash); }
+
+.course-learning .chapters strong {
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.course-learning .chapters .chapter-index {
+  font-size: 0.8125rem;
+  font-variant-numeric: lining-nums tabular-nums;
+  color: var(--muted);
+}
+
+.course-learning .chapters .chapter-arrow {
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+.course-learning .chapters a:hover .chapter-arrow,
+.course-learning .chapters a:focus-visible .chapter-arrow {
+  color: var(--accent);
+}
+
+.course-visual { min-width: 0; }
+.course-visual .course-concept { margin: 0; }
+
+.course-visual .course-concept img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: contain;
+  border: 0;
+  border-radius: 24px;
+  background: #edf4fa;
+}
+
+.course-visual figcaption {
+  border: 0;
+  padding: 0;
+  margin: 1.5rem 1.25rem 0;
+  color: var(--ink-soft);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.course-visual figcaption strong { color: var(--ink); }
+
+.course-preparation {
+  padding: 1.5rem;
+  background: var(--wash);
+  border-radius: 20px;
+  margin-top: 1.75rem;
+}
+
+.course-preparation h2 {
+  font-size: 1rem;
+  margin-bottom: 0.65rem;
+}
+
+.course-preparation .prose {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+.course-details {
+  margin-top: 4rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.course-details .prose h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.course-details .prose { line-height: 1.75; }
+
+.course-details .factbox {
+  border: 0;
+  border-radius: 20px;
+  padding: 1.5rem;
+}
+
+.course-details .factbox h2 {
+  color: var(--ink);
+  letter-spacing: 0;
+  text-transform: none;
+  font-size: 1rem;
+}
+
+.course-details .split-side { position: static; }
+
+#course-contents,
+#course-details {
+  scroll-margin-top: 6rem;
+}
+
+@media (min-width: 64rem) {
+  .course-learning > .chapter-list:only-child .chapters {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 3rem;
+  }
+}
+
+@media (max-width: 60rem) {
+  .course-learning {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+
+  .course-heading {
+    padding-block: 2rem;
+  }
+
+  .course-heading h1 {
+    max-width: none;
+  }
+
+  .course-toolbar-actions {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 44rem) {
+  .course-learning {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .course-toolbar {
+    position: relative;
+    flex-wrap: wrap;
+    padding-block: 0.75rem;
+    gap: 0.35rem;
+  }
+
+  .course-toolbar-actions {
+    gap: 0.9rem;
+    width: 100%;
+  }
+
+  .course-toolbar-actions .button-primary {
+    margin-left: auto;
+  }
+
+  .course-heading h1 {
+    font-size: var(--title-page);
+  }
+
+  .course-heading .lede {
+    font-size: 1.0625rem;
+  }
+
+  .course-visual figcaption {
+    margin-inline: 0;
+  }
+
+  .course-details {
+    margin-top: 3rem;
+    padding-top: 2rem;
+  }
+
+  .course-learning .chapters a {
+    min-height: 3.4rem;
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .course-heading h1 {
+    background-image: linear-gradient(105deg, #e1f3ff, #8dbfe2);
+  }
+}
+
+/* Restored shared visual direction from the Apple-inspired revision. */
+.site-header {
+  position: relative;
+  padding-block: .65rem;
+  padding-inline: max(clamp(1rem, 4vw, 2.5rem), calc((100vw - var(--page)) / 2 + 2.5rem));
+  background: var(--paper);
+  backdrop-filter: none;
+}
+.brand { font-size: 1rem; font-weight: 600; letter-spacing: -.025em; }
+.brand-mark { width: 1.6rem; height: 1.6rem; }
+.top-nav { font-size: .8125rem; }
+.top-nav a { padding-inline: .75rem; }
+.top-nav a[aria-current="page"] { background: transparent; color: var(--ink); }
+.top-nav a:hover { background: transparent; color: var(--accent); }
+.page-head { max-width: 62rem; }
+.page-head .lede { max-width: 52rem; }
+.page-head h1 { letter-spacing: -.025em; }
+/* The same ramp a course page uses for its title (.course-heading h1), so that
+   arriving at Courses, Research, Group, Publications or the CV does not feel
+   like stepping down a level from the home page. These used to top out at
+   3.25rem -- 52px against a course page's 75px -- and the section pages read
+   as the small ones of the site. */
+.page-head h1.kicker-title {
+  font-family: var(--sans);
+  font-size: var(--title-page);
+  font-weight: 650;
+  line-height: 1.06;
+  letter-spacing: -.045em;
+  text-transform: none;
+  text-wrap: balance;
+}
+.hero { max-width: none; padding-block: 1rem 3.5rem; margin-bottom: 2rem; border-bottom: 1px solid var(--line); }
+.hero-with-portrait { grid-template-columns: minmax(0, 1fr) auto; gap: 3rem; }
+.hero-portrait { width: clamp(10rem, 19vw, 16rem); border-radius: 24px; }
+.hero h1 { font-size: var(--title-site); letter-spacing: -.045em; }
+.hero h1, .page-head h1.kicker-title {
+  color: #123e5c;
+  background: linear-gradient(105deg, #082e46, #608eaf);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero .lede { max-width: 44rem; font-size: 1.25rem; line-height: 1.6; }
+.cards { gap: 1.5rem; }
+.card { border-color: transparent; background: var(--wash); box-shadow: none; border-radius: 22px; padding: 1.6rem; overflow: hidden; }
+.card:hover { border-color: var(--line); background: var(--wash); box-shadow: none; }
+.card-image { width: calc(100% + 3.2rem); margin: -1.6rem -1.6rem .6rem; object-fit: contain; background: #fff; border-bottom: 0; border-radius: 22px 22px 0 0; }
+.course-card .card-image { aspect-ratio: 2 / 1; object-fit: cover; background: #edf4fa; }
+.course-card h3 { font-size: 1.45rem; }
+.card h2, .card h3 { letter-spacing: -.035em; }
+.card-text { line-height: 1.6; }
+.research-overview {
+  margin-bottom: clamp(3rem, 6vw, 4.5rem);
+}
+.research-context {
+  max-width: 52rem;
+  padding-top: clamp(2rem, 4vw, 3rem);
+  border-top: 1px solid var(--line);
+}
+.research-context h2 {
+  font-size: var(--title-section);
+  letter-spacing: -.035em;
+}
+.highlight-card { min-height: 0; padding: 1.5rem; border: 0; }
+.highlight-card:hover { background: var(--wash); }
+.card-meta { font-size: .8125rem; }
+.card-more { font-size: .875rem; font-weight: 600; padding-top: 1rem; }
+.card-more > span { float: right; }
+.section-head { border-bottom-width: 1px; padding-bottom: .85rem; }
+.section-head h2 { font-size: 1.65rem; }
+.home-prose { max-width: 46rem; }
+.home-prose h2 { font-size: 2rem; letter-spacing: -.04em; }
+.figure img.diagram { filter: none; mix-blend-mode: normal; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); }
+.figure figcaption { padding-left: 1rem; border-left: 2px solid var(--accent-line); margin-top: 1rem; }
+.course-visual figcaption { padding: 0; border: 0; }
+.split-main { min-width: 0; }
+.factbox p { overflow-wrap: anywhere; }
+.project-intro { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(2rem, 4vw, 3.5rem); align-items: start; margin-bottom: 2.5rem; }
+.project-intro .page-head, .project-intro .hero-figure { margin: 0; }
+/* A project title is raised too, but not to the full section-page size: it
+   sits in the narrower left column of a two-column intro, and at 75px a title
+   like "Attosecond imaging of plasmonic near fields" breaks into five lines. */
+.project-intro .page-head h1 {
+  font-size: var(--title-page);
+  line-height: 1.06;
+  text-wrap: balance;
+}
+/* Widened from .9fr so the title above has room at the shared page size. */
+.project-intro { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); }
+.project-intro .lede { font-size: 1.125rem; line-height: 1.7; }
+.project-intro figcaption { font-size: .875rem; }
+.project-intro:has(> :only-child) { grid-template-columns: 1fr; }
+@media screen and (prefers-color-scheme: dark) {
+  :root { --accent: #80baff; --accent-soft: #18293c; --accent-line: #365579; }
+  .hero h1, .page-head h1.kicker-title { background-image: linear-gradient(105deg, #e1f3ff, #8dbfe2); }
+}
+@media (max-width: 64rem) { .project-intro { grid-template-columns: 1fr; } }
+@media (max-width: 44rem) {
+  .hero-with-portrait { grid-template-columns: 1fr; gap: 1.5rem; }
+  .hero-portrait { order: -1; width: 6rem; border-radius: 18px; }
+  .hero .lede { font-size: 1.0625rem; }
+}
+@media (forced-colors: active) {
+  .course-heading h1, .hero h1, .page-head h1.kicker-title { background: none; -webkit-text-fill-color: currentColor; }
+}
+
+
+/* ------------------------------------------------ layout proportion ------ */
+/* Three places where the pieces of a page were not in proportion with each
+   other. All three are the same fault in different clothes: two blocks that
+   sit side by side, or above one another, at widths that were never chosen
+   to relate. */
+
+/* 1. A project page. The intro is a two-column grid: heading and summary on
+   the left, figure and caption on the right. The right side is always the
+   taller of the two, so `align-items: start` left a void beside the picture.
+   Centring the short column against the tall one turns that gap into margin
+   above and below, which reads as deliberate. The tags now live in this
+   column too (see build_project_page), which shortens the gap to begin with. */
+.project-intro { align-items: center; }
+.project-intro-text { min-width: 0; }
+.project-intro-text .tags { margin-top: 1.5rem; }
+.project-intro .hero-figure img { width: 100%; }
+
+/* 2. Research cards. Two faults. The images are figures on white, dropped
+   into a card tinted with --wash, so every card had a hard white rectangle
+   glued to its top at whatever height the image happened to be. Fixing the
+   aspect ratio makes the images agree with each other, `contain` keeps the
+   whole figure visible, and the white is now an explicit panel with a rule
+   under it rather than an accident of the artwork. */
+.project-card .card-image {
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  object-position: center;
+  background: #fff;
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--line);
+}
+/* A faint diagonal hatch, not a plain tint. A blank panel the same colour as
+   the card reads as an image that failed to load; a hatch reads as a space
+   deliberately left empty, which is what it is -- this project has no figure
+   yet. */
+.card-image-blank {
+  aspect-ratio: 16 / 9;
+  background:
+    repeating-linear-gradient(135deg,
+      var(--line) 0 1px,
+      transparent 1px 11px),
+    linear-gradient(135deg, var(--accent-soft), var(--wash));
+  border-bottom: 1px solid var(--line);
+}
+/* Four projects at 21rem minimum gave three across and one stranded on its
+   own row. A wider minimum gives two-by-two, which also makes each figure
+   twice the size. */
+.research-overview { grid-template-columns: repeat(auto-fit, minmax(min(100%, 27rem), 1fr)); }
+
+/* 3. The group page. The bio ran the full width of the content column -- about
+   120 characters a line, far past comfortable reading -- while the joining box
+   below it was capped at the prose measure, so the two blocks shared an edge on
+   the left and nothing on the right. One width for both. */
+.person, .callout { max-width: calc(var(--prose) + 6rem); }
+.person-bio { max-width: none; }
+
+@media (max-width: 64rem) {
+  .project-intro { align-items: start; }
+}
+
 /* -------------------------------------------------------------- print ---- */
 
 @media print {
@@ -1002,5 +1576,13 @@ th { font-family: var(--sans); font-size: 0.8rem; text-transform: uppercase; let
   main { max-width: none; padding: 0; }
   .card, .factbox, .callout { break-inside: avoid; border: 1px solid #ccc; }
   .split { display: block; }
+  .course-toolbar { display: none; }
+  .course-learning { display: block; }
+  .project-intro { display: block; }
+  .figure { break-inside: avoid; }
+  .course-heading h1, .hero h1, .page-head h1.kicker-title {
+    background: none;
+    -webkit-text-fill-color: #000;
+  }
   a { color: #000; text-decoration: underline; }
 }

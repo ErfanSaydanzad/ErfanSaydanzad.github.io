@@ -1,0 +1,4795 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 8: Rotational and Vibrational Spectroscopy | Direct Method</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+  <link rel="preload" href="../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../assets/css/site.css?v=198a0b43">
+  <link rel="preload" href="../../assets/fonts/latinmodern-math.woff2" as="font" type="font/woff2" crossorigin>
+  <script defer src="../../assets/js/main.js?v=198a0b43"></script>
+
+<style>
+.site-header { justify-content: flex-start; gap: 16px; }
+.site-header .top-nav { margin-left: auto; }
+.site-up {
+  display: inline-flex; align-items: center; gap: 6px; flex: none;
+  padding: 4px 11px 4px 8px;
+  border: 1px solid var(--line); border-radius: 999px;
+  color: var(--muted); font-family: var(--sans); font-size: 0.78rem;
+  line-height: 1.4; text-decoration: none; white-space: nowrap;
+  transition: color .15s ease, border-color .15s ease, background-color .15s ease;
+}
+.site-up:hover, .site-up:focus-visible {
+  color: var(--accent); border-color: var(--accent); background: var(--wash);
+}
+.site-up svg { width: 12px; height: 12px; flex: none; }
+@media (max-width: 560px) {
+  .site-up { padding: 3px 8px 3px 6px; font-size: 0.72rem; gap: 4px; }
+}
+</style></head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="site-up" href="../../../../../index.html"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.5 5.5 8l4.5 4.5"/></svg><span>Saydanzad Group</span></a>
+  <a class="brand" href="../../index.html">
+    <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M9 6.5V25.5M9 6.5H24M9 25.5H24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 16Q10.5 9.5 15.5 16T25.5 16" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/></svg>
+    <span>Direct Method</span>
+  </a>
+  <nav class="top-nav" aria-label="Primary">
+    <a href="../../index.html">Home</a>
+    <a href="../../toc.html">Contents</a>
+    <a href="../../projects.html">Projects</a>
+  </nav>
+</header>
+<main class="layout" id="main">
+  <aside class="sidebar">
+  <div class="sidebar-inner">
+    <p class="sidebar-kicker">Chapter 8</p>
+    <h2>Rotational and Vibrational Spectroscopy</h2>
+    <nav class="chapter-toc" aria-label="Chapter contents">
+      <a class="toc-level-2" href="#sec-8-introduction">8.1 Introduction</a>
+<a class="toc-level-2" href="#sec-8-radiative-processes-and-einstein-coefficients">8.2 Radiative Processes and Einstein Coefficients</a>
+<a class="toc-level-2" href="#sec-8-rotational-spectroscopy">8.3 Rotational Spectroscopy</a>
+<a class="toc-level-2" href="#sec-8-vibrational-spectroscopy">8.4 Vibrational Spectroscopy</a>
+<a class="toc-level-3" href="#sec-8-vibration-rotation-bands">8.4.1 Vibration–Rotation Bands</a>
+<a class="toc-level-3" href="#sec-8-real-band-structure-b-b-b-b">8.4.2 Real Band Structure: B&#x27; != B&#x27;&#x27;</a>
+<a class="toc-level-2" href="#sec-8-normal-modes-and-co-2-2">8.5 Normal Modes and CO2</a>
+<a class="toc-level-3" href="#sec-8-raman-scattering">8.5.1 Raman Scattering</a>
+<a class="toc-level-3" href="#sec-8-stokes-and-anti-stokes-lines">8.5.2 Stokes and Anti-Stokes Lines</a>
+<a class="toc-level-3" href="#sec-8-first-pass-self-checks">First-pass self-checks</a>
+<a class="toc-level-2" href="#sec-8-summary">8.6 Summary</a>
+<a class="toc-level-2" href="#sec-8-exercises">8.7 Exercises</a>
+<a class="toc-level-2" href="#sec-8-project-the-normal-modes-of-co-2-2">8.8 Project: The Normal Modes of CO2</a>
+    </nav>
+  </div>
+</aside>
+
+  <article class="content">
+    <header class="chapter-hero">
+      <p>Chapter 8</p>
+      <h1>Rotational and Vibrational Spectroscopy</h1>
+    </header>
+    <h2 id="sec-8-introduction"><span class="sec-number">8.1</span>Introduction</h2>
+<p>Chapter 7 found the vibrational and rotational levels. A level scheme is not a spectrum: what a spectrometer records is a set of <em>transitions</em>, and which transitions appear is a separate question.</p>
+<p>That question always has the same form. From Chapter 6, the rate of a one-photon transition is proportional to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">|</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>f</mi>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
+  </mrow>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi mathvariant="normal">𝒅</mi>
+      <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+    </mover>
+  </mrow>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>i</mi>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+  <msup>
+    <mo stretchy="false">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+</math></span>, so the whole of this chapter is one calculation repeated:</p>
+<div class="math-block math-block--numbered" id="eq-eq-spec-master"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mtext>is</mtext>
+        <mstyle scriptlevel="0">
+          <mspace width="1em" />
+        </mstyle>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mi>f</mi>
+          </mrow>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
+        </mrow>
+        <mrow data-mjx-texclass="ORD">
+          <mover accent="true">
+            <mi mathvariant="normal">𝒅</mi>
+            <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+          </mover>
+        </mrow>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mi>i</mi>
+          </mrow>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+        </mrow>
+        <mstyle scriptlevel="0">
+          <mspace width="1em" />
+        </mstyle>
+        <mtext>zero or not?</mtext>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:SPEC-master">(8.1)</span></div>
+<p>Nonzero means the line appears, with strength given by the square. Zero means it is invisible, however intense the light. We evaluate the integrals rather than quoting the rules.</p>
+<p>Two results are used later. A molecule can be entirely dark in one kind of spectroscopy and bright in another — symmetry decides, and CO<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span> is the standard example. And the pattern of a band gives the geometry, which is how a spectrum becomes structural information.</p>
+<p>The thread through the chapter is simple: one matrix element determines visibility, and energy-level formulas determine where visible lines appear.</p>
+<p>This chapter uses one workflow repeatedly:</p>
+<ol><li><p>identify initial and final states;</p></li><li><p>test if the transition moment is symmetry-allowed;</p></li><li><p>use level formulas to predict line positions;</p></li><li><p>use populations and matrix elements to interpret intensities.</p></li></ol>
+<section class="callout definition" id="definition-def-spec-route"><header><span class="callout-kind">Definition 8.1.1</span><span class="callout-title">Core route and extension</span></header><p> The <em>first-pass core</em> evaluates one rotor integral and one oscillator matrix element, then squares each amplitude to obtain a relative line strength. Thermal envelopes, vibration–rotation branches, polyatomic mode symmetry, and Raman scattering are an <em>extension</em>. The core is enough to read the elementary spectra used in later courses.</p></section>
+<h2 id="sec-8-radiative-processes-and-einstein-coefficients"><span class="sec-number">8.2</span>Radiative Processes and Einstein Coefficients</h2>
+<p>Before applying selection rules, it helps to separate the three elementary radiative processes between two levels <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+</math></span>:</p>
+<div class="math-block math-block--numbered" id="eq-eq-spec-einstein-rates"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <msub>
+          <mi>R</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mrow data-mjx-texclass="ORD">
+              <mi data-mjx-auto-op="false">abs</mi>
+            </mrow>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <msub>
+          <mi>B</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mn>12</mn>
+          </mrow>
+        </msub>
+        <mi>ρ</mi>
+        <mo stretchy="false">(</mo>
+        <mi>ν</mi>
+        <mo stretchy="false">)</mo>
+        <msub>
+          <mi>N</mi>
+          <mn>1</mn>
+        </msub>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <msub>
+          <mi>R</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mrow data-mjx-texclass="ORD">
+              <mi data-mjx-auto-op="false">stim</mi>
+            </mrow>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <msub>
+          <mi>B</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mn>21</mn>
+          </mrow>
+        </msub>
+        <mi>ρ</mi>
+        <mo stretchy="false">(</mo>
+        <mi>ν</mi>
+        <mo stretchy="false">)</mo>
+        <msub>
+          <mi>N</mi>
+          <mn>2</mn>
+        </msub>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <msub>
+          <mi>R</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mrow data-mjx-texclass="ORD">
+              <mi data-mjx-auto-op="false">sp</mi>
+            </mrow>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <msub>
+          <mi>A</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mn>21</mn>
+          </mrow>
+        </msub>
+        <msub>
+          <mi>N</mi>
+          <mn>2</mn>
+        </msub>
+        <mo>,</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:SPEC-einstein-rates">(8.2)</span></div>
+<p>where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ρ</mi>
+  <mo stretchy="false">(</mo>
+  <mi>ν</mi>
+  <mo stretchy="false">)</mo>
+</math></span> is the spectral energy density and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>N</mi>
+    <mi>i</mi>
+  </msub>
+</math></span> are level populations.</p>
+<p>At thermal equilibrium, detailed balance gives</p>
+<div class="math-block math-block--numbered" id="eq-eq-spec-einstein-relations"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <msub>
+          <mi>B</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mn>12</mn>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <msub>
+          <mi>B</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mn>21</mn>
+          </mrow>
+        </msub>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <mfrac>
+          <msub>
+            <mi>A</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mn>21</mn>
+            </mrow>
+          </msub>
+          <msub>
+            <mi>B</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mn>21</mn>
+            </mrow>
+          </msub>
+        </mfrac>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mn>8</mn>
+            <mi>π</mi>
+            <mi>h</mi>
+            <msup>
+              <mi>ν</mi>
+              <mn>3</mn>
+            </msup>
+          </mrow>
+          <msup>
+            <mi>c</mi>
+            <mn>3</mn>
+          </msup>
+        </mfrac>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:SPEC-einstein-relations">(8.3)</span></div>
+<p>These relations are useful in practice: once an absorption strength is known, they connect it to spontaneous-emission lifetime <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>τ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mrow data-mjx-texclass="ORD">
+        <mi data-mjx-auto-op="false">rad</mi>
+      </mrow>
+    </mrow>
+  </msub>
+  <mo>∼</mo>
+  <mn>1</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msub>
+    <mi>A</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>21</mn>
+    </mrow>
+  </msub>
+</math></span> and therefore to fluorescence intensity.</p>
+<p>So Einstein coefficients supply the population dynamics, while selection rules decide whether a line exists at all.</p>
+<h2 id="sec-8-rotational-spectroscopy"><span class="sec-number">8.3</span>Rotational Spectroscopy</h2>
+<p>The rotational states of a diatomic are the spherical harmonics of Chapter 3, now describing the orientation of the molecular axis: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>J</mi>
+      <mo>,</mo>
+      <mi>M</mi>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+  <mo accent="false" stretchy="false">→</mo>
+  <msubsup>
+    <mi>Y</mi>
+    <mi>J</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>M</mi>
+    </mrow>
+  </msubsup>
+  <mo stretchy="false">(</mo>
+  <mi>θ</mi>
+  <mo>,</mo>
+  <mi>φ</mi>
+  <mo stretchy="false">)</mo>
+</math></span>, with energies <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>E</mi>
+    <mi>J</mi>
+  </msub>
+  <mo>=</mo>
+  <mi>B</mi>
+  <mi>J</mi>
+  <mo stretchy="false">(</mo>
+  <mi>J</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>.</p>
+<p>The dipole moment of the molecule points along its axis. Writing its magnitude as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>d</mi>
+    <mn>0</mn>
+  </msub>
+</math></span> (a permanent, geometry-dependent constant) and its direction as the unit vector <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>n</mi>
+      <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+    </mover>
+  </mrow>
+  <mo stretchy="false">(</mo>
+  <mi>θ</mi>
+  <mo>,</mo>
+  <mi>φ</mi>
+  <mo stretchy="false">)</mo>
+</math></span>,</p>
+<div class="math-block math-block--numbered" id="eq-eq-spec-molecular-dipole"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mrow data-mjx-texclass="ORD">
+          <mover accent="true">
+            <mi mathvariant="normal">𝒅</mi>
+            <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+          </mover>
+        </mrow>
+        <mo>=</mo>
+        <msub>
+          <mi>d</mi>
+          <mn>0</mn>
+        </msub>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <mrow data-mjx-texclass="ORD">
+          <mover accent="true">
+            <mi>n</mi>
+            <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+          </mover>
+        </mrow>
+        <mo stretchy="false">(</mo>
+        <mi>θ</mi>
+        <mo>,</mo>
+        <mi>φ</mi>
+        <mo stretchy="false">)</mo>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:SPEC-molecular-dipole">(8.4)</span></div>
+<p>The <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>z</mi>
+</math></span> component is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>d</mi>
+    <mn>0</mn>
+  </msub>
+  <mi>cos</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mi>θ</mi>
+</math></span>, so the matrix element is</p>
+<div class="math-block math-block--numbered" id="eq-eq-spec-rot-matrix"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
+          <mrow data-mjx-texclass="ORD">
+            <msup>
+              <mi>J</mi>
+              <mo data-mjx-alternate="1">′</mo>
+            </msup>
+            <msup>
+              <mi>M</mi>
+              <mo data-mjx-alternate="1">′</mo>
+            </msup>
+          </mrow>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
+        </mrow>
+        <msub>
+          <mrow data-mjx-texclass="ORD">
+            <mover accent="true">
+              <mi>d</mi>
+              <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+            </mover>
+          </mrow>
+          <mi>z</mi>
+        </msub>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mi>J</mi>
+            <mi>M</mi>
+          </mrow>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+        </mrow>
+        <mo>=</mo>
+        <msub>
+          <mi>d</mi>
+          <mn>0</mn>
+        </msub>
+        <mo data-mjx-texclass="OP">∫</mo>
+        <msubsup>
+          <mi>Y</mi>
+          <mrow data-mjx-texclass="ORD">
+            <msup>
+              <mi>J</mi>
+              <mo data-mjx-alternate="1">′</mo>
+            </msup>
+          </mrow>
+          <mrow data-mjx-texclass="ORD">
+            <msup>
+              <mi>M</mi>
+              <mo data-mjx-alternate="1">′</mo>
+            </msup>
+            <mo>∗</mo>
+          </mrow>
+        </msubsup>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <mi>cos</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+        <mi>θ</mi>
+        <mstyle scriptlevel="0">
+          <mspace width="0.278em" />
+        </mstyle>
+        <msubsup>
+          <mi>Y</mi>
+          <mi>J</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mi>M</mi>
+          </mrow>
+        </msubsup>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <mi>d</mi>
+        <mi mathvariant="normal">Ω</mi>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:SPEC-rot-matrix">(8.5)</span></div>
+<p>For the easiest line, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>J</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+  <mo>,</mo>
+  <mi>M</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+  <mo accent="false" stretchy="false">→</mo>
+  <msup>
+    <mi>J</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+  <mo>=</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <msup>
+    <mi>M</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>, use <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msubsup>
+    <mi>Y</mi>
+    <mn>0</mn>
+    <mn>0</mn>
+  </msubsup>
+  <mo>=</mo>
+  <mn>1</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msqrt>
+    <mn>4</mn>
+    <mi>π</mi>
+  </msqrt>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msubsup>
+    <mi>Y</mi>
+    <mn>1</mn>
+    <mn>0</mn>
+  </msubsup>
+  <mo>=</mo>
+  <msqrt>
+    <mn>3</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mo>/</mo>
+    </mrow>
+    <mo stretchy="false">(</mo>
+    <mn>4</mn>
+    <mi>π</mi>
+    <mo stretchy="false">)</mo>
+  </msqrt>
+  <mi>cos</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mi>θ</mi>
+</math></span>:</p>
+<div class="math-block math-block--numbered" id="eq-eq-spec-rot-00-10"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mn>1</mn>
+            <mo>,</mo>
+            <mn>0</mn>
+          </mrow>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
+        </mrow>
+        <msub>
+          <mrow data-mjx-texclass="ORD">
+            <mover accent="true">
+              <mi>d</mi>
+              <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+            </mover>
+          </mrow>
+          <mi>z</mi>
+        </msub>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mn>0</mn>
+            <mo>,</mo>
+            <mn>0</mn>
+          </mrow>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+        </mrow>
+        <mo>=</mo>
+        <msub>
+          <mi>d</mi>
+          <mn>0</mn>
+        </msub>
+        <mfrac>
+          <msqrt>
+            <mn>3</mn>
+          </msqrt>
+          <mrow>
+            <mn>4</mn>
+            <mi>π</mi>
+          </mrow>
+        </mfrac>
+        <mo data-mjx-texclass="OP">∫</mo>
+        <msup>
+          <mi>cos</mi>
+          <mn>2</mn>
+        </msup>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+        <mi>θ</mi>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <mi>d</mi>
+        <mi mathvariant="normal">Ω</mi>
+        <mo>=</mo>
+        <mfrac>
+          <msub>
+            <mi>d</mi>
+            <mn>0</mn>
+          </msub>
+          <msqrt>
+            <mn>3</mn>
+          </msqrt>
+        </mfrac>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:SPEC-rot-00-10">(8.6)</span></div>
+<p>The line strength for this polarization is therefore proportional to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msubsup>
+    <mi>d</mi>
+    <mn>0</mn>
+    <mn>2</mn>
+  </msubsup>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>3</mn>
+</math></span>. This direct integral and the symmetry rule below are two methods for reaching the same conclusion.</p>
+<p>Two facts follow immediately, and both are physical rather than technical.</p>
+<section class="callout theorem" id="theorem-thm-spec-rot-active"><header><span class="callout-kind">Theorem 8.3.1</span><span class="callout-title">Rotational activity</span></header><p> A molecule has a pure rotational spectrum only if <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>d</mi>
+    <mn>0</mn>
+  </msub>
+  <mo>≠</mo>
+  <mn>0</mn>
+</math></span>, that is, only if it possesses a permanent electric dipole moment.</p></section>
+<div class="proof" data-lead="Proof."><p>Equation <a class="xref" href="../chapter-08/index.html#eq-eq-spec-rot-matrix">(8.5)</a> is proportional to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>d</mi>
+    <mn>0</mn>
+  </msub>
+</math></span>. If the dipole moment vanishes, every rotational matrix element vanishes with it, whatever the angular integral does.</p></div>
+<p>For <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>v</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+  <mo accent="false" stretchy="false">→</mo>
+  <mn>1</mn>
+</math></span>, the ladder calculation gives the actual amplitude</p>
+<div class="math-block math-block--numbered" id="eq-eq-spec-vib-01-amplitude"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mn>1</mn>
+          </mrow>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
+        </mrow>
+        <mrow data-mjx-texclass="ORD">
+          <mover accent="true">
+            <mi>d</mi>
+            <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+          </mover>
+        </mrow>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mn>0</mn>
+          </mrow>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+        </mrow>
+        <mo>=</mo>
+        <msub>
+          <mrow data-mjx-texclass="INNER">
+            <mo data-mjx-texclass="OPEN" fence="true" stretchy="true" symmetric="true" form="prefix" lspace="0em" rspace="0em" />
+            <mfrac>
+              <mrow>
+                <mi>d</mi>
+                <mi>d</mi>
+              </mrow>
+              <mrow>
+                <mi>d</mi>
+                <mi>R</mi>
+              </mrow>
+            </mfrac>
+            <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
+          </mrow>
+          <mrow data-mjx-texclass="ORD">
+            <msub>
+              <mi>R</mi>
+              <mi>e</mi>
+            </msub>
+          </mrow>
+        </msub>
+        <msqrt>
+          <mfrac>
+            <mi data-mjx-alternate="1">ℏ</mi>
+            <mrow>
+              <mn>2</mn>
+              <mi>μ</mi>
+              <msub>
+                <mi>ω</mi>
+                <mi>e</mi>
+              </msub>
+            </mrow>
+          </mfrac>
+        </msqrt>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:SPEC-vib-01-amplitude">(8.7)</span></div>
+<p>Parity reaches the same zero/nonzero decision: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>h</mi>
+  <msub>
+    <mi>i</mi>
+    <mn>0</mn>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>q</mi>
+  <mo stretchy="false">)</mo>
+</math></span> is even, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+</math></span> is odd, and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>h</mi>
+  <msub>
+    <mi>i</mi>
+    <mn>1</mn>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>q</mi>
+  <mo stretchy="false">)</mo>
+</math></span> is odd, so <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>χ</mi>
+    <mn>1</mn>
+  </msub>
+  <mi>q</mi>
+  <msub>
+    <mi>χ</mi>
+    <mn>0</mn>
+  </msub>
+</math></span> is even and may integrate to a nonzero value. For <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+  <mo accent="false" stretchy="false">→</mo>
+  <mn>2</mn>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>h</mi>
+  <msub>
+    <mi>i</mi>
+    <mn>2</mn>
+  </msub>
+  <mi>q</mi>
+  <msub>
+    <mi>χ</mi>
+    <mn>0</mn>
+  </msub>
+</math></span> is odd and its integral vanishes. Matrix algebra adds what parity cannot: the magnitude in Eq. <a class="xref" href="../chapter-08/index.html#eq-eq-spec-vib-01-amplitude">(8.7)</a>.</p>
+<p>So HCl, CO and H<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span>O have microwave spectra. H<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span>, N<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span>, O<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span> and — importantly for this course — CO<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span> do not. A symmetric linear molecule O=C=O has its charge distribution balanced about the inversion center, so <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>d</mi>
+    <mn>0</mn>
+  </msub>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> exactly by symmetry, and rotating it presents nothing for the field to grip.</p>
+<p>This is the first major spectroscopy lesson: level structure alone is never enough; transition moments determine observability.</p>
+<section class="callout theorem" id="theorem-thm-spec-rot-rule"><header><span class="callout-kind">Theorem 8.3.2</span><span class="callout-title">Rotational selection rule</span></header><p> The integral in Eq. <a class="xref" href="../chapter-08/index.html#eq-eq-spec-rot-matrix">(8.5)</a> vanishes unless</p>
+<div class="math-block math-block--numbered" id="eq-eq-spec-rot-rule"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi mathvariant="normal">Δ</mi>
+        <mi>J</mi>
+        <mo>=</mo>
+        <mo form="prefix" lspace="0em" rspace="0em">±</mo>
+        <mn>1</mn>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <mi mathvariant="normal">Δ</mi>
+        <mi>M</mi>
+        <mo>=</mo>
+        <mn>0</mn>
+        <mstyle scriptlevel="0">
+          <mspace width="1em" />
+        </mstyle>
+        <mrow>
+          <mtext>(for </mtext>
+          <mrow data-mjx-texclass="ORD">
+            <mi>z</mi>
+          </mrow>
+          <mtext>-polarized light)</mtext>
+        </mrow>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:SPEC-rot-rule">(8.8)</span></div></section>
+<div class="proof" data-lead="Proof."><p>Use <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>cos</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mi>θ</mi>
+  <mo>=</mo>
+  <msqrt>
+    <mn>4</mn>
+    <mi>π</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo>/</mo>
+    </mrow>
+    <mn>3</mn>
+  </msqrt>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msubsup>
+    <mi>Y</mi>
+    <mn>1</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>0</mn>
+    </mrow>
+  </msubsup>
+</math></span> from Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-ylm-table">(4.32)</a>, so the integral becomes one over three spherical harmonics,</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <msqrt>
+    <mfrac>
+      <mrow>
+        <mn>4</mn>
+        <mi>π</mi>
+      </mrow>
+      <mn>3</mn>
+    </mfrac>
+  </msqrt>
+  <mo data-mjx-texclass="OP">∫</mo>
+  <msubsup>
+    <mi>Y</mi>
+    <mrow data-mjx-texclass="ORD">
+      <msup>
+        <mi>J</mi>
+        <mo data-mjx-alternate="1">′</mo>
+      </msup>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <msup>
+        <mi>M</mi>
+        <mo data-mjx-alternate="1">′</mo>
+      </msup>
+      <mo>∗</mo>
+    </mrow>
+  </msubsup>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msubsup>
+    <mi>Y</mi>
+    <mn>1</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>0</mn>
+    </mrow>
+  </msubsup>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msubsup>
+    <mi>Y</mi>
+    <mi>J</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>M</mi>
+    </mrow>
+  </msubsup>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mi>d</mi>
+  <mi mathvariant="normal">Ω</mi>
+  <mo>.</mo>
+</math></div>
+<p>Two properties of that integral settle the matter. The <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>φ</mi>
+</math></span> dependence is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>i</mi>
+      <mo stretchy="false">(</mo>
+      <mi>M</mi>
+      <mo>−</mo>
+      <msup>
+        <mi>M</mi>
+        <mo data-mjx-alternate="1">′</mo>
+      </msup>
+      <mo>+</mo>
+      <mn>0</mn>
+      <mo stretchy="false">)</mo>
+      <mi>φ</mi>
+    </mrow>
+  </msup>
+</math></span>, which integrates to zero unless <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>M</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+  <mo>=</mo>
+  <mi>M</mi>
+</math></span>. And the product <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msubsup>
+    <mi>Y</mi>
+    <mn>1</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>0</mn>
+    </mrow>
+  </msubsup>
+  <msubsup>
+    <mi>Y</mi>
+    <mi>J</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>M</mi>
+    </mrow>
+  </msubsup>
+</math></span> expands in spherical harmonics of rank <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">|</mo>
+  <mi>J</mi>
+  <mo>−</mo>
+  <mn>1</mn>
+  <mo stretchy="false">|</mo>
+</math></span> to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>J</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+</math></span> only, so orthogonality kills everything except <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>J</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+  <mo>=</mo>
+  <mi>J</mi>
+  <mo>±</mo>
+  <mn>1</mn>
+</math></span>; the case <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>J</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+  <mo>=</mo>
+  <mi>J</mi>
+</math></span> is further excluded by parity, since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msubsup>
+    <mi>Y</mi>
+    <mi>J</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>M</mi>
+    </mrow>
+  </msubsup>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msubsup>
+    <mi>Y</mi>
+    <mn>1</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>0</mn>
+    </mrow>
+  </msubsup>
+  <msubsup>
+    <mi>Y</mi>
+    <mi>J</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>M</mi>
+    </mrow>
+  </msubsup>
+</math></span> then have opposite parity <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>1</mn>
+  <msup>
+    <mo stretchy="false">)</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>J</mi>
+    </mrow>
+  </msup>
+</math></span> versus <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>1</mn>
+  <msup>
+    <mo stretchy="false">)</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>J</mi>
+      <mo>+</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+</math></span>.</p></div>
+<p>Combining Theorem <a class="xref" href="../chapter-08/index.html#theorem-thm-spec-rot-rule">8.3.2</a> with Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-rot-spacing">(7.28)</a>, absorption from <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>J</mi>
+</math></span> to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>J</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+</math></span> costs</p>
+<div class="math-block math-block--numbered" id="eq-eq-spec-rot-lines"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi mathvariant="normal">Δ</mi>
+        <mi>E</mi>
+        <mo>=</mo>
+        <msub>
+          <mi>E</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mi>J</mi>
+            <mo>+</mo>
+            <mn>1</mn>
+          </mrow>
+        </msub>
+        <mo>−</mo>
+        <msub>
+          <mi>E</mi>
+          <mi>J</mi>
+        </msub>
+        <mo>=</mo>
+        <mn>2</mn>
+        <mi>B</mi>
+        <mo stretchy="false">(</mo>
+        <mi>J</mi>
+        <mo>+</mo>
+        <mn>1</mn>
+        <mo stretchy="false">)</mo>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <mi>J</mi>
+        <mo>=</mo>
+        <mn>0</mn>
+        <mo>,</mo>
+        <mn>1</mn>
+        <mo>,</mo>
+        <mn>2</mn>
+        <mo>,</mo>
+        <mo>…</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:SPEC-rot-lines">(8.9)</span></div>
+<p>so the lines fall at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mi>B</mi>
+  <mo>,</mo>
+  <mn>4</mn>
+  <mi>B</mi>
+  <mo>,</mo>
+  <mn>6</mn>
+  <mi>B</mi>
+  <mo>,</mo>
+  <mo>…</mo>
+</math></span>: a comb of <em>equally spaced</em> lines separated by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mi>B</mi>
+</math></span>.</p>
+<p>That claim deserves a second look, because the ladder of levels is not equally spaced at all. Writing the rungs out:</p>
+<div class="centered"><div class="table-wrap"><table><tr><td>
+		<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>J</mi>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>3</mn>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>4</mn>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>5</mn>
+</math></span></td></tr><tr><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>F</mi>
+  <mo stretchy="false">(</mo>
+  <mi>J</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mi>B</mi>
+  <mi>J</mi>
+  <mo stretchy="false">(</mo>
+  <mi>J</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mi>B</mi>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>6</mn>
+  <mi>B</mi>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>12</mn>
+  <mi>B</mi>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>20</mn>
+  <mi>B</mi>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>30</mn>
+  <mi>B</mi>
+</math></span></td></tr><tr><td>
+		gap to the rung above</td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mi>B</mi>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>4</mn>
+  <mi>B</mi>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>6</mn>
+  <mi>B</mi>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>8</mn>
+  <mi>B</mi>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>10</mn>
+  <mi>B</mi>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>…</mo>
+</math></span></td></tr><tr><td></td></tr></table></div></div>
+<p> The rungs get further apart as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>J</mi>
+</math></span> rises, and a reader who has just been told the spectrum is a uniform comb is entitled to find that surprising. The resolution is that a spectrometer does not record the rungs; it records the <em>gaps</em>. Those gaps grow, but they grow by the same amount, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mi>B</mi>
+</math></span>, each time — and a sequence whose successive differences are constant is arithmetic. So the transition energies <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mi>B</mi>
+  <mo>,</mo>
+  <mn>4</mn>
+  <mi>B</mi>
+  <mo>,</mo>
+  <mn>6</mn>
+  <mi>B</mi>
+  <mo>,</mo>
+  <mo>…</mo>
+</math></span> are evenly spaced even though the levels they connect are not. Figure <a class="xref" href="../chapter-08/index.html#chapter-08-fig-1">8.1</a> shows the two together.</p>
+<figure id="chapter-08-fig-1" class="figure"><img src="assets/img/ch08_fig00_rotational_ladder.png" class="diagram" alt="A ladder with growing gaps, and the evenly spaced spectrum it produces. Each gap in the upper panel is one line in the lower one, in the same colour. The rungs are quadratic in J; their differences are linear in J; and a linear sequence is exactly one with constant spacing. This is why a single measured spacing determines B, and with it the moment of inertia and the bond length." loading="lazy" style="--figure-width: 94%;"><figcaption>Figure 8.1. A ladder with growing gaps, and the evenly spaced spectrum it
+	produces. Each gap in the upper panel is one line in the lower one, in
+	the same colour. The rungs are quadratic in <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>J</mi>
+</math></span>; their differences are
+	linear in <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>J</mi>
+</math></span>; and a linear sequence is exactly one with constant spacing.
+	This is why a single measured spacing determines <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>B</mi>
+</math></span>, and with it the
+	moment of inertia and the bond length.</figcaption></figure>
+<p>Measure the spacing, get <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>B</mi>
+</math></span>, get <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>I</mi>
+</math></span>, get the bond length — Example <a class="xref" href="../chapter-07/index.html#example-ex-mol-bond-length">7.7.1</a>. The same inversion run the other way weighs the nuclei.</p>
+<section class="callout example" id="example-ex-spec-isotope"><header><span class="callout-kind">Example 8.3.1</span><span class="callout-title">Weighing a nucleus with a microwave source</span></header><p> The rotational spectrum of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mn>12</mn>
+    </mrow>
+  </msup>
+</math></span>C<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mn>16</mn>
+    </mrow>
+  </msup>
+</math></span>O has <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>B</mi>
+    <mi>e</mi>
+  </msub>
+  <mo>=</mo>
+  <mn>1.9313</mn>
+</math></span> cm<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+</math></span>. Predict <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>B</mi>
+    <mi>e</mi>
+  </msub>
+</math></span> for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mn>13</mn>
+    </mrow>
+  </msup>
+</math></span>C<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mn>16</mn>
+    </mrow>
+  </msup>
+</math></span>O, and say what measuring it would tell you.</p>
+<p class="solution-head">Solution.</p>
+<p>Substituting a neutron changes the mass but not the chemistry: the electronic potential that sets <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>R</mi>
+    <mi>e</mi>
+  </msub>
+</math></span> is a function of nuclear <em>charge</em>, which is unchanged, so <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>R</mi>
+    <mi>e</mi>
+  </msub>
+</math></span> is the same for both molecules to well below the precision of the measurement. Since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>B</mi>
+  <mo>=</mo>
+  <msup>
+    <mi data-mjx-alternate="1">ℏ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+  <mi>μ</mi>
+  <msubsup>
+    <mi>R</mi>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msubsup>
+</math></span>, everything except <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>μ</mi>
+</math></span> cancels in the ratio:</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mfrac>
+    <mrow>
+      <mi>B</mi>
+      <msup>
+        <mo stretchy="false">(</mo>
+        <mrow data-mjx-texclass="ORD">
+          <mn>13</mn>
+        </mrow>
+      </msup>
+      <msup>
+        <mrow data-mjx-texclass="ORD">
+          <mi mathvariant="normal">C</mi>
+        </mrow>
+        <mrow data-mjx-texclass="ORD">
+          <mn>16</mn>
+        </mrow>
+      </msup>
+      <mrow data-mjx-texclass="ORD">
+        <mi mathvariant="normal">O</mi>
+      </mrow>
+      <mo stretchy="false">)</mo>
+    </mrow>
+    <mrow>
+      <mi>B</mi>
+      <msup>
+        <mo stretchy="false">(</mo>
+        <mrow data-mjx-texclass="ORD">
+          <mn>12</mn>
+        </mrow>
+      </msup>
+      <msup>
+        <mrow data-mjx-texclass="ORD">
+          <mi mathvariant="normal">C</mi>
+        </mrow>
+        <mrow data-mjx-texclass="ORD">
+          <mn>16</mn>
+        </mrow>
+      </msup>
+      <mrow data-mjx-texclass="ORD">
+        <mi mathvariant="normal">O</mi>
+      </mrow>
+      <mo stretchy="false">)</mo>
+    </mrow>
+  </mfrac>
+  <mo>=</mo>
+  <mfrac>
+    <mrow>
+      <mi>μ</mi>
+      <msup>
+        <mo stretchy="false">(</mo>
+        <mrow data-mjx-texclass="ORD">
+          <mn>12</mn>
+        </mrow>
+      </msup>
+      <msup>
+        <mrow data-mjx-texclass="ORD">
+          <mi mathvariant="normal">C</mi>
+        </mrow>
+        <mrow data-mjx-texclass="ORD">
+          <mn>16</mn>
+        </mrow>
+      </msup>
+      <mrow data-mjx-texclass="ORD">
+        <mi mathvariant="normal">O</mi>
+      </mrow>
+      <mo stretchy="false">)</mo>
+    </mrow>
+    <mrow>
+      <mi>μ</mi>
+      <msup>
+        <mo stretchy="false">(</mo>
+        <mrow data-mjx-texclass="ORD">
+          <mn>13</mn>
+        </mrow>
+      </msup>
+      <msup>
+        <mrow data-mjx-texclass="ORD">
+          <mi mathvariant="normal">C</mi>
+        </mrow>
+        <mrow data-mjx-texclass="ORD">
+          <mn>16</mn>
+        </mrow>
+      </msup>
+      <mrow data-mjx-texclass="ORD">
+        <mi mathvariant="normal">O</mi>
+      </mrow>
+      <mo stretchy="false">)</mo>
+    </mrow>
+  </mfrac>
+  <mo>.</mo>
+</math></div>
+<p>With <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>μ</mi>
+  <mo>=</mo>
+  <msub>
+    <mi>m</mi>
+    <mn>1</mn>
+  </msub>
+  <msub>
+    <mi>m</mi>
+    <mn>2</mn>
+  </msub>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>m</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>+</mo>
+  <msub>
+    <mi>m</mi>
+    <mn>2</mn>
+  </msub>
+  <mo stretchy="false">)</mo>
+</math></span> the two reduced masses are <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>6.8562</mn>
+</math></span> u and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>7.1724</mn>
+</math></span> u, a ratio of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1.0461</mn>
+</math></span>, so</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>B</mi>
+  <msup>
+    <mo stretchy="false">(</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>13</mn>
+    </mrow>
+  </msup>
+  <msup>
+    <mrow data-mjx-texclass="ORD">
+      <mi mathvariant="normal">C</mi>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mn>16</mn>
+    </mrow>
+  </msup>
+  <mrow data-mjx-texclass="ORD">
+    <mi mathvariant="normal">O</mi>
+  </mrow>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mfrac>
+    <mn>1.9313</mn>
+    <mn>1.0461</mn>
+  </mfrac>
+  <mo>=</mo>
+  <mn>1.8461</mn>
+  <mtext> </mtext>
+  <msup>
+    <mrow data-mjx-texclass="ORD">
+      <mi data-mjx-auto-op="false">cm</mi>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+  <mo>,</mo>
+</math></div>
+<p>and the line spacing <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mi>B</mi>
+</math></span> falls by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0.170</mn>
+</math></span> cm<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+</math></span> — an enormous shift by microwave standards, resolved without difficulty.</p>
+<p>Read backwards, this is a mass measurement. The bond length cancels, so a measured ratio of two rotational constants gives a ratio of reduced masses, and with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <msup>
+    <mo stretchy="false">(</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>16</mn>
+    </mrow>
+  </msup>
+  <mrow data-mjx-texclass="ORD">
+    <mi mathvariant="normal">O</mi>
+  </mrow>
+  <mo stretchy="false">)</mo>
+</math></span> known that gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <msup>
+    <mo stretchy="false">(</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>13</mn>
+    </mrow>
+  </msup>
+  <mrow data-mjx-texclass="ORD">
+    <mi mathvariant="normal">C</mi>
+  </mrow>
+  <mo stretchy="false">)</mo>
+</math></span>. Done carefully the answer agrees with mass spectrometry to a few parts in <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>10</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>4</mn>
+    </mrow>
+  </msup>
+</math></span>. A spectroscopist pointing millimetre waves at a cold gas is weighing its nuclei.</p>
+<p>The vibrational constant shifts too, but by half as much in relative terms, since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ω</mi>
+    <mi>e</mi>
+  </msub>
+  <mo>∝</mo>
+  <msup>
+    <mi>μ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mn>2</mn>
+    </mrow>
+  </msup>
+</math></span> rather than <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>μ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+</math></span>: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2170</mn>
+</math></span> cm<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+</math></span> becomes <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2121</mn>
+</math></span> cm<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+</math></span>. In a spectrum of ordinary carbon monoxide, the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1.1</mn>
+  <mi mathvariant="normal">%</mi>
+</math></span> natural abundance of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mn>13</mn>
+    </mrow>
+  </msup>
+</math></span>C shows up as a faint second band <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>48</mn>
+</math></span> cm<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+</math></span> below the main one.</p></section>
+<section class="callout remark" id="remark-rem-spec-intensities"><header><span class="callout-kind">Remark 8.3.1</span><span class="callout-title">Line intensities</span></header><p> The lines are not equally strong. The population of level <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>J</mi>
+</math></span> at temperature <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>T</mi>
+</math></span> is proportional to the degeneracy times the Boltzmann factor,</p>
+<div class="math-block math-block--numbered" id="eq-eq-spec-boltzmann"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <msub>
+          <mi>N</mi>
+          <mi>J</mi>
+        </msub>
+        <mo>∝</mo>
+        <mo stretchy="false">(</mo>
+        <mn>2</mn>
+        <mi>J</mi>
+        <mo>+</mo>
+        <mn>1</mn>
+        <mo stretchy="false">)</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <msup>
+          <mi>e</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+            <mi>B</mi>
+            <mi>J</mi>
+            <mo stretchy="false">(</mo>
+            <mi>J</mi>
+            <mo>+</mo>
+            <mn>1</mn>
+            <mo stretchy="false">)</mo>
+            <mrow data-mjx-texclass="ORD">
+              <mo>/</mo>
+            </mrow>
+            <msub>
+              <mi>k</mi>
+              <mi>B</mi>
+            </msub>
+            <mi>T</mi>
+          </mrow>
+        </msup>
+        <mo>,</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:SPEC-boltzmann">(8.10)</span></div>
+<p>which rises from the degeneracy and falls from the exponential, peaking at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>J</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo data-mjx-texclass="OP" movablelimits="true">max</mo>
+    </mrow>
+  </msub>
+  <mo>≃</mo>
+  <msqrt>
+    <msub>
+      <mi>k</mi>
+      <mi>B</mi>
+    </msub>
+    <mi>T</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo>/</mo>
+    </mrow>
+    <mn>2</mn>
+    <mi>B</mi>
+  </msqrt>
+  <mo>−</mo>
+  <mstyle displaystyle="false" scriptlevel="0">
+    <mfrac>
+      <mn>1</mn>
+      <mn>2</mn>
+    </mfrac>
+  </mstyle>
+</math></span>. A rotational band therefore has a characteristic intensity envelope, and its maximum is a thermometer.</p></section>
+<p>It is worth being concrete about how good a thermometer. It is convenient to measure both rotational and vibrational spacings as temperatures, by dividing them by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>k</mi>
+    <mi>B</mi>
+  </msub>
+</math></span>:</p>
+<div class="math-block math-block--numbered" id="eq-eq-spec-characteristic-t"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <msub>
+          <mi>θ</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mrow data-mjx-texclass="ORD">
+              <mi data-mjx-auto-op="false">rot</mi>
+            </mrow>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mi>h</mi>
+            <mi>c</mi>
+            <msub>
+              <mi>B</mi>
+              <mi>e</mi>
+            </msub>
+          </mrow>
+          <msub>
+            <mi>k</mi>
+            <mi>B</mi>
+          </msub>
+        </mfrac>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <msub>
+          <mi>θ</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mrow data-mjx-texclass="ORD">
+              <mi data-mjx-auto-op="false">vib</mi>
+            </mrow>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mi>h</mi>
+            <mi>c</mi>
+            <mstyle scriptlevel="0">
+              <mspace width="0.167em" />
+            </mstyle>
+            <msub>
+              <mi>ω</mi>
+              <mi>e</mi>
+            </msub>
+          </mrow>
+          <msub>
+            <mi>k</mi>
+            <mi>B</mi>
+          </msub>
+        </mfrac>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <mfrac>
+          <mrow>
+            <mi>h</mi>
+            <mi>c</mi>
+          </mrow>
+          <msub>
+            <mi>k</mi>
+            <mi>B</mi>
+          </msub>
+        </mfrac>
+        <mo>=</mo>
+        <mn>1.4388</mn>
+        <mtext> </mtext>
+        <mrow data-mjx-texclass="ORD">
+          <mi mathvariant="normal">K</mi>
+          <mstyle scriptlevel="0">
+            <mspace width="0.167em" />
+          </mstyle>
+          <mi data-mjx-auto-op="false">cm</mi>
+        </mrow>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:SPEC-characteristic-T">(8.11)</span></div>
+<p>with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>B</mi>
+    <mi>e</mi>
+  </msub>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ω</mi>
+    <mi>e</mi>
+  </msub>
+</math></span> in cm<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+</math></span>. These two numbers say at a glance which degrees of freedom room temperature has already switched on:</p>
+<div class="centered"><div class="table-wrap"><table><tr><td></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>B</mi>
+    <mi>e</mi>
+  </msub>
+</math></span> (cm<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+</math></span>)</td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ω</mi>
+    <mi>e</mi>
+  </msub>
+</math></span> (cm<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+</math></span>)</td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>θ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mrow data-mjx-texclass="ORD">
+        <mi data-mjx-auto-op="false">rot</mi>
+      </mrow>
+    </mrow>
+  </msub>
+</math></span> (K)</td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>θ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mrow data-mjx-texclass="ORD">
+        <mi data-mjx-auto-op="false">vib</mi>
+      </mrow>
+    </mrow>
+  </msub>
+</math></span> (K)</td></tr><tr><td>
+		H<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>60.85</mn>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>4401</mn>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>87.6</mn>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>6332</mn>
+</math></span></td></tr><tr><td>N<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1.998</mn>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2359</mn>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2.9</mn>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>3393</mn>
+</math></span></td></tr><tr><td>O<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1.446</mn>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1580</mn>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2.1</mn>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2274</mn>
+</math></span></td></tr><tr><td>CO</td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1.931</mn>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2170</mn>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2.8</mn>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>3122</mn>
+</math></span></td></tr><tr><td>NO</td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1.705</mn>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1904</mn>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2.5</mn>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2740</mn>
+</math></span></td></tr><tr><td>Cl<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0.244</mn>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>560</mn>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0.35</mn>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>805</mn>
+</math></span></td></tr><tr><td></td></tr></table></div></div>
+<p> For every molecule here except H<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>θ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mrow data-mjx-texclass="ORD">
+        <mi data-mjx-auto-op="false">rot</mi>
+      </mrow>
+    </mrow>
+  </msub>
+</math></span> is a few kelvin and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>θ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mrow data-mjx-texclass="ORD">
+        <mi data-mjx-auto-op="false">vib</mi>
+      </mrow>
+    </mrow>
+  </msub>
+</math></span> is a few thousand. At <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>T</mi>
+  <mo>=</mo>
+  <mn>300</mn>
+</math></span> K that is the whole story of a room-temperature spectrum in one line: rotation is thermally excited many levels deep, so a band is a broad comb of dozens of lines with a maximum well away from <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>J</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>; vibration is not excited at all, so essentially every molecule starts from <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>v</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> and there is one band, not a series of them. Figure <a class="xref" href="../chapter-08/index.html#chapter-08-fig-2">8.2</a> shows what the first half of that sentence looks like.</p>
+<figure id="chapter-08-fig-2" class="figure"><img src="assets/img/ch08_fig04_thermal_envelope.png" class="diagram" alt="The rotational envelope of CO at two temperatures. The degeneracy 2J+1 pushes the population up, the Boltzmann factor pulls it down, and the peak sits where they balance. Heating from 300 K to 1000 K moves the brightest line from J7 to J13, and since J goes as T, locating that line in a measured band measures the temperature of the gas — with no thermometer in it." loading="lazy" style="--figure-width: 92%;"><figcaption>Figure 8.2. The rotational envelope of CO at two temperatures. The
+	degeneracy <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mi>J</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+</math></span> pushes the population up, the Boltzmann factor pulls it
+	down, and the peak sits where they balance. Heating from <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>300</mn>
+</math></span> K to
+	<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1000</mn>
+</math></span> K moves the brightest line from <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>J</mi>
+  <mo>≃</mo>
+  <mn>7</mn>
+</math></span> to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>J</mi>
+  <mo>≃</mo>
+  <mn>13</mn>
+</math></span>, and
+	since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>J</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo data-mjx-texclass="OP" movablelimits="true">max</mo>
+    </mrow>
+  </msub>
+</math></span> goes as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msqrt>
+    <mi>T</mi>
+  </msqrt>
+</math></span>, locating that line in a measured band
+	measures the temperature of the gas — with no thermometer in it.</figcaption></figure>
+<section class="callout remark" id="remark-rem-spec-hot-bands"><header><span class="callout-kind">Remark 8.3.2</span><span class="callout-title">Hot bands</span></header><p> The second half of that sentence fails as soon as the gas is hot. The fraction of molecules already in <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>v</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span> is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>N</mi>
+    <mn>1</mn>
+  </msub>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msub>
+    <mi>N</mi>
+    <mn>0</mn>
+  </msub>
+  <mo>=</mo>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <msub>
+        <mi>θ</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mrow data-mjx-texclass="ORD">
+            <mi data-mjx-auto-op="false">vib</mi>
+          </mrow>
+        </mrow>
+      </msub>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mi>T</mi>
+    </mrow>
+  </msup>
+</math></span>, so for CO (<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>θ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mrow data-mjx-texclass="ORD">
+        <mi data-mjx-auto-op="false">vib</mi>
+      </mrow>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mn>3122</mn>
+</math></span> K) it is about <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>3</mn>
+  <mo>×</mo>
+  <msup>
+    <mn>10</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>5</mn>
+    </mrow>
+  </msup>
+</math></span> at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>300</mn>
+</math></span> K, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>4</mn>
+  <mo>×</mo>
+  <msup>
+    <mn>10</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>2</mn>
+    </mrow>
+  </msup>
+</math></span> at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1000</mn>
+</math></span> K, and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0.21</mn>
+</math></span> at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2000</mn>
+</math></span> K. Those molecules absorb on <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>v</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+  <mo accent="false" stretchy="false">→</mo>
+  <mn>2</mn>
+</math></span>, which anharmonicity (Sec. <a class="xref" href="../chapter-07/index.html#sec-7-anharmonicity">7.6.2</a>) places slightly below the fundamental. The extra band that appears just to the low-frequency side of the main one is a <em>hot band</em>, and its strength relative to the fundamental is another thermometer — the one normally used in flames and shock tubes, where it is the whole reason the spectrum of a hot gas does not look like the spectrum of a cold one.</p></section>
+<h2 id="sec-8-vibrational-spectroscopy"><span class="sec-number">8.4</span>Vibrational Spectroscopy</h2>
+<p>Now the vibrational levels <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>E</mi>
+    <mi>v</mi>
+  </msub>
+  <mo>=</mo>
+  <mi data-mjx-alternate="1">ℏ</mi>
+  <msub>
+    <mi>ω</mi>
+    <mi>e</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>v</mi>
+  <mo>+</mo>
+  <mstyle displaystyle="false" scriptlevel="0">
+    <mfrac>
+      <mn>1</mn>
+      <mn>2</mn>
+    </mfrac>
+  </mstyle>
+  <mo stretchy="false">)</mo>
+</math></span>. The relevant dipole is again the molecule's own, but what matters is how it <em>changes</em> as the bond stretches. Expand about equilibrium in the displacement <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+  <mo>=</mo>
+  <mi>R</mi>
+  <mo>−</mo>
+  <msub>
+    <mi>R</mi>
+    <mi>e</mi>
+  </msub>
+</math></span>:</p>
+<div class="math-block math-block--numbered" id="eq-eq-spec-dipole-expansion"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>d</mi>
+        <mo stretchy="false">(</mo>
+        <mi>R</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mi>d</mi>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>R</mi>
+          <mi>e</mi>
+        </msub>
+        <mo stretchy="false">)</mo>
+        <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+        <msub>
+          <mrow data-mjx-texclass="INNER">
+            <mo data-mjx-texclass="OPEN" fence="true" stretchy="true" symmetric="true" form="prefix" lspace="0em" rspace="0em" />
+            <mfrac>
+              <mrow>
+                <mi>d</mi>
+                <mi>d</mi>
+              </mrow>
+              <mrow>
+                <mi>d</mi>
+                <mi>R</mi>
+              </mrow>
+            </mfrac>
+            <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
+          </mrow>
+          <mrow data-mjx-texclass="ORD">
+            <msub>
+              <mi>R</mi>
+              <mi>e</mi>
+            </msub>
+          </mrow>
+        </msub>
+        <mi>q</mi>
+        <mo>+</mo>
+        <mfrac>
+          <mn>1</mn>
+          <mn>2</mn>
+        </mfrac>
+        <msub>
+          <mrow data-mjx-texclass="INNER">
+            <mo data-mjx-texclass="OPEN" fence="true" stretchy="true" symmetric="true" form="prefix" lspace="0em" rspace="0em" />
+            <mfrac>
+              <mrow>
+                <msup>
+                  <mi>d</mi>
+                  <mrow data-mjx-texclass="ORD">
+                    <mn>2</mn>
+                  </mrow>
+                </msup>
+                <mi>d</mi>
+              </mrow>
+              <mrow>
+                <mi>d</mi>
+                <msup>
+                  <mi>R</mi>
+                  <mrow data-mjx-texclass="ORD">
+                    <mn>2</mn>
+                  </mrow>
+                </msup>
+              </mrow>
+            </mfrac>
+            <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
+          </mrow>
+          <mrow data-mjx-texclass="ORD">
+            <msub>
+              <mi>R</mi>
+              <mi>e</mi>
+            </msub>
+          </mrow>
+        </msub>
+        <msup>
+          <mi>q</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mn>2</mn>
+          </mrow>
+        </msup>
+        <mo>+</mo>
+        <mo>…</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:SPEC-dipole-expansion">(8.12)</span></div>
+<section class="callout theorem" id="theorem-thm-spec-vib"><header><span class="callout-kind">Theorem 8.4.1</span><span class="callout-title">Vibrational activity and selection rule</span></header><p> Within the harmonic approximation, the vibrational matrix element <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
+    <mrow data-mjx-texclass="ORD">
+      <msup>
+        <mi>v</mi>
+        <mo data-mjx-alternate="1">′</mo>
+      </msup>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
+  </mrow>
+  <mi>d</mi>
+  <mo stretchy="false">(</mo>
+  <mi>R</mi>
+  <mo stretchy="false">)</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>v</mi>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+</math></span> vanishes unless</p>
+<div class="math-block math-block--numbered" id="eq-eq-spec-vib-rule"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi mathvariant="normal">Δ</mi>
+        <mi>v</mi>
+        <mo>=</mo>
+        <mo form="prefix" lspace="0em" rspace="0em">±</mo>
+        <mn>1</mn>
+        <mo>,</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:SPEC-vib-rule">(8.13)</span></div>
+<p>and even then only if <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mrow data-mjx-texclass="INNER">
+      <mo data-mjx-texclass="OPEN" fence="true" stretchy="true" symmetric="true" form="prefix" lspace="0em" rspace="0em" />
+      <mi>d</mi>
+      <mi>d</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mi>d</mi>
+      <mi>R</mi>
+      <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <msub>
+        <mi>R</mi>
+        <mi>e</mi>
+      </msub>
+    </mrow>
+  </msub>
+  <mo>≠</mo>
+  <mn>0</mn>
+</math></span>: the dipole moment must change with the vibrational coordinate.</p></section>
+<div class="proof" data-lead="Proof."><p>Insert Eq. <a class="xref" href="../chapter-08/index.html#eq-eq-spec-dipole-expansion">(8.12)</a> into <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
+    <mrow data-mjx-texclass="ORD">
+      <msup>
+        <mi>v</mi>
+        <mo data-mjx-alternate="1">′</mo>
+      </msup>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
+  </mrow>
+  <mi>d</mi>
+  <mo stretchy="false">(</mo>
+  <mi>R</mi>
+  <mo stretchy="false">)</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>v</mi>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+</math></span> and take the terms in turn.</p>
+<p>The constant <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>R</mi>
+    <mi>e</mi>
+  </msub>
+  <mo stretchy="false">)</mo>
+</math></span> gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>R</mi>
+    <mi>e</mi>
+  </msub>
+  <mo stretchy="false">)</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
+    <mrow data-mjx-texclass="ORD">
+      <msup>
+        <mi>v</mi>
+        <mo data-mjx-alternate="1">′</mo>
+      </msup>
+    </mrow>
+    <mo lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>v</mi>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+  <mo>=</mo>
+  <mi>d</mi>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>R</mi>
+    <mi>e</mi>
+  </msub>
+  <mo stretchy="false">)</mo>
+  <msub>
+    <mi>δ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <msup>
+        <mi>v</mi>
+        <mo data-mjx-alternate="1">′</mo>
+      </msup>
+      <mi>v</mi>
+    </mrow>
+  </msub>
+</math></span>, which is zero for any transition: a constant dipole cannot drive a vibrational change.</p>
+<p>The linear term gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mrow data-mjx-texclass="INNER">
+      <mo data-mjx-texclass="OPEN" fence="true" stretchy="true" symmetric="true" form="prefix" lspace="0em" rspace="0em" />
+      <mfrac>
+        <mrow>
+          <mi>d</mi>
+          <mi>d</mi>
+        </mrow>
+        <mrow>
+          <mi>d</mi>
+          <mi>R</mi>
+        </mrow>
+      </mfrac>
+      <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <msub>
+        <mi>R</mi>
+        <mi>e</mi>
+      </msub>
+    </mrow>
+  </msub>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
+    <mrow data-mjx-texclass="ORD">
+      <msup>
+        <mi>v</mi>
+        <mo data-mjx-alternate="1">′</mo>
+      </msup>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
+  </mrow>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>q</mi>
+      <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+    </mover>
+  </mrow>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>v</mi>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+</math></span>. From Chapter 2, Def. <a class="xref" href="../chapter-02/index.html#definition-def-ms-ladder">2.7.1</a>, the displacement operator is</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>q</mi>
+      <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+    </mover>
+  </mrow>
+  <mo>=</mo>
+  <msqrt>
+    <mfrac>
+      <mi data-mjx-alternate="1">ℏ</mi>
+      <mrow>
+        <mn>2</mn>
+        <mi>μ</mi>
+        <msub>
+          <mi>ω</mi>
+          <mi>e</mi>
+        </msub>
+      </mrow>
+    </mfrac>
+  </msqrt>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mover accent="true">
+        <mi>a</mi>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+      </mover>
+    </mrow>
+    <mo>+</mo>
+    <msup>
+      <mrow data-mjx-texclass="ORD">
+        <mover accent="true">
+          <mi>a</mi>
+          <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+        </mover>
+      </mrow>
+      <mrow data-mjx-texclass="ORD">
+        <mo>†</mo>
+      </mrow>
+    </msup>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+  </mrow>
+  <mo>,</mo>
+</math></div>
+<p>so by Eq. <a class="xref" href="../chapter-02/index.html#eq-eq-ms-ladder-action">(2.38)</a></p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
+    <mrow data-mjx-texclass="ORD">
+      <msup>
+        <mi>v</mi>
+        <mo data-mjx-alternate="1">′</mo>
+      </msup>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
+  </mrow>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>q</mi>
+      <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+    </mover>
+  </mrow>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>v</mi>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+  <mo>=</mo>
+  <msqrt>
+    <mfrac>
+      <mi data-mjx-alternate="1">ℏ</mi>
+      <mrow>
+        <mn>2</mn>
+        <mi>μ</mi>
+        <msub>
+          <mi>ω</mi>
+          <mi>e</mi>
+        </msub>
+      </mrow>
+    </mfrac>
+  </msqrt>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <msqrt>
+      <mi>v</mi>
+    </msqrt>
+    <mstyle scriptlevel="0">
+      <mspace width="0.167em" />
+    </mstyle>
+    <msub>
+      <mi>δ</mi>
+      <mrow data-mjx-texclass="ORD">
+        <msup>
+          <mi>v</mi>
+          <mo data-mjx-alternate="1">′</mo>
+        </msup>
+        <mo>,</mo>
+        <mi>v</mi>
+        <mo>−</mo>
+        <mn>1</mn>
+      </mrow>
+    </msub>
+    <mo>+</mo>
+    <msqrt>
+      <mi>v</mi>
+      <mo>+</mo>
+      <mn>1</mn>
+    </msqrt>
+    <mstyle scriptlevel="0">
+      <mspace width="0.167em" />
+    </mstyle>
+    <msub>
+      <mi>δ</mi>
+      <mrow data-mjx-texclass="ORD">
+        <msup>
+          <mi>v</mi>
+          <mo data-mjx-alternate="1">′</mo>
+        </msup>
+        <mo>,</mo>
+        <mi>v</mi>
+        <mo>+</mo>
+        <mn>1</mn>
+      </mrow>
+    </msub>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+  </mrow>
+  <mo>,</mo>
+</math></div>
+<p>which is nonzero only for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>v</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+  <mo>=</mo>
+  <mi>v</mi>
+  <mo>±</mo>
+  <mn>1</mn>
+</math></span>. That is Eq. <a class="xref" href="../chapter-08/index.html#eq-eq-spec-vib-rule">(8.13)</a>, and it is proportional to the dipole gradient.</p></div>
+<section class="callout remark" id="remark-rem-spec-overtones"><header><span class="callout-kind">Remark 8.4.1</span><span class="callout-title">Overtones</span></header><p> The rule is a property of the harmonic oscillator, not of molecules. Two things spoil it, both weakly. The quadratic term in Eq. <a class="xref" href="../chapter-08/index.html#eq-eq-spec-dipole-expansion">(8.12)</a> contributes <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
+    <mrow data-mjx-texclass="ORD">
+      <msup>
+        <mi>v</mi>
+        <mo data-mjx-alternate="1">′</mo>
+      </msup>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
+  </mrow>
+  <msup>
+    <mrow data-mjx-texclass="ORD">
+      <mover accent="true">
+        <mi>q</mi>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+      </mover>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>v</mi>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+</math></span>, which connects <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>v</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+  <mo>=</mo>
+  <mi>v</mi>
+  <mo>±</mo>
+  <mn>2</mn>
+</math></span>; and anharmonicity (Sec. <a class="xref" href="../chapter-07/index.html#sec-7-anharmonicity">7.6.2</a>) mixes the harmonic states. The resulting <em>overtone</em> bands are typically a hundred times weaker than the fundamental and are routinely observed.</p></section>
+<p>In short: fundamentals come from the linear dipole term, overtones from higher-order dipole terms and anharmonic mixing.</p>
+<section class="callout example" id="example-ex-spec-homonuclear"><header><span class="callout-kind">Example 8.4.1</span><span class="callout-title">Why N<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span> is invisible and HCl is not</span></header><p> Explain why the bulk of the atmosphere is transparent in the infrared.</p>
+<p class="solution-head">Solution.</p>
+<p>N<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span> and O<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span> are homonuclear. By symmetry their dipole moment is zero at <em>every</em> bond length — stretching a symmetric molecule keeps it symmetric — so <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mo stretchy="false">(</mo>
+  <mi>R</mi>
+  <mo stretchy="false">)</mo>
+  <mo>≡</mo>
+  <mn>0</mn>
+</math></span> and hence <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mrow data-mjx-texclass="INNER">
+      <mo data-mjx-texclass="OPEN" fence="true" stretchy="true" symmetric="true" form="prefix" lspace="0em" rspace="0em" />
+      <mi>d</mi>
+      <mi>d</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mi>d</mi>
+      <mi>R</mi>
+      <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <msub>
+        <mi>R</mi>
+        <mi>e</mi>
+      </msub>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>. By Theorem <a class="xref" href="../chapter-08/index.html#theorem-thm-spec-vib">8.4.1</a> they have no infrared spectrum at all.</p>
+<p>HCl is heteronuclear: the chlorine draws charge, so <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mo stretchy="false">(</mo>
+  <mi>R</mi>
+  <mo stretchy="false">)</mo>
+  <mo>≠</mo>
+  <mn>0</mn>
+</math></span>, and stretching the bond changes the separation of the charges, so <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mi>d</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>d</mi>
+  <mi>R</mi>
+  <mo>≠</mo>
+  <mn>0</mn>
+</math></span>. It absorbs strongly.</p>
+<p>Since N<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span> and O<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span> make up <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>99</mn>
+  <mi mathvariant="normal">%</mi>
+</math></span> of the atmosphere and neither absorbs infrared, the atmosphere's infrared behavior is set entirely by trace species that do — H<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span>O, CO<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span>, CH<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>4</mn>
+  </msub>
+</math></span>. That is the physical basis of the greenhouse effect, and it is a selection rule.</p></section>
+<h3 id="sec-8-vibration-rotation-bands"><span class="sec-number">8.4.1</span>Vibration–Rotation Bands</h3>
+<figure id="chapter-08-fig-3" class="figure"><img src="assets/img/ch08_fig01_pr_branches.png" class="diagram" alt="Where a band comes from. One vibrational transition, combined with J=1, produces two combs of lines with a gap between them; the gap is the missing Q branch, and its presence or absence is the first thing to read off a measured band." loading="lazy" style="--figure-width: 92%;"><figcaption>Figure 8.3. Where a band comes from. One vibrational transition, combined
+	with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Δ</mi>
+  <mi>J</mi>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">±</mo>
+  <mn>1</mn>
+</math></span>, produces two combs of lines with a gap between
+	them; the gap is the missing <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>Q</mi>
+</math></span> branch, and its presence or absence is
+	the first thing to read off a measured band.</figcaption></figure>
+<p>A real infrared spectrum shows not one line per vibrational transition but a whole structure, because rotational spacings are a hundred times smaller (Sec. <a class="xref" href="../chapter-07/index.html#sec-7-the-three-energy-scales">7.10</a>) and the molecule changes <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>v</mi>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>J</mi>
+</math></span> together.</p>
+<p>Combining Eqs. <a class="xref" href="../chapter-08/index.html#eq-eq-spec-rot-rule">(8.8)</a> and <a class="xref" href="../chapter-08/index.html#eq-eq-spec-vib-rule">(8.13)</a>, and writing the band center as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover accent="true">
+        <mi>ν</mi>
+        <mo stretchy="false" style="padding-bottom:0.06em">˜</mo>
+      </mover>
+    </mrow>
+    <mn>0</mn>
+  </msub>
+  <mo>=</mo>
+  <msub>
+    <mi>ω</mi>
+    <mi>e</mi>
+  </msub>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+  <mi>π</mi>
+  <mi>c</mi>
+</math></span>, the transition wavenumbers for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>v</mi>
+  <mo accent="false" stretchy="false">→</mo>
+  <mi>v</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+</math></span> are</p>
+<div class="math-block math-block--numbered" id="eq-eq-spec-branches"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mtable displaystyle="true" columnalign="right left" columnspacing="0em" rowspacing="3pt">
+          <mtr>
+            <mtd>
+              <mrow>
+                <mrow data-mjx-texclass="ORD">
+                  <mi>R</mi>
+                </mrow>
+                <mtext> branch </mtext>
+              </mrow>
+              <mo stretchy="false">(</mo>
+              <mi>J</mi>
+              <mo accent="false" stretchy="false">→</mo>
+              <mi>J</mi>
+              <mo>+</mo>
+              <mn>1</mn>
+              <mo stretchy="false">)</mo>
+              <mo>:</mo>
+            </mtd>
+            <mtd style="text-align: left">
+              <mstyle scriptlevel="0">
+                <mspace width="1em" />
+              </mstyle>
+              <mrow data-mjx-texclass="ORD">
+                <mover accent="true">
+                  <mi>ν</mi>
+                  <mo stretchy="false" style="padding-bottom:0.06em">˜</mo>
+                </mover>
+              </mrow>
+              <mo>=</mo>
+              <msub>
+                <mrow data-mjx-texclass="ORD">
+                  <mover accent="true">
+                    <mi>ν</mi>
+                    <mo stretchy="false" style="padding-bottom:0.06em">˜</mo>
+                  </mover>
+                </mrow>
+                <mn>0</mn>
+              </msub>
+              <mo>+</mo>
+              <mn>2</mn>
+              <mi>B</mi>
+              <mo stretchy="false">(</mo>
+              <mi>J</mi>
+              <mo>+</mo>
+              <mn>1</mn>
+              <mo stretchy="false">)</mo>
+              <mo>,</mo>
+              <mstyle scriptlevel="0">
+                <mspace width="1em" />
+              </mstyle>
+              <mi>J</mi>
+              <mo>=</mo>
+              <mn>0</mn>
+              <mo>,</mo>
+              <mn>1</mn>
+              <mo>,</mo>
+              <mn>2</mn>
+              <mo>,</mo>
+              <mo>…</mo>
+            </mtd>
+          </mtr>
+          <mtr>
+            <mtd>
+              <mrow>
+                <mrow data-mjx-texclass="ORD">
+                  <mi>P</mi>
+                </mrow>
+                <mtext> branch </mtext>
+              </mrow>
+              <mo stretchy="false">(</mo>
+              <mi>J</mi>
+              <mo accent="false" stretchy="false">→</mo>
+              <mi>J</mi>
+              <mo>−</mo>
+              <mn>1</mn>
+              <mo stretchy="false">)</mo>
+              <mo>:</mo>
+            </mtd>
+            <mtd style="text-align: left">
+              <mstyle scriptlevel="0">
+                <mspace width="1em" />
+              </mstyle>
+              <mrow data-mjx-texclass="ORD">
+                <mover accent="true">
+                  <mi>ν</mi>
+                  <mo stretchy="false" style="padding-bottom:0.06em">˜</mo>
+                </mover>
+              </mrow>
+              <mo>=</mo>
+              <msub>
+                <mrow data-mjx-texclass="ORD">
+                  <mover accent="true">
+                    <mi>ν</mi>
+                    <mo stretchy="false" style="padding-bottom:0.06em">˜</mo>
+                  </mover>
+                </mrow>
+                <mn>0</mn>
+              </msub>
+              <mo>−</mo>
+              <mn>2</mn>
+              <mi>B</mi>
+              <mi>J</mi>
+              <mo>,</mo>
+              <mstyle scriptlevel="0">
+                <mspace width="1em" />
+              </mstyle>
+              <mi>J</mi>
+              <mo>=</mo>
+              <mn>1</mn>
+              <mo>,</mo>
+              <mn>2</mn>
+              <mo>,</mo>
+              <mn>3</mn>
+              <mo>,</mo>
+              <mo>…</mo>
+            </mtd>
+          </mtr>
+          <mtr>
+            <mtd>
+              <mrow>
+                <mrow data-mjx-texclass="ORD">
+                  <mi>Q</mi>
+                </mrow>
+                <mtext> branch </mtext>
+              </mrow>
+              <mo stretchy="false">(</mo>
+              <mi>J</mi>
+              <mo accent="false" stretchy="false">→</mo>
+              <mi>J</mi>
+              <mo stretchy="false">)</mo>
+              <mo>:</mo>
+            </mtd>
+            <mtd style="text-align: left">
+              <mstyle scriptlevel="0">
+                <mspace width="1em" />
+              </mstyle>
+              <mrow data-mjx-texclass="ORD">
+                <mover accent="true">
+                  <mi>ν</mi>
+                  <mo stretchy="false" style="padding-bottom:0.06em">˜</mo>
+                </mover>
+              </mrow>
+              <mo>=</mo>
+              <msub>
+                <mrow data-mjx-texclass="ORD">
+                  <mover accent="true">
+                    <mi>ν</mi>
+                    <mo stretchy="false" style="padding-bottom:0.06em">˜</mo>
+                  </mover>
+                </mrow>
+                <mn>0</mn>
+              </msub>
+              <mo>.</mo>
+            </mtd>
+          </mtr>
+        </mtable>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:SPEC-branches">(8.14)</span></div>
+<p>The result is a double comb of lines spaced <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mi>B</mi>
+</math></span>, with a <em>gap</em> of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>4</mn>
+  <mi>B</mi>
+</math></span> at the center where the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>Q</mi>
+</math></span> branch would be. For a diatomic in a <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Σ</mi>
+</math></span> state the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>Q</mi>
+</math></span> branch is forbidden — <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Δ</mi>
+  <mi>J</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> requires the transition dipole to have a component along the molecular axis with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Δ</mi>
+  <mi mathvariant="normal">Λ</mi>
+  <mo>≠</mo>
+  <mn>0</mn>
+</math></span> — so the gap is the signature of the band.</p>
+<p>That central gap is often the fastest way to recognize a rovibrational band in raw spectral data.</p>
+<h3 id="sec-8-real-band-structure-b-b-b-b"><span class="sec-number">8.4.2</span>Real Band Structure: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>B</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+  <mo>≠</mo>
+  <msup>
+    <mi>B</mi>
+    <mo data-mjx-alternate="1">″</mo>
+  </msup>
+</math></span></h3>
+<p>Equation <a class="xref" href="../chapter-08/index.html#eq-eq-spec-branches">(8.14)</a> assumes one rotational constant <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>B</mi>
+</math></span> for both vibrational states. Real bands use two constants: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>B</mi>
+    <mo data-mjx-alternate="1">″</mo>
+  </msup>
+</math></span> (lower) and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>B</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+</math></span> (upper). Keeping only first-order vibration–rotation effects gives</p>
+<div class="math-block math-block--numbered" id="eq-eq-spec-real-branches"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mtable displaystyle="true" columnalign="right left" columnspacing="0em" rowspacing="3pt">
+          <mtr>
+            <mtd>
+              <msub>
+                <mrow data-mjx-texclass="ORD">
+                  <mover accent="true">
+                    <mi>ν</mi>
+                    <mo stretchy="false" style="padding-bottom:0.06em">˜</mo>
+                  </mover>
+                </mrow>
+                <mi>R</mi>
+              </msub>
+              <mo stretchy="false">(</mo>
+              <mi>J</mi>
+              <mo stretchy="false">)</mo>
+            </mtd>
+            <mtd style="text-align: left">
+              <mi />
+              <mo>=</mo>
+              <msub>
+                <mrow data-mjx-texclass="ORD">
+                  <mover accent="true">
+                    <mi>ν</mi>
+                    <mo stretchy="false" style="padding-bottom:0.06em">˜</mo>
+                  </mover>
+                </mrow>
+                <mn>0</mn>
+              </msub>
+              <mo>+</mo>
+              <mo stretchy="false">(</mo>
+              <msup>
+                <mi>B</mi>
+                <mo data-mjx-alternate="1">′</mo>
+              </msup>
+              <mo>+</mo>
+              <msup>
+                <mi>B</mi>
+                <mo data-mjx-alternate="1">″</mo>
+              </msup>
+              <mo stretchy="false">)</mo>
+              <mo stretchy="false">(</mo>
+              <mi>J</mi>
+              <mo>+</mo>
+              <mn>1</mn>
+              <mo stretchy="false">)</mo>
+              <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+              <mo stretchy="false">(</mo>
+              <msup>
+                <mi>B</mi>
+                <mo data-mjx-alternate="1">′</mo>
+              </msup>
+              <mo>−</mo>
+              <msup>
+                <mi>B</mi>
+                <mo data-mjx-alternate="1">″</mo>
+              </msup>
+              <mo stretchy="false">)</mo>
+              <mo stretchy="false">(</mo>
+              <mi>J</mi>
+              <mo>+</mo>
+              <mn>1</mn>
+              <msup>
+                <mo stretchy="false">)</mo>
+                <mn>2</mn>
+              </msup>
+              <mo>,</mo>
+            </mtd>
+          </mtr>
+          <mtr>
+            <mtd>
+              <msub>
+                <mrow data-mjx-texclass="ORD">
+                  <mover accent="true">
+                    <mi>ν</mi>
+                    <mo stretchy="false" style="padding-bottom:0.06em">˜</mo>
+                  </mover>
+                </mrow>
+                <mi>P</mi>
+              </msub>
+              <mo stretchy="false">(</mo>
+              <mi>J</mi>
+              <mo stretchy="false">)</mo>
+            </mtd>
+            <mtd style="text-align: left">
+              <mi />
+              <mo>=</mo>
+              <msub>
+                <mrow data-mjx-texclass="ORD">
+                  <mover accent="true">
+                    <mi>ν</mi>
+                    <mo stretchy="false" style="padding-bottom:0.06em">˜</mo>
+                  </mover>
+                </mrow>
+                <mn>0</mn>
+              </msub>
+              <mo>−</mo>
+              <mo stretchy="false">(</mo>
+              <msup>
+                <mi>B</mi>
+                <mo data-mjx-alternate="1">′</mo>
+              </msup>
+              <mo>+</mo>
+              <msup>
+                <mi>B</mi>
+                <mo data-mjx-alternate="1">″</mo>
+              </msup>
+              <mo stretchy="false">)</mo>
+              <mi>J</mi>
+              <mo>+</mo>
+              <mo stretchy="false">(</mo>
+              <msup>
+                <mi>B</mi>
+                <mo data-mjx-alternate="1">′</mo>
+              </msup>
+              <mo>−</mo>
+              <msup>
+                <mi>B</mi>
+                <mo data-mjx-alternate="1">″</mo>
+              </msup>
+              <mo stretchy="false">)</mo>
+              <msup>
+                <mi>J</mi>
+                <mn>2</mn>
+              </msup>
+              <mo>.</mo>
+            </mtd>
+          </mtr>
+        </mtable>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:SPEC-real-branches">(8.15)</span></div>
+<p>If <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>B</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+  <mo>&lt;</mo>
+  <msup>
+    <mi>B</mi>
+    <mo data-mjx-alternate="1">″</mo>
+  </msup>
+</math></span> (the usual case), lines in one branch crowd and can form a band head. The head condition is approximately</p>
+<div class="math-block math-block--numbered" id="eq-eq-spec-band-head"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <msub>
+          <mi>J</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mrow data-mjx-texclass="ORD">
+              <mi data-mjx-auto-op="false">head</mi>
+            </mrow>
+          </mrow>
+        </msub>
+        <mo>≈</mo>
+        <mfrac>
+          <mrow>
+            <msup>
+              <mi>B</mi>
+              <mo data-mjx-alternate="1">′</mo>
+            </msup>
+            <mo>+</mo>
+            <msup>
+              <mi>B</mi>
+              <mo data-mjx-alternate="1">″</mo>
+            </msup>
+          </mrow>
+          <mrow>
+            <mn>2</mn>
+            <mo stretchy="false">(</mo>
+            <msup>
+              <mi>B</mi>
+              <mo data-mjx-alternate="1">″</mo>
+            </msup>
+            <mo>−</mo>
+            <msup>
+              <mi>B</mi>
+              <mo data-mjx-alternate="1">′</mo>
+            </msup>
+            <mo stretchy="false">)</mo>
+          </mrow>
+        </mfrac>
+        <mo>−</mo>
+        <mn>1</mn>
+        <mo>,</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:SPEC-band-head">(8.16)</span></div>
+<p>which is one of the quickest diagnostics for geometry change upon vibrational excitation.</p>
+<p>The formula also explains why most infrared bands show no head. Write <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>B</mi>
+    <mi>v</mi>
+  </msub>
+  <mo>=</mo>
+  <msub>
+    <mi>B</mi>
+    <mi>e</mi>
+  </msub>
+  <mo>−</mo>
+  <msub>
+    <mi>α</mi>
+    <mi>e</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>v</mi>
+  <mo>+</mo>
+  <mstyle displaystyle="false" scriptlevel="0">
+    <mfrac>
+      <mn>1</mn>
+      <mn>2</mn>
+    </mfrac>
+  </mstyle>
+  <mo stretchy="false">)</mo>
+</math></span>, so that <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>B</mi>
+    <mo data-mjx-alternate="1">″</mo>
+  </msup>
+  <mo>−</mo>
+  <msup>
+    <mi>B</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+  <mo>=</mo>
+  <msub>
+    <mi>α</mi>
+    <mi>e</mi>
+  </msub>
+</math></span> and the head sits at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>J</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mrow data-mjx-texclass="ORD">
+        <mi data-mjx-auto-op="false">head</mi>
+      </mrow>
+    </mrow>
+  </msub>
+  <mo>≈</mo>
+  <msub>
+    <mi>B</mi>
+    <mi>e</mi>
+  </msub>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msub>
+    <mi>α</mi>
+    <mi>e</mi>
+  </msub>
+</math></span>. For CO, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>B</mi>
+    <mi>e</mi>
+  </msub>
+  <mo>=</mo>
+  <mn>1.931</mn>
+</math></span> cm<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>α</mi>
+    <mi>e</mi>
+  </msub>
+  <mo>=</mo>
+  <mn>0.0175</mn>
+</math></span> cm<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+</math></span>, giving <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>J</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mrow data-mjx-texclass="ORD">
+        <mi data-mjx-auto-op="false">head</mi>
+      </mrow>
+    </mrow>
+  </msub>
+  <mo>≈</mo>
+  <mn>108</mn>
+</math></span>. Compare that with the thermal envelope of Fig. <a class="xref" href="../chapter-08/index.html#chapter-08-fig-2">8.2</a>: at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>300</mn>
+</math></span> K the population is already negligible by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>J</mi>
+  <mo>=</mo>
+  <mn>25</mn>
+</math></span>, and at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>J</mi>
+  <mo>=</mo>
+  <mn>108</mn>
+</math></span> it is smaller than at the peak by some forty-five orders of magnitude. The head is a real feature of Eq. <a class="xref" href="../chapter-08/index.html#eq-eq-spec-real-branches">(8.15)</a>, and there is simply nothing left in the gas to put a line there.</p>
+<p>So the presence of a head is a statement about the ratio <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>α</mi>
+    <mi>e</mi>
+  </msub>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msub>
+    <mi>B</mi>
+    <mi>e</mi>
+  </msub>
+</math></span>: it appears when the molecule's geometry changes a lot on vibrational excitation, which is common in <em>electronic</em> bands — where the upper state is a different electronic state with a genuinely different bond length — and rare within a single electronic state. Chapter 9 returns to it for that reason.</p>
+<p>Branch asymmetry is therefore not a nuisance detail; it reports structural change between lower and upper vibrational states.</p>
+<h2 id="sec-8-normal-modes-and-co-2-2"><span class="sec-number">8.5</span>Normal Modes and CO<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span></h2>
+<figure id="chapter-08-fig-4" class="figure"><img src="assets/img/ch08_fig02_normal_modes.png" class="diagram" alt="Infrared activity is decided by symmetry alone. The symmetric stretch moves both oxygens outward together, leaving the dipole zero throughout, so no infrared photon can drive it — and CO2 is a greenhouse gas because of the other two modes, not this one." loading="lazy" style="--figure-width: 96%;"><figcaption>Figure 8.4. Infrared activity is decided by symmetry alone. The symmetric
+	stretch moves both oxygens outward together, leaving the dipole zero
+	throughout, so no infrared photon can drive it — and CO<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span> is a
+	greenhouse gas because of the other two modes, not this one.</figcaption></figure>
+<p>For a polyatomic molecule each normal mode of Sec. <a class="xref" href="../chapter-07/index.html#sec-7-polyatomic-molecules-normal-modes">7.8</a> is an independent oscillator in a collective coordinate <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>Q</mi>
+    <mi>i</mi>
+  </msub>
+</math></span>, and Theorem <a class="xref" href="../chapter-08/index.html#theorem-thm-spec-vib">8.4.1</a> applies to each separately: mode <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> is infrared active if and only if</p>
+<div class="math-block math-block--numbered" id="eq-eq-spec-mode-active"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <msub>
+          <mrow data-mjx-texclass="INNER">
+            <mo data-mjx-texclass="OPEN" fence="true" stretchy="true" symmetric="true" form="prefix" lspace="0em" rspace="0em" />
+            <mfrac>
+              <mrow>
+                <mi>∂</mi>
+                <mrow data-mjx-texclass="ORD">
+                  <mover accent="true">
+                    <mi>d</mi>
+                    <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+                  </mover>
+                </mrow>
+              </mrow>
+              <mrow>
+                <mi>∂</mi>
+                <msub>
+                  <mi>Q</mi>
+                  <mi>i</mi>
+                </msub>
+              </mrow>
+            </mfrac>
+            <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
+          </mrow>
+          <mrow data-mjx-texclass="ORD">
+            <mi>Q</mi>
+            <mo>=</mo>
+            <mn>0</mn>
+          </mrow>
+        </msub>
+        <mo>≠</mo>
+        <mn>0</mn>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:SPEC-mode-active">(8.17)</span></div>
+<p>CO<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span> has four modes (Sec. <a class="xref" href="../chapter-07/index.html#sec-7-polyatomic-molecules-normal-modes">7.8</a>), and they do not all behave the same way.</p>
+<section class="callout example" id="example-ex-spec-co2-symmetric"><header><span class="callout-kind">Example 8.5.1</span><span class="callout-title">Which CO<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span> modes absorb</span></header><p> Determine the infrared activity of the symmetric stretch, the antisymmetric stretch and the bend.</p>
+<p class="solution-head">Solution.</p>
+<p>Assign partial charges <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mi>q</mi>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+  <mn>2</mn>
+  <mi>q</mi>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mi>q</mi>
+</math></span> to O, C, O, so that the molecule is neutral, and compute <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>d</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+  <mo>=</mo>
+  <munder>
+    <mo data-mjx-texclass="OP" stretchy="true">∑</mo>
+    <mi>i</mi>
+  </munder>
+  <msub>
+    <mi>q</mi>
+    <mi>i</mi>
+  </msub>
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover accent="true">
+        <mi>r</mi>
+        <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+      </mover>
+    </mrow>
+    <mi>i</mi>
+  </msub>
+</math></span> during each motion.</p>
+<p><em>Symmetric stretch <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ν</mi>
+    <mn>1</mn>
+  </msub>
+</math></span>.</em> Both oxygens move outward together by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+  <mi>s</mi>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mi>s</mi>
+</math></span> along the axis, carbon stationary. Then</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <msub>
+    <mi>d</mi>
+    <mi>z</mi>
+  </msub>
+  <mo>=</mo>
+  <mo stretchy="false">(</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mi>q</mi>
+  <mo stretchy="false">)</mo>
+  <mo stretchy="false">(</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <msub>
+    <mi>R</mi>
+    <mi>e</mi>
+  </msub>
+  <mo>−</mo>
+  <mi>s</mi>
+  <mo stretchy="false">)</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+  <mo stretchy="false">(</mo>
+  <mn>2</mn>
+  <mi>q</mi>
+  <mo stretchy="false">)</mo>
+  <mo stretchy="false">(</mo>
+  <mn>0</mn>
+  <mo stretchy="false">)</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+  <mo stretchy="false">(</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mi>q</mi>
+  <mo stretchy="false">)</mo>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>R</mi>
+    <mi>e</mi>
+  </msub>
+  <mo>+</mo>
+  <mi>s</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mn>0</mn>
+  <mo>,</mo>
+</math></div>
+<p>identically, for every <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span>. The molecule stays symmetric about its center throughout, so its dipole is zero at every instant, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>∂</mi>
+  <mi>d</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>∂</mi>
+  <msub>
+    <mi>Q</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>, and the mode is <strong>infrared inactive</strong>.</p>
+<p><em>Antisymmetric stretch <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ν</mi>
+    <mn>3</mn>
+  </msub>
+</math></span>.</em> One bond lengthens by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> while the other shortens by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span>, so the carbon shifts relative to the center of the oxygens. Now</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <msub>
+    <mi>d</mi>
+    <mi>z</mi>
+  </msub>
+  <mo>∝</mo>
+  <mi>s</mi>
+  <mo>≠</mo>
+  <mn>0</mn>
+  <mo>,</mo>
+</math></div>
+<p>an oscillating dipole along the axis. <strong>Active.</strong></p>
+<p><em>Bend <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ν</mi>
+    <mn>2</mn>
+  </msub>
+</math></span>.</em> The carbon moves perpendicular to the axis while the oxygens move the other way, producing a dipole perpendicular to the axis. <strong>Active.</strong></p>
+<p>So CO<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span> absorbs at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>667</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2349</mn>
+</math></span> cm<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+</math></span> and is transparent at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1333</mn>
+</math></span> cm<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+</math></span>; and by Theorem <a class="xref" href="../chapter-08/index.html#theorem-thm-spec-rot-active">8.3.1</a> it has no microwave spectrum at all. Its two active bands lie where the Earth radiates, which is what makes it a greenhouse gas — and its inactive mode is invisible to the same measurement.</p></section>
+<p>This is a complete demonstration of mode-specific activity: same molecule, different motions, different spectroscopic visibility.</p>
+<h3 id="sec-8-raman-scattering"><span class="sec-number">8.5.1</span>Raman Scattering</h3>
+<figure id="chapter-08-fig-5" class="figure"><img src="assets/img/ch08_fig03_raman.png" class="diagram" alt="Raman reads the same level spacings out of the scattered light instead of the absorbed. The anti-Stokes lines are weaker by exactly the Boltzmann factor, because they start from a level that has to be occupied already — which makes their ratio to the Stokes lines a thermometer." loading="lazy" style="--figure-width: 92%;"><figcaption>Figure 8.5. Raman reads the same level spacings out of the scattered light
+	instead of the absorbed. The anti-Stokes lines are weaker by exactly the
+	Boltzmann factor, because they start from a level that has to be occupied
+	already — which makes their ratio to the Stokes lines a thermometer.</figcaption></figure>
+<p>A mode invisible in absorption need not be invisible altogether. In <em>Raman scattering</em> the molecule is not asked to absorb resonantly: a photon is scattered, and in the process leaves behind or removes one vibrational quantum, so the scattered light returns shifted by the vibrational frequency.</p>
+<p>The relevant quantity is not the permanent dipole but the <em>polarizability</em> <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>α</mi>
+</math></span> — how easily the electron cloud distorts in a field. The field induces a dipole <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover accent="true">
+        <mi>d</mi>
+        <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+      </mover>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mrow data-mjx-texclass="ORD">
+        <mi data-mjx-auto-op="false">ind</mi>
+      </mrow>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mi>α</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>E</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+</math></span>, and expanding <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>α</mi>
+</math></span> in the normal coordinate as in Eq. <a class="xref" href="../chapter-08/index.html#eq-eq-spec-dipole-expansion">(8.12)</a> gives</p>
+<section class="callout theorem" id="theorem-thm-spec-raman"><header><span class="callout-kind">Theorem 8.5.1</span><span class="callout-title">Raman activity</span></header><p> A vibrational mode is Raman active if and only if</p>
+<div class="math-block math-block--numbered" id="eq-eq-spec-raman-rule"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <msub>
+          <mrow data-mjx-texclass="INNER">
+            <mo data-mjx-texclass="OPEN" fence="true" stretchy="true" symmetric="true" form="prefix" lspace="0em" rspace="0em" />
+            <mfrac>
+              <mrow>
+                <mi>∂</mi>
+                <mi>α</mi>
+              </mrow>
+              <mrow>
+                <mi>∂</mi>
+                <msub>
+                  <mi>Q</mi>
+                  <mi>i</mi>
+                </msub>
+              </mrow>
+            </mfrac>
+            <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
+          </mrow>
+          <mrow data-mjx-texclass="ORD">
+            <mi>Q</mi>
+            <mo>=</mo>
+            <mn>0</mn>
+          </mrow>
+        </msub>
+        <mo>≠</mo>
+        <mn>0</mn>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:SPEC-raman-rule">(8.18)</span></div></section>
+<p>For the symmetric stretch of CO<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span> the polarizability certainly changes — the molecule grows and a larger electron cloud is easier to polarize — even though the dipole does not. The mode that infrared spectroscopy cannot see, Raman scattering sees clearly.</p>
+<section class="callout theorem" id="theorem-thm-spec-mutual-exclusion"><header><span class="callout-kind">Theorem 8.5.2</span><span class="callout-title">Rule of mutual exclusion</span></header><p> In a molecule with a center of inversion, no vibrational mode is both infrared and Raman active.</p></section>
+<div class="proof" data-lead="Proof."><p>Under inversion the dipole moment is odd (<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi mathvariant="normal">Π</mi>
+      <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+    </mover>
+  </mrow>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>d</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+  <msup>
+    <mrow data-mjx-texclass="ORD">
+      <mover accent="true">
+        <mi mathvariant="normal">Π</mi>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+      </mover>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mo>†</mo>
+    </mrow>
+  </msup>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>d</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+</math></span>) while the polarizability, a second-rank tensor built from two factors of position, is even. A normal coordinate <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>Q</mi>
+    <mi>i</mi>
+  </msub>
+</math></span> is itself either even (<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>g</mi>
+</math></span>) or odd (<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>u</mi>
+</math></span>) under inversion. For <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>∂</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>d</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>∂</mi>
+  <msub>
+    <mi>Q</mi>
+    <mi>i</mi>
+  </msub>
+</math></span> to be nonzero, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>Q</mi>
+    <mi>i</mi>
+  </msub>
+</math></span> must be odd; for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>∂</mi>
+  <mi>α</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>∂</mi>
+  <msub>
+    <mi>Q</mi>
+    <mi>i</mi>
+  </msub>
+</math></span> to be nonzero, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>Q</mi>
+    <mi>i</mi>
+  </msub>
+</math></span> must be even. No mode can be both.</p></div>
+<p>The two techniques are therefore complementary by symmetry rather than by accident, and for a centrosymmetric molecule both are needed to see all the modes.</p>
+<h3 id="sec-8-stokes-and-anti-stokes-lines"><span class="sec-number">8.5.2</span>Stokes and Anti-Stokes Lines</h3>
+<p>Raman spectra contain two shifted sets of lines around the laser frequency: Stokes (red-shifted) and anti-Stokes (blue-shifted). Their intensity ratio is</p>
+<div class="math-block math-block--numbered" id="eq-eq-spec-stokes-ratio"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mfrac>
+          <msub>
+            <mi>I</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mrow data-mjx-texclass="ORD">
+                <mi data-mjx-auto-op="false">AS</mi>
+              </mrow>
+            </mrow>
+          </msub>
+          <msub>
+            <mi>I</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mrow data-mjx-texclass="ORD">
+                <mi mathvariant="normal">S</mi>
+              </mrow>
+            </mrow>
+          </msub>
+        </mfrac>
+        <mo>≈</mo>
+        <msup>
+          <mrow data-mjx-texclass="INNER">
+            <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+            <mfrac>
+              <mrow>
+                <msub>
+                  <mrow data-mjx-texclass="ORD">
+                    <mover accent="true">
+                      <mi>ν</mi>
+                      <mo stretchy="false" style="padding-bottom:0.06em">˜</mo>
+                    </mover>
+                  </mrow>
+                  <mn>0</mn>
+                </msub>
+                <mo>+</mo>
+                <msub>
+                  <mrow data-mjx-texclass="ORD">
+                    <mover accent="true">
+                      <mi>ν</mi>
+                      <mo stretchy="false" style="padding-bottom:0.06em">˜</mo>
+                    </mover>
+                  </mrow>
+                  <mi>v</mi>
+                </msub>
+              </mrow>
+              <mrow>
+                <msub>
+                  <mrow data-mjx-texclass="ORD">
+                    <mover accent="true">
+                      <mi>ν</mi>
+                      <mo stretchy="false" style="padding-bottom:0.06em">˜</mo>
+                    </mover>
+                  </mrow>
+                  <mn>0</mn>
+                </msub>
+                <mo>−</mo>
+                <msub>
+                  <mrow data-mjx-texclass="ORD">
+                    <mover accent="true">
+                      <mi>ν</mi>
+                      <mo stretchy="false" style="padding-bottom:0.06em">˜</mo>
+                    </mover>
+                  </mrow>
+                  <mi>v</mi>
+                </msub>
+              </mrow>
+            </mfrac>
+            <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+          </mrow>
+          <mn>4</mn>
+        </msup>
+        <mi>exp</mi>
+        <mstyle scriptlevel="0">
+          <mspace width="-0.167em" />
+        </mstyle>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+          <mfrac>
+            <mrow>
+              <mi>h</mi>
+              <mi>c</mi>
+              <msub>
+                <mrow data-mjx-texclass="ORD">
+                  <mover accent="true">
+                    <mi>ν</mi>
+                    <mo stretchy="false" style="padding-bottom:0.06em">˜</mo>
+                  </mover>
+                </mrow>
+                <mi>v</mi>
+              </msub>
+            </mrow>
+            <mrow>
+              <msub>
+                <mi>k</mi>
+                <mi>B</mi>
+              </msub>
+              <mi>T</mi>
+            </mrow>
+          </mfrac>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:SPEC-stokes-ratio">(8.19)</span></div>
+<p>The Boltzmann factor dominates: anti-Stokes lines are weaker because they start from thermally excited vibrational states. This ratio is therefore a direct temperature probe.</p>
+<h3 id="sec-8-first-pass-self-checks">First-pass self-checks</h3>
+<section class="callout example" id="example-ex-spec-selfcheck-rotor"><header><span class="callout-kind">Example 8.5.2</span><span class="callout-title">Self-check 1: the first rotor line</span></header><p> A polar rotor has <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>B</mi>
+  <mo>=</mo>
+  <mn>2.0</mn>
+</math></span> cm<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+</math></span>. Give its first three absorption positions and the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>z</mi>
+</math></span>-polarized <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>J</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+  <mo>,</mo>
+  <mi>M</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+  <mo accent="false" stretchy="false">→</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mn>0</mn>
+</math></span> line strength.</p>
+<p class="solution-head">Solution.</p>
+<p>Equation <a class="xref" href="../chapter-08/index.html#eq-eq-spec-rot-lines">(8.9)</a> gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>4.0</mn>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>8.0</mn>
+</math></span>, and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>12.0</mn>
+</math></span> cm<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+</math></span>. Equation <a class="xref" href="../chapter-08/index.html#eq-eq-spec-rot-00-10">(8.6)</a> gives amplitude <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>d</mi>
+    <mn>0</mn>
+  </msub>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msqrt>
+    <mn>3</mn>
+  </msqrt>
+</math></span>, so the strength is proportional to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msubsup>
+    <mi>d</mi>
+    <mn>0</mn>
+    <mn>2</mn>
+  </msubsup>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>3</mn>
+</math></span>. The energy formula fixes position; the matrix element fixes intensity.</p></section>
+<section class="callout example" id="example-ex-spec-selfcheck-oscillator"><header><span class="callout-kind">Example 8.5.3</span><span class="callout-title">Self-check 2: oscillator matrix versus parity</span></header><p> For a linear dipole <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mo>=</mo>
+  <msup>
+    <mi>d</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+  <mi>q</mi>
+</math></span>, decide whether <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+  <mo accent="false" stretchy="false">→</mo>
+  <mn>1</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+  <mo accent="false" stretchy="false">→</mo>
+  <mn>2</mn>
+</math></span> appear, then find the nonzero amplitude.</p>
+<p class="solution-head">Solution.</p>
+<p>Parity makes <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>χ</mi>
+    <mn>1</mn>
+  </msub>
+  <mi>q</mi>
+  <msub>
+    <mi>χ</mi>
+    <mn>0</mn>
+  </msub>
+</math></span> even and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>χ</mi>
+    <mn>2</mn>
+  </msub>
+  <mi>q</mi>
+  <msub>
+    <mi>χ</mi>
+    <mn>0</mn>
+  </msub>
+</math></span> odd, so only <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+  <mo accent="false" stretchy="false">→</mo>
+  <mn>1</mn>
+</math></span> can appear. Ladder operators give the magnitude: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>1</mn>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
+  </mrow>
+  <msup>
+    <mi>d</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+  <mi>q</mi>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>0</mn>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+  <mo>=</mo>
+  <msup>
+    <mi>d</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+  <msqrt>
+    <mi data-mjx-alternate="1">ℏ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo>/</mo>
+    </mrow>
+    <mo stretchy="false">(</mo>
+    <mn>2</mn>
+    <mi>μ</mi>
+    <mi>ω</mi>
+    <mo stretchy="false">)</mo>
+  </msqrt>
+</math></span>. Thus symmetry decides the zero without integration, while the matrix method supplies the line strength <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">|</mo>
+  <msup>
+    <mi>d</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+  <msup>
+    <mo stretchy="false">|</mo>
+    <mn>2</mn>
+  </msup>
+  <mi data-mjx-alternate="1">ℏ</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mo stretchy="false">(</mo>
+  <mn>2</mn>
+  <mi>μ</mi>
+  <mi>ω</mi>
+  <mo stretchy="false">)</mo>
+</math></span>.</p></section>
+<section class="callout example" id="example-ex-spec-selfcheck-population"><header><span class="callout-kind">Example 8.5.4</span><span class="callout-title">Self-check 3: population changes intensity</span></header><p> At a temperature with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>k</mi>
+    <mi>B</mi>
+  </msub>
+  <mi>T</mi>
+  <mo>=</mo>
+  <mn>10</mn>
+  <mi>B</mi>
+</math></span>, compare the unnormalized populations of rotor levels <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>J</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>J</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>.</p>
+<p class="solution-head">Solution.</p>
+<p>Equation <a class="xref" href="../chapter-08/index.html#eq-eq-spec-boltzmann">(8.10)</a> gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>N</mi>
+    <mn>0</mn>
+  </msub>
+  <mo>∝</mo>
+  <mn>1</mn>
+</math></span>. For <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>J</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>N</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>∝</mo>
+  <mn>3</mn>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>2</mn>
+      <mi>B</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mo stretchy="false">(</mo>
+      <mn>10</mn>
+      <mi>B</mi>
+      <mo stretchy="false">)</mo>
+    </mrow>
+  </msup>
+  <mo>=</mo>
+  <mn>3</mn>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>0.2</mn>
+    </mrow>
+  </msup>
+  <mo>=</mo>
+  <mn>2.456</mn>
+</math></span>. Even though <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>J</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span> costs energy, its threefold degeneracy makes it more populated here. An allowed line can still be weak when its initial level is scarcely populated.</p></section>
+<h2 id="sec-8-summary"><span class="sec-number">8.6</span>Summary</h2>
+<ul><li><p>Whether a line appears is decided by one question: is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>f</mi>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
+  </mrow>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi mathvariant="normal">𝒅</mi>
+      <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+    </mover>
+  </mrow>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>i</mi>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+</math></span> zero? Everything here is that question asked of different operators.</p></li><li><p>Absorption, stimulated emission, and spontaneous emission are connected by Einstein coefficients, Eqs. <a class="xref" href="../chapter-08/index.html#eq-eq-spec-einstein-rates">(8.2)</a> and <a class="xref" href="../chapter-08/index.html#eq-eq-spec-einstein-relations">(8.3)</a>; they link line strengths and radiative lifetimes.</p></li><li><p>Rotation: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Δ</mi>
+  <mi>J</mi>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">±</mo>
+  <mn>1</mn>
+</math></span> (Thm. <a class="xref" href="../chapter-08/index.html#theorem-thm-spec-rot-rule">8.3.2</a>), lines equally spaced by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mi>B</mi>
+</math></span>, and <em>only</em> if the molecule has a permanent dipole (Thm. <a class="xref" href="../chapter-08/index.html#theorem-thm-spec-rot-active">8.3.1</a>). CO<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span> has none. Intensities follow the Boltzmann envelope, peaking near <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>J</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo data-mjx-texclass="OP" movablelimits="true">max</mo>
+    </mrow>
+  </msub>
+  <mo>≃</mo>
+  <msqrt>
+    <msub>
+      <mi>k</mi>
+      <mi>B</mi>
+    </msub>
+    <mi>T</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo>/</mo>
+    </mrow>
+    <mn>2</mn>
+    <mi>B</mi>
+  </msqrt>
+</math></span>.</p></li><li><p>Vibration: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Δ</mi>
+  <mi>v</mi>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">±</mo>
+  <mn>1</mn>
+</math></span> from <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
+    <mrow data-mjx-texclass="ORD">
+      <msup>
+        <mi>v</mi>
+        <mo data-mjx-alternate="1">′</mo>
+      </msup>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
+  </mrow>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>q</mi>
+      <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+    </mover>
+  </mrow>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>v</mi>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+  <mo>∝</mo>
+  <msqrt>
+    <mi>v</mi>
+  </msqrt>
+  <msub>
+    <mi>δ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <msup>
+        <mi>v</mi>
+        <mo data-mjx-alternate="1">′</mo>
+      </msup>
+      <mo>,</mo>
+      <mi>v</mi>
+      <mo>−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msub>
+  <mo>+</mo>
+  <msqrt>
+    <mi>v</mi>
+    <mo>+</mo>
+    <mn>1</mn>
+  </msqrt>
+  <msub>
+    <mi>δ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <msup>
+        <mi>v</mi>
+        <mo data-mjx-alternate="1">′</mo>
+      </msup>
+      <mo>,</mo>
+      <mi>v</mi>
+      <mo>+</mo>
+      <mn>1</mn>
+    </mrow>
+  </msub>
+</math></span>, and only if <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mi>d</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>d</mi>
+  <mi>R</mi>
+  <mo>≠</mo>
+  <mn>0</mn>
+</math></span> (Thm. <a class="xref" href="../chapter-08/index.html#theorem-thm-spec-vib">8.4.1</a>). Homonuclear diatomics are infrared-dark, which is why the atmosphere is transparent except for its trace gases.</p></li><li><p>A vibrational band carries rotational structure: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>P</mi>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>Q</mi>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>R</mi>
+</math></span> branches, Eq. <a class="xref" href="../chapter-08/index.html#eq-eq-spec-branches">(8.14)</a>, with lines spaced <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mi>B</mi>
+</math></span> and a central gap of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>4</mn>
+  <mi>B</mi>
+</math></span> in the simplest model. In real spectra, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>B</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+  <mo>≠</mo>
+  <msup>
+    <mi>B</mi>
+    <mo data-mjx-alternate="1">″</mo>
+  </msup>
+</math></span> causes branch asymmetry and can create a band head, Eq. <a class="xref" href="../chapter-08/index.html#eq-eq-spec-band-head">(8.16)</a>.</p></li><li><p>Polyatomics: mode <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> is infrared active if <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>∂</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>d</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>∂</mi>
+  <msub>
+    <mi>Q</mi>
+    <mi>i</mi>
+  </msub>
+  <mo>≠</mo>
+  <mn>0</mn>
+</math></span>. CO<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span>'s symmetric stretch is inactive because the molecule stays symmetric throughout the motion; the bend and antisymmetric stretch are active.</p></li><li><p>Raman scattering is governed by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>∂</mi>
+  <mi>α</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>∂</mi>
+  <msub>
+    <mi>Q</mi>
+    <mi>i</mi>
+  </msub>
+</math></span> instead, and in a centrosymmetric molecule the two techniques are mutually exclusive by parity (Thm. <a class="xref" href="../chapter-08/index.html#theorem-thm-spec-mutual-exclusion">8.5.2</a>). The Stokes/anti-Stokes ratio, Eq. <a class="xref" href="../chapter-08/index.html#eq-eq-spec-stokes-ratio">(8.19)</a>, gives temperature.</p></li></ul>
+<h2 id="sec-8-exercises"><span class="sec-number">8.7</span>Exercises</h2>
+<ol><li><p><strong>The rotational integral.</strong> Evaluate <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="OP">∫</mo>
+  <msubsup>
+    <mi>Y</mi>
+    <mn>1</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>0</mn>
+      <mo>∗</mo>
+    </mrow>
+  </msubsup>
+  <mi>cos</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mi>θ</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msubsup>
+    <mi>Y</mi>
+    <mn>0</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>0</mn>
+    </mrow>
+  </msubsup>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mi>d</mi>
+  <mi mathvariant="normal">Ω</mi>
+</math></span> explicitly using Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-ylm-table">(4.32)</a>, and confirm it is nonzero. Then evaluate <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="OP">∫</mo>
+  <msubsup>
+    <mi>Y</mi>
+    <mn>0</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>0</mn>
+      <mo>∗</mo>
+    </mrow>
+  </msubsup>
+  <mi>cos</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mi>θ</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msubsup>
+    <mi>Y</mi>
+    <mn>0</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>0</mn>
+    </mrow>
+  </msubsup>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mi>d</mi>
+  <mi mathvariant="normal">Ω</mi>
+</math></span> and confirm it vanishes. Which part of Theorem <a class="xref" href="../chapter-08/index.html#theorem-thm-spec-rot-rule">8.3.2</a> does each illustrate?</p></li><li><p><strong>Which molecules are active?</strong> For H<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span>, HCl, CO<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span>, H<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span>O and N<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span>O (linear but N–N–O, hence not symmetric), state whether each has (a) a pure rotational spectrum and (b) at least one infrared-active vibration. Give the one-line symmetry reason in each case.</p></li><li><p><strong>The vibrational matrix element.</strong> Reproduce the proof of Theorem <a class="xref" href="../chapter-08/index.html#theorem-thm-spec-vib">8.4.1</a>. Then compute <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">|</mo>
+  </mrow>
+  <msup>
+    <mrow data-mjx-texclass="ORD">
+      <mover accent="true">
+        <mi>q</mi>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+      </mover>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mn>0</mn>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+</math></span> using <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>q</mi>
+      <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+    </mover>
+  </mrow>
+  <mo>∝</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>a</mi>
+      <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+    </mover>
+  </mrow>
+  <mo>+</mo>
+  <msup>
+    <mrow data-mjx-texclass="ORD">
+      <mover accent="true">
+        <mi>a</mi>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+      </mover>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mo>†</mo>
+    </mrow>
+  </msup>
+</math></span> and Eq. <a class="xref" href="../chapter-02/index.html#eq-eq-ms-ladder-action">(2.38)</a>, and confirm it is nonzero — this is the first overtone of Remark <a class="xref" href="../chapter-08/index.html#remark-rem-spec-overtones">8.4.1</a>.</p></li><li><p><strong>Reading a band.</strong> An infrared band shows a comb of lines spaced <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0.72</mn>
+</math></span> cm<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+</math></span> on either side of a gap centered at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2143</mn>
+</math></span> cm<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+</math></span>.</p>
+<ol><li><p>Identify the branches and the band center.</p></li><li><p>Find <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>B</mi>
+</math></span>, and hence the bond length, taking <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>μ</mi>
+  <mo>=</mo>
+  <mn>1.139</mn>
+  <mo>×</mo>
+  <msup>
+    <mn>10</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>26</mn>
+    </mrow>
+  </msup>
+</math></span> kg.</p></li><li><p>The central gap is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>4</mn>
+  <mi>B</mi>
+</math></span> wide rather than <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mi>B</mi>
+</math></span>. Explain why, using Eq. <a class="xref" href="../chapter-08/index.html#eq-eq-spec-branches">(8.14)</a>.</p></li></ol></li><li><p><strong>Boltzmann envelope.</strong> Using Eq. <a class="xref" href="../chapter-08/index.html#eq-eq-spec-boltzmann">(8.10)</a> with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>B</mi>
+  <mo>=</mo>
+  <mn>1.931</mn>
+</math></span> cm<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+</math></span> for CO at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>300</mn>
+</math></span> K, find <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>J</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo data-mjx-texclass="OP" movablelimits="true">max</mo>
+    </mrow>
+  </msub>
+</math></span>. (Note <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>k</mi>
+    <mi>B</mi>
+  </msub>
+  <mi>T</mi>
+  <mo>=</mo>
+  <mn>208</mn>
+</math></span> cm<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+</math></span> at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>300</mn>
+</math></span> K.) Sketch the expected intensity pattern of the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>P</mi>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>R</mi>
+</math></span> branches.</p></li><li><p><strong>Mutual exclusion.</strong> Reproduce the proof of Theorem <a class="xref" href="../chapter-08/index.html#theorem-thm-spec-mutual-exclusion">8.5.2</a>. Then determine, for each of CO<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span>'s four modes, whether the normal coordinate is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>g</mi>
+</math></span> or <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>u</mi>
+</math></span> under inversion, and hence confirm the activity assignments of Example <a class="xref" href="../chapter-08/index.html#example-ex-spec-co2-symmetric">8.5.1</a>.</p></li><li><p><strong>Einstein coefficients and lifetime.</strong> A transition has frequency <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ν</mi>
+  <mo>=</mo>
+  <mn>6.0</mn>
+  <mo>×</mo>
+  <msup>
+    <mn>10</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>13</mn>
+    </mrow>
+  </msup>
+</math></span> Hz and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>B</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>21</mn>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mn>2.5</mn>
+  <mo>×</mo>
+  <msup>
+    <mn>10</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>20</mn>
+    </mrow>
+  </msup>
+</math></span> in SI units.</p>
+<ol><li><p>Use Eq. <a class="xref" href="../chapter-08/index.html#eq-eq-spec-einstein-relations">(8.3)</a> to find <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>A</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>21</mn>
+    </mrow>
+  </msub>
+</math></span>.</p></li><li><p>Estimate the radiative lifetime <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>τ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mrow data-mjx-texclass="ORD">
+        <mi data-mjx-auto-op="false">rad</mi>
+      </mrow>
+    </mrow>
+  </msub>
+</math></span>.</p></li><li><p>Explain qualitatively how the lifetime changes for a higher-frequency transition with similar dipole strength.</p></li></ol></li><li><p><strong>Real branch formulas.</strong> For a band with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover accent="true">
+        <mi>ν</mi>
+        <mo stretchy="false" style="padding-bottom:0.06em">˜</mo>
+      </mover>
+    </mrow>
+    <mn>0</mn>
+  </msub>
+  <mo>=</mo>
+  <mn>2143</mn>
+</math></span> cm<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>B</mi>
+    <mo data-mjx-alternate="1">″</mo>
+  </msup>
+  <mo>=</mo>
+  <mn>1.93</mn>
+</math></span> cm<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+</math></span>, and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>B</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+  <mo>=</mo>
+  <mn>1.88</mn>
+</math></span> cm<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+</math></span>:</p>
+<ol><li><p>Compute <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover accent="true">
+        <mi>ν</mi>
+        <mo stretchy="false" style="padding-bottom:0.06em">˜</mo>
+      </mover>
+    </mrow>
+    <mi>R</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mn>0</mn>
+  <mo stretchy="false">)</mo>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover accent="true">
+        <mi>ν</mi>
+        <mo stretchy="false" style="padding-bottom:0.06em">˜</mo>
+      </mover>
+    </mrow>
+    <mi>R</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mn>5</mn>
+  <mo stretchy="false">)</mo>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover accent="true">
+        <mi>ν</mi>
+        <mo stretchy="false" style="padding-bottom:0.06em">˜</mo>
+      </mover>
+    </mrow>
+    <mi>P</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>, and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover accent="true">
+        <mi>ν</mi>
+        <mo stretchy="false" style="padding-bottom:0.06em">˜</mo>
+      </mover>
+    </mrow>
+    <mi>P</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mn>6</mn>
+  <mo stretchy="false">)</mo>
+</math></span> from Eq. <a class="xref" href="../chapter-08/index.html#eq-eq-spec-real-branches">(8.15)</a>.</p></li><li><p>Use Eq. <a class="xref" href="../chapter-08/index.html#eq-eq-spec-band-head">(8.16)</a> to estimate whether a band head appears in the observed <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>J</mi>
+</math></span> range.</p></li><li><p>Compare with the equal-spacing prediction of Eq. <a class="xref" href="../chapter-08/index.html#eq-eq-spec-branches">(8.14)</a>.</p></li></ol></li><li><p><strong>Raman thermometry.</strong> A Raman spectrum collected with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover accent="true">
+        <mi>ν</mi>
+        <mo stretchy="false" style="padding-bottom:0.06em">˜</mo>
+      </mover>
+    </mrow>
+    <mn>0</mn>
+  </msub>
+  <mo>=</mo>
+  <mn>18797</mn>
+</math></span> cm<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+</math></span> (532 nm laser) shows a mode at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover accent="true">
+        <mi>ν</mi>
+        <mo stretchy="false" style="padding-bottom:0.06em">˜</mo>
+      </mover>
+    </mrow>
+    <mi>v</mi>
+  </msub>
+  <mo>=</mo>
+  <mn>1000</mn>
+</math></span> cm<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+</math></span> with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>I</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mrow data-mjx-texclass="ORD">
+        <mi data-mjx-auto-op="false">AS</mi>
+      </mrow>
+    </mrow>
+  </msub>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msub>
+    <mi>I</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mrow data-mjx-texclass="ORD">
+        <mi mathvariant="normal">S</mi>
+      </mrow>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mn>0.11</mn>
+</math></span>. Estimate the sample temperature using Eq. <a class="xref" href="../chapter-08/index.html#eq-eq-spec-stokes-ratio">(8.19)</a>.</p></li></ol>
+<h2 id="sec-8-project-the-normal-modes-of-co-2-2"><span class="sec-number">8.8</span>Project: The Normal Modes of CO<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span></h2>
+<p><strong>The problem.</strong> Compute the normal modes of CO<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span> from a ball-and-spring model and predict which are infrared active. This is the classical normal-mode analysis that underlies the quantum result, and it is an eigenvalue problem.</p>
+<p>Model the molecule as three masses on a line — <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>m</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi mathvariant="normal">O</mi>
+    </mrow>
+  </msub>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>m</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi mathvariant="normal">C</mi>
+    </mrow>
+  </msub>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>m</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi mathvariant="normal">O</mi>
+    </mrow>
+  </msub>
+</math></span> — joined by two identical springs of constant <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span>. Restrict attention to motion <em>along</em> the axis, which captures the two stretches; the bend needs the perpendicular coordinates.</p>
+<ol><li><p><strong>On paper.</strong> Write Newton's equations for the three axial displacements <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>x</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>,</mo>
+  <msub>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msub>
+  <mo>,</mo>
+  <msub>
+    <mi>x</mi>
+    <mn>3</mn>
+  </msub>
+</math></span>. Put them in the form <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mrow data-mjx-texclass="ORD">
+        <mover accent="true">
+          <mi>x</mi>
+          <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+        </mover>
+      </mrow>
+      <mo>¨</mo>
+    </mover>
+  </mrow>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <msup>
+    <mrow data-mjx-texclass="ORD">
+      <mi mathvariant="normal">𝐌</mi>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+  <mrow data-mjx-texclass="ORD">
+    <mi mathvariant="normal">𝐊</mi>
+  </mrow>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>x</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+</math></span> and write both <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>3</mn>
+  <mo>×</mo>
+  <mn>3</mn>
+</math></span> matrices out explicitly.</p></li><li><p><strong>On paper.</strong> Find the three eigenvalues by hand. One is zero: identify which motion it is and explain why it <em>must</em> be there. Show that the other two are</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <msubsup>
+    <mi>ω</mi>
+    <mn>1</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msubsup>
+  <mo>=</mo>
+  <mfrac>
+    <mi>k</mi>
+    <msub>
+      <mi>m</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mi mathvariant="normal">O</mi>
+      </mrow>
+    </msub>
+  </mfrac>
+  <mo>,</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="2em" />
+  </mstyle>
+  <msubsup>
+    <mi>ω</mi>
+    <mn>3</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msubsup>
+  <mo>=</mo>
+  <mi>k</mi>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <mfrac>
+      <mn>1</mn>
+      <msub>
+        <mi>m</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mi mathvariant="normal">O</mi>
+        </mrow>
+      </msub>
+    </mfrac>
+    <mo>+</mo>
+    <mfrac>
+      <mn>2</mn>
+      <msub>
+        <mi>m</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mi mathvariant="normal">C</mi>
+        </mrow>
+      </msub>
+    </mfrac>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+  </mrow>
+  <mo>,</mo>
+</math></div>
+<p>and identify which is the symmetric and which the antisymmetric stretch.</p></li><li><p><strong>On paper.</strong> Show from these that <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ω</mi>
+    <mn>3</mn>
+  </msub>
+  <mo>&gt;</mo>
+  <msub>
+    <mi>ω</mi>
+    <mn>1</mn>
+  </msub>
+</math></span> always, and compute the predicted ratio <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ω</mi>
+    <mn>3</mn>
+  </msub>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msub>
+    <mi>ω</mi>
+    <mn>1</mn>
+  </msub>
+</math></span> using <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>m</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi mathvariant="normal">O</mi>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mn>16</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>m</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi mathvariant="normal">C</mi>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mn>12</mn>
+</math></span> u. Compare with the measured <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2349</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>1333</mn>
+  <mo>=</mo>
+  <mn>1.76</mn>
+</math></span>.</p></li><li><p><strong>On the computer.</strong> Diagonalize the matrix numerically and confirm your eigenvalues and eigenvectors. Choose <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> so the antisymmetric mode comes out at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2349</mn>
+</math></span> cm<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+</math></span>, then report what the model predicts for the symmetric stretch. Comment on the discrepancy with (c): what has a two-spring model left out?</p></li><li><p><strong>On the computer.</strong> For each mode compute the dipole moment as a function of time, assigning charges <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mi>q</mi>
+  <mo>,</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+  <mn>2</mn>
+  <mi>q</mi>
+  <mo>,</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mi>q</mi>
+</math></span> and summing <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <munder>
+    <mo data-mjx-texclass="OP" stretchy="true">∑</mo>
+    <mi>i</mi>
+  </munder>
+  <msub>
+    <mi>q</mi>
+    <mi>i</mi>
+  </msub>
+  <msub>
+    <mi>x</mi>
+    <mi>i</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+</math></span>. Plot both. One should oscillate and the other be identically zero, reproducing Example <a class="xref" href="../chapter-08/index.html#example-ex-spec-co2-symmetric">8.5.1</a> numerically rather than by symmetry argument.</p></li><li><p><strong>What has to move.</strong> One animation per stretching mode: the three atoms oscillating with the relative amplitudes and phases from your eigenvectors, with the instantaneous dipole drawn as an arrow beneath. The arrow should stay dead at zero for the symmetric mode and swing for the antisymmetric one. That contrast is the whole of infrared selection rules in one figure.</p></li></ol>
+<p><strong>The check.</strong> The zero eigenvalue in (b) is the test that your matrices are right: rigid translation of the whole molecule costs no energy, so it <em>must</em> appear as a zero mode. If it does not come out exactly zero numerically, your force-constant matrix has an error — each of its rows must sum to zero.</p>
+<p><strong>Be ready to answer.</strong> Your part (e) shows the symmetric stretch has no oscillating dipole and so cannot absorb infrared light. Yet the mode exists and carries energy. How would you detect it experimentally, and what property of the molecule does that technique couple to instead?</p>
+    <nav class="chapter-nav" aria-label="Chapter navigation">
+      <a href="../chapter-07/index.html">Previous: Molecular Structure, Vibration and Rotation</a>
+      <a href="../../toc.html">Contents</a>
+      <a href="../chapter-09/index.html">Next: Electronic Spectroscopy</a>
+    </nav>
+  </article>
+</main>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p class="site-footer-notice"><strong>Under development.</strong> These notes are a working draft and have not been fully checked. Concepts, derivations, worked solutions and numerical values may contain errors, so read them critically and verify anything you rely on.</p>
+    <p>&copy; 2026 Erfan Saydanzad. All rights reserved. This material is published for reading and personal study; it may not be copied, redistributed, or reused in other work without written permission.</p>
+  </div>
+</footer>
+</body>
+</html>

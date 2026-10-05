@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Chapter 9: Electronic Spectroscopy | Direct Method</title>
+  <title>Chapter 9: Electronic Spectroscopy | Quantum Mechanics and Spectroscopy</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
   <link rel="preload" href="../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../../assets/css/site.css?v=856ec339">
+  <link rel="stylesheet" href="../../assets/css/site.css?v=ee8de383">
   <link rel="preload" href="../../assets/fonts/latinmodern-math.woff2" as="font" type="font/woff2" crossorigin>
-  <script defer src="../../assets/js/main.js?v=856ec339"></script>
+  <script defer src="../../assets/js/main.js?v=ee8de383"></script>
 
 <style>
 .site-header { justify-content: flex-start; gap: 16px; }
@@ -35,7 +35,7 @@
   <a class="site-up" href="../../../../../index.html"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.5 5.5 8l4.5 4.5"/></svg><span>Saydanzad Group</span></a>
   <a class="brand" href="../../index.html">
     <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M9 6.5V25.5M9 6.5H24M9 25.5H24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 16Q10.5 9.5 15.5 16T25.5 16" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/></svg>
-    <span>Direct Method</span>
+    <span>Quantum Mechanics and Spectroscopy</span>
   </a>
   <nav class="top-nav" aria-label="Primary">
     <a href="../../index.html">Home</a>
@@ -53,10 +53,12 @@
 <a class="toc-level-2" href="#sec-9-what-an-electronic-spectrum-measures">9.2 What an Electronic Spectrum Measures</a>
 <a class="toc-level-2" href="#sec-9-factorizing-the-transition-dipole">9.3 Factorizing the Transition Dipole</a>
 <a class="toc-level-2" href="#sec-9-the-franck-condon-principle">9.4 The Franck–Condon Principle</a>
+<a class="toc-level-3" href="#sec-9-band-heads-and-shading">9.4.1 Band Heads and Shading</a>
 <a class="toc-level-2" href="#sec-9-excited-state-relaxation-pathways">9.5 Excited-State Relaxation Pathways</a>
 <a class="toc-level-2" href="#sec-9-photoelectron-spectroscopy">9.6 Photoelectron Spectroscopy</a>
 <a class="toc-level-2" href="#sec-9-molecular-rydberg-series">9.7 Molecular Rydberg Series</a>
 <a class="toc-level-3" href="#sec-9-bound-states-above-a-threshold">9.7.1 Bound States Above a Threshold</a>
+<a class="toc-level-3" href="#sec-9-first-pass-self-checks">First-pass self-checks</a>
 <a class="toc-level-2" href="#sec-9-summary">9.8 Summary</a>
 <a class="toc-level-2" href="#sec-9-exercises">9.9 Exercises</a>
 <a class="toc-level-2" href="#sec-9-project-franck-condon-factors">9.10 Project: Franck–Condon Factors</a>
@@ -75,6 +77,7 @@
 <ol><li><p>the <strong>Franck–Condon principle</strong>, which decides which vibrational levels of the upper state are populated and hence why a molecular absorption band is a band rather than a line;</p></li><li><p><strong>photoelectron spectroscopy</strong>, the measurement performed by the research this course prepares for;</p></li><li><p><strong>molecular Rydberg series</strong>, where the atomic physics of Chapters 4 and 5 returns with the molecule's several ionization thresholds each supporting a series of its own.</p></li></ol>
 <p>The last section shows that a series converging to a high threshold consists of states that are bound and simultaneously degenerate with a lower continuum. That is where the book has been going.</p>
 <p>The chapter logic is sequential: factorize intensity, interpret band shape, measure thresholds by photoelectrons, then connect thresholds to Rydberg series and autoionization.</p>
+<section class="callout definition" id="definition-def-elec-route"><header><span class="callout-kind">Definition 9.1.1</span><span class="callout-title">Core route and extension</span></header><p> The <em>first-pass core</em> is a pair of displaced harmonic potentials: define their vertical and adiabatic gaps, calculate Franck–Condon overlaps, and check that their probabilities sum to one. Photoelectron band heads and molecular Rydberg series are a <em>research extension</em>.</p></section>
 <h2 id="sec-9-what-an-electronic-spectrum-measures"><span class="sec-number">9.2</span>What an Electronic Spectrum Measures</h2>
 <p>Electronic spectroscopy is read from three linked observables: transition energy, transition intensity, and excited-state decay.</p>
 <p>The line position gives the energy gap,</p>
@@ -106,6 +109,142 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:eq:ELEC-gap">(9.1)</span></div>
+<section class="callout definition" id="definition-def-elec-gaps"><header><span class="callout-kind">Definition 9.2.1</span><span class="callout-title">Electronic, vertical, adiabatic, and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span>–<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span> gaps</span></header><p> Let <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>U</mi>
+    <mi>g</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>R</mi>
+  <mo stretchy="false">)</mo>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>U</mi>
+    <mi>e</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>R</mi>
+  <mo stretchy="false">)</mo>
+</math></span> be nuclear-inclusive Born–Oppenheimer potentials, each containing <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>V</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>N</mi>
+      <mi>N</mi>
+    </mrow>
+  </msub>
+</math></span> once. The <em>vertical gap</em> from the ground minimum <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>R</mi>
+    <mi>g</mi>
+  </msub>
+</math></span> is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Δ</mi>
+  <msub>
+    <mi>E</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi mathvariant="normal">v</mi>
+      <mi mathvariant="normal">e</mi>
+      <mi mathvariant="normal">r</mi>
+      <mi mathvariant="normal">t</mi>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <msub>
+    <mi>U</mi>
+    <mi>e</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>R</mi>
+    <mi>g</mi>
+  </msub>
+  <mo stretchy="false">)</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <msub>
+    <mi>U</mi>
+    <mi>g</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>R</mi>
+    <mi>g</mi>
+  </msub>
+  <mo stretchy="false">)</mo>
+</math></span>. The <em>adiabatic electronic gap</em> is the difference of minima <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Δ</mi>
+  <msub>
+    <mi>E</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi mathvariant="normal">a</mi>
+      <mi mathvariant="normal">d</mi>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <msub>
+    <mi>U</mi>
+    <mi>e</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>R</mi>
+    <mi>e</mi>
+  </msub>
+  <mo stretchy="false">)</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <msub>
+    <mi>U</mi>
+    <mi>g</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>R</mi>
+    <mi>g</mi>
+  </msub>
+  <mo stretchy="false">)</mo>
+</math></span>. The spectroscopic <em><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span>–<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span> gap</em> also includes the difference of vibrational zero-point energies: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>E</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>00</mn>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mi mathvariant="normal">Δ</mi>
+  <msub>
+    <mi>E</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi mathvariant="normal">a</mi>
+      <mi mathvariant="normal">d</mi>
+    </mrow>
+  </msub>
+  <mo>+</mo>
+  <mo stretchy="false">(</mo>
+  <mi data-mjx-alternate="1">ℏ</mi>
+  <msub>
+    <mi>ω</mi>
+    <mi>e</mi>
+  </msub>
+  <mo>−</mo>
+  <mi data-mjx-alternate="1">ℏ</mi>
+  <msub>
+    <mi>ω</mi>
+    <mi>g</mi>
+  </msub>
+  <mo stretchy="false">)</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+</math></span> in the harmonic model. Stating which gap is meant prevents an electronic energy from being confused with a nuclear-inclusive transition energy.</p></section>
 <p>In absorption experiments, intensity is reported through Beer–Lambert law,</p>
 <div class="math-block math-block--numbered" id="eq-eq-elec-beer-lambert"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -1064,7 +1203,169 @@
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:eq:ELEC-sum-rule">(9.5)</span></div>
 <p>The total intensity of the band is fixed by the electronic factor alone; the Franck–Condon factors only decide how it is <em>distributed</em> among the vibrational lines. This is the check to apply to any computation of them.</p></section>
+<p>For equal harmonic frequencies and a displacement <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Δ</mi>
+  <mi>R</mi>
+  <mo>=</mo>
+  <msub>
+    <mi>R</mi>
+    <mi>e</mi>
+  </msub>
+  <mo>−</mo>
+  <msub>
+    <mi>R</mi>
+    <mi>g</mi>
+  </msub>
+</math></span>, the overlap is analytic. Define the dimensionless displacement</p>
+<div class="math-block math-block--numbered" id="eq-eq-elec-huang-rhys"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>S</mi>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mi>μ</mi>
+            <mi>ω</mi>
+            <mo stretchy="false">(</mo>
+            <mi mathvariant="normal">Δ</mi>
+            <mi>R</mi>
+            <msup>
+              <mo stretchy="false">)</mo>
+              <mn>2</mn>
+            </msup>
+          </mrow>
+          <mrow>
+            <mn>2</mn>
+            <mi data-mjx-alternate="1">ℏ</mi>
+          </mrow>
+        </mfrac>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:ELEC-huang-rhys">(9.6)</span></div>
+<p>Acting with the translation operator on the upper oscillator vacuum gives the Poisson progression</p>
+<div class="math-block math-block--numbered" id="eq-eq-elec-displaced-poisson"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mrow class="mml-boxed">
+          <mrow data-mjx-texclass="ORD">
+            <mstyle displaystyle="true" scriptlevel="0">
+              <mrow data-mjx-texclass="ORD">
+                <mstyle scriptlevel="0">
+                  <mspace width="0.278em" />
+                </mstyle>
+                <msub>
+                  <mrow data-mjx-texclass="ORD">
+                    <mi data-mjx-auto-op="false">FC</mi>
+                  </mrow>
+                  <mrow data-mjx-texclass="ORD">
+                    <mi>n</mi>
+                    <mn>0</mn>
+                  </mrow>
+                </msub>
+                <mo>=</mo>
+                <msup>
+                  <mi>e</mi>
+                  <mrow data-mjx-texclass="ORD">
+                    <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+                    <mi>S</mi>
+                  </mrow>
+                </msup>
+                <mfrac>
+                  <msup>
+                    <mi>S</mi>
+                    <mi>n</mi>
+                  </msup>
+                  <mrow>
+                    <mi>n</mi>
+                    <mo>!</mo>
+                  </mrow>
+                </mfrac>
+                <mstyle scriptlevel="0">
+                  <mspace width="0.278em" />
+                </mstyle>
+              </mrow>
+            </mstyle>
+          </mrow>
+        </mrow>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <mi>n</mi>
+        <mo>=</mo>
+        <mn>0</mn>
+        <mo>,</mo>
+        <mn>1</mn>
+        <mo>,</mo>
+        <mn>2</mn>
+        <mo>,</mo>
+        <mo>…</mo>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:ELEC-displaced-poisson">(9.7)</span></div>
+<p>Its closure check is immediate: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <munder>
+    <mo data-mjx-texclass="OP" stretchy="true">∑</mo>
+    <mi>n</mi>
+  </munder>
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mi data-mjx-auto-op="false">FC</mi>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+      <mn>0</mn>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi>S</mi>
+    </mrow>
+  </msup>
+  <munder>
+    <mo data-mjx-texclass="OP" stretchy="true">∑</mo>
+    <mi>n</mi>
+  </munder>
+  <msup>
+    <mi>S</mi>
+    <mi>n</mi>
+  </msup>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>n</mi>
+  <mo>!</mo>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>. The mean excited vibrational quantum number is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>S</mi>
+</math></span>, so the distribution moves away from <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> as the surfaces separate.</p>
 <h2 id="sec-9-the-franck-condon-principle"><span class="sec-number">9.4</span>The Franck–Condon Principle</h2>
+<figure id="chapter-09-fig-1" class="figure"><img src="assets/img/ch09_fig01_franck_condon.png" class="diagram" alt="The principle and its consequence. Because the electronic jump is fast compared with nuclear motion it is vertical, and the molecule arrives on the upper curve at a geometry that is not its equilibrium — so the brightest line is not the one to v&amp;#x27;=0 but the one whose turning point lies under the arrow." loading="lazy" style="--figure-width: 98%;"><figcaption>Figure 9.1. The principle and its consequence. Because the electronic jump
+	is fast compared with nuclear motion it is vertical, and the molecule
+	arrives on the upper curve at a geometry that is not its equilibrium —
+	so the brightest line is not the one to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>v</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> but the one whose
+	turning point lies under the arrow.</figcaption></figure>
 <p>The physical content of Theorem <a class="xref" href="../chapter-09/index.html#theorem-thm-elec-factorisation">9.3.1</a> is the timescale hierarchy of Sec. <a class="xref" href="../chapter-07/index.html#sec-7-the-three-energy-scales">7.10</a>. An electronic transition is driven in attoseconds to femtoseconds; nuclear motion takes tens of femtoseconds. The nuclei therefore do not move during the transition, and on a diagram of potential curves the transition is a <em>vertical arrow</em>: the molecule arrives on the upper curve at the bond length it had on the lower one.</p>
 <p>Mathematically that is exactly what Eq. <a class="xref" href="../chapter-09/index.html#eq-eq-elec-fc-factor">(9.4)</a> says. The overlap <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo data-mjx-texclass="OP">∫</mo>
@@ -1209,6 +1510,289 @@
   <mn>0</mn>
 </math></span> means the geometry barely changed, so the electron came from a <em>nonbonding</em> orbital — a lone pair, say, that was not holding the molecule together.</p>
 <p>A band shape is therefore a measurement of how bonding an orbital was. This is the standard way photoelectron spectra are assigned, and it is worth knowing before looking at one.</p></section>
+<h3 id="sec-9-band-heads-and-shading"><span class="sec-number">9.4.1</span>Band Heads and Shading</h3>
+<p>The Franck–Condon argument said that an electronic transition changes the bond length. That change has a second consequence, visible in the rotational structure rather than the vibrational envelope, and it is the feature by which electronic bands are usually recognized at a glance.</p>
+<p>Each vibrational line of Sec. <a class="xref" href="../chapter-09/index.html#sec-9-the-franck-condon-principle">9.4</a> is really a band of rotational lines, at wavenumbers given by Eq. <a class="xref" href="../chapter-08/index.html#eq-eq-spec-real-branches">(8.15)</a>. Both branches collapse into one formula if we introduce a single running number <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span>,</p>
+<div class="math-block math-block--numbered" id="eq-eq-elec-fortrat"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mrow data-mjx-texclass="ORD">
+          <mover accent="true">
+            <mi>ν</mi>
+            <mo stretchy="false" style="padding-bottom:0.06em">˜</mo>
+          </mover>
+        </mrow>
+        <mo>−</mo>
+        <msub>
+          <mrow data-mjx-texclass="ORD">
+            <mover accent="true">
+              <mi>ν</mi>
+              <mo stretchy="false" style="padding-bottom:0.06em">˜</mo>
+            </mover>
+          </mrow>
+          <mn>0</mn>
+        </msub>
+        <mo>=</mo>
+        <mo stretchy="false">(</mo>
+        <msup>
+          <mi>B</mi>
+          <mo data-mjx-alternate="1">′</mo>
+        </msup>
+        <mo>+</mo>
+        <msup>
+          <mi>B</mi>
+          <mo data-mjx-alternate="1">″</mo>
+        </msup>
+        <mo stretchy="false">)</mo>
+        <mi>m</mi>
+        <mo>+</mo>
+        <mo stretchy="false">(</mo>
+        <msup>
+          <mi>B</mi>
+          <mo data-mjx-alternate="1">′</mo>
+        </msup>
+        <mo>−</mo>
+        <msup>
+          <mi>B</mi>
+          <mo data-mjx-alternate="1">″</mo>
+        </msup>
+        <mo stretchy="false">)</mo>
+        <msup>
+          <mi>m</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mn>2</mn>
+          </mrow>
+        </msup>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <mi>m</mi>
+        <mo>=</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">{</mo>
+          <mtable columnalign="left left" columnspacing="1em" rowspacing=".2em">
+            <mtr>
+              <mtd style="text-align: left">
+                <mi>J</mi>
+                <mo>+</mo>
+                <mn>1</mn>
+                <mo>,</mo>
+              </mtd>
+              <mtd style="text-align: left">
+                <mi>R</mi>
+                <mtext> branch</mtext>
+                <mo>,</mo>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd style="text-align: left">
+                <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+                <mi>J</mi>
+                <mo>,</mo>
+              </mtd>
+              <mtd style="text-align: left">
+                <mi>P</mi>
+                <mtext> branch</mtext>
+                <mo>,</mo>
+              </mtd>
+            </mtr>
+          </mtable>
+          <mo data-mjx-texclass="CLOSE" fence="true" stretchy="true" symmetric="true" form="postfix" lspace="0em" rspace="0em" />
+        </mrow>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:ELEC-fortrat">(9.8)</span></div>
+<p>with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> omitted, since it is the missing <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>Q</mi>
+</math></span> branch. Written this way the whole rotational structure is a <em>parabola</em> in <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span>, and the one thing every parabola has is a turning point:</p>
+<div class="math-block math-block--numbered" id="eq-eq-elec-head-position"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <msub>
+          <mi>m</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mrow data-mjx-texclass="ORD">
+              <mi data-mjx-auto-op="false">head</mi>
+            </mrow>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <msup>
+              <mi>B</mi>
+              <mo data-mjx-alternate="1">′</mo>
+            </msup>
+            <mo>+</mo>
+            <msup>
+              <mi>B</mi>
+              <mo data-mjx-alternate="1">″</mo>
+            </msup>
+          </mrow>
+          <mrow>
+            <mn>2</mn>
+            <mo stretchy="false">(</mo>
+            <msup>
+              <mi>B</mi>
+              <mo data-mjx-alternate="1">″</mo>
+            </msup>
+            <mo>−</mo>
+            <msup>
+              <mi>B</mi>
+              <mo data-mjx-alternate="1">′</mo>
+            </msup>
+            <mo stretchy="false">)</mo>
+          </mrow>
+        </mfrac>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:ELEC-head-position">(9.9)</span></div>
+<p>Near <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>m</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mrow data-mjx-texclass="ORD">
+        <mi data-mjx-auto-op="false">head</mi>
+      </mrow>
+    </mrow>
+  </msub>
+</math></span> consecutive lines fall almost on top of one another. They crowd together, stop, and turn back — so the band has a sharp edge with nothing beyond it, and fades away in the other direction. The edge is the <em>band head</em>, and the direction of fading is the band's <em>shading</em>.</p>
+<figure id="chapter-09-fig-2" class="figure"><img src="assets/img/ch09_fig03_band_head.png" class="diagram" alt="A band head, for a bond that lengthens by 5\% on excitation. Upper panel: Eq. (9.8) plotted against the running number m — the Fortrat parabola. Lower panel: the same lines laid out as a spectrum. The turning point of the parabola is where consecutive lines stop separating, which in the spectrum is a wall on one side and a thinning comb on the other. Nothing has been added between the panels; they are the same numbers read two ways." loading="lazy" style="--figure-width: 94%;"><figcaption>Figure 9.2. A band head, for a bond that lengthens by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>5</mn>
+  <mi mathvariant="normal">%</mi>
+</math></span> on excitation.
+	Upper panel: Eq. <a class="xref" href="../chapter-09/index.html#eq-eq-elec-fortrat">(9.8)</a> plotted against the running
+	number <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span> — the Fortrat parabola. Lower panel: the same lines laid out
+	as a spectrum. The turning point of the parabola is where consecutive
+	lines stop separating, which in the spectrum is a wall on one side and a
+	thinning comb on the other. Nothing has been added between the panels;
+	they are the same numbers read two ways.</figcaption></figure>
+<p>Which branch turns is decided by the sign of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>B</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+  <mo>−</mo>
+  <msup>
+    <mi>B</mi>
+    <mo data-mjx-alternate="1">″</mo>
+  </msup>
+</math></span>, and since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>B</mi>
+  <mo>∝</mo>
+  <mn>1</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msubsup>
+    <mi>R</mi>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msubsup>
+</math></span> that is decided by whether the bond got longer or shorter:</p>
+<div class="centered"><div class="table-wrap"><table><tr><td>
+		upper state</td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>B</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+</math></span> vs <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>B</mi>
+    <mo data-mjx-alternate="1">″</mo>
+  </msup>
+</math></span></td><td>branch that turns</td><td>shading</td></tr><tr><td>
+		longer bond</td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>B</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+  <mo>&lt;</mo>
+  <msup>
+    <mi>B</mi>
+    <mo data-mjx-alternate="1">″</mo>
+  </msup>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>R</mi>
+</math></span></td><td>degraded to the red</td></tr><tr><td>shorter bond</td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>B</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+  <mo>&gt;</mo>
+  <msup>
+    <mi>B</mi>
+    <mo data-mjx-alternate="1">″</mo>
+  </msup>
+</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>P</mi>
+</math></span></td><td>degraded to the violet</td></tr><tr><td></td></tr></table></div></div>
+<p> Most excited states are reached by promoting an electron into an antibonding orbital, which lengthens and weakens the bond, so most electronic bands are degraded to the red. When one is not, that is worth noticing: it says the electron came out of an orbital that was antibonding in the <em>lower</em> state.</p>
+<p>This is also the answer to a question Chapter 8 left open. There the same formula gave <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>m</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mrow data-mjx-texclass="ORD">
+        <mi data-mjx-auto-op="false">head</mi>
+      </mrow>
+    </mrow>
+  </msub>
+  <mo>≈</mo>
+  <msub>
+    <mi>B</mi>
+    <mi>e</mi>
+  </msub>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msub>
+    <mi>α</mi>
+    <mi>e</mi>
+  </msub>
+  <mo>≈</mo>
+  <mn>108</mn>
+</math></span> for CO, far beyond any thermally populated <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>J</mi>
+</math></span>, so a vibrational band inside one electronic state has a head that is never reached. Here <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>B</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>B</mi>
+    <mo data-mjx-alternate="1">″</mo>
+  </msup>
+</math></span> differ by percent rather than by tenths of a percent, because the bond length itself has changed, and Eq. <a class="xref" href="../chapter-09/index.html#eq-eq-elec-head-position">(9.9)</a> brings the head down to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>m</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mrow data-mjx-texclass="ORD">
+        <mi data-mjx-auto-op="false">head</mi>
+      </mrow>
+    </mrow>
+  </msub>
+  <mo>≈</mo>
+  <mn>10</mn>
+</math></span> — squarely inside the populated levels. The head appears in electronic spectra and not in vibrational ones for exactly one reason: only an electronic transition moves the nuclei far enough.</p>
 <h2 id="sec-9-excited-state-relaxation-pathways"><span class="sec-number">9.5</span>Excited-State Relaxation Pathways</h2>
 <p>After absorption, population does not stay where it was created. It relaxes through competing channels:</p>
 <ul><li><p><strong>vibrational relaxation</strong> within one electronic state (typically fs–ps);</p></li><li><p><strong>internal conversion</strong> (<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -1343,7 +1927,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:ELEC-fluorescence-yield">(9.6)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:ELEC-fluorescence-yield">(9.10)</span></div>
 <p>with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>k</mi>
@@ -1394,7 +1978,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:ELEC-PES">(9.7)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:ELEC-PES">(9.11)</span></div>
 <p>with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi data-mjx-alternate="1">ℏ</mi>
   <mi>ω</mi>
@@ -1433,7 +2017,7 @@
   <mn>3.1</mn>
 </math></span> eV; the first is a single sharp line and the second a long progression. Interpret.</p>
 <p class="solution-head">Solution.</p>
-<p>From Eq. <a class="xref" href="../chapter-09/index.html#eq-eq-elec-pes">(9.7)</a>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>From Eq. <a class="xref" href="../chapter-09/index.html#eq-eq-elec-pes">(9.11)</a>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>E</mi>
     <mrow data-mjx-texclass="ORD">
@@ -1584,7 +2168,7 @@
     <mo data-mjx-alternate="1">′</mo>
   </msup>
   <mo stretchy="false">)</mo>
-</math></span>. The transition rate into them is Fermi's golden rule (Thm. <a class="xref" href="../chapter-06/index.html#theorem-thm-td-golden-rule">6.5.1</a>), which with this normalization reduces to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>. The transition rate into them is Fermi's golden rule (Thm. <a class="xref" href="../chapter-06/index.html#theorem-thm-td-golden-rule">6.6.1</a>), which with this normalization reduces to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi mathvariant="normal">Γ</mi>
   <mo>=</mo>
   <mn>2</mn>
@@ -1616,7 +2200,7 @@
       <mn>2</mn>
     </mrow>
   </msup>
-</math></span> (Remark <a class="xref" href="../chapter-06/index.html#remark-rem-td-energy-norm">6.5.1</a>). Chapter 10 makes this quantitative.</p></section>
+</math></span> (Remark <a class="xref" href="../chapter-06/index.html#remark-rem-td-energy-norm">6.6.1</a>). Chapter 10 makes this quantitative.</p></section>
 <p>Two further pieces of vocabulary, because the literature uses them without explanation. The departing electron is described by <em>partial waves</em> — the angular momentum components <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ε</mi>
   <mi>s</mi>
@@ -1650,6 +2234,20 @@
   <mn>1</mn>
 </math></span>, odd under inversion. These are Chapter 3's atomic labels plus Chapter 7's molecular ones, and the selection rules apply to them unchanged.</p>
 <h2 id="sec-9-molecular-rydberg-series"><span class="sec-number">9.7</span>Molecular Rydberg Series</h2>
+<figure id="chapter-09-fig-3" class="figure"><img src="assets/img/ch09_fig02_rydberg_series.png" class="diagram" alt="A Rydberg series is an infinite number of lines in a finite interval. They crowd onto the threshold as n^-3, so a spectrometer of any given resolution stops resolving them at some n — and everything above that point is the continuum of Chapter 10." loading="lazy" style="--figure-width: 92%;"><figcaption>Figure 9.3. A Rydberg series is an infinite number of lines in a finite
+	interval. They crowd onto the threshold as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>n</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>3</mn>
+    </mrow>
+  </msup>
+</math></span>, so a spectrometer of
+	any given resolution stops resolving them at some <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> — and everything
+	above that point is the continuum of Chapter 10.</figcaption></figure>
 <p>The pieces now come together.</p>
 <p>Excite one electron to an orbital of high principal quantum number, short of ionizing it. That electron is far outside everything else, and what it sees — by Eq. <a class="xref" href="../chapter-05/index.html#eq-eq-me-screened">(5.15)</a> of Chapter 5, which knew nothing about molecules — is a net charge of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo form="prefix" lspace="0em" rspace="0em">+</mo>
@@ -1722,7 +2320,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:ELEC-rydberg-formula">(9.8)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:ELEC-rydberg-formula">(9.12)</span></div>
 <p>with the same quantum defect, the same penetration argument, and the same ordering <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>δ</mi>
@@ -1749,7 +2347,7 @@
       </mrow>
     </mrow>
   </msub>
-</math></span> appearing in Eq. <a class="xref" href="../chapter-09/index.html#eq-eq-elec-rydberg-formula">(9.8)</a> is the energy of the <em>specific ionic state</em> the series converges to.</p></section>
+</math></span> appearing in Eq. <a class="xref" href="../chapter-09/index.html#eq-eq-elec-rydberg-formula">(9.12)</a> is the energy of the <em>specific ionic state</em> the series converges to.</p></section>
 <p>The reason is immediate from the construction: the Rydberg electron is bound to a particular ionic core, and removing it entirely leaves that core in that state. Which core is specified by the notation:</p>
 <section class="callout definition" id="definition-def-elec-rydberg-label"><header><span class="callout-kind">Definition 9.7.1</span><span class="callout-title">Molecular Rydberg label</span></header><div class="math-block math-block--numbered" id="eq-eq-elec-rydberg-label"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -1773,7 +2371,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:ELEC-rydberg-label">(9.9)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:ELEC-rydberg-label">(9.13)</span></div>
 <p>names both the hole left in the core and the orbital the excited electron occupies. Thus <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo stretchy="false">(</mo>
   <mn>3</mn>
@@ -1966,7 +2564,7 @@
   <mi>u</mi>
 </math></span>, and deduce two consequences.</p>
 <p class="solution-head">Solution.</p>
-<p>Use the product rule of Remark <a class="xref" href="../chapter-07/index.html#remark-rem-mol-parity-product">7.5.1</a>. Start from the ground configuration Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-co2-config">(7.18)</a>, whose total parity is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>Use the product rule of Remark <a class="xref" href="../chapter-07/index.html#remark-rem-mol-parity-product">7.5.1</a>. Start from the ground configuration Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-co2-config">(7.19)</a>, whose total parity is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>g</mi>
 </math></span> (Example <a class="xref" href="../chapter-07/index.html#example-ex-mol-co2">7.5.1</a>).</p>
 <p>Removing one electron from <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -2037,6 +2635,295 @@
   <mi>l</mi>
 </math></span>.</p>
 <p>That second result removes an entire block of the Hamiltonian in Chapter 11, and it costs nothing — no fitting, no parameter, no error. It is a symmetry argument, made in Chapter 3, applied to labels earned in Chapter 7.</p></section>
+<h3 id="sec-9-first-pass-self-checks">First-pass self-checks</h3>
+<figure id="chapter-09-fig-4" class="figure"><img src="assets/img/learn_fc_ladder.png" class="diagram" alt="One electronic transition, spread over a vibrational progression. The bars are the Franck–Condon factors for two harmonic wells of equal frequency displaced by a Huang–Rhys factor S=1; the blue bars are the three lines Self-check 2 sums by hand, and they come to 0.9197, leaving 0.0803 in n3. Nothing here creates intensity: the factors sum to one, so a larger displacement does not brighten the band but only moves the brightness up the ladder. Read the shape and you have read how far the equilibrium geometry moved when the electron was promoted." loading="lazy" style="--figure-width: 86%;"><figcaption>Figure 9.4. One electronic transition, spread over a vibrational
+	progression. The bars are the Franck–Condon factors for two harmonic
+	wells of equal frequency displaced by a Huang–Rhys factor <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>S</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>; the
+	blue bars are the three lines Self-check 2 sums by hand, and they come to
+	<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0.9197</mn>
+</math></span>, leaving <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0.0803</mn>
+</math></span> in <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>≥</mo>
+  <mn>3</mn>
+</math></span>. Nothing here creates intensity:
+	the factors sum to one, so a larger displacement does not brighten the
+	band but only moves the brightness up the ladder. Read the shape and you
+	have read how far the equilibrium geometry moved when the electron was
+	promoted.</figcaption></figure>
+<section class="callout example" id="example-ex-elec-selfcheck-gaps"><header><span class="callout-kind">Example 9.7.2</span><span class="callout-title">Self-check 1: three different gaps</span></header><p> Take <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>U</mi>
+    <mi>g</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>R</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <msup>
+    <mi>R</mi>
+    <mn>2</mn>
+  </msup>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>U</mi>
+    <mi>e</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>R</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mn>3</mn>
+  <mo>+</mo>
+  <mo stretchy="false">(</mo>
+  <mi>R</mi>
+  <mo>−</mo>
+  <mn>0.5</mn>
+  <msup>
+    <mo stretchy="false">)</mo>
+    <mn>2</mn>
+  </msup>
+</math></span> in one energy unit. The harmonic frequencies are equal. Find the vertical, adiabatic, and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span>–<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span> gaps.</p>
+<p class="solution-head">Solution.</p>
+<p>The minima are at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>R</mi>
+    <mi>g</mi>
+  </msub>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>R</mi>
+    <mi>e</mi>
+  </msub>
+  <mo>=</mo>
+  <mn>0.5</mn>
+</math></span>. Therefore <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Δ</mi>
+  <msub>
+    <mi>E</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi mathvariant="normal">v</mi>
+      <mi mathvariant="normal">e</mi>
+      <mi mathvariant="normal">r</mi>
+      <mi mathvariant="normal">t</mi>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <msub>
+    <mi>U</mi>
+    <mi>e</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mn>0</mn>
+  <mo stretchy="false">)</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <msub>
+    <mi>U</mi>
+    <mi>g</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mn>0</mn>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mn>3.25</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Δ</mi>
+  <msub>
+    <mi>E</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi mathvariant="normal">a</mi>
+      <mi mathvariant="normal">d</mi>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <msub>
+    <mi>U</mi>
+    <mi>e</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mn>0.5</mn>
+  <mo stretchy="false">)</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <msub>
+    <mi>U</mi>
+    <mi>g</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mn>0</mn>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mn>3.00</mn>
+</math></span>. Equal frequencies make the zero-point difference vanish, so <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>E</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>00</mn>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mn>3.00</mn>
+</math></span>. The vertical gap includes the upper-surface distortion energy; the adiabatic gap does not.</p></section>
+<section class="callout example" id="example-ex-elec-selfcheck-poisson"><header><span class="callout-kind">Example 9.7.3</span><span class="callout-title">Self-check 2: a displaced-oscillator progression</span></header><p> For a teaching displacement with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>S</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>, calculate the first three Franck–Condon factors and compare their partial sum with closure.</p>
+<p class="solution-head">Solution.</p>
+<p>Equation <a class="xref" href="../chapter-09/index.html#eq-eq-elec-displaced-poisson">(9.7)</a> gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mi data-mjx-auto-op="false">FC</mi>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mn>00</mn>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+  <mo>=</mo>
+  <mn>0.367879</mn>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mi data-mjx-auto-op="false">FC</mi>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mn>10</mn>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+  <mo>=</mo>
+  <mn>0.367879</mn>
+</math></span>, and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mi data-mjx-auto-op="false">FC</mi>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mn>20</mn>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+  <mo>=</mo>
+  <mn>0.183940</mn>
+</math></span>. Their sum is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0.919698</mn>
+</math></span>; the remaining <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0.080302</mn>
+</math></span> lies in <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>≥</mo>
+  <mn>3</mn>
+</math></span>. The exact infinite sum is one, so the partial sum also quantifies truncation error.</p></section>
+<section class="callout example" id="example-ex-elec-selfcheck-maximum"><header><span class="callout-kind">Example 9.7.4</span><span class="callout-title">Self-check 3: locate the brightest line</span></header><p> For <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>S</mi>
+  <mo>=</mo>
+  <mn>2</mn>
+</math></span>, which low-lying displaced-oscillator lines are brightest?</p>
+<p class="solution-head">Solution.</p>
+<p>From the Poisson formula, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mi data-mjx-auto-op="false">FC</mi>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+      <mo>+</mo>
+      <mn>1</mn>
+      <mo>,</mo>
+      <mn>0</mn>
+    </mrow>
+  </msub>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mi data-mjx-auto-op="false">FC</mi>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+      <mn>0</mn>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mi>S</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>. The ratio is greater than one before <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>, equals one from <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span> to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>=</mo>
+  <mn>2</mn>
+</math></span>, and is smaller afterward. Thus <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>=</mo>
+  <mn>2</mn>
+</math></span> tie for the maximum, each with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mo>=</mo>
+  <mn>0.270671</mn>
+</math></span>. The recurrence finds the peak without evaluating every overlap integral.</p></section>
 <h2 id="sec-9-summary"><span class="sec-number">9.8</span>Summary</h2>
 <ul><li><p>Electronic line positions follow <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi mathvariant="normal">Δ</mi>
@@ -2064,7 +2951,7 @@
   </msub>
   <mo>+</mo>
   <mi>ε</mi>
-</math></span>: one band per orbital, each with its own vibrational structure, and the fastest electron corresponds to the lowest threshold.</p></li><li><p>Excited-state pathways compete: fluorescence, internal conversion, intersystem crossing, and phosphorescence. Fluorescence yield and lifetime are set by rate competition, Eq. <a class="xref" href="../chapter-09/index.html#eq-eq-elec-fluorescence-yield">(9.6)</a>.</p></li><li><p>The free electron is described by partial waves labeled <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>: one band per orbital, each with its own vibrational structure, and the fastest electron corresponds to the lowest threshold.</p></li><li><p>Excited-state pathways compete: fluorescence, internal conversion, intersystem crossing, and phosphorescence. Fluorescence yield and lifetime are set by rate competition, Eq. <a class="xref" href="../chapter-09/index.html#eq-eq-elec-fluorescence-yield">(9.10)</a>.</p></li><li><p>The free electron is described by partial waves labeled <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ε</mi>
   <mi>s</mi>
   <msub>
@@ -2078,7 +2965,7 @@
     <mi>π</mi>
     <mi>u</mi>
   </msub>
-</math></span> and so on.</p></li><li><p>Molecular Rydberg states obey the atomic formula Eq. <a class="xref" href="../chapter-09/index.html#eq-eq-elec-rydberg-formula">(9.8)</a>, but there is one series per ionization threshold (Thm. <a class="xref" href="../chapter-09/index.html#theorem-thm-elec-series">9.7.1</a>) and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> and so on.</p></li><li><p>Molecular Rydberg states obey the atomic formula Eq. <a class="xref" href="../chapter-09/index.html#eq-eq-elec-rydberg-formula">(9.12)</a>, but there is one series per ionization threshold (Thm. <a class="xref" href="../chapter-09/index.html#theorem-thm-elec-series">9.7.1</a>) and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>E</mi>
     <mrow data-mjx-texclass="ORD">
@@ -2680,7 +3567,7 @@
     <mi>τ</mi>
     <mi>F</mi>
   </msub>
-</math></span> from Eq. <a class="xref" href="../chapter-09/index.html#eq-eq-elec-fluorescence-yield">(9.6)</a>.</p></li><li><p>If oxygen quenching doubles <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> from Eq. <a class="xref" href="../chapter-09/index.html#eq-eq-elec-fluorescence-yield">(9.10)</a>.</p></li><li><p>If oxygen quenching doubles <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>k</mi>
     <mi>q</mi>
@@ -2921,6 +3808,7 @@
 </main>
 <footer class="site-footer">
   <div class="site-footer-inner">
+    <p class="site-footer-notice"><strong>Under development.</strong> These notes are a working draft and have not been fully checked. Concepts, derivations, worked solutions and numerical values may contain errors, so read them critically and verify anything you rely on.</p>
     <p>&copy; 2026 Erfan Saydanzad. All rights reserved. This material is published for reading and personal study; it may not be copied, redistributed, or reused in other work without written permission.</p>
   </div>
 </footer>

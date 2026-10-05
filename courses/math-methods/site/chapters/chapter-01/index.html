@@ -6,9 +6,9 @@
   <title>Chapter 1: Infinite Series and Power Series | Mathematical Methods in the Physical Sciences</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
   <link rel="preload" href="../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../../assets/css/site.css?v=9dea6c95">
+  <link rel="stylesheet" href="../../assets/css/site.css?v=a126620a">
   <link rel="preload" href="../../assets/fonts/latinmodern-math.woff2" as="font" type="font/woff2" crossorigin>
-  <script defer src="../../assets/js/main.js?v=9dea6c95"></script>
+  <script defer src="../../assets/js/main.js?v=a126620a"></script>
 
 <style>
 .site-header { justify-content: flex-start; gap: 16px; }
@@ -93,7 +93,11 @@
       <p>Chapter 1</p>
       <h1>Infinite Series and Power Series</h1>
     </header>
-    <h2 id="sec-1-definitions-and-notation"><span class="sec-number">1.1</span>Definitions and Notation</h2>
+    <p><strong>Video lectures for this chapter.</strong> Each section below links to the part of the video that teaches it; all lectures are in the <a href="https://www.youtube.com/playlist?list=PLMf1SoafIGr0">course playlist</a>.</p>
+<p class="lecture-video"><a href="https://www.youtube.com/watch?v=54OLcnvLUy0&amp;t=0s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> Lecture 2: Infinite Series and Convergence Tests (full lecture)</a></p>
+<p class="lecture-video"><a href="https://www.youtube.com/watch?v=uHnE9O9ORoQ&amp;t=0s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> Lecture 3: Power Series and Taylor Series (full lecture)</a></p>
+<h2 id="sec-1-definitions-and-notation"><span class="sec-number">1.1</span>Definitions and Notation</h2>
+<p class="lecture-video"><a href="https://www.youtube.com/watch?v=54OLcnvLUy0&amp;t=0s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> Lecture 2, Part 1: Sequences and Series (0:00)</a></p>
 <section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Sequence</span></header><p>A <strong>sequence</strong> is an ordered list of numbers:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -624,6 +628,7 @@
   <mn>120</mn>
 </math></span></p></li></ul></section>
 <h2 id="sec-1-geometric-sequences-and-series"><span class="sec-number">1.2</span>Geometric Sequences and Series</h2>
+<p class="lecture-video"><a href="https://www.youtube.com/watch?v=54OLcnvLUy0&amp;t=285s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> Lecture 2, Part 2: Geometric Series (4:45)</a></p>
 <section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Geometric sequence</span></header><p>A <strong>geometric sequence</strong> is a sequence in which each term is obtained by multiplying the previous one by a fixed number <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>r</mi>
 </math></span>, called the <strong>common ratio</strong>:</p>
@@ -976,6 +981,7 @@
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:1.11">(1.11)</span></div></div>
 <h3 id="sec-1-infinite-geometric-series"><span class="sec-number">1.2.2</span>Infinite Geometric Series</h3>
+<p class="lecture-video"><a href="https://www.youtube.com/watch?v=54OLcnvLUy0&amp;t=612s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> Lecture 2, Part 3: Geometric Series in Action (10:12)</a></p>
 <p>We do not need a new argument here: the infinite case follows from the finite formula we just proved by letting <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>N</mi>
   <mo accent="false" stretchy="false">→</mo>
@@ -1207,6 +1213,74 @@
   <mo form="prefix" lspace="0em" rspace="0em">−</mo>
   <mn>1</mn>
 </math></span> the partial sums stay bounded but never settle down, and that is enough to diverge.</p></section>
+<section class="callout remark"><header><span class="callout-kind">Remark</span><span class="callout-title">Why convergence must come first</span></header><p>The subtraction trick that proved the finite-sum formula is safe only because <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>S</mi>
+    <mi>N</mi>
+  </msub>
+</math></span> is a finite sum. Applied to a divergent series it gives nonsense. Suppose we treated</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>S</mi>
+        <mo>=</mo>
+        <mn>2</mn>
+        <mo>+</mo>
+        <mn>4</mn>
+        <mo>+</mo>
+        <mn>8</mn>
+        <mo>+</mo>
+        <mn>16</mn>
+        <mo>+</mo>
+        <mo>⋯</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:1.15">(1.15)</span></div>
+<p>as a number. Multiplying by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+</math></span> shifts every term one place,</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mn>2</mn>
+        <mi>S</mi>
+        <mo>=</mo>
+        <mn>4</mn>
+        <mo>+</mo>
+        <mn>8</mn>
+        <mo>+</mo>
+        <mn>16</mn>
+        <mo>+</mo>
+        <mn>32</mn>
+        <mo>+</mo>
+        <mo>⋯</mo>
+        <mo>,</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:1.16">(1.16)</span></div>
+<p>and subtracting gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>S</mi>
+  <mo>−</mo>
+  <mn>2</mn>
+  <mi>S</mi>
+  <mo>=</mo>
+  <mn>2</mn>
+</math></span>, that is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>S</mi>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>2</mn>
+</math></span>: a sum of positive numbers that comes out negative. The mistake is the first step. This series is geometric with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mo>=</mo>
+  <mn>2</mn>
+</math></span>, so it diverges and there is no number <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>S</mi>
+</math></span> to subtract. Adding, subtracting or multiplying infinite series term by term is legitimate only once they are known to converge, which is why the convergence tests come before any such manipulation.</p></section>
 <section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">Bouncing Ball</span></header><p>A ball is dropped from a height of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>1</mn>
 </math></span> yard and rebounds to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -1327,7 +1401,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.15">(1.15)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.17">(1.17)</span></div>
 <p>The sum is geometric with first term <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>a</mi>
   <mo>=</mo>
@@ -1419,7 +1493,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.16">(1.16)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.18">(1.18)</span></div>
 <p>Therefore</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -1440,7 +1514,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.17">(1.17)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.19">(1.19)</span></div>
 <p>Note that the ball bounces infinitely many times yet travels only a finite distance — infinitely many terms can still add up to a finite total.</p></section>
 <section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">Repeating Decimal <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>0.333</mn>
@@ -1490,7 +1564,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.18">(1.18)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.20">(1.20)</span></div>
 <p>This is a geometric series with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>a</mi>
   <mo>=</mo>
@@ -1544,7 +1618,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.19">(1.19)</span></div></section>
+</math><span class="eqn-number" id="mjx-eqn:1.21">(1.21)</span></div></section>
 <section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">Repeating Decimal <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>0.785714</mn>
   <mo>…</mo>
@@ -1582,7 +1656,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.20">(1.20)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.22">(1.22)</span></div>
 <p>The repeating part is geometric with:</p>
 <ul><li><p><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>a</mi>
@@ -1644,8 +1718,20 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.21">(1.21)</span></div>
-<p>Thus:</p>
+</math><span class="eqn-number" id="mjx-eqn:1.23">(1.23)</span></div>
+<p>The last step uses <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>285714</mn>
+  <mo>=</mo>
+  <mn>2</mn>
+  <mo>×</mo>
+  <mn>142857</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>999999</mn>
+  <mo>=</mo>
+  <mn>7</mn>
+  <mo>×</mo>
+  <mn>142857</mn>
+</math></span>. Thus:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -1670,7 +1756,158 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.22">(1.22)</span></div></section>
+</math><span class="eqn-number" id="mjx-eqn:1.24">(1.24)</span></div></section>
+<section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">Repeating Decimal <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0.2333</mn>
+  <mo>…</mo>
+</math></span></span></header><p>Here only the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>3</mn>
+</math></span> repeats, so split off the digit that does not:</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mn>0.2333</mn>
+        <mo>…</mo>
+        <mo>=</mo>
+        <mfrac>
+          <mn>2</mn>
+          <mn>10</mn>
+        </mfrac>
+        <mo>+</mo>
+        <mfrac>
+          <mn>3</mn>
+          <mn>100</mn>
+        </mfrac>
+        <mo>+</mo>
+        <mfrac>
+          <mn>3</mn>
+          <mn>1000</mn>
+        </mfrac>
+        <mo>+</mo>
+        <mo>⋯</mo>
+        <mo>=</mo>
+        <mfrac>
+          <mn>2</mn>
+          <mn>10</mn>
+        </mfrac>
+        <mo>+</mo>
+        <mfrac>
+          <mn>3</mn>
+          <mn>100</mn>
+        </mfrac>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mn>1</mn>
+          <mo>+</mo>
+          <mfrac>
+            <mn>1</mn>
+            <mn>10</mn>
+          </mfrac>
+          <mo>+</mo>
+          <mfrac>
+            <mn>1</mn>
+            <mn>100</mn>
+          </mfrac>
+          <mo>+</mo>
+          <mo>⋯</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:1.25">(1.25)</span></div>
+<p>The bracket is geometric with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mo>=</mo>
+  <mfrac>
+    <mn>1</mn>
+    <mn>10</mn>
+  </mfrac>
+</math></span>, so it equals <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mfrac>
+    <mn>1</mn>
+    <mrow>
+      <mn>1</mn>
+      <mo>−</mo>
+      <mn>1</mn>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mn>10</mn>
+    </mrow>
+  </mfrac>
+  <mo>=</mo>
+  <mfrac>
+    <mn>10</mn>
+    <mn>9</mn>
+  </mfrac>
+</math></span>, and</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mn>0.2333</mn>
+        <mo>…</mo>
+        <mo>=</mo>
+        <mfrac>
+          <mn>2</mn>
+          <mn>10</mn>
+        </mfrac>
+        <mo>+</mo>
+        <mfrac>
+          <mn>3</mn>
+          <mn>100</mn>
+        </mfrac>
+        <mo>⋅</mo>
+        <mfrac>
+          <mn>10</mn>
+          <mn>9</mn>
+        </mfrac>
+        <mo>=</mo>
+        <mfrac>
+          <mn>2</mn>
+          <mn>10</mn>
+        </mfrac>
+        <mo>+</mo>
+        <mfrac>
+          <mn>1</mn>
+          <mn>30</mn>
+        </mfrac>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mn>6</mn>
+            <mo>+</mo>
+            <mn>1</mn>
+          </mrow>
+          <mn>30</mn>
+        </mfrac>
+        <mo>=</mo>
+        <mfrac>
+          <mn>7</mn>
+          <mn>30</mn>
+        </mfrac>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:1.26">(1.26)</span></div>
+<p>As a check, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>7</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>30</mn>
+  <mo>=</mo>
+  <mn>0.2333</mn>
+  <mo>…</mo>
+</math></span></p></section>
 <section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">Physics: multiple reflections in a glass plate</span></header><p>A beam of light of intensity <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>I</mi>
@@ -1763,7 +2000,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.23">(1.23)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.27">(1.27)</span></div>
 <p>which is geometric with first term <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>a</mi>
   <mo>=</mo>
@@ -1906,7 +2143,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.24">(1.24)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.28">(1.28)</span></div>
 <p>As a check: if <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>R</mi>
   <mo>=</mo>
@@ -1967,7 +2204,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.25">(1.25)</span></div></section>
+</math><span class="eqn-number" id="mjx-eqn:1.29">(1.29)</span></div></section>
 <section class="callout example"><header>Example</header><p>Evaluate:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -2023,7 +2260,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.26">(1.26)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.30">(1.30)</span></div>
 <p class="solution-head">Solution.</p>
 <p>The highest power of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>n</mi>
@@ -2167,7 +2404,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.27">(1.27)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.31">(1.31)</span></div>
 <p>Now every term of the form <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>1</mn>
   <mrow data-mjx-texclass="ORD">
@@ -2236,7 +2473,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.28">(1.28)</span></div></section>
+</math><span class="eqn-number" id="mjx-eqn:1.32">(1.32)</span></div></section>
 <section class="callout example"><header>Example</header><p>Evaluate:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -2253,15 +2490,19 @@
         <mfrac>
           <mrow>
             <mi>ln</mi>
-            <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-            <mi>n</mi>
+            <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+            <mrow>
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+              <mi>n</mi>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+            </mrow>
           </mrow>
           <mi>n</mi>
         </mfrac>
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.29">(1.29)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.33">(1.33)</span></div>
 <p class="solution-head">Solution: Using L'Hôpital's Rule</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true" columnalign="right left" columnspacing="0em" rowspacing="3pt">
@@ -2278,8 +2519,12 @@
         <mfrac>
           <mrow>
             <mi>ln</mi>
-            <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-            <mi>n</mi>
+            <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+            <mrow>
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+              <mi>n</mi>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+            </mrow>
           </mrow>
           <mi>n</mi>
         </mfrac>
@@ -2310,7 +2555,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.30">(1.30)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.34">(1.34)</span></div>
 <p><strong>Note:</strong> Although <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>n</mi>
 </math></span> is discrete, the limit is evaluated using a continuous extension <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -2322,8 +2567,12 @@
   <mfrac>
     <mrow>
       <mi>ln</mi>
-      <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-      <mi>x</mi>
+      <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+      <mrow>
+        <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+      </mrow>
     </mrow>
     <mi>x</mi>
   </mfrac>
@@ -2361,7 +2610,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.31">(1.31)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.35">(1.35)</span></div>
 <p class="solution-head">Solution.</p>
 <p>Take logarithm:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
@@ -2399,8 +2648,12 @@
         <mfrac>
           <mrow>
             <mi>ln</mi>
-            <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-            <mi>n</mi>
+            <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+            <mrow>
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+              <mi>n</mi>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+            </mrow>
           </mrow>
           <mi>n</mi>
         </mfrac>
@@ -2416,7 +2669,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.32">(1.32)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.36">(1.36)</span></div>
 <p>Hence:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -2457,8 +2710,9 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.33">(1.33)</span></div></section>
+</math><span class="eqn-number" id="mjx-eqn:1.37">(1.37)</span></div></section>
 <h2 id="sec-1-testing-series-for-convergence"><span class="sec-number">1.4</span>Testing Series for Convergence</h2>
+<p class="lecture-video"><a href="https://www.youtube.com/watch?v=54OLcnvLUy0&amp;t=927s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> Lecture 2, Part 4: Convergence and the Preliminary Test (15:27)</a></p>
 <h3 id="sec-1-preliminary-test"><span class="sec-number">1.4.1</span>Preliminary Test</h3>
 <section class="callout theorem"><header><span class="callout-kind">Theorem</span><span class="callout-title">Preliminary Test</span></header><p>If <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mstyle displaystyle="true" scriptlevel="0">
@@ -2529,7 +2783,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.34">(1.34)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.38">(1.38)</span></div>
 <p class="solution-head">Solution.</p>
 <p>The general term is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
@@ -2619,7 +2873,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.35">(1.35)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.39">(1.39)</span></div>
 <p>then <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo data-mjx-texclass="OP">∑</mo>
   <msub>
@@ -2658,7 +2912,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.36">(1.36)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.40">(1.40)</span></div>
 <p>then <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo data-mjx-texclass="OP">∑</mo>
   <msub>
@@ -2743,7 +2997,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.37">(1.37)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.41">(1.41)</span></div>
 <p>as one checks at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>n</mi>
   <mo>=</mo>
@@ -2787,7 +3041,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.38">(1.38)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.42">(1.42)</span></div>
 <p>The geometric series <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo data-mjx-texclass="OP">∑</mo>
   <mstyle displaystyle="false" scriptlevel="0">
@@ -2829,6 +3083,7 @@
   </mstyle>
 </math></span> <strong>converges</strong>.</p></section>
 <h3 id="sec-1-integral-test"><span class="sec-number">1.4.3</span>Integral Test</h3>
+<p class="lecture-video"><a href="https://www.youtube.com/watch?v=54OLcnvLUy0&amp;t=1491s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> Lecture 2, Part 6: The Integral Test (24:51)</a></p>
 <section class="callout theorem"><header><span class="callout-kind">Theorem</span><span class="callout-title">Integral Test</span></header><p>Let <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>a</mi>
@@ -2870,7 +3125,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.39">(1.39)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.43">(1.43)</span></div>
 <p><strong>converges if and only if</strong> the improper integral</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -2893,8 +3148,117 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.40">(1.40)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.44">(1.44)</span></div>
 <p>is finite.</p></section>
+<p class="paragraph-title">Why it works.</p>
+<p>Draw the graph of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>f</mi>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+</math></span> and, for each integer <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>≥</mo>
+  <mi>M</mi>
+</math></span>, a rectangle of width <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> and height <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>a</mi>
+    <mi>n</mi>
+  </msub>
+  <mo>=</mo>
+  <mi>f</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span> standing on the interval <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mi>n</mi>
+  <mo>,</mo>
+  <mi>n</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo stretchy="false">]</mo>
+</math></span>. Because <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>f</mi>
+</math></span> is decreasing, these rectangles lie above the curve; shifted one unit to the left, onto <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mi>n</mi>
+  <mo>−</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mi>n</mi>
+  <mo stretchy="false">]</mo>
+</math></span>, they lie below it. The total area of the rectangles is the sum, so</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <msubsup>
+          <mo data-mjx-texclass="OP">∫</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mi>M</mi>
+          </mrow>
+          <mrow data-mjx-texclass="ORD">
+            <mi mathvariant="normal">∞</mi>
+          </mrow>
+        </msubsup>
+        <mi>f</mi>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <mi>d</mi>
+        <mi>x</mi>
+        <mo>≤</mo>
+        <munderover>
+          <mo data-mjx-texclass="OP" stretchy="true">∑</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mi>n</mi>
+            <mo>=</mo>
+            <mi>M</mi>
+          </mrow>
+          <mrow data-mjx-texclass="ORD">
+            <mi mathvariant="normal">∞</mi>
+          </mrow>
+        </munderover>
+        <msub>
+          <mi>a</mi>
+          <mi>n</mi>
+        </msub>
+        <mo>≤</mo>
+        <msub>
+          <mi>a</mi>
+          <mi>M</mi>
+        </msub>
+        <mo>+</mo>
+        <msubsup>
+          <mo data-mjx-texclass="OP">∫</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mi>M</mi>
+          </mrow>
+          <mrow data-mjx-texclass="ORD">
+            <mi mathvariant="normal">∞</mi>
+          </mrow>
+        </msubsup>
+        <mi>f</mi>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <mi>d</mi>
+        <mi>x</mi>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:integral-test-bounds">(1.45)</span></div>
+<p>The sum and the area differ by at most the first term, so one is finite exactly when the other is.</p>
 <section class="callout example"><header>Example</header><p>Test the <strong>harmonic series</strong> <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mstyle displaystyle="true" scriptlevel="0">
     <munderover>
@@ -2982,9 +3346,13 @@
         <mrow data-mjx-texclass="ORD">
           <mo minsize="1.623em" maxsize="1.623em" stretchy="true" lspace="0em" rspace="0em">[</mo>
         </mrow>
-        <mi>ln</mi>
-        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mi>x</mi>
+        <mspace width="0.167em" /><mi>ln</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+          <mi>x</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+        </mrow>
         <msubsup>
           <mrow data-mjx-texclass="ORD">
             <mo minsize="1.623em" maxsize="1.623em" stretchy="true" lspace="0em" rspace="0em">]</mo>
@@ -3003,12 +3371,20 @@
         </munder>
         <mo stretchy="false">(</mo>
         <mi>ln</mi>
-        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mi>b</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+          <mi>b</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+        </mrow>
         <mo>−</mo>
         <mi>ln</mi>
-        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mn>1</mn>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+          <mn>1</mn>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+        </mrow>
         <mo stretchy="false">)</mo>
         <mo>=</mo>
         <munder>
@@ -3019,16 +3395,20 @@
             <mi mathvariant="normal">∞</mi>
           </mrow>
         </munder>
-        <mi>ln</mi>
-        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mi>b</mi>
+        <mspace width="0.167em" /><mi>ln</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+          <mi>b</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+        </mrow>
         <mo>=</mo>
         <mi mathvariant="normal">∞</mi>
         <mo>.</mo>
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:harmonic-integral">(1.41)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:harmonic-integral">(1.46)</span></div>
 <p>The integral is infinite, so by the Integral Test the harmonic series <strong>diverges</strong>.</p>
 <p>This result is worth remembering. The terms <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>1</mn>
@@ -3110,7 +3490,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:p-series">(1.42)</span></div></section>
+</math><span class="eqn-number" id="mjx-eqn:eq:p-series">(1.47)</span></div></section>
 <div class="proof" data-lead="Proof."><p>For <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>p</mi>
   <mo>≤</mo>
@@ -3232,7 +3612,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.43">(1.43)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.48">(1.48)</span></div>
 <p>If <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>p</mi>
   <mo>&gt;</mo>
@@ -3312,7 +3692,75 @@
     </mfrac>
   </mstyle>
 </math></span>).</p></section>
+<section class="callout remark"><header><span class="callout-kind">Remark</span><span class="callout-title">The integral is not the sum</span></header><p>The Integral Test decides <em>whether</em> a series converges; the value of the integral is not the value of the sum. For <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+  <mo>=</mo>
+  <mn>2</mn>
+</math></span> the integral is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msubsup>
+    <mo data-mjx-texclass="OP">∫</mo>
+    <mn>1</mn>
+    <mi mathvariant="normal">∞</mi>
+  </msubsup>
+  <msup>
+    <mi>x</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mi>d</mi>
+  <mi>x</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>, but</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <munderover>
+          <mo data-mjx-texclass="OP" stretchy="true">∑</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mi>n</mi>
+            <mo>=</mo>
+            <mn>1</mn>
+          </mrow>
+          <mrow data-mjx-texclass="ORD">
+            <mi mathvariant="normal">∞</mi>
+          </mrow>
+        </munderover>
+        <mfrac>
+          <mn>1</mn>
+          <msup>
+            <mi>n</mi>
+            <mn>2</mn>
+          </msup>
+        </mfrac>
+        <mo>=</mo>
+        <mfrac>
+          <msup>
+            <mi>π</mi>
+            <mn>2</mn>
+          </msup>
+          <mn>6</mn>
+        </mfrac>
+        <mo>≈</mo>
+        <mn>1.645</mn>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:1.49">(1.49)</span></div>
+<p>The bounds <a class="eqn-ref" href="#mjx-eqn:eq:integral-test-bounds">(1.45)</a> only place the sum between <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+</math></span>.</p></section>
 <h3 id="sec-1-ratio-test"><span class="sec-number">1.4.4</span>Ratio Test</h3>
+<p class="lecture-video"><a href="https://www.youtube.com/watch?v=54OLcnvLUy0&amp;t=1243s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> Lecture 2, Part 5: The Ratio Test (20:43)</a></p>
 <section class="callout theorem"><header><span class="callout-kind">Theorem</span><span class="callout-title">Ratio Test</span></header><p>Let</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -3350,7 +3798,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:ratio-rho">(1.44)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:ratio-rho">(1.50)</span></div>
 <p>Then</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -3413,7 +3861,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.45">(1.45)</span></div></section>
+</math><span class="eqn-number" id="mjx-eqn:1.51">(1.51)</span></div></section>
 <section class="callout example"><header>Example</header><p>Test <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mstyle displaystyle="true" scriptlevel="0">
     <munderover>
@@ -3579,7 +4027,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:ratio-n2-over-2n">(1.46)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:ratio-n2-over-2n">(1.52)</span></div>
 <p>Since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mfrac>
     <mrow>
@@ -3654,10 +4102,192 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.47">(1.47)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.53">(1.53)</span></div>
 <p>so the series <strong>converges</strong> by the Ratio Test. Notice the general lesson: an exponential in the denominator beats any power of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>n</mi>
 </math></span> in the numerator.</p></section>
+<section class="callout example"><header>Example</header><p>Test <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mstyle displaystyle="true" scriptlevel="0">
+    <munderover>
+      <mo data-mjx-texclass="OP" stretchy="true">∑</mo>
+      <mrow data-mjx-texclass="ORD">
+        <mi>n</mi>
+        <mo>=</mo>
+        <mn>0</mn>
+      </mrow>
+      <mi mathvariant="normal">∞</mi>
+    </munderover>
+    <mfrac>
+      <mn>1</mn>
+      <mrow>
+        <mi>n</mi>
+        <mo>!</mo>
+      </mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mn>1</mn>
+    <mo>+</mo>
+    <mn>1</mn>
+    <mo>+</mo>
+    <mfrac>
+      <mn>1</mn>
+      <mrow>
+        <mn>2</mn>
+        <mo>!</mo>
+      </mrow>
+    </mfrac>
+    <mo>+</mo>
+    <mfrac>
+      <mn>1</mn>
+      <mrow>
+        <mn>3</mn>
+        <mo>!</mo>
+      </mrow>
+    </mfrac>
+    <mo>+</mo>
+    <mo>⋯</mo>
+  </mstyle>
+</math></span>.</p>
+<p class="solution-head">Solution.</p>
+<p>Here <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>a</mi>
+    <mi>n</mi>
+  </msub>
+  <mo>=</mo>
+  <mn>1</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>n</mi>
+  <mo>!</mo>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>a</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+      <mo>+</mo>
+      <mn>1</mn>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mn>1</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+  <mo>!</mo>
+</math></span>. Since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+  <mo>!</mo>
+  <mo>=</mo>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mi>n</mi>
+  <mo>!</mo>
+</math></span>,</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mfrac>
+          <msub>
+            <mi>a</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mi>n</mi>
+              <mo>+</mo>
+              <mn>1</mn>
+            </mrow>
+          </msub>
+          <msub>
+            <mi>a</mi>
+            <mi>n</mi>
+          </msub>
+        </mfrac>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mi>n</mi>
+            <mo>!</mo>
+          </mrow>
+          <mrow>
+            <mo stretchy="false">(</mo>
+            <mi>n</mi>
+            <mo>+</mo>
+            <mn>1</mn>
+            <mo stretchy="false">)</mo>
+            <mo>!</mo>
+          </mrow>
+        </mfrac>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mi>n</mi>
+            <mo>!</mo>
+          </mrow>
+          <mrow>
+            <mo stretchy="false">(</mo>
+            <mi>n</mi>
+            <mo>+</mo>
+            <mn>1</mn>
+            <mo stretchy="false">)</mo>
+            <mstyle scriptlevel="0">
+              <mspace width="0.167em" />
+            </mstyle>
+            <mi>n</mi>
+            <mo>!</mo>
+          </mrow>
+        </mfrac>
+        <mo>=</mo>
+        <mfrac>
+          <mn>1</mn>
+          <mrow>
+            <mi>n</mi>
+            <mo>+</mo>
+            <mn>1</mn>
+          </mrow>
+        </mfrac>
+        <mo stretchy="false">⟶</mo>
+        <mn>0</mn>
+        <mo>,</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:1.54">(1.54)</span></div>
+<p>so <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ρ</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+  <mo>&lt;</mo>
+  <mn>1</mn>
+</math></span> and the series <strong>converges</strong>. Its sum is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>e</mi>
+  <mo>≈</mo>
+  <mn>2.718</mn>
+</math></span>, as the Maclaurin series of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>e</mi>
+    <mi>x</mi>
+  </msup>
+</math></span> at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span> shows in Section <a class="xref" href="../chapter-01/index.html#sec-1-taylor-and-maclaurin-series">1.9</a>.</p></section>
 <section class="callout remark"><header>Remark</header><p>The Ratio Test is the natural first choice whenever <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>a</mi>
@@ -3739,7 +4369,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:limit-comparison">(1.48)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:limit-comparison">(1.55)</span></div>
 <p>then the two series <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo data-mjx-texclass="OP">∑</mo>
   <msub>
@@ -3799,7 +4429,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.49">(1.49)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.56">(1.56)</span></div>
 <p>for convergence.</p>
 <p class="solution-head">Solution.</p>
 <p>Keep only the highest power of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -3932,7 +4562,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.50">(1.50)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.57">(1.57)</span></div>
 <p>This suggests comparing with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>b</mi>
@@ -4026,7 +4656,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.51">(1.51)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.58">(1.58)</span></div>
 <p>which satisfies <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>0</mn>
   <mo>&lt;</mo>
@@ -4054,6 +4684,7 @@
   <mn>1</mn>
 </math></span> it converges, so the given series <strong>converges</strong> by the Limit Comparison Test.</p></section>
 <h2 id="sec-1-alternating-series"><span class="sec-number">1.5</span>Alternating Series</h2>
+<p class="lecture-video"><a href="https://www.youtube.com/watch?v=uHnE9O9ORoQ&amp;t=0s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> Lecture 3, Part 1: Alternating Series (0:00)</a></p>
 <p>Many series we have studied so far have non-negative terms. We now consider an important class of series whose terms alternate in sign.</p>
 <section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Alternating Series</span></header><p>A series is called <strong>alternating</strong> if the signs of its terms switch between positive and negative, for example</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
@@ -4085,7 +4716,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.52">(1.52)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.59">(1.59)</span></div>
 <p>Equivalently, it may be written in the form</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -4130,7 +4761,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:alt-series-general">(1.53)</span></div></section>
+</math><span class="eqn-number" id="mjx-eqn:eq:alt-series-general">(1.60)</span></div></section>
 <section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">Alternating harmonic series</span></header><div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -4181,8 +4812,8 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:alt-harmonic">(1.54)</span></div></section>
-<section class="callout theorem"><header><span class="callout-kind">Theorem</span><span class="callout-title">Alternating Series Test (Leibniz Criterion)</span></header><p>An alternating series of the form <a class="eqn-ref" href="#mjx-eqn:eq:alt-series-general">(1.53)</a></p>
+</math><span class="eqn-number" id="mjx-eqn:eq:alt-harmonic">(1.61)</span></div></section>
+<section class="callout theorem"><header><span class="callout-kind">Theorem</span><span class="callout-title">Alternating Series Test (Leibniz Criterion)</span></header><p>An alternating series of the form <a class="eqn-ref" href="#mjx-eqn:eq:alt-series-general">(1.60)</a></p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -4219,7 +4850,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.55">(1.55)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.62">(1.62)</span></div>
 <p><strong>converges</strong> if</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -4264,7 +4895,27 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:leibniz">(1.56)</span></div></section>
+</math><span class="eqn-number" id="mjx-eqn:eq:leibniz">(1.63)</span></div></section>
+<p class="paragraph-title">Why it works.</p>
+<p>The partial sums move up and down by turns, and each step is no larger than the one before. So every later partial sum stays between any two consecutive ones: the partial sums swing back and forth inside a window that keeps shrinking, and when <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>a</mi>
+    <mi>n</mi>
+  </msub>
+  <mo accent="false" stretchy="false">→</mo>
+  <mn>0</mn>
+</math></span> the window closes on a single number, the sum. The same picture shows that stopping after <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>N</mi>
+</math></span> terms makes an error of at most <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>a</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>N</mi>
+      <mo>+</mo>
+      <mn>1</mn>
+    </mrow>
+  </msub>
+</math></span>, the first term left out.</p>
 <h3 id="sec-1-absolute-vs-conditional-convergence"><span class="sec-number">1.5.1</span>Absolute vs. Conditional Convergence</h3>
 <section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Absolute and conditional convergence</span></header><ul><li><p>If <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mstyle displaystyle="true" scriptlevel="0">
@@ -4448,7 +5099,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.57">(1.57)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.64">(1.64)</span></div>
 <p>which is a <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>p</mi>
 </math></span>-series with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -4457,7 +5108,7 @@
   <mn>2</mn>
   <mo>&gt;</mo>
   <mn>1</mn>
-</math></span> and therefore converges by <a class="eqn-ref" href="#mjx-eqn:eq:p-series">(1.42)</a>. Since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> and therefore converges by <a class="eqn-ref" href="#mjx-eqn:eq:p-series">(1.47)</a>. Since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo data-mjx-texclass="OP">∑</mo>
   <mo stretchy="false">|</mo>
   <msub>
@@ -4494,7 +5145,7 @@
       <mi>n</mi>
     </mfrac>
   </mstyle>
-</math></span> from <a class="eqn-ref" href="#mjx-eqn:eq:alt-harmonic">(1.54)</a>.</p>
+</math></span> from <a class="eqn-ref" href="#mjx-eqn:eq:alt-harmonic">(1.61)</a>.</p>
 <p class="solution-head">Solution.</p>
 <p>Set <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
@@ -4553,7 +5204,7 @@
   <mi>n</mi>
   <mo>=</mo>
   <mn>0</mn>
-</math></span>, so both conditions in <a class="eqn-ref" href="#mjx-eqn:eq:leibniz">(1.56)</a> hold and the series <strong>converges</strong> by the Alternating Series Test.</p>
+</math></span>, so both conditions in <a class="eqn-ref" href="#mjx-eqn:eq:leibniz">(1.63)</a> hold and the series <strong>converges</strong> by the Alternating Series Test.</p>
 <p>However, taking absolute values gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo data-mjx-texclass="OP">∑</mo>
   <mn>1</mn>
@@ -4563,8 +5214,12 @@
   <mi>n</mi>
 </math></span>, the harmonic series, which diverges. The series therefore converges but not absolutely: it is <strong>conditionally convergent</strong>. Its sum is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ln</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mn>2</mn>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mn>2</mn>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
 </math></span>.</p></section>
 <section class="callout remark"><header>Remark</header><p>The distinction is not merely bookkeeping. The terms of an absolutely convergent series may be rearranged freely without changing the sum, exactly as with a finite sum. This is <em>false</em> for a conditionally convergent series: by reordering the alternating harmonic series one can make it converge to any number at all. Whenever you reorder, split, or term-by-term combine infinite series, absolute convergence is the property that makes it legitimate.</p></section>
 <h2 id="sec-1-summary-convergence-tests">Summary: Convergence Tests</h2>
@@ -4749,8 +5404,9 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.58">(1.58)</span></div></section>
+</math><span class="eqn-number" id="mjx-eqn:1.65">(1.65)</span></div></section>
 <h2 id="sec-1-power-series"><span class="sec-number">1.7</span>Power Series</h2>
+<p class="lecture-video"><a href="https://www.youtube.com/watch?v=uHnE9O9ORoQ&amp;t=224s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> Lecture 3, Part 2: Power Series (3:44)</a></p>
 <section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Power Series</span></header><p>A <strong>power series</strong> centered at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>a</mi>
 </math></span> is an infinite series of the form</p>
@@ -4813,7 +5469,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.59">(1.59)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.66">(1.66)</span></div>
 <p>where:</p>
 <ul><li><p><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
@@ -4970,7 +5626,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.60">(1.60)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.67">(1.67)</span></div>
 <p>with conventions: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ρ</mi>
   <mo>=</mo>
@@ -5025,7 +5681,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.61">(1.61)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.68">(1.68)</span></div>
 <p class="solution-head">Solution.</p>
 <p>The series is centred at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>a</mi>
@@ -5130,7 +5786,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.62">(1.62)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.69">(1.69)</span></div>
 <p>so <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ρ</mi>
   <mo>=</mo>
@@ -5286,7 +5942,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.63">(1.63)</span></div></section>
+</math><span class="eqn-number" id="mjx-eqn:1.70">(1.70)</span></div></section>
 <section class="callout example"><header>Example</header><p>Find the radius and interval of convergence of</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -5327,7 +5983,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.64">(1.64)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.71">(1.71)</span></div>
 <p class="solution-head">Solution.</p>
 <p>Here <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
@@ -5449,7 +6105,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.65">(1.65)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.72">(1.72)</span></div>
 <p>so <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ρ</mi>
   <mo>=</mo>
@@ -5622,7 +6278,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.66">(1.66)</span></div></section>
+</math><span class="eqn-number" id="mjx-eqn:1.73">(1.73)</span></div></section>
 <section class="callout remark"><header><span class="callout-kind">Remark</span><span class="callout-title">The commonest endpoint mistake</span></header><p>Notice what happened at the endpoints above. It is tempting to look only at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>c</mi>
@@ -5732,7 +6388,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.67">(1.67)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.74">(1.74)</span></div>
 <p>has radius of convergence <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>R</mi>
   <mo>&gt;</mo>
@@ -5854,7 +6510,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.68">(1.68)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.75">(1.75)</span></div>
 <p>Both resulting power series have the same radius of convergence <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>R</mi>
 </math></span>.</p></li><li><p><strong>Algebra of Series.</strong> Power series may be added, subtracted, and multiplied term by term. The resulting series converges at least in the intersection of the original intervals of convergence. Division is valid provided the denominator does not vanish at the center <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -5865,8 +6521,12 @@
   <mfrac>
     <mrow>
       <mi>sin</mi>
-      <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-      <mi>x</mi>
+      <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+      <mrow>
+        <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+      </mrow>
     </mrow>
     <mi>x</mi>
   </mfrac>
@@ -5930,7 +6590,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.69">(1.69)</span></div></li><li><p><strong>Uniqueness.</strong> A power series represents a unique function on its interval of convergence, and the coefficients satisfy</p>
+</math><span class="eqn-number" id="mjx-eqn:1.76">(1.76)</span></div></li><li><p><strong>Uniqueness.</strong> A power series represents a unique function on its interval of convergence, and the coefficients satisfy</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -5963,8 +6623,9 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.70">(1.70)</span></div></li></ol></section>
+</math><span class="eqn-number" id="mjx-eqn:1.77">(1.77)</span></div></li></ol></section>
 <h2 id="sec-1-taylor-and-maclaurin-series"><span class="sec-number">1.9</span>Taylor and Maclaurin Series</h2>
+<p class="lecture-video"><a href="https://www.youtube.com/watch?v=uHnE9O9ORoQ&amp;t=538s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> Lecture 3, Part 3: Taylor and Maclaurin Series (8:58)</a></p>
 <h3 id="sec-1-finding-the-coefficients">Finding the Coefficients</h3>
 <p>Suppose a function <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>f</mi>
@@ -6018,7 +6679,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.71">(1.71)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.78">(1.78)</span></div>
 <p>Differentiating term by term yields</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -6129,7 +6790,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.72">(1.72)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.79">(1.79)</span></div>
 <p>Evaluating successively at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>x</mi>
   <mo>=</mo>
@@ -6196,7 +6857,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.73">(1.73)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.80">(1.80)</span></div>
 <p>Therefore, in general,</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -6238,12 +6899,16 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.74">(1.74)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.81">(1.81)</span></div>
 <section class="callout theorem"><header><span class="callout-kind">Theorem</span><span class="callout-title">Taylor Series</span></header><p>If <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>f</mi>
-</math></span> has derivatives of all orders in an open interval containing <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> can be written as a power series about <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>=</mo>
   <mi>a</mi>
-</math></span>, then</p>
+</math></span> on an open interval containing <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+</math></span>, then that series must be</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -6294,10 +6959,10 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.75">(1.75)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.82">(1.82)</span></div>
 <p>for every <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>x</mi>
-</math></span> in the interval where the series converges. This is called the <strong>Taylor series of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> in that interval. This is called the <strong>Taylor series of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>f</mi>
 </math></span> about <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>x</mi>
@@ -6346,7 +7011,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.76">(1.76)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.83">(1.83)</span></div>
 <p>Substituting these coefficients into the original power series yields</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -6423,7 +7088,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.77">(1.77)</span></div></div>
+</math><span class="eqn-number" id="mjx-eqn:1.84">(1.84)</span></div></div>
 <section class="callout remark"><header><span class="callout-kind">Remark</span><span class="callout-title">What this argument does and does not show</span></header><p>Read the proof carefully: it <em>assumes</em> that <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>f</mi>
 </math></span> equals <em>some</em> power series, and then shows the coefficients could only be <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -6504,7 +7169,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.78">(1.78)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.85">(1.85)</span></div>
 <p>has derivatives of every order at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>x</mi>
   <mo>=</mo>
@@ -6538,21 +7203,29 @@
   </msup>
 </math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>sin</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mi>x</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
 </math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>cos</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mi>x</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
 </math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ln</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
   <mrow>
-    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
     <mn>1</mn>
     <mo>+</mo>
     <mi>x</mi>
-    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
   </mrow>
 </math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo stretchy="false">(</mo>
@@ -6619,17 +7292,25 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.79">(1.79)</span></div></section>
+</math><span class="eqn-number" id="mjx-eqn:1.86">(1.86)</span></div></section>
 <section class="callout example"><header>Example</header><p>Find the Maclaurin series for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>sin</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mi>x</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
 </math></span>.</p>
 <p class="solution-head">Solution.</p>
 <p>Differentiate repeatedly. The derivatives of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>sin</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mi>x</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
 </math></span> repeat with period four, so we only ever need these four:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -6647,8 +7328,12 @@
               <mi />
               <mo>=</mo>
               <mi>sin</mi>
-              <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-              <mi>x</mi>
+              <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+              <mrow>
+                <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+                <mi>x</mi>
+                <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+              </mrow>
               <mo>,</mo>
             </mtd>
             <mtd>
@@ -6681,8 +7366,12 @@
               <mi />
               <mo>=</mo>
               <mi>cos</mi>
-              <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-              <mi>x</mi>
+              <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+              <mrow>
+                <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+                <mi>x</mi>
+                <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+              </mrow>
               <mo>,</mo>
             </mtd>
             <mtd>
@@ -6719,8 +7408,12 @@
               <mo>=</mo>
               <mo form="prefix" lspace="0em" rspace="0em">−</mo>
               <mi>sin</mi>
-              <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-              <mi>x</mi>
+              <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+              <mrow>
+                <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+                <mi>x</mi>
+                <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+              </mrow>
               <mo>,</mo>
             </mtd>
             <mtd>
@@ -6757,8 +7450,12 @@
               <mo>=</mo>
               <mo form="prefix" lspace="0em" rspace="0em">−</mo>
               <mi>cos</mi>
-              <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-              <mi>x</mi>
+              <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+              <mrow>
+                <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+                <mi>x</mi>
+                <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+              </mrow>
               <mo>,</mo>
             </mtd>
             <mtd>
@@ -6785,7 +7482,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.80">(1.80)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.87">(1.87)</span></div>
 <p>and then the pattern <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>0</mn>
   <mo>,</mo>
@@ -6828,8 +7525,12 @@
     <mtr>
       <mtd>
         <mi>sin</mi>
-        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mi>x</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+          <mi>x</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+        </mrow>
         <mo>=</mo>
         <mi>x</mi>
         <mo>−</mo>
@@ -6871,15 +7572,19 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.81">(1.81)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.88">(1.88)</span></div>
 <p>Only odd powers survive, with alternating signs, so</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
         <mi>sin</mi>
-        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mi>x</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+          <mi>x</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+        </mrow>
         <mo>=</mo>
         <munderover>
           <mo data-mjx-texclass="OP" stretchy="true">∑</mo>
@@ -6930,7 +7635,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.82">(1.82)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.89">(1.89)</span></div>
 <p>The Ratio Test confirms <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>R</mi>
   <mo>=</mo>
@@ -6942,28 +7647,40 @@
 </math></span>.</p></section>
 <section class="callout remark"><header>Remark</header><p>That <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>sin</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mi>x</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
 </math></span> contains only odd powers is no accident. <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>sin</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
   <mrow>
-    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
     <mo form="prefix" lspace="0em" rspace="0em">−</mo>
     <mi>x</mi>
-    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
   </mrow>
   <mo>=</mo>
   <mo form="prefix" lspace="0em" rspace="0em">−</mo>
   <mi>sin</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mi>x</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
 </math></span> makes it an <em>odd</em> function, and only odd powers of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>x</mi>
 </math></span> are odd functions. Likewise <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>cos</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mi>x</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
 </math></span> is even and its series below contains only even powers. This is a quick way to catch algebra errors: if an even power appears in a series for an odd function, something has gone wrong.</p></section>
 <section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">Physics: the small-angle pendulum</span></header><p>A pendulum of length <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>L</mi>
@@ -6996,30 +7713,42 @@
           <mi>g</mi>
           <mi>L</mi>
         </mfrac>
-        <mi>sin</mi>
-        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mi>θ</mi>
+        <mspace width="0.167em" /><mi>sin</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+          <mi>θ</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+        </mrow>
         <mo>,</mo>
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:pendulum-exact">(1.83)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:pendulum-exact">(1.90)</span></div>
 <p>where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>g</mi>
 </math></span> is the acceleration due to gravity. This equation cannot be solved in terms of elementary functions. Show how a series expansion rescues the situation for small swings.</p>
 <p class="solution-head">Solution.</p>
 <p>The obstacle is the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>sin</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mi>θ</mi>
-</math></span> on the right, which makes <a class="eqn-ref" href="#mjx-eqn:eq:pendulum-exact">(1.83)</a> <em>nonlinear</em>. Replace it by its Maclaurin series:</p>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>θ</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+</math></span> on the right, which makes <a class="eqn-ref" href="#mjx-eqn:eq:pendulum-exact">(1.90)</a> <em>nonlinear</em>. Replace it by its Maclaurin series:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
         <mi>sin</mi>
-        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mi>θ</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+          <mi>θ</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+        </mrow>
         <mo>=</mo>
         <mi>θ</mi>
         <mo>−</mo>
@@ -7049,16 +7778,20 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.84">(1.84)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.91">(1.91)</span></div>
 <p>For a small swing, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>θ</mi>
 </math></span> is small and each successive term is far smaller than the one before. Keeping only the first term gives the <strong>small-angle approximation</strong> <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>sin</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mi>θ</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>θ</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
   <mo>≈</mo>
   <mi>θ</mi>
-</math></span>, and <a class="eqn-ref" href="#mjx-eqn:eq:pendulum-exact">(1.83)</a> becomes</p>
+</math></span>, and <a class="eqn-ref" href="#mjx-eqn:eq:pendulum-exact">(1.90)</a> becomes</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -7093,7 +7826,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.85">(1.85)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.92">(1.92)</span></div>
 <p>which is linear and has the familiar oscillating solution <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>θ</mi>
   <mo stretchy="false">(</mo>
@@ -7104,13 +7837,13 @@
     <mi>θ</mi>
     <mn>0</mn>
   </msub>
-  <mi>cos</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mspace width="0.167em" /><mi>cos</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
   <mrow>
-    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
     <mi>ω</mi>
     <mi>t</mi>
-    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
   </mrow>
 </math></span> with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ω</mi>
@@ -7165,7 +7898,144 @@
   <mi mathvariant="normal">%</mi>
 </math></span>. Note that <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>θ</mi>
-</math></span> must be in <strong>radians</strong> — the series is only valid in radians, which is the real reason radians are the natural unit for angles in physics.</p></section>
+</math></span> must be in <strong>radians</strong> — the series is only valid in radians, which is the real reason radians are the natural unit for angles in physics.</p>
+<p>The period depends on the approximation even less than the force does. To see this, we can solve the exact equation <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mi>θ</mi>
+      <mo>¨</mo>
+    </mover>
+  </mrow>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mo stretchy="false">(</mo>
+  <mi>g</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>L</mi>
+  <mo stretchy="false">)</mo>
+  <mi>sin</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>θ</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+</math></span> numerically and compare the result with the small-angle solution <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>θ</mi>
+    <mn>0</mn>
+  </msub>
+  <mspace width="0.167em" /><mi>cos</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>ω</mi>
+    <mi>t</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+</math></span>. Take a pendulum of length <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>L</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span> m, whose small-angle period is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>T</mi>
+  <mo>=</mo>
+  <mn>2</mn>
+  <mi>π</mi>
+  <msqrt>
+    <mi>L</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo>/</mo>
+    </mrow>
+    <mi>g</mi>
+  </msqrt>
+  <mo>=</mo>
+  <mn>2.006</mn>
+</math></span> s. Released from <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>10</mn>
+    <mo>∘</mo>
+  </msup>
+</math></span>, the pendulum has an exact period of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2.010</mn>
+</math></span> s, only <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0.2</mn>
+  <mi mathvariant="normal">%</mi>
+</math></span> longer, and the two solutions are practically identical. Released from <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>60</mn>
+    <mo>∘</mo>
+  </msup>
+</math></span>, it has an exact period of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2.153</mn>
+</math></span> s, which is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>7.3</mn>
+  <mi mathvariant="normal">%</mi>
+</math></span> longer, and after four swings the exact pendulum lags behind the approximation by about <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0.6</mn>
+</math></span> s. The exact pendulum is slower because <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>sin</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>θ</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+  <mo>&lt;</mo>
+  <mi>θ</mi>
+</math></span> for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>θ</mi>
+  <mo>&gt;</mo>
+  <mn>0</mn>
+</math></span>: the true restoring force is weaker than the approximation assumes, so the pendulum takes longer to swing back.</p>
+<figure id="chapter-01-fig-1" class="figure animation"><img src="assets/img/ch01_anim_pendulum.gif" class="diagram" alt="The angle /0 over four periods for release angles of 10^ (top) and 60^ (bottom). Blue: the exact motion, computed numerically. Dashed red: the small-angle approximation 0( t). The two agree at 10^ but drift apart at 60^. On the left, both pendulums hang from the same pivot." loading="lazy"><figcaption>Figure 1.1. The angle <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>θ</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msub>
+    <mi>θ</mi>
+    <mn>0</mn>
+  </msub>
+</math></span> over four periods for release angles of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>10</mn>
+    <mo>∘</mo>
+  </msup>
+</math></span> (top) and
+		<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>60</mn>
+    <mo>∘</mo>
+  </msup>
+</math></span> (bottom). Blue: the exact motion, computed numerically. Dashed red: the
+		small-angle approximation <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>θ</mi>
+    <mn>0</mn>
+  </msub>
+  <mspace width="0.167em" /><mi>cos</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>ω</mi>
+    <mi>t</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+</math></span>. The two agree at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>10</mn>
+    <mo>∘</mo>
+  </msup>
+</math></span> but drift
+		apart at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>60</mn>
+    <mo>∘</mo>
+  </msup>
+</math></span>. On the left, both pendulums hang from the same pivot.</figcaption></figure></section>
 <h3 id="sec-1-common-maclaurin-series">Common Maclaurin Series</h3>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -7244,14 +8114,18 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.86">(1.86)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.93">(1.93)</span></div>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
         <mi>sin</mi>
-        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mi>x</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+          <mi>x</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+        </mrow>
         <mo>=</mo>
         <munderover>
           <mo data-mjx-texclass="OP" stretchy="true">∑</mo>
@@ -7338,14 +8212,18 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.87">(1.87)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.94">(1.94)</span></div>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
         <mi>cos</mi>
-        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mi>x</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+          <mi>x</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+        </mrow>
         <mo>=</mo>
         <munderover>
           <mo data-mjx-texclass="OP" stretchy="true">∑</mo>
@@ -7428,19 +8306,19 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.88">(1.88)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.95">(1.95)</span></div>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
         <mi>ln</mi>
-        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
         <mrow>
-          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
           <mn>1</mn>
           <mo>+</mo>
           <mi>x</mi>
-          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
         </mrow>
         <mo>=</mo>
         <munderover>
@@ -7513,7 +8391,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.89">(1.89)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.96">(1.96)</span></div>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -7590,17 +8468,17 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.90">(1.90)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.97">(1.97)</span></div>
 <section class="callout remark"><header>Remark</header><p>Memorise these five. Almost every series in this chapter, and most you will meet later, is obtained from one of them by substitution, differentiation, integration, or multiplication — the techniques of the next section — rather than by computing derivatives from scratch.</p>
 <p>Note the endpoint in <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ln</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
   <mrow>
-    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
     <mn>1</mn>
     <mo>+</mo>
     <mi>x</mi>
-    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
   </mrow>
 </math></span>: the series does converge at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>x</mi>
@@ -7608,8 +8486,12 @@
   <mn>1</mn>
 </math></span>, where it gives the alternating harmonic series and hence <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ln</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mn>2</mn>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mn>2</mn>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
 </math></span>, as promised in Section <a class="xref" href="../chapter-01/index.html#sec-1-testing-series-for-convergence">1.4</a>. It diverges at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>x</mi>
   <mo>=</mo>
@@ -7630,6 +8512,7 @@
   <mn>1</mn>
 </math></span>.</p></section>
 <h2 id="sec-1-techniques-for-obtaining-power-series-expansions"><span class="sec-number">1.10</span>Techniques for Obtaining Power Series Expansions</h2>
+<p class="lecture-video"><a href="https://www.youtube.com/watch?v=uHnE9O9ORoQ&amp;t=787s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> Lecture 3, Part 4: Building Power Series (13:07)</a></p>
 <p>Power series expansions can be generated or modified using several systematic techniques. These allow you to construct new series from known ones without starting from scratch.</p>
 <h3 id="sec-1-using-differentiation-and-integration"><span class="sec-number">1.10.1</span>Using Differentiation and Integration</h3>
 <section class="callout example"><header>Example</header><p>Start with the geometric series for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -7669,7 +8552,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.91">(1.91)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.98">(1.98)</span></div>
 <p>Differentiate term-by-term:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -7714,7 +8597,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.92">(1.92)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.99">(1.99)</span></div>
 <p>Integrate term-by-term:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -7722,13 +8605,13 @@
       <mtd>
         <mo form="prefix" lspace="0em" rspace="0em">−</mo>
         <mi>ln</mi>
-        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
         <mrow>
-          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
           <mn>1</mn>
           <mo>−</mo>
           <mi>x</mi>
-          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
         </mrow>
         <mo>=</mo>
         <munderover>
@@ -7751,7 +8634,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.93">(1.93)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.100">(1.100)</span></div>
 <p>Both series have radius <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>R</mi>
   <mo>=</mo>
@@ -7766,7 +8649,218 @@
   <mo>=</mo>
   <mi>R</mi>
 </math></span>, the differentiated or integrated series may behave differently from the original. Endpoint behavior must be checked separately.</p></section>
+<section class="callout example"><header>Example</header><p>Obtain the Maclaurin series of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>cos</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+</math></span> from that of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>sin</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+</math></span>.</p>
+<p class="solution-head">Solution.</p>
+<p>Since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>cos</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+  <mo>=</mo>
+  <mfrac>
+    <mi>d</mi>
+    <mrow>
+      <mi>d</mi>
+      <mi>x</mi>
+    </mrow>
+  </mfrac>
+  <mspace width="0.167em" /><mi>sin</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+</math></span>, differentiate the series of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>sin</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+</math></span> term by term:</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>cos</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+          <mi>x</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+        </mrow>
+        <mo>=</mo>
+        <mfrac>
+          <mi>d</mi>
+          <mrow>
+            <mi>d</mi>
+            <mi>x</mi>
+          </mrow>
+        </mfrac>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mi>x</mi>
+          <mo>−</mo>
+          <mfrac>
+            <msup>
+              <mi>x</mi>
+              <mn>3</mn>
+            </msup>
+            <mrow>
+              <mn>3</mn>
+              <mo>!</mo>
+            </mrow>
+          </mfrac>
+          <mo>+</mo>
+          <mfrac>
+            <msup>
+              <mi>x</mi>
+              <mn>5</mn>
+            </msup>
+            <mrow>
+              <mn>5</mn>
+              <mo>!</mo>
+            </mrow>
+          </mfrac>
+          <mo>−</mo>
+          <mo>⋯</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
+        <mo>=</mo>
+        <mn>1</mn>
+        <mo>−</mo>
+        <mfrac>
+          <mrow>
+            <mn>3</mn>
+            <msup>
+              <mi>x</mi>
+              <mn>2</mn>
+            </msup>
+          </mrow>
+          <mrow>
+            <mn>3</mn>
+            <mo>!</mo>
+          </mrow>
+        </mfrac>
+        <mo>+</mo>
+        <mfrac>
+          <mrow>
+            <mn>5</mn>
+            <msup>
+              <mi>x</mi>
+              <mn>4</mn>
+            </msup>
+          </mrow>
+          <mrow>
+            <mn>5</mn>
+            <mo>!</mo>
+          </mrow>
+        </mfrac>
+        <mo>−</mo>
+        <mo>⋯</mo>
+        <mo>=</mo>
+        <mn>1</mn>
+        <mo>−</mo>
+        <mfrac>
+          <msup>
+            <mi>x</mi>
+            <mn>2</mn>
+          </msup>
+          <mrow>
+            <mn>2</mn>
+            <mo>!</mo>
+          </mrow>
+        </mfrac>
+        <mo>+</mo>
+        <mfrac>
+          <msup>
+            <mi>x</mi>
+            <mn>4</mn>
+          </msup>
+          <mrow>
+            <mn>4</mn>
+            <mo>!</mo>
+          </mrow>
+        </mfrac>
+        <mo>−</mo>
+        <mo>⋯</mo>
+        <mo>,</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:1.101">(1.101)</span></div>
+<p>using <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>3</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>3</mn>
+  <mo>!</mo>
+  <mo>=</mo>
+  <mn>1</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+  <mo>!</mo>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>5</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>5</mn>
+  <mo>!</mo>
+  <mo>=</mo>
+  <mn>1</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>4</mn>
+  <mo>!</mo>
+</math></span>. This is the series of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>cos</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+</math></span> listed among the common Maclaurin series, obtained without computing a single derivative of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>cos</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+</math></span>, and it keeps the radius <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>R</mi>
+  <mo>=</mo>
+  <mi mathvariant="normal">∞</mi>
+</math></span>.</p></section>
 <h3 id="sec-1-multiplying-a-series-by-a-polynomial-or-by-another-series"><span class="sec-number">1.10.2</span>Multiplying a Series by a Polynomial or by Another Series</h3>
+<p class="lecture-video"><a href="https://www.youtube.com/watch?v=uHnE9O9ORoQ&amp;t=1032s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> Lecture 3, Part 5: Multiplying Power Series (17:12)</a></p>
 <p>If</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -7801,7 +8895,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.94">(1.94)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.102">(1.102)</span></div>
 <p>and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>P</mi>
   <mo stretchy="false">(</mo>
@@ -7831,12 +8925,20 @@
   <mn>1</mn>
   <mo stretchy="false">)</mo>
   <mi>sin</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mi>x</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
 </math></span>, we multiply the Maclaurin series for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>sin</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mi>x</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
 </math></span> by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo stretchy="false">(</mo>
   <mi>x</mi>
@@ -7854,8 +8956,12 @@
         <mn>1</mn>
         <mo stretchy="false">)</mo>
         <mi>sin</mi>
-        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mi>x</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+          <mi>x</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+        </mrow>
         <mo>=</mo>
         <mo stretchy="false">(</mo>
         <mi>x</mi>
@@ -7895,7 +9001,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.95">(1.95)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.103">(1.103)</span></div>
 <p>Expanding and combining like terms:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -7907,8 +9013,12 @@
         <mn>1</mn>
         <mo stretchy="false">)</mo>
         <mi>sin</mi>
-        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mi>x</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+          <mi>x</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+        </mrow>
         <mo>=</mo>
         <mi>x</mi>
         <mo>+</mo>
@@ -7944,7 +9054,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.96">(1.96)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.104">(1.104)</span></div>
 <p>Thus, the series begins</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -7956,8 +9066,12 @@
         <mn>1</mn>
         <mo stretchy="false">)</mo>
         <mi>sin</mi>
-        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mi>x</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+          <mi>x</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+        </mrow>
         <mo>=</mo>
         <mi>x</mi>
         <mo>+</mo>
@@ -7987,7 +9101,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.97">(1.97)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.105">(1.105)</span></div>
 <p>This illustrates how multiplying a series by a polynomial simply shifts and rescales its terms. Notice that this method is easier than computing successive derivatives of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo stretchy="false">(</mo>
   <mi>x</mi>
@@ -7995,17 +9109,25 @@
   <mn>1</mn>
   <mo stretchy="false">)</mo>
   <mi>sin</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mi>x</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
 </math></span> to form its Taylor series directly.</p></section>
 <section class="callout example"><header>Example</header><p>To find the series for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>e</mi>
     <mi>x</mi>
   </msup>
-  <mi>cos</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mi>x</mi>
+  <mspace width="0.167em" /><mi>cos</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
 </math></span>, multiply the Maclaurin series for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>e</mi>
@@ -8013,8 +9135,12 @@
   </msup>
 </math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>cos</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mi>x</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
 </math></span>:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -8024,9 +9150,13 @@
           <mi>e</mi>
           <mi>x</mi>
         </msup>
-        <mi>cos</mi>
-        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mi>x</mi>
+        <mspace width="0.167em" /><mi>cos</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+          <mi>x</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+        </mrow>
         <mo>=</mo>
         <mrow data-mjx-texclass="INNER">
           <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
@@ -8103,7 +9233,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.98">(1.98)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.106">(1.106)</span></div>
 <p>Work power by power. For each power of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>x</mi>
 </math></span>, collect every way of forming it as (term from <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -8115,8 +9245,12 @@
   <mo>×</mo>
 </math></span> (term from <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>cos</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mi>x</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
 </math></span>):</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -8385,7 +9519,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.99">(1.99)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.107">(1.107)</span></div>
 <p>Thus the series begins</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -8395,9 +9529,13 @@
           <mi>e</mi>
           <mi>x</mi>
         </msup>
-        <mi>cos</mi>
-        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mi>x</mi>
+        <mspace width="0.167em" /><mi>cos</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+          <mi>x</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+        </mrow>
         <mo>=</mo>
         <mn>1</mn>
         <mo>+</mo>
@@ -8424,7 +9562,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.100">(1.100)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.108">(1.108)</span></div>
 <p>Note that the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>x</mi>
@@ -8445,7 +9583,255 @@
     <mi>x</mi>
     <mn>4</mn>
   </msup>
-</math></span> from either factor.</p></section>
+</math></span> from either factor.</p>
+<p>A table makes the first warning automatic. Put the terms of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>e</mi>
+    <mi>x</mi>
+  </msup>
+</math></span> down the side and those of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>cos</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+</math></span> across the top, keeping the zeros of the missing odd powers so that each column is one power. Each cell is one product. One step down or one step right raises the power by one, so all products of the same power lie on one <em>anti-diagonal</em>:</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mtable columnalign="center center center center center center" columnspacing="1em" rowspacing="4pt 0.6em 0.6em 0.6em 0.6em 0.4em" columnlines="solid none none none none" rowlines="solid none">
+          <mtr>
+            <mtd style="border-right: 1px solid currentColor; padding-right: 0.5em; padding-left: 0.5em; text-align: center">
+              <mo>×</mo>
+            </mtd>
+            <mtd style="text-align: center">
+              <mn>1</mn>
+            </mtd>
+            <mtd style="text-align: center">
+              <mn>0</mn>
+            </mtd>
+            <mtd style="text-align: center">
+              <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+              <mstyle displaystyle="false" scriptlevel="0">
+                <mfrac>
+                  <msup>
+                    <mi>x</mi>
+                    <mn>2</mn>
+                  </msup>
+                  <mrow>
+                    <mn>2</mn>
+                    <mo>!</mo>
+                  </mrow>
+                </mfrac>
+              </mstyle>
+            </mtd>
+            <mtd style="text-align: center">
+              <mn>0</mn>
+            </mtd>
+            <mtd style="text-align: center">
+              <mstyle displaystyle="false" scriptlevel="0">
+                <mfrac>
+                  <msup>
+                    <mi>x</mi>
+                    <mn>4</mn>
+                  </msup>
+                  <mrow>
+                    <mn>4</mn>
+                    <mo>!</mo>
+                  </mrow>
+                </mfrac>
+              </mstyle>
+            </mtd>
+          </mtr>
+          <mtr>
+            <mtd style="border-right: 1px solid currentColor; padding-right: 0.5em; padding-left: 0.5em; text-align: center">
+              <mn>1</mn>
+            </mtd>
+            <mtd style="text-align: center">
+              <mn>1</mn>
+            </mtd>
+            <mtd style="text-align: center" />
+            <mtd style="text-align: center">
+              <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+              <mstyle displaystyle="false" scriptlevel="0">
+                <mfrac>
+                  <msup>
+                    <mi>x</mi>
+                    <mn>2</mn>
+                  </msup>
+                  <mn>2</mn>
+                </mfrac>
+              </mstyle>
+            </mtd>
+            <mtd style="text-align: center" />
+            <mtd style="text-align: center">
+              <mstyle displaystyle="false" scriptlevel="0">
+                <mfrac>
+                  <msup>
+                    <mi>x</mi>
+                    <mn>4</mn>
+                  </msup>
+                  <mn>24</mn>
+                </mfrac>
+              </mstyle>
+            </mtd>
+          </mtr>
+          <mtr>
+            <mtd style="border-right: 1px solid currentColor; padding-right: 0.5em; padding-left: 0.5em; text-align: center">
+              <mi>x</mi>
+            </mtd>
+            <mtd style="text-align: center">
+              <mi>x</mi>
+            </mtd>
+            <mtd style="text-align: center" />
+            <mtd style="text-align: center">
+              <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+              <mstyle displaystyle="false" scriptlevel="0">
+                <mfrac>
+                  <msup>
+                    <mi>x</mi>
+                    <mn>3</mn>
+                  </msup>
+                  <mn>2</mn>
+                </mfrac>
+              </mstyle>
+            </mtd>
+            <mtd style="text-align: center" />
+            <mtd style="text-align: center" />
+          </mtr>
+          <mtr>
+            <mtd style="border-right: 1px solid currentColor; padding-right: 0.5em; padding-left: 0.5em; text-align: center">
+              <mstyle displaystyle="false" scriptlevel="0">
+                <mfrac>
+                  <msup>
+                    <mi>x</mi>
+                    <mn>2</mn>
+                  </msup>
+                  <mrow>
+                    <mn>2</mn>
+                    <mo>!</mo>
+                  </mrow>
+                </mfrac>
+              </mstyle>
+            </mtd>
+            <mtd style="text-align: center">
+              <mstyle displaystyle="false" scriptlevel="0">
+                <mfrac>
+                  <msup>
+                    <mi>x</mi>
+                    <mn>2</mn>
+                  </msup>
+                  <mn>2</mn>
+                </mfrac>
+              </mstyle>
+            </mtd>
+            <mtd style="text-align: center" />
+            <mtd style="text-align: center">
+              <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+              <mstyle displaystyle="false" scriptlevel="0">
+                <mfrac>
+                  <msup>
+                    <mi>x</mi>
+                    <mn>4</mn>
+                  </msup>
+                  <mn>4</mn>
+                </mfrac>
+              </mstyle>
+            </mtd>
+            <mtd style="text-align: center" />
+            <mtd style="text-align: center" />
+          </mtr>
+          <mtr>
+            <mtd style="border-right: 1px solid currentColor; padding-right: 0.5em; padding-left: 0.5em; text-align: center">
+              <mstyle displaystyle="false" scriptlevel="0">
+                <mfrac>
+                  <msup>
+                    <mi>x</mi>
+                    <mn>3</mn>
+                  </msup>
+                  <mrow>
+                    <mn>3</mn>
+                    <mo>!</mo>
+                  </mrow>
+                </mfrac>
+              </mstyle>
+            </mtd>
+            <mtd style="text-align: center">
+              <mstyle displaystyle="false" scriptlevel="0">
+                <mfrac>
+                  <msup>
+                    <mi>x</mi>
+                    <mn>3</mn>
+                  </msup>
+                  <mn>6</mn>
+                </mfrac>
+              </mstyle>
+            </mtd>
+            <mtd style="text-align: center" />
+            <mtd style="text-align: center" />
+            <mtd style="text-align: center" />
+            <mtd style="text-align: center" />
+          </mtr>
+          <mtr>
+            <mtd style="border-right: 1px solid currentColor; padding-right: 0.5em; padding-left: 0.5em; text-align: center">
+              <mstyle displaystyle="false" scriptlevel="0">
+                <mfrac>
+                  <msup>
+                    <mi>x</mi>
+                    <mn>4</mn>
+                  </msup>
+                  <mrow>
+                    <mn>4</mn>
+                    <mo>!</mo>
+                  </mrow>
+                </mfrac>
+              </mstyle>
+            </mtd>
+            <mtd style="text-align: center">
+              <mstyle displaystyle="false" scriptlevel="0">
+                <mfrac>
+                  <msup>
+                    <mi>x</mi>
+                    <mn>4</mn>
+                  </msup>
+                  <mn>24</mn>
+                </mfrac>
+              </mstyle>
+            </mtd>
+            <mtd style="text-align: center" />
+            <mtd style="text-align: center" />
+            <mtd style="text-align: center" />
+            <mtd style="text-align: center" />
+          </mtr>
+        </mtable>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:1.109">(1.109)</span></div>
+<p>Adding along each anti-diagonal reproduces the rows <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>x</mi>
+    <mn>0</mn>
+  </msup>
+</math></span> to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>x</mi>
+    <mn>4</mn>
+  </msup>
+</math></span> above; the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>x</mi>
+    <mn>4</mn>
+  </msup>
+</math></span> anti-diagonal visibly holds three products. (Cells beyond <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>x</mi>
+    <mn>4</mn>
+  </msup>
+</math></span> are left empty.)</p></section>
 <h3 id="sec-1-division-of-two-series-or-of-a-series-by-a-polynomial"><span class="sec-number">1.10.3</span>Division of Two Series or of a Series by a Polynomial</h3>
 <p>If <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>f</mi>
@@ -8476,8 +9862,12 @@
 </math></span> one at a time.</p>
 <section class="callout example"><header>Example</header><p>Find the Maclaurin series for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>tan</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mi>x</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
 </math></span> up to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>x</mi>
@@ -8487,16 +9877,24 @@
 <p class="solution-head">Solution.</p>
 <p>Rather than differentiate <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>tan</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mi>x</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
 </math></span> five times, divide the known series</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
         <mi>sin</mi>
-        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mi>x</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+          <mi>x</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+        </mrow>
         <mo>=</mo>
         <mi>x</mi>
         <mo>−</mo>
@@ -8521,9 +9919,13 @@
         <mstyle scriptlevel="0">
           <mspace width="2em" />
         </mstyle>
-        <mi>cos</mi>
-        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mi>x</mi>
+        <mspace width="0.167em" /><mi>cos</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+          <mi>x</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+        </mrow>
         <mo>=</mo>
         <mn>1</mn>
         <mo>−</mo>
@@ -8548,15 +9950,23 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.101">(1.101)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.110">(1.110)</span></div>
 <p>Since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>tan</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mi>x</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
 </math></span> is odd and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>tan</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mn>0</mn>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mn>0</mn>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
   <mo>=</mo>
   <mn>0</mn>
 </math></span>, only odd powers can appear. Write</p>
@@ -8565,8 +9975,12 @@
     <mtr>
       <mtd>
         <mi>tan</mi>
-        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mi>x</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+          <mi>x</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+        </mrow>
         <mo>=</mo>
         <msub>
           <mi>a</mi>
@@ -8596,19 +10010,31 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.102">(1.102)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.111">(1.111)</span></div>
 <p>and clear the denominator using <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>sin</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mi>x</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
   <mo>=</mo>
   <mi>tan</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mi>x</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
   <mo>⋅</mo>
   <mi>cos</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mi>x</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
 </math></span>:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -8686,7 +10112,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.103">(1.103)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.112">(1.112)</span></div>
 <p>Now match coefficients power by power:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -8883,7 +10309,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.104">(1.104)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.113">(1.113)</span></div>
 <p>Therefore</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -8894,9 +10320,13 @@
             <mstyle displaystyle="true" scriptlevel="0">
               <mrow data-mjx-texclass="ORD">
                 <mtext> </mtext>
-                <mi>tan</mi>
-                <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                <mi>x</mi>
+                <mspace width="0.167em" /><mi>tan</mi>
+                <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+                <mrow>
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+                  <mi>x</mi>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+                </mrow>
                 <mo>=</mo>
                 <mi>x</mi>
                 <mo>+</mo>
@@ -8928,21 +10358,33 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.105">(1.105)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.114">(1.114)</span></div>
 <p>Unlike <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>sin</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mi>x</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
 </math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>cos</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mi>x</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
 </math></span>, this series does <em>not</em> converge for all <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>x</mi>
 </math></span>: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>cos</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mi>x</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
 </math></span> vanishes at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>x</mi>
   <mo>=</mo>
@@ -8954,8 +10396,12 @@
   <mn>2</mn>
 </math></span>, where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>tan</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mi>x</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
 </math></span> blows up, so <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>R</mi>
   <mo>=</mo>
@@ -8966,6 +10412,7 @@
   <mn>2</mn>
 </math></span>. Dividing by a series always risks a smaller radius of convergence than either series started with.</p></section>
 <h3 id="sec-1-using-the-binomial-series"><span class="sec-number">1.10.4</span>Using the Binomial Series</h3>
+<p class="lecture-video"><a href="https://www.youtube.com/watch?v=uHnE9O9ORoQ&amp;t=1228s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> Lecture 3, Part 6: The Binomial Series and arctan (20:28)</a></p>
 <section class="callout theorem"><header><span class="callout-kind">Theorem</span><span class="callout-title">General Binomial Series</span></header><p>For any real or complex exponent <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>p</mi>
 </math></span>,</p>
@@ -9023,7 +10470,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.106">(1.106)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.115">(1.115)</span></div>
 <p>where the generalized binomial coefficients are given by</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -9090,7 +10537,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.107">(1.107)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.116">(1.116)</span></div>
 <p>The series converges for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo stretchy="false">|</mo>
   <mi>x</mi>
@@ -9212,7 +10659,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.108">(1.108)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.117">(1.117)</span></div>
 <p>Substituting into the binomial series — note that the signs are already carried by the coefficients, so we do <em>not</em> insert extra alternating signs by hand:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -9287,7 +10734,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.109">(1.109)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.118">(1.118)</span></div>
 <p>This is a useful check on the whole binomial machinery: the answer is just the geometric series with ratio <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo form="prefix" lspace="0em" rspace="0em">−</mo>
   <mi>x</mi>
@@ -9615,7 +11062,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.110">(1.110)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.119">(1.119)</span></div>
 <p>Hence</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -9676,7 +11123,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.111">(1.111)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.120">(1.120)</span></div>
 <p>Only the first two terms are needed in most applications: for small <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>x</mi>
 </math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -9732,7 +11179,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.112">(1.112)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.121">(1.121)</span></div>
 <p>where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>G</mi>
 </math></span> is the gravitational constant. The familiar classroom formula is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -9808,7 +11255,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.113">(1.113)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.122">(1.122)</span></div>
 <p>Near the Earth's surface <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>h</mi>
   <mo>≪</mo>
@@ -9878,7 +11325,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.114">(1.114)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.123">(1.123)</span></div>
 <p>Therefore</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -9971,7 +11418,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.115">(1.115)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.124">(1.124)</span></div>
 <p>The first term does not depend on <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>h</mi>
 </math></span>; since only <em>changes</em> in potential energy are physically meaningful, it can be discarded by choosing where to put the zero of energy. The second term is exactly <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -10021,7 +11468,16 @@
 </math></span> is about <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>0.02</mn>
   <mi mathvariant="normal">%</mi>
-</math></span>. This is the same pattern as the relativistic kinetic energy of Section <a class="xref" href="../chapter-01/index.html#sec-1-applications-of-series">1.11</a>: the simple formula is the first term of a series, accurate whenever the neglected ratio is small.</p></section>
+</math></span>. This is the same pattern as the relativistic kinetic energy of Section <a class="xref" href="../chapter-01/index.html#sec-1-applications-of-series">1.11</a>: the simple formula is the first term of a series, accurate whenever the neglected ratio is small.</p>
+<div class="centered"><figure id="chapter-01-fig-2" class="figure"><img src="assets/img/ch01_fig3_mgh.png" class="diagram" alt="The potential energy gained by lifting a mass to a height h: the exact value (blue) and the approximation mgh (dashed red). The straight line is tangent to the exact curve at the ground, so the two agree for small heights and separate for large ones." loading="lazy" style="--figure-width: 55%;"><figcaption>Figure 1.2. The potential energy gained by lifting a mass to a height <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>h</mi>
+</math></span>: the exact value
+		(blue) and the approximation <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>g</mi>
+  <mi>h</mi>
+</math></span> (dashed red). The straight line is tangent to the exact curve
+		at the ground, so the two agree for small heights and separate for large ones.</figcaption></figure></div></section>
 <section class="callout remark"><header>Remark</header><p>For nonnegative integers <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>p</mi>
 </math></span>, the binomial expansion terminates after <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -10036,7 +11492,91 @@
   <mo stretchy="false">|</mo>
   <mo>&lt;</mo>
   <mn>1</mn>
-</math></span>.</p></section>
+</math></span>. Only for whole-number <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+</math></span> may the coefficient be written with factorials, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mrow data-mjx-texclass="OPEN">
+      <mo minsize="1.2em" maxsize="1.2em" stretchy="true">(</mo>
+    </mrow>
+    <mfrac linethickness="0">
+      <mi>p</mi>
+      <mi>n</mi>
+    </mfrac>
+    <mrow data-mjx-texclass="CLOSE">
+      <mo minsize="1.2em" maxsize="1.2em" stretchy="true">)</mo>
+    </mrow>
+  </mrow>
+  <mo>=</mo>
+  <mfrac>
+    <mrow>
+      <mi>p</mi>
+      <mo>!</mo>
+    </mrow>
+    <mrow>
+      <mi>n</mi>
+      <mo>!</mo>
+      <mstyle scriptlevel="0">
+        <mspace width="0.167em" />
+      </mstyle>
+      <mo stretchy="false">(</mo>
+      <mi>p</mi>
+      <mo>−</mo>
+      <mi>n</mi>
+      <mo stretchy="false">)</mo>
+      <mo>!</mo>
+    </mrow>
+  </mfrac>
+</math></span>; for any other <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+</math></span> (such as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>1</mn>
+</math></span> or <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+  <mo>=</mo>
+  <mstyle displaystyle="false" scriptlevel="0">
+    <mfrac>
+      <mn>1</mn>
+      <mn>2</mn>
+    </mfrac>
+  </mstyle>
+</math></span>, where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+  <mo>!</mo>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi>p</mi>
+  <mo>−</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+  <mo>!</mo>
+</math></span> have no meaning) use the product form <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mfrac>
+    <mrow>
+      <mi>p</mi>
+      <mo stretchy="false">(</mo>
+      <mi>p</mi>
+      <mo>−</mo>
+      <mn>1</mn>
+      <mo stretchy="false">)</mo>
+      <mo>⋯</mo>
+      <mo stretchy="false">(</mo>
+      <mi>p</mi>
+      <mo>−</mo>
+      <mi>n</mi>
+      <mo>+</mo>
+      <mn>1</mn>
+      <mo stretchy="false">)</mo>
+    </mrow>
+    <mrow>
+      <mi>n</mi>
+      <mo>!</mo>
+    </mrow>
+  </mfrac>
+</math></span> of the theorem.</p></section>
 <h3 id="sec-1-substitution-of-a-polynomial-or-a-series-into-another-series"><span class="sec-number">1.10.5</span>Substitution of a Polynomial or a Series into Another Series</h3>
 <section class="callout example"><header>Example</header><p>From <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mfrac>
@@ -10105,14 +11645,298 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.116">(1.116)</span></div></section>
+</math><span class="eqn-number" id="mjx-eqn:1.125">(1.125)</span></div></section>
+<section class="callout example"><header>Example</header><p>Find the series of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi>x</mi>
+    </mrow>
+  </msup>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>cosh</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>sinh</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+</math></span> from that of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>e</mi>
+    <mi>x</mi>
+  </msup>
+</math></span>.</p>
+<p class="solution-head">Solution.</p>
+<p>Substitute <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mi>x</mi>
+</math></span> for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> in <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>e</mi>
+    <mi>x</mi>
+  </msup>
+  <mo>=</mo>
+  <mn>1</mn>
+  <mo>+</mo>
+  <mi>x</mi>
+  <mo>+</mo>
+  <mfrac>
+    <msup>
+      <mi>x</mi>
+      <mn>2</mn>
+    </msup>
+    <mrow>
+      <mn>2</mn>
+      <mo>!</mo>
+    </mrow>
+  </mfrac>
+  <mo>+</mo>
+  <mfrac>
+    <msup>
+      <mi>x</mi>
+      <mn>3</mn>
+    </msup>
+    <mrow>
+      <mn>3</mn>
+      <mo>!</mo>
+    </mrow>
+  </mfrac>
+  <mo>+</mo>
+  <mo>⋯</mo>
+</math></span>; every odd power changes sign:</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <msup>
+          <mi>e</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+            <mi>x</mi>
+          </mrow>
+        </msup>
+        <mo>=</mo>
+        <mn>1</mn>
+        <mo>−</mo>
+        <mi>x</mi>
+        <mo>+</mo>
+        <mfrac>
+          <msup>
+            <mi>x</mi>
+            <mn>2</mn>
+          </msup>
+          <mrow>
+            <mn>2</mn>
+            <mo>!</mo>
+          </mrow>
+        </mfrac>
+        <mo>−</mo>
+        <mfrac>
+          <msup>
+            <mi>x</mi>
+            <mn>3</mn>
+          </msup>
+          <mrow>
+            <mn>3</mn>
+            <mo>!</mo>
+          </mrow>
+        </mfrac>
+        <mo>+</mo>
+        <mo>⋯</mo>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <mi>R</mi>
+        <mo>=</mo>
+        <mi mathvariant="normal">∞</mi>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:1.126">(1.126)</span></div>
+<p>Now add and subtract the two series. In <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>cosh</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+  <mo>=</mo>
+  <mfrac>
+    <mn>1</mn>
+    <mn>2</mn>
+  </mfrac>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <msup>
+      <mi>e</mi>
+      <mi>x</mi>
+    </msup>
+    <mo>+</mo>
+    <msup>
+      <mi>e</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+        <mi>x</mi>
+      </mrow>
+    </msup>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+  </mrow>
+</math></span> the odd powers cancel and the even ones double; in <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>sinh</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+  <mo>=</mo>
+  <mfrac>
+    <mn>1</mn>
+    <mn>2</mn>
+  </mfrac>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <msup>
+      <mi>e</mi>
+      <mi>x</mi>
+    </msup>
+    <mo>−</mo>
+    <msup>
+      <mi>e</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+        <mi>x</mi>
+      </mrow>
+    </msup>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+  </mrow>
+</math></span> it is the other way round:</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>cosh</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+          <mi>x</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+        </mrow>
+        <mo>=</mo>
+        <mn>1</mn>
+        <mo>+</mo>
+        <mfrac>
+          <msup>
+            <mi>x</mi>
+            <mn>2</mn>
+          </msup>
+          <mrow>
+            <mn>2</mn>
+            <mo>!</mo>
+          </mrow>
+        </mfrac>
+        <mo>+</mo>
+        <mfrac>
+          <msup>
+            <mi>x</mi>
+            <mn>4</mn>
+          </msup>
+          <mrow>
+            <mn>4</mn>
+            <mo>!</mo>
+          </mrow>
+        </mfrac>
+        <mo>+</mo>
+        <mo>⋯</mo>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <mspace width="0.167em" /><mi>sinh</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+          <mi>x</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+        </mrow>
+        <mo>=</mo>
+        <mi>x</mi>
+        <mo>+</mo>
+        <mfrac>
+          <msup>
+            <mi>x</mi>
+            <mn>3</mn>
+          </msup>
+          <mrow>
+            <mn>3</mn>
+            <mo>!</mo>
+          </mrow>
+        </mfrac>
+        <mo>+</mo>
+        <mfrac>
+          <msup>
+            <mi>x</mi>
+            <mn>5</mn>
+          </msup>
+          <mrow>
+            <mn>5</mn>
+            <mo>!</mo>
+          </mrow>
+        </mfrac>
+        <mo>+</mo>
+        <mo>⋯</mo>
+        <mo>,</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:1.127">(1.127)</span></div>
+<p>both with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>R</mi>
+  <mo>=</mo>
+  <mi mathvariant="normal">∞</mi>
+</math></span>. They are the series of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>cos</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>sin</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+</math></span> without the alternating signs.</p></section>
 <section class="callout example"><header>Example</header><p>Find the Maclaurin series of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>e</mi>
     <mrow data-mjx-texclass="ORD">
       <mi>tan</mi>
-      <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-      <mi>x</mi>
+      <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+      <mrow>
+        <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+      </mrow>
     </mrow>
   </msup>
 </math></span> up to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -10127,8 +11951,12 @@
     <mtr>
       <mtd>
         <mi>tan</mi>
-        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mi>x</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+          <mi>x</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+        </mrow>
         <mo>=</mo>
         <mi>x</mi>
         <mo>+</mo>
@@ -10155,13 +11983,17 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.117">(1.117)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.128">(1.128)</span></div>
 <p>Let <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>u</mi>
   <mo>=</mo>
   <mi>tan</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mi>x</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
 </math></span>. Then</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -10230,7 +12062,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.118">(1.118)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.129">(1.129)</span></div>
 <p>Compute powers of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>u</mi>
 </math></span> to the needed order:</p>
@@ -10354,7 +12186,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.119">(1.119)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.130">(1.130)</span></div>
 <p>Substitute:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -10367,8 +12199,12 @@
                 <mi>e</mi>
                 <mrow data-mjx-texclass="ORD">
                   <mi>tan</mi>
-                  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                  <mi>x</mi>
+                  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+                  <mrow>
+                    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+                    <mi>x</mi>
+                    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+                  </mrow>
                 </mrow>
               </msup>
             </mtd>
@@ -10590,7 +12426,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.120">(1.120)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.131">(1.131)</span></div>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -10606,8 +12442,12 @@
                   <mi>e</mi>
                   <mrow data-mjx-texclass="ORD">
                     <mi>tan</mi>
-                    <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                    <mi>x</mi>
+                    <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+                    <mrow>
+                      <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+                      <mi>x</mi>
+                      <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+                    </mrow>
                   </mrow>
                 </msup>
                 <mo>=</mo>
@@ -10665,11 +12505,15 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.121">(1.121)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.132">(1.132)</span></div>
 <p>(The radius of convergence is limited by the nearest pole of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>tan</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mi>x</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
 </math></span>, so <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>R</mi>
   <mo>=</mo>
@@ -10684,8 +12528,12 @@
 <p>You can combine multiplication, division, substitution, differentiation, and integration.</p>
 <section class="callout example"><header>Example</header><p>Find the Maclaurin series for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>arctan</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mi>x</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
 </math></span>.</p>
 <p>We use the identity</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
@@ -10693,8 +12541,12 @@
     <mtr>
       <mtd>
         <mi>arctan</mi>
-        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mi>x</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+          <mi>x</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+        </mrow>
         <mo>=</mo>
         <msubsup>
           <mo data-mjx-texclass="OP">∫</mo>
@@ -10719,7 +12571,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.122">(1.122)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.133">(1.133)</span></div>
 <p>First, expand the denominator as a binomial series:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -10782,7 +12634,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.123">(1.123)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.134">(1.134)</span></div>
 <p>Now integrate term by term:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -10882,15 +12734,19 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.124">(1.124)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.135">(1.135)</span></div>
 <p>Thus,</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
         <mi>arctan</mi>
-        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mi>x</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+          <mi>x</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+        </mrow>
         <mo>=</mo>
         <mi>x</mi>
         <mo>−</mo>
@@ -10932,7 +12788,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.125">(1.125)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.136">(1.136)</span></div>
 <p>The expansion of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>1</mn>
   <mrow data-mjx-texclass="ORD">
@@ -10999,10 +12855,50 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.126">(1.126)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.137">(1.137)</span></div>
 <p>a beautiful formula but a hopeless way to compute <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>π</mi>
-</math></span>: it converges so slowly that several hundred terms are needed for two decimal places.</p></section>
+</math></span>: it converges so slowly that several hundred terms are needed for two decimal places.</p>
+<p>Notice that the radius is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>R</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span> although <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>arctan</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+</math></span> is perfectly smooth on the whole real line: outside <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mn>1</mn>
+  <mo stretchy="false">]</mo>
+</math></span> every partial sum runs away from it. The obstruction is complex. The integrand <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo>+</mo>
+  <msup>
+    <mi>t</mi>
+    <mn>2</mn>
+  </msup>
+  <mo stretchy="false">)</mo>
+</math></span> blows up at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">±</mo>
+  <mi>i</mi>
+</math></span>, at distance <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> from the center, and a power series converges only inside a disk that avoids such points (see the disk of convergence in Chapter 2).</p></section>
 <h3 id="sec-1-taylor-series-using-basic-maclaurin-series"><span class="sec-number">1.10.7</span>Taylor Series Using Basic Maclaurin Series</h3>
 <p>Taylor’s theorem:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
@@ -11053,7 +12949,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.127">(1.127)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.138">(1.138)</span></div>
 <p>gives the coefficients directly from derivatives at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>x</mi>
   <mo>=</mo>
@@ -11061,8 +12957,12 @@
 </math></span>.</p>
 <section class="callout example"><header>Example</header><p>Expand <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ln</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mi>x</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
 </math></span> about <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>x</mi>
   <mo>=</mo>
@@ -11086,13 +12986,13 @@
     <mtr>
       <mtd>
         <mi>ln</mi>
-        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
         <mrow>
-          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
           <mn>1</mn>
           <mo>+</mo>
           <mi>h</mi>
-          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
         </mrow>
         <mo>=</mo>
         <mi>h</mi>
@@ -11126,15 +13026,19 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.128">(1.128)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.139">(1.139)</span></div>
 <p>Thus:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
         <mi>ln</mi>
-        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mi>x</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+          <mi>x</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+        </mrow>
         <mo>=</mo>
         <mo stretchy="false">(</mo>
         <mi>x</mi>
@@ -11171,12 +13075,22 @@
         </mfrac>
         <mo>−</mo>
         <mo>⋯</mo>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <mn>0</mn>
+        <mo>&lt;</mo>
+        <mi>x</mi>
+        <mo>≤</mo>
+        <mn>2</mn>
         <mo>.</mo>
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.129">(1.129)</span></div></section>
+</math><span class="eqn-number" id="mjx-eqn:1.140">(1.140)</span></div></section>
 <h2 id="sec-1-applications-of-series"><span class="sec-number">1.11</span>Applications of Series</h2>
+<p class="lecture-video"><a href="https://www.youtube.com/watch?v=uHnE9O9ORoQ&amp;t=1488s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> Lecture 3, Part 7: Series at Work (24:48)</a></p>
 <p>In the example of the bouncing ball, we saw that the <strong>sum of an infinite series</strong> can often be very close to the sum of a <strong>finite number of initial terms</strong>. This principle underlies many applications:</p>
 <ul><li><p>Many real-world problems cannot be solved exactly but can be expressed as an infinite series.</p></li><li><p>In practice, only as many terms as needed to achieve the desired accuracy are computed.</p></li><li><p>Series solutions are commonly used in solving:</p>
 <ul><li><p>ordinary differential equations (Chapters 8 and 12),</p></li><li><p>partial differential equations (Chapter 13).</p></li></ul></li></ul>
@@ -11253,7 +13167,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.130">(1.130)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.141">(1.141)</span></div>
 <p>Substituting <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>x</mi>
   <mo>=</mo>
@@ -11328,7 +13242,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.131">(1.131)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.142">(1.142)</span></div>
 <p>The true value is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>1.0488088</mn>
   <mo>…</mo>
@@ -11410,7 +13324,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.132">(1.132)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.143">(1.143)</span></div>
 <p>Show that at everyday speeds this reduces to the familiar <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mstyle displaystyle="false" scriptlevel="0">
     <mfrac>
@@ -11516,7 +13430,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:binomial-half">(1.133)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:binomial-half">(1.144)</span></div>
 <p>Substituting and cancelling the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>1</mn>
 </math></span>:</p>
@@ -11610,7 +13524,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.134">(1.134)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.145">(1.145)</span></div>
 <p>The leading term is exactly the Newtonian kinetic energy. The first correction is smaller than it by a factor <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mstyle displaystyle="false" scriptlevel="0">
     <mfrac>
@@ -11641,7 +13555,26 @@
       <mn>12</mn>
     </mrow>
   </msup>
-</math></span> — utterly negligible. Newtonian mechanics is not a different theory here; it is the first term of a series.</p></section>
+</math></span> — utterly negligible. Newtonian mechanics is not a different theory here; it is the first term of a series.</p>
+<div class="centered"><figure id="chapter-01-fig-3" class="figure"><img src="assets/img/ch01_fig2_kinetic_energy.png" class="diagram" alt="Kinetic energy as a function of speed: the exact relativistic value (blue) and Newton&#x27;s 12 mv^2 (dashed red). The two curves coincide at everyday speeds; as v approaches c, the exact energy grows without limit." loading="lazy" style="--figure-width: 55%;"><figcaption>Figure 1.3. Kinetic energy as a function of speed: the exact relativistic value (blue)
+		and Newton's <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mstyle displaystyle="false" scriptlevel="0">
+    <mfrac>
+      <mn>1</mn>
+      <mn>2</mn>
+    </mfrac>
+  </mstyle>
+  <mi>m</mi>
+  <msup>
+    <mi>v</mi>
+    <mn>2</mn>
+  </msup>
+</math></span> (dashed red). The two curves coincide at everyday speeds; as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>v</mi>
+</math></span>
+		approaches <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+</math></span>, the exact energy grows without limit.</figcaption></figure></div></section>
 <section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">Physics: the classical limit of Planck's radiation law</span></header><p>A hot object emits light across a range of frequencies. Planck's law gives the energy radiated at frequency <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ν</mi>
 </math></span> by a body at absolute temperature <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -11697,7 +13630,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:planck">(1.135)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:planck">(1.146)</span></div>
 <p>where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>h</mi>
 </math></span> is Planck's constant and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -11756,7 +13689,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.136">(1.136)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.147">(1.147)</span></div>
 <p>and expand the exponential in the denominator using the Maclaurin series for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>e</mi>
@@ -11816,7 +13749,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.137">(1.137)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.148">(1.148)</span></div>
 <p>Note that the leading <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>1</mn>
 </math></span> cancels exactly; this is why the expansion is needed rather than simply setting <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -11851,7 +13784,7 @@
   </mrow>
   <mi>k</mi>
   <mi>T</mi>
-</math></span> into <a class="eqn-ref" href="#mjx-eqn:eq:planck">(1.135)</a>:</p>
+</math></span> into <a class="eqn-ref" href="#mjx-eqn:eq:planck">(1.146)</a>:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -11911,7 +13844,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:1.138">(1.138)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:1.149">(1.149)</span></div>
 <p>which is exactly the Rayleigh–Jeans law. So the classical result was never wrong, only incomplete: it is the leading term of Planck's law when <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>h</mi>
   <mi>ν</mi>
@@ -11923,8 +13856,21 @@
   <mo stretchy="false">(</mo>
   <mi>ν</mi>
   <mo stretchy="false">)</mo>
-</math></span>, and Planck's law avoids the “ultraviolet catastrophe” — the classical prediction that a hot body radiates infinite total energy.</p></section>
-<section class="callout remark"><header>Remark</header><p>Series such as <a class="eqn-ref" href="#mjx-eqn:eq:binomial-half">(1.133)</a>, written in powers of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>, and Planck's law avoids the “ultraviolet catastrophe” — the classical prediction that a hot body radiates infinite total energy.</p>
+<div class="centered"><figure id="chapter-01-fig-4" class="figure"><img src="assets/img/ch01_fig4_planck.png" class="diagram" alt="Planck&#x27;s radiation law (blue) and the classical Rayleigh–Jeans law (dashed red), plotted against x = h/kT. The two agree at low frequencies; at high frequencies the classical curve keeps rising, while Planck&#x27;s law turns over and falls to zero." loading="lazy" style="--figure-width: 55%;"><figcaption>Figure 1.4. Planck's radiation law (blue) and the classical Rayleigh–Jeans law (dashed
+		red), plotted against <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>=</mo>
+  <mi>h</mi>
+  <mi>ν</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>k</mi>
+  <mi>T</mi>
+</math></span>. The two agree at low frequencies; at high frequencies the
+		classical curve keeps rising, while Planck's law turns over and falls to zero.</figcaption></figure></div></section>
+<section class="callout remark"><header>Remark</header><p>Series such as <a class="eqn-ref" href="#mjx-eqn:eq:binomial-half">(1.144)</a>, written in powers of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>x</mi>
 </math></span>, are the <strong>power series</strong> of Section <a class="xref" href="../chapter-01/index.html#sec-1-power-series">1.7</a>. Beyond the approximations above, they are used to define:</p>
 <ul><li><p>Functions of complex numbers (Chapter 2, Section 8),</p></li><li><p>Functions of matrices (Chapter 3, Section 6),</p></li><li><p>Fourier series (Chapter 7),</p></li><li><p>Special functions like Legendre and Bessel functions (Chapters 12 and 13).</p></li></ul></section>
@@ -12214,26 +14160,26 @@
         <mi>a</mi>
         <mi>n</mi>
       </msub>
-      <mi>cos</mi>
-      <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+      <mspace width="0.167em" /><mi>cos</mi>
+      <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
       <mrow>
-        <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+        <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
         <mi>n</mi>
         <mi>x</mi>
-        <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
       </mrow>
       <mo>+</mo>
       <msub>
         <mi>b</mi>
         <mi>n</mi>
       </msub>
-      <mi>sin</mi>
-      <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+      <mspace width="0.167em" /><mi>sin</mi>
+      <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
       <mrow>
-        <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+        <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
         <mi>n</mi>
         <mi>x</mi>
-        <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
       </mrow>
       <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">]</mo>
     </mrow>
@@ -12243,7 +14189,7 @@
 <p>Everything in this chapter is standard first-year material, so if a topic did not settle the first time, a second presentation of it often helps. Everything listed below is free to read or watch. The material is grouped the way the chapter is: first convergence, then power series.</p>
 <h3 id="sec-1-convergence-of-series">Convergence of series</h3>
 <p><em>Sections <a class="xref" href="../chapter-01/index.html#sec-1-testing-series-for-convergence">1.4</a> and the alternating-series material that follows it.</em></p>
-<ul><li><p><strong>OpenStax, <em>Calculus Volume 2</em>, Chapter 5.</strong> A full textbook treatment in almost our order — <a href="https://openstax.org/books/calculus-volume-2/pages/5-1-sequences">5.1 Sequences</a>, <a href="https://openstax.org/books/calculus-volume-2/pages/5-2-infinite-series">5.2 Infinite Series</a>, <a href="https://openstax.org/books/calculus-volume-2/pages/5-3-the-divergence-and-integral-tests">5.3 Divergence and Integral Tests</a>, <a href="https://openstax.org/books/calculus-volume-2/pages/5-4-comparison-tests">5.4 Comparison Tests</a>, <a href="https://openstax.org/books/calculus-volume-2/pages/5-5-alternating-series">5.5 Alternating Series</a>, <a href="https://openstax.org/books/calculus-volume-2/pages/5-6-ratio-and-root-tests">5.6 Ratio and Root Tests</a> — the last of which also covers the Root Test, which we did not.</p></li><li><p><strong>Paul's Online Math Notes.</strong> The fastest place to see a test applied several times in a row: <a href="https://tutorial.math.lamar.edu/Classes/CalcII/SeriesIntro.aspx">Series \&amp; Sequences</a> and, especially, <a href="https://tutorial.math.lamar.edu/Classes/CalcII/SeriesStrategy.aspx">Strategy for Series</a> — a decision procedure for choosing a test, and a good companion to our summary table.</p></li><li><p><strong>Khan Academy.</strong> <a href="https://www.khanacademy.org/math/ap-calculus-bc/bc-series-new">Series (AP Calculus BC)</a> — short videos, each followed by practice questions. Best for drilling the convergence tests until they are automatic.</p></li></ul>
+<ul><li><p><strong>OpenStax, <em>Calculus Volume 2</em>, Chapter 5.</strong> A full textbook treatment in almost our order — <a href="https://openstax.org/books/calculus-volume-2/pages/5-1-sequences">5.1 Sequences</a>, <a href="https://openstax.org/books/calculus-volume-2/pages/5-2-infinite-series">5.2 Infinite Series</a>, <a href="https://openstax.org/books/calculus-volume-2/pages/5-3-the-divergence-and-integral-tests">5.3 Divergence and Integral Tests</a>, <a href="https://openstax.org/books/calculus-volume-2/pages/5-4-comparison-tests">5.4 Comparison Tests</a>, <a href="https://openstax.org/books/calculus-volume-2/pages/5-5-alternating-series">5.5 Alternating Series</a>, <a href="https://openstax.org/books/calculus-volume-2/pages/5-6-ratio-and-root-tests">5.6 Ratio and Root Tests</a> — the last of which also covers the Root Test, which we did not.</p></li><li><p><strong>Paul's Online Math Notes.</strong> The fastest place to see a test applied several times in a row: <a href="https://tutorial.math.lamar.edu/Classes/CalcII/SeriesIntro.aspx">Series &amp; Sequences</a> and, especially, <a href="https://tutorial.math.lamar.edu/Classes/CalcII/SeriesStrategy.aspx">Strategy for Series</a> — a decision procedure for choosing a test, and a good companion to our summary table.</p></li><li><p><strong>Khan Academy.</strong> <a href="https://www.khanacademy.org/math/ap-calculus-bc/bc-series-new">Series (AP Calculus BC)</a> — short videos, each followed by practice questions. Best for drilling the convergence tests until they are automatic.</p></li></ul>
 <p>On what it actually means for an infinite sum to have a value:</p>
 <section class="callout context"><header>Video</header><p><strong>Defining Convergent and Divergent Infinite Series</strong></p>
 <a class="video-preview" href="https://www.youtube.com/watch?v=cr8QcflluF0" target="_blank" rel="noopener" aria-label="Watch Defining Convergent and Divergent Infinite Series on YouTube"><img src="https://img.youtube.com/vi/cr8QcflluF0/hqdefault.jpg" alt="Video thumbnail for Defining Convergent and Divergent Infinite Series" loading="lazy"><span class="video-preview-play" aria-hidden="true"></span><span class="video-preview-label">Watch on YouTube</span></a>

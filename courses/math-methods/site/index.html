@@ -6,9 +6,9 @@
   <title>Home | Mathematical Methods in the Physical Sciences</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
   <link rel="preload" href="assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/site.css?v=9dea6c95">
+  <link rel="stylesheet" href="assets/css/site.css?v=a126620a">
   <link rel="preload" href="assets/fonts/latinmodern-math.woff2" as="font" type="font/woff2" crossorigin>
-  <script defer src="assets/js/main.js?v=9dea6c95"></script>
+  <script defer src="assets/js/main.js?v=a126620a"></script>
 
 <style>
 .site-header { justify-content: flex-start; gap: 16px; }
@@ -97,9 +97,21 @@
   </section>
   <section class="overview content">
     <h2 id="why-mathematics-is-important-for-learning-physics">Why Mathematics Is Important for Learning Physics</h2>
+<p><strong>Video lectures for this chapter.</strong> Each section below links to the part of the video that teaches it; all lectures are in the <a href="https://www.youtube.com/playlist?list=PLMf1SoafIGr0">course playlist</a>.</p>
+<p class="lecture-video"><a href="https://www.youtube.com/watch?v=EE_zrZZQH_A&amp;t=0s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> Lecture 1: Why Mathematical Methods? (full lecture)</a></p>
 <p>Mathematics is the working language of physics. From Newton's laws to Schrödinger's equation, every major physical theory is written in mathematical form, and a physical idea is only as precise as the mathematics used to express it. The methods in these notes are not a detour on the way to physics; they are part of the way physics is actually done.</p>
 <p>Instead of meeting these methods one at a time and wondering where each one leads, it is more useful to see the destination first. The three areas below will already be familiar. Each raises a concrete mathematical problem, and each problem is addressed by chapters in these notes. The same core tools appear repeatedly: series for approximation, linear algebra for coupled systems, and differential equations for change.</p>
-<section class="callout context"><header>1. Classical Mechanics</header><p>At its foundation, mechanics begins with Newton's second law, which is a second-order ordinary differential equation:</p>
+<p>The core courses of a physics degree (classical mechanics, electromagnetism, quantum mechanics, thermodynamics and statistical mechanics, and special relativity) are each built on equations, and the central ones are differential equations. Newton's second law is an <em>ordinary</em> differential equation (ODE): its unknown, the position, depends on a single variable, the time. Maxwell's equations are <em>partial</em> differential equations (PDEs): the fields depend on <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>y</mi>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>z</mi>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+</math></span> at once. Schrödinger's equation is an ODE in one dimension and a PDE in three. For each area below we therefore ask the same questions: what do we typically do there, what is known and what is unknown, and which mathematics finds the unknown.</p>
+<section class="callout context"><header>1. Classical Mechanics</header><p class="lecture-video"><a href="https://www.youtube.com/watch?v=EE_zrZZQH_A&amp;t=0s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> Lecture 1, Part 1: The Language of Physics (0:00)</a></p>
+<p>At its foundation, mechanics begins with Newton's second law, which is a second-order ordinary differential equation:</p>
 <div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <msub>
     <mrow data-mjx-texclass="ORD">
@@ -188,12 +200,67 @@
   </mfrac>
   <mo>.</mo>
 </math></div>
-<p>Given a force law, solving for the motion is the central task of the subject.</p>
+<p>Given a force law, solving for the motion is the central task of the subject. We know the mass <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span>, the net force <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover accent="true">
+        <mi>F</mi>
+        <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+      </mover>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mtext>net</mtext>
+    </mrow>
+  </msub>
+</math></span>, the initial position <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover accent="true">
+        <mi>r</mi>
+        <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+      </mover>
+    </mrow>
+    <mn>0</mn>
+  </msub>
+</math></span> and the initial velocity <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover accent="true">
+        <mi>v</mi>
+        <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+      </mover>
+    </mrow>
+    <mn>0</mn>
+  </msub>
+</math></span>; we want the position <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>r</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+</math></span> and the velocity <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>v</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+</math></span> at every later time. For a constant force, such as gravity near the ground, the equation is easy to solve; for most forces it is hard, and the methods of these notes are what make progress possible.</p>
 <figure class="figure figure-single"><img src="assets/img/Fig1.png" class="diagram" alt="Fig1" loading="lazy"></figure>
 <p><strong>Where this is developed:</strong></p>
 <ul><li><p><strong>Ordinary Differential Equations (Ch. 8):</strong> first- and second-order equations</p></li><li><p><strong>Linear Algebra (Ch. 3):</strong> systems of equations, eigenvalue problems, normal modes</p></li><li><p><strong>Infinite Series and Power Series (Ch. 1):</strong> approximating motion when no exact solution exists</p></li></ul>
 <p><strong>Applications:</strong> oscillators, planetary motion, variational formulations</p></section>
-<section class="callout context"><header>2. Electromagnetism</header><p>Maxwell's equations describe how electric and magnetic fields behave in matter:</p>
+<section class="callout context"><header>2. Electromagnetism</header><p class="lecture-video"><a href="https://www.youtube.com/watch?v=EE_zrZZQH_A&amp;t=393s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> Lecture 1, Part 2: Electromagnetism (6:33)</a></p>
+<p>Maxwell's equations describe how electric and magnetic fields behave in matter:</p>
 <div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true" columnalign="right left right left" columnspacing="0em 2em 0em" rowspacing="3pt">
     <mtr>
@@ -324,12 +391,204 @@
     </mtr>
   </mtable>
 </math></div>
-<p>They are written in the language of vector calculus, so learning that language is essential for reading, interpreting, and applying them.</p>
+<p>Electric fields come from charge, described by the free charge density <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ρ</mi>
+    <mi>f</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <msup>
+        <mi>r</mi>
+        <mo data-mjx-alternate="1">′</mo>
+      </msup>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+  <mo>,</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+</math></span> at a source point <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <msup>
+        <mi>r</mi>
+        <mo data-mjx-alternate="1">′</mo>
+      </msup>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+</math></span>, and from changing magnetic fields. When charges move, they form a current, with free current density <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover accent="true">
+        <mi>J</mi>
+        <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+      </mover>
+    </mrow>
+    <mi>f</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <msup>
+        <mi>r</mi>
+        <mo data-mjx-alternate="1">′</mo>
+      </msup>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+  <mo>,</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+</math></span>, and a current generates a magnetic field. Maxwell's equations connect these sources to the fields. Given the sources, and how <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>D</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+</math></span> is related to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>E</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>H</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+</math></span> to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>B</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+</math></span> in the material, we want the fields <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>E</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+  <mo stretchy="false">(</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>r</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+  <mo>,</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>B</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+  <mo stretchy="false">(</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>r</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+  <mo>,</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+</math></span> at every field point <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>r</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+</math></span>. Each is a function of four variables, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>E</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+  <mo stretchy="false">(</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>r</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+  <mo>,</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>E</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo>,</mo>
+  <mi>y</mi>
+  <mo>,</mo>
+  <mi>z</mi>
+  <mo>,</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+</math></span>, so the equations that govern them are partial differential equations.</p>
 <figure class="figure figure-single"><img src="assets/img/Fig2.png" class="diagram" alt="Fig2" loading="lazy"></figure>
+<p>They are written in the language of vector calculus, so learning that language is essential for reading, interpreting, and applying them. One of the first and most striking predictions of these equations is light itself. In empty space, Maxwell's equations combine into a wave equation, and the waves it describes travel at the speed</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>c</mi>
+  <mo>=</mo>
+  <mfrac>
+    <mn>1</mn>
+    <msqrt>
+      <msub>
+        <mi>μ</mi>
+        <mn>0</mn>
+      </msub>
+      <mstyle scriptlevel="0">
+        <mspace width="0.167em" />
+      </mstyle>
+      <msub>
+        <mi>ε</mi>
+        <mn>0</mn>
+      </msub>
+    </msqrt>
+  </mfrac>
+  <mo>.</mo>
+</math></div>
+<p>When this speed is computed from the measured constants <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>μ</mi>
+    <mn>0</mn>
+  </msub>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ε</mi>
+    <mn>0</mn>
+  </msub>
+</math></span>, it equals the measured speed of light: light is an electromagnetic wave.</p>
+<figure id="chapter--1-fig-1" class="figure animation"><img src="assets/img/overview_anim_em_wave.gif" class="diagram" alt="A light wave travelling in the x direction. The electric field (red) and the magnetic field (blue) oscillate in step, at right angles to each other and to the direction of travel." loading="lazy"><figcaption>Figure -1.1. A light wave travelling in the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> direction. The electric field (red) and the magnetic
+		field (blue) oscillate in step, at right angles to each other and to the direction of
+		travel.</figcaption></figure>
 <p><strong>Where this is developed:</strong></p>
 <ul><li><p><strong>Vector Analysis (Ch. 6):</strong> gradient, divergence, curl; Gauss's and Stokes's theorems</p></li><li><p><strong>Partial Differential Equations (Ch. 10):</strong> Laplace's, Poisson's, and wave equations</p></li><li><p><strong>Fourier Series and Transforms (Ch. 7):</strong> solving boundary value problems for fields</p></li><li><p><strong>Multiple Integrals (Ch. 5):</strong> charge and current distributions in space</p></li></ul>
 <p><strong>Applications:</strong> fields in dielectrics, waveguides, and AC circuits</p></section>
-<section class="callout context"><header>3. Quantum Mechanics</header><p>In quantum mechanics, a particle is described by a wavefunction that evolves according to the Schrödinger equation:</p>
+<section class="callout context"><header>3. Quantum Mechanics</header><p class="lecture-video"><a href="https://www.youtube.com/watch?v=EE_zrZZQH_A&amp;t=857s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> Lecture 1, Part 3: Quantum Mechanics (14:17)</a></p>
+<p>In quantum mechanics, a particle is described by a wavefunction that evolves according to the Schrödinger equation:</p>
 <div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mi>i</mi>
   <mi data-mjx-alternate="1">ℏ</mi>
@@ -365,12 +624,126 @@
   <mi>ψ</mi>
   <mo>.</mo>
 </math></div>
-<p>This equation is complex-valued and, once again, a partial differential equation. Two recurring threads of these notes meet here directly.</p>
+<p>This equation is complex-valued and, once again, a partial differential equation. Two recurring threads of these notes meet here directly. For a state of definite energy <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>E</mi>
+</math></span>, the wavefunction obeys the time-independent Schrödinger equation,</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mfrac>
+    <msup>
+      <mi data-mjx-alternate="1">ℏ</mi>
+      <mn>2</mn>
+    </msup>
+    <mrow>
+      <mn>2</mn>
+      <mi>m</mi>
+    </mrow>
+  </mfrac>
+  <msup>
+    <mi mathvariant="normal">∇</mi>
+    <mn>2</mn>
+  </msup>
+  <mi>ψ</mi>
+  <mo stretchy="false">(</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>r</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+  <mo stretchy="false">)</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+  <mi>V</mi>
+  <mo stretchy="false">(</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>r</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+  <mo stretchy="false">)</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mi>ψ</mi>
+  <mo stretchy="false">(</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>r</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mi>E</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mi>ψ</mi>
+  <mo stretchy="false">(</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>r</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+  <mo stretchy="false">)</mo>
+  <mo>.</mo>
+</math></div>
+<p>We know the potential <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>V</mi>
+  <mo stretchy="false">(</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>r</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+  <mo stretchy="false">)</mo>
+</math></span> (for the hydrogen atom, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>V</mi>
+  <mo stretchy="false">(</mo>
+  <mi>r</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <msup>
+    <mi>e</mi>
+    <mn>2</mn>
+  </msup>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mo stretchy="false">(</mo>
+  <mn>4</mn>
+  <mi>π</mi>
+  <msub>
+    <mi>ε</mi>
+    <mn>0</mn>
+  </msub>
+  <mi>r</mi>
+  <mo stretchy="false">)</mo>
+</math></span>) and the mass <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span>; we want the wavefunction <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ψ</mi>
+  <mo stretchy="false">(</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>r</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+  <mo stretchy="false">)</mo>
+</math></span> and the energy <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>E</mi>
+</math></span>. Only certain energies satisfy the equation: they are the eigenvalues of the energy operator. In one dimension the equation is an ordinary differential equation; in three dimensions, separating the variables turns it into ordinary differential equations that are solved with series.</p>
 <figure class="figure figure-single"><img src="assets/img/Fig3.png" class="diagram" alt="Fig3" loading="lazy"></figure>
 <p><strong>Where this is developed:</strong></p>
 <ul><li><p><strong>Complex Numbers (Ch. 2):</strong> Euler's formula, complex amplitudes</p></li><li><p><strong>Linear Algebra (Ch. 3):</strong> operators, eigenvalues, Hilbert space</p></li><li><p><strong>Fourier Series and Transforms (Ch. 7):</strong> analysing wavefunctions in different bases</p></li><li><p><strong>Partial Differential Equations (Ch. 10):</strong> time-dependent and time-independent Schrödinger equations</p></li><li><p><strong>Series Solutions (Ch. 9):</strong> special functions such as Legendre and Bessel</p></li></ul>
 <p><strong>Applications:</strong> atomic structure, tunnelling, and the harmonic oscillator</p></section>
-<p> Read across the three boxes and a clear pattern appears: the same core chapters are called on repeatedly. That is why these methods are best studied as an integrated toolkit rather than learned piecemeal. When a technique appears later in the notes and its purpose is not immediately obvious, return to this page and connect it to the physical question it was designed to answer.</p>
+<p class="lecture-video"><a href="https://www.youtube.com/watch?v=EE_zrZZQH_A&amp;t=1149s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> Lecture 1, Part 4: The Toolkit and the Road Ahead (19:09)</a></p>
+<p>Read across the three boxes and a clear pattern appears: the same core chapters are called on repeatedly. Each box names only the chapters that its own examples make most visible; in practice every area uses every chapter. Mechanics, for instance, uses complex numbers for oscillations, vector analysis for forces derived from a potential energy, and multiple integrals for centers of mass and moments of inertia, while electromagnetism uses series for multipole expansions, and matrices and ordinary differential equations for circuits. That is why these methods are best studied as an integrated toolkit rather than learned piecemeal. When a technique appears later in the notes and its purpose is not immediately obvious, return to this page and connect it to the physical question it was designed to answer.</p>
   </section>
   <section class="preface content">
     <h2 id="preface">Preface</h2>

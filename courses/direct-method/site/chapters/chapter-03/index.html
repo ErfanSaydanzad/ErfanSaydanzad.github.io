@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Chapter 3: Angular Momentum and Central Potentials | Direct Method</title>
+  <title>Chapter 3: Angular Momentum and Central Potentials | Quantum Mechanics and Spectroscopy</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
   <link rel="preload" href="../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../../assets/css/site.css?v=856ec339">
+  <link rel="stylesheet" href="../../assets/css/site.css?v=ee8de383">
   <link rel="preload" href="../../assets/fonts/latinmodern-math.woff2" as="font" type="font/woff2" crossorigin>
-  <script defer src="../../assets/js/main.js?v=856ec339"></script>
+  <script defer src="../../assets/js/main.js?v=ee8de383"></script>
 
 <style>
 .site-header { justify-content: flex-start; gap: 16px; }
@@ -35,7 +35,7 @@
   <a class="site-up" href="../../../../../index.html"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.5 5.5 8l4.5 4.5"/></svg><span>Saydanzad Group</span></a>
   <a class="brand" href="../../index.html">
     <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M9 6.5V25.5M9 6.5H24M9 25.5H24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 16Q10.5 9.5 15.5 16T25.5 16" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/></svg>
-    <span>Direct Method</span>
+    <span>Quantum Mechanics and Spectroscopy</span>
   </a>
   <nav class="top-nav" aria-label="Primary">
     <a href="../../index.html">Home</a>
@@ -59,6 +59,7 @@
 <a class="toc-level-2" href="#sec-3-parity-and-selection-rules">3.6 Parity and Selection Rules</a>
 <a class="toc-level-2" href="#sec-3-spin">3.7 Spin</a>
 <a class="toc-level-2" href="#sec-3-central-potentials">3.8 Central Potentials</a>
+<a class="toc-level-3" href="#sec-3-first-pass-self-checks-spin-and-parity">3.8.1 First-Pass Self-Checks: Spin and Parity</a>
 <a class="toc-level-2" href="#sec-3-summary">3.9 Summary</a>
 <a class="toc-level-2" href="#sec-3-exercises">3.10 Exercises</a>
 <a class="toc-level-2" href="#sec-3-project-the-centrifugal-barrier">3.11 Project: The Centrifugal Barrier</a>
@@ -72,6 +73,7 @@
       <h1>Angular Momentum and Central Potentials</h1>
     </header>
     <h2 id="sec-3-introduction"><span class="sec-number">3.1</span>Introduction</h2>
+<p>Symmetry, as wide or as narrow as you may define its meaning, is one idea by which man through the ages has tried to comprehend and create order, beauty and perfection.Hermann Weyl, <em>Symmetry</em> (1952)</p>
 <p>Chapter 2 solved the Schrödinger equation in one dimension. Atoms are three-dimensional, and the force binding them is directed toward a center. This chapter develops the machinery that this difference requires.</p>
 <p>The resulting simplification is substantial, and is worth stating at the outset. A general three-dimensional problem is a partial differential equation in three variables. A problem with a <em>central</em> potential — one depending only on the distance <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>r</mi>
@@ -79,6 +81,118 @@
   <mi>r</mi>
 </math></span> alone, with the angular part solved once and for all, for every central potential there will ever be. Chapter 4 then solves the radial part exactly for the Coulomb potential.</p>
 <p>We proceed in two independent ways, which is instructive because each illuminates the other. Sections <a class="xref" href="../chapter-03/index.html#sec-3-the-angular-momentum-operators">3.2</a>–<a class="xref" href="../chapter-03/index.html#sec-3-matrix-representations">3.4</a> obtain the entire spectrum of angular momentum from <em>commutators alone</em>, with no differential equations and no wave functions. Sections <a class="xref" href="../chapter-03/index.html#sec-3-orbital-angular-momentum-in-spherical-coordinates">3.5</a>–<a class="xref" href="../chapter-03/index.html#sec-3-parity-and-selection-rules">3.6</a> then find the eigenfunctions explicitly in spherical coordinates. The two routes give the same answer, and the algebraic one gives slightly more — it admits half-integer values that the differential route excludes, and nature uses them for spin.</p>
+<section class="callout remark" id="remark-rem-am-first-pass"><header><span class="callout-kind">Remark 3.1.1</span><span class="callout-title">First-pass route</span></header><p> Follow the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>j</mi>
+  <mo>=</mo>
+  <mstyle displaystyle="false" scriptlevel="0">
+    <mfrac>
+      <mn>1</mn>
+      <mn>2</mn>
+    </mfrac>
+  </mstyle>
+</math></span> rung in Sec. <a class="xref" href="../chapter-03/index.html#sec-3-matrix-representations">3.4</a>, then read parity and spin. Work the three self-checks just before the Summary. This is enough preparation for electron spin, dipole selection rules, and two-electron states. The full commutator derivation, general <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>j</mi>
+</math></span> ladder, central-potential reduction, exercises, and project form the optional second pass.</p></section>
+<section class="callout remark"><header><span class="callout-kind">Remark</span><span class="callout-title">Prerequisite recall: commutators and probabilities</span></header><p>The commutator is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>A</mi>
+      <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+    </mover>
+  </mrow>
+  <mo>,</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>B</mi>
+      <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+    </mover>
+  </mrow>
+  <mo stretchy="false">]</mo>
+  <mo>=</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>A</mi>
+      <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+    </mover>
+  </mrow>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>B</mi>
+      <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+    </mover>
+  </mrow>
+  <mo>−</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>B</mi>
+      <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+    </mover>
+  </mrow>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>A</mi>
+      <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+    </mover>
+  </mrow>
+</math></span>. In an ordered orthonormal basis, the columns of an operator matrix are the coefficient columns of its action on successive basis kets. If <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>ψ</mi>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+  <mo>=</mo>
+  <msub>
+    <mi>c</mi>
+    <mo stretchy="false">↑</mo>
+  </msub>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mo stretchy="false">↑</mo>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+  <mo>+</mo>
+  <msub>
+    <mi>c</mi>
+    <mo stretchy="false">↓</mo>
+  </msub>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mo stretchy="false">↓</mo>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+</math></span>, then a measurement of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>S</mi>
+    <mi>z</mi>
+  </msub>
+</math></span> gives probabilities <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">|</mo>
+  <msub>
+    <mi>c</mi>
+    <mo stretchy="false">↑</mo>
+  </msub>
+  <msup>
+    <mo stretchy="false">|</mo>
+    <mn>2</mn>
+  </msup>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">|</mo>
+  <msub>
+    <mi>c</mi>
+    <mo stretchy="false">↓</mo>
+  </msub>
+  <msup>
+    <mo stretchy="false">|</mo>
+    <mn>2</mn>
+  </msup>
+</math></span>. Chapter 1, “Mathematical Tools of Quantum Mechanics,” develops both statements; these formulas suffice for the first-pass route.</p></section>
 <h2 id="sec-3-the-angular-momentum-operators"><span class="sec-number">3.2</span>The Angular Momentum Operators</h2>
 <p>Classically <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
@@ -2776,6 +2890,25 @@
   <mi>λ</mi>
 </math></span>.</p>
 <h3 id="sec-3-the-ladder-must-terminate"><span class="sec-number">3.3.2</span>The Ladder Must Terminate</h3>
+<figure id="chapter-03-fig-1" class="figure"><img src="assets/img/ch03_fig01_ladder_terminates.png" class="diagram" alt="The argument of this section in one picture. J move between rungs a unit apart, and the ladder is forced to stop at both ends; a ladder with a top, a bottom and a fixed step has a whole number of rungs, and that is what makes 2j an integer." loading="lazy" style="--figure-width: 86%;"><figcaption>Figure 3.1. The argument of this section in one picture. <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover accent="true">
+        <mi>J</mi>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+      </mover>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">±</mo>
+    </mrow>
+  </msub>
+</math></span> move
+	between rungs a unit apart, and the ladder is forced to stop at both ends;
+	a ladder with a top, a bottom and a fixed step has a whole number of
+	rungs, and that is what makes <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mi>j</mi>
+</math></span> an integer.</figcaption></figure>
 <p>The ladder cannot run forever, because <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msubsup>
     <mrow data-mjx-texclass="ORD">
@@ -3521,7 +3654,26 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:eq:AM-ladder-action">(3.24)</span></div></section>
-<section class="callout remark"><header>Remark</header><p>Note that <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout misreading"><header><span class="callout-kind">A common misreading</span><span class="callout-title">the vector does not point along <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>z</mi>
+</math></span></span></header><p>It is tempting to picture <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>j</mi>
+      <mo>,</mo>
+      <mi>m</mi>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+</math></span> as an arrow of length <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>j</mi>
+  <mi data-mjx-alternate="1">ℏ</mi>
+</math></span> lying along the axis when <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mo>=</mo>
+  <mi>j</mi>
+</math></span>. It never does. The eigenvalue of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mrow data-mjx-texclass="ORD">
       <mover accent="true">
@@ -3533,7 +3685,7 @@
       <mn>2</mn>
     </mrow>
   </msup>
-</math></span> has eigenvalue <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi data-mjx-alternate="1">ℏ</mi>
     <mrow data-mjx-texclass="ORD">
@@ -3559,20 +3711,42 @@
       <mn>2</mn>
     </mrow>
   </msup>
-</math></span>, so the length of the vector always exceeds its largest projection: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msqrt>
-    <mi>j</mi>
-    <mo stretchy="false">(</mo>
-    <mi>j</mi>
-    <mo>+</mo>
-    <mn>1</mn>
-    <mo stretchy="false">)</mo>
-  </msqrt>
-  <mo>&gt;</mo>
-  <mi>j</mi>
-</math></span>. The angular momentum can never point exactly along <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>, so the length of the vector always exceeds its largest projection:</p>
+<div class="math-block math-block--numbered" id="eq-eq-am-length-exceeds"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <msqrt>
+          <mi>j</mi>
+          <mo stretchy="false">(</mo>
+          <mi>j</mi>
+          <mo>+</mo>
+          <mn>1</mn>
+          <mo stretchy="false">)</mo>
+        </msqrt>
+        <mstyle scriptlevel="0">
+          <mspace width="0.278em" />
+        </mstyle>
+        <mo>&gt;</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="0.278em" />
+        </mstyle>
+        <mi>j</mi>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <mtext>for every </mtext>
+        <mi>j</mi>
+        <mo>&gt;</mo>
+        <mn>0</mn>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:AM-length-exceeds">(3.25)</span></div>
+<p>If the vector could align with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>z</mi>
-</math></span>. If it could, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>, then <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mrow data-mjx-texclass="ORD">
       <mover accent="true">
@@ -3592,7 +3766,46 @@
     </mrow>
     <mi>y</mi>
   </msub>
-</math></span> would both be zero and all three components would be simultaneously known, contradicting Eq. <a class="xref" href="../chapter-03/index.html#eq-eq-am-commutators">(3.7)</a>.</p></section>
+</math></span> would both be zero, all three components would be known at once, and Eq. <a class="xref" href="../chapter-03/index.html#eq-eq-am-commutators">(3.7)</a> would be contradicted. The gap between <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msqrt>
+    <mi>j</mi>
+    <mo stretchy="false">(</mo>
+    <mi>j</mi>
+    <mo>+</mo>
+    <mn>1</mn>
+    <mo stretchy="false">)</mo>
+  </msqrt>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>j</mi>
+</math></span> is exactly the room the uncertainty relation requires.</p></section>
+<figure id="chapter-03-fig-2" class="figure"><img src="assets/img/ch03_fig02_vector_model.png" class="diagram" alt="Why the picture has to be a cone and not an arrow. The length is fixed at j(j+1)\, and the projection on z takes the 2j+1 values m, but nothing fixes where on the cone the vector lies — and Eq. (3.7) forbids anything from fixing it." loading="lazy" style="--figure-width: 62%;"><figcaption>Figure 3.2. Why the picture has to be a cone and not an arrow. The length is
+	fixed at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msqrt>
+    <mi>j</mi>
+    <mo stretchy="false">(</mo>
+    <mi>j</mi>
+    <mo>+</mo>
+    <mn>1</mn>
+    <mo stretchy="false">)</mo>
+  </msqrt>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mi data-mjx-alternate="1">ℏ</mi>
+</math></span> and the projection on <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>z</mi>
+</math></span> takes the
+	<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mi>j</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+</math></span> values <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi data-mjx-alternate="1">ℏ</mi>
+</math></span>, but nothing fixes where on the cone the vector
+	lies — and Eq. <a class="xref" href="../chapter-03/index.html#eq-eq-am-commutators">(3.7)</a> forbids anything from fixing
+	it.</figcaption></figure>
 <section class="callout remark"><header>Remark</header><p>The derivation permitted half-integer <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>j</mi>
 </math></span>: nothing in Eq. <a class="xref" href="../chapter-03/index.html#eq-eq-am-general">(3.8)</a> excludes it. Section <a class="xref" href="../chapter-03/index.html#sec-3-orbital-angular-momentum-in-spherical-coordinates">3.5</a> shows that <em>orbital</em> angular momentum must have integer <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -3619,7 +3832,7 @@
   <mn>1</mn>
   <mo stretchy="false">)</mo>
 </math></span>-dimensional space, and the operators become finite matrices. Two cases are worth writing out.</p>
-<p><strong><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p class="case-head case-head-example">The simplest case: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>j</mi>
   <mo>=</mo>
   <mstyle displaystyle="false" scriptlevel="0">
@@ -3628,7 +3841,8 @@
       <mn>2</mn>
     </mfrac>
   </mstyle>
-</math></span>.</strong> With basis <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>.</p>
+<p>With basis <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="INNER">
     <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
@@ -3858,7 +4072,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:AM-half-matrices">(3.25)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:AM-half-matrices">(3.26)</span></div>
 <p>Recovering <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mrow data-mjx-texclass="ORD">
@@ -4066,12 +4280,13 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:AM-pauli">(3.26)</span></div>
-<p><strong><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math><span class="eqn-number" id="mjx-eqn:eq:AM-pauli">(3.27)</span></div>
+<p class="case-head case-head-example">The next case: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>j</mi>
   <mo>=</mo>
   <mn>1</mn>
-</math></span>.</strong> With basis <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>.</p>
+<p>With basis <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="INNER">
     <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
@@ -4292,7 +4507,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:AM-one-matrices">(3.27)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:AM-one-matrices">(3.28)</span></div>
 <section class="callout example" id="example-ex-am-matrix-check"><header><span class="callout-kind">Example 3.4.1</span><span class="callout-title">Checking the algebra in matrices</span></header><p> Verify <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo stretchy="false">[</mo>
   <msub>
@@ -4756,10 +4971,10 @@
         <mi>x</mi>
         <mo>=</mo>
         <mi>r</mi>
-        <mi>sin</mi>
+        <mspace width="0.167em" /><mi>sin</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
         <mi>θ</mi>
-        <mi>cos</mi>
+        <mspace width="0.167em" /><mi>cos</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
         <mi>φ</mi>
         <mo>,</mo>
@@ -4769,10 +4984,10 @@
         <mi>y</mi>
         <mo>=</mo>
         <mi>r</mi>
-        <mi>sin</mi>
+        <mspace width="0.167em" /><mi>sin</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
         <mi>θ</mi>
-        <mi>sin</mi>
+        <mspace width="0.167em" /><mi>sin</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
         <mi>φ</mi>
         <mo>,</mo>
@@ -4782,14 +4997,14 @@
         <mi>z</mi>
         <mo>=</mo>
         <mi>r</mi>
-        <mi>cos</mi>
+        <mspace width="0.167em" /><mi>cos</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
         <mi>θ</mi>
         <mo>.</mo>
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:AM-spherical-coords">(3.28)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:AM-spherical-coords">(3.29)</span></div>
 <p>Consider <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mrow data-mjx-texclass="ORD">
@@ -4879,10 +5094,10 @@
         <mo>=</mo>
         <mo form="prefix" lspace="0em" rspace="0em">−</mo>
         <mi>r</mi>
-        <mi>sin</mi>
+        <mspace width="0.167em" /><mi>sin</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
         <mi>θ</mi>
-        <mi>sin</mi>
+        <mspace width="0.167em" /><mi>sin</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
         <mi>φ</mi>
         <mstyle scriptlevel="0">
@@ -4894,10 +5109,10 @@
         </msub>
         <mo>+</mo>
         <mi>r</mi>
-        <mi>sin</mi>
+        <mspace width="0.167em" /><mi>sin</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
         <mi>θ</mi>
-        <mi>cos</mi>
+        <mspace width="0.167em" /><mi>cos</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
         <mi>φ</mi>
         <mstyle scriptlevel="0">
@@ -4930,7 +5145,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:AM-Lz-derivation">(3.29)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:AM-Lz-derivation">(3.30)</span></div>
 <p>The right-hand side is exactly <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mrow data-mjx-texclass="ORD">
@@ -4991,7 +5206,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:AM-Lz-spherical">(3.30)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:AM-Lz-spherical">(3.31)</span></div>
 <p>a simple and important result: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mrow data-mjx-texclass="ORD">
@@ -5126,7 +5341,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:AM-L2-spherical">(3.31)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:AM-L2-spherical">(3.32)</span></div>
 <p>Neither operator contains <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>r</mi>
 </math></span>. Angular momentum is a statement about angles only, which is exactly why it will separate from the radial problem in Sec. <a class="xref" href="../chapter-03/index.html#sec-3-central-potentials">3.8</a>.</p>
@@ -5209,7 +5424,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:AM-Ylm-eigen">(3.32)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:AM-Ylm-eigen">(3.33)</span></div>
 <p>are solved in Chapter 4, Sec. <a class="xref" href="../chapter-04/index.html#sec-4-solving-the-angular-equation">4.5</a>, by separating <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>Y</mi>
   <mo>=</mo>
@@ -5330,7 +5545,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:AM-Ylm">(3.33)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:AM-Ylm">(3.34)</span></div>
 <p>orthonormal on the sphere,</p>
 <div class="math-block math-block--numbered" id="eq-eq-am-ylm-ortho"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -5386,7 +5601,7 @@
             <mi>m</mi>
           </mrow>
         </msubsup>
-        <mi>sin</mi>
+        <mspace width="0.167em" /><mi>sin</mi>
         <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
         <mi>θ</mi>
         <mstyle scriptlevel="0">
@@ -5424,8 +5639,128 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:AM-Ylm-ortho">(3.34)</span></div>
-<p>The lowest few are listed in Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-ylm-table">(4.31)</a>.</p>
+</math><span class="eqn-number" id="mjx-eqn:eq:AM-Ylm-ortho">(3.35)</span></div>
+<p>The lowest few are listed in Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-ylm-table">(4.32)</a>.</p>
+<figure id="chapter-03-fig-3" class="figure"><img src="assets/img/ch03_fig03_spherical_harmonics.png" class="diagram" alt="The angular factor, drawn as the surface r=|Yl^m(,)|. The polar angle carries l-|m| nodes, so m=0 states have a node across the equator and |m|=l states have none — which is why pz points along the axis and px lies across it. The two colours are the two signs of Yl^m, and it is those signs that decide whether a combination of atomic orbitals bonds or antibonds in Chapter 7." loading="lazy" style="--figure-width: 98%;"><figcaption>Figure 3.3. The angular factor, drawn as the surface <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mo>=</mo>
+  <mo stretchy="false">|</mo>
+  <msubsup>
+    <mi>Y</mi>
+    <mi>l</mi>
+    <mi>m</mi>
+  </msubsup>
+  <mo stretchy="false">(</mo>
+  <mi>θ</mi>
+  <mo>,</mo>
+  <mi>φ</mi>
+  <mo stretchy="false">)</mo>
+  <mo stretchy="false">|</mo>
+</math></span>.
+	The polar angle carries <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+  <mo>−</mo>
+  <mo stretchy="false">|</mo>
+  <mi>m</mi>
+  <mo stretchy="false">|</mo>
+</math></span> nodes, so <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> states have a node across
+	the equator and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">|</mo>
+  <mi>m</mi>
+  <mo stretchy="false">|</mo>
+  <mo>=</mo>
+  <mi>l</mi>
+</math></span> states have none — which is why <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>p</mi>
+    <mi>z</mi>
+  </msub>
+</math></span> points
+	along the axis and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>p</mi>
+    <mi>x</mi>
+  </msub>
+</math></span> lies across it. The two colours are the two
+	signs of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msubsup>
+    <mi>Y</mi>
+    <mi>l</mi>
+    <mi>m</mi>
+  </msubsup>
+</math></span>, and it is those signs that decide whether a combination
+	of atomic orbitals bonds or antibonds in Chapter 7.</figcaption></figure>
+<p>The spherical harmonic is only the angular half. Multiplying it by the radial function <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>R</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+      <mi>l</mi>
+    </mrow>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>r</mi>
+  <mo stretchy="false">)</mo>
+</math></span> of Chapter 4 gives the orbital itself, and adds a second kind of node that the angular picture cannot show.</p>
+<figure id="chapter-03-fig-4" class="figure"><img src="assets/img/ch03_fig05_hydrogen_orbitals.png" class="diagram" alt="The full hydrogen orbitals n m=Rnl(r)Yl^m, with a quadrant removed so the interior is visible. The 1s and 2s have the same spherical angular factor and are told apart only by the radial node — the small inner lobe of opposite sign at the centre of the 2s — which is the whole reason s electrons penetrate to the nucleus in Chapter 5. Total nodes are always n-1, split n--1 radial and angular." loading="lazy" style="--figure-width: 98%;"><figcaption>Figure 3.4. The full hydrogen orbitals <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ψ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+      <mi>ℓ</mi>
+      <mi>m</mi>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <msub>
+    <mi>R</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+      <mi>l</mi>
+    </mrow>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>r</mi>
+  <mo stretchy="false">)</mo>
+  <msubsup>
+    <mi>Y</mi>
+    <mi>l</mi>
+    <mi>m</mi>
+  </msubsup>
+</math></span>, with
+	a quadrant removed so the interior is visible. The <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+  <mi>s</mi>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mi>s</mi>
+</math></span> have the
+	same spherical angular factor and are told apart only by the radial node
+	— the small inner lobe of opposite sign at the centre of the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mi>s</mi>
+</math></span> —
+	which is the whole reason <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> electrons penetrate to the nucleus in
+	Chapter 5. Total nodes are always <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>−</mo>
+  <mn>1</mn>
+</math></span>, split <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>−</mo>
+  <mi>ℓ</mi>
+  <mo>−</mo>
+  <mn>1</mn>
+</math></span> radial and
+	<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ℓ</mi>
+</math></span> angular.</figcaption></figure>
 <p>Note the agreement between the two routes: the differential equation gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>l</mi>
   <mo>=</mo>
@@ -5492,7 +5827,7 @@
   </msub>
   <mo>+</mo>
   <mi>i</mi>
-  <mi>cot</mi>
+  <mspace width="0.167em" /><mi>cot</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
   <mi>θ</mi>
   <mstyle scriptlevel="0">
@@ -5523,7 +5858,7 @@
   </msubsup>
 </math></span>, and check against Theorem <a class="xref" href="../chapter-03/index.html#theorem-thm-am-spectrum">3.3.1</a>.</p>
 <p class="solution-head">Solution.</p>
-<p>From Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-ylm-table">(4.31)</a>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>From Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-ylm-table">(4.32)</a>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msubsup>
     <mi>Y</mi>
     <mn>1</mn>
@@ -5540,7 +5875,7 @@
     <mn>4</mn>
     <mi>π</mi>
   </msqrt>
-  <mi>cos</mi>
+  <mspace width="0.167em" /><mi>cos</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
   <mi>θ</mi>
 </math></span>, which has no <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -5597,7 +5932,7 @@
         </mrow>
       </mfrac>
     </msqrt>
-    <mi>cos</mi>
+    <mspace width="0.167em" /><mi>cos</mi>
     <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
     <mi>θ</mi>
     <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
@@ -5617,7 +5952,7 @@
   <mstyle scriptlevel="0">
     <mspace width="0.167em" />
   </mstyle>
-  <mi>sin</mi>
+  <mspace width="0.167em" /><mi>sin</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
   <mi>θ</mi>
   <mstyle scriptlevel="0">
@@ -5715,7 +6050,7 @@
       </mrow>
     </mfrac>
   </msqrt>
-  <mi>sin</mi>
+  <mspace width="0.167em" /><mi>sin</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
   <mi>θ</mi>
   <mstyle scriptlevel="0">
@@ -5739,7 +6074,7 @@
       </mrow>
     </mfrac>
   </msqrt>
-  <mi>sin</mi>
+  <mspace width="0.167em" /><mi>sin</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
   <mi>θ</mi>
   <mstyle scriptlevel="0">
@@ -5754,7 +6089,7 @@
   </msup>
   <mo>,</mo>
 </math></div>
-<p>which is exactly the entry in Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-ylm-table">(4.31)</a>, including the minus sign. The algebraic and differential descriptions agree in detail, not merely in outline.</p></section>
+<p>which is exactly the entry in Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-ylm-table">(4.32)</a>, including the minus sign. The algebraic and differential descriptions agree in detail, not merely in outline.</p></section>
 <h2 id="sec-3-parity-and-selection-rules"><span class="sec-number">3.6</span>Parity and Selection Rules</h2>
 <p>The <em>parity operator</em> <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
@@ -5801,7 +6136,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:AM-parity-def">(3.35)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:AM-parity-def">(3.36)</span></div>
 <p>Since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mrow data-mjx-texclass="ORD">
@@ -6072,7 +6407,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:AM-parity-Ylm">(3.36)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:AM-parity-Ylm">(3.37)</span></div>
 <p><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>s</mi>
 </math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -6137,7 +6472,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:AM-dipole-odd">(3.37)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:AM-dipole-odd">(3.38)</span></div>
 <section class="callout theorem" id="theorem-thm-am-laporte"><header><span class="callout-kind">Theorem 3.6.1</span><span class="callout-title">Laporte's rule</span></header><p> If <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="INNER">
     <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
@@ -6203,7 +6538,7 @@
       <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
     </mover>
   </mrow>
-</math></span> twice and use Eq. <a class="xref" href="../chapter-03/index.html#eq-eq-am-dipole-odd">(3.37)</a>:</p>
+</math></span> twice and use Eq. <a class="xref" href="../chapter-03/index.html#eq-eq-am-dipole-odd">(3.38)</a>:</p>
 <div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mrow data-mjx-texclass="INNER">
     <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">⟨</mo>
@@ -6363,7 +6698,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:AM-selection">(3.38)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:AM-selection">(3.39)</span></div>
 <p>The <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi mathvariant="normal">Δ</mi>
   <mi>l</mi>
@@ -6386,7 +6721,7 @@
   <mi>z</mi>
   <mo>=</mo>
   <mi>r</mi>
-  <mi>cos</mi>
+  <mspace width="0.167em" /><mi>cos</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
   <mi>θ</mi>
 </math></span>, carrying no <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -6404,7 +6739,7 @@
   <mi>y</mi>
   <mo>=</mo>
   <mi>r</mi>
-  <mi>sin</mi>
+  <mspace width="0.167em" /><mi>sin</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
   <mi>θ</mi>
   <mstyle scriptlevel="0">
@@ -6464,7 +6799,7 @@
   <mi>z</mi>
   <mo>=</mo>
   <mi>r</mi>
-  <mi>cos</mi>
+  <mspace width="0.167em" /><mi>cos</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
   <mi>θ</mi>
 </math></span> and use <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -6517,7 +6852,7 @@
       <mo>∗</mo>
     </mrow>
   </msubsup>
-  <mi>cos</mi>
+  <mspace width="0.167em" /><mi>cos</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
   <mi>θ</mi>
   <mstyle scriptlevel="0">
@@ -6564,10 +6899,10 @@
       <mi>π</mi>
     </mrow>
   </msubsup>
-  <mi>cos</mi>
+  <mspace width="0.167em" /><mi>cos</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
   <mi>θ</mi>
-  <mi>sin</mi>
+  <mspace width="0.167em" /><mi>sin</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
   <mi>θ</mi>
   <mstyle scriptlevel="0">
@@ -6638,7 +6973,7 @@
       <mo>∗</mo>
     </mrow>
   </msubsup>
-  <mi>cos</mi>
+  <mspace width="0.167em" /><mi>cos</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
   <mi>θ</mi>
   <mstyle scriptlevel="0">
@@ -6747,7 +7082,7 @@
   </mfrac>
   <mo>,</mo>
 </math></div>
-<p>using orthonormality, Eq. <a class="xref" href="../chapter-03/index.html#eq-eq-am-ylm-ortho">(3.34)</a>. Nonzero: allowed.</p>
+<p>using orthonormality, Eq. <a class="xref" href="../chapter-03/index.html#eq-eq-am-ylm-ortho">(3.35)</a>. Nonzero: allowed.</p>
 <p>The physical consequence is substantial. Hydrogen's <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>2</mn>
   <mi>s</mi>
@@ -6909,8 +7244,8 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:AM-spin-half">(3.39)</span></div>
-<p>with the matrices of Eq. <a class="xref" href="../chapter-03/index.html#eq-eq-am-pauli">(3.26)</a>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math><span class="eqn-number" id="mjx-eqn:eq:AM-spin-half">(3.40)</span></div>
+<p>with the matrices of Eq. <a class="xref" href="../chapter-03/index.html#eq-eq-am-pauli">(3.27)</a>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mover accent="true">
       <mi mathvariant="normal">𝑺</mi>
@@ -6998,7 +7333,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:AM-H-commutes">(3.40)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:AM-H-commutes">(3.41)</span></div>
 <p>because <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mrow data-mjx-texclass="ORD">
@@ -7125,7 +7460,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:AM-laplacian">(3.41)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:AM-laplacian">(3.42)</span></div>
 <p>and the separable form</p>
 <div class="math-block math-block--numbered" id="eq-eq-am-separation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -7175,8 +7510,8 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:AM-separation">(3.42)</span></div>
-<p>reduces the three-dimensional problem to one dimension. Chapter 4 carries this out in full, Eqs. <a class="xref" href="../chapter-04/index.html#eq-eq-h-sep-step1">(4.12)</a>–<a class="xref" href="../chapter-04/index.html#eq-eq-h-radial-1d">(4.20)</a>; the result, after the substitution <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math><span class="eqn-number" id="mjx-eqn:eq:AM-separation">(3.43)</span></div>
+<p>reduces the three-dimensional problem to one dimension. Chapter 4 carries this out in full, Eqs. <a class="xref" href="../chapter-04/index.html#eq-eq-h-sep-step1">(4.13)</a>–<a class="xref" href="../chapter-04/index.html#eq-eq-h-radial-1d">(4.21)</a>; the result, after the substitution <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>U</mi>
   <mo>=</mo>
   <mi>r</mi>
@@ -7339,9 +7674,25 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:AM-radial">(3.43)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:AM-radial">(3.44)</span></div>
 <p>Three features are used throughout the rest of the book.</p>
 <p><strong>It is a one-dimensional problem.</strong> Every technique of Chapter 2 — matching across regions, counting nodes, reading off bound states — applies unchanged on the half-line.</p>
+<figure id="chapter-03-fig-5" class="figure"><img src="assets/img/ch03_fig04_centrifugal_barrier.png" class="diagram" alt="The centrifugal term decides which electrons can reach the nucleus. It is repulsive and diverges as r0 for every l&amp;gt;0, so only l=0 has no barrier to cross. This one picture is behind the quantum defect of Chapter 5 and the autoionization widths of Chapter 10." loading="lazy" style="--figure-width: 90%;"><figcaption>Figure 3.5. The centrifugal term decides which electrons can reach the
+	nucleus. It is repulsive and diverges as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mo accent="false" stretchy="false">→</mo>
+  <mn>0</mn>
+</math></span> for every <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+  <mo>&gt;</mo>
+  <mn>0</mn>
+</math></span>, so only
+	<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> has no barrier to cross. This one picture is behind the quantum
+	defect of Chapter 5 and the autoionization widths of Chapter 10.</figcaption></figure>
 <p><strong>The centrifugal barrier excludes high <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>l</mi>
 </math></span> from the center.</strong> The term <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -7454,8 +7805,660 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:AM-energy-normalization">(3.44)</span></div>
-<p>Equation <a class="xref" href="../chapter-03/index.html#eq-eq-am-energy-normalization">(3.44)</a> is unfamiliar now and becomes central in Chapter 10; for the moment only the qualitative picture is needed — a countable ladder below threshold, a continuum above it.</p>
+</math><span class="eqn-number" id="mjx-eqn:eq:AM-energy-normalization">(3.45)</span></div>
+<p>Equation <a class="xref" href="../chapter-03/index.html#eq-eq-am-energy-normalization">(3.45)</a> is unfamiliar now and becomes central in Chapter 10; for the moment only the qualitative picture is needed — a countable ladder below threshold, a continuum above it.</p>
+<h3 id="sec-3-first-pass-self-checks-spin-and-parity"><span class="sec-number">3.8.1</span>First-Pass Self-Checks: Spin and Parity</h3>
+<section class="callout example" id="example-ex-am-selfcheck-spin-ladder"><header><span class="callout-kind">Example 3.8.1</span><span class="callout-title">Self-check 1: spin matrices from the ladder</span></header><p> Use the ordered basis <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo fence="false" stretchy="false">{</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mo stretchy="false">↑</mo>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+  <mo>,</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mo stretchy="false">↓</mo>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+  <mo fence="false" stretchy="false">}</mo>
+</math></span> and the ladder rule to construct <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover accent="true">
+        <mi>S</mi>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+      </mover>
+    </mrow>
+    <mi>x</mi>
+  </msub>
+</math></span>. Verify its action directly.</p>
+<p class="solution-head">Solution.</p>
+<p>For <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mo>=</mo>
+  <mstyle displaystyle="false" scriptlevel="0">
+    <mfrac>
+      <mn>1</mn>
+      <mn>2</mn>
+    </mfrac>
+  </mstyle>
+</math></span>,</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover accent="true">
+        <mi>S</mi>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+      </mover>
+    </mrow>
+    <mo>+</mo>
+  </msub>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mo stretchy="false">↓</mo>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+  <mo>=</mo>
+  <mi data-mjx-alternate="1">ℏ</mi>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mo stretchy="false">↑</mo>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+  <mo>,</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="2em" />
+  </mstyle>
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover accent="true">
+        <mi>S</mi>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+      </mover>
+    </mrow>
+    <mo>+</mo>
+  </msub>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mo stretchy="false">↑</mo>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+  <mo>=</mo>
+  <mn>0</mn>
+  <mo>,</mo>
+</math></div>
+<p>so its two columns are <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mn>0</mn>
+  <mo>,</mo>
+  <mn>0</mn>
+  <msup>
+    <mo stretchy="false">)</mo>
+    <mi>T</mi>
+  </msup>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi data-mjx-alternate="1">ℏ</mi>
+  <mo>,</mo>
+  <mn>0</mn>
+  <msup>
+    <mo stretchy="false">)</mo>
+    <mi>T</mi>
+  </msup>
+</math></span>:</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <msub>
+    <mi>S</mi>
+    <mo>+</mo>
+  </msub>
+  <mo>=</mo>
+  <mi data-mjx-alternate="1">ℏ</mi>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <mtable columnspacing="1em" rowspacing="4pt">
+      <mtr>
+        <mtd>
+          <mn>0</mn>
+        </mtd>
+        <mtd>
+          <mn>1</mn>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mn>0</mn>
+        </mtd>
+        <mtd>
+          <mn>0</mn>
+        </mtd>
+      </mtr>
+    </mtable>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+  </mrow>
+  <mo>,</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="2em" />
+  </mstyle>
+  <msub>
+    <mi>S</mi>
+    <mo>−</mo>
+  </msub>
+  <mo>=</mo>
+  <msubsup>
+    <mi>S</mi>
+    <mo>+</mo>
+    <mo>†</mo>
+  </msubsup>
+  <mo>=</mo>
+  <mi data-mjx-alternate="1">ℏ</mi>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <mtable columnspacing="1em" rowspacing="4pt">
+      <mtr>
+        <mtd>
+          <mn>0</mn>
+        </mtd>
+        <mtd>
+          <mn>0</mn>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mn>1</mn>
+        </mtd>
+        <mtd>
+          <mn>0</mn>
+        </mtd>
+      </mtr>
+    </mtable>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+  </mrow>
+  <mo>.</mo>
+</math></div>
+<p>Hence</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <msub>
+    <mi>S</mi>
+    <mi>x</mi>
+  </msub>
+  <mo>=</mo>
+  <mfrac>
+    <mrow>
+      <msub>
+        <mi>S</mi>
+        <mo>+</mo>
+      </msub>
+      <mo>+</mo>
+      <msub>
+        <mi>S</mi>
+        <mo>−</mo>
+      </msub>
+    </mrow>
+    <mn>2</mn>
+  </mfrac>
+  <mo>=</mo>
+  <mfrac>
+    <mi data-mjx-alternate="1">ℏ</mi>
+    <mn>2</mn>
+  </mfrac>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <mtable columnspacing="1em" rowspacing="4pt">
+      <mtr>
+        <mtd>
+          <mn>0</mn>
+        </mtd>
+        <mtd>
+          <mn>1</mn>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mn>1</mn>
+        </mtd>
+        <mtd>
+          <mn>0</mn>
+        </mtd>
+      </mtr>
+    </mtable>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+  </mrow>
+  <mo>.</mo>
+</math></div>
+<p>Matrix multiplication gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>S</mi>
+    <mi>x</mi>
+  </msub>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mo stretchy="false">↑</mo>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+  <mo>=</mo>
+  <mo stretchy="false">(</mo>
+  <mi data-mjx-alternate="1">ℏ</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+  <mo stretchy="false">)</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mo stretchy="false">↓</mo>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>S</mi>
+    <mi>x</mi>
+  </msub>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mo stretchy="false">↓</mo>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+  <mo>=</mo>
+  <mo stretchy="false">(</mo>
+  <mi data-mjx-alternate="1">ℏ</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+  <mo stretchy="false">)</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mo stretchy="false">↑</mo>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+</math></span>, exactly the same action as the ladder construction.</p></section>
+<section class="callout example" id="example-ex-am-selfcheck-spin-probabilities"><header><span class="callout-kind">Example 3.8.2</span><span class="callout-title">Self-check 2: spin probabilities in two bases</span></header><p> A spin is prepared in <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+      <mi>x</mi>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+  <mo>=</mo>
+  <mo stretchy="false">(</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mo stretchy="false">↑</mo>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+  <mo>+</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mo stretchy="false">↓</mo>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+  <mo stretchy="false">)</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msqrt>
+    <mn>2</mn>
+  </msqrt>
+</math></span>. Find the probabilities for measurements of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>S</mi>
+    <mi>z</mi>
+  </msub>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>S</mi>
+    <mi>x</mi>
+  </msub>
+</math></span>.</p>
+<p class="solution-head">Solution.</p>
+<p>In the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>S</mi>
+    <mi>z</mi>
+  </msub>
+</math></span> basis the coefficients are both <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msqrt>
+    <mn>2</mn>
+  </msqrt>
+</math></span>, so</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>P</mi>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>S</mi>
+    <mi>z</mi>
+  </msub>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+  <mi data-mjx-alternate="1">ℏ</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mi>P</mi>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>S</mi>
+    <mi>z</mi>
+  </msub>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mi data-mjx-alternate="1">ℏ</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mfrac>
+    <mn>1</mn>
+    <mn>2</mn>
+  </mfrac>
+  <mo>.</mo>
+</math></div>
+<p>Using the matrix from Self-check 1,</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <msub>
+    <mi>S</mi>
+    <mi>x</mi>
+  </msub>
+  <mfrac>
+    <mn>1</mn>
+    <msqrt>
+      <mn>2</mn>
+    </msqrt>
+  </mfrac>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <mtable columnspacing="1em" rowspacing="4pt">
+      <mtr>
+        <mtd>
+          <mn>1</mn>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mn>1</mn>
+        </mtd>
+      </mtr>
+    </mtable>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+  </mrow>
+  <mo>=</mo>
+  <mfrac>
+    <mi data-mjx-alternate="1">ℏ</mi>
+    <mrow>
+      <mn>2</mn>
+      <msqrt>
+        <mn>2</mn>
+      </msqrt>
+    </mrow>
+  </mfrac>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+    <mtable columnspacing="1em" rowspacing="4pt">
+      <mtr>
+        <mtd>
+          <mn>1</mn>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mn>1</mn>
+        </mtd>
+      </mtr>
+    </mtable>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+  </mrow>
+  <mo>=</mo>
+  <mfrac>
+    <mi data-mjx-alternate="1">ℏ</mi>
+    <mn>2</mn>
+  </mfrac>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+      <mi>x</mi>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+  <mo>.</mo>
+</math></div>
+<p>Thus <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+      <mi>x</mi>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+</math></span> is an <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>S</mi>
+    <mi>x</mi>
+  </msub>
+</math></span> eigenstate: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>P</mi>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>S</mi>
+    <mi>x</mi>
+  </msub>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+  <mi data-mjx-alternate="1">ℏ</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>P</mi>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>S</mi>
+    <mi>x</mi>
+  </msub>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mi data-mjx-alternate="1">ℏ</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>. Probabilities depend on the measurement basis even though the prepared ket has not changed.</p></section>
+<section class="callout example" id="example-ex-am-selfcheck-parity-integral"><header><span class="callout-kind">Example 3.8.3</span><span class="callout-title">Self-check 3: an explicit parity integral</span></header><p> Evaluate the angular factor of the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>z</mi>
+</math></span> matrix element between two <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> states and identify the cancellation.</p>
+<p class="solution-head">Solution.</p>
+<p>Since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msubsup>
+    <mi>Y</mi>
+    <mn>0</mn>
+    <mn>0</mn>
+  </msubsup>
+  <mo>=</mo>
+  <mn>1</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msqrt>
+    <mn>4</mn>
+    <mi>π</mi>
+  </msqrt>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>z</mi>
+  <mo>=</mo>
+  <mi>r</mi>
+  <mspace width="0.167em" /><mi>cos</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mi>θ</mi>
+</math></span>, the angular factor is</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>I</mi>
+  <mo>=</mo>
+  <mo data-mjx-texclass="OP">∫</mo>
+  <msubsup>
+    <mi>Y</mi>
+    <mn>0</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>0</mn>
+      <mo>∗</mo>
+    </mrow>
+  </msubsup>
+  <mspace width="0.167em" /><mi>cos</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mi>θ</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msubsup>
+    <mi>Y</mi>
+    <mn>0</mn>
+    <mn>0</mn>
+  </msubsup>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mi>d</mi>
+  <mi mathvariant="normal">Ω</mi>
+  <mo>=</mo>
+  <mfrac>
+    <mn>1</mn>
+    <mrow>
+      <mn>4</mn>
+      <mi>π</mi>
+    </mrow>
+  </mfrac>
+  <msubsup>
+    <mo data-mjx-texclass="OP">∫</mo>
+    <mn>0</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+      <mi>π</mi>
+    </mrow>
+  </msubsup>
+  <mi>d</mi>
+  <mi>φ</mi>
+  <msubsup>
+    <mo data-mjx-texclass="OP">∫</mo>
+    <mn>0</mn>
+    <mi>π</mi>
+  </msubsup>
+  <mspace width="0.167em" /><mi>cos</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mi>θ</mi>
+  <mspace width="0.167em" /><mi>sin</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mi>θ</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mi>d</mi>
+  <mi>θ</mi>
+  <mo>.</mo>
+</math></div>
+<p>With <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>u</mi>
+  <mo>=</mo>
+  <mi>cos</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mi>θ</mi>
+</math></span>,</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>I</mi>
+  <mo>=</mo>
+  <mfrac>
+    <mn>1</mn>
+    <mn>2</mn>
+  </mfrac>
+  <msubsup>
+    <mo data-mjx-texclass="OP">∫</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mn>1</mn>
+    </mrow>
+  </msubsup>
+  <mi>u</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mi>d</mi>
+  <mi>u</mi>
+  <mo>=</mo>
+  <mfrac>
+    <mn>1</mn>
+    <mn>4</mn>
+  </mfrac>
+  <msubsup>
+    <mrow data-mjx-texclass="INNER">
+      <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">[</mo>
+      <msup>
+        <mi>u</mi>
+        <mn>2</mn>
+      </msup>
+      <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">]</mo>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mn>1</mn>
+    </mrow>
+  </msubsup>
+  <mo>=</mo>
+  <mn>0.</mn>
+</math></div>
+<p>The integrand is odd under <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>u</mi>
+  <mo accent="false" stretchy="false">→</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mi>u</mi>
+</math></span>: the northern and southern hemispheres cancel exactly. This integral is the simplest explicit case of Laporte's rule, Theorem <a class="xref" href="../chapter-03/index.html#theorem-thm-am-laporte">3.6.1</a>.</p></section>
 <h2 id="sec-3-summary"><span class="sec-number">3.9</span>Summary</h2>
 <ul><li><p>From <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo stretchy="false">[</mo>
@@ -7813,7 +8816,7 @@
       <mn>2</mn>
     </mrow>
   </msup>
-</math></span> is Eq. <a class="xref" href="../chapter-03/index.html#eq-eq-am-l2-spherical">(3.31)</a>; neither contains <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> is Eq. <a class="xref" href="../chapter-03/index.html#eq-eq-am-l2-spherical">(3.32)</a>; neither contains <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>r</mi>
 </math></span>. The eigenfunctions are the spherical harmonics <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msubsup>
@@ -7895,7 +8898,7 @@
       <mi>m</mi>
     </mrow>
   </msubsup>
-</math></span>, giving the radial equation <a class="xref" href="../chapter-03/index.html#eq-eq-am-radial">(3.43)</a> for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>, giving the radial equation <a class="xref" href="../chapter-03/index.html#eq-eq-am-radial">(3.44)</a> for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>U</mi>
   <mo>=</mo>
   <mi>r</mi>
@@ -8071,7 +9074,7 @@
   </msub>
   <mo>+</mo>
   <mi>i</mi>
-  <mi>cot</mi>
+  <mspace width="0.167em" /><mi>cot</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
   <mi>θ</mi>
   <mstyle scriptlevel="0">
@@ -8082,12 +9085,12 @@
     <mi>φ</mi>
   </msub>
   <mo stretchy="false">)</mo>
-</math></span>, derive Eq. <a class="xref" href="../chapter-03/index.html#eq-eq-am-l2-spherical">(3.31)</a>.</p></li><li><p><strong>Ladder normalization.</strong> Derive Eq. <a class="xref" href="../chapter-03/index.html#eq-eq-am-ladder-action">(3.24)</a> from Eqs. <a class="xref" href="../chapter-03/index.html#eq-eq-am-positivity">(3.18)</a> and <a class="xref" href="../chapter-03/index.html#eq-eq-am-norm-value">(3.19)</a>. Then verify it for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>, derive Eq. <a class="xref" href="../chapter-03/index.html#eq-eq-am-l2-spherical">(3.32)</a>.</p></li><li><p><strong>Ladder normalization.</strong> Derive Eq. <a class="xref" href="../chapter-03/index.html#eq-eq-am-ladder-action">(3.24)</a> from Eqs. <a class="xref" href="../chapter-03/index.html#eq-eq-am-positivity">(3.18)</a> and <a class="xref" href="../chapter-03/index.html#eq-eq-am-norm-value">(3.19)</a>. Then verify it for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>j</mi>
   <mo>=</mo>
   <mn>1</mn>
-</math></span> by applying the matrix of Eq. <a class="xref" href="../chapter-03/index.html#eq-eq-am-one-matrices">(3.27)</a> to each basis vector.</p></li><li><p><strong>Parity and a selection rule.</strong></p>
-<ol><li><p>Verify Eq. <a class="xref" href="../chapter-03/index.html#eq-eq-am-parity-ylm">(3.36)</a> explicitly for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> by applying the matrix of Eq. <a class="xref" href="../chapter-03/index.html#eq-eq-am-one-matrices">(3.28)</a> to each basis vector.</p></li><li><p><strong>Parity and a selection rule.</strong></p>
+<ol><li><p>Verify Eq. <a class="xref" href="../chapter-03/index.html#eq-eq-am-parity-ylm">(3.37)</a> explicitly for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msubsup>
     <mi>Y</mi>
     <mn>0</mn>
@@ -8112,7 +9115,7 @@
       <mn>1</mn>
     </mrow>
   </msubsup>
-</math></span> using Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-ylm-table">(4.31)</a>.</p></li><li><p>Evaluate <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> using Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-ylm-table">(4.32)</a>.</p></li><li><p>Evaluate <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo data-mjx-texclass="OP">∫</mo>
   <msubsup>
     <mi>Y</mi>
@@ -8122,7 +9125,7 @@
       <mo>∗</mo>
     </mrow>
   </msubsup>
-  <mi>cos</mi>
+  <mspace width="0.167em" /><mi>cos</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
   <mi>θ</mi>
   <mstyle scriptlevel="0">
@@ -8288,7 +9291,7 @@
     <mo>/</mo>
   </mrow>
   <mi>r</mi>
-</math></span> in atomic units, so that the effective potential of Eq. <a class="xref" href="../chapter-03/index.html#eq-eq-am-radial">(3.43)</a> is</p>
+</math></span> in atomic units, so that the effective potential of Eq. <a class="xref" href="../chapter-03/index.html#eq-eq-am-radial">(3.44)</a> is</p>
 <div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <msub>
     <mi>V</mi>
@@ -8438,7 +9441,7 @@
   <mi>n</mi>
   <mo>=</mo>
   <mn>3</mn>
-</math></span> as a horizontal line and mark the turning points from (b).</p></li><li><p><strong>On the computer.</strong> Discretize Eq. <a class="xref" href="../chapter-03/index.html#eq-eq-am-radial">(3.43)</a> on a grid and find the lowest bound-state energy for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> as a horizontal line and mark the turning points from (b).</p></li><li><p><strong>On the computer.</strong> Discretize Eq. <a class="xref" href="../chapter-03/index.html#eq-eq-am-radial">(3.44)</a> on a grid and find the lowest bound-state energy for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>l</mi>
   <mo>=</mo>
   <mn>0</mn>
@@ -8530,6 +9533,7 @@
 </main>
 <footer class="site-footer">
   <div class="site-footer-inner">
+    <p class="site-footer-notice"><strong>Under development.</strong> These notes are a working draft and have not been fully checked. Concepts, derivations, worked solutions and numerical values may contain errors, so read them critically and verify anything you rely on.</p>
     <p>&copy; 2026 Erfan Saydanzad. All rights reserved. This material is published for reading and personal study; it may not be copied, redistributed, or reused in other work without written permission.</p>
   </div>
 </footer>

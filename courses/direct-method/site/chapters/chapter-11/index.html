@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Chapter 11: Time-Dependent Rydberg–Fano Dynamics in CO2 | Direct Method</title>
+  <title>Chapter 11: Time-Dependent Rydberg–Fano Dynamics in CO2 | Quantum Mechanics and Spectroscopy</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
   <link rel="preload" href="../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../../assets/css/site.css?v=856ec339">
+  <link rel="stylesheet" href="../../assets/css/site.css?v=ee8de383">
   <link rel="preload" href="../../assets/fonts/latinmodern-math.woff2" as="font" type="font/woff2" crossorigin>
-  <script defer src="../../assets/js/main.js?v=856ec339"></script>
+  <script defer src="../../assets/js/main.js?v=ee8de383"></script>
 
 <style>
 .site-header { justify-content: flex-start; gap: 16px; }
@@ -35,7 +35,7 @@
   <a class="site-up" href="../../../../../index.html"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.5 5.5 8l4.5 4.5"/></svg><span>Saydanzad Group</span></a>
   <a class="brand" href="../../index.html">
     <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M9 6.5V25.5M9 6.5H24M9 25.5H24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 16Q10.5 9.5 15.5 16T25.5 16" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/></svg>
-    <span>Direct Method</span>
+    <span>Quantum Mechanics and Spectroscopy</span>
   </a>
   <nav class="top-nav" aria-label="Primary">
     <a href="../../index.html">Home</a>
@@ -55,6 +55,7 @@
 </math></span></h2>
     <nav class="chapter-toc" aria-label="Chapter contents">
       <a class="toc-level-2" href="#sec-11-introduction">11.1 Introduction</a>
+<a class="toc-level-3" href="#sec-11-first-solvable-limits-decay-then-drive">11.1.1 First solvable limits: decay, then drive</a>
 <a class="toc-level-2" href="#sec-11-the-physical-setup">11.2 The Physical Setup</a>
 <a class="toc-level-2" href="#sec-11-the-channel-basis">11.3 The Channel Basis</a>
 <a class="toc-level-3" href="#sec-11-the-hamiltonian">11.3.1 The Hamiltonian</a>
@@ -62,9 +63,11 @@
 <a class="toc-level-3" href="#sec-11-reading-the-terms">11.4.1 Reading the Terms</a>
 <a class="toc-level-3" href="#sec-11-the-effective-pump-amplitude">11.4.2 The Effective Pump Amplitude</a>
 <a class="toc-level-2" href="#sec-11-the-approximations">11.5 The Approximations</a>
+<a class="toc-level-3" href="#sec-11-the-shift-the-model-omits">11.5.1 The Shift the Model Omits</a>
 <a class="toc-level-2" href="#sec-11-what-the-model-predicts">11.6 What the Model Predicts</a>
 <a class="toc-level-3" href="#sec-11-the-coupled-channel-c-here-x-a-fano-profile-assembling-itself">The coupled channel (C, here X): a Fano profile assembling itself</a>
 <a class="toc-level-3" href="#sec-11-the-uncoupled-channel-n-here-b-quantum-beats">The uncoupled channel (N, here B): quantum beats</a>
+<a class="toc-level-3" href="#sec-11-first-pass-self-checks">First-pass self-checks</a>
 <a class="toc-level-2" href="#sec-11-summary">11.7 Summary</a>
 <a class="toc-level-2" href="#sec-11-exercises">11.8 Exercises</a>
 <a class="toc-level-2" href="#sec-11-project-time-resolved-fano-buildup">11.9 Project: Time-Resolved Fano Buildup</a>
@@ -95,7 +98,326 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
   <mo>=</mo>
   <mn>1</mn>
 </math></span>.</p>
+<section class="callout definition" id="definition-def-co2-route"><header><span class="callout-kind">Definition 11.1.1</span><span class="callout-title">Optional research extension</span></header><p> This chapter is optional for entering Quantum Chemistry or Condensed Matter. Its <em>first pass</em> is the one-level decay and resonantly driven two-level models below. The CO<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span> channel basis, continuum elimination, and pump–probe observables are the <em>research extension</em> reached by repeating the same amplitude bookkeeping with more channels.</p></section>
+<h3 id="sec-11-first-solvable-limits-decay-then-drive"><span class="sec-number">11.1.1</span>First solvable limits: decay, then drive</h3>
+<p>A single unstable level with energy <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>E</mi>
+    <mi>a</mi>
+  </msub>
+</math></span> and energy width <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Γ</mi>
+</math></span> obeys</p>
+<div class="math-block math-block--numbered" id="eq-eq-co2-one-decay"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>i</mi>
+        <msub>
+          <mrow data-mjx-texclass="ORD">
+            <mover>
+              <mi>c</mi>
+              <mo>˙</mo>
+            </mover>
+          </mrow>
+          <mi>a</mi>
+        </msub>
+        <mo>=</mo>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>E</mi>
+          <mi>a</mi>
+        </msub>
+        <mo>−</mo>
+        <mi>i</mi>
+        <mi mathvariant="normal">Γ</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mo>/</mo>
+        </mrow>
+        <mn>2</mn>
+        <mo stretchy="false">)</mo>
+        <msub>
+          <mi>c</mi>
+          <mi>a</mi>
+        </msub>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <msub>
+          <mi>c</mi>
+          <mi>a</mi>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>t</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <msub>
+          <mi>c</mi>
+          <mi>a</mi>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mn>0</mn>
+        <mo stretchy="false">)</mo>
+        <msup>
+          <mi>e</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+            <mi>i</mi>
+            <msub>
+              <mi>E</mi>
+              <mi>a</mi>
+            </msub>
+            <mi>t</mi>
+          </mrow>
+        </msup>
+        <msup>
+          <mi>e</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+            <mi mathvariant="normal">Γ</mi>
+            <mi>t</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mo>/</mo>
+            </mrow>
+            <mn>2</mn>
+          </mrow>
+        </msup>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:CO2-one-decay">(11.1)</span></div>
+<p>Thus <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>P</mi>
+    <mi>a</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mo stretchy="false">|</mo>
+  <msub>
+    <mi>c</mi>
+    <mi>a</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mn>0</mn>
+  <mo stretchy="false">)</mo>
+  <msup>
+    <mo stretchy="false">|</mo>
+    <mn>2</mn>
+  </msup>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi mathvariant="normal">Γ</mi>
+      <mi>t</mi>
+    </mrow>
+  </msup>
+</math></span>. Restoring units changes the exponent to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mi mathvariant="normal">Γ</mi>
+  <mi>t</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi data-mjx-alternate="1">ℏ</mi>
+</math></span>. If this effective non-Hermitian equation represents loss into an initially empty continuum, its accumulated probability is</p>
+<div class="math-block math-block--numbered" id="eq-eq-co2-one-decay-loss"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <msub>
+          <mi>P</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mi mathvariant="normal">c</mi>
+            <mi mathvariant="normal">o</mi>
+            <mi mathvariant="normal">n</mi>
+            <mi mathvariant="normal">t</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>t</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mo stretchy="false">|</mo>
+        <msub>
+          <mi>c</mi>
+          <mi>a</mi>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mn>0</mn>
+        <mo stretchy="false">)</mo>
+        <msup>
+          <mo stretchy="false">|</mo>
+          <mn>2</mn>
+        </msup>
+        <mo>−</mo>
+        <msub>
+          <mi>P</mi>
+          <mi>a</mi>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>t</mi>
+        <mo stretchy="false">)</mo>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <msub>
+          <mrow data-mjx-texclass="ORD">
+            <mover>
+              <mi>P</mi>
+              <mo>˙</mo>
+            </mover>
+          </mrow>
+          <mrow data-mjx-texclass="ORD">
+            <mi mathvariant="normal">c</mi>
+            <mi mathvariant="normal">o</mi>
+            <mi mathvariant="normal">n</mi>
+            <mi mathvariant="normal">t</mi>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <mi mathvariant="normal">Γ</mi>
+        <msub>
+          <mi>P</mi>
+          <mi>a</mi>
+        </msub>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:CO2-one-decay-loss">(11.2)</span></div>
+<p>in atomic units. The missing norm has a physical destination; it has not ceased to exist.</p>
+<p>Before adding decay or continua, drive a stable pair on resonance with the constant RWA Hamiltonian</p>
+<div class="math-block math-block--numbered" id="eq-eq-co2-simple-driven-pair"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <msub>
+          <mi>H</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mn>2</mn>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <mfrac>
+          <mi mathvariant="normal">Ω</mi>
+          <mn>2</mn>
+        </mfrac>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mtable columnspacing="1em" rowspacing="4pt">
+            <mtr>
+              <mtd>
+                <mn>0</mn>
+              </mtd>
+              <mtd>
+                <mn>1</mn>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <mn>1</mn>
+              </mtd>
+              <mtd>
+                <mn>0</mn>
+              </mtd>
+            </mtr>
+          </mtable>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:CO2-simple-driven-pair">(11.3)</span></div>
+<p>For <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>c</mi>
+    <mi>g</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mn>0</mn>
+  <mo stretchy="false">)</mo>
+  <mo>,</mo>
+  <msub>
+    <mi>c</mi>
+    <mi>a</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mn>0</mn>
+  <mo stretchy="false">)</mo>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mn>0</mn>
+  <mo stretchy="false">)</mo>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>c</mi>
+    <mi>g</mi>
+  </msub>
+  <mo>=</mo>
+  <mi>cos</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi mathvariant="normal">Ω</mi>
+    <mi>t</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo>/</mo>
+    </mrow>
+    <mn>2</mn>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>c</mi>
+    <mi>a</mi>
+  </msub>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mi>i</mi>
+  <mspace width="0.167em" /><mi>sin</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi mathvariant="normal">Ω</mi>
+    <mi>t</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo>/</mo>
+    </mrow>
+    <mn>2</mn>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+</math></span>, so the two probabilities sum to one. The research equations below add three ingredients to this matrix: detunings, the loss term <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mi>i</mi>
+  <msub>
+    <mi mathvariant="normal">Γ</mi>
+    <mi>n</mi>
+  </msub>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+</math></span>, and continuum amplitudes that receive the lost probability.</p>
 <h2 id="sec-11-the-physical-setup"><span class="sec-number">11.2</span>The Physical Setup</h2>
+<figure id="chapter-11-fig-1" class="figure"><img src="assets/img/ch11_fig01_pump_probe.png" class="diagram" alt="The whole experiment in one diagram, and the whole of the channel basis that the coupled equations are written in. Everything the chapter derives is bookkeeping for these four arrows." loading="lazy" style="--figure-width: 96%;"><figcaption>Figure 11.1. The whole experiment in one diagram, and the whole of the
+	channel basis that the coupled equations are written in. Everything the
+	chapter derives is bookkeeping for these four arrows.</figcaption></figure>
 <p>An attosecond XUV pulse, centered near <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>17.6</mn>
 </math></span> eV with bandwidth about <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -534,7 +856,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:CO2-expansion">(11.1)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:CO2-expansion">(11.4)</span></div>
 <div class="centered"><div class="table-wrap"><table><tr><td>
 		Amplitude</td><td>State</td><td>Introduced in</td></tr><tr><td>
 		<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -758,7 +1080,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:CO2-normalization">(11.2)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:CO2-normalization">(11.5)</span></div>
 <p>This is the check to apply to any numerical solution (Remark <a class="xref" href="../chapter-06/index.html#remark-rem-td-norm">6.2.3</a>).</p>
 <h3 id="sec-11-the-hamiltonian"><span class="sec-number">11.3.1</span>The Hamiltonian</h3>
 <div class="math-block math-block--numbered" id="eq-eq-co2-hamiltonian"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
@@ -821,7 +1143,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:CO2-hamiltonian">(11.3)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:CO2-hamiltonian">(11.6)</span></div>
 <p>with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mrow data-mjx-texclass="ORD">
@@ -1003,7 +1325,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:CO2-Hsplit">(11.4)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:CO2-Hsplit">(11.7)</span></div>
 <p><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mrow data-mjx-texclass="ORD">
@@ -1181,7 +1503,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:CO2-dipole">(11.5)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:CO2-dipole">(11.8)</span></div>
 <p>with envelopes <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>h</mi>
 </math></span>, carrier frequencies <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -1195,8 +1517,8 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
   </msub>
 </math></span> appearing in exactly one place — the argument of the infrared envelope. This is the quantity the experiment varies.</p>
 <h2 id="sec-11-deriving-the-coupled-equations"><span class="sec-number">11.4</span>Deriving the Coupled Equations</h2>
-<p>The derivation is Theorem <a class="xref" href="../chapter-06/index.html#theorem-thm-td-coupled">6.2.1</a> applied to Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-expansion">(11.1)</a>, and it is worth following once because the result looks more complicated than the procedure.</p>
-<p><strong>Step 1: project.</strong> Substituting Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-expansion">(11.1)</a> into <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>The derivation is Theorem <a class="xref" href="../chapter-06/index.html#theorem-thm-td-coupled">6.2.1</a> applied to Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-expansion">(11.4)</a>, and it is worth following once because the result looks more complicated than the procedure.</p>
+<p><strong>Step 1: project.</strong> Substituting Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-expansion">(11.4)</a> into <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>i</mi>
   <msub>
     <mi>∂</mi>
@@ -1759,7 +2081,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:CO2-cg">(11.6)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:CO2-cg">(11.9)</span></div>
 <p><strong>Each Rydberg amplitude</strong> is pumped from the ground state, decays by autoionization, and is depleted by the probe:</p>
 <div class="math-block math-block--numbered" id="eq-eq-co2-cr"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -2058,7 +2380,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:CO2-cR">(11.7)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:CO2-cR">(11.10)</span></div>
 <p><strong>The coupled continuum</strong> receives amplitude from both routes:</p>
 <div class="math-block math-block--numbered" id="eq-eq-co2-cx"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -2291,7 +2613,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:CO2-cX">(11.8)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:CO2-cX">(11.11)</span></div>
 <p><strong>The uncoupled continuum</strong> is fed only by the probe:</p>
 <div class="math-block math-block--numbered" id="eq-eq-co2-cb"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -2465,7 +2787,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:CO2-cB">(11.9)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:CO2-cB">(11.12)</span></div>
 <h3 id="sec-11-reading-the-terms"><span class="sec-number">11.4.1</span>Reading the Terms</h3>
 <p>Four observations account for everything above.</p>
 <section class="callout remark" id="remark-rem-co2-structure"><header><span class="callout-kind">Remark 11.4.1</span><span class="callout-title">Every coupling is envelope <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -2502,7 +2824,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
     <mo>/</mo>
   </mrow>
   <mn>2</mn>
-</math></span> on the left of Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-cr">(11.7)</a> carries no envelope and no dipole. It is autoionization, present whether or not any light is on, and it makes the effective Hamiltonian non-Hermitian in the Rydberg block. The factor <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> on the left of Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-cr">(11.10)</a> carries no envelope and no dipole. It is autoionization, present whether or not any light is on, and it makes the effective Hamiltonian non-Hermitian in the Rydberg block. The factor <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mstyle displaystyle="false" scriptlevel="0">
     <mfrac>
       <mn>1</mn>
@@ -2543,7 +2865,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
     </mrow>
   </msup>
 </math></span>.</p></section>
-<section class="callout remark" id="remark-rem-co2-two-ends"><header><span class="callout-kind">Remark 11.4.3</span><span class="callout-title">The two ends of the same process</span></header><p> The second term of Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-cx">(11.8)</a> is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout remark" id="remark-rem-co2-two-ends"><header><span class="callout-kind">Remark 11.4.3</span><span class="callout-title">The two ends of the same process</span></header><p> The second term of Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-cx">(11.11)</a> is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msqrt>
     <msub>
       <mi mathvariant="normal">Γ</mi>
@@ -2558,8 +2880,8 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
     <mn>2</mn>
     <mi>π</mi>
   </msqrt>
-</math></span> — Eq. <a class="xref" href="../chapter-10/index.html#eq-eq-fano-effective-coupling">(10.9)</a> exactly. It and the decay term of Remark <a class="xref" href="../chapter-11/index.html#remark-rem-co2-decay">11.4.2</a> are the same physics viewed from opposite ends: population leaving the Rydberg state arrives in the continuum. Together they conserve Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-normalization">(11.2)</a>.</p></section>
-<section class="callout remark" id="remark-rem-co2-interference"><header><span class="callout-kind">Remark 11.4.4</span><span class="callout-title">Interference lives in Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-cx">(11.8)</a></span></header><p> Its two terms add <em>amplitudes</em> into the same final state <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> — Eq. <a class="xref" href="../chapter-10/index.html#eq-eq-fano-effective-coupling">(10.9)</a> exactly. It and the decay term of Remark <a class="xref" href="../chapter-11/index.html#remark-rem-co2-decay">11.4.2</a> are the same physics viewed from opposite ends: population leaving the Rydberg state arrives in the continuum. Together they conserve Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-normalization">(11.5)</a>.</p></section>
+<section class="callout remark" id="remark-rem-co2-interference"><header><span class="callout-kind">Remark 11.4.4</span><span class="callout-title">Interference lives in Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-cx">(11.11)</a></span></header><p> Its two terms add <em>amplitudes</em> into the same final state <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="INNER">
     <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
     <mrow data-mjx-texclass="ORD">
@@ -2576,7 +2898,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
   </mrow>
 </math></span>. Squaring the sum produces a cross term, and that cross term is the Fano asymmetry — now time-dependent, because the two contributions arrive on different schedules. The direct term follows the pump envelope and stops when the pulse does; the resonant term keeps arriving for as long as the Rydberg states take to decay.</p></section>
 <h3 id="sec-11-the-effective-pump-amplitude"><span class="sec-number">11.4.2</span>The Effective Pump Amplitude</h3>
-<p>One symbol in Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-cr">(11.7)</a> remains: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>One symbol in Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-cr">(11.10)</a> remains: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>ρ</mi>
     <mi>n</mi>
@@ -2700,7 +3022,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:CO2-rho">(11.10)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:CO2-rho">(11.13)</span></div>
 <p>evaluated at the on-shell photoelectron energy — the energy the electron must carry for energy to be conserved when the resonance decays.</p>
 <p>Chapter 10's asymmetry parameter appears here in the combination <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo stretchy="false">(</mo>
@@ -2889,10 +3211,306 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
   <mi>g</mi>
 </math></span> Rydberg orbitals, so both have total parity <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>u</mi>
-</math></span>, and one photon cannot connect two states of equal parity. Not an approximation so much as a symmetry.</p></li><li><p><strong>Predissociation neglected.</strong> The sharp states can also fall apart into neutral fragments, competing with autoionization. Omitting it makes the calculated autoionization yields upper bounds.</p></li></ol>
+</math></span>, and one photon cannot connect two states of equal parity. Not an approximation so much as a symmetry.</p></li><li><p><strong>Predissociation neglected.</strong> The sharp states can also fall apart into neutral fragments, competing with autoionization. Omitting it makes the calculated autoionization yields upper bounds.</p></li><li><p><strong>No AC Stark shift.</strong> The states are taken to sit at their field-free energies for the whole calculation. They do not: while either pulse is on, the atom is dressed (Sec. <a class="xref" href="../chapter-06/index.html#sec-6-dressed-states-and-the-names-they-go-by">6.5</a>) and every level moves. Sec. <a class="xref" href="../chapter-11/index.html#sec-11-the-shift-the-model-omits">11.5.1</a> works out what that costs.</p></li></ol>
 <p>Assumption (v) illustrates what this course was for. It removes an entire block of the Hamiltonian and costs nothing — no fitting, no parameter, no error — because it follows from the inversion symmetry of a linear centrosymmetric molecule. A symmetry argument proved in Chapter 3, applied to labels earned in Chapter 7, simplifies a research calculation in Chapter 11.</p>
+<h3 id="sec-11-the-shift-the-model-omits"><span class="sec-number">11.5.1</span>The Shift the Model Omits</h3>
+<p>Assumption (vii) is the one most easily forgotten, because nothing in the equations complains about it. It is worth seeing what its removal would do.</p>
+<p>While a pulse is on, the atom is not in an eigenstate of its own Hamiltonian; it is dressed by the field, and the levels move. For the intensities used in these experiments the field is far too weak to split anything visibly — there is no Autler–Townes doublet here — but it is easily strong enough to <em>shift</em> the resonance by a small amount <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Δ</mi>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+</math></span>, following the pulse envelope and vanishing with it.</p>
+<p>The shift enters exactly one place: the energy denominator that fixes where the resonance sits relative to the continuum,</p>
+<div class="math-block math-block--numbered" id="eq-eq-co2-stark-denominator"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mfrac>
+          <mn>1</mn>
+          <mrow>
+            <msub>
+              <mi>E</mi>
+              <mi>b</mi>
+            </msub>
+            <mo>−</mo>
+            <msub>
+              <mi>E</mi>
+              <mi>X</mi>
+            </msub>
+            <mo>−</mo>
+            <mi>ε</mi>
+          </mrow>
+        </mfrac>
+        <mstyle scriptlevel="0">
+          <mspace width="0.278em" />
+        </mstyle>
+        <mo stretchy="false">⟶</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="0.278em" />
+        </mstyle>
+        <mfrac>
+          <mn>1</mn>
+          <mrow>
+            <msub>
+              <mi>E</mi>
+              <mi>b</mi>
+            </msub>
+            <mo>−</mo>
+            <msub>
+              <mi>E</mi>
+              <mi>X</mi>
+            </msub>
+            <mo>−</mo>
+            <mi>ε</mi>
+            <mo>−</mo>
+            <mi mathvariant="normal">Δ</mi>
+            <mo stretchy="false">(</mo>
+            <mi>t</mi>
+            <mo stretchy="false">)</mo>
+          </mrow>
+        </mfrac>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:CO2-stark-denominator">(11.14)</span></div>
+<p>Comparing the two, the field-free formula is recovered by the replacement <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>E</mi>
+    <mi>b</mi>
+  </msub>
+  <mo accent="false" stretchy="false">→</mo>
+  <msub>
+    <mi>E</mi>
+    <mi>b</mi>
+  </msub>
+  <mo>−</mo>
+  <mi mathvariant="normal">Δ</mi>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+</math></span>. The asymmetry parameter is a function of that energy, so it inherits the shift; expanding to first order in <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Δ</mi>
+</math></span>,</p>
+<div class="math-block math-block--numbered" id="eq-eq-co2-q-of-t"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mrow class="mml-boxed">
+          <mrow data-mjx-texclass="ORD">
+            <mstyle displaystyle="true" scriptlevel="0">
+              <mrow data-mjx-texclass="ORD">
+                <mstyle scriptlevel="0">
+                  <mspace width="0.278em" />
+                </mstyle>
+                <mi>q</mi>
+                <mo stretchy="false">(</mo>
+                <mi>t</mi>
+                <mo stretchy="false">)</mo>
+                <mo>=</mo>
+                <msub>
+                  <mi>q</mi>
+                  <mn>0</mn>
+                </msub>
+                <mo>−</mo>
+                <mi mathvariant="normal">Δ</mi>
+                <mo stretchy="false">(</mo>
+                <mi>t</mi>
+                <mo stretchy="false">)</mo>
+                <mstyle scriptlevel="0">
+                  <mspace width="0.167em" />
+                </mstyle>
+                <mfrac>
+                  <mrow>
+                    <mi>d</mi>
+                    <msub>
+                      <mi>q</mi>
+                      <mn>0</mn>
+                    </msub>
+                  </mrow>
+                  <mrow>
+                    <mi>d</mi>
+                    <msub>
+                      <mi>E</mi>
+                      <mi>b</mi>
+                    </msub>
+                  </mrow>
+                </mfrac>
+                <mo>+</mo>
+                <mrow data-mjx-texclass="ORD">
+                  <mi data-mjx-variant="-tex-calligraphic" mathvariant="normal">𝒪</mi>
+                </mrow>
+                <mo stretchy="false">(</mo>
+                <msup>
+                  <mi mathvariant="normal">Δ</mi>
+                  <mrow data-mjx-texclass="ORD">
+                    <mn>2</mn>
+                  </mrow>
+                </msup>
+                <mo stretchy="false">)</mo>
+                <mstyle scriptlevel="0">
+                  <mspace width="0.278em" />
+                </mstyle>
+              </mrow>
+            </mstyle>
+          </mrow>
+        </mrow>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:CO2-q-of-t">(11.15)</span></div>
+<p>valid whenever <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Δ</mi>
+</math></span> is small compared with the energy scale over which <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>q</mi>
+    <mn>0</mn>
+  </msub>
+</math></span> varies — which, for a Rydberg series converging on a threshold, is itself small, so this is not a trivial condition.</p>
+<p>Equation <a class="xref" href="../chapter-11/index.html#eq-eq-co2-q-of-t">(11.15)</a> says the line shape changes shape while the pulse is on. Not its height and not its width: its <em>asymmetry</em>. Look back at Fig. <a class="xref" href="../chapter-10/index.html#chapter-10-fig-2">10.2</a>, which draws the profile for a range of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+</math></span>; a Stark shift slides the resonance along that family and back again as the pulse passes.</p>
+<p>This is worth separating carefully from the time dependence the chapter already has. Figure <a class="xref" href="../chapter-11/index.html#chapter-11-fig-2">11.2</a> shows the profile <em>forming</em>, because the two interfering amplitudes arrive on different schedules and the interference is not complete until the resonance has finished decaying. That is a property of the resonance and happens with no field present at all. The Stark contribution is the opposite kind of thing: it is present only while the field is, it follows the envelope instantaneously, and it leaves nothing behind. In a delay scan the two are distinguishable — one tracks the pulse, the other tracks <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi mathvariant="normal">Γ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+</math></span>.</p>
+<section class="callout remark" id="remark-rem-co2-dark"><header><span class="callout-kind">Remark 11.5.1</span><span class="callout-title">Where a dark state would hide</span></header><p> Assumption (iv) set the cross-widths <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi mathvariant="normal">Γ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+      <mi>m</mi>
+    </mrow>
+  </msub>
+</math></span> to zero, so that each Rydberg state decays into the continuum on its own. That assumption is doing more work than it looks.</p>
+<p>If two bound states <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <msub>
+        <mi>b</mi>
+        <mn>1</mn>
+      </msub>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <msub>
+        <mi>b</mi>
+        <mn>2</mn>
+      </msub>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+</math></span> decay into the <em>same</em> continuum, then the superposition <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>α</mi>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <msub>
+        <mi>b</mi>
+        <mn>1</mn>
+      </msub>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+  <mo>+</mo>
+  <mi>β</mi>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
+    <mrow data-mjx-texclass="ORD">
+      <msub>
+        <mi>b</mi>
+        <mn>2</mn>
+      </msub>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
+  </mrow>
+</math></span> has ionization width</p>
+<div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <msub>
+    <mi mathvariant="normal">Γ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mrow data-mjx-texclass="ORD">
+        <mi data-mjx-auto-op="false">dark</mi>
+      </mrow>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mrow data-mjx-texclass="OPEN">
+    <mo minsize="1.2em" maxsize="1.2em" stretchy="true">|</mo>
+  </mrow>
+  <mi>α</mi>
+  <msub>
+    <mi>V</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>X</mi>
+      <mo>,</mo>
+      <msub>
+        <mi>b</mi>
+        <mn>1</mn>
+      </msub>
+    </mrow>
+  </msub>
+  <mo>+</mo>
+  <mi>β</mi>
+  <msub>
+    <mi>V</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>X</mi>
+      <mo>,</mo>
+      <msub>
+        <mi>b</mi>
+        <mn>2</mn>
+      </msub>
+    </mrow>
+  </msub>
+  <msup>
+    <mrow data-mjx-texclass="CLOSE">
+      <mo minsize="1.2em" maxsize="1.2em" stretchy="true">|</mo>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mo>,</mo>
+</math></div>
+<p>and there is always a choice of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>α</mi>
+  <mo>,</mo>
+  <mi>β</mi>
+</math></span> making it vanish. That superposition cannot ionize at all, however long one waits and however allowed each state is separately: it is a dark state (Sec. <a class="xref" href="../chapter-06/index.html#sec-6-dark-states-a-different-thing-entirely">6.5.2</a>), and it would show up as a dip in the photoionization cross-section rather than as a peak.</p>
+<p>Setting <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi mathvariant="normal">Γ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+      <mi>m</mi>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> removes the coherence that would build such a superposition, so the model cannot produce this feature. Whether the real molecule does is a question the model is not equipped to answer, and Exercise <strong>E3</strong> is where it starts to be asked.</p></section>
 <h2 id="sec-11-what-the-model-predicts"><span class="sec-number">11.6</span>What the Model Predicts</h2>
-<p>Solving Eqs. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-cg">(11.6)</a>–<a class="xref" href="../chapter-11/index.html#eq-eq-co2-cb">(11.9)</a> for each delay <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<figure id="chapter-11-fig-2" class="figure"><img src="assets/img/ch11_fig02_fano_buildup.png" class="diagram" alt="The prediction that makes the model worth writing down. The Fano profile of Chapter 10 is a steady-state object; here it is watched forming. The asymmetry needs the full lifetime to develop, so a probe arriving sooner than finds a line that is still symmetric — and the delay at which it stops being symmetric measures directly." loading="lazy" style="--figure-width: 98%;"><figcaption>Figure 11.2. The prediction that makes the model worth writing down. The Fano
+	profile of Chapter 10 is a steady-state object; here it is watched
+	forming. The asymmetry needs the full lifetime to develop, so a probe
+	arriving sooner than <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>τ</mi>
+</math></span> finds a line that is still symmetric — and
+	the delay at which it stops being symmetric measures <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>τ</mi>
+</math></span> directly.</figcaption></figure>
+<p>Solving Eqs. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-cg">(11.9)</a>–<a class="xref" href="../chapter-11/index.html#eq-eq-co2-cb">(11.12)</a> for each delay <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>t</mi>
     <mi>d</mi>
@@ -2963,7 +3581,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
   <mi mathvariant="normal">∞</mi>
 </math></span> limit of this.</p>
 <h3 id="sec-11-the-uncoupled-channel-n-here-b-quantum-beats">The uncoupled channel (N, here B): quantum beats</h3>
-<p>No XUV route reaches this continuum, so its population is proportional to the Rydberg population surviving when the probe arrives. The broadband pump excited several Rydberg states <em>coherently</em> (Example <a class="xref" href="../chapter-06/index.html#example-ex-td-pulse-spec">6.5.2</a>), and their amplitudes carry phases advancing at different rates, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>No XUV route reaches this continuum, so its population is proportional to the Rydberg population surviving when the probe arrives. The broadband pump excited several Rydberg states <em>coherently</em> (Example <a class="xref" href="../chapter-06/index.html#example-ex-td-pulse-spec">6.6.2</a>), and their amplitudes carry phases advancing at different rates, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>e</mi>
     <mrow data-mjx-texclass="ORD">
@@ -3023,7 +3641,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:CO2-beat">(11.11)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:CO2-beat">(11.16)</span></div>
 <p>and the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mi data-mjx-variant="-tex-calligraphic" mathvariant="normal">𝒩</mi>
@@ -3134,6 +3752,252 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
 </math></span> to states differing only in <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>l</mi>
 </math></span> — that is, to the centrifugal barrier of Chapter 3.</p></section>
+<h3 id="sec-11-first-pass-self-checks">First-pass self-checks</h3>
+<figure id="chapter-11-fig-3" class="figure"><img src="assets/img/learn_decay.png" class="diagram" alt="The factor of two that decides whether the bookkeeping closes. Time is measured in lifetimes =/. The amplitude falls as e^- t/2 and the survival probability as its square, e^- t/; the continuum population is the difference from one, and probability is conserved at every instant because the two lower curves sum to one by construction. Using the amplitude&#x27;s exponent for a population — the error Self-check 1 is built to catch — overestimates the survival at one lifetime by 0.61 against 0.37, and the accounting no longer closes." loading="lazy" style="--figure-width: 86%;"><figcaption>Figure 11.3. The factor of two that decides whether the bookkeeping closes.
+	Time is measured in lifetimes <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>τ</mi>
+  <mo>=</mo>
+  <mi data-mjx-alternate="1">ℏ</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi mathvariant="normal">Γ</mi>
+</math></span>. The amplitude falls as
+	<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi mathvariant="normal">Γ</mi>
+      <mi>t</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mn>2</mn>
+      <mi data-mjx-alternate="1">ℏ</mi>
+    </mrow>
+  </msup>
+</math></span> and the survival probability as its square,
+	<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi mathvariant="normal">Γ</mi>
+      <mi>t</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mi data-mjx-alternate="1">ℏ</mi>
+    </mrow>
+  </msup>
+</math></span>; the continuum population is the difference from
+	one, and probability is conserved at every instant because the two lower
+	curves sum to one by construction. Using the amplitude's exponent for a
+	population — the error Self-check 1 is built to catch — overestimates
+	the survival at one lifetime by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0.61</mn>
+</math></span> against <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0.37</mn>
+</math></span>, and the accounting
+	no longer closes.</figcaption></figure>
+<section class="callout example" id="example-ex-co2-selfcheck-decay"><header><span class="callout-kind">Example 11.6.2</span><span class="callout-title">Self-check 1: one level decays and one channel fills</span></header><p> A teaching level has <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Γ</mi>
+  <mo>=</mo>
+  <mn>20</mn>
+</math></span> meV and begins with unit population. Find the level and continuum probabilities after one lifetime.</p>
+<p class="solution-head">Solution.</p>
+<p>The lifetime is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>τ</mi>
+  <mo>=</mo>
+  <mi data-mjx-alternate="1">ℏ</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi mathvariant="normal">Γ</mi>
+  <mo>=</mo>
+  <mn>32.9</mn>
+</math></span> fs. At <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+  <mo>=</mo>
+  <mi>τ</mi>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>P</mi>
+    <mi>a</mi>
+  </msub>
+  <mo>=</mo>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+  <mo>=</mo>
+  <mn>0.367879</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>P</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi mathvariant="normal">c</mi>
+      <mi mathvariant="normal">o</mi>
+      <mi mathvariant="normal">n</mi>
+      <mi mathvariant="normal">t</mi>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mn>1</mn>
+  <mo>−</mo>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+  <mo>=</mo>
+  <mn>0.632121</mn>
+</math></span>. Their sum is one. Applying the amplitude decay <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi mathvariant="normal">Γ</mi>
+      <mi>t</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mo stretchy="false">(</mo>
+      <mn>2</mn>
+      <mi data-mjx-alternate="1">ℏ</mi>
+      <mo stretchy="false">)</mo>
+    </mrow>
+  </msup>
+</math></span> directly to probability would miss the square and fail this accounting check.</p></section>
+<section class="callout example" id="example-ex-co2-selfcheck-pair"><header><span class="callout-kind">Example 11.6.3</span><span class="callout-title">Self-check 2: solve the driven pair</span></header><p> In atomic units let <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Ω</mi>
+  <mo>=</mo>
+  <mn>0.2</mn>
+</math></span> in Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-simple-driven-pair">(11.3)</a>. When is the initially empty level first fully populated?</p>
+<p class="solution-head">Solution.</p>
+<p><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>P</mi>
+    <mi>a</mi>
+  </msub>
+  <mo>=</mo>
+  <msup>
+    <mi>sin</mi>
+    <mn>2</mn>
+  </msup>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mo stretchy="false">(</mo>
+  <mi mathvariant="normal">Ω</mi>
+  <mi>t</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+  <mo stretchy="false">)</mo>
+</math></span> first reaches one when <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Ω</mi>
+  <mi>t</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+  <mo>=</mo>
+  <mi>π</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+</math></span>, hence <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+  <mo>=</mo>
+  <mi>π</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi mathvariant="normal">Ω</mi>
+  <mo>=</mo>
+  <mn>15.708</mn>
+</math></span> atomic units of time. At that instant <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>P</mi>
+    <mi>g</mi>
+  </msub>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>P</mi>
+    <mi>a</mi>
+  </msub>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>. This is the lossless benchmark to recover when all widths and continuum couplings are set to zero.</p></section>
+<section class="callout example" id="example-ex-co2-selfcheck-norm"><header><span class="callout-kind">Example 11.6.4</span><span class="callout-title">Self-check 3: account for every channel</span></header><p> At one time a teaching calculation gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>P</mi>
+    <mi>g</mi>
+  </msub>
+  <mo>=</mo>
+  <mn>0.05</mn>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <munder>
+    <mo data-mjx-texclass="OP" stretchy="true">∑</mo>
+    <mi>n</mi>
+  </munder>
+  <msub>
+    <mi>P</mi>
+    <mrow data-mjx-texclass="ORD">
+      <msub>
+        <mrow data-mjx-texclass="ORD">
+          <mi data-mjx-variant="-tex-calligraphic" mathvariant="normal">ℛ</mi>
+        </mrow>
+        <mi>n</mi>
+      </msub>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mn>0.40</mn>
+</math></span>, and integrated continuum probabilities <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>P</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mrow data-mjx-texclass="ORD">
+        <mi data-mjx-variant="-tex-calligraphic" mathvariant="normal">𝒞</mi>
+      </mrow>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mn>0.35</mn>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>P</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mrow data-mjx-texclass="ORD">
+        <mi data-mjx-variant="-tex-calligraphic" mathvariant="normal">𝒩</mi>
+      </mrow>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mn>0.20</mn>
+</math></span>. Does it pass the norm check?</p>
+<p class="solution-head">Solution.</p>
+<p>Equation <a class="xref" href="../chapter-11/index.html#eq-eq-co2-normalization">(11.5)</a> gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0.05</mn>
+  <mo>+</mo>
+  <mn>0.40</mn>
+  <mo>+</mo>
+  <mn>0.35</mn>
+  <mo>+</mo>
+  <mn>0.20</mn>
+  <mo>=</mo>
+  <mn>1.00</mn>
+</math></span>, so it passes. Omitting either continuum would make an apparent loss. Each continuum contribution is an energy integral of a probability density, not the density at one photoelectron energy.</p></section>
 <h2 id="sec-11-summary"><span class="sec-number">11.7</span>Summary</h2>
 <ul><li><p>An XUV pump reaches the coupled continuum (<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
@@ -3188,7 +4052,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
       <mo form="prefix" lspace="0em" rspace="0em">+</mo>
     </mrow>
   </msubsup>
-</math></span>), which no XUV route reaches.</p></li><li><p>The state is expanded as Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-expansion">(11.1)</a>: two discrete kinds of amplitude and two continuum integrals, with probability conserved by Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-normalization">(11.2)</a>.</p></li><li><p><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>), which no XUV route reaches.</p></li><li><p>The state is expanded as Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-expansion">(11.4)</a>: two discrete kinds of amplitude and two continuum integrals, with probability conserved by Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-normalization">(11.5)</a>.</p></li><li><p><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mrow data-mjx-texclass="ORD">
       <mover accent="true">
@@ -3212,7 +4076,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
       </mrow>
     </mrow>
   </msub>
-</math></span>, which is the autoionization coupling of Chapter 10.</p></li><li><p>Projecting, applying the RWA and eliminating the coupled continuum in the Markov–Fano reduction gives Eqs. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-cg">(11.6)</a>–<a class="xref" href="../chapter-11/index.html#eq-eq-co2-cb">(11.9)</a>: Chapter 6's <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>, which is the autoionization coupling of Chapter 10.</p></li><li><p>Projecting, applying the RWA and eliminating the coupled continuum in the Markov–Fano reduction gives Eqs. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-cg">(11.9)</a>–<a class="xref" href="../chapter-11/index.html#eq-eq-co2-cb">(11.12)</a>: Chapter 6's <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>i</mi>
   <msub>
     <mrow data-mjx-texclass="ORD">
@@ -3270,7 +4134,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
     <mo>/</mo>
   </mrow>
   <mn>2</mn>
-</math></span> carries neither and is autoionization.</p></li><li><p>Interference sits in Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-cx">(11.8)</a>, whose two terms add amplitudes into one final state. The complex factor <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> carries neither and is autoionization.</p></li><li><p>Interference sits in Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-cx">(11.11)</a>, whose two terms add amplitudes into one final state. The complex factor <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo stretchy="false">(</mo>
   <msub>
     <mi>q</mi>
@@ -3304,9 +4168,9 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
   </mrow>
 </math></span> channel (here <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>B</mi>
-</math></span>) shows quantum beats at the Rydberg level spacings, Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-beat">(11.11)</a>, so a Fourier transform of the delay dependence returns the spectrum of the wave packet.</p></li></ul>
+</math></span>) shows quantum beats at the Rydberg level spacings, Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-beat">(11.16)</a>, so a Fourier transform of the delay dependence returns the spectrum of the wave packet.</p></li></ul>
 <h2 id="sec-11-exercises"><span class="sec-number">11.8</span>Exercises</h2>
-<ol><li><p><strong>Account for every term.</strong> Take Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-cr">(11.7)</a>. For each of its three terms state (a) which physical process it represents, (b) which pulse if any drives it, and (c) which earlier chapter defined the quantity in it. Then explain why the second term contains <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<ol><li><p><strong>Account for every term.</strong> Take Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-cr">(11.10)</a>. For each of its three terms state (a) which physical process it represents, (b) which pulse if any drives it, and (c) which earlier chapter defined the quantity in it. Then explain why the second term contains <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>c</mi>
     <mrow data-mjx-texclass="ORD">
@@ -3381,7 +4245,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
       <mn>3</mn>
     </mrow>
   </msup>
-</math></span> (Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-spacing">(4.61)</a>), show that the ratio <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> (Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-spacing">(4.62)</a>), show that the ratio <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi mathvariant="normal">Γ</mi>
   <mrow data-mjx-texclass="ORD">
     <mo>/</mo>
@@ -3403,7 +4267,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
   <mi>d</mi>
 </math></span>.</p></li><li><p>Comment: does the assumption get better or worse as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>n</mi>
-</math></span> increases, and why is that answer surprising?</p></li></ol></li><li><p><strong>The pump amplitude.</strong> From Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-rho">(11.10)</a>, compute <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> increases, and why is that answer surprising?</p></li></ol></li><li><p><strong>The pump amplitude.</strong> From Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-rho">(11.13)</a>, compute <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo stretchy="false">|</mo>
   <msub>
     <mi>ρ</mi>
@@ -3496,9 +4360,9 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
   <mn>0</mn>
   <mo>.</mo>
 </math></div>
-<p>using Eqs. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-cr">(11.7)</a> and <a class="xref" href="../chapter-11/index.html#eq-eq-co2-cx">(11.8)</a>. Identify which two terms cancel, and relate the result to Remark <a class="xref" href="../chapter-11/index.html#remark-rem-co2-two-ends">11.4.3</a>.</p></li></ol>
+<p>using Eqs. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-cr">(11.10)</a> and <a class="xref" href="../chapter-11/index.html#eq-eq-co2-cx">(11.11)</a>. Identify which two terms cancel, and relate the result to Remark <a class="xref" href="../chapter-11/index.html#remark-rem-co2-two-ends">11.4.3</a>.</p></li></ol>
 <h2 id="sec-11-project-time-resolved-fano-buildup"><span class="sec-number">11.9</span>Project: Time-Resolved Fano Buildup</h2>
-<p><strong>The problem.</strong> Solve a reduced version of Eqs. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-cg">(11.6)</a>–<a class="xref" href="../chapter-11/index.html#eq-eq-co2-cb">(11.9)</a> numerically and watch both signatures appear: the Fano profile assembling itself in the coupled channel (<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p><strong>The problem.</strong> Solve a reduced version of Eqs. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-cg">(11.9)</a>–<a class="xref" href="../chapter-11/index.html#eq-eq-co2-cb">(11.12)</a> numerically and watch both signatures appear: the Fano profile assembling itself in the coupled channel (<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mi data-mjx-variant="-tex-calligraphic" mathvariant="normal">𝒞</mi>
   </mrow>
@@ -3518,7 +4382,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
   </msub>
   <mo>≈</mo>
   <mn>1</mn>
-</math></span> throughout, which removes Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-cg">(11.6)</a>.</p>
+</math></span> throughout, which removes Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-cg">(11.9)</a>.</p>
 <p>Use real parameters: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>E</mi>
@@ -3643,7 +4507,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
       <mi>n</mi>
     </mrow>
   </msub>
-</math></span>.</p></li><li><p><strong>On paper.</strong> Convert every parameter to atomic units and state the time step you will need. It must resolve the fastest phase in the problem — identify which exponent in Eqs. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-cr">(11.7)</a>–<a class="xref" href="../chapter-11/index.html#eq-eq-co2-cb">(11.9)</a> that is.</p></li><li><p><strong>On the computer.</strong> With the probe off, integrate the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>.</p></li><li><p><strong>On paper.</strong> Convert every parameter to atomic units and state the time step you will need. It must resolve the fastest phase in the problem — identify which exponent in Eqs. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-cr">(11.10)</a>–<a class="xref" href="../chapter-11/index.html#eq-eq-co2-cb">(11.12)</a> that is.</p></li><li><p><strong>On the computer.</strong> With the probe off, integrate the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>c</mi>
     <mrow data-mjx-texclass="ORD">
@@ -3812,7 +4676,7 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
       <mi>d</mi>
     </mrow>
   </msub>
-</math></span> from Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-beat">(11.11)</a> and with the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> from Eq. <a class="xref" href="../chapter-11/index.html#eq-eq-co2-beat">(11.16)</a> and with the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>25.5</mn>
 </math></span> fs period of Example <a class="xref" href="../chapter-11/index.html#example-ex-co2-beats">11.6.1</a>.</p></li><li><p><strong>What has to move.</strong> Two animations. First, the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
@@ -3834,12 +4698,13 @@ photoemission experiment of Biswas <em>et al.</em>, Phys. Rev. A <strong>110</st
     <nav class="chapter-nav" aria-label="Chapter navigation">
       <a href="../chapter-10/index.html">Previous: Rydberg and Continuum States; Fano Resonances</a>
       <a href="../../toc.html">Contents</a>
-      <a href="../chapter-12/index.html">Next: Quantum Information and Quantum Computing</a>
+      <span></span>
     </nav>
   </article>
 </main>
 <footer class="site-footer">
   <div class="site-footer-inner">
+    <p class="site-footer-notice"><strong>Under development.</strong> These notes are a working draft and have not been fully checked. Concepts, derivations, worked solutions and numerical values may contain errors, so read them critically and verify anything you rely on.</p>
     <p>&copy; 2026 Erfan Saydanzad. All rights reserved. This material is published for reading and personal study; it may not be copied, redistributed, or reused in other work without written permission.</p>
   </div>
 </footer>

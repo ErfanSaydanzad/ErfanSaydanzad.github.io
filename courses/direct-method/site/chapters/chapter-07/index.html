@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Chapter 7: Molecular Structure, Vibration and Rotation | Direct Method</title>
+  <title>Chapter 7: Molecular Structure, Vibration and Rotation | Quantum Mechanics and Spectroscopy</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
   <link rel="preload" href="../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../../assets/css/site.css?v=856ec339">
+  <link rel="stylesheet" href="../../assets/css/site.css?v=ee8de383">
   <link rel="preload" href="../../assets/fonts/latinmodern-math.woff2" as="font" type="font/woff2" crossorigin>
-  <script defer src="../../assets/js/main.js?v=856ec339"></script>
+  <script defer src="../../assets/js/main.js?v=ee8de383"></script>
 
 <style>
 .site-header { justify-content: flex-start; gap: 16px; }
@@ -35,7 +35,7 @@
   <a class="site-up" href="../../../../../index.html"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.5 5.5 8l4.5 4.5"/></svg><span>Saydanzad Group</span></a>
   <a class="brand" href="../../index.html">
     <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M9 6.5V25.5M9 6.5H24M9 25.5H24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 16Q10.5 9.5 15.5 16T25.5 16" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/></svg>
-    <span>Direct Method</span>
+    <span>Quantum Mechanics and Spectroscopy</span>
   </a>
   <nav class="top-nav" aria-label="Primary">
     <a href="../../index.html">Home</a>
@@ -64,6 +64,7 @@
 <a class="toc-level-2" href="#sec-7-polyatomic-molecules-normal-modes">7.8 Polyatomic Molecules: Normal Modes</a>
 <a class="toc-level-2" href="#sec-7-symmetry-workflow-for-molecular-spectroscopy">7.9 Symmetry Workflow for Molecular Spectroscopy</a>
 <a class="toc-level-2" href="#sec-7-the-three-energy-scales">7.10 The Three Energy Scales</a>
+<a class="toc-level-3" href="#sec-7-first-pass-self-checks">First-pass self-checks</a>
 <a class="toc-level-2" href="#sec-7-summary">7.11 Summary</a>
 <a class="toc-level-2" href="#sec-7-exercises">7.12 Exercises</a>
 <a class="toc-level-2" href="#sec-7-project-a-potential-energy-curve-and-its-levels">7.13 Project: A Potential Energy Curve and Its Levels</a>
@@ -120,6 +121,12 @@
   <mo accent="false" stretchy="false">→</mo>
 </math></span> mode symmetry.</p>
 <p>The chapter follows a single workflow: the electronic and nuclear motion are first separated, each part is then solved with the tools already available, and the result is finally translated into spectroscopic language.</p>
+<section class="callout definition" id="definition-def-mol-route"><header><span class="callout-kind">Definition 7.1.1</span><span class="callout-title">Core route and extension</span></header><p> The <em>first-pass core</em> is the two-orbital LCAO problem, one harmonic vibration, one rigid rotor, and the two-mass normal-mode calculation. The CO<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi />
+    <mn>2</mn>
+  </msub>
+</math></span> configurations, term symbols, anharmonic corrections, and full symmetry workflow are a <em>research extension</em>. The core alone supplies the molecular prerequisites for Quantum Chemistry and Condensed Matter.</p></section>
 <h2 id="sec-7-the-molecular-hamiltonian"><span class="sec-number">7.2</span>The Molecular Hamiltonian</h2>
 <p>For a molecule of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>N</mi>
@@ -543,6 +550,21 @@
   </msub>
 </math></span> is smaller than the electronic kinetic energy by roughly that factor. This suggests solving the electrons first and letting the nuclei follow.</p>
 <h2 id="sec-7-the-born-oppenheimer-separation"><span class="sec-number">7.3</span>The Born–Oppenheimer Separation</h2>
+<figure id="chapter-07-fig-1" class="figure"><img src="assets/img/ch07_fig01_born_oppenheimer.png" class="diagram" alt="What the separation produces. Solving the electronic problem at every fixed geometry turns a many-body problem into a curve, and the nuclei then move in that curve as though it were an ordinary potential. Every quantity in the rest of this chapter — De, Re, the vibrational constants — is read off one of these curves." loading="lazy" style="--figure-width: 88%;"><figcaption>Figure 7.1. What the separation produces. Solving the electronic problem at
+	every fixed geometry turns a many-body problem into a curve, and the
+	nuclei then move in that curve as though it were an ordinary potential.
+	Every quantity in the rest of this chapter — <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>D</mi>
+    <mi>e</mi>
+  </msub>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>R</mi>
+    <mi>e</mi>
+  </msub>
+</math></span>, the
+	vibrational constants — is read off one of these curves.</figcaption></figure>
 <p><strong>Step one: fix the nuclei.</strong> For each geometry <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mover accent="true">
@@ -1559,6 +1581,11 @@
   </msub>
 </math></span>. Energy can be stored in the electrons or in the motion of the nuclei, and the two ladders have very different rungs — the organizing fact of molecular spectroscopy (Sec. <a class="xref" href="../chapter-07/index.html#sec-7-the-three-energy-scales">7.10</a>).</p>
 <h2 id="sec-7-molecular-orbitals-the-lcao-method"><span class="sec-number">7.4</span>Molecular Orbitals: the LCAO Method</h2>
+<figure id="chapter-07-fig-2" class="figure"><img src="assets/img/ch07_fig02_lcao.png" class="diagram" alt="The whole of the LCAO idea. Whether two atomic orbitals bond or antibond is decided by their relative sign — the same signs drawn on the spherical harmonics in Fig. 3.3 — because that is what determines whether the amplitudes reinforce between the nuclei or cancel there." loading="lazy" style="--figure-width: 96%;"><figcaption>Figure 7.2. The whole of the LCAO idea. Whether two atomic orbitals bond or
+	antibond is decided by their relative sign — the same signs drawn on the
+	spherical harmonics in Fig. <a class="xref" href="../chapter-03/index.html#chapter-03-fig-3">3.3</a> — because that is
+	what determines whether the amplitudes reinforce between the nuclei or
+	cancel there.</figcaption></figure>
 <p>Solving Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-electronic">(7.3)</a> in practice uses the independent-electron picture of Chapter 5, with orbitals now spread over the whole molecule. The standard construction builds them from atomic orbitals.</p>
 <p>Consider H<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msubsup>
@@ -2254,6 +2281,206 @@
   </msub>
 </math></span> does not exist.</p></section>
 <p>This simple two-orbital model already captures the central chemical idea: bonding depends on where electron density sits between nuclei.</p>
+<p>The same result can be obtained without a determinant. In the orthogonal limit <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>S</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>, the electronic matrix in the ordered basis <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>ϕ</mi>
+    <mi>A</mi>
+  </msub>
+  <mo>,</mo>
+  <msub>
+    <mi>ϕ</mi>
+    <mi>B</mi>
+  </msub>
+  <mo stretchy="false">)</mo>
+</math></span> is</p>
+<div class="math-block math-block--numbered" id="eq-eq-mol-lcao-simple-matrix"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <msub>
+          <mi>H</mi>
+          <mi>e</mi>
+        </msub>
+        <mo>=</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mtable columnspacing="1em" rowspacing="4pt">
+            <mtr>
+              <mtd>
+                <mi>α</mi>
+              </mtd>
+              <mtd>
+                <mi>β</mi>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <mi>β</mi>
+              </mtd>
+              <mtd>
+                <mi>α</mi>
+              </mtd>
+            </mtr>
+          </mtable>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:MOL-lcao-simple-matrix">(7.16)</span></div>
+<p>Interchanging <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>A</mi>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>B</mi>
+</math></span> leaves <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>H</mi>
+    <mi>e</mi>
+  </msub>
+</math></span> unchanged, so its eigenvectors must be symmetric or antisymmetric: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msqrt>
+    <mn>2</mn>
+  </msqrt>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msqrt>
+    <mn>2</mn>
+  </msqrt>
+</math></span>. Direct matrix diagonalization gives the same energies <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>α</mi>
+  <mo>+</mo>
+  <mi>β</mi>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>α</mi>
+  <mo>−</mo>
+  <mi>β</mi>
+</math></span>. Thus symmetry predicts the eigenvectors, while the matrix gives their energies. For the teaching values <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>α</mi>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>0.50</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>β</mi>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>0.10</mn>
+</math></span> in a declared energy unit, the bonding and antibonding energies are <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>0.60</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>0.40</mn>
+</math></span>.</p>
+<section class="callout misreading" id="misreading-mis-mol-vnn-once"><header><span class="callout-kind">A common misreading 7.4.1</span><span class="callout-title">Count nuclear repulsion once</span></header><p> The eigenvalues of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover accent="true">
+        <mi>H</mi>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+      </mover>
+    </mrow>
+    <mi>e</mi>
+  </msub>
+</math></span> in Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-h-parts">(7.2)</a> are electronic energies at fixed nuclei; <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>V</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>N</mi>
+      <mi>N</mi>
+    </mrow>
+  </msub>
+</math></span> is not inside <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover accent="true">
+        <mi>H</mi>
+        <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
+      </mover>
+    </mrow>
+    <mi>e</mi>
+  </msub>
+</math></span>. A nuclear-inclusive potential curve is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>U</mi>
+    <mi>a</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>R</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <msub>
+    <mi>E</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>e</mi>
+      <mo>,</mo>
+      <mi>a</mi>
+    </mrow>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>R</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+  <mo stretchy="false">)</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+  <msub>
+    <mi>V</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>N</mi>
+      <mi>N</mi>
+    </mrow>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>R</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+  <mo stretchy="false">)</mo>
+</math></span>. Add <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>V</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>N</mi>
+      <mi>N</mi>
+    </mrow>
+  </msub>
+</math></span> once when forming <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>U</mi>
+    <mi>a</mi>
+  </msub>
+</math></span>, and do not add it again when comparing molecular energies.</p></section>
 <h2 id="sec-7-molecular-orbital-labels"><span class="sec-number">7.5</span>Molecular Orbital Labels</h2>
 <p>In an atom <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
@@ -2419,7 +2646,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:MOL-gu">(7.16)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:MOL-gu">(7.17)</span></div>
 <p>Molecules with no inversion center, such as CO or HCl, carry no <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>g</mi>
   <mrow data-mjx-texclass="ORD">
@@ -2431,7 +2658,7 @@
 <section class="callout remark" id="remark-rem-mol-parity-product"><header><span class="callout-kind">Remark 7.5.1</span><span class="callout-title">Orbital parity versus state parity</span></header><p> A subscript <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>g</mi>
 </math></span> on an <em>orbital</em> says that orbital is even. The parity of the whole electronic <em>state</em> is the <em>product</em> over all occupied orbitals. This distinction is easy to lose and it matters: a state built from one odd orbital and one even orbital is odd overall. We use exactly this product rule in Sec. <a class="xref" href="../chapter-07/index.html#sec-7-ionization-several-thresholds">7.5.2</a> and again in Chapter 9.</p></section>
-<p>Since the dipole operator is odd (Chapter 3, Eq. <a class="xref" href="../chapter-03/index.html#eq-eq-am-dipole-odd">(3.37)</a>), Laporte's rule survives intact in centrosymmetric molecules: a one-photon transition must connect <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>Since the dipole operator is odd (Chapter 3, Eq. <a class="xref" href="../chapter-03/index.html#eq-eq-am-dipole-odd">(3.38)</a>), Laporte's rule survives intact in centrosymmetric molecules: a one-photon transition must connect <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>g</mi>
 </math></span> to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>u</mi>
@@ -2465,7 +2692,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:MOL-term">(7.17)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:MOL-term">(7.18)</span></div>
 <p>with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>S</mi>
 </math></span> the total spin, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -2611,7 +2838,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:MOL-co2-config">(7.18)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:MOL-co2-config">(7.19)</span></div>
 <p>Find the term symbol.</p>
 <p class="solution-head">Solution.</p>
 <p>First check the count: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -2711,7 +2938,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:MOL-co2-X">(7.19)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:MOL-co2-X">(7.20)</span></div>
 <p>A closed-shell ground state — the normal situation for a stable molecule, and convenient: singlet, zero axial angular momentum, even parity. Every transition out of it starts from a clean slate.</p></section>
 <h3 id="sec-7-ionization-several-thresholds"><span class="sec-number">7.5.2</span>Ionization: Several Thresholds</h3>
 <p>In an atom one speaks of “the” ionization energy. A molecule has one for <em>each</em> orbital an electron can be removed from, and each leaves the ion in a different electronic state.</p>
@@ -2723,7 +2950,7 @@
       <mo form="prefix" lspace="0em" rspace="0em">+</mo>
     </mrow>
   </msubsup>
-</math></span></span></header><p> Derive the term symbol of the ion produced by removing one electron from each valence orbital in Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-co2-config">(7.18)</a>.</p>
+</math></span></span></header><p> Derive the term symbol of the ion produced by removing one electron from each valence orbital in Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-co2-config">(7.19)</a>.</p>
 <p class="solution-head">Solution.</p>
 <p>By Theorem <a class="xref" href="../chapter-05/index.html#theorem-thm-me-closed-shell">5.9.1</a>, one hole behaves like one electron. So in every case <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>S</mi>
@@ -3034,7 +3261,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:MOL-taylor">(7.20)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:MOL-taylor">(7.21)</span></div>
 <p>The linear term vanishes because <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>R</mi>
@@ -3166,7 +3393,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:MOL-vib-levels">(7.21)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:MOL-vib-levels">(7.22)</span></div>
 <h3 id="sec-7-spectroscopic-constants-and-units"><span class="sec-number">7.6.1</span>Spectroscopic Constants and Units</h3>
 <p>Experiments usually report frequencies in wavenumbers rather than energies. Write</p>
 <div class="math-block math-block--numbered" id="eq-eq-mol-vib-term-wavenumber"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
@@ -3247,7 +3474,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:MOL-vib-term-wavenumber">(7.22)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:MOL-vib-term-wavenumber">(7.23)</span></div>
 <p>where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>ω</mi>
@@ -3283,7 +3510,11 @@
   <mi>v</mi>
 </math></span>.</p>
 <h3 id="sec-7-anharmonicity"><span class="sec-number">7.6.2</span>Anharmonicity</h3>
-<p>Equal spacing is an artefact of truncating Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-taylor">(7.20)</a> at second order. A real curve flattens toward the dissociation limit, so the true levels crowd together as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<figure id="chapter-07-fig-3" class="figure"><img src="assets/img/ch07_fig03_morse.png" class="diagram" alt="The harmonic curve is right where it is fitted and wrong about everything else. It agrees with Morse at the minimum, by construction, and then climbs forever — so it predicts an infinite ladder of equally spaced levels for a bond that in fact breaks after fourteen." loading="lazy" style="--figure-width: 88%;"><figcaption>Figure 7.3. The harmonic curve is right where it is fitted and wrong about
+	everything else. It agrees with Morse at the minimum, by construction,
+	and then climbs forever — so it predicts an infinite ladder of equally
+	spaced levels for a bond that in fact breaks after fourteen.</figcaption></figure>
+<p>Equal spacing is an artefact of truncating Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-taylor">(7.21)</a> at second order. A real curve flattens toward the dissociation limit, so the true levels crowd together as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>v</mi>
 </math></span> grows and eventually stop.</p>
 <section class="callout definition" id="definition-def-mol-morse"><header><span class="callout-kind">Definition 7.6.1</span><span class="callout-title">Morse potential</span></header><div class="math-block math-block--numbered" id="eq-eq-mol-morse"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
@@ -3329,7 +3560,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:MOL-morse">(7.23)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:MOL-morse">(7.24)</span></div>
 <p>with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>D</mi>
@@ -3443,7 +3674,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:MOL-morse-levels">(7.24)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:MOL-morse-levels">(7.25)</span></div>
 <p>with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>x</mi>
@@ -3555,7 +3786,7 @@
   </msub>
 </math></span>, and estimate how many bound vibrational levels there are.</p>
 <p class="solution-head">Solution.</p>
-<p>Expanding Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-morse">(7.23)</a> about <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>Expanding Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-morse">(7.24)</a> about <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>R</mi>
     <mi>e</mi>
@@ -3811,6 +4042,27 @@
   </msub>
 </math></span> has of order eighteen bound vibrational states — a finite ladder, unlike the harmonic oscillator's infinite one, and the difference is precisely that a real bond can break.</p></section>
 <h2 id="sec-7-rotation"><span class="sec-number">7.7</span>Rotation</h2>
+<figure id="chapter-07-fig-4" class="figure"><img src="assets/img/ch07_fig04_rotor.png" class="diagram" alt="The one ladder in this book whose rungs are not evenly spaced. EJ=BJ(J+1) spreads as 2BJ, and yet the transitions between neighbours are evenly spaced — which is why a rotational spectrum is a comb of equally separated lines even though the levels are not." loading="lazy" style="--figure-width: 80%;"><figcaption>Figure 7.4. The one ladder in this book whose rungs are not evenly spaced.
+	<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>E</mi>
+    <mi>J</mi>
+  </msub>
+  <mo>=</mo>
+  <mi>B</mi>
+  <mi>J</mi>
+  <mo stretchy="false">(</mo>
+  <mi>J</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span> spreads as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mi>B</mi>
+  <mi>J</mi>
+</math></span>, and yet the <em>transitions</em> between
+	neighbours are evenly spaced — which is why a rotational spectrum is a
+	comb of equally separated lines even though the levels are not.</figcaption></figure>
 <p>Hold the bond length fixed at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>R</mi>
@@ -3870,7 +4122,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:MOL-rotor-H">(7.25)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:MOL-rotor-H">(7.26)</span></div>
 <p>with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>I</mi>
 </math></span> the moment of inertia. But <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -3972,7 +4224,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:MOL-rot-levels">(7.26)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:MOL-rot-levels">(7.27)</span></div>
 <p>each level <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo stretchy="false">(</mo>
   <mn>2</mn>
@@ -4018,7 +4270,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:MOL-rot-spacing">(7.27)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:MOL-rot-spacing">(7.28)</span></div>
 <p>growing linearly with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>J</mi>
 </math></span>. A rotational spectrum is therefore a sequence of lines evenly spaced by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -4078,7 +4330,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:MOL-Bv">(7.28)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:MOL-Bv">(7.29)</span></div>
 <p>with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>α</mi>
@@ -4167,7 +4419,7 @@
   </mrow>
   <mo>.</mo>
 </math></div>
-<p>From Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-rot-levels">(7.26)</a>,</p>
+<p>From Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-rot-levels">(7.27)</a>,</p>
 <div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mi>I</mi>
   <mo>=</mo>
@@ -4310,7 +4562,7 @@
 <p>the accepted value. One measured line spacing gives the geometry of the molecule — among the cleanest inversions in physics.</p></section>
 <section class="callout remark" id="remark-rem-mol-distortion"><header><span class="callout-kind">Remark 7.7.1</span><span class="callout-title">Centrifugal distortion</span></header><p> A real bond stretches as the molecule spins faster, increasing <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>I</mi>
-</math></span> and lowering the levels below Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-rot-levels">(7.26)</a>. The standard correction adds a term <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> and lowering the levels below Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-rot-levels">(7.27)</a>. The standard correction adds a term <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo form="prefix" lspace="0em" rspace="0em">−</mo>
   <mi>D</mi>
   <msup>
@@ -4398,8 +4650,153 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:eq:MOL-mode-count">(7.29)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:eq:MOL-mode-count">(7.30)</span></div>
 <p>Expanding the potential to second order in all coordinates gives a quadratic form, and diagonalizing it produces independent oscillators in collective coordinates — the <em>normal modes</em>, in which every atom moves in phase at one frequency. This is the eigenvalue problem of linear algebra, and it is set as the project.</p>
+<p>The smallest example is two equal masses <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span> attached to fixed walls by springs <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> and joined by a spring <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>k</mi>
+    <mi>c</mi>
+  </msub>
+</math></span>. Their displacements obey</p>
+<div class="math-block math-block--numbered" id="eq-eq-mol-two-mass-modes"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>m</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mover>
+            <mrow data-mjx-texclass="ORD">
+              <mover accent="true">
+                <mi>x</mi>
+                <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+              </mover>
+            </mrow>
+            <mo>¨</mo>
+          </mover>
+        </mrow>
+        <mo>=</mo>
+        <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mtable columnspacing="1em" rowspacing="4pt">
+            <mtr>
+              <mtd>
+                <mi>k</mi>
+                <mo>+</mo>
+                <msub>
+                  <mi>k</mi>
+                  <mi>c</mi>
+                </msub>
+              </mtd>
+              <mtd>
+                <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+                <msub>
+                  <mi>k</mi>
+                  <mi>c</mi>
+                </msub>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+                <msub>
+                  <mi>k</mi>
+                  <mi>c</mi>
+                </msub>
+              </mtd>
+              <mtd>
+                <mi>k</mi>
+                <mo>+</mo>
+                <msub>
+                  <mi>k</mi>
+                  <mi>c</mi>
+                </msub>
+              </mtd>
+            </mtr>
+          </mtable>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
+        <mrow data-mjx-texclass="ORD">
+          <mover accent="true">
+            <mi>x</mi>
+            <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+          </mover>
+        </mrow>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:eq:MOL-two-mass-modes">(7.31)</span></div>
+<p>Symmetry again supplies the eigenvectors. For <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span> the joining spring is not stretched and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ω</mi>
+    <mi>s</mi>
+  </msub>
+  <mo>=</mo>
+  <msqrt>
+    <mi>k</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo>/</mo>
+    </mrow>
+    <mi>m</mi>
+  </msqrt>
+</math></span>; for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span> it is stretched twice and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ω</mi>
+    <mi>a</mi>
+  </msub>
+  <mo>=</mo>
+  <msqrt>
+    <mo stretchy="false">(</mo>
+    <mi>k</mi>
+    <mo>+</mo>
+    <mn>2</mn>
+    <msub>
+      <mi>k</mi>
+      <mi>c</mi>
+    </msub>
+    <mo stretchy="false">)</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mo>/</mo>
+    </mrow>
+    <mi>m</mi>
+  </msqrt>
+</math></span>. Quantization turns each independent normal coordinate into an oscillator with energies <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi data-mjx-alternate="1">ℏ</mi>
+  <msub>
+    <mi>ω</mi>
+    <mi>j</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>n</mi>
+    <mi>j</mi>
+  </msub>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+  <mo stretchy="false">)</mo>
+</math></span>. This is the direct bridge from molecular vibration to phonons: a crystal has many masses, hence many collective eigenvectors, but the matrix method is unchanged.</p>
 <p>CO<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi />
@@ -4533,6 +4930,246 @@
 </math></span> eV</td><td>microwave</td><td>picoseconds</td></tr><tr><td></td></tr></table></div></div>
 <p>The separations are factors of roughly a hundred, and they have two consequences. They make spectroscopy possible: each motion can be excited and observed nearly independently. And they justify Born–Oppenheimer itself — the electrons respond a hundred times faster than the nuclei, so they adjust essentially instantaneously.</p>
 <p>The timescale column matters in its own right. A pulse of a few femtoseconds — the XUV pulse of Chapter 6 — is <em>fast compared with nuclear motion</em>. During such a pulse the molecule has no time to change shape. That observation licenses the fixed-nuclei treatment used in Chapter 11, and it is why the vibrational structure developed here can be set aside there.</p>
+<h3 id="sec-7-first-pass-self-checks">First-pass self-checks</h3>
+<figure id="chapter-07-fig-5" class="figure"><img src="assets/img/learn_two_masses.png" class="diagram" alt="Two equal masses joined by one spring and anchored to nothing. The arrows are the eigenvectors of the stated force-constant matrix and the frequencies are the square roots of its eigenvalues, both computed rather than asserted. The symmetric eigenvector has eigenvalue zero: it moves the pair without stretching the spring, so it is a translation and not a vibration at all. Only the antisymmetric one, at =2, is a normal mode of internal motion. This is where the 3N-6 count comes from — anchor the masses, as Self-check 3 does with k=1 and kc=0.5, and the zero mode is replaced by =1." loading="lazy" style="--figure-width: 88%;"><figcaption>Figure 7.5. Two equal masses joined by one spring and anchored to nothing.
+	The arrows are the eigenvectors of the stated force-constant matrix and
+	the frequencies are the square roots of its eigenvalues, both computed
+	rather than asserted. The symmetric eigenvector has eigenvalue zero: it
+	moves the pair without stretching the spring, so it is a translation and
+	not a vibration at all. Only the antisymmetric one, at
+	<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ω</mi>
+  <mo>=</mo>
+  <msqrt>
+    <mn>2</mn>
+  </msqrt>
+</math></span>, is a normal mode of internal motion. This is where the
+	<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>3</mn>
+  <mi>N</mi>
+  <mo>−</mo>
+  <mn>6</mn>
+</math></span> count comes from — anchor the masses, as Self-check 3 does with
+	<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>k</mi>
+    <mi>c</mi>
+  </msub>
+  <mo>=</mo>
+  <mn>0.5</mn>
+</math></span>, and the zero mode is replaced by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ω</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>.</figcaption></figure>
+<section class="callout example" id="example-ex-mol-selfcheck-lcao"><header><span class="callout-kind">Example 7.10.1</span><span class="callout-title">Self-check 1: LCAO by matrix and symmetry</span></header><p> For the teaching matrix in Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-lcao-simple-matrix">(7.16)</a>, take <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>α</mi>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>0.50</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>β</mi>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>0.10</mn>
+</math></span>. Find both orbitals and energies in two ways.</p>
+<p class="solution-head">Solution.</p>
+<p>The characteristic equation is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi>α</mi>
+  <mo>−</mo>
+  <mi>E</mi>
+  <msup>
+    <mo stretchy="false">)</mo>
+    <mn>2</mn>
+  </msup>
+  <mo>−</mo>
+  <msup>
+    <mi>β</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>, so <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>E</mi>
+  <mo>=</mo>
+  <mi>α</mi>
+  <mo>±</mo>
+  <mi>β</mi>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>0.60</mn>
+  <mo>,</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>0.40</mn>
+</math></span>. Substitution gives normalized eigenvectors <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msqrt>
+    <mn>2</mn>
+  </msqrt>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msqrt>
+    <mn>2</mn>
+  </msqrt>
+</math></span>. Independently, exchange symmetry permits only the same symmetric and antisymmetric combinations. The negative <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>β</mi>
+</math></span> puts the symmetric, bonding combination lower.</p></section>
+<section class="callout example" id="example-ex-mol-selfcheck-vnn"><header><span class="callout-kind">Example 7.10.2</span><span class="callout-title">Self-check 2: count <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>V</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>N</mi>
+      <mi>N</mi>
+    </mrow>
+  </msub>
+</math></span></span></header><p> At one geometry a calculation gives electronic energy <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>E</mi>
+    <mi>e</mi>
+  </msub>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>1.20</mn>
+</math></span> and nuclear repulsion <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>V</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>N</mi>
+      <mi>N</mi>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+  <mn>0.30</mn>
+</math></span> in the same energy unit. What point lies on the molecular potential curve?</p>
+<p class="solution-head">Solution.</p>
+<p>By Remark <a class="xref" href="../chapter-07/index.html#misreading-mis-mol-vnn-once">7.4.1</a>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>U</mi>
+  <mo>=</mo>
+  <msub>
+    <mi>E</mi>
+    <mi>e</mi>
+  </msub>
+  <mo>+</mo>
+  <msub>
+    <mi>V</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>N</mi>
+      <mi>N</mi>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>1.20</mn>
+  <mo>+</mo>
+  <mn>0.30</mn>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>0.90</mn>
+</math></span>. The value <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>0.60</mn>
+</math></span> would add the same nuclear repulsion twice. Writing the two terms before inserting numbers is the safest check.</p></section>
+<section class="callout example" id="example-ex-mol-selfcheck-modes"><header><span class="callout-kind">Example 7.10.3</span><span class="callout-title">Self-check 3: two masses become two modes</span></header><p> Set <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>, and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>k</mi>
+    <mi>c</mi>
+  </msub>
+  <mo>=</mo>
+  <mn>0.5</mn>
+</math></span> in Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-two-mass-modes">(7.31)</a>. Find both normal frequencies.</p>
+<p class="solution-head">Solution.</p>
+<p>The symmetric vector <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msqrt>
+    <mn>2</mn>
+  </msqrt>
+</math></span> has eigenvalue <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>, hence <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ω</mi>
+    <mi>s</mi>
+  </msub>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>. The antisymmetric vector <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msqrt>
+    <mn>2</mn>
+  </msqrt>
+</math></span> has eigenvalue <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+  <mo>+</mo>
+  <mn>2</mn>
+  <msub>
+    <mi>k</mi>
+    <mi>c</mi>
+  </msub>
+  <mo>=</mo>
+  <mn>2</mn>
+</math></span>, hence <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ω</mi>
+    <mi>a</mi>
+  </msub>
+  <mo>=</mo>
+  <msqrt>
+    <mn>2</mn>
+  </msqrt>
+</math></span>. Diagonalizing the displayed matrix gives the same pair. Quantization replaces each classical mode by an independent ladder with spacing <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi data-mjx-alternate="1">ℏ</mi>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msqrt>
+    <mn>2</mn>
+  </msqrt>
+  <mi data-mjx-alternate="1">ℏ</mi>
+</math></span>; the many-mass version is the phonon calculation.</p></section>
 <h2 id="sec-7-summary"><span class="sec-number">7.11</span>Summary</h2>
 <ul><li><p>The molecular Hamiltonian is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
@@ -5006,14 +5643,14 @@
     <mi>σ</mi>
     <mi>g</mi>
   </msub>
-</math></span> in Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-co2-config">(7.18)</a>, giving the reasoning for multiplicity, Greek letter and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> in Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-co2-config">(7.19)</a>, giving the reasoning for multiplicity, Greek letter and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>g</mi>
   <mrow data-mjx-texclass="ORD">
     <mo>/</mo>
   </mrow>
   <mi>u</mi>
 </math></span> subscript separately. Check against Example <a class="xref" href="../chapter-07/index.html#example-ex-mol-co2-ions">7.5.2</a>.</p></li><li><p><strong>Anharmonicity.</strong></p>
-<ol><li><p>Expand Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-morse">(7.23)</a> about <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<ol><li><p>Expand Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-morse">(7.24)</a> about <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>R</mi>
     <mi>e</mi>
@@ -5032,7 +5669,7 @@
       <mn>2</mn>
     </mrow>
   </msup>
-</math></span>.</p></li><li><p>Using Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-morse-levels">(7.24)</a>, find the spacing <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>.</p></li><li><p>Using Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-morse-levels">(7.25)</a>, find the spacing <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>E</mi>
     <mrow data-mjx-texclass="ORD">
@@ -5123,7 +5760,7 @@
 </math></span> transitions and confirm they are spaced by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>2</mn>
   <mi>B</mi>
-</math></span>.</p></li><li><p><strong>Counting modes.</strong> Use Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-mode-count">(7.29)</a> for CO<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>.</p></li><li><p><strong>Counting modes.</strong> Use Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-mode-count">(7.30)</a> for CO<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi />
     <mn>2</mn>
@@ -5200,7 +5837,7 @@
     <mi>B</mi>
     <mn>1</mn>
   </msub>
-</math></span> from Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-bv">(7.28)</a>.</p></li><li><p>Estimate how much the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> from Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-bv">(7.29)</a>.</p></li><li><p>Estimate how much the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>J</mi>
   <mo>=</mo>
   <mn>5</mn>
@@ -5265,7 +5902,7 @@
   </mrow>
   <mn>2</mn>
 </math></span>. Convert everything to atomic units before starting.</p>
-<ol><li><p><strong>On paper.</strong> Verify that Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-morse">(7.23)</a> has its minimum at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<ol><li><p><strong>On paper.</strong> Verify that Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-morse">(7.24)</a> has its minimum at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>R</mi>
     <mi>e</mi>
@@ -5312,7 +5949,7 @@
   </msub>
 </math></span>.</p></li><li><p><strong>On paper.</strong> Compute <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>B</mi>
-</math></span> from Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-rot-levels">(7.26)</a> and confirm it is roughly a hundred times smaller than <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> from Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-rot-levels">(7.27)</a> and confirm it is roughly a hundred times smaller than <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi data-mjx-alternate="1">ℏ</mi>
   <msub>
     <mi>ω</mi>
@@ -5374,7 +6011,7 @@
     <mi>x</mi>
     <mi>e</mi>
   </msub>
-</math></span> with the analytic values in Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-morse-levels">(7.24)</a>.</p></li><li><p><strong>On the computer.</strong> Add rotation by putting <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> with the analytic values in Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-morse-levels">(7.25)</a>.</p></li><li><p><strong>On the computer.</strong> Add rotation by putting <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>J</mi>
   <mo stretchy="false">(</mo>
   <mi>J</mi>
@@ -5428,7 +6065,7 @@
 </math></span> from (a): the harmonic approximation is good at the bottom of the well, which is where it should be. A large discrepancy almost always means a unit error — mixing eV with Å and atomic mass units is the usual cause, and converting everything to atomic units first is the cure.</p>
 <p><strong>Be ready to answer.</strong> Your spacings in (d) shrink as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>v</mi>
-</math></span> increases, while Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-vib-levels">(7.21)</a> says they should be equal. Point at the step in Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-taylor">(7.20)</a> responsible, and say what physical fact about a real bond the harmonic approximation throws away.</p>
+</math></span> increases, while Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-vib-levels">(7.22)</a> says they should be equal. Point at the step in Eq. <a class="xref" href="../chapter-07/index.html#eq-eq-mol-taylor">(7.21)</a> responsible, and say what physical fact about a real bond the harmonic approximation throws away.</p>
     <nav class="chapter-nav" aria-label="Chapter navigation">
       <a href="../chapter-06/index.html">Previous: Time-Dependent Potentials and Light–Matter Interaction</a>
       <a href="../../toc.html">Contents</a>
@@ -5438,6 +6075,7 @@
 </main>
 <footer class="site-footer">
   <div class="site-footer-inner">
+    <p class="site-footer-notice"><strong>Under development.</strong> These notes are a working draft and have not been fully checked. Concepts, derivations, worked solutions and numerical values may contain errors, so read them critically and verify anything you rely on.</p>
     <p>&copy; 2026 Erfan Saydanzad. All rights reserved. This material is published for reading and personal study; it may not be copied, redistributed, or reused in other work without written permission.</p>
   </div>
 </footer>

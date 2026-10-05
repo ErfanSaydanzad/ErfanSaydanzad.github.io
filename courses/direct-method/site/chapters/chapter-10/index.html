@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Chapter 10: Rydberg and Continuum States; Fano Resonances | Direct Method</title>
+  <title>Chapter 10: Rydberg and Continuum States; Fano Resonances | Quantum Mechanics and Spectroscopy</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
   <link rel="preload" href="../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../../assets/css/site.css?v=856ec339">
+  <link rel="stylesheet" href="../../assets/css/site.css?v=ee8de383">
   <link rel="preload" href="../../assets/fonts/latinmodern-math.woff2" as="font" type="font/woff2" crossorigin>
-  <script defer src="../../assets/js/main.js?v=856ec339"></script>
+  <script defer src="../../assets/js/main.js?v=ee8de383"></script>
 
 <style>
 .site-header { justify-content: flex-start; gap: 16px; }
@@ -35,7 +35,7 @@
   <a class="site-up" href="../../../../../index.html"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.5 5.5 8l4.5 4.5"/></svg><span>Saydanzad Group</span></a>
   <a class="brand" href="../../index.html">
     <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M9 6.5V25.5M9 6.5H24M9 25.5H24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 16Q10.5 9.5 15.5 16T25.5 16" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/></svg>
-    <span>Direct Method</span>
+    <span>Quantum Mechanics and Spectroscopy</span>
   </a>
   <nav class="top-nav" aria-label="Primary">
     <a href="../../index.html">Home</a>
@@ -57,6 +57,7 @@
 <a class="toc-level-2" href="#sec-10-a-rydberg-series-of-autoionizing-states">10.6 A Rydberg Series of Autoionizing States</a>
 <a class="toc-level-3" href="#sec-10-how-q-varies-along-a-series">10.6.1 How q Varies Along a Series</a>
 <a class="toc-level-2" href="#sec-10-two-series-and-why-they-differ">10.7 Two Series, and Why They Differ</a>
+<a class="toc-level-3" href="#sec-10-first-pass-self-checks">First-pass self-checks</a>
 <a class="toc-level-2" href="#sec-10-summary">10.8 Summary</a>
 <a class="toc-level-2" href="#sec-10-exercises">10.9 Exercises</a>
 <a class="toc-level-2" href="#sec-10-project-fano-profiles-from-a-measured-series">10.10 Project: Fano Profiles from a Measured Series</a>
@@ -94,6 +95,19 @@
   <mi>q</mi>
 </math></span>;</p></li><li><p>the <strong>scaling laws</strong> that parameterize a whole Rydberg series from measured level positions and a single anchor.</p></li></ol>
 <p>By the end of the chapter, numbers from a published research table are reproduced by hand. Chapter 11 then makes the whole thing time-dependent.</p>
+<section class="callout definition" id="definition-def-fano-route"><header><span class="callout-kind">Definition 10.1.1</span><span class="callout-title">Optional research extension</span></header><p> Chapters 10–11 are optional for entering Quantum Chemistry or Condensed Matter. The <em>first pass</em> through this chapter needs only Eqs. <a class="xref" href="../chapter-10/index.html#eq-eq-fano-width">(10.6)</a> and <a class="xref" href="../chapter-10/index.html#eq-eq-fano-profile">(10.16)</a>, evaluated at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>, and large <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">|</mo>
+  <mi>q</mi>
+  <mo stretchy="false">|</mo>
+</math></span>. The continuum diagonalization and Rydberg series parameterization are a <em>research extension</em>.</p></section>
 <h2 id="sec-10-continuum-normalization"><span class="sec-number">10.2</span>Continuum Normalization</h2>
 <p>A bound state is normalizable, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="INNER">
@@ -147,6 +161,76 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:eq:FANO-energy-norm">(10.1)</span></div></section>
+<p>Because <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>δ</mi>
+  <mo stretchy="false">(</mo>
+  <mi>E</mi>
+  <mo>−</mo>
+  <msup>
+    <mi>E</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+  <mo stretchy="false">)</mo>
+</math></span> has units of inverse energy, an energy-normalized ket has units <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mi mathvariant="normal">e</mi>
+    <mi mathvariant="normal">n</mi>
+    <mi mathvariant="normal">e</mi>
+    <mi mathvariant="normal">r</mi>
+    <mi mathvariant="normal">g</mi>
+    <mi mathvariant="normal">y</mi>
+  </mrow>
+  <msup>
+    <mo stretchy="false">)</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mn>2</mn>
+    </mrow>
+  </msup>
+</math></span>. Consequently <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mo stretchy="false">(</mo>
+  <mi>E</mi>
+  <mo stretchy="false">)</mo>
+</math></span> in Eq. <a class="xref" href="../chapter-10/index.html#eq-eq-fano-completeness">(10.2)</a> is a probability <em>amplitude density</em> with units <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mi mathvariant="normal">e</mi>
+    <mi mathvariant="normal">n</mi>
+    <mi mathvariant="normal">e</mi>
+    <mi mathvariant="normal">r</mi>
+    <mi mathvariant="normal">g</mi>
+    <mi mathvariant="normal">y</mi>
+  </mrow>
+  <msup>
+    <mo stretchy="false">)</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mn>2</mn>
+    </mrow>
+  </msup>
+</math></span>, while <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">|</mo>
+  <mi>c</mi>
+  <mo stretchy="false">(</mo>
+  <mi>E</mi>
+  <mo stretchy="false">)</mo>
+  <msup>
+    <mo stretchy="false">|</mo>
+    <mn>2</mn>
+  </msup>
+  <mi>d</mi>
+  <mi>E</mi>
+</math></span> is a dimensionless probability. A plotted amplitude and a plotted probability density are not interchangeable.</p>
 <p>Two consequences are used constantly.</p>
 <section class="callout theorem" id="theorem-thm-fano-completeness"><header><span class="callout-kind">Theorem 10.2.1</span><span class="callout-title">Mixed completeness</span></header><p> For a system with both bound and free states,</p>
 <div class="math-block math-block--numbered" id="eq-eq-fano-completeness"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
@@ -263,7 +347,7 @@
     </mrow>
   </msup>
 </math></span> is a probability.</p>
-<p>The second consequence is Remark <a class="xref" href="../chapter-06/index.html#remark-rem-td-energy-norm">6.5.1</a> of Chapter 6: the density of states is absorbed into the states themselves, so in atomic units Fermi's golden rule reduces to</p>
+<p>The second consequence is Remark <a class="xref" href="../chapter-06/index.html#remark-rem-td-energy-norm">6.6.1</a> of Chapter 6: the density of states is absorbed into the states themselves, so in atomic units Fermi's golden rule reduces to</p>
 <div class="math-block math-block--numbered" id="eq-eq-fano-golden-normalized"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -310,6 +394,10 @@
 </math><span class="eqn-number" id="mjx-eqn:eq:FANO-golden-normalized">(10.3)</span></div>
 <p>This is the reason for the convention, since it removes one factor that would otherwise have to be tracked.</p>
 <h2 id="sec-10-a-discrete-state-coupled-to-a-continuum"><span class="sec-number">10.3</span>A Discrete State Coupled to a Continuum</h2>
+<figure id="chapter-10-fig-1" class="figure"><img src="assets/img/ch10_fig02_two_paths.png" class="diagram" alt="Why the line is asymmetric at all. The same final state is reached two ways, so the two amplitudes add before they are squared — and amplitudes that add can also cancel. A rate calculation, which adds probabilities, can never produce the zero." loading="lazy" style="--figure-width: 92%;"><figcaption>Figure 10.1. Why the line is asymmetric at all. The same final state is
+	reached two ways, so the two amplitudes add before they are squared —
+	and amplitudes that add can also cancel. A rate calculation, which adds
+	probabilities, can never produce the zero.</figcaption></figure>
 <p>Here is the model, stripped to essentials. Two ingredients: a discrete state <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="INNER">
     <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">|</mo>
@@ -580,7 +668,7 @@
       <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
     </mover>
   </mrow>
-</math></span> the coupling term of Eq. <a class="xref" href="../chapter-10/index.html#eq-eq-fano-hamiltonian">(10.5)</a> and the final states the continuum at the same energy. Remark <a class="xref" href="../chapter-06/index.html#remark-rem-td-not-light">6.5.2</a> of Chapter 6 established that the golden rule holds for any coupling, not only a radiative one.</p></div>
+</math></span> the coupling term of Eq. <a class="xref" href="../chapter-10/index.html#eq-eq-fano-hamiltonian">(10.5)</a> and the final states the continuum at the same energy. Remark <a class="xref" href="../chapter-06/index.html#remark-rem-td-not-light">6.6.2</a> of Chapter 6 established that the golden rule holds for any coupling, not only a radiative one.</p></div>
 <p>In practical units, Eq. <a class="xref" href="../chapter-10/index.html#eq-eq-fano-lifetime">(10.7)</a> reads</p>
 <div class="math-block math-block--numbered" id="eq-eq-fano-units"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -625,7 +713,57 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:eq:FANO-units">(10.8)</span></div>
-<p>so a state of width <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>Here <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Γ</mi>
+</math></span> is an energy width. The corresponding population-decay rate is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>γ</mi>
+  <mo>=</mo>
+  <mi mathvariant="normal">Γ</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi data-mjx-alternate="1">ℏ</mi>
+</math></span> in s<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+</math></span>, so <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>P</mi>
+    <mi>a</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi>γ</mi>
+      <mi>t</mi>
+    </mrow>
+  </msup>
+  <mo>=</mo>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi mathvariant="normal">Γ</mi>
+      <mi>t</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mi data-mjx-alternate="1">ℏ</mi>
+    </mrow>
+  </msup>
+</math></span>. Using the same symbol for the energy width and the rate silently loses a factor of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi data-mjx-alternate="1">ℏ</mi>
+</math></span>. so a state of width <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>37</mn>
 </math></span> meV lives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>18</mn>
@@ -1523,6 +1661,18 @@
     <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">⟩</mo>
   </mrow>
 </math></span> to that for direct ionization.</p></section>
+<figure id="chapter-10-fig-2" class="figure"><img src="assets/img/ch10_fig01_fano_profiles.png" class="diagram" alt="One formula and every line shape it produces, as q runs from zero to infinity. Each curve is scaled to a common peak so the shapes can be compared; the marked points are the exact zeros at =-q, which no amount of absorption could produce and which are therefore the fingerprint of interference." loading="lazy" style="--figure-width: 94%;"><figcaption>Figure 10.2. One formula and every line shape it produces, as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+</math></span> runs from
+	zero to infinity. Each curve is scaled to a common peak so the shapes can
+	be compared; the marked points are the exact zeros at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ϵ</mi>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mi>q</mi>
+</math></span>,
+	which no amount of absorption could produce and which are therefore the
+	fingerprint of interference.</figcaption></figure>
 <p>The formula is most easily understood by taking limits.</p>
 <ul><li><p><strong>Far from resonance</strong> (<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ϵ</mi>
@@ -1951,6 +2101,18 @@
 </math></span> it can be badly wrong.</p></section>
 <h2 id="sec-10-a-rydberg-series-of-autoionizing-states"><span class="sec-number">10.6</span>A Rydberg Series of Autoionizing States</h2>
 <p>Put the resonance into a Rydberg series and everything becomes predictable, because Chapter 4 already established how Rydberg quantities scale.</p>
+<figure id="chapter-10-fig-3" class="figure"><img src="assets/img/ch10_fig03_autoionizing_series.png" class="diagram" alt="Two n^-3 laws working against each other. The resonances crowd together as they approach the threshold and narrow at the same rate, so the series stays resolvable in principle for as long as the spectrometer can follow it." loading="lazy" style="--figure-width: 92%;"><figcaption>Figure 10.3. Two <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>n</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>3</mn>
+    </mrow>
+  </msup>
+</math></span> laws working against each other. The resonances
+	crowd together as they approach the threshold and narrow at the same
+	rate, so the series stays resolvable in principle for as long as the
+	spectrometer can follow it.</figcaption></figure>
 <p>Autoionization happens <em>at the core</em>: the Rydberg electron must be close in for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mrow data-mjx-texclass="ORD">
@@ -1964,7 +2126,7 @@
       <mi>e</mi>
     </mrow>
   </msub>
-</math></span> to transfer energy. Chapter 4's central result, Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-amplitude-scaling">(4.62)</a>, was that the probability of being near the core falls as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> to transfer energy. Chapter 4's central result, Eq. <a class="xref" href="../chapter-04/index.html#eq-eq-h-amplitude-scaling">(4.63)</a>, was that the probability of being near the core falls as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo stretchy="false">(</mo>
   <msup>
     <mi>n</mi>
@@ -3026,6 +3188,244 @@
   <mo>=</mo>
   <mi data-mjx-alternate="1">ℏ</mi>
 </math></span>. Sharp means slow.</p>
+<h3 id="sec-10-first-pass-self-checks">First-pass self-checks</h3>
+<section class="callout example" id="example-ex-fano-selfcheck-q"><header><span class="callout-kind">Example 10.7.1</span><span class="callout-title">Self-check 1: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>, and large <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+</math></span></span></header><p> Evaluate <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>σ</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msub>
+    <mi>σ</mi>
+    <mi>b</mi>
+  </msub>
+</math></span> at line center and locate the zero for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>, and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+  <mo>=</mo>
+  <mn>10</mn>
+</math></span>.</p>
+<p class="solution-head">Solution.</p>
+<p>At <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ϵ</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> the ratios are <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>q</mi>
+    <mn>2</mn>
+  </msup>
+</math></span>: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>, and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>100</mn>
+</math></span>. The zeros are at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ϵ</mi>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mi>q</mi>
+</math></span>: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>1</mn>
+</math></span>, and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>10</mn>
+</math></span>. For <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> the resonance is a symmetric window; for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span> the zero lies one reduced-energy unit below center and the maximum <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+  <mo>+</mo>
+  <msup>
+    <mi>q</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>=</mo>
+  <mn>2</mn>
+</math></span> lies at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ϵ</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>; for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+  <mo>=</mo>
+  <mn>10</mn>
+</math></span> the near-center profile is peak-like and approaches the Lorentzian limit.</p></section>
+<section class="callout example" id="example-ex-fano-selfcheck-width"><header><span class="callout-kind">Example 10.7.2</span><span class="callout-title">Self-check 2: energy width versus rate</span></header><p> A teaching resonance has energy width <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Γ</mi>
+  <mo>=</mo>
+  <mn>20</mn>
+</math></span> meV. Find its lifetime and population-decay rate.</p>
+<p class="solution-head">Solution.</p>
+<p>Equation <a class="xref" href="../chapter-10/index.html#eq-eq-fano-units">(10.8)</a> gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>τ</mi>
+  <mo>=</mo>
+  <mn>658</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>20</mn>
+  <mo>=</mo>
+  <mn>32.9</mn>
+</math></span> fs. The rate is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>γ</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>τ</mi>
+  <mo>=</mo>
+  <mn>0.0304</mn>
+</math></span> fs<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+</math></span>, equivalently <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Γ</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi data-mjx-alternate="1">ℏ</mi>
+</math></span>. Reporting <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>20</mn>
+</math></span> meV as a rate would be dimensionally wrong.</p></section>
+<section class="callout example" id="example-ex-fano-selfcheck-normalization"><header><span class="callout-kind">Example 10.7.3</span><span class="callout-title">Self-check 3: amplitude density and probability</span></header><p> Let <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mo stretchy="false">(</mo>
+  <mi>E</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mn>1</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msqrt>
+    <mn>2</mn>
+    <mstyle scriptlevel="0">
+      <mspace width="0.167em" />
+    </mstyle>
+    <mrow data-mjx-texclass="ORD">
+      <mi data-mjx-auto-op="false">eV</mi>
+    </mrow>
+  </msqrt>
+</math></span> on an interval of width <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+</math></span> eV and zero elsewhere. Is the continuum state normalized?</p>
+<p class="solution-head">Solution.</p>
+<p>The amplitude density has the required units eV<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi />
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mn>2</mn>
+    </mrow>
+  </msup>
+</math></span>. Its probability density is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">|</mo>
+  <mi>c</mi>
+  <mo stretchy="false">(</mo>
+  <mi>E</mi>
+  <mo stretchy="false">)</mo>
+  <msup>
+    <mo stretchy="false">|</mo>
+    <mn>2</mn>
+  </msup>
+  <mo>=</mo>
+  <mn>1</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mo stretchy="false">(</mo>
+  <mn>2</mn>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mrow data-mjx-texclass="ORD">
+    <mi data-mjx-auto-op="false">eV</mi>
+  </mrow>
+  <mo stretchy="false">)</mo>
+</math></span>, and integration gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="OP">∫</mo>
+  <mo stretchy="false">|</mo>
+  <mi>c</mi>
+  <mo stretchy="false">(</mo>
+  <mi>E</mi>
+  <mo stretchy="false">)</mo>
+  <msup>
+    <mo stretchy="false">|</mo>
+    <mn>2</mn>
+  </msup>
+  <mi>d</mi>
+  <mi>E</mi>
+  <mo>=</mo>
+  <mo stretchy="false">[</mo>
+  <mn>1</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mo stretchy="false">(</mo>
+  <mn>2</mn>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mrow data-mjx-texclass="ORD">
+    <mi data-mjx-auto-op="false">eV</mi>
+  </mrow>
+  <mo stretchy="false">)</mo>
+  <mo stretchy="false">]</mo>
+  <mo stretchy="false">(</mo>
+  <mn>2</mn>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mrow data-mjx-texclass="ORD">
+    <mi data-mjx-auto-op="false">eV</mi>
+  </mrow>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>. The value of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">|</mo>
+  <mi>c</mi>
+  <msup>
+    <mo stretchy="false">|</mo>
+    <mn>2</mn>
+  </msup>
+</math></span> alone is a density, not a probability.</p></section>
 <h2 id="sec-10-summary"><span class="sec-number">10.8</span>Summary</h2>
 <ul><li><p>Continuum states are energy-normalized (Def. <a class="xref" href="../chapter-10/index.html#definition-def-fano-energy-norm">10.2.1</a>), which lets a sum over bound states and an integral over the continuum appear in one expansion (Thm. <a class="xref" href="../chapter-10/index.html#theorem-thm-fano-completeness">10.2.1</a>) and absorbs the density of states so that <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi mathvariant="normal">Γ</mi>
@@ -3746,6 +4146,7 @@
 </main>
 <footer class="site-footer">
   <div class="site-footer-inner">
+    <p class="site-footer-notice"><strong>Under development.</strong> These notes are a working draft and have not been fully checked. Concepts, derivations, worked solutions and numerical values may contain errors, so read them critically and verify anything you rely on.</p>
     <p>&copy; 2026 Erfan Saydanzad. All rights reserved. This material is published for reading and personal study; it may not be copied, redistributed, or reused in other work without written permission.</p>
   </div>
 </footer>
