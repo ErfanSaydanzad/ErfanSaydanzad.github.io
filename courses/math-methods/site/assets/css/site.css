@@ -1553,7 +1553,11 @@ tbody tr:last-child td { border-bottom: 1px solid var(--line); }
   columns: 2 250px;
   column-gap: 40px;
   margin: 0;
-  padding-left: 1.2rem;
+  /* Each entry carries its own section number ("1.3 Limit of ..."); the list's counter would put a
+     second one in front of it ("3. 1.3 Limit ...", 2026-10-16). Starred sections stay unnumbered, as in
+     the book. */
+  list-style: none;
+  padding-left: 0;
   font-size: 0.94rem;
 }
 .toc-chapter ol a {
@@ -1566,7 +1570,9 @@ tbody tr:last-child td { border-bottom: 1px solid var(--line); }
   text-underline-offset: 0.16em;
 }
 .toc-chapter ol li::marker { color: var(--muted); }
-.toc-chapter li { margin: 0.2em 0; break-inside: avoid; }
+/* Space below only: a top margin is kept in the first column and dropped at a column break, so the second
+   column started higher than the first. */
+.toc-chapter li { margin: 0 0 0.4em; break-inside: avoid; }
 
 /* ---------------------------------------------------------------- footer -- */
 
