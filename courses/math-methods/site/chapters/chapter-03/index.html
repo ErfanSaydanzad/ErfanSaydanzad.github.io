@@ -6,9 +6,9 @@
   <title>Chapter 3: Linear Algebra | Mathematical Methods in the Physical Sciences</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
   <link rel="preload" href="../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../../assets/css/site.css?v=a126620a">
+  <link rel="stylesheet" href="../../assets/css/site.css?v=b434b9c2">
   <link rel="preload" href="../../assets/fonts/latinmodern-math.woff2" as="font" type="font/woff2" crossorigin>
-  <script defer src="../../assets/js/main.js?v=a126620a"></script>
+  <script defer src="../../assets/js/main.js?v=b434b9c2"></script>
 
 <style>
 .site-header { justify-content: flex-start; gap: 16px; }
@@ -54,11 +54,11 @@
 <a class="toc-level-3" href="#sec-3-matrix-form-and-augmented-matrix">3.2.1 Matrix Form, and Augmented Matrix</a>
 <a class="toc-level-3" href="#sec-3-elementary-row-operations">3.2.2 Elementary Row Operations</a>
 <a class="toc-level-3" href="#sec-3-row-echelon-form-ref-and-reduced-row-echelon-form-rref">3.2.3 Row Echelon Form (REF) and Reduced Row Echelon Form (RREF)</a>
-<a class="toc-level-2" href="#sec-3-gauss-jordan-reduction">3.3 Gauss--Jordan Reduction</a>
+<a class="toc-level-2" href="#sec-3-gauss-jordan-reduction">3.3 Gauss–Jordan Reduction</a>
 <a class="toc-level-2" href="#sec-3-determinants">3.4 Determinants</a>
 <a class="toc-level-3" href="#sec-3-general-definition-cofactor-expansion">General Definition: Cofactor Expansion</a>
 <a class="toc-level-3" href="#sec-3-properties-of-determinants">Properties of Determinants</a>
-<a class="toc-level-2" href="#sec-3-cramer-s-rule">3.5 Cramer&#x27;s Rule</a>
+<a class="toc-level-2" href="#sec-3-cramer-s-rule">3.5 Cramer's Rule</a>
 <a class="toc-level-2" href="#sec-3-vectors">3.6 Vectors</a>
 <a class="toc-level-3" href="#sec-3-definition-and-notation">Definition and Notation</a>
 <a class="toc-level-3" href="#sec-3-vector-in-3d-space">Vector in 3D Space</a>
@@ -67,9 +67,15 @@
 <a class="toc-level-3" href="#sec-3-addition-and-subtraction">Addition and Subtraction</a>
 <a class="toc-level-3" href="#sec-3-dot-product-scalar-product">Dot Product (Scalar Product)</a>
 <a class="toc-level-3" href="#sec-3-component-formula">Component Formula</a>
-<a class="toc-level-3" href="#sec-3-vectors-in-n-dimensional-space">Vectors in n-Dimensional Space</a>
-<a class="toc-level-3" href="#sec-3-kronecker-delta-and-the-dot-product-in-n-dimensions">Kronecker Delta and the Dot Product in n Dimensions</a>
-<a class="toc-level-3" href="#sec-3-dot-product-in-n-dimensions">Dot Product in n Dimensions</a>
+<a class="toc-level-3" href="#sec-3-vectors-in-n-dimensional-space">Vectors in <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span>-Dimensional Space</a>
+<a class="toc-level-3" href="#sec-3-kronecker-delta-and-the-dot-product-in-n-dimensions">Kronecker Delta and the Dot Product in <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> Dimensions</a>
+<a class="toc-level-3" href="#sec-3-dot-product-in-n-dimensions">Dot Product in <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> Dimensions</a>
 <a class="toc-level-3" href="#sec-3-cross-product">Cross Product</a>
 <a class="toc-level-3" href="#sec-3-component-formula-for-the-cross-product">Component Formula for the Cross Product</a>
 <a class="toc-level-3" href="#sec-3-levi-civita-symbol-and-the-cross-product">Levi-Civita Symbol and the Cross Product</a>
@@ -94,7 +100,11 @@
 <a class="toc-level-3" href="#sec-3-linear-transformations-in-2d">Linear Transformations in 2D</a>
 <a class="toc-level-3" href="#sec-3-geometric-interpretation">Geometric Interpretation</a>
 <a class="toc-level-2" href="#sec-3-orthogonal-transformations">3.11 Orthogonal Transformations</a>
-<a class="toc-level-3" href="#sec-3-conditions-for-a-2-2-orthogonal-matrix">Conditions for a 2 2 Orthogonal Matrix</a>
+<a class="toc-level-3" href="#sec-3-conditions-for-a-2-2-orthogonal-matrix">Conditions for a <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mo>×</mo>
+  <mn>2</mn>
+</math></span> Orthogonal Matrix</a>
 <a class="toc-level-3" href="#sec-3-determinant-property">Determinant Property</a>
 <a class="toc-level-2" href="#sec-3-rotation-in-2d">3.12 Rotation in 2D</a>
 <a class="toc-level-3" href="#sec-3-active-rotation">Active Rotation</a>
@@ -103,10 +113,21 @@
 <a class="toc-level-3" href="#sec-3-matrix-form">Matrix Form</a>
 <a class="toc-level-3" href="#sec-3-passive-rotation">Passive Rotation</a>
 <a class="toc-level-2" href="#sec-3-rotations-and-reflections-in-3d">3.13 Rotations and Reflections in 3D</a>
-<a class="toc-level-3" href="#sec-3-rotation-about-the-z-axis">Rotation about the z-axis</a>
-<a class="toc-level-3" href="#sec-3-rotation-about-the-z-axis-with-reflection-in-the-xy-plane">Rotation about the z-axis with reflection in the xy-plane</a>
-<a class="toc-level-3" href="#sec-3-rotation-about-the-y-axis">Rotation about the y-axis</a>
-<a class="toc-level-3" href="#sec-3-rotation-about-the-x-axis">Rotation about the x-axis</a>
+<a class="toc-level-3" href="#sec-3-rotation-about-the-z-axis">Rotation about the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>z</mi>
+</math></span>-axis</a>
+<a class="toc-level-3" href="#sec-3-rotation-about-the-z-axis-with-reflection-in-the-xy-plane">Rotation about the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>z</mi>
+</math></span>-axis with reflection in the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mi>y</mi>
+</math></span>-plane</a>
+<a class="toc-level-3" href="#sec-3-rotation-about-the-y-axis">Rotation about the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>y</mi>
+</math></span>-axis</a>
+<a class="toc-level-3" href="#sec-3-rotation-about-the-x-axis">Rotation about the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span>-axis</a>
 <a class="toc-level-3" href="#sec-3-general-3d-rotation">General 3D Rotation</a>
 <a class="toc-level-2" href="#sec-3-linear-independence">3.14 Linear Independence</a>
 <a class="toc-level-3" href="#sec-3-vectors-61">Vectors</a>
@@ -127,7 +148,7 @@
 <a class="toc-level-2" href="#sec-3-general-vector-spaces">3.17 General Vector Spaces</a>
 <a class="toc-level-3" href="#sec-3-definition-of-a-vector-space">Definition of a Vector Space</a>
 <a class="toc-level-3" href="#sec-3-examples-of-vector-spaces">Examples of Vector Spaces</a>
-<a class="toc-level-2" href="#sec-3-bra-ket-notation-and-inner-outer-products">3.18 Bra--Ket Notation and Inner/Outer Products</a>
+<a class="toc-level-2" href="#sec-3-bra-ket-notation-and-inner-outer-products">3.18 Bra–Ket Notation and Inner/Outer Products</a>
 <a class="toc-level-3" href="#sec-3-motivation">Motivation</a>
 <a class="toc-level-3" href="#sec-3-kets-and-bras">Kets and Bras</a>
 <a class="toc-level-3" href="#sec-3-inner-product-dot-product">Inner Product (Dot Product)</a>
@@ -142,7 +163,7 @@
 <a class="toc-level-3" href="#sec-3-hilbert-space">Hilbert Space</a>
 <a class="toc-level-3" href="#sec-3-orthonormal-bases">Orthonormal Bases</a>
 <a class="toc-level-3" href="#sec-3-schwarz-s-inequality">Schwarz’s Inequality</a>
-<a class="toc-level-2" href="#sec-3-gram-schmidt-method-of-orthonormalization">3.20 Gram--Schmidt Method of Orthonormalization</a>
+<a class="toc-level-2" href="#sec-3-gram-schmidt-method-of-orthonormalization">3.20 Gram–Schmidt Method of Orthonormalization</a>
 <a class="toc-level-3" href="#sec-3-motivation-95">Motivation</a>
 <a class="toc-level-3" href="#sec-3-procedure">Procedure</a>
 <a class="toc-level-2" href="#sec-3-applications-of-linear-algebra">3.21 Applications of Linear Algebra</a>
@@ -19434,7 +19455,7 @@
 <p>Equivalently, linear transformations preserve vector addition and scalar multiplication.</p></section>
 <h3 id="sec-3-linear-transformations-in-2d">Linear Transformations in 2D</h3>
 <p>Consider the set of equations</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-lintrans"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -19635,7 +19656,7 @@
   <mi>M</mi>
 </math></span> is a linear operator.</p>
 <h3 id="sec-3-geometric-interpretation">Geometric Interpretation</h3>
-<p>Equations <a class="eqn-ref" href="#mjx-eqn:eq:lintrans">(3.225)</a> can be interpreted in two ways:</p>
+<p>Equations <a class="xref" href="../chapter-03/index.html#eq-eq-lintrans">(3.225)</a> can be interpreted in two ways:</p>
 <ul><li><p>The vector <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mover accent="true">

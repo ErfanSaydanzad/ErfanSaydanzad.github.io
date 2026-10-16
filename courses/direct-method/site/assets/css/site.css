@@ -546,6 +546,18 @@ li.labeled { list-style: none; }
 li.labeled > .item-label { font-weight: 600; margin-right: 0.4em; }
 li.labeled > .item-label + p { display: inline; }
 
+/* \begin{description}: the term is the point, so it leads its own line. The
+   glossary chapter is one long one of these, so it has to stay scannable. */
+dl.described { margin: 1em 0; }
+dl.described > dt {
+  font-weight: 600;
+  margin-top: 0.9em;
+}
+dl.described > dt:first-child { margin-top: 0; }
+dl.described > dd { margin: 0.15em 0 0 1.4em; }
+dl.described > dd > :first-child { margin-top: 0; }
+dl.described > dd > :last-child { margin-bottom: 0; }
+
 .figure.animation img { border: 1px solid var(--line); border-radius: 4px; }
 
 pre.code {

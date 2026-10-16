@@ -6,9 +6,9 @@
   <title>Chapter 5: Multiple Integrals; Applications of Integration | Mathematical Methods in the Physical Sciences</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
   <link rel="preload" href="../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../../assets/css/site.css?v=a126620a">
+  <link rel="stylesheet" href="../../assets/css/site.css?v=b434b9c2">
   <link rel="preload" href="../../assets/fonts/latinmodern-math.woff2" as="font" type="font/woff2" crossorigin>
-  <script defer src="../../assets/js/main.js?v=a126620a"></script>
+  <script defer src="../../assets/js/main.js?v=b434b9c2"></script>
 
 <style>
 .site-header { justify-content: flex-start; gap: 16px; }
@@ -51,7 +51,11 @@
     <nav class="chapter-toc" aria-label="Chapter contents">
       <a class="toc-level-2" href="#sec-5-single-integral">5.1 Single integral</a>
 <a class="toc-level-2" href="#sec-5-double-and-triple-integrals">5.2 Double and Triple Integrals</a>
-<a class="toc-level-2" href="#sec-5-when-to-integrate-y-first-vs-x-first">5.3 When to Integrate y-First vs. x-First</a>
+<a class="toc-level-2" href="#sec-5-when-to-integrate-y-first-vs-x-first">5.3 When to Integrate <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>y</mi>
+</math></span>-First vs. <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span>-First</a>
 <a class="toc-level-3" href="#sec-5-type-i-regions-vertical-strips">Type I Regions (Vertical Strips)</a>
 <a class="toc-level-3" href="#sec-5-type-ii-regions-horizontal-strips">Type II Regions (Horizontal Strips)</a>
 <a class="toc-level-3" href="#sec-5-either-description-works">Either Description Works</a>
@@ -59,18 +63,60 @@
 <a class="toc-level-2" href="#sec-5-applications-of-integration">5.4 Applications of Integration</a>
 <a class="toc-level-3" href="#sec-5-center-of-mass">Center of mass</a>
 <a class="toc-level-2" href="#sec-5-change-of-variables-in-integrals">5.5 Change of Variables in Integrals</a>
-<a class="toc-level-3" href="#sec-5-change-of-variables-cartesian-cylindrical-coordinates">Change of Variables: Cartesian Cylindrical Coordinates</a>
+<a class="toc-level-3" href="#sec-5-change-of-variables-cartesian-cylindrical-coordinates">Change of Variables: Cartesian <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">→</mo>
+</math></span> Cylindrical Coordinates</a>
 <a class="toc-level-3" href="#sec-5-1-definition-of-cylindrical-coordinates">1. Definition of Cylindrical Coordinates</a>
 <a class="toc-level-3" href="#sec-5-2-the-local-unit-vectors">2. The Local Unit Vectors</a>
-<a class="toc-level-3" href="#sec-5-3-differential-displacement-d-r">3. Differential Displacement dr</a>
-<a class="toc-level-3" href="#sec-5-4-small-surface-element-d-s">4. Small Surface Element ds</a>
-<a class="toc-level-3" href="#sec-5-5-small-volume-element-dv">5. Small Volume Element dV</a>
-<a class="toc-level-3" href="#sec-5-change-of-variables-cartesian-spherical-coordinates">Change of Variables: Cartesian Spherical Coordinates</a>
+<a class="toc-level-3" href="#sec-5-3-differential-displacement-d-r">3. Differential Displacement <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>r</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+</math></span></a>
+<a class="toc-level-3" href="#sec-5-4-small-surface-element-d-s">4. Small Surface Element <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>s</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+</math></span></a>
+<a class="toc-level-3" href="#sec-5-5-small-volume-element-dv">5. Small Volume Element <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mi>V</mi>
+</math></span></a>
+<a class="toc-level-3" href="#sec-5-change-of-variables-cartesian-spherical-coordinates">Change of Variables: Cartesian <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">→</mo>
+</math></span> Spherical Coordinates</a>
 <a class="toc-level-3" href="#sec-5-1-definition-of-spherical-coordinates">1. Definition of Spherical Coordinates</a>
 <a class="toc-level-3" href="#sec-5-2-the-local-unit-vectors-19">2. The Local Unit Vectors</a>
-<a class="toc-level-3" href="#sec-5-3-differential-displacement-d-r-20">3. Differential Displacement dr</a>
-<a class="toc-level-3" href="#sec-5-4-small-surface-element-d-s-21">4. Small Surface Element ds</a>
-<a class="toc-level-3" href="#sec-5-5-small-volume-element-dv-22">5. Small Volume Element dV</a>
+<a class="toc-level-3" href="#sec-5-3-differential-displacement-d-r-20">3. Differential Displacement <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>r</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+</math></span></a>
+<a class="toc-level-3" href="#sec-5-4-small-surface-element-d-s-21">4. Small Surface Element <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>s</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+</math></span></a>
+<a class="toc-level-3" href="#sec-5-5-small-volume-element-dv-22">5. Small Volume Element <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mi>V</mi>
+</math></span></a>
 <a class="toc-level-2" href="#sec-5-connection-with-the-jacobian-matrix">5.6 Connection with the Jacobian Matrix</a>
 <a class="toc-level-3" href="#sec-5-verifying-the-jacobian-for-cylindrical-coordinates">Verifying the Jacobian for Cylindrical Coordinates</a>
 <a class="toc-level-3" href="#sec-5-verifying-the-jacobian-for-spherical-coordinates">Verifying the Jacobian for Spherical Coordinates</a>
@@ -1163,7 +1209,7 @@
 </math></span>, we integrate with respect to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>y</mi>
 </math></span> first:</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-typei"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -1324,7 +1370,7 @@
 </math></span>, we integrate with respect to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>x</mi>
 </math></span> first:</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-typeii"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -1445,7 +1491,7 @@
 <p>If the region <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>A</mi>
 </math></span> satisfies both descriptions, either order of integration yields the same result:</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-eitherorder"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>

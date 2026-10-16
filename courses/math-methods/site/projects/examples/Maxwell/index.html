@@ -6,9 +6,9 @@
   <title>A Standing Electromagnetic Wave in a Square Cavity | Mathematical Methods in the Physical Sciences</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
   <link rel="preload" href="../../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../../../assets/css/site.css?v=a126620a">
+  <link rel="stylesheet" href="../../../assets/css/site.css?v=b434b9c2">
   <link rel="preload" href="../../../assets/fonts/latinmodern-math.woff2" as="font" type="font/woff2" crossorigin>
-  <script defer src="../../../assets/js/main.js?v=a126620a"></script>
+  <script defer src="../../../assets/js/main.js?v=b434b9c2"></script>
 
 <style>
 .site-header { justify-content: flex-start; gap: 16px; }
@@ -46,7 +46,7 @@
 <main class="content project" id="main">
 <header class="project-head"><p class="project-kicker">Worked example · solved on paper</p><h1>A Standing Electromagnetic Wave in a Square Cavity</h1><p class="project-author">PHYS 3260, Mathematical Methods — worked example</p></header>
 <section class="project-problem" aria-label="The problem"><p class="project-problem-kicker">The problem</p><p>Consider the electromagnetic field</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-egiven"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -122,7 +122,7 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:eq:Egiven">(1)</span></div>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-bgiven"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -407,7 +407,7 @@
    separation-of-variables method for partial differential equations of
    Chapter 10.</p>
 <h2 id="sec-900-the-physics-question"><span class="sec-number">1</span>The physics question</h2>
-<p>The problem hands over a pair of fields and asks whether they can exist. That is a shorter road to the same physics than solving Maxwell's equations from nothing: substituting <a class="eqn-ref" href="#mjx-eqn:eq:Egiven">(1)</a> and <a class="eqn-ref" href="#mjx-eqn:eq:Bgiven">(2)</a> into the four equations turns each of them into an algebraic condition, and two of those conditions are what fix the only unknowns in the problem, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>The problem hands over a pair of fields and asks whether they can exist. That is a shorter road to the same physics than solving Maxwell's equations from nothing: substituting <a class="xref" href="#eq-eq-egiven">(1)</a> and <a class="xref" href="#eq-eq-bgiven">(2)</a> into the four equations turns each of them into an algebraic condition, and two of those conditions are what fix the only unknowns in the problem, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ω</mi>
 </math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
@@ -468,7 +468,7 @@
 </math></span> grid the same formula would put a maximum on the wall and would not be a cavity field at all.</p>
 <h2 id="sec-900-maxwell-s-equations-and-the-boundary-conditions"><span class="sec-number">2</span>Maxwell's equations and the boundary conditions</h2>
 <p>In a linear medium Maxwell's equations read</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-maxwell-medium"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true" columnalign="right left right left" columnspacing="0em 2em 0em" rowspacing="3pt">
     <mtr>
       <mtd>
@@ -690,9 +690,9 @@
       <mo stretchy="false" style="padding-bottom:0.06em">ˆ</mo>
     </mover>
   </mrow>
-</math></span> be the unit normal pointing from medium 1 into medium 2. Applying the integral form of <a class="eqn-ref" href="#mjx-eqn:eq:maxwell-medium">(3)</a> to a flat pillbox and to a vanishing-height loop straddling the surface gives the four matching conditions. The two integral theorems used below — the divergence theorem for the pillboxes and Stokes' theorem for the loops — are the ones proved in <strong>Chapter 6</strong>; here they do the work of turning differential equations into statements about what happens at a surface.</p>
+</math></span> be the unit normal pointing from medium 1 into medium 2. Applying the integral form of <a class="xref" href="#eq-eq-maxwell-medium">(3)</a> to a flat pillbox and to a vanishing-height loop straddling the surface gives the four matching conditions. The two integral theorems used below — the divergence theorem for the pillboxes and Stokes' theorem for the loops — are the ones proved in <strong>Chapter 6</strong>; here they do the work of turning differential equations into statements about what happens at a surface.</p>
 <p>Gauss's law on a thin pillbox gives</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-pillbox"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -799,7 +799,7 @@
   <mi mathvariant="normal">Δ</mi>
   <mi>ℓ</mi>
 </math></span> whose height goes to zero encloses no flux, so</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-loop"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -857,8 +857,8 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:eq:loop">(6)</span></div>
-<p>and the Ampère–Maxwell law on that loop encloses only the surface current. Together, <a class="eqn-ref" href="#mjx-eqn:eq:pillbox">(5)</a> and <a class="eqn-ref" href="#mjx-eqn:eq:loop">(6)</a> give the four matching conditions</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<p>and the Ampère–Maxwell law on that loop encloses only the surface current. Together, <a class="xref" href="#eq-eq-pillbox">(5)</a> and <a class="xref" href="#eq-eq-loop">(6)</a> give the four matching conditions</p>
+<div class="math-block math-block--numbered" id="eq-eq-bcs"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true" columnalign="right left right left" columnspacing="0em 2em 0em" rowspacing="3pt">
     <mtr>
       <mtd>
@@ -1034,7 +1034,7 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:eq:bcs">(7)</span></div>
-<p>Inside a perfect conductor both fields vanish, so the second and third of <a class="eqn-ref" href="#mjx-eqn:eq:bcs">(7)</a> say that at the cavity wall the tangential electric field and the normal magnetic field must be zero. For the field <a class="eqn-ref" href="#mjx-eqn:eq:Egiven">(1)</a> the only component of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>Inside a perfect conductor both fields vanish, so the second and third of <a class="xref" href="#eq-eq-bcs">(7)</a> say that at the cavity wall the tangential electric field and the normal magnetic field must be zero. For the field <a class="xref" href="#eq-eq-egiven">(1)</a> the only component of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mover accent="true">
       <mi>E</mi>
@@ -1083,8 +1083,8 @@
   </mrow>
   <mo>=</mo>
   <mn>0</mn>
-</math></span>. Equations <a class="eqn-ref" href="#mjx-eqn:eq:maxwell-medium">(3)</a> collapse to</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+</math></span>. Equations <a class="xref" href="#eq-eq-maxwell-medium">(3)</a> collapse to</p>
+<div class="math-block math-block--numbered" id="eq-eq-maxwell-vacuum"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true" columnalign="right left right left" columnspacing="0em 2em 0em" rowspacing="3pt">
     <mtr>
       <mtd>
@@ -1211,7 +1211,7 @@
   </msqrt>
 </math></span>.</p>
 <h2 id="sec-900-a-verifying-the-field"><span class="sec-number">3</span>(a) Verifying the field</h2>
-<p>Each of the four equations in <a class="eqn-ref" href="#mjx-eqn:eq:maxwell-vacuum">(8)</a> is now checked in turn. Every step is a partial derivative of a product of sines and cosines — the machinery of Chapter 6.</p>
+<p>Each of the four equations in <a class="xref" href="#eq-eq-maxwell-vacuum">(8)</a> is now checked in turn. Every step is a partial derivative of a product of sines and cosines — the machinery of Chapter 6.</p>
 <h3 id="sec-900-divergence-of-e"><span class="sec-number">3.1</span>Divergence of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mover accent="true">
@@ -1300,7 +1300,7 @@
     </mover>
   </mrow>
 </math></span>,</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-dive"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -1541,7 +1541,7 @@
   </mtable>
 </math></div>
 <p>which cancel term by term, so</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-divb"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -1606,7 +1606,7 @@
 </math></span> has only a <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>z</mi>
 </math></span>-component,</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-curle-general"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -1816,8 +1816,8 @@
     </mtr>
   </mtable>
 </math></div>
-<p>equation <a class="eqn-ref" href="#mjx-eqn:eq:curlE-general">(11)</a> becomes</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<p>equation <a class="xref" href="#eq-eq-curle-general">(11)</a> becomes</p>
+<div class="math-block math-block--numbered" id="eq-eq-curle"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -1935,8 +1935,8 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:eq:curlE">(12)</span></div>
-<p>Differentiating <a class="eqn-ref" href="#mjx-eqn:eq:Bgiven">(2)</a> in time,</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<p>Differentiating <a class="xref" href="#eq-eq-bgiven">(2)</a> in time,</p>
+<div class="math-block math-block--numbered" id="eq-eq-dbdt"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -2056,8 +2056,8 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:eq:dBdt">(13)</span></div>
-<p>Equations <a class="eqn-ref" href="#mjx-eqn:eq:curlE">(12)</a> and <a class="eqn-ref" href="#mjx-eqn:eq:dBdt">(13)</a> agree, with the same spatial pattern and the same time dependence, provided</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<p>Equations <a class="xref" href="#eq-eq-curle">(12)</a> and <a class="xref" href="#eq-eq-dbdt">(13)</a> agree, with the same spatial pattern and the same time dependence, provided</p>
+<div class="math-block math-block--numbered" id="eq-eq-match1"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -2096,7 +2096,7 @@
 <p>Only the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>z</mi>
 </math></span>-component survives:</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-curlb-general"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -2287,8 +2287,8 @@
     </mtr>
   </mtable>
 </math></div>
-<p>so that <a class="eqn-ref" href="#mjx-eqn:eq:curlB-general">(15)</a> gives</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<p>so that <a class="xref" href="#eq-eq-curlb-general">(15)</a> gives</p>
+<div class="math-block math-block--numbered" id="eq-eq-curlb"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -2367,7 +2367,7 @@
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:eq:curlB">(16)</span></div>
 <p>while the displacement-current term is</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-displacement"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -2461,8 +2461,8 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:eq:displacement">(17)</span></div>
-<p>Matching the coefficients of <a class="eqn-ref" href="#mjx-eqn:eq:curlB">(16)</a> and <a class="eqn-ref" href="#mjx-eqn:eq:displacement">(17)</a>,</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<p>Matching the coefficients of <a class="xref" href="#eq-eq-curlb">(16)</a> and <a class="xref" href="#eq-eq-displacement">(17)</a>,</p>
+<div class="math-block math-block--numbered" id="eq-eq-match2"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -2497,7 +2497,7 @@
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:eq:match2">(18)</span></div>
 <h3 id="sec-900-solving-the-two-matching-conditions"><span class="sec-number">3.5</span>Solving the two matching conditions</h3>
-<p>Equation <a class="eqn-ref" href="#mjx-eqn:eq:match1">(14)</a> gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>Equation <a class="xref" href="#eq-eq-match1">(14)</a> gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>B</mi>
     <mn>0</mn>
@@ -2515,8 +2515,8 @@
   <mi>L</mi>
   <mi>ω</mi>
   <mo stretchy="false">)</mo>
-</math></span>. Substituting into <a class="eqn-ref" href="#mjx-eqn:eq:match2">(18)</a>,</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+</math></span>. Substituting into <a class="xref" href="#eq-eq-match2">(18)</a>,</p>
+<div class="math-block math-block--numbered" id="eq-eq-omega-squared"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -2590,7 +2590,7 @@
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:eq:omega-squared">(19)</span></div>
 <p>so that</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-answer-a"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -2892,7 +2892,7 @@
    changes — only its amplitude — which is what makes this a standing wave
    rather than a travelling one.</figcaption></figure>
 <h2 id="sec-900-the-full-family-of-modes"><span class="sec-number">5</span>The full family of modes</h2>
-<p>Nothing above required the particular pattern in <a class="eqn-ref" href="#mjx-eqn:eq:Egiven">(1)</a>. Solving the cavity from scratch produces every mode it supports, and the given field turns out to be the lowest one.</p>
+<p>Nothing above required the particular pattern in <a class="xref" href="#eq-eq-egiven">(1)</a>. Solving the cavity from scratch produces every mode it supports, and the given field turns out to be the lowest one.</p>
 <h3 id="sec-900-wave-equation"><span class="sec-number">5.1</span>Wave equation</h3>
 <p>Take the curl of Faraday's law and use <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi mathvariant="normal">∇</mi>
@@ -2942,7 +2942,7 @@
   <mo>=</mo>
   <mn>0</mn>
 </math></span>:</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-wave"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -3045,7 +3045,7 @@
 </math><span class="eqn-number" id="mjx-eqn:eq:wave">(21)</span></div>
 <p>Every Cartesian component of both fields satisfies the same scalar wave equation — the partial differential equation of Chapter 10.</p>
 <h3 id="sec-900-separation-of-variables-chapter-10"><span class="sec-number">5.2</span>Separation of variables (Chapter 10)</h3>
-<p>This is the method of <strong>Chapter 10</strong> applied unchanged. Look for a solution of <a class="eqn-ref" href="#mjx-eqn:eq:wave">(21)</a> with no <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>This is the method of <strong>Chapter 10</strong> applied unchanged. Look for a solution of <a class="xref" href="#eq-eq-wave">(21)</a> with no <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>z</mi>
 </math></span>-dependence in the product form <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
@@ -3083,7 +3083,7 @@
   <mi>Y</mi>
   <mi>T</mi>
 </math></span> gives</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-separated"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -3128,8 +3128,8 @@
   <mi>y</mi>
 </math></span> and the third only on <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>t</mi>
-</math></span>. Three functions of independent variables can agree only if each is a constant, so <a class="eqn-ref" href="#mjx-eqn:eq:separated">(22)</a> splits into</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+</math></span>. Three functions of independent variables can agree only if each is a constant, so <a class="xref" href="#eq-eq-separated">(22)</a> splits into</p>
+<div class="math-block math-block--numbered" id="eq-eq-three-odes"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -3210,7 +3210,7 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:eq:three-odes">(23)</span></div>
-<p>The signs in <a class="eqn-ref" href="#mjx-eqn:eq:three-odes">(23)</a> are forced: a positive separation constant would give growing exponentials, which cannot vanish on both walls.</p>
+<p>The signs in <a class="xref" href="#eq-eq-three-odes">(23)</a> are forced: a positive separation constant would give growing exponentials, which cannot vanish on both walls.</p>
 <h3 id="sec-900-applying-the-walls"><span class="sec-number">5.3</span>Applying the walls</h3>
 <p><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
@@ -3245,7 +3245,7 @@
   </mrow>
   <mn>2</mn>
 </math></span>, the admissible solutions are</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-modes"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -3354,7 +3354,7 @@
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:eq:modes">(24)</span></div>
 <p>with</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-omega-mn"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -3421,7 +3421,7 @@
     <mi>L</mi>
     <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
   </mrow>
-</math></span>, so <a class="eqn-ref" href="#mjx-eqn:eq:modes">(24)</a> reproduces the field of the problem and <a class="eqn-ref" href="#mjx-eqn:eq:omega-mn">(25)</a> reproduces <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>, so <a class="xref" href="#eq-eq-modes">(24)</a> reproduces the field of the problem and <a class="xref" href="#eq-eq-omega-mn">(25)</a> reproduces <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>ω</mi>
     <mrow data-mjx-texclass="ORD">
@@ -3438,7 +3438,7 @@
     <mo>/</mo>
   </mrow>
   <mi>L</mi>
-</math></span>, confirming <a class="eqn-ref" href="#mjx-eqn:eq:answer-a">(20)</a>. Writing the modes as shifted sines rather than as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>, confirming <a class="xref" href="#eq-eq-answer-a">(20)</a>. Writing the modes as shifted sines rather than as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>cos</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
   <mrow>
@@ -3539,7 +3539,7 @@
       <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
     </mover>
   </mrow>
-</math></span> follows from Faraday's law, so <a class="eqn-ref" href="#mjx-eqn:eq:modes">(24)</a> determines the mode completely.</p>
+</math></span> follows from Faraday's law, so <a class="xref" href="#eq-eq-modes">(24)</a> determines the mode completely.</p>
 <h2 id="sec-900-energy-in-the-cavity"><span class="sec-number">6</span>Energy in the cavity</h2>
 <p>The energy density of the field is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>u</mi>
@@ -3616,7 +3616,7 @@
     <mo>/</mo>
   </mrow>
   <mn>2</mn>
-</math></span>. Using <a class="eqn-ref" href="#mjx-eqn:eq:Egiven">(1)</a> and <a class="eqn-ref" href="#mjx-eqn:eq:Bgiven">(2)</a> with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>. Using <a class="xref" href="#eq-eq-egiven">(1)</a> and <a class="xref" href="#eq-eq-bgiven">(2)</a> with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>B</mi>
     <mn>0</mn>
@@ -3635,7 +3635,7 @@
   </msqrt>
   <mi>c</mi>
   <mo stretchy="false">)</mo>
-</math></span> from <a class="eqn-ref" href="#mjx-eqn:eq:answer-a">(20)</a>,</p>
+</math></span> from <a class="xref" href="#eq-eq-answer-a">(20)</a>,</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -3742,14 +3742,14 @@
 <figure id="fig-4" class="figure"><img src="assets/img/fig_energy.png" class="diagram" alt="Electric and magnetic energy over one period. Each is largest when the other vanishes, and their sum is constant." loading="lazy" style="--figure-width: 90%;"><figcaption>Figure 4. Electric and magnetic energy over one period. Each is largest when
     the other vanishes, and their sum is constant.</figcaption></figure>
 <h2 id="sec-900-which-course-methods-were-used"><span class="sec-number">7</span>Which course methods were used</h2>
-<ul><li><p><strong>Partial differentiation and vector operators (Chapter 6).</strong> Verifying the field is four exercises in taking divergences and curls of products of sines and cosines; the two matching conditions <a class="eqn-ref" href="#mjx-eqn:eq:match1">(14)</a>–<a class="eqn-ref" href="#mjx-eqn:eq:match2">(18)</a> fall straight out of them.</p></li><li><p><strong>Partial differential equations (Chapter 10).</strong> Eliminating <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<ul><li><p><strong>Partial differentiation and vector operators (Chapter 6).</strong> Verifying the field is four exercises in taking divergences and curls of products of sines and cosines; the two matching conditions <a class="xref" href="#eq-eq-match1">(14)</a>–<a class="xref" href="#eq-eq-match2">(18)</a> fall straight out of them.</p></li><li><p><strong>Partial differential equations (Chapter 10).</strong> Eliminating <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mover accent="true">
       <mi>B</mi>
       <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
     </mover>
   </mrow>
-</math></span> turns Maxwell's equations into the wave equation, and separation of variables plus the wall conditions turns that into the discrete family <a class="eqn-ref" href="#mjx-eqn:eq:modes">(24)</a>. The quantisation of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> turns Maxwell's equations into the wave equation, and separation of variables plus the wall conditions turns that into the discrete family <a class="xref" href="#eq-eq-modes">(24)</a>. The quantisation of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>ω</mi>
     <mrow data-mjx-texclass="ORD">
@@ -3757,7 +3757,7 @@
       <mi>n</mi>
     </mrow>
   </msub>
-</math></span> is a boundary-value problem, not a property of the wave equation itself.</p></li><li><p><strong>Fourier series (Chapter 7).</strong> The modes <a class="eqn-ref" href="#mjx-eqn:eq:modes">(24)</a> are a complete orthogonal set on the square, so any field the cavity can hold is a double Fourier sine series in these patterns — which is what lets us treat the lowest mode on its own.</p></li><li><p><strong>Multiple integrals (Chapter 5).</strong> The stored energies <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> is a boundary-value problem, not a property of the wave equation itself.</p></li><li><p><strong>Fourier series (Chapter 7).</strong> The modes <a class="xref" href="#eq-eq-modes">(24)</a> are a complete orthogonal set on the square, so any field the cavity can hold is a double Fourier sine series in these patterns — which is what lets us treat the lowest mode on its own.</p></li><li><p><strong>Multiple integrals (Chapter 5).</strong> The stored energies <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>U</mi>
     <mi>E</mi>

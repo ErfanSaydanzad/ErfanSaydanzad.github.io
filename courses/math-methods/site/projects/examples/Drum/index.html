@@ -6,9 +6,9 @@
   <title>Why a Drum Has No Pitch: Modes of a Circular Membrane | Mathematical Methods in the Physical Sciences</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
   <link rel="preload" href="../../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../../../assets/css/site.css?v=a126620a">
+  <link rel="stylesheet" href="../../../assets/css/site.css?v=b434b9c2">
   <link rel="preload" href="../../../assets/fonts/latinmodern-math.woff2" as="font" type="font/woff2" crossorigin>
-  <script defer src="../../../assets/js/main.js?v=a126620a"></script>
+  <script defer src="../../../assets/js/main.js?v=b434b9c2"></script>
   <script defer src="../../../assets/js/visualizations/examples-Drum.js"></script>
 <style>
 .site-header { justify-content: flex-start; gap: 16px; }
@@ -220,7 +220,7 @@
 </math></span> be the vertical displacement of a membrane of radius <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>R</mi>
 </math></span>, held fixed at the rim. Small transverse vibrations obey the two-dimensional wave equation</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-wave"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -270,7 +270,7 @@
 </math></span> and the areal density <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>σ</mi>
 </math></span>. The geometry is circular, so the Laplacian is used in polar coordinates,</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-laplacian"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -345,7 +345,7 @@
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:eq:laplacian">(2)</span></div>
 <p>The boundary condition is that the rim never moves,</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-bc"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -375,7 +375,7 @@
   <mi>r</mi>
   <mo>=</mo>
   <mn>0</mn>
-</math></span> where <a class="eqn-ref" href="#mjx-eqn:eq:laplacian">(2)</a> is singular. That regularity requirement is not a technicality: it is what removes half of the solutions below.</p>
+</math></span> where <a class="xref" href="#eq-eq-laplacian">(2)</a> is singular. That regularity requirement is not a technicality: it is what removes half of the solutions below.</p>
 <p>Throughout the calculations <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>R</mi>
   <mo>=</mo>
@@ -429,7 +429,7 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:4">(4)</span></div>
-<p>Substituting into <a class="eqn-ref" href="#mjx-eqn:eq:wave">(1)</a> and dividing by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>Substituting into <a class="xref" href="#eq-eq-wave">(1)</a> and dividing by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>P</mi>
   <mi mathvariant="normal">Θ</mi>
   <mi>T</mi>
@@ -507,7 +507,7 @@
     <mn>2</mn>
   </msup>
 </math></span> — negative, because a positive constant would give solutions growing without bound in time, which a membrane with a fixed rim cannot do — gives</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-time"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -544,7 +544,7 @@
 </math></span> from <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>θ</mi>
 </math></span> in the remainder introduces a second constant,</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-radial"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -662,7 +662,7 @@
   <mi>θ</mi>
 </math></span> terms are needed below.</p>
 <h3 id="sec-900-the-radial-equation-bessel-s-equation-chapter-9"><span class="sec-number">3.2</span>The radial equation: Bessel's equation (Chapter 9)</h3>
-<p>Equation <a class="eqn-ref" href="#mjx-eqn:eq:radial">(7)</a> is Bessel's equation of order <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>Equation <a class="xref" href="#eq-eq-radial">(7)</a> is Bessel's equation of order <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>n</mi>
 </math></span> in the variable <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>k</mi>
@@ -721,7 +721,7 @@
     <mi>Y</mi>
     <mi>n</mi>
   </msub>
-</math></span> are the Bessel functions of the first and second kind — exactly the functions Chapter 9 obtains by solving <a class="eqn-ref" href="#mjx-eqn:eq:radial">(7)</a> as a power series about the regular singular point <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> are the Bessel functions of the first and second kind — exactly the functions Chapter 9 obtains by solving <a class="xref" href="#eq-eq-radial">(7)</a> as a power series about the regular singular point <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>r</mi>
   <mo>=</mo>
   <mn>0</mn>
@@ -747,7 +747,7 @@
   <mn>0</mn>
 </math></span>.</p>
 <h3 id="sec-900-the-clamped-rim-quantises-the-frequency"><span class="sec-number">3.3</span>The clamped rim quantises the frequency</h3>
-<p>The boundary condition <a class="eqn-ref" href="#mjx-eqn:eq:bc">(3)</a> now bites: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>The boundary condition <a class="xref" href="#eq-eq-bc">(3)</a> now bites: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>J</mi>
     <mi>n</mi>
@@ -782,7 +782,7 @@
     <mi>n</mi>
   </msub>
 </math></span> (Figure <a class="xref" href="#fig-2">2</a>),</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-omega"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -900,7 +900,7 @@
     next.</figcaption></figure>
 <h3 id="sec-900-the-normal-modes"><span class="sec-number">3.4</span>The normal modes</h3>
 <p>Collecting the three factors, the normal modes of the drumhead are</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-modes"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -1122,7 +1122,7 @@
   <mo stretchy="false">)</mo>
 </math></span>.</figcaption></figure>
 <h2 id="sec-900-why-the-drum-has-no-pitch"><span class="sec-number">4</span>Why the drum has no pitch</h2>
-<p>The frequencies <a class="eqn-ref" href="#mjx-eqn:eq:omega">(9)</a> in units of the fundamental <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>The frequencies <a class="xref" href="#eq-eq-omega">(9)</a> in units of the fundamental <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>ω</mi>
     <mrow data-mjx-texclass="ORD">
@@ -1130,7 +1130,7 @@
     </mrow>
   </msub>
 </math></span> are</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-ratios"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -1227,7 +1227,7 @@
       <mi>m</mi>
     </mrow>
   </msub>
-</math></span>, each given the amplitude the mallet delivers to that mode — and the second is the same mallet striking a clamped <em>string</em> as long as the drum is wide, hit the same distance off centre. The two are then transposed to a common fundamental, so that the one difference left between them is the ladder <a class="eqn-ref" href="#mjx-eqn:eq:ratios">(11)</a> against <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>, each given the amplitude the mallet delivers to that mode — and the second is the same mallet striking a clamped <em>string</em> as long as the drum is wide, hit the same distance off centre. The two are then transposed to a common fundamental, so that the one difference left between them is the ladder <a class="xref" href="#eq-eq-ratios">(11)</a> against <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>1</mn>
   <mo>,</mo>
   <mn>2</mn>
@@ -1287,7 +1287,7 @@
    real instruments do: the drum's notes die before the next one lands, while
    the string's ring on and overlap.</p>
 </section>
-<p>A second feature of <a class="eqn-ref" href="#mjx-eqn:eq:ratios">(11)</a> is worth naming: every mode with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>A second feature of <a class="xref" href="#eq-eq-ratios">(11)</a> is worth naming: every mode with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>n</mi>
   <mo>≥</mo>
   <mn>1</mn>
@@ -1303,8 +1303,8 @@
   <mi>θ</mi>
 </math></span> gives a different pattern — the same shape rotated by half a nodal sector — at exactly the same frequency. Which of the pair is excited depends only on where the drum is struck.</p>
 <h2 id="sec-900-striking-the-drum-an-initial-value-problem"><span class="sec-number">5</span>Striking the drum: an initial-value problem</h2>
-<p>Equation <a class="eqn-ref" href="#mjx-eqn:eq:modes">(10)</a> describes what the membrane <em>can</em> do. What it actually does is fixed by how it is started. A drum is struck, not plucked: the mallet leaves the membrane flat but moving,</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<p>Equation <a class="xref" href="#eq-eq-modes">(10)</a> describes what the membrane <em>can</em> do. What it actually does is fixed by how it is started. A drum is struck, not plucked: the mallet leaves the membrane flat but moving,</p>
+<div class="math-block math-block--numbered" id="eq-eq-ic"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -1378,8 +1378,8 @@
       <mi>m</mi>
     </mrow>
   </msub>
-</math></span> in <a class="eqn-ref" href="#mjx-eqn:eq:modes">(10)</a>, leaving</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+</math></span> in <a class="xref" href="#eq-eq-modes">(10)</a>, leaving</p>
+<div class="math-block math-block--numbered" id="eq-eq-solution"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -1482,7 +1482,7 @@
 </math></span> are the coefficients of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>v</mi>
 </math></span> in the mode basis. Finding them is an orthogonal expansion of exactly the kind <strong>Chapter 7</strong> performs with sines and cosines — the only differences are that the basis functions are Bessel functions instead of sinusoids and that the inner product carries a weight. The modes are orthogonal on the disc under</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-inner"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -1540,7 +1540,7 @@
 <p>in which the factor <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>r</mi>
 </math></span> is the Jacobian of polar coordinates (<strong>Chapter 5</strong>) and is what makes the orthogonality work. Projecting,</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-coefficients"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -1626,10 +1626,10 @@
       <mi>m</mi>
     </mrow>
   </msub>
-</math></span> in <a class="eqn-ref" href="#mjx-eqn:eq:solution">(13)</a> is worth a comment. A kick of a given size sets a stiff, high-frequency mode swinging through a smaller displacement than a floppy one, so the visible motion is dominated by the lowest few modes even though the strike deposits energy across many. This is why Figure <a class="xref" href="#fig-1">1</a> stays smooth despite starting from a sharply localised strike.</p>
+</math></span> in <a class="xref" href="#eq-eq-solution">(13)</a> is worth a comment. A kick of a given size sets a stiff, high-frequency mode swinging through a smaller displacement than a floppy one, so the visible motion is dominated by the lowest few modes even though the strike deposits energy across many. This is why Figure <a class="xref" href="#fig-1">1</a> stays smooth despite starting from a sharply localised strike.</p>
 <p>This is the motion shown at the head of the report: the dent from the mallet spreads outward, reflects off the clamped rim, and returns, while the higher modes ride on top of the fundamental at their own unrelated frequencies, so the surface never repeats exactly.</p>
 <h2 id="sec-900-which-course-methods-were-used"><span class="sec-number">6</span>Which course methods were used</h2>
-<ul><li><p><strong>Series solutions of differential equations (Chapter 9).</strong> The radial equation <a class="eqn-ref" href="#mjx-eqn:eq:radial">(7)</a> is Bessel's equation; <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<ul><li><p><strong>Series solutions of differential equations (Chapter 9).</strong> The radial equation <a class="xref" href="#eq-eq-radial">(7)</a> is Bessel's equation; <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>J</mi>
     <mi>n</mi>
@@ -1664,14 +1664,14 @@
       <mi>m</mi>
     </mrow>
   </msub>
-</math></span>.</p></li><li><p><strong>Fourier series and orthogonal expansions (Chapter 7).</strong> The Fourier–Bessel expansion <a class="eqn-ref" href="#mjx-eqn:eq:coefficients">(15)</a> is the same projection onto an orthogonal basis, with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>.</p></li><li><p><strong>Fourier series and orthogonal expansions (Chapter 7).</strong> The Fourier–Bessel expansion <a class="xref" href="#eq-eq-coefficients">(15)</a> is the same projection onto an orthogonal basis, with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>J</mi>
     <mi>n</mi>
   </msub>
 </math></span> in place of sines and the weight <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>r</mi>
-</math></span> in the inner product.</p></li><li><p><strong>Multiple integrals (Chapter 5).</strong> The inner product <a class="eqn-ref" href="#mjx-eqn:eq:inner">(14)</a> is an area integral in polar coordinates, and the factor <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> in the inner product.</p></li><li><p><strong>Multiple integrals (Chapter 5).</strong> The inner product <a class="xref" href="#eq-eq-inner">(14)</a> is an area integral in polar coordinates, and the factor <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>r</mi>
 </math></span> in it is the Jacobian.</p></li></ul>
 <h2 id="sec-900-conclusion"><span class="sec-number">7</span>Conclusion</h2>

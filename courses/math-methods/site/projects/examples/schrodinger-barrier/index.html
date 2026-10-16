@@ -6,9 +6,9 @@
   <title>Quantum Tunnelling of a Wave Packet through a Rectangular Barrier (Numerical) | Mathematical Methods in the Physical Sciences</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
   <link rel="preload" href="../../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../../../assets/css/site.css?v=a126620a">
+  <link rel="stylesheet" href="../../../assets/css/site.css?v=b434b9c2">
   <link rel="preload" href="../../../assets/fonts/latinmodern-math.woff2" as="font" type="font/woff2" crossorigin>
-  <script defer src="../../../assets/js/main.js?v=a126620a"></script>
+  <script defer src="../../../assets/js/main.js?v=b434b9c2"></script>
 
 <style>
 .site-header { justify-content: flex-start; gap: 16px; }
@@ -315,7 +315,7 @@
 </math></span> is the probability density for finding the particle at position <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>x</mi>
 </math></span>. Its evolution is governed by the <strong>time-dependent Schrödinger equation</strong>, a partial differential equation of exactly the kind studied in Chapter 10:</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-tdse"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -466,7 +466,7 @@
   <mo stretchy="false">)</mo>
 </math></span>.</p>
 <p>The barrier is the piecewise-constant potential</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-barrier"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -552,7 +552,7 @@
     <mn>0</mn>
   </msub>
 </math></span>,</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-packet"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -673,7 +673,7 @@
     </mrow>
   </msup>
 </math></span> — a complex exponential of the kind introduced in Chapter 2 — gives the packet its momentum: its mean energy is</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-energy"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -723,7 +723,7 @@
   </msub>
 </math></span>, safely <em>below</em> the barrier. Classically nothing would get through.</p>
 <h2 id="sec-900-working-out-the-method-split-step-fourier"><span class="sec-number">3</span>Working out the method: split-step Fourier</h2>
-<p>Equation <a class="eqn-ref" href="#mjx-eqn:eq:tdse">(1)</a> is integrated forward in time here. For this particular potential that is a choice rather than a necessity: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>Equation <a class="xref" href="#eq-eq-tdse">(1)</a> is integrated forward in time here. For this particular potential that is a choice rather than a necessity: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>V</mi>
 </math></span> is piecewise constant, so the stationary states can be found exactly by matching exponentials across the two walls, and a packet can be assembled from them — which is where the closed-form transmission coefficient of Section <a class="xref" href="#sec-900-comparison-with-analytic-theory">5.3</a> comes from. What that route does not survive is a change of shape. Stepping the equation forward asks nothing of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>V</mi>
@@ -732,8 +732,8 @@
   <mo stretchy="false">)</mo>
 </math></span> beyond being able to evaluate it, so the same program runs unchanged for a smooth bump, a barrier that moves, or one with no straight edges anywhere; the matching argument works for none of them. The idea that makes the stepping easy is the same one that runs through this whole course: <em>a hard operation in one representation is a simple multiplication in another, and the Fourier transform moves us between them.</em></p>
 <h3 id="sec-900-formal-time-evolution"><span class="sec-number">3.1</span>Formal time evolution</h3>
-<p>The Schrödinger equation is a partial differential equation, but it is not attacked here by separation of variables, the method of <strong>Chapter 10</strong>. Separation gives the stationary states, and this problem is about what a <em>localised</em> packet does in time — so <a class="eqn-ref" href="#mjx-eqn:eq:tdse">(1)</a> is integrated forward instead. For a time-independent Hamiltonian it is solved by the exponential operator</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<p>The Schrödinger equation is a partial differential equation, but it is not attacked here by separation of variables, the method of <strong>Chapter 10</strong>. Separation gives the stationary states, and this problem is about what a <em>localised</em> packet does in time — so <a class="xref" href="#eq-eq-tdse">(1)</a> is integrated forward instead. For a time-independent Hamiltonian it is solved by the exponential operator</p>
+<div class="math-block math-block--numbered" id="eq-eq-formal"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -889,7 +889,7 @@
   <mi mathvariant="normal">Δ</mi>
   <mi>t</mi>
 </math></span> we split the exponential symmetrically using the Baker–Campbell–Hausdorff formula. The <strong>Strang splitting</strong></p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-strang"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -1617,7 +1617,7 @@
     (right). The barrier region is shaded grey.</figcaption></figure>
 <h3 id="sec-900-reflection-and-transmission-probabilities"><span class="sec-number">5.2</span>Reflection and transmission probabilities</h3>
 <p>Integrating the final probability density on each side of the barrier gives</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-rt"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -1745,7 +1745,7 @@
     <mn>0</mn>
   </msub>
 </math></span>, the analytic transmission coefficient of a rectangular barrier is obtained by solving the stationary Schrödinger equation:</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-tanalytic"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>

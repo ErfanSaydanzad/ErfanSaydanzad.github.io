@@ -6,9 +6,9 @@
   <title>Chapter 2: Complex Numbers | Mathematical Methods in the Physical Sciences</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
   <link rel="preload" href="../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../../assets/css/site.css?v=a126620a">
+  <link rel="stylesheet" href="../../assets/css/site.css?v=b434b9c2">
   <link rel="preload" href="../../assets/fonts/latinmodern-math.woff2" as="font" type="font/woff2" crossorigin>
-  <script defer src="../../assets/js/main.js?v=a126620a"></script>
+  <script defer src="../../assets/js/main.js?v=b434b9c2"></script>
 
 <style>
 .site-header { justify-content: flex-start; gap: 16px; }
@@ -63,7 +63,21 @@
 <a class="toc-level-3" href="#sec-2-worked-examples-12">Worked Examples</a>
 <a class="toc-level-3" href="#sec-2-quick-facts">Quick Facts</a>
 <a class="toc-level-2" href="#sec-2-complex-algebra">2.2 Complex Algebra</a>
-<a class="toc-level-3" href="#sec-2-simplifying-to-x-iy-or-re-i">2.2.1 Simplifying to x+iy or re^i</a>
+<a class="toc-level-3" href="#sec-2-simplifying-to-x-iy-or-re-i">2.2.1 Simplifying to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>+</mo>
+  <mi>i</mi>
+  <mi>y</mi>
+</math></span> or <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>i</mi>
+      <mi>θ</mi>
+    </mrow>
+  </msup>
+</math></span></a>
 <a class="toc-level-3" href="#sec-2-conjugates-of-expressions">2.2.2 Conjugates of Expressions</a>
 <a class="toc-level-3" href="#sec-2-absolute-value-modulus">2.2.3 Absolute Value (Modulus)</a>
 <a class="toc-level-3" href="#sec-2-complex-equations">2.2.4 Complex Equations</a>
@@ -73,10 +87,10 @@
 <a class="toc-level-3" href="#sec-2-quick-facts-22">Quick Facts</a>
 <a class="toc-level-2" href="#sec-2-complex-power-series-disk-of-convergence">2.4 Complex Power Series: Disk of Convergence</a>
 <a class="toc-level-3" href="#sec-2-radius-and-disk-of-convergence">2.4.1 Radius and Disk of Convergence</a>
-<a class="toc-level-2" href="#sec-2-euler-s-formula">2.5 Euler&#x27;s Formula</a>
+<a class="toc-level-2" href="#sec-2-euler-s-formula">2.5 Euler's Formula</a>
 <a class="toc-level-3" href="#sec-2-proof-using-power-series">Proof Using Power Series</a>
 <a class="toc-level-3" href="#sec-2-geometric-meaning">Geometric Meaning</a>
-<a class="toc-level-3" href="#sec-2-applications-of-euler-s-formula">Applications of Euler&#x27;s Formula</a>
+<a class="toc-level-3" href="#sec-2-applications-of-euler-s-formula">Applications of Euler's Formula</a>
 <a class="toc-level-2" href="#sec-2-elementary-functions-of-complex-numbers">2.6 Elementary Functions of Complex Numbers</a>
 <a class="toc-level-3" href="#sec-2-polynomials-and-rational-functions">Polynomials and Rational Functions</a>
 <a class="toc-level-2" href="#sec-2-the-exponential-function">2.7 The Exponential Function</a>
@@ -98,7 +112,7 @@
 <a class="toc-level-2" href="#sec-2-summary-table">Summary Table</a>
 <a class="toc-level-2" href="#sec-2-for-the-interested-reader">For the Interested Reader</a>
 <a class="toc-level-3" href="#sec-2-algebra-and-geometry-of-complex-numbers">Algebra and geometry of complex numbers</a>
-<a class="toc-level-3" href="#sec-2-euler-s-formula-and-where-it-leads">Euler&#x27;s formula and where it leads</a>
+<a class="toc-level-3" href="#sec-2-euler-s-formula-and-where-it-leads">Euler's formula and where it leads</a>
 <a class="toc-level-3" href="#sec-2-video-lectures">Video lectures</a>
     </nav>
   </div>
@@ -1075,7 +1089,7 @@
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:2.18">(2.18)</span></div></section>
 <h3 id="sec-2-terminology-and-notation">Terminology and Notation</h3>
-<section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Standard Notation for Complex Numbers</span></header><p> For a complex number</p>
+<section class="callout definition" id="definition-def-complex-notation"><header><span class="callout-kind">Definition 2.1.3</span><span class="callout-title">Standard Notation for Complex Numbers</span></header><p> For a complex number</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -9442,7 +9456,7 @@
 <section class="callout theorem"><header><span class="callout-kind">Theorem</span><span class="callout-title">Powers of a Complex Number</span></header><p>For any integer <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>n</mi>
 </math></span>,</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-complex-power"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -9512,7 +9526,7 @@
   <mo>=</mo>
   <mn>1</mn>
 </math></span>, this becomes De Moivre's formula:</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-de-moivre"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -9592,7 +9606,7 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:eq:de_moivre">(2.114)</span></div>
-<section class="callout remark"><header>Remark</header><p>De Moivre's formula is a machine for trigonometric identities. Expanding the left side of <a class="eqn-ref" href="#mjx-eqn:eq:de_moivre">(2.114)</a> for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout remark"><header>Remark</header><p>De Moivre's formula is a machine for trigonometric identities. Expanding the left side of <a class="xref" href="../chapter-02/index.html#eq-eq-de-moivre">(2.114)</a> for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>n</mi>
   <mo>=</mo>
   <mn>2</mn>
@@ -9672,7 +9686,7 @@
   <mi>n</mi>
 </math></span>-th power is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>z</mi>
-</math></span>. From <a class="eqn-ref" href="#mjx-eqn:eq:complex_power">(2.113)</a>, the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>. From <a class="xref" href="../chapter-02/index.html#eq-eq-complex-power">(2.113)</a>, the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>n</mi>
 </math></span>-th roots of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>z</mi>
@@ -14346,7 +14360,7 @@
   </mrow>
   <mn>4</mn>
 </math></span>.</p></li></ol></section>
-<section class="callout remark"><header><span class="callout-kind">Remark</span><span class="callout-title">All values, and the one we call <em>the</em> answer</span></header><p> The same two-step pattern has now appeared twice — once for a root in Section <a class="xref" href="../chapter-02/index.html#sec-2-powers-and-roots-of-complex-numbers">2.8</a> and once for a logarithm — and it is worth seeing the two side by side, because the rule behind them is identical. In each case the several answers come from the argument being fixed only up to whole turns, and the single answer comes from insisting that the argument be the principal one, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout remark" id="remark-rem-all-vs-principal"><header><span class="callout-kind">Remark 2.11.2</span><span class="callout-title">All values, and the one we call <em>the</em> answer</span></header><p> The same two-step pattern has now appeared twice — once for a root in Section <a class="xref" href="../chapter-02/index.html#sec-2-powers-and-roots-of-complex-numbers">2.8</a> and once for a logarithm — and it is worth seeing the two side by side, because the rule behind them is identical. In each case the several answers come from the argument being fixed only up to whole turns, and the single answer comes from insisting that the argument be the principal one, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mi data-mjx-auto-op="false">Arg</mi>
   </mrow>

@@ -6,9 +6,9 @@
   <title>Chapter 1: Infinite Series and Power Series | Mathematical Methods in the Physical Sciences</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3E.e%7Bstroke%3A%231a1c1e%7D.w%7Bstroke%3A%230f5f66%7D%40media%28prefers-color-scheme%3Adark%29%7B.e%7Bstroke%3A%23e4e7ec%7D.w%7Bstroke%3A%235fb6bd%7D%7D%3C%2Fstyle%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%223.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20class%3D%22e%22%20d%3D%22M9.5%207V25M9.5%207H24M9.5%2025H24%22%2F%3E%3Cpath%20class%3D%22w%22%20d%3D%22M6%2016Q10.75%209%2015.5%2016T25%2016%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
   <link rel="preload" href="../../assets/fonts/source-serif-4-latin-roman.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../../assets/css/site.css?v=a126620a">
+  <link rel="stylesheet" href="../../assets/css/site.css?v=b434b9c2">
   <link rel="preload" href="../../assets/fonts/latinmodern-math.woff2" as="font" type="font/woff2" crossorigin>
-  <script defer src="../../assets/js/main.js?v=a126620a"></script>
+  <script defer src="../../assets/js/main.js?v=b434b9c2"></script>
 
 <style>
 .site-header { justify-content: flex-start; gap: 16px; }
@@ -53,7 +53,11 @@
 <a class="toc-level-2" href="#sec-1-geometric-sequences-and-series">1.2 Geometric Sequences and Series</a>
 <a class="toc-level-3" href="#sec-1-finite-geometric-series">1.2.1 Finite Geometric Series</a>
 <a class="toc-level-3" href="#sec-1-infinite-geometric-series">1.2.2 Infinite Geometric Series</a>
-<a class="toc-level-2" href="#sec-1-limit-of-the-general-term-as-n">1.3 Limit of the General Term as n</a>
+<a class="toc-level-2" href="#sec-1-limit-of-the-general-term-as-n">1.3 Limit of the General Term as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo accent="false" stretchy="false">→</mo>
+  <mi mathvariant="normal">∞</mi>
+</math></span></a>
 <a class="toc-level-2" href="#sec-1-testing-series-for-convergence">1.4 Testing Series for Convergence</a>
 <a class="toc-level-3" href="#sec-1-preliminary-test">1.4.1 Preliminary Test</a>
 <a class="toc-level-3" href="#sec-1-comparison-test">1.4.2 Comparison Test</a>
@@ -412,7 +416,7 @@
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:1.3">(1.3)</span></div>
 <p>We cannot literally add infinitely many numbers, so this symbol is <em>defined</em> as the limit of the partial sums:</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-series-as-limit"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -1005,7 +1009,7 @@
   <mo>&lt;</mo>
   <mn>1</mn>
 </math></span>, and in that case</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-geometric-infinite"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -1039,7 +1043,7 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:eq:geometric-infinite">(1.12)</span></div></section>
-<div class="proof" data-lead="Proof."><p>By definition <a class="eqn-ref" href="#mjx-eqn:eq:series-as-limit">(1.4)</a> the sum is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="proof" data-lead="Proof."><p>By definition <a class="xref" href="../chapter-01/index.html#eq-eq-series-as-limit">(1.4)</a> the sum is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <munder>
     <mo data-mjx-texclass="OP" movablelimits="true" stretchy="true">lim</mo>
     <mrow data-mjx-texclass="ORD">
@@ -1420,7 +1424,7 @@
   <mo stretchy="false">|</mo>
   <mo>&lt;</mo>
   <mn>1</mn>
-</math></span> it converges, and by <a class="eqn-ref" href="#mjx-eqn:eq:geometric-infinite">(1.12)</a></p>
+</math></span> it converges, and by <a class="xref" href="../chapter-01/index.html#eq-eq-geometric-infinite">(1.12)</a></p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -2029,7 +2033,7 @@
   <mo stretchy="false">|</mo>
   <mo>&lt;</mo>
   <mn>1</mn>
-</math></span>, so by <a class="eqn-ref" href="#mjx-eqn:eq:geometric-infinite">(1.12)</a></p>
+</math></span>, so by <a class="xref" href="../chapter-01/index.html#eq-eq-geometric-infinite">(1.12)</a></p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -3189,7 +3193,7 @@
   <mi>n</mi>
   <mo stretchy="false">]</mo>
 </math></span>, they lie below it. The total area of the rectangles is the sum, so</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-integral-test-bounds"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -3291,7 +3295,7 @@
   <mo>≥</mo>
   <mn>1</mn>
 </math></span> this function is positive, continuous, and decreasing, so the Integral Test applies. Evaluating the improper integral as a limit:</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-harmonic-integral"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -3430,7 +3434,7 @@
 </math></span>-series</span></header><p>For a constant <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>p</mi>
 </math></span>,</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-p-series"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -3752,7 +3756,7 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:1.49">(1.49)</span></div>
-<p>The bounds <a class="eqn-ref" href="#mjx-eqn:eq:integral-test-bounds">(1.45)</a> only place the sum between <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>The bounds <a class="xref" href="../chapter-01/index.html#eq-eq-integral-test-bounds">(1.45)</a> only place the sum between <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>1</mn>
 </math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>2</mn>
@@ -3760,7 +3764,7 @@
 <h3 id="sec-1-ratio-test"><span class="sec-number">1.4.4</span>Ratio Test</h3>
 <p class="lecture-video"><a href="https://www.youtube.com/watch?v=54OLcnvLUy0&amp;t=1243s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> Lecture 2, Part 5: The Ratio Test (20:43)</a></p>
 <section class="callout theorem"><header><span class="callout-kind">Theorem</span><span class="callout-title">Ratio Test</span></header><p>Let</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-ratio-rho"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -3907,7 +3911,7 @@
     <mi>n</mi>
   </msub>
 </math></span> means multiplying by its reciprocal:</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-ratio-n2-over-2n"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -4330,7 +4334,7 @@
 </math></span>, and the test is inconclusive.</p></section>
 <h3 id="sec-1-limit-comparison-test"><span class="sec-number">1.4.5</span>Limit Comparison Test</h3>
 <section class="callout theorem"><header><span class="callout-kind">Theorem</span><span class="callout-title">Limit Comparison Test</span></header><p>If</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-limit-comparison"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -4716,7 +4720,7 @@
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:1.59">(1.59)</span></div>
 <p>Equivalently, it may be written in the form</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-alt-series-general"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -4760,7 +4764,7 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:eq:alt-series-general">(1.60)</span></div></section>
-<section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">Alternating harmonic series</span></header><div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">Alternating harmonic series</span></header><div class="math-block math-block--numbered" id="eq-eq-alt-harmonic"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -4811,7 +4815,7 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:eq:alt-harmonic">(1.61)</span></div></section>
-<section class="callout theorem"><header><span class="callout-kind">Theorem</span><span class="callout-title">Alternating Series Test (Leibniz Criterion)</span></header><p>An alternating series of the form <a class="eqn-ref" href="#mjx-eqn:eq:alt-series-general">(1.60)</a></p>
+<section class="callout theorem"><header><span class="callout-kind">Theorem</span><span class="callout-title">Alternating Series Test (Leibniz Criterion)</span></header><p>An alternating series of the form <a class="xref" href="../chapter-01/index.html#eq-eq-alt-series-general">(1.60)</a></p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -4850,7 +4854,7 @@
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:1.62">(1.62)</span></div>
 <p><strong>converges</strong> if</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-leibniz"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -4960,7 +4964,7 @@
     </msub>
   </mstyle>
 </math></span> is <strong>conditionally convergent</strong>.</p></li></ul></section>
-<section class="callout theorem"><header><span class="callout-kind">Theorem</span><span class="callout-title">Absolute convergence implies convergence</span></header><p>If <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout theorem" id="theorem-thm-abs-implies-conv"><header><span class="callout-kind">Theorem 1.5.2</span><span class="callout-title">Absolute convergence implies convergence</span></header><p>If <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mstyle displaystyle="true" scriptlevel="0">
     <mo data-mjx-texclass="OP">∑</mo>
     <mo stretchy="false">|</mo>
@@ -5106,7 +5110,7 @@
   <mn>2</mn>
   <mo>&gt;</mo>
   <mn>1</mn>
-</math></span> and therefore converges by <a class="eqn-ref" href="#mjx-eqn:eq:p-series">(1.47)</a>. Since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> and therefore converges by <a class="xref" href="../chapter-01/index.html#eq-eq-p-series">(1.47)</a>. Since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo data-mjx-texclass="OP">∑</mo>
   <mo stretchy="false">|</mo>
   <msub>
@@ -5143,7 +5147,7 @@
       <mi>n</mi>
     </mfrac>
   </mstyle>
-</math></span> from <a class="eqn-ref" href="#mjx-eqn:eq:alt-harmonic">(1.61)</a>.</p>
+</math></span> from <a class="xref" href="../chapter-01/index.html#eq-eq-alt-harmonic">(1.61)</a>.</p>
 <p class="solution-head">Solution.</p>
 <p>Set <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
@@ -5202,7 +5206,7 @@
   <mi>n</mi>
   <mo>=</mo>
   <mn>0</mn>
-</math></span>, so both conditions in <a class="eqn-ref" href="#mjx-eqn:eq:leibniz">(1.63)</a> hold and the series <strong>converges</strong> by the Alternating Series Test.</p>
+</math></span>, so both conditions in <a class="xref" href="../chapter-01/index.html#eq-eq-leibniz">(1.63)</a> hold and the series <strong>converges</strong> by the Alternating Series Test.</p>
 <p>However, taking absolute values gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo data-mjx-texclass="OP">∑</mo>
   <mn>1</mn>
@@ -7685,7 +7689,7 @@
 </math></span> swinging through an angle <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>θ</mi>
 </math></span> from the vertical obeys</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-pendulum-exact"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -7735,7 +7739,7 @@
     <mi>θ</mi>
     <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
   </mrow>
-</math></span> on the right, which makes <a class="eqn-ref" href="#mjx-eqn:eq:pendulum-exact">(1.90)</a> <em>nonlinear</em>. Replace it by its Maclaurin series:</p>
+</math></span> on the right, which makes <a class="xref" href="../chapter-01/index.html#eq-eq-pendulum-exact">(1.90)</a> <em>nonlinear</em>. Replace it by its Maclaurin series:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -7789,7 +7793,7 @@
   </mrow>
   <mo>≈</mo>
   <mi>θ</mi>
-</math></span>, and <a class="eqn-ref" href="#mjx-eqn:eq:pendulum-exact">(1.90)</a> becomes</p>
+</math></span>, and <a class="xref" href="../chapter-01/index.html#eq-eq-pendulum-exact">(1.90)</a> becomes</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -13383,7 +13387,7 @@
 </math></span>. For small <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>x</mi>
 </math></span>,</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-binomial-half"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -13578,7 +13582,7 @@
 </math></span> by a body at absolute temperature <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>T</mi>
 </math></span> as</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<div class="math-block math-block--numbered" id="eq-eq-planck"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -13782,7 +13786,7 @@
   </mrow>
   <mi>k</mi>
   <mi>T</mi>
-</math></span> into <a class="eqn-ref" href="#mjx-eqn:eq:planck">(1.146)</a>:</p>
+</math></span> into <a class="xref" href="../chapter-01/index.html#eq-eq-planck">(1.146)</a>:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -13868,7 +13872,7 @@
   <mi>T</mi>
 </math></span>. The two agree at low frequencies; at high frequencies the
 		classical curve keeps rising, while Planck's law turns over and falls to zero.</figcaption></figure></div></section>
-<section class="callout remark"><header>Remark</header><p>Series such as <a class="eqn-ref" href="#mjx-eqn:eq:binomial-half">(1.144)</a>, written in powers of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout remark"><header>Remark</header><p>Series such as <a class="xref" href="../chapter-01/index.html#eq-eq-binomial-half">(1.144)</a>, written in powers of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>x</mi>
 </math></span>, are the <strong>power series</strong> of Section <a class="xref" href="../chapter-01/index.html#sec-1-power-series">1.7</a>. Beyond the approximations above, they are used to define:</p>
 <ul><li><p>Functions of complex numbers (Chapter 2, Section 8),</p></li><li><p>Functions of matrices (Chapter 3, Section 6),</p></li><li><p>Fourier series (Chapter 7),</p></li><li><p>Special functions like Legendre and Bessel functions (Chapters 12 and 13).</p></li></ul></section>

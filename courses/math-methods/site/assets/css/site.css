@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Mathematical Methods in the Physical Sciences -- lecture note stylesheet
+   Lecture note stylesheet
 
    Design goals, in priority order:
      1. Long-form readability. Students read this for hours.
@@ -47,12 +47,22 @@
   --c-example-bg: #f2f9f4;
   --c-solution: #10612e;
   --c-solution-bg: #f2f9f4;
+  /* A number written over one term of a sum. Dark enough for AAA at
+     superscript size; matches clrannot in methodsbook.sty. */
+  --c-annot: #991b1b;
   --c-remark: #475569;
   --c-remark-bg: #f7f8fa;
   --c-proof: #475569;
   --c-proof-bg: #fcfcfd;
   --c-context: #0c5d56;
   --c-context-bg: #f0f7f7;
+  /* The status disclaimer, and nothing else. Red is the one colour a
+     reader will not mistake for decoration, and this is the one notice on
+     the site that must be read before the text it introduces. Measured
+     8.0:1 on --paper and 7.6:1 on its own tint, so it clears AAA in the
+     body sizes it is used at. */
+  --c-alert: #991b1b;
+  --c-alert-bg: #fef2f2;
 
   /* Foundational statements. An axiom is an assumption of the theory's
      structure; a postulate is a physical assertion laid on top of it. They
@@ -126,12 +136,17 @@
     --c-example-bg: #13221a;
     --c-solution: #5fc98c;
     --c-solution-bg: #13221a;
+    --c-annot: #f2a0a0;
     --c-remark: #9ea9b8;
     --c-remark-bg: #1a1d23;
     --c-proof: #9aa5b5;
     --c-proof-bg: #17191e;
     --c-context: #58bdb3;
     --c-context-bg: #122322;
+    /* 8.9:1 on --paper, 8.5:1 on its own tint. A dark-mode red has to be
+       lightened this far to stay legible; a saturated one reads as brown. */
+    --c-alert: #f2a0a0;
+    --c-alert-bg: #2a1416;
 
     --c-axiom: #f4a0b9;
     --c-axiom-bg: #2a1219;
@@ -141,22 +156,17 @@
     --c-misreading-bg: #241b10;
   }
 
-  /* Every figure on this site is drawn on white paper -- matplotlib for the
-     plots, TikZ for the diagrams -- and a white plate in a dark page reads as
-     a hole burned in it.
-
-     The colour in these figures carries meaning: the sign of a displacement,
-     which mode is which. So the paper is flipped without touching the hues.
-     invert() alone would turn the blue curve orange; following it with a
-     180-degree hue rotation puts every hue back where it started, and only
-     the lightness ends up reversed. Black ink on white becomes white ink on
-     black, and the blue curve stays blue.
-
-     Photographs are the one thing this must not touch -- a face or a piece of
-     apparatus comes out as a negative -- so it is opt-in per image, set by
-     the builder from the file type. */
-  /* Anything left on white paper -- photographs, screenshots -- keeps it, and
-     is given an edge so it reads as a plate laid on the page. */
+  /* Every figure on this site is drawn by matplotlib on white paper, and the
+     colour in them is carrying meaning -- the sign of a displacement, which
+     mode is which. Dimming them with a filter would be a lie told for the
+     sake of the theme, so they keep their white and are given an edge, which
+     reads as a plate laid on the page rather than as a hole burned in it. */
+  /* A white plate in a dark page reads as a hole burned in it. The colour in
+     these figures carries meaning, so the paper is flipped without touching
+     the hues: invert() alone would turn the blue curve orange, and following
+     it with a 180-degree hue rotation puts every hue back, leaving only the
+     lightness reversed. Photographs must not be touched -- a face comes out a
+     negative -- so it is opt-in, set by the builder from the file type. */
   .figure img:not(.diagram), figure img:not(.diagram), .project-card-preview {
     box-shadow: 0 0 0 1px var(--line-strong);
   }
@@ -246,7 +256,7 @@ body {
 
 /* Captions are commentary on the text, not part of it, so they change voice:
    the sans, one step down, is the oldest editorial signal there is. */
-figcaption, .interactive-caption {
+figcaption, .interactive-caption, .suggestion-meta {
   font-family: var(--sans);
 }
 
@@ -254,7 +264,7 @@ figcaption, .interactive-caption {
    final line, and even out the line lengths of a heading. Both degrade to
    ordinary wrapping where they are not supported. */
 p, li, figcaption, dd { text-wrap: pretty; }
-h1, h2, h3, h4, .project-card strong { text-wrap: balance; }
+h1, h2, h3, h4, .project-card strong, .suggestion h3 { text-wrap: balance; }
 
 /* Anchored links land under the sticky header without it. */
 :target { scroll-margin-top: 5rem; }
@@ -282,7 +292,7 @@ a:hover { text-decoration-thickness: 0.12em; }
   left: 12px;
   top: 12px;
   z-index: 50;
-  /* SC 2.5.5 Target Size, once it is on screen. */
+  /* SC 2.5.5 Target Size, once on screen. */
   display: inline-flex;
   align-items: center;
   min-height: 44px;
@@ -536,6 +546,91 @@ li.labeled { list-style: none; }
 li.labeled > .item-label { font-weight: 600; margin-right: 0.4em; }
 li.labeled > .item-label + p { display: inline; }
 
+/* \begin{description}: the term is the point, so it leads its own line. The
+   glossary chapter is one long one of these, so it has to stay scannable. */
+dl.described { margin: 1em 0; }
+dl.described > dt {
+  font-weight: 600;
+  margin-top: 0.9em;
+}
+dl.described > dt:first-child { margin-top: 0; }
+dl.described > dd { margin: 0.15em 0 0 1.4em; }
+dl.described > dd > :first-child { margin-top: 0; }
+dl.described > dd > :last-child { margin-bottom: 0; }
+
+/* A \webmovie figure. It gets the same sizing as an image but deliberately
+   none of the .diagram treatment below: that rule multiplies a figure's white
+   paper into the page and, in dark mode, inverts it. Both are right for a line
+   drawing on white and wrong for a lit 3-D render, which is closer to a
+   photograph -- inverting it would turn the shading inside out. The dark and
+   light versions of such a figure are rendered separately instead. */
+.figure video, figure video {
+  max-width: min(var(--figure-width, 100%), 100%);
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+  background: #0B1220;
+}
+
+/* Replay for an animation that has played once and stopped. */
+.animation-replay {
+  display: block;
+  margin: 0.4rem auto 0;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid var(--line, #cbd5e1);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--accent);
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.animation-replay:hover { background: var(--accent-soft); }
+.animation-replay:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+/* Link to the course's own lecture video, at the part that teaches this
+   section: one line under the heading, with a small play badge. */
+.lecture-video {
+  margin: 0.3rem 0;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+}
+.lecture-video a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.lecture-video a:hover { text-decoration: underline; }
+.lecture-video-play {
+  position: relative;
+  flex: none;
+  width: 26px;
+  height: 18px;
+  border-radius: 5px;
+  background: #dc2626;
+}
+.lecture-video-play::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  border-style: solid;
+  border-width: 4px 0 4px 7px;
+  border-color: transparent transparent transparent #fff;
+}
+.lecture-video-tag {
+  font-weight: 700;
+  color: #dc2626;
+}
+.lecture-video a:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
 .figure.animation img { border: 1px solid var(--line); border-radius: 4px; }
 
 pre.code {
@@ -728,16 +823,12 @@ pre.code {
 
 .math-inline { overflow-wrap: anywhere; }
 
-/* Equations are real MathML, laid out by the browser rather than by MathJax
-   in the page. That is what lets them survive a reading mode, which rebuilds
-   the page from its own stylesheet and would otherwise drop the layout and
-   leave every formula as a vertical stack of its parts.
+/* Equations are real MathML, laid out by the browser rather than by MathJax in
+   the page. That is what lets them survive a reading mode, which rebuilds the
+   page from its own stylesheet and would otherwise drop the layout.
 
    Latin Modern Math is the OpenType cut of the Computer Modern the PDF is set
-   in, and it carries the OpenType MATH table that native MathML layout needs
-   for stretchy brackets, radicals and fraction rules. Without a MATH font the
-   browser falls back to Cambria Math on Windows and STIX Two Math on macOS,
-   and to something unsuitable elsewhere. */
+   in, and carries the MATH table native MathML layout needs. */
 @font-face {
   font-family: "Latin Modern Math";
   src: url("../fonts/latinmodern-math.woff2") format("woff2");
@@ -746,24 +837,21 @@ pre.code {
 
 math {
   font-family: "Latin Modern Math", "STIX Two Math", "Cambria Math", math;
-  /* Latin Modern runs small next to Source Serif; this brings the x-heights
-     together so an inline symbol sits on the line with the words. */
   font-size: 1.06em;
 }
 
-/* \\boxed, which these notes use to ring a result worth carrying forward.
-   MathML Core has no <menclose>, so prerender.py rewrites it to an <mrow> and
-   the box is drawn here. */
+/* \\boxed. MathML Core has no <menclose>, so prerender.py rewrites it to an
+   <mrow> and the box is drawn here. */
 .mml-boxed {
   border: 1px solid currentColor;
   border-radius: 2px;
   padding: 0.3em 0.45em;
 }
 
-/* \\overline, which chapter 2 sets every complex conjugate with. The bar is a
-   rule rather than a character because no math font carries a stretchable one
-   -- see _rule_bars in mmlcore.py -- and the browser was drawing MathJax's
-   fixed-width dash over the middle of the expression instead of across it.
+/* \\overline. The bar is a rule rather than a character because no math font
+   carries a stretchable one -- see _rule_bars in mmlcore.py -- so the browser
+   would otherwise draw MathJax's fixed-width dash over the middle of the
+   expression instead of across it.
 
    The three numbers are Latin Modern's own OverbarVerticalGap,
    OverbarRuleThickness and OverbarExtraAscender, so the rule lands where TeX
@@ -796,10 +884,8 @@ math {
   font-size: 0;
 }
 
-/* The equation number. MathML Core has no <mlabeledtr> either, so the tag is
-   lifted out into an HTML element and set against the right margin the way
-   the PDF sets it. In a reading mode the grid collapses and the number simply
-   follows the equation as text, which is the right outcome. */
+/* MathML Core has no <mlabeledtr> either, so the equation tag is lifted out
+   into an HTML element and set against the right margin. */
 .math-block--numbered {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -866,21 +952,6 @@ figure, .figure, .table-figure {
   max-width: min(var(--figure-width, 100%), 100%);
   height: auto;
   border-radius: 4px;
-}
-
-/* A \webmovie figure. It gets the same sizing as an image but deliberately
-   none of the .diagram treatment below: that rule multiplies a figure's white
-   paper into the page and, in dark mode, inverts it. Both are right for a line
-   drawing on white and wrong for a lit 3-D render, which is closer to a
-   photograph -- inverting it would turn the shading inside out. The dark and
-   light versions of such a figure are rendered separately instead. */
-.figure video, figure video {
-  max-width: min(var(--figure-width, 100%), 100%);
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 4px;
-  background: #0B1220;
 }
 
 /* Diagrams are drawn as black-on-white rasters, and a white rectangle sitting
@@ -971,6 +1042,107 @@ figcaption {
   padding: 0 16px 14px;
   color: var(--ink-soft);
   font-size: 0.9rem;
+}
+
+/* ------------------------------------------------ suggested projects -- */
+
+/* Ten offers, each read in the same order: what is asked, what solves it,
+   what moves, and what will be asked back. The counter is drawn by hand and
+   pushed into the margin so that the four labelled lines of each entry stay
+   flush with one another and the list scans as a table would. */
+
+.suggestions {
+  counter-reset: suggestion;
+  margin: 1.6rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.suggestion {
+  counter-increment: suggestion;
+  position: relative;
+  margin: 0 0 1.4rem;
+  padding: 16px 18px 16px 62px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--paper);
+  break-inside: avoid;
+}
+
+.suggestion::before {
+  content: counter(suggestion);
+  position: absolute;
+  top: 16px;
+  left: 18px;
+  width: 30px;
+  color: var(--accent);
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1;
+  text-align: right;
+}
+
+.suggestion h3 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.16rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.suggestion-meta {
+  margin: 2px 0 10px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.suggestion p { margin: 0 0 0.6rem; font-size: 0.95rem; }
+.suggestion p strong { color: var(--ink); }
+.suggestion p:last-child { margin-bottom: 0; }
+
+/* The problem itself, quoted inside the card in the same ruled block a project
+   page gives it, so the thing a student is handed and the thing they hand back
+   look alike. */
+.suggestion .project-problem {
+  margin: 0 0 0.9rem;
+  padding: 2px 0 12px 16px;
+  font-size: 0.95rem;
+}
+.suggestion .project-problem-kicker { font-size: 0.72rem; }
+
+/* (a), (b), (c) -- lettered because the parts are referred to by letter in the
+   text around them, and because a numbered list inside a numbered list of
+   problems would be two counters saying different things. */
+.problem-parts { counter-reset: part; margin: 0.7rem 0 0; padding-left: 2.1em; list-style: none; }
+.problem-parts > li { counter-increment: part; position: relative; margin: 0 0 0.55rem; }
+.problem-parts > li:last-child { margin-bottom: 0; }
+.problem-parts > li::before {
+  content: "(" counter(part, lower-alpha) ")";
+  position: absolute;
+  left: -2.1em;
+  width: 1.8em;
+  color: var(--accent);
+  font-weight: 600;
+  text-align: left;
+}
+
+/* The question they will be asked in the talk. It is the part of the offer
+   that decides the grade, so it is set apart rather than buried at the end. */
+.suggestion-defend {
+  padding: 10px 12px;
+  border-left: 3px solid var(--accent);
+  background: var(--accent-soft);
+  font-style: italic;
+}
+
+.suggestion-defend strong { font-style: normal; }
+
+@media (max-width: 34rem) {
+  .suggestion { padding: 14px 14px 14px 14px; }
+  .suggestion::before { position: static; display: block; width: auto; text-align: left; }
 }
 
 /* ------------------------------------------------------ listening panel -- */
@@ -1150,6 +1322,7 @@ figcaption {
 .callout.solution   { --callout-color: var(--c-solution);   --callout-bg: var(--c-solution-bg); }
 .callout.remark     { --callout-color: var(--c-remark);     --callout-bg: var(--c-remark-bg); }
 .callout.context    { --callout-color: var(--c-context);    --callout-bg: var(--c-context-bg); }
+.callout.alert      { --callout-color: var(--c-alert);      --callout-bg: var(--c-alert-bg); }
 .callout.axiom      { --callout-color: var(--c-axiom);      --callout-bg: var(--c-axiom-bg); }
 .callout.postulate  { --callout-color: var(--c-postulate);  --callout-bg: var(--c-postulate-bg); }
 .callout.misreading { --callout-color: var(--c-misreading); --callout-bg: var(--c-misreading-bg); }
@@ -1238,64 +1411,6 @@ figcaption {
   outline-offset: 3px;
 }
 
-/* Replay for an animation that has played once and stopped. */
-.animation-replay {
-  display: block;
-  margin: 0.4rem auto 0;
-  padding: 0.25rem 0.75rem;
-  border: 1px solid var(--line, #cbd5e1);
-  border-radius: 999px;
-  background: transparent;
-  color: var(--accent);
-  font-family: var(--sans);
-  font-size: 0.85rem;
-  cursor: pointer;
-}
-.animation-replay:hover { background: var(--accent-soft); }
-.animation-replay:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
-
-/* Link to the course's own lecture video, at the part that teaches this
-   section: one line under the heading, with a small play badge. */
-.lecture-video {
-  margin: 0.3rem 0;
-  font-family: var(--sans);
-  font-size: 0.95rem;
-}
-.lecture-video a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  color: var(--ink);
-  text-decoration: none;
-}
-
-.lecture-video a:hover { text-decoration: underline; }
-.lecture-video-play {
-  position: relative;
-  flex: none;
-  width: 26px;
-  height: 18px;
-  border-radius: 5px;
-  background: #dc2626;
-}
-.lecture-video-play::before {
-  content: "";
-  position: absolute;
-  top: 5px;
-  left: 10px;
-  border-style: solid;
-  border-width: 4px 0 4px 7px;
-  border-color: transparent transparent transparent #fff;
-}
-.lecture-video-tag {
-  font-weight: 700;
-  color: #dc2626;
-}
-.lecture-video a:focus-visible {
-  outline: 3px solid var(--accent);
-  outline-offset: 2px;
-}
-
 /* Heading that opens a solution inside its example box, so an example and
    its solution are one panel rather than two. */
 .solution-head {
@@ -1306,6 +1421,26 @@ figcaption {
   font-weight: 600;
 }
 .solution-head + * { margin-top: 0; }
+
+/* The rungs of the escalation ladder: the simplest case, the next case, and
+   the general result. Set like .solution-head because they do the same job --
+   a heading inside running argument -- but the general case takes the theorem
+   colour, so the eye lands on the result being earned. Both colours are
+   already defined for light and dark, so these follow the theme. */
+.case-head {
+  margin: 1.35em 0 0.4em;
+  font-family: var(--serif);
+  font-size: 1.06rem;
+  font-weight: 600;
+}
+.case-head-example { color: var(--c-example); }
+.case-head-theorem { color: var(--c-theorem); }
+.case-head + * { margin-top: 0; }
+
+/* \termno numbers a term of a sum that is about to become a sigma. MathJax
+   emits the number inside <mrow class="termno">, so the colour lives here
+   rather than in the MathML, and follows the theme. */
+.termno { color: var(--c-annot); }
 
 /* --------------------------------------------------------------- tables -- */
 
@@ -1448,6 +1583,15 @@ tbody tr:last-child td { border-bottom: 1px solid var(--line); }
   font-size: 0.84rem;
 }
 .site-footer p { margin: 0; }
+/* The status disclaimer is meant to be read, so it is not muted like the rest
+   of the footer. Two class selectors so it outranks `.site-footer p`. */
+.site-footer .site-footer-notice {
+  margin-bottom: 10px;
+  padding-left: 10px;
+  border-left: 3px solid var(--c-alert);
+  color: var(--c-alert);
+  font-weight: 500;
+}
 
 /* ----------------------------------------------------------- responsive -- */
 
@@ -1565,8 +1709,6 @@ tbody tr:last-child td { border-bottom: 1px solid var(--line); }
      than a block of ink: tinted panels band badly on most printers. */
   /* A thumbnail cannot be played on paper, so print the address. */
   .video-preview { display: none; }
-  .animation-replay { display: none; }
-  .lecture-video a::after { content: " (" attr(href) ")"; font-size: 8pt; color: #555; }
 
   .site-footer {
     margin-top: 18pt;
@@ -1577,6 +1719,9 @@ tbody tr:last-child td { border-bottom: 1px solid var(--line); }
 
   .proof { margin: 8pt 0; break-inside: avoid; }
   .solution-head { margin: 7pt 0 3pt; font-size: 11pt; }
+  .animation-replay { display: none; }
+  .lecture-video a::after { content: " (" attr(href) ")"; font-size: 8pt; color: #555; }
+  .case-head { margin: 8pt 0 3pt; font-size: 11pt; break-after: avoid; }
 
   .callout {
     margin: 9pt 0;
