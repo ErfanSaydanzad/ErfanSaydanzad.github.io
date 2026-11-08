@@ -62,13 +62,14 @@
 <a class="toc-level-2" href="#sec-7-a-quantum-particle-in-fourier-space"><span>7.4 A Quantum Particle in Fourier Space</span></a>
 <a class="toc-level-3" href="#sec-7-wave-function-and-momentum"><span>Wave function and momentum</span></a>
 <a class="toc-level-3" href="#sec-7-the-gaussian-particle"><span>The Gaussian particle</span></a>
-<a class="toc-level-3" href="#sec-7-solving-the-free-particle"><span>Solving the free particle</span></a>
+<a class="toc-level-3" href="#sec-7-the-free-particle-spreads"><span>The free particle spreads</span></a>
 <a class="toc-level-2" href="#sec-7-the-fourier-transform-in-two-and-three-dimensions"><span>7.5 The Fourier Transform in Two and Three Dimensions</span></a>
 <a class="toc-level-3" href="#sec-7-plane-waves-and-the-wave-vector"><span>Plane waves and the wave vector</span></a>
+<a class="toc-level-3" href="#sec-7-reading-a-two-dimensional-transform"><span>Reading a two-dimensional transform</span></a>
 <a class="toc-level-3" href="#sec-7-light-through-an-opening"><span>Light through an opening</span></a>
-<a class="toc-level-3" href="#sec-7-a-round-function"><span>A round function</span></a>
+<a class="toc-level-3" href="#sec-7-three-dimensions"><span>Three dimensions</span></a>
 <a class="toc-level-2" href="#sec-7-the-fourier-series-as-an-eigenvalue-problem"><span>7.6 The Fourier Series as an Eigenvalue Problem</span></a>
-<a class="toc-level-3" href="#sec-7-from-eigenvectors-to-eigenfunctions"><span>From eigenvectors to eigenfunctions</span></a>
+<a class="toc-level-3" href="#sec-7-the-differential-equation-as-an-eigenvalue-problem"><span>The differential equation as an eigenvalue problem</span></a>
 <a class="toc-level-3" href="#sec-7-sturm-liouville-problems"><span>Sturm–Liouville problems</span></a>
 <a class="toc-level-2" href="#sec-7-where-fourier-analysis-is-used"><span>7.7 Where Fourier Analysis Is Used</span></a>
 <a class="toc-level-2" href="#sec-7-summary-table"><span>Summary Table</span></a>
@@ -393,7 +394,7 @@
 <p>The smallest positive <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>L</mi>
 </math></span> satisfying this relation is called the <strong>fundamental period</strong>.</p></section>
-<figure id="chapter-07-fig-2" class="figure"><img src="assets/img/Fig7_1.png" class="diagram" alt="A periodic function of period L: the same shape repeats on every interval of length L." loading="lazy" style="--figure-width: 80%;"><figcaption>Figure 7.2. A periodic function of period <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<figure id="chapter-07-fig-2" class="figure"><img src="assets/img/ch07_fig15_periodic.png" class="diagram" alt="A periodic function of period L: the same shape repeats on every interval of length L." loading="lazy" style="--figure-width: 80%;"><figcaption>Figure 7.2. A periodic function of period <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>L</mi>
 </math></span>: the same shape repeats on every interval of length <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>L</mi>
@@ -701,7 +702,7 @@
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:7.10">(7.10)</span></div>
 <p>form a complete orthogonal set over one period.</p>
-<figure id="chapter-07-fig-4" class="figure"><img src="assets/img/ch07_fig05_turning_arrow.png" class="diagram" alt="A pure wave e^ikx is an arrow turning in the complex plane; its shadow on the real axis is (kx)." loading="lazy" style="--figure-width: 80%;"><figcaption>Figure 7.4. A pure wave <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<figure id="chapter-07-fig-4" class="figure"><img src="assets/img/ch07_fig05_turning_arrow.png" class="diagram" alt="A wave e^ikx is an arrow turning in the complex plane; its shadow on the real axis is (kx)." loading="lazy" style="--figure-width: 80%;"><figcaption>Figure 7.4. A wave <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>e</mi>
     <mrow data-mjx-texclass="ORD">
@@ -973,12 +974,28 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:7.13">(7.13)</span></div>
-<p>The list of all the coefficients <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>Each coefficient <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>c</mi>
     <mi>n</mi>
   </msub>
-</math></span> is the shape's <strong>recipe</strong> (as the lecture videos call it), or its <strong>spectrum</strong>: how much of each pure wave goes in.</p></section>
+</math></span> gives the contribution of the wave <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>i</mi>
+      <msub>
+        <mi>k</mi>
+        <mi>n</mi>
+      </msub>
+      <mi>x</mi>
+    </mrow>
+  </msup>
+</math></span> to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>f</mi>
+</math></span>; the list of all of them is the <strong>spectrum</strong> of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>f</mi>
+</math></span>.</p></section>
 <div class="proof" data-lead="Proof."><p>Starting from <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>f</mi>
   <mo stretchy="false">(</mo>
@@ -3088,7 +3105,14 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:7.33">(7.33)</span></div></li></ol></section>
-<figure id="chapter-07-fig-6" class="figure"><img src="assets/img/Fig7_2.jpeg" alt="Example of a function satisfying Dirichlet conditions over one period." loading="lazy" style="--figure-width: 80%;"><figcaption>Figure 7.6. Example of a function satisfying Dirichlet conditions over one period.</figcaption></figure>
+<figure id="chapter-07-fig-6" class="figure"><img src="assets/img/ch07_fig16_dirichlet.png" class="diagram" alt="A function that satisfies the Dirichlet conditions on one period [-,]: a finite number of finite jumps and a finite number of maxima and minima." loading="lazy" style="--figure-width: 80%;"><figcaption>Figure 7.6. A function that satisfies the Dirichlet conditions on one period <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mi>π</mi>
+  <mo>,</mo>
+  <mi>π</mi>
+  <mo stretchy="false">]</mo>
+</math></span>: a finite number of finite jumps and a finite number of maxima and minima.</figcaption></figure>
 <section class="callout theorem"><header><span class="callout-kind">Theorem</span><span class="callout-title">Convergence of the Fourier Series</span></header><p>If <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>f</mi>
   <mo stretchy="false">(</mo>
@@ -3355,7 +3379,7 @@
 </math><span class="eqn-number" id="mjx-eqn:7.36">(7.36)</span></div>
 <p>Each term in the sum represents a <strong>harmonic component</strong> (or mode) of the signal.</p>
 <figure id="chapter-07-fig-7" class="figure"><img src="assets/img/ch07_fig01_two_shapes.png" class="diagram" alt="The same note, A at 440 Hz, equally loud, on a violin and a flute: the same period, a different shape that repeats." loading="lazy" style="--figure-width: 85%;"><figcaption>Figure 7.7. The same note, A at 440 Hz, equally loud, on a violin and a flute: the same period, a different shape that repeats.</figcaption></figure>
-<figure id="chapter-07-fig-8" class="figure"><img src="assets/img/ch07_fig02_flute_recipe.png" class="diagram" alt="Six harmonics, at 1,2,,6 times 440 Hz, add up to the flute&#x27;s recording: its recipe. The violin&#x27;s recipe has the same harmonics in different amounts, which is the difference we hear." loading="lazy" style="--figure-width: 85%;"><figcaption>Figure 7.8. Six harmonics, at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<figure id="chapter-07-fig-8" class="figure"><img src="assets/img/ch07_fig02_flute_recipe.png" class="diagram" alt="Six harmonics, at 1,2,,6 times 440 Hz, add up to the flute&#x27;s recording. The violin has the same harmonics with different coefficients, which is the difference we hear." loading="lazy" style="--figure-width: 85%;"><figcaption>Figure 7.8. Six harmonics, at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>1</mn>
   <mo>,</mo>
   <mn>2</mn>
@@ -3363,8 +3387,8 @@
   <mo>…</mo>
   <mo>,</mo>
   <mn>6</mn>
-</math></span> times 440 Hz, add up to the flute's recording: its recipe. The violin's recipe has the
-	same harmonics in different amounts, which is the difference we hear.</figcaption></figure>
+</math></span> times 440 Hz, add up to the flute's recording. The violin has the same harmonics
+	with different coefficients, which is the difference we hear.</figcaption></figure>
 <section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Harmonic Component</span></header><p>The <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>n</mi>
 </math></span>-th term in the Fourier series,</p>
@@ -3377,7 +3401,7 @@
             <mstyle displaystyle="true" scriptlevel="0">
               <mrow data-mjx-texclass="ORD">
                 <msub>
-                  <mi>ϕ</mi>
+                  <mi>u</mi>
                   <mi>n</mi>
                 </msub>
                 <mo stretchy="false">(</mo>
@@ -3426,32 +3450,32 @@
 </math><span class="eqn-number" id="mjx-eqn:7.37">(7.37)</span></div>
 <p>is called the <strong><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>n</mi>
-</math></span>-th harmonic</strong>. It corresponds to a wave of frequency</p>
+</math></span>-th harmonic</strong>; the two waves <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">±</mo>
+      <mi>i</mi>
+      <msub>
+        <mi>k</mi>
+        <mi>n</mi>
+      </msub>
+      <mi>x</mi>
+    </mrow>
+  </msup>
+</math></span> of the complex series are its two halves. It makes <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> whole turns in one period. If the variable is a position <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span>, the period <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>L</mi>
+</math></span> is the <strong>wavelength</strong> <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>λ</mi>
+</math></span>, and</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
-        <msub>
-          <mi>ν</mi>
-          <mi>n</mi>
-        </msub>
-        <mo>=</mo>
-        <mfrac>
-          <mi>n</mi>
-          <mi>L</mi>
-        </mfrac>
-        <mstyle scriptlevel="0">
-          <mspace width="1em" />
-        </mstyle>
-        <mtext>or angular frequency</mtext>
-        <mstyle scriptlevel="0">
-          <mspace width="1em" />
-        </mstyle>
-        <msub>
-          <mi>ω</mi>
-          <mi>n</mi>
-        </msub>
-        <mo>=</mo>
         <msub>
           <mi>k</mi>
           <mi>n</mi>
@@ -3463,13 +3487,65 @@
             <mi>π</mi>
             <mi>n</mi>
           </mrow>
-          <mi>L</mi>
+          <mi>λ</mi>
         </mfrac>
+        <mstyle scriptlevel="0">
+          <mspace width="1em" />
+        </mstyle>
+        <mtext>(wave number)</mtext>
+        <mo>;</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:7.38">(7.38)</span></div>
+<p>if the variable is a time <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+</math></span>, the period is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>T</mi>
+</math></span>, and</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <msub>
+          <mi>ω</mi>
+          <mi>n</mi>
+        </msub>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mn>2</mn>
+            <mi>π</mi>
+            <mi>n</mi>
+          </mrow>
+          <mi>T</mi>
+        </mfrac>
+        <mstyle scriptlevel="0">
+          <mspace width="1em" />
+        </mstyle>
+        <mtext>(angular frequency)</mtext>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <msub>
+          <mi>ν</mi>
+          <mi>n</mi>
+        </msub>
+        <mo>=</mo>
+        <mfrac>
+          <mi>n</mi>
+          <mi>T</mi>
+        </mfrac>
+        <mstyle scriptlevel="0">
+          <mspace width="1em" />
+        </mstyle>
+        <mtext>(frequency)</mtext>
         <mo>.</mo>
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.38">(7.38)</span></div></section>
+</math><span class="eqn-number" id="mjx-eqn:7.39">(7.39)</span></div></section>
 <p>Thus,</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -3479,7 +3555,7 @@
           <mtr>
             <mtd>
               <msub>
-                <mi>ϕ</mi>
+                <mi>u</mi>
                 <mn>0</mn>
               </msub>
               <mo stretchy="false">(</mo>
@@ -3506,7 +3582,7 @@
           <mtr>
             <mtd>
               <msub>
-                <mi>ϕ</mi>
+                <mi>u</mi>
                 <mn>1</mn>
               </msub>
               <mo stretchy="false">(</mo>
@@ -3557,7 +3633,7 @@
           <mtr>
             <mtd>
               <msub>
-                <mi>ϕ</mi>
+                <mi>u</mi>
                 <mn>2</mn>
               </msub>
               <mo stretchy="false">(</mo>
@@ -3610,7 +3686,7 @@
           <mtr>
             <mtd>
               <msub>
-                <mi>ϕ</mi>
+                <mi>u</mi>
                 <mi>N</mi>
               </msub>
               <mo stretchy="false">(</mo>
@@ -3671,7 +3747,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.39">(7.39)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.40">(7.40)</span></div>
 <p>Each harmonic contributes a specific <strong>frequency</strong>, <strong>amplitude</strong>, and <strong>phase</strong> to the total waveform. The original function <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>f</mi>
   <mo stretchy="false">(</mo>
@@ -3692,7 +3768,7 @@
                 <mo stretchy="false">)</mo>
                 <mo>=</mo>
                 <msub>
-                  <mi>ϕ</mi>
+                  <mi>u</mi>
                   <mn>0</mn>
                 </msub>
                 <mo stretchy="false">(</mo>
@@ -3700,7 +3776,7 @@
                 <mo stretchy="false">)</mo>
                 <mo form="prefix" lspace="0em" rspace="0em">+</mo>
                 <msub>
-                  <mi>ϕ</mi>
+                  <mi>u</mi>
                   <mn>1</mn>
                 </msub>
                 <mo stretchy="false">(</mo>
@@ -3708,7 +3784,7 @@
                 <mo stretchy="false">)</mo>
                 <mo form="prefix" lspace="0em" rspace="0em">+</mo>
                 <msub>
-                  <mi>ϕ</mi>
+                  <mi>u</mi>
                   <mn>2</mn>
                 </msub>
                 <mo stretchy="false">(</mo>
@@ -3729,7 +3805,7 @@
                   </mrow>
                 </munderover>
                 <msub>
-                  <mi>ϕ</mi>
+                  <mi>u</mi>
                   <mi>n</mi>
                 </msub>
                 <mo stretchy="false">(</mo>
@@ -3743,7 +3819,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.40">(7.40)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.41">(7.41)</span></div>
 <p>As more harmonics are included, the approximation of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>f</mi>
   <mo stretchy="false">(</mo>
@@ -3788,7 +3864,7 @@
           </mrow>
         </munderover>
         <msub>
-          <mi>ϕ</mi>
+          <mi>u</mi>
           <mi>n</mi>
         </msub>
         <mo stretchy="false">(</mo>
@@ -3798,7 +3874,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.41">(7.41)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.42">(7.42)</span></div>
 <p>where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>N</mi>
 </math></span> sets the cutoff frequency.</p></section>
@@ -3867,14 +3943,10 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.42">(7.42)</span></div>
-<div class="centered"><figure id="chapter-07-fig-9" class="figure"><img src="assets/img/Fig7_square_step_fourier.png" class="diagram" alt="The square step on [-,] with the partial sums S1, S3 and S9 of its Fourier series. Each added term follows the step more closely, except near the jumps, where the overshoot persists." loading="lazy" style="--figure-width: 88%;"><figcaption>Figure 7.9. The square step on <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo stretchy="false">[</mo>
-  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+</math><span class="eqn-number" id="mjx-eqn:7.43">(7.43)</span></div>
+<div class="centered"><figure id="chapter-07-fig-9" class="figure"><img src="assets/img/ch07_fig17_square_step.png" class="diagram" alt="The square step of period 2 with the partial sums S1, S3 and S9 of its Fourier series. Each added term follows the step more closely, except near the jumps, where the overshoot persists." loading="lazy" style="--figure-width: 88%;"><figcaption>Figure 7.9. The square step of period <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
   <mi>π</mi>
-  <mo>,</mo>
-  <mi>π</mi>
-  <mo stretchy="false">]</mo>
 </math></span> with the partial sums <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>S</mi>
@@ -3967,7 +4039,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.43">(7.43)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.44">(7.44)</span></div>
 <p>where, from the coefficient formulas with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>L</mi>
   <mo>=</mo>
@@ -4122,7 +4194,23 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.44">(7.44)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.45">(7.45)</span></div>
+<p>The unknowns are <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>a</mi>
+    <mn>0</mn>
+  </msub>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>a</mi>
+    <mi>n</mi>
+  </msub>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>b</mi>
+    <mi>n</mi>
+  </msub>
+</math></span>: once they are found, the expansion is known, each coefficient giving the contribution of its harmonic.</p>
 <p class="solution-head">Solution.</p>
 <p><strong>Step 1: </strong> <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
@@ -4238,7 +4326,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.45">(7.45)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.46">(7.46)</span></div>
 <p><strong>Step 2: </strong> <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>a</mi>
@@ -4325,7 +4413,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.46">(7.46)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.47">(7.47)</span></div>
 <p><strong>Step 3: </strong> <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>b</mi>
@@ -4454,7 +4542,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.47">(7.47)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.48">(7.48)</span></div>
 <p>Hence</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -4506,7 +4594,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.48">(7.48)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.49">(7.49)</span></div>
 <p><strong>Result.</strong></p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -4569,7 +4657,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.49">(7.49)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.50">(7.50)</span></div>
 <p>(i.e., the sum runs over odd <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>n</mi>
 </math></span>). At the jump points <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -4605,7 +4693,7 @@
 </math></span> (period <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>2</mn>
   <mi>π</mi>
-</math></span>)</span></header><div class="centered"><figure id="chapter-07-fig-10" class="figure"><img src="assets/img/Fig7_periodic_ramp_fourier.png" class="diagram" alt="The periodic ramp of period 2 with the partial sums S0, S1, S2 and S8 of its Fourier series." loading="lazy" style="--figure-width: 88%;"><figcaption>Figure 7.10. The periodic ramp of period <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>)</span></header><div class="centered"><figure id="chapter-07-fig-10" class="figure"><img src="assets/img/ch07_fig18_periodic_ramp.png" class="diagram" alt="The periodic ramp of period 2 with the partial sums S0, S1, S2 and S8 of its Fourier series." loading="lazy" style="--figure-width: 88%;"><figcaption>Figure 7.10. The periodic ramp of period <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>2</mn>
   <mi>π</mi>
 </math></span> with the partial sums <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -4841,7 +4929,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.50">(7.50)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.51">(7.51)</span></div>
 <p class="solution-head">Solution.</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -4936,7 +5024,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.51">(7.51)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.52">(7.52)</span></div>
 <p><strong>Step 2: Cosine coefficients (<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>n</mi>
   <mo>≥</mo>
@@ -5021,7 +5109,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.52">(7.52)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.53">(7.53)</span></div>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -5193,7 +5281,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.53">(7.53)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.54">(7.54)</span></div>
 <p><strong>Step 3: Sine coefficients (<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>n</mi>
   <mo>≥</mo>
@@ -5279,7 +5367,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.54">(7.54)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.55">(7.55)</span></div>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -5397,7 +5485,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.55">(7.55)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.56">(7.56)</span></div>
 <p><strong>Final series.</strong></p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -5492,7 +5580,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.56">(7.56)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.57">(7.57)</span></div>
 <p>or, separating even/odd indices,</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -5601,7 +5689,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.57">(7.57)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.58">(7.58)</span></div>
 <p>At the jump points <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>x</mi>
   <mo>≡</mo>
@@ -5701,9 +5789,9 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.58">(7.58)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.59">(7.59)</span></div>
 <p>We find its real Fourier series</p>
-<div class="centered"><figure id="chapter-07-fig-11" class="figure"><img src="assets/img/Fig7_half_ramp.png" class="diagram" alt="The periodic half-ramp: f(t)=t on (0,T/2) and zero on (-T/2,0), extended with period T." loading="lazy" style="--figure-width: 88%;"><figcaption>Figure 7.11. The periodic half-ramp: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="centered"><figure id="chapter-07-fig-11" class="figure"><img src="assets/img/ch07_fig19_half_ramp.png" class="diagram" alt="The periodic half-ramp: f(t)=t on (0,T/2) and zero on (-T/2,0), extended with period T." loading="lazy" style="--figure-width: 88%;"><figcaption>Figure 7.11. The periodic half-ramp: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>f</mi>
   <mo stretchy="false">(</mo>
   <mi>t</mi>
@@ -5824,7 +5912,41 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.59">(7.59)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.60">(7.60)</span></div>
+<p>The variable is now time: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo accent="false" stretchy="false">→</mo>
+  <mi>t</mi>
+</math></span>, the period <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>L</mi>
+  <mo accent="false" stretchy="false">→</mo>
+  <mi>T</mi>
+</math></span>, and the wave number <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>k</mi>
+    <mi>n</mi>
+  </msub>
+</math></span> becomes the angular frequency <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ω</mi>
+    <mi>n</mi>
+  </msub>
+</math></span>. The unknowns are <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>a</mi>
+    <mn>0</mn>
+  </msub>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>a</mi>
+    <mi>n</mi>
+  </msub>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>b</mi>
+    <mi>n</mi>
+  </msub>
+</math></span>.</p>
 <p class="solution-head">Solution.</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -5928,7 +6050,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.60">(7.60)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.61">(7.61)</span></div>
 <p>Hence the DC term is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>a</mi>
@@ -6044,7 +6166,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.61">(7.61)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.62">(7.62)</span></div>
 <p>Integration by parts with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>u</mi>
   <mo>=</mo>
@@ -6138,7 +6260,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.62">(7.62)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.63">(7.63)</span></div>
 <p>Therefore</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -6289,7 +6411,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.63">(7.63)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.64">(7.64)</span></div>
 <p>Using <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>sin</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
@@ -6445,7 +6567,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.64">(7.64)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.65">(7.65)</span></div>
 <p>Hence</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -6504,7 +6626,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.65">(7.65)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.66">(7.66)</span></div>
 <p><strong>Step 3: Sine coefficients.</strong></p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -6596,7 +6718,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.66">(7.66)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.67">(7.67)</span></div>
 <p>With <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>u</mi>
   <mo>=</mo>
@@ -6691,7 +6813,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.67">(7.67)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.68">(7.68)</span></div>
 <p>Thus</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -6875,7 +6997,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.68">(7.68)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.69">(7.69)</span></div>
 <p><strong>Result (real Fourier series).</strong></p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -7017,7 +7139,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.69">(7.69)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.70">(7.70)</span></div>
 <ul><li><p><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>a</mi>
@@ -7097,11 +7219,11 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.70">(7.70)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.71">(7.71)</span></div>
 <p>which repeats every interval of length <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>L</mi>
 </math></span>. This represents a periodic <strong>ramp waveform</strong>, analogous to a sawtooth pattern in signal processing.</p>
-<div class="centered"><figure id="chapter-07-fig-12" class="figure"><img src="assets/img/Fig7_sawtooth_ramp.png" class="diagram" alt="Periodic ramp function f(x)=x on [-L/2,L/2], repeated with period L." loading="lazy" style="--figure-width: 62%;"><figcaption>Figure 7.12. Periodic ramp function <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="centered"><figure id="chapter-07-fig-12" class="figure"><img src="assets/img/ch07_fig20_sawtooth.png" class="diagram" alt="The sawtooth: f(x)=x on [-L/2,L/2], repeated with period L." loading="lazy" style="--figure-width: 80%;"><figcaption>Figure 7.12. The sawtooth: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>f</mi>
   <mo stretchy="false">(</mo>
   <mi>x</mi>
@@ -7126,6 +7248,53 @@
 </math></span>, repeated with period <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>L</mi>
 </math></span>.</figcaption></figure></div>
+<p>We want its series in complex form, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>f</mi>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <munderover>
+    <mo data-mjx-texclass="OP" stretchy="true">∑</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+      <mo>=</mo>
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi mathvariant="normal">∞</mi>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mi mathvariant="normal">∞</mi>
+    </mrow>
+  </munderover>
+  <msub>
+    <mi>c</mi>
+    <mi>n</mi>
+  </msub>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>i</mi>
+      <msub>
+        <mi>k</mi>
+        <mi>n</mi>
+      </msub>
+      <mi>x</mi>
+    </mrow>
+  </msup>
+</math></span>; the unknowns are <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>c</mi>
+    <mn>0</mn>
+  </msub>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>c</mi>
+    <mi>n</mi>
+  </msub>
+</math></span>.</p>
 <p class="solution-head">Solution.</p>
 <p>For a periodic function <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>f</mi>
@@ -7215,7 +7384,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.71">(7.71)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.72">(7.72)</span></div>
 <p>Substitute <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>f</mi>
   <mo stretchy="false">(</mo>
@@ -7288,7 +7457,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.72">(7.72)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.73">(7.73)</span></div>
 <p><strong>Step 2. Integration by parts.</strong></p>
 <p>Let</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
@@ -7386,7 +7555,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.73">(7.73)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.74">(7.74)</span></div>
 <p>Then</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -7570,7 +7739,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.74">(7.74)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.75">(7.75)</span></div>
 <p><strong>Step 3. Simplify the second term.</strong></p>
 <p>The exponential integral gives</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
@@ -7661,7 +7830,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.75">(7.75)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.76">(7.76)</span></div>
 <p>since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>sin</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
@@ -7817,7 +7986,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.76">(7.76)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.77">(7.77)</span></div>
 <p>Using <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>cos</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
@@ -7896,7 +8065,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.77">(7.77)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.78">(7.78)</span></div>
 <p><strong>Step 5. DC (zero-frequency) coefficient.</strong></p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -7941,7 +8110,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.78">(7.78)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.79">(7.79)</span></div>
 <p>since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>f</mi>
   <mo stretchy="false">(</mo>
@@ -8049,7 +8218,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.79">(7.79)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.80">(7.80)</span></div>
 <p><strong>Interpretation.</strong></p>
 <ul><li><p>The amplitude of each harmonic decreases as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>1</mn>
@@ -8163,7 +8332,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.80">(7.80)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.81">(7.81)</span></div>
 <p>When <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>L</mi>
   <mo accent="false" stretchy="false">→</mo>
@@ -8217,7 +8386,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.81">(7.81)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.82">(7.82)</span></div>
 <p>The discrete index <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>n</mi>
 </math></span> is replaced by a continuous variable <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -8263,7 +8432,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.82">(7.82)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.83">(7.83)</span></div>
 <section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Fourier Coefficient in Continuous Limit</span></header><p>Let</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -8313,7 +8482,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.83">(7.83)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.84">(7.84)</span></div>
 <p>Then <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>g</mi>
   <mo stretchy="false">(</mo>
@@ -8473,7 +8642,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.84">(7.84)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.85">(7.85)</span></div>
 <section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Fourier Transform (F.T.) and Inverse Transform</span></header><div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -8593,7 +8762,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.85">(7.85)</span></div></section>
+</math><span class="eqn-number" id="mjx-eqn:7.86">(7.86)</span></div></section>
 <section class="callout remark"><header>Remark</header><ul><li><p><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>f</mi>
   <mo stretchy="false">(</mo>
@@ -8731,7 +8900,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.86">(7.86)</span></div></section>
+</math><span class="eqn-number" id="mjx-eqn:7.87">(7.87)</span></div></section>
 <p class="lecture-video"><a href="https://www.youtube.com/watch?v=d-FDrVcSUcg&amp;t=257s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> <span>Lecture 21, Part 2: The Pulse and the Sinc (4:17)</span></a></p>
 <section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">Rectangular pulse of width <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>2</mn>
@@ -8786,12 +8955,17 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.87">(7.87)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.88">(7.88)</span></div>
 <p>This is a nonperiodic rectangular pulse centered at the origin with total width <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>2</mn>
   <mi>a</mi>
-</math></span> and unit height.</p>
-<div class="centered"><figure id="chapter-07-fig-13" class="figure"><img src="assets/img/Fig7_rectangular_pulse.png" class="diagram" alt="The rectangular pulse of total width 2a and unit height, centred at the origin." loading="lazy" style="--figure-width: 62%;"><figcaption>Figure 7.13. The rectangular pulse of total width <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> and unit height. The unknown is its Fourier transform <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>g</mi>
+  <mo stretchy="false">(</mo>
+  <mi>k</mi>
+  <mo stretchy="false">)</mo>
+</math></span>: which waves the pulse contains, and how much of each.</p>
+<div class="centered"><figure id="chapter-07-fig-13" class="figure"><img src="assets/img/ch07_fig21_pulse.png" class="diagram" alt="The rectangular pulse of total width 2a and unit height, centred at the origin." loading="lazy" style="--figure-width: 80%;"><figcaption>Figure 7.13. The rectangular pulse of total width <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>2</mn>
   <mi>a</mi>
 </math></span> and unit height, centred at the origin.</figcaption></figure></div>
@@ -8889,7 +9063,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.88">(7.88)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.89">(7.89)</span></div>
 <p class="solution-head">Solution.</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -8935,7 +9109,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.89">(7.89)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.90">(7.90)</span></div>
 <p><strong>Step 2. Evaluate the integral.</strong></p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -9051,7 +9225,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.90">(7.90)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.91">(7.91)</span></div>
 <p><strong>Step 3. Simplify and express the result.</strong></p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -9151,7 +9325,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.91">(7.91)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.92">(7.92)</span></div>
 <p>At <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>k</mi>
   <mo>=</mo>
@@ -9236,15 +9410,61 @@
 </math></span>-space corresponds to a wide function in <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>x</mi>
 </math></span>-space and vice versa.</p></li></ul>
-<div class="centered"><figure id="chapter-07-fig-14" class="figure"><img src="assets/img/Fig7_sinc_spectrum.png" class="diagram" alt="Rectangular pulse in x-space and its sinc-shaped spectrum in k-space. A wider pulse (larger a) gives a narrower main lobe in k." loading="lazy" style="--figure-width: 62%;"><figcaption>Figure 7.14. Rectangular pulse in <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math></span>-space and its sinc-shaped spectrum in <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="centered"><figure id="chapter-07-fig-14" class="figure"><img src="assets/img/ch07_fig22_sinc.png" class="diagram" alt="The transform of the rectangular pulse, g(k)=(ak)/( k): height a/ at k=0 and zeros at k=/a,\ 2/a,\ A wider pulse (larger a) gives a narrower main peak." loading="lazy" style="--figure-width: 80%;"><figcaption>Figure 7.14. The transform of the rectangular pulse, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>g</mi>
+  <mo stretchy="false">(</mo>
   <mi>k</mi>
-</math></span>-space. A wider pulse (larger <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mi>sin</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>a</mi>
+    <mi>k</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mo stretchy="false">(</mo>
+  <mi>π</mi>
+  <mi>k</mi>
+  <mo stretchy="false">)</mo>
+</math></span>: height <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>a</mi>
-</math></span>) gives a narrower main lobe in <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>π</mi>
+</math></span> at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>k</mi>
-</math></span>.</figcaption></figure></div></section>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> and zeros at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">±</mo>
+  <mi>π</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>a</mi>
+  <mo>,</mo>
+  <mtext> </mtext>
+  <mo>±</mo>
+  <mn>2</mn>
+  <mi>π</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>a</mi>
+  <mo>,</mo>
+  <mtext> </mtext>
+  <mo>…</mo>
+</math></span> A wider pulse (larger <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+</math></span>) gives a narrower main peak.</figcaption></figure></div></section>
 <p class="lecture-video"><a href="https://www.youtube.com/watch?v=d-FDrVcSUcg&amp;t=466s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> <span>Lecture 21, Part 3: The Fading Note (7:46)</span></a></p>
 <section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">Fourier Transform of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>f</mi>
@@ -9292,13 +9512,13 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.92">(7.92)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.93">(7.93)</span></div>
 <p>This function decays exponentially on both sides of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>t</mi>
   <mo>=</mo>
   <mn>0</mn>
 </math></span>:</p>
-<div class="centered"><figure id="chapter-07-fig-15" class="figure"><img src="assets/img/Fig7_exponential_decay.png" class="diagram" alt="The two-sided exponential f(t)=e^-a|t|, which decays on both sides of t=0." loading="lazy" style="--figure-width: 62%;"><figcaption>Figure 7.15. The two-sided exponential <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="centered"><figure id="chapter-07-fig-15" class="figure"><img src="assets/img/ch07_fig23_exponential.png" class="diagram" alt="The two-sided exponential f(t)=e^-a|t|. It decays on both sides of t=0 and falls to 1/e at |t|=1/a." loading="lazy" style="--figure-width: 80%;"><figcaption>Figure 7.15. The two-sided exponential <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>f</mi>
   <mo stretchy="false">(</mo>
   <mi>t</mi>
@@ -9314,10 +9534,26 @@
       <mo stretchy="false">|</mo>
     </mrow>
   </msup>
-</math></span>, which decays on both sides of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>. It decays on both sides of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>t</mi>
   <mo>=</mo>
   <mn>0</mn>
+</math></span> and falls to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>e</mi>
+</math></span> at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">|</mo>
+  <mi>t</mi>
+  <mo stretchy="false">|</mo>
+  <mo>=</mo>
+  <mn>1</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>a</mi>
 </math></span>.</figcaption></figure></div>
 <p>We use the Fourier transform convention:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
@@ -9404,7 +9640,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.93">(7.93)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.94">(7.94)</span></div>
 <p class="solution-head">Solution.</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -9496,7 +9732,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.94">(7.94)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.95">(7.95)</span></div>
 <p><strong>Step 2. Evaluate each integral.</strong></p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -9592,7 +9828,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.95">(7.95)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.96">(7.96)</span></div>
 <p><strong>Step 3. Combine the results:</strong></p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -9659,7 +9895,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.96">(7.96)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.97">(7.97)</span></div>
 <p>Thus, the Fourier transform of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>e</mi>
@@ -9713,7 +9949,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.97">(7.97)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.98">(7.98)</span></div>
 <p>which is known as the <strong>Lorentzian function</strong>.</p>
 <p><strong>Shape of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>g</mi>
@@ -9721,32 +9957,56 @@
   <mi>ω</mi>
   <mo stretchy="false">)</mo>
 </math></span>:</strong></p>
-<div class="centered"><figure id="chapter-07-fig-16" class="figure"><img src="assets/img/Fig7_lorentzian_spectrum.png" class="diagram" alt="The Lorentzian spectrum g() a/(a^2+^2), the Fourier transform of the two-sided exponential." loading="lazy" style="--figure-width: 62%;"><figcaption>Figure 7.16. The Lorentzian spectrum <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="centered"><figure id="chapter-07-fig-16" class="figure"><img src="assets/img/ch07_fig24_lorentzian.png" class="diagram" alt="The Lorentzian g()=1\,aa^2+^2, the Fourier transform of the two-sided exponential: height 1/( a) at =0, half that height at = a." loading="lazy" style="--figure-width: 80%;"><figcaption>Figure 7.16. The Lorentzian <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>g</mi>
   <mo stretchy="false">(</mo>
   <mi>ω</mi>
   <mo stretchy="false">)</mo>
-  <mo>∝</mo>
-  <mi>a</mi>
+  <mo>=</mo>
+  <mfrac>
+    <mn>1</mn>
+    <mi>π</mi>
+  </mfrac>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mfrac>
+    <mi>a</mi>
+    <mrow>
+      <msup>
+        <mi>a</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mn>2</mn>
+        </mrow>
+      </msup>
+      <mo>+</mo>
+      <msup>
+        <mi>ω</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mn>2</mn>
+        </mrow>
+      </msup>
+    </mrow>
+  </mfrac>
+</math></span>, the Fourier transform of the two-sided exponential: height <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
   <mrow data-mjx-texclass="ORD">
     <mo>/</mo>
   </mrow>
   <mo stretchy="false">(</mo>
-  <msup>
-    <mi>a</mi>
-    <mrow data-mjx-texclass="ORD">
-      <mn>2</mn>
-    </mrow>
-  </msup>
-  <mo>+</mo>
-  <msup>
-    <mi>ω</mi>
-    <mrow data-mjx-texclass="ORD">
-      <mn>2</mn>
-    </mrow>
-  </msup>
+  <mi>π</mi>
+  <mi>a</mi>
   <mo stretchy="false">)</mo>
-</math></span>, the Fourier transform of the two-sided exponential.</figcaption></figure></div>
+</math></span> at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ω</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>, half that height at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ω</mi>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">±</mo>
+  <mi>a</mi>
+</math></span>.</figcaption></figure></div>
 <p>As <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>a</mi>
 </math></span> increases, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -9759,14 +10019,14 @@
 </math></span> decreases, it becomes narrower and taller.</p></section>
 <h2 id="sec-7-a-quantum-particle-in-fourier-space"><span class="sec-number">7.4</span>A Quantum Particle in Fourier Space</h2>
 <p class="lecture-video"><a href="https://www.youtube.com/watch?v=d-FDrVcSUcg&amp;t=695s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> <span>Lecture 21, Part 4: A Quantum Particle in Fourier Space (11:35)</span></a></p>
-<p>The most important use of the transform in physics is in quantum mechanics. This section works one example on a line in full, assuming nothing beyond this chapter.</p>
+<p>The Fourier transform is used most of all in quantum mechanics. This section works one example in full: a particle held near one place. Nothing beyond this chapter is assumed.</p>
 <h3 id="sec-7-wave-function-and-momentum">Wave function and momentum</h3>
-<p>In quantum mechanics a particle is described by its <strong>wave function</strong> <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<ul><li><p><strong>The wave function.</strong> A quantum particle is described by a wave function <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ψ</mi>
   <mo stretchy="false">(</mo>
   <mi>x</mi>
   <mo stretchy="false">)</mo>
-</math></span>. Its meaning (Born's rule): <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>. By Born's rule, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo stretchy="false">|</mo>
   <mi>ψ</mi>
   <mo stretchy="false">(</mo>
@@ -9788,75 +10048,30 @@
   <mo>+</mo>
   <mi>d</mi>
   <mi>x</mi>
-</math></span>, so</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mtable displaystyle="true">
-    <mtr>
-      <mtd>
-        <mi>P</mi>
-        <mo stretchy="false">(</mo>
-        <mi>a</mi>
-        <mo>≤</mo>
-        <mi>x</mi>
-        <mo>≤</mo>
-        <mi>b</mi>
-        <mo stretchy="false">)</mo>
-        <mo>=</mo>
-        <msubsup>
-          <mo data-mjx-texclass="OP">∫</mo>
-          <mi>a</mi>
-          <mi>b</mi>
-        </msubsup>
-        <mo stretchy="false">|</mo>
-        <mi>ψ</mi>
-        <mo stretchy="false">(</mo>
-        <mi>x</mi>
-        <mo stretchy="false">)</mo>
-        <msup>
-          <mo stretchy="false">|</mo>
-          <mn>2</mn>
-        </msup>
-        <mstyle scriptlevel="0">
-          <mspace width="0.167em" />
-        </mstyle>
-        <mi>d</mi>
-        <mi>x</mi>
-        <mo>,</mo>
-        <mstyle scriptlevel="0">
-          <mspace width="2em" />
-        </mstyle>
-        <msubsup>
-          <mo data-mjx-texclass="OP">∫</mo>
-          <mrow data-mjx-texclass="ORD">
-            <mo form="prefix" lspace="0em" rspace="0em">−</mo>
-            <mi mathvariant="normal">∞</mi>
-          </mrow>
-          <mrow data-mjx-texclass="ORD">
-            <mi mathvariant="normal">∞</mi>
-          </mrow>
-        </msubsup>
-        <mo stretchy="false">|</mo>
-        <mi>ψ</mi>
-        <mo stretchy="false">(</mo>
-        <mi>x</mi>
-        <mo stretchy="false">)</mo>
-        <msup>
-          <mo stretchy="false">|</mo>
-          <mn>2</mn>
-        </msup>
-        <mstyle scriptlevel="0">
-          <mspace width="0.167em" />
-        </mstyle>
-        <mi>d</mi>
-        <mi>x</mi>
-        <mo>=</mo>
-        <mn>1</mn>
-        <mo>.</mo>
-      </mtd>
-    </mtr>
-  </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.98">(7.98)</span></div>
-<p>Momentum enters through de Broglie's relation (1924), confirmed by electron diffraction: the pure wave <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>. So the probability of finding it between <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>b</mi>
+</math></span> is the area <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msubsup>
+    <mo data-mjx-texclass="OP">∫</mo>
+    <mi>a</mi>
+    <mi>b</mi>
+  </msubsup>
+  <mo stretchy="false">|</mo>
+  <mi>ψ</mi>
+  <msup>
+    <mo stretchy="false">|</mo>
+    <mn>2</mn>
+  </msup>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mi>d</mi>
+  <mi>x</mi>
+</math></span>, and the total area is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>: the particle is somewhere.</p></li><li><p><strong>Momentum.</strong> By de Broglie's relation, the single wave <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>e</mi>
     <mrow data-mjx-texclass="ORD">
@@ -9909,8 +10124,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.99">(7.99)</span></div>
-<p>Since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math><span class="eqn-number" id="mjx-eqn:7.99">(7.99)</span></div></li><li><p><strong>The wave function in momentum.</strong> Since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo stretchy="false">|</mo>
   <msup>
     <mi>e</mi>
@@ -9926,7 +10140,7 @@
   </msup>
   <mo>=</mo>
   <mn>1</mn>
-</math></span> everywhere, a pure wave has an exact momentum and no position at all. A particle held near one place is a sum of many pure waves, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> everywhere, a single wave has an exact momentum but no definite position. A particle held near one place is a sum of many such waves, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ψ</mi>
   <mo stretchy="false">(</mo>
   <mi>x</mi>
@@ -9953,79 +10167,104 @@
   </mstyle>
   <mi>d</mi>
   <mi>k</mi>
-</math></span>, so its transform <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>. Its transform <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>g</mi>
   <mo stretchy="false">(</mo>
   <mi>k</mi>
   <mo stretchy="false">)</mo>
-</math></span> is its <strong>momentum recipe</strong>: how much of momentum <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> therefore tells how much of each momentum <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi data-mjx-alternate="1">ℏ</mi>
   <mi>k</mi>
-</math></span> it carries.</p>
+</math></span> the particle carries.</p></li></ul>
 <h3 id="sec-7-the-gaussian-particle">The Gaussian particle</h3>
-<p>A particle held near the origin is described by the Gaussian wave function <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>ψ</mi>
-  <mo stretchy="false">(</mo>
-  <mi>x</mi>
-  <mo stretchy="false">)</mo>
-  <mo>=</mo>
-  <mi>A</mi>
-  <mstyle scriptlevel="0">
-    <mspace width="0.167em" />
-  </mstyle>
-  <msup>
-    <mi>e</mi>
-    <mrow data-mjx-texclass="ORD">
-      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
-      <msup>
+<p>The simplest wave function of a particle held near the origin is the Gaussian</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>ψ</mi>
+        <mo stretchy="false">(</mo>
         <mi>x</mi>
-        <mn>2</mn>
-      </msup>
-      <mrow data-mjx-texclass="ORD">
-        <mo>/</mo>
-      </mrow>
-      <mn>4</mn>
-      <msup>
-        <mi>σ</mi>
-        <mn>2</mn>
-      </msup>
-    </mrow>
-  </msup>
-</math></span>. Squaring doubles the exponent, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mi>A</mi>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <msup>
+          <mi>e</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+            <msup>
+              <mi>x</mi>
+              <mn>2</mn>
+            </msup>
+            <mrow data-mjx-texclass="ORD">
+              <mo>/</mo>
+            </mrow>
+            <mn>4</mn>
+            <msup>
+              <mi>σ</mi>
+              <mn>2</mn>
+            </msup>
+          </mrow>
+        </msup>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <mo stretchy="false">|</mo>
+        <mi>ψ</mi>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <msup>
+          <mo stretchy="false">|</mo>
+          <mn>2</mn>
+        </msup>
+        <mo>=</mo>
+        <msup>
+          <mi>A</mi>
+          <mn>2</mn>
+        </msup>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <msup>
+          <mi>e</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+            <msup>
+              <mi>x</mi>
+              <mn>2</mn>
+            </msup>
+            <mrow data-mjx-texclass="ORD">
+              <mo>/</mo>
+            </mrow>
+            <mn>2</mn>
+            <msup>
+              <mi>σ</mi>
+              <mn>2</mn>
+            </msup>
+          </mrow>
+        </msup>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:7.100">(7.100)</span></div>
+<p>Squaring doubles the exponent, so <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo stretchy="false">|</mo>
   <mi>ψ</mi>
   <msup>
     <mo stretchy="false">|</mo>
     <mn>2</mn>
   </msup>
-  <mo>=</mo>
-  <msup>
-    <mi>A</mi>
-    <mn>2</mn>
-  </msup>
-  <msup>
-    <mi>e</mi>
-    <mrow data-mjx-texclass="ORD">
-      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
-      <msup>
-        <mi>x</mi>
-        <mn>2</mn>
-      </msup>
-      <mrow data-mjx-texclass="ORD">
-        <mo>/</mo>
-      </mrow>
-      <mn>2</mn>
-      <msup>
-        <mi>σ</mi>
-        <mn>2</mn>
-      </msup>
-    </mrow>
-  </msup>
-</math></span>: the bell curve of statistics, of width (standard deviation) <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> is the bell curve of statistics with width (standard deviation) <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>σ</mi>
-</math></span>. To fix <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>. The constant <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>A</mi>
-</math></span> we need the area under a bell.</p>
+</math></span> is fixed by the total probability, which needs the area under a bell.</p>
 <section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">The Gaussian integral</span></header><p>Find <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>I</mi>
   <mo>=</mo>
@@ -10055,7 +10294,9 @@
   <mi>d</mi>
   <mi>x</mi>
 </math></span>.</p>
-<p>No antiderivative helps, so square it, writing the second copy with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>No antiderivative is available, so square <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>I</mi>
+</math></span>, writing the second copy with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>y</mi>
 </math></span>:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
@@ -10150,8 +10391,8 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.100">(7.100)</span></div>
-<p>The integrand is a round hill, so use polar coordinates (Chapter 5): <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math><span class="eqn-number" id="mjx-eqn:7.101">(7.101)</span></div>
+<p>The integrand is round, so use polar coordinates (Chapter 5): <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>x</mi>
     <mn>2</mn>
@@ -10166,7 +10407,7 @@
     <mi>r</mi>
     <mn>2</mn>
   </msup>
-</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>d</mi>
   <mi>x</mi>
   <mstyle scriptlevel="0">
@@ -10268,8 +10509,19 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.101">(7.101)</span></div>
-<p>Hence</p>
+</math><span class="eqn-number" id="mjx-eqn:7.102">(7.102)</span></div>
+<p>Hence, and after the substitution <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>=</mo>
+  <msqrt>
+    <mn>2</mn>
+  </msqrt>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mi>σ</mi>
+  <mi>u</mi>
+</math></span>,</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -10354,31 +10606,19 @@
           <mn>2</mn>
           <mi>π</mi>
         </msqrt>
-        <mstyle scriptlevel="0">
-          <mspace width="1em" />
-        </mstyle>
-        <mo stretchy="false">(</mo>
-        <mi>x</mi>
-        <mo>=</mo>
-        <msqrt>
-          <mn>2</mn>
-        </msqrt>
-        <mstyle scriptlevel="0">
-          <mspace width="0.167em" />
-        </mstyle>
-        <mi>σ</mi>
-        <mi>u</mi>
-        <mo stretchy="false">)</mo>
         <mo>.</mo>
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.102">(7.102)</span></div></section>
-<p>So <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math><span class="eqn-number" id="mjx-eqn:7.103">(7.103)</span></div></section>
+<p>Therefore <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>A</mi>
     <mn>2</mn>
   </msup>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
   <mi>σ</mi>
   <msqrt>
     <mn>2</mn>
@@ -10432,121 +10672,18 @@
     </mrow>
   </msup>
 </math></span>.</p>
-<section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">The transform of a Gaussian</span></header><p>Find the momentum recipe <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">The transform of a Gaussian</span></header><p>Find the wave function in momentum, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>g</mi>
   <mo stretchy="false">(</mo>
   <mi>k</mi>
   <mo stretchy="false">)</mo>
-</math></span> of the Gaussian particle.</p>
-<p>By definition,</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mtable displaystyle="true">
-    <mtr>
-      <mtd>
-        <mi>g</mi>
-        <mo stretchy="false">(</mo>
-        <mi>k</mi>
-        <mo stretchy="false">)</mo>
-        <mo>=</mo>
-        <mfrac>
-          <mi>A</mi>
-          <mrow>
-            <mn>2</mn>
-            <mi>π</mi>
-          </mrow>
-        </mfrac>
-        <msubsup>
-          <mo data-mjx-texclass="OP">∫</mo>
-          <mrow data-mjx-texclass="ORD">
-            <mo form="prefix" lspace="0em" rspace="0em">−</mo>
-            <mi mathvariant="normal">∞</mi>
-          </mrow>
-          <mrow data-mjx-texclass="ORD">
-            <mi mathvariant="normal">∞</mi>
-          </mrow>
-        </msubsup>
-        <msup>
-          <mi>e</mi>
-          <mrow data-mjx-texclass="ORD">
-            <mo form="prefix" lspace="0em" rspace="0em">−</mo>
-            <msup>
-              <mi>x</mi>
-              <mn>2</mn>
-            </msup>
-            <mrow data-mjx-texclass="ORD">
-              <mo>/</mo>
-            </mrow>
-            <mn>4</mn>
-            <msup>
-              <mi>σ</mi>
-              <mn>2</mn>
-            </msup>
-          </mrow>
-        </msup>
-        <mstyle scriptlevel="0">
-          <mspace width="0.167em" />
-        </mstyle>
-        <msup>
-          <mi>e</mi>
-          <mrow data-mjx-texclass="ORD">
-            <mo form="prefix" lspace="0em" rspace="0em">−</mo>
-            <mi>i</mi>
-            <mi>k</mi>
-            <mi>x</mi>
-          </mrow>
-        </msup>
-        <mstyle scriptlevel="0">
-          <mspace width="0.167em" />
-        </mstyle>
-        <mi>d</mi>
-        <mi>x</mi>
-        <mo>,</mo>
-        <mstyle scriptlevel="0">
-          <mspace width="2em" />
-        </mstyle>
-        <msup>
-          <mi>e</mi>
-          <mrow data-mjx-texclass="ORD">
-            <mo form="prefix" lspace="0em" rspace="0em">−</mo>
-            <mi>i</mi>
-            <mi>k</mi>
-            <mi>x</mi>
-          </mrow>
-        </msup>
-        <mo>=</mo>
-        <mi>cos</mi>
-        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
-        <mrow>
-          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
-          <mi>k</mi>
-          <mi>x</mi>
-          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
-        </mrow>
-        <mo>−</mo>
-        <mi>i</mi>
-        <mspace width="0.167em" /><mi>sin</mi>
-        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
-        <mrow>
-          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
-          <mi>k</mi>
-          <mi>x</mi>
-          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
-        </mrow>
-        <mo>.</mo>
-      </mtd>
-    </mtr>
-  </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.103">(7.103)</span></div>
-<p>The bell is even and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>sin</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
-  <mrow>
-    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
-    <mi>k</mi>
-    <mi>x</mi>
-    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
-  </mrow>
-</math></span> is odd, so the sine part integrates to zero, and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>, of the Gaussian particle. The unknown is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>g</mi>
+  <mo stretchy="false">(</mo>
+  <mi>k</mi>
+  <mo stretchy="false">)</mo>
+</math></span>.</p>
+<p>By definition, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>g</mi>
   <mo stretchy="false">(</mo>
   <mi>k</mi>
@@ -10559,16 +10696,6 @@
       <mi>π</mi>
     </mrow>
   </mfrac>
-  <mi>G</mi>
-  <mo stretchy="false">(</mo>
-  <mi>k</mi>
-  <mo stretchy="false">)</mo>
-</math></span> with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>G</mi>
-  <mo stretchy="false">(</mo>
-  <mi>k</mi>
-  <mo stretchy="false">)</mo>
-  <mo>=</mo>
   <msubsup>
     <mo data-mjx-texclass="OP">∫</mo>
     <mrow data-mjx-texclass="ORD">
@@ -10597,7 +10724,35 @@
       </msup>
     </mrow>
   </msup>
-  <mspace width="0.167em" /><mi>cos</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi>i</mi>
+      <mi>k</mi>
+      <mi>x</mi>
+    </mrow>
+  </msup>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mi>d</mi>
+  <mi>x</mi>
+</math></span>. Write <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi>i</mi>
+      <mi>k</mi>
+      <mi>x</mi>
+    </mrow>
+  </msup>
+  <mo>=</mo>
+  <mi>cos</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
   <mrow>
     <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
@@ -10605,12 +10760,105 @@
     <mi>x</mi>
     <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
   </mrow>
-  <mstyle scriptlevel="0">
-    <mspace width="0.167em" />
-  </mstyle>
-  <mi>d</mi>
-  <mi>x</mi>
-</math></span>. Differentiate under the integral and use <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>−</mo>
+  <mi>i</mi>
+  <mspace width="0.167em" /><mi>sin</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>k</mi>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+</math></span>. The bell is even and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>sin</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>k</mi>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+</math></span> is odd, so the sine part integrates to zero, leaving</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>g</mi>
+        <mo stretchy="false">(</mo>
+        <mi>k</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mfrac>
+          <mi>A</mi>
+          <mrow>
+            <mn>2</mn>
+            <mi>π</mi>
+          </mrow>
+        </mfrac>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <mi>G</mi>
+        <mo stretchy="false">(</mo>
+        <mi>k</mi>
+        <mo stretchy="false">)</mo>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <mi>G</mi>
+        <mo stretchy="false">(</mo>
+        <mi>k</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <msubsup>
+          <mo data-mjx-texclass="OP">∫</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+            <mi mathvariant="normal">∞</mi>
+          </mrow>
+          <mrow data-mjx-texclass="ORD">
+            <mi mathvariant="normal">∞</mi>
+          </mrow>
+        </msubsup>
+        <msup>
+          <mi>e</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+            <msup>
+              <mi>x</mi>
+              <mn>2</mn>
+            </msup>
+            <mrow data-mjx-texclass="ORD">
+              <mo>/</mo>
+            </mrow>
+            <mn>4</mn>
+            <msup>
+              <mi>σ</mi>
+              <mn>2</mn>
+            </msup>
+          </mrow>
+        </msup>
+        <mspace width="0.167em" /><mi>cos</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+          <mi>k</mi>
+          <mi>x</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+        </mrow>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <mi>d</mi>
+        <mi>x</mi>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:7.104">(7.104)</span></div>
+<p>Differentiate under the integral, use <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>x</mi>
   <mstyle scriptlevel="0">
     <mspace width="0.167em" />
@@ -10640,6 +10888,9 @@
     <mi>σ</mi>
     <mn>2</mn>
   </msup>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
   <mfrac>
     <mi>d</mi>
     <mrow>
@@ -10665,7 +10916,7 @@
       </msup>
     </mrow>
   </msup>
-</math></span>, then integrate by parts:</p>
+</math></span>, and integrate by parts:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -10725,67 +10976,6 @@
         <mi>d</mi>
         <mi>x</mi>
         <mo>=</mo>
-        <mn>2</mn>
-        <msup>
-          <mi>σ</mi>
-          <mn>2</mn>
-        </msup>
-        <mrow data-mjx-texclass="ORD">
-          <mo minsize="1.623em" maxsize="1.623em" stretchy="true" lspace="0em" rspace="0em">[</mo>
-        </mrow>
-        <msup>
-          <mi>e</mi>
-          <mrow data-mjx-texclass="ORD">
-            <mo form="prefix" lspace="0em" rspace="0em">−</mo>
-            <msup>
-              <mi>x</mi>
-              <mn>2</mn>
-            </msup>
-            <mrow data-mjx-texclass="ORD">
-              <mo>/</mo>
-            </mrow>
-            <mn>4</mn>
-            <msup>
-              <mi>σ</mi>
-              <mn>2</mn>
-            </msup>
-          </mrow>
-        </msup>
-        <mspace width="0.167em" /><mi>sin</mi>
-        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
-        <mrow>
-          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
-          <mi>k</mi>
-          <mi>x</mi>
-          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
-        </mrow>
-        <msubsup>
-          <mrow data-mjx-texclass="ORD">
-            <mo minsize="1.623em" maxsize="1.623em" stretchy="true" lspace="0em" rspace="0em">]</mo>
-          </mrow>
-          <mrow data-mjx-texclass="ORD">
-            <mo form="prefix" lspace="0em" rspace="0em">−</mo>
-            <mi mathvariant="normal">∞</mi>
-          </mrow>
-          <mrow data-mjx-texclass="ORD">
-            <mi mathvariant="normal">∞</mi>
-          </mrow>
-        </msubsup>
-        <mo>−</mo>
-        <mn>2</mn>
-        <msup>
-          <mi>σ</mi>
-          <mn>2</mn>
-        </msup>
-        <mi>k</mi>
-        <mstyle scriptlevel="0">
-          <mspace width="0.167em" />
-        </mstyle>
-        <mi>G</mi>
-        <mo stretchy="false">(</mo>
-        <mi>k</mi>
-        <mo stretchy="false">)</mo>
-        <mo>=</mo>
         <mo form="prefix" lspace="0em" rspace="0em">−</mo>
         <mn>2</mn>
         <msup>
@@ -10804,10 +10994,10 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.104">(7.104)</span></div>
-<p>The end term vanishes because the bell does. Dividing by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math><span class="eqn-number" id="mjx-eqn:7.105">(7.105)</span></div>
+<p>(The boundary term vanishes because the bell does.) Dividing by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>G</mi>
-</math></span> and integrating, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> and integrating gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ln</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
   <mrow>
@@ -10854,7 +11044,7 @@
       </msup>
     </mrow>
   </msup>
-</math></span> with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>, where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>G</mi>
   <mo stretchy="false">(</mo>
   <mn>0</mn>
@@ -10879,6 +11069,9 @@
       </msup>
     </mrow>
   </msup>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
   <mi>d</mi>
   <mi>x</mi>
   <mo>=</mo>
@@ -10953,17 +11146,17 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.105">(7.105)</span></div>
-<p>The transform of a bell is a bell: the tighter the particle is held (small <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math><span class="eqn-number" id="mjx-eqn:7.106">(7.106)</span></div>
+<p>The transform of a bell is a bell. The tighter the particle is held (small <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>σ</mi>
-</math></span>), the wider its momentum recipe (Figure <a class="xref" href="../chapter-07/index.html#chapter-07-fig-17">7.17</a>).</p></section>
+</math></span>), the wider its spread of momenta (Figure <a class="xref" href="../chapter-07/index.html#chapter-07-fig-17">7.17</a>).</p></section>
 <figure id="chapter-07-fig-17" class="figure"><img src="assets/img/ch07_fig09_gaussian_pair.png" class="diagram" alt="The Gaussian wave function (left) and its transform (right) for two widths: narrow in x is wide in k." loading="lazy" style="--figure-width: 85%;"><figcaption>Figure 7.17. The Gaussian wave function (left) and its transform (right) for two widths: narrow in <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>x</mi>
 </math></span> is wide in <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>k</mi>
 </math></span>.</figcaption></figure>
 <p class="lecture-video"><a href="https://www.youtube.com/watch?v=d-FDrVcSUcg&amp;t=1152s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> <span>Lecture 21, Part 5: Uncertainty, and the Spreading Electron (19:12)</span></a></p>
-<section class="callout theorem"><header><span class="callout-kind">Theorem</span><span class="callout-title">Uncertainty of the Gaussian</span></header><p>Measure each spread by its standard deviation. From <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<section class="callout theorem"><header><span class="callout-kind">Theorem</span><span class="callout-title">Uncertainty of the Gaussian</span></header><p>Measure each spread by its standard deviation. Since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo stretchy="false">|</mo>
   <mi>ψ</mi>
   <msup>
@@ -10996,21 +11189,12 @@
   <mi>σ</mi>
 </math></span>. The probability of each <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>k</mi>
-</math></span> is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mn>2</mn>
-  <mi>π</mi>
+</math></span> is proportional to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo stretchy="false">|</mo>
   <mi>g</mi>
   <mo stretchy="false">(</mo>
   <mi>k</mi>
   <mo stretchy="false">)</mo>
-  <msup>
-    <mo stretchy="false">|</mo>
-    <mn>2</mn>
-  </msup>
-</math></span>, and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo stretchy="false">|</mo>
-  <mi>g</mi>
   <msup>
     <mo stretchy="false">|</mo>
     <mn>2</mn>
@@ -11067,7 +11251,7 @@
   </mrow>
   <mn>2</mn>
   <mi>σ</mi>
-</math></span>. Hence, whatever <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>. Whatever <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>σ</mi>
 </math></span> is,</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
@@ -11134,7 +11318,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.106">(7.106)</span></div></section>
+</math><span class="eqn-number" id="mjx-eqn:7.107">(7.107)</span></div></section>
 <p>Heisenberg's uncertainty principle states that <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi mathvariant="normal">Δ</mi>
   <mi>x</mi>
@@ -11149,13 +11333,13 @@
     <mo>/</mo>
   </mrow>
   <mn>2</mn>
-</math></span> for every wave function; the Gaussian is the one that reaches the bound. It is the width–bandwidth tradeoff of the rectangular pulse, multiplied by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> for every wave function, and the Gaussian is the one that reaches the bound. It is the width–bandwidth tradeoff of the rectangular pulse, multiplied by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi data-mjx-alternate="1">ℏ</mi>
 </math></span>.</p>
-<h3 id="sec-7-solving-the-free-particle">Solving the free particle</h3>
+<h3 id="sec-7-the-free-particle-spreads">The free particle spreads</h3>
 <p>For a free particle of mass <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>m</mi>
-</math></span> (no force), the wave function changes in time by Schrödinger's equation,</p>
+</math></span> (no force acting), the wave function changes in time by Schrödinger's equation,</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -11210,8 +11394,8 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.107">(7.107)</span></div>
-<p>whose right side is the kinetic energy at work. A plane wave turning in time, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math><span class="eqn-number" id="mjx-eqn:7.108">(7.108)</span></div>
+<p>whose right side is the kinetic energy at work. Try one plane wave turning in time, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ψ</mi>
   <mo>=</mo>
   <msup>
@@ -11227,14 +11411,14 @@
       <mo stretchy="false">)</mo>
     </mrow>
   </msup>
-</math></span>, gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>: the left side gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi data-mjx-alternate="1">ℏ</mi>
   <mi>ω</mi>
   <mstyle scriptlevel="0">
     <mspace width="0.167em" />
   </mstyle>
   <mi>ψ</mi>
-</math></span> on the left and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> and the right side <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mfrac>
     <mrow>
       <msup>
@@ -11251,8 +11435,11 @@
       <mi>m</mi>
     </mrow>
   </mfrac>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
   <mi>ψ</mi>
-</math></span> on the right, so it is a solution when</p>
+</math></span>. It is a solution when</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -11301,8 +11488,8 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.108">(7.108)</span></div>
-<p>Each plane wave turns at its own rate, so the solution for any starting wave function is</p>
+</math><span class="eqn-number" id="mjx-eqn:7.109">(7.109)</span></div>
+<p>Each plane wave simply turns at its own rate, so the solution for any starting wave function is</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -11357,21 +11544,21 @@
             </mstyle>
           </mrow>
         </mrow>
-        <mo>:</mo>
+        <mo>.</mo>
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.109">(7.109)</span></div>
-<p>take the starting recipe, let each wave turn, and add them back up. The transform has turned a partial differential equation into one multiplication for each <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math><span class="eqn-number" id="mjx-eqn:7.110">(7.110)</span></div>
+<p>In words: take the starting transform, let each wave turn, and add them back up. The transform turns a partial differential equation into one multiplication for each <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>k</mi>
-</math></span>. Since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>. The size <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo stretchy="false">|</mo>
   <mi>g</mi>
   <mo stretchy="false">(</mo>
   <mi>k</mi>
   <mo stretchy="false">)</mo>
   <mo stretchy="false">|</mo>
-</math></span> never changes, the momentum probabilities stay fixed (no force), but the position spreads: the same Gaussian integrals give a bell of width</p>
+</math></span> never changes, so the momentum probabilities stay fixed, as they must with no force. The position, however, spreads: the same Gaussian integrals give a bell of width</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -11417,8 +11604,8 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.110">(7.110)</span></div>
-<p>because the faster parts of the recipe run ahead and the slower ones fall behind (Figure <a class="xref" href="../chapter-07/index.html#chapter-07-fig-18">7.18</a>). For an electron held to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math><span class="eqn-number" id="mjx-eqn:7.111">(7.111)</span></div>
+<p>because the faster parts of the packet run ahead and the slower ones fall behind (Figure <a class="xref" href="../chapter-07/index.html#chapter-07-fig-18">7.18</a>). For an electron held to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>σ</mi>
   <mo>=</mo>
   <mn>1</mn>
@@ -11453,7 +11640,7 @@
     </mrow>
   </msup>
 </math></span> s.</p>
-<figure id="chapter-07-fig-18" class="figure"><img src="assets/img/ch07_fig10_packet_spreads.png" class="diagram" alt="A free Gaussian packet at t=0, and 3: it spreads, while its momentum recipe stays the same." loading="lazy" style="--figure-width: 80%;"><figcaption>Figure 7.18. A free Gaussian packet at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<figure id="chapter-07-fig-18" class="figure"><img src="assets/img/ch07_fig10_packet_spreads.png" class="diagram" alt="A free Gaussian packet at t=0, and 3: it spreads, while its spread of momenta stays the same." loading="lazy" style="--figure-width: 80%;"><figcaption>Figure 7.18. A free Gaussian packet at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>t</mi>
   <mo>=</mo>
   <mn>0</mn>
@@ -11462,19 +11649,19 @@
 </math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>3</mn>
   <mi>τ</mi>
-</math></span>: it spreads, while its momentum recipe stays the same.</figcaption></figure>
+</math></span>: it spreads, while its spread of momenta stays the same.</figcaption></figure>
 <h2 id="sec-7-the-fourier-transform-in-two-and-three-dimensions"><span class="sec-number">7.5</span>The Fourier Transform in Two and Three Dimensions</h2>
 <p class="lecture-video"><a href="https://www.youtube.com/watch?v=d-FDrVcSUcg&amp;t=1484s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> <span>Lecture 21, Part 6: The Fourier Transform in 2D (24:44)</span></a></p>
-<p>So far every function had one variable. A photograph is a function of two, the brightness <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>So far every function had one variable. A photograph is a function of two variables, its brightness <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>f</mi>
   <mo stretchy="false">(</mo>
   <mi>x</mi>
   <mo>,</mo>
   <mi>y</mi>
   <mo stretchy="false">)</mo>
-</math></span> at each point, and a field in space is a function of three. The transform carries over with one new idea: in more than one dimension, a pure wave has a <em>direction</em>.</p>
+</math></span>, and a field in space is a function of three. The transform carries over with one new idea: in more than one dimension, a wave has a <em>direction</em>.</p>
 <h3 id="sec-7-plane-waves-and-the-wave-vector">Plane waves and the wave vector</h3>
-<p>On a line, the pure wave <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>On a line, the wave <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>e</mi>
     <mrow data-mjx-texclass="ORD">
@@ -11483,13 +11670,13 @@
       <mi>x</mi>
     </mrow>
   </msup>
-</math></span> needs one number <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> needs one number, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>k</mi>
-</math></span>: how fast it turns as you walk along <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>: how fast it turns as you move along <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>x</mi>
-</math></span>. On a surface it needs two, how fast it turns along <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>. On a surface it needs two: how fast it turns along <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>x</mi>
-</math></span> and how fast along <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>, and how fast along <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>y</mi>
 </math></span>. Collect them in the <strong>wave vector</strong> <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
@@ -11523,7 +11710,7 @@
   <mo>,</mo>
   <mi>y</mi>
   <mo stretchy="false">)</mo>
-</math></span>; the exponent is then a dot product:</p>
+</math></span>. The exponent is then a dot product:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -11578,8 +11765,8 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.111">(7.111)</span></div>
-<p>The crests are where the phase <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math><span class="eqn-number" id="mjx-eqn:7.112">(7.112)</span></div>
+<ul><li><p><strong>Crests.</strong> The phase <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mover accent="true">
       <mi>k</mi>
@@ -11593,56 +11780,44 @@
       <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
     </mover>
   </mrow>
-</math></span> is constant. Walking along a crest you move at right angles to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> is constant along lines at right angles to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mover accent="true">
       <mi>k</mi>
       <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
     </mover>
   </mrow>
-</math></span>, so the crests are parallel stripes across <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>. So the crests are parallel stripes across <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mover accent="true">
       <mi>k</mi>
       <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
     </mover>
   </mrow>
-</math></span> and the wave travels along <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>, and the wave travels along <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mover accent="true">
       <mi>k</mi>
       <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
     </mover>
   </mrow>
-</math></span>. As on the line, the wavelength is</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mtable displaystyle="true">
-    <mtr>
-      <mtd>
-        <mi>λ</mi>
-        <mo>=</mo>
-        <mfrac>
-          <mrow>
-            <mn>2</mn>
-            <mi>π</mi>
-          </mrow>
-          <mrow>
-            <mo stretchy="false">|</mo>
-            <mrow data-mjx-texclass="ORD">
-              <mover accent="true">
-                <mi>k</mi>
-                <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
-              </mover>
-            </mrow>
-            <mo stretchy="false">|</mo>
-          </mrow>
-        </mfrac>
-        <mo>:</mo>
-      </mtd>
-    </mtr>
-  </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.112">(7.112)</span></div>
-<p>a longer wave vector means closer stripes. In space, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>.</p></li><li><p><strong>Wavelength.</strong> As on the line, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>λ</mi>
+  <mo>=</mo>
+  <mn>2</mn>
+  <mi>π</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mo stretchy="false">|</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>k</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
+  <mo stretchy="false">|</mo>
+</math></span>: a longer wave vector means closer stripes.</p></li><li><p><strong>Space.</strong> In three dimensions <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mover accent="true">
       <mi>k</mi>
@@ -11666,7 +11841,7 @@
     <mi>z</mi>
   </msub>
   <mo stretchy="false">)</mo>
-</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mover accent="true">
       <mi>k</mi>
@@ -11698,7 +11873,7 @@
     <mi>z</mi>
   </msub>
   <mi>z</mi>
-</math></span>, and the crests are flat planes at right angles to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>. The crests are flat planes at right angles to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mover accent="true">
       <mi>k</mi>
@@ -11725,8 +11900,8 @@
       </mrow>
     </mrow>
   </msup>
-</math></span> is called a <strong>plane wave</strong>. Light from a distant star, or a laser beam, arrives as plane waves.</p>
-<section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Fourier Transform in Two and Three Dimensions</span></header><p>With the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> is called a <strong>plane wave</strong>.</p></li></ul>
+<section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Fourier Transform in Two and Three Dimensions</span></header><p>The one-dimensional transform is done once along each axis, with one factor <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mstyle displaystyle="false" scriptlevel="0">
     <mfrac>
       <mn>1</mn>
@@ -11736,7 +11911,7 @@
       </mrow>
     </mfrac>
   </mstyle>
-</math></span> on the forward transform, as in the one-dimensional pair above, one factor for each direction:</p>
+</math></span> for each:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -12015,7 +12190,7 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:7.114">(7.114)</span></div>
-<p>with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>d</mi>
     <mn>3</mn>
@@ -12034,7 +12209,7 @@
   </mstyle>
   <mi>d</mi>
   <mi>z</mi>
-</math></span> over all of space and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> runs over all of space and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>d</mi>
     <mn>3</mn>
@@ -12062,12 +12237,13 @@
     <mi>k</mi>
     <mi>z</mi>
   </msub>
-</math></span>. Each is the one-dimensional transform done once along each axis.</p></section>
+</math></span>.</p></section>
+<h3 id="sec-7-reading-a-two-dimensional-transform">Reading a two-dimensional transform</h3>
 <p>The transform <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>g</mi>
 </math></span> is itself a picture, drawn on the <strong><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>k</mi>
-</math></span>-plane</strong>: each point <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>-plane</strong>. Each point <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo stretchy="false">(</mo>
   <msub>
     <mi>k</mi>
@@ -12083,16 +12259,9 @@
   <mo stretchy="false">|</mo>
   <mi>g</mi>
   <mo stretchy="false">|</mo>
-</math></span> there is how much of that wave <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> at that point is how much of that wave <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>f</mi>
-</math></span> contains. Near the centre <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow data-mjx-texclass="ORD">
-    <mover accent="true">
-      <mi>k</mi>
-      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
-    </mover>
-  </mrow>
-</math></span> is short and the stripes are wide: these waves carry the broad shapes of a picture. Far from the centre the stripes are fine: these carry its fine detail.</p>
+</math></span> contains. Points near the centre are long waves, which carry the broad shapes of a picture; points far from the centre are short waves, which carry its fine detail.</p>
 <section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">One set of stripes</span></header><p>Find the transform of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>f</mi>
   <mo stretchy="false">(</mo>
@@ -12124,7 +12293,7 @@
     <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
   </mrow>
 </math></span>.</p>
-<p>A cosine is two turning arrows:</p>
+<p>A cosine is the sum of two turning arrows:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -12221,7 +12390,7 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:7.115">(7.115)</span></div>
-<p>It contains two plane waves and nothing else, so its transform is zero everywhere except at two points: two dots, at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>It contains these two plane waves and nothing else, so its transform is zero except at two points: two dots, at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo form="prefix" lspace="0em" rspace="0em">+</mo>
   <msub>
     <mrow data-mjx-texclass="ORD">
@@ -12243,7 +12412,7 @@
     </mrow>
     <mn>0</mn>
   </msub>
-</math></span>. Turning the stripes turns the dots, because each dot is the wave vector itself; crowding the stripes together moves the dots away from the centre.</p></section>
+</math></span> (Figure <a class="xref" href="../chapter-07/index.html#chapter-07-fig-19">7.19</a>). Turning the stripes turns the dots; crowding the stripes moves the dots away from the centre.</p></section>
 <figure id="chapter-07-fig-19" class="figure"><img src="assets/img/ch07_fig07_stripes_two_dots.png" class="diagram" alt="One set of stripes, (k0r), with its wave vector across them (left), and its two-dimensional transform: two dots, at k0 (right)." loading="lazy" style="--figure-width: 85%;"><figcaption>Figure 7.19. One set of stripes, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>cos</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
@@ -12280,15 +12449,16 @@
     <mn>0</mn>
   </msub>
 </math></span> (right).</figcaption></figure>
-<section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">Cleaning a striped portrait</span></header><p>A regular pattern of stripes, such as a scanner or electrical interference can leave, is laid across Fourier's portrait. Remove the stripes without touching the face.</p>
-<p>The striped picture is the face plus one cosine of stripes. In its transform (Figure <a class="xref" href="../chapter-07/index.html#chapter-07-fig-20">7.20</a>, middle) the face is a glow at the centre, since a face is mostly broad, slow changes, and the stripes are two bright dots standing apart from everything else. Set those two plane waves to zero, covering the two dots and changing nothing else, and transform back: every stripe is gone and the face is untouched, because the face had almost nothing at those two points. Image programs remove regular patterns this way, for example the dots of a printed photograph when it is scanned.</p></section>
+<section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">Cleaning a striped portrait</span></header><p>A regular pattern of stripes, such as a scanner or electrical interference can leave, lies across a portrait of Fourier. Remove the stripes without touching the face.</p>
+<p>The striped picture is the face plus one cosine of stripes. In its transform (Figure <a class="xref" href="../chapter-07/index.html#chapter-07-fig-20">7.20</a>, middle) the face is a glow at the centre, because a face is mostly broad, slow changes; the stripes are two bright dots, standing apart from everything else. Set those two plane waves to zero and transform back: every stripe is gone and the face is untouched, because the face had almost nothing at those two points. Image programs remove regular patterns in the same way.</p></section>
 <figure id="chapter-07-fig-20" class="figure"><img src="assets/img/ch07_fig08_portrait.jpg" alt="The striped portrait (left); its two-dimensional transform, with the face at the centre and the stripes&#x27; two dots circled (middle); and the portrait transformed back with the two dots covered (right)." loading="lazy"><figcaption>Figure 7.20. The striped portrait (left); its two-dimensional transform, with the face at the centre and the stripes' two dots
 	circled (middle); and the portrait transformed back with the two dots covered (right).</figcaption></figure>
 <h3 id="sec-7-light-through-an-opening">Light through an opening</h3>
 <p class="lecture-video"><a href="https://www.youtube.com/watch?v=d-FDrVcSUcg&amp;t=1829s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> <span>Lecture 21, Part 7: Light Through an Opening (30:29)</span></a></p>
-<p><strong>Diffraction</strong> is the bending and spreading of waves after they pass through an opening: a wide opening lets light go on almost straight, a narrow one (close to the wavelength <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p><strong>Diffraction</strong> is the bending and spreading of waves after they pass through an opening. A wide opening lets light go on almost straight; a narrow one, close to the wavelength <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>λ</mi>
-</math></span>) spreads it in all directions. Every point of the opening sends out its own wave (Huygens). Toward a far screen in the direction <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>, spreads it in all directions.</p>
+<ul><li><p><strong>The formula.</strong> Every point of the opening sends out its own wave (Huygens). Toward a far screen in the direction <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>θ</mi>
 </math></span>, the wave from a point at height <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>x</mi>
@@ -12314,7 +12484,7 @@
     <mi>θ</mi>
     <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
   </mrow>
-</math></span> with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>, with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>k</mi>
     <mn>0</mn>
@@ -12377,8 +12547,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.116">(7.116)</span></div>
-<p>With <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math><span class="eqn-number" id="mjx-eqn:7.116">(7.116)</span></div></li><li><p><strong>It is a Fourier transform.</strong> With <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>k</mi>
     <mi>x</mi>
@@ -12395,7 +12564,7 @@
     <mi>θ</mi>
     <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
   </mrow>
-</math></span> this is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>, the formula reads <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo data-mjx-texclass="OP">∫</mo>
   <mi>A</mi>
   <mo stretchy="false">(</mo>
@@ -12434,7 +12603,7 @@
     <mi>x</mi>
   </msub>
   <mo stretchy="false">)</mo>
-</math></span>: the Fourier transform of the opening, each direction being one wave number. For an opening <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>: each direction on the screen is one wave number. For an opening <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>A</mi>
   <mo stretchy="false">(</mo>
   <mi>x</mi>
@@ -12501,14 +12670,14 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:7.117">(7.117)</span></div>
-<p>and the eye sees its square, the intensity.</p>
+<p>and the eye sees its square, the intensity.</p></li></ul>
 <section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">A square and a round opening</span></header><p>A square opening of width <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>w</mi>
 </math></span> is a pulse in <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>x</mi>
 </math></span> times a pulse in <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>y</mi>
-</math></span>, so its amplitude is the pulse's sinc in each direction,</p>
+</math></span>, so its amplitude is the pulse's sinc in each direction:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -12562,12 +12731,12 @@
             <mi>y</mi>
           </msub>
         </mfrac>
-        <mo>,</mo>
+        <mo>.</mo>
       </mtd>
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:7.118">(7.118)</span></div>
-<p>large only near the two axes: a cross of spots (Figure <a class="xref" href="../chapter-07/index.html#chapter-07-fig-21">7.21</a>). It is dark where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>This is large only near the two axes, which gives a cross of spots (Figure <a class="xref" href="../chapter-07/index.html#chapter-07-fig-21">7.21</a>). It is dark where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>k</mi>
     <mi>x</mi>
@@ -12577,7 +12746,7 @@
   <mn>2</mn>
   <mi>π</mi>
   <mi>m</mi>
-</math></span>, that is at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>, that is, at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>sin</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
   <mrow>
@@ -12592,9 +12761,9 @@
     <mo>/</mo>
   </mrow>
   <mi>w</mi>
-</math></span>: a smaller opening spreads the pattern wider. A round opening of diameter <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>, so a smaller opening spreads the pattern wider. A round opening of diameter <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>D</mi>
-</math></span> is the same in every direction, so its pattern is a disc and rings (the Airy pattern), with the first dark ring at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> looks the same in every direction, so its pattern is a disc surrounded by rings (the Airy pattern), with the first dark ring at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>sin</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
   <mrow>
@@ -12612,9 +12781,9 @@
     <mo>/</mo>
   </mrow>
   <mi>D</mi>
-</math></span>. A telescope of diameter <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>. For this reason a telescope of diameter <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>D</mi>
-</math></span> therefore cannot separate two stars closer than about <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> cannot separate two stars closer than about <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>1.22</mn>
   <mstyle scriptlevel="0">
     <mspace width="0.167em" />
@@ -12627,6 +12796,7 @@
 </math></span>.</p></section>
 <figure id="chapter-07-fig-21" class="figure"><img src="assets/img/ch07_fig13_diffraction.jpg" alt="A square opening and the cross of spots a far screen shows; a round opening and its rings. Each pattern is the two-dimensional Fourier transform of its opening, squared (drawn brighter so the faint spots show)." loading="lazy"><figcaption>Figure 7.21. A square opening and the cross of spots a far screen shows; a round opening and its rings. Each pattern is the
 	two-dimensional Fourier transform of its opening, squared (drawn brighter so the faint spots show).</figcaption></figure>
+<h3 id="sec-7-three-dimensions">Three dimensions</h3>
 <p class="lecture-video"><a href="https://www.youtube.com/watch?v=d-FDrVcSUcg&amp;t=2118s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> <span>Lecture 21, Part 8: The Fourier Transform in 3D (35:18)</span></a></p>
 <section class="callout remark"><header><span class="callout-kind">Remark</span><span class="callout-title">A product splits</span></header><p>If <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>f</mi>
@@ -12785,8 +12955,8 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.119">(7.119)</span></div></section>
-<p>For example, the Gaussian particle of Section <a class="xref" href="../chapter-07/index.html#sec-7-a-quantum-particle-in-fourier-space">7.4</a> in space is a product, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math><span class="eqn-number" id="mjx-eqn:7.119">(7.119)</span></div>
+<p>For example, the Gaussian particle of Section <a class="xref" href="../chapter-07/index.html#sec-7-a-quantum-particle-in-fourier-space">7.4</a> in space is such a product, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ψ</mi>
   <mo stretchy="false">(</mo>
   <mrow data-mjx-texclass="ORD">
@@ -12852,33 +13022,17 @@
       </msup>
     </mrow>
   </msup>
-</math></span>, so its transform is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>, so its transform is a round bell in <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span>-space, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>g</mi>
   <mo stretchy="false">(</mo>
-  <msub>
-    <mi>k</mi>
-    <mi>x</mi>
-  </msub>
-  <mo stretchy="false">)</mo>
-  <mstyle scriptlevel="0">
-    <mspace width="0.167em" />
-  </mstyle>
-  <mi>g</mi>
-  <mo stretchy="false">(</mo>
-  <msub>
-    <mi>k</mi>
-    <mi>y</mi>
-  </msub>
-  <mo stretchy="false">)</mo>
-  <mstyle scriptlevel="0">
-    <mspace width="0.167em" />
-  </mstyle>
-  <mi>g</mi>
-  <mo stretchy="false">(</mo>
-  <msub>
-    <mi>k</mi>
-    <mi>z</mi>
-  </msub>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>k</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
+  </mrow>
   <mo stretchy="false">)</mo>
   <mo>∝</mo>
   <msup>
@@ -12902,11 +13056,9 @@
       </msup>
     </mrow>
   </msup>
-</math></span>: a round bell in <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>k</mi>
-</math></span>-space. An atom, though, is round without being a product.</p>
-<h3 id="sec-7-a-round-function">A round function</h3>
-<p>If <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>.</p></section>
+<p>An atom, however, is round without being a product. Round functions have their own shortcut.</p>
+<section class="callout theorem"><header><span class="callout-kind">Theorem</span><span class="callout-title">Transform of a round function</span></header><p>If <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>f</mi>
   <mo stretchy="false">(</mo>
   <mrow data-mjx-texclass="ORD">
@@ -12921,23 +13073,80 @@
   <mo stretchy="false">(</mo>
   <mi>r</mi>
   <mo stretchy="false">)</mo>
-</math></span> depends only on the distance from the origin, the direction of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> depends only on the distance from the origin, then</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mrow class="mml-boxed">
+          <mrow data-mjx-texclass="ORD">
+            <mstyle displaystyle="true" scriptlevel="0">
+              <mrow data-mjx-texclass="ORD">
+                <mi>g</mi>
+                <mo stretchy="false">(</mo>
+                <mi>k</mi>
+                <mo stretchy="false">)</mo>
+                <mo>=</mo>
+                <mfrac>
+                  <mn>1</mn>
+                  <mrow>
+                    <mn>2</mn>
+                    <msup>
+                      <mi>π</mi>
+                      <mn>2</mn>
+                    </msup>
+                    <mi>k</mi>
+                  </mrow>
+                </mfrac>
+                <msubsup>
+                  <mo data-mjx-texclass="OP">∫</mo>
+                  <mn>0</mn>
+                  <mi mathvariant="normal">∞</mi>
+                </msubsup>
+                <mi>r</mi>
+                <mstyle scriptlevel="0">
+                  <mspace width="0.167em" />
+                </mstyle>
+                <mi>f</mi>
+                <mo stretchy="false">(</mo>
+                <mi>r</mi>
+                <mo stretchy="false">)</mo>
+                <mstyle scriptlevel="0">
+                  <mspace width="0.167em" />
+                </mstyle>
+                <mspace width="0.167em" /><mi>sin</mi>
+                <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+                <mrow>
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+                  <mi>k</mi>
+                  <mi>r</mi>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+                </mrow>
+                <mstyle scriptlevel="0">
+                  <mspace width="0.167em" />
+                </mstyle>
+                <mi>d</mi>
+                <mi>r</mi>
+              </mrow>
+            </mstyle>
+          </mrow>
+        </mrow>
+        <mo>:</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:7.120">(7.120)</span></div>
+<p>one radial integral, and the transform is round too.</p></section>
+<div class="proof" data-lead="Proof."><p>The direction of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mover accent="true">
       <mi>k</mi>
       <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
     </mover>
   </mrow>
-</math></span> does not matter. Point <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow data-mjx-texclass="ORD">
-    <mover accent="true">
-      <mi>k</mi>
-      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
-    </mover>
-  </mrow>
-</math></span> along the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> does not matter, so point it along the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>z</mi>
-</math></span> axis, so that <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> axis: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mover accent="true">
       <mi>k</mi>
@@ -12955,9 +13164,13 @@
   <mi>k</mi>
   <mi>r</mi>
   <mspace width="0.167em" /><mi>cos</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mi>θ</mi>
-</math></span>, and use spherical coordinates (Chapter 5), <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>θ</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+</math></span>. In spherical coordinates (Chapter 5), <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>d</mi>
     <mn>3</mn>
@@ -12969,8 +13182,12 @@
     <mn>2</mn>
   </msup>
   <mspace width="0.167em" /><mi>sin</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mi>θ</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>θ</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
   <mstyle scriptlevel="0">
     <mspace width="0.167em" />
   </mstyle>
@@ -12986,7 +13203,7 @@
   </mstyle>
   <mi>d</mi>
   <mi>ϕ</mi>
-</math></span>:</p>
+</math></span>, so</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -13049,13 +13266,21 @@
             <mi>k</mi>
             <mi>r</mi>
             <mspace width="0.167em" /><mi>cos</mi>
-            <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-            <mi>θ</mi>
+            <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+            <mrow>
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+              <mi>θ</mi>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+            </mrow>
           </mrow>
         </msup>
         <mspace width="0.167em" /><mi>sin</mi>
-        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mi>θ</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+          <mi>θ</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+        </mrow>
         <mstyle scriptlevel="0">
           <mspace width="0.167em" />
         </mstyle>
@@ -13065,45 +13290,25 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.120">(7.120)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.121">(7.121)</span></div>
 <p>The <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ϕ</mi>
 </math></span> integral gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>2</mn>
   <mi>π</mi>
-</math></span>, and with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>. With <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>u</mi>
   <mo>=</mo>
   <mi>cos</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>θ</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+</math></span> the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>θ</mi>
-</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msubsup>
-    <mo data-mjx-texclass="OP">∫</mo>
-    <mn>0</mn>
-    <mi>π</mi>
-  </msubsup>
-  <msup>
-    <mi>e</mi>
-    <mrow data-mjx-texclass="ORD">
-      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
-      <mi>i</mi>
-      <mi>k</mi>
-      <mi>r</mi>
-      <mspace width="0.167em" /><mi>cos</mi>
-      <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-      <mi>θ</mi>
-    </mrow>
-  </msup>
-  <mspace width="0.167em" /><mi>sin</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mi>θ</mi>
-  <mstyle scriptlevel="0">
-    <mspace width="0.167em" />
-  </mstyle>
-  <mi>d</mi>
-  <mi>θ</mi>
-  <mo>=</mo>
+</math></span> integral is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msubsup>
     <mo data-mjx-texclass="OP">∫</mo>
     <mrow data-mjx-texclass="ORD">
@@ -13147,70 +13352,7 @@
       <mi>r</mi>
     </mrow>
   </mfrac>
-</math></span>. Hence</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mtable displaystyle="true">
-    <mtr>
-      <mtd>
-        <mrow class="mml-boxed">
-          <mrow data-mjx-texclass="ORD">
-            <mstyle displaystyle="true" scriptlevel="0">
-              <mrow data-mjx-texclass="ORD">
-                <mi>g</mi>
-                <mo stretchy="false">(</mo>
-                <mi>k</mi>
-                <mo stretchy="false">)</mo>
-                <mo>=</mo>
-                <mfrac>
-                  <mn>1</mn>
-                  <mrow>
-                    <mn>2</mn>
-                    <msup>
-                      <mi>π</mi>
-                      <mn>2</mn>
-                    </msup>
-                    <mi>k</mi>
-                  </mrow>
-                </mfrac>
-                <msubsup>
-                  <mo data-mjx-texclass="OP">∫</mo>
-                  <mn>0</mn>
-                  <mi mathvariant="normal">∞</mi>
-                </msubsup>
-                <mi>r</mi>
-                <mstyle scriptlevel="0">
-                  <mspace width="0.167em" />
-                </mstyle>
-                <mi>f</mi>
-                <mo stretchy="false">(</mo>
-                <mi>r</mi>
-                <mo stretchy="false">)</mo>
-                <mstyle scriptlevel="0">
-                  <mspace width="0.167em" />
-                </mstyle>
-                <mspace width="0.167em" /><mi>sin</mi>
-                <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
-                <mrow>
-                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
-                  <mi>k</mi>
-                  <mi>r</mi>
-                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
-                </mrow>
-                <mstyle scriptlevel="0">
-                  <mspace width="0.167em" />
-                </mstyle>
-                <mi>d</mi>
-                <mi>r</mi>
-              </mrow>
-            </mstyle>
-          </mrow>
-        </mrow>
-        <mo>:</mo>
-      </mtd>
-    </mtr>
-  </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.121">(7.121)</span></div>
-<p>one radial integral, and a round function has a round transform.</p>
+</math></span>. Multiplying out gives the boxed formula.</p></div>
 <section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">Hydrogen's electron in momentum space</span></header><p>The ground state of hydrogen is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ψ</mi>
   <mo stretchy="false">(</mo>
@@ -13238,12 +13380,17 @@
       <mn>3</mn>
     </msup>
   </msqrt>
-</math></span>, with the Bohr radius <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>, where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>a</mi>
   <mo>=</mo>
   <mn>0.529</mn>
-</math></span> Å. Find its momentum recipe, and the typical speed of the electron.</p>
-<p>It is normalised: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> Å is the Bohr radius. Find its wave function in momentum, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>g</mi>
+  <mo stretchy="false">(</mo>
+  <mi>k</mi>
+  <mo stretchy="false">)</mo>
+</math></span>, and the typical speed of the electron.</p>
+<p>The wave function is normalised: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>4</mn>
   <mi>π</mi>
   <msubsup>
@@ -13403,7 +13550,7 @@
   <mo>−</mo>
   <mi>i</mi>
   <mi>k</mi>
-</math></span>; integrating by parts, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>. Integration by parts gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msubsup>
     <mo data-mjx-texclass="OP">∫</mo>
     <mn>0</mn>
@@ -13585,7 +13732,7 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:7.123">(7.123)</span></div>
-<p>The recipe falls to half its height at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>This curve falls to half its height at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>a</mi>
   <mi>k</mi>
   <mo>=</mo>
@@ -13606,7 +13753,17 @@
     <mo>/</mo>
   </mrow>
   <mi>a</mi>
-</math></span>: a smaller atom has a wider spread of momenta. Weighted by the recipe, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>: a smaller atom has a wider spread of momenta. Weighted by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">|</mo>
+  <mi>g</mi>
+  <mo stretchy="false">(</mo>
+  <mi>k</mi>
+  <mo stretchy="false">)</mo>
+  <msup>
+    <mo stretchy="false">|</mo>
+    <mn>2</mn>
+  </msup>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo fence="false" stretchy="false">⟨</mo>
   <msup>
     <mi>k</mi>
@@ -13670,15 +13827,15 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:7.124">(7.124)</span></div>
-<p>Figure <a class="xref" href="../chapter-07/index.html#chapter-07-fig-22">7.22</a> shows the electron in both spaces: in position space a cloud about <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>Figure <a class="xref" href="../chapter-07/index.html#chapter-07-fig-22">7.22</a> shows the electron in both spaces: a cloud about <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>a</mi>
-</math></span> across, in momentum space a cloud about <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> across in position space, and a cloud about <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>1</mn>
   <mrow data-mjx-texclass="ORD">
     <mo>/</mo>
   </mrow>
   <mi>a</mi>
-</math></span> across, joined by the Fourier transform.</p></section>
+</math></span> across in momentum space.</p></section>
 <figure id="chapter-07-fig-22" class="figure"><img src="assets/img/ch07_fig14_hydrogen_clouds.png" class="diagram" alt="Hydrogen&#x27;s electron in position space (left, axes x, y, z) and in momentum space (right, axes kx, ky, kz). Each point is drawn from the probability, ||^2 e^-2r/a on the left and |g|^2 (1 + a^2k^2)^-4 on the right, so the points crowd where the electron is likely to be, or likely to have that momentum." loading="lazy" style="--figure-width: 95%;"><figcaption>Figure 7.22. Hydrogen's electron in position space (left, axes <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>x</mi>
 </math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -13751,18 +13908,11 @@
 	so the points crowd where the electron is likely to be, or likely to have that momentum.</figcaption></figure>
 <h2 id="sec-7-the-fourier-series-as-an-eigenvalue-problem"><span class="sec-number">7.6</span>The Fourier Series as an Eigenvalue Problem</h2>
 <p class="lecture-video"><a href="https://www.youtube.com/watch?v=d-FDrVcSUcg&amp;t=2513s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> <span>Lecture 21, Part 9: Beyond Sines and Cosines (41:53)</span></a></p>
-<p>Why can sines and cosines build any shape? It is not luck. It is the same fact as in Chapter 3: the eigenvectors of a symmetric matrix are perpendicular and form a basis. Here the matrix is a differential operator, and its eigenvectors are functions.</p>
-<h3 id="sec-7-from-eigenvectors-to-eigenfunctions">From eigenvectors to eigenfunctions</h3>
-<p>Recall Chapter 3. A symmetric matrix <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>Why can sines and cosines build any shape? It is not luck. It is the same fact as in Chapter 3, where a symmetric matrix has perpendicular eigenvectors that can build any vector. Here the matrix is replaced by a differential operator, and its eigenvectors by functions.</p>
+<h3 id="sec-7-the-differential-equation-as-an-eigenvalue-problem">The differential equation as an eigenvalue problem</h3>
+<p>Recall Chapter 3: a symmetric matrix <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>A</mi>
-</math></span> (<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>A</mi>
-  <mo>=</mo>
-  <msup>
-    <mi>A</mi>
-    <mi>T</mi>
-  </msup>
-</math></span>) has eigenvectors, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> has eigenvectors, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>A</mi>
   <msub>
     <mrow data-mjx-texclass="ORD">
@@ -13787,581 +13937,56 @@
     </mrow>
     <mi>n</mi>
   </msub>
-</math></span>; eigenvectors of different eigenvalues are perpendicular, and there are enough of them to build any vector:</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mtable displaystyle="true">
-    <mtr>
-      <mtd>
-        <mrow data-mjx-texclass="ORD">
-          <mover accent="true">
-            <mi>v</mi>
-            <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
-          </mover>
-        </mrow>
-        <mo>=</mo>
-        <munder>
-          <mo data-mjx-texclass="OP" stretchy="true">∑</mo>
-          <mi>n</mi>
-        </munder>
-        <msub>
-          <mi>c</mi>
-          <mi>n</mi>
-        </msub>
-        <mstyle scriptlevel="0">
-          <mspace width="0.167em" />
-        </mstyle>
-        <msub>
-          <mrow data-mjx-texclass="ORD">
-            <mover accent="true">
-              <mi>e</mi>
-              <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
-            </mover>
-          </mrow>
-          <mi>n</mi>
-        </msub>
-        <mo>,</mo>
-        <mstyle scriptlevel="0">
-          <mspace width="2em" />
-        </mstyle>
-        <msub>
-          <mi>c</mi>
-          <mi>n</mi>
-        </msub>
-        <mo>=</mo>
-        <mfrac>
-          <mrow>
-            <mrow data-mjx-texclass="ORD">
-              <mover accent="true">
-                <mi>v</mi>
-                <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
-              </mover>
-            </mrow>
-            <mo>⋅</mo>
-            <msub>
-              <mrow data-mjx-texclass="ORD">
-                <mover accent="true">
-                  <mi>e</mi>
-                  <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
-                </mover>
-              </mrow>
-              <mi>n</mi>
-            </msub>
-          </mrow>
-          <mrow>
-            <msub>
-              <mrow data-mjx-texclass="ORD">
-                <mover accent="true">
-                  <mi>e</mi>
-                  <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
-                </mover>
-              </mrow>
-              <mi>n</mi>
-            </msub>
-            <mo>⋅</mo>
-            <msub>
-              <mrow data-mjx-texclass="ORD">
-                <mover accent="true">
-                  <mi>e</mi>
-                  <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
-                </mover>
-              </mrow>
-              <mi>n</mi>
-            </msub>
-          </mrow>
-        </mfrac>
-        <mo>.</mo>
-      </mtd>
-    </mtr>
-  </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.125">(7.125)</span></div>
-<p>Now sample a function <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>u</mi>
-  <mo stretchy="false">(</mo>
-  <mi>x</mi>
-  <mo stretchy="false">)</mo>
-</math></span> on <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mn>0</mn>
-  <mo>≤</mo>
-  <mi>x</mi>
-  <mo>≤</mo>
-  <mi>L</mi>
-</math></span> at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>N</mi>
-</math></span> points <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>. Eigenvectors of different eigenvalues are perpendicular, and there are enough of them to build any vector, with the amounts <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
-    <mi>x</mi>
-    <mi>j</mi>
-  </msub>
-  <mo>=</mo>
-  <mi>j</mi>
-  <mi>h</mi>
-</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>h</mi>
-  <mo>=</mo>
-  <mi>L</mi>
-  <mrow data-mjx-texclass="ORD">
-    <mo>/</mo>
-  </mrow>
-  <mo stretchy="false">(</mo>
-  <mi>N</mi>
-  <mo>+</mo>
-  <mn>1</mn>
-  <mo stretchy="false">)</mo>
-</math></span>, with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>u</mi>
-  <mo>=</mo>
-  <mn>0</mn>
-</math></span> at both ends. The list <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo stretchy="false">(</mo>
-  <msub>
-    <mi>u</mi>
-    <mn>1</mn>
-  </msub>
-  <mo>,</mo>
-  <mo>…</mo>
-  <mo>,</mo>
-  <msub>
-    <mi>u</mi>
-    <mi>N</mi>
-  </msub>
-  <mo stretchy="false">)</mo>
-</math></span> is a vector, and the second derivative becomes a matrix acting on it:</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mtable displaystyle="true">
-    <mtr>
-      <mtd>
-        <mfrac>
-          <mrow>
-            <msup>
-              <mi>d</mi>
-              <mn>2</mn>
-            </msup>
-            <mi>u</mi>
-          </mrow>
-          <mrow>
-            <mi>d</mi>
-            <msup>
-              <mi>x</mi>
-              <mn>2</mn>
-            </msup>
-          </mrow>
-        </mfrac>
-        <msub>
-          <mrow data-mjx-texclass="ORD">
-            <mo minsize="1.623em" maxsize="1.623em" stretchy="true" lspace="0em" rspace="0em">|</mo>
-          </mrow>
-          <mrow data-mjx-texclass="ORD">
-            <msub>
-              <mi>x</mi>
-              <mi>j</mi>
-            </msub>
-          </mrow>
-        </msub>
-        <mo>≈</mo>
-        <mfrac>
-          <mrow>
-            <msub>
-              <mi>u</mi>
-              <mrow data-mjx-texclass="ORD">
-                <mi>j</mi>
-                <mo>+</mo>
-                <mn>1</mn>
-              </mrow>
-            </msub>
-            <mo>−</mo>
-            <mn>2</mn>
-            <msub>
-              <mi>u</mi>
-              <mi>j</mi>
-            </msub>
-            <mo>+</mo>
-            <msub>
-              <mi>u</mi>
-              <mrow data-mjx-texclass="ORD">
-                <mi>j</mi>
-                <mo>−</mo>
-                <mn>1</mn>
-              </mrow>
-            </msub>
-          </mrow>
-          <msup>
-            <mi>h</mi>
-            <mn>2</mn>
-          </msup>
-        </mfrac>
-        <mo>=</mo>
-        <mo stretchy="false">(</mo>
-        <mi>D</mi>
-        <mstyle scriptlevel="0">
-          <mspace width="0.167em" />
-        </mstyle>
-        <mrow data-mjx-texclass="ORD">
-          <mover accent="true">
-            <mi>u</mi>
-            <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
-          </mover>
-        </mrow>
-        <msub>
-          <mo stretchy="false">)</mo>
-          <mi>j</mi>
-        </msub>
-        <mo>,</mo>
-        <mstyle scriptlevel="0">
-          <mspace width="2em" />
-        </mstyle>
-        <mi>D</mi>
-        <mo>=</mo>
-        <mfrac>
-          <mn>1</mn>
-          <msup>
-            <mi>h</mi>
-            <mn>2</mn>
-          </msup>
-        </mfrac>
-        <mrow data-mjx-texclass="INNER">
-          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
-          <mtable columnspacing="1em" rowspacing="4pt">
-            <mtr>
-              <mtd>
-                <mo form="prefix" lspace="0em" rspace="0em">−</mo>
-                <mn>2</mn>
-              </mtd>
-              <mtd>
-                <mn>1</mn>
-              </mtd>
-              <mtd />
-              <mtd />
-            </mtr>
-            <mtr>
-              <mtd>
-                <mn>1</mn>
-              </mtd>
-              <mtd>
-                <mo form="prefix" lspace="0em" rspace="0em">−</mo>
-                <mn>2</mn>
-              </mtd>
-              <mtd>
-                <mo>⋱</mo>
-              </mtd>
-              <mtd />
-            </mtr>
-            <mtr>
-              <mtd />
-              <mtd>
-                <mo>⋱</mo>
-              </mtd>
-              <mtd>
-                <mo>⋱</mo>
-              </mtd>
-              <mtd>
-                <mn>1</mn>
-              </mtd>
-            </mtr>
-            <mtr>
-              <mtd />
-              <mtd />
-              <mtd>
-                <mn>1</mn>
-              </mtd>
-              <mtd>
-                <mo form="prefix" lspace="0em" rspace="0em">−</mo>
-                <mn>2</mn>
-              </mtd>
-            </mtr>
-          </mtable>
-          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
-        </mrow>
-        <mo>.</mo>
-      </mtd>
-    </mtr>
-  </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.126">(7.126)</span></div>
-<p><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>D</mi>
-</math></span> is symmetric. Its eigenvectors are sampled sines: with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>u</mi>
-    <mi>j</mi>
-  </msub>
-  <mo>=</mo>
-  <mi>sin</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
-  <mrow>
-    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
-    <mi>j</mi>
-    <mi>θ</mi>
-    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
-  </mrow>
-</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>u</mi>
-    <mrow data-mjx-texclass="ORD">
-      <mi>j</mi>
-      <mo>+</mo>
-      <mn>1</mn>
-    </mrow>
-  </msub>
-  <mo>+</mo>
-  <msub>
-    <mi>u</mi>
-    <mrow data-mjx-texclass="ORD">
-      <mi>j</mi>
-      <mo>−</mo>
-      <mn>1</mn>
-    </mrow>
-  </msub>
-  <mo>−</mo>
-  <mn>2</mn>
-  <msub>
-    <mi>u</mi>
-    <mi>j</mi>
-  </msub>
-  <mo>=</mo>
-  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
-  <mn>4</mn>
-  <msup>
-    <mi>sin</mi>
-    <mn>2</mn>
-  </msup>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mo stretchy="false">(</mo>
-  <mi>θ</mi>
-  <mrow data-mjx-texclass="ORD">
-    <mo>/</mo>
-  </mrow>
-  <mn>2</mn>
-  <mo stretchy="false">)</mo>
-  <mstyle scriptlevel="0">
-    <mspace width="0.167em" />
-  </mstyle>
-  <msub>
-    <mi>u</mi>
-    <mi>j</mi>
-  </msub>
-</math></span>, and the end conditions require <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>θ</mi>
-  <mo>=</mo>
-  <mi>n</mi>
-  <mi>π</mi>
-  <mrow data-mjx-texclass="ORD">
-    <mo>/</mo>
-  </mrow>
-  <mo stretchy="false">(</mo>
-  <mi>N</mi>
-  <mo>+</mo>
-  <mn>1</mn>
-  <mo stretchy="false">)</mo>
-</math></span>. So</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mtable displaystyle="true">
-    <mtr>
-      <mtd>
-        <mi>D</mi>
-        <msub>
-          <mrow data-mjx-texclass="ORD">
-            <mover accent="true">
-              <mi>e</mi>
-              <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
-            </mover>
-          </mrow>
-          <mi>n</mi>
-        </msub>
-        <mo>=</mo>
-        <msub>
-          <mi>μ</mi>
-          <mi>n</mi>
-        </msub>
-        <msub>
-          <mrow data-mjx-texclass="ORD">
-            <mover accent="true">
-              <mi>e</mi>
-              <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
-            </mover>
-          </mrow>
-          <mi>n</mi>
-        </msub>
-        <mo>,</mo>
-        <mstyle scriptlevel="0">
-          <mspace width="2em" />
-        </mstyle>
-        <msub>
-          <mrow data-mjx-texclass="ORD">
-            <mover accent="true">
-              <mi>e</mi>
-              <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
-            </mover>
-          </mrow>
-          <mi>n</mi>
-        </msub>
-        <mo>=</mo>
-        <mrow data-mjx-texclass="ORD">
-          <mo minsize="1.623em" maxsize="1.623em" stretchy="true" lspace="0em" rspace="0em">(</mo>
-        </mrow>
-        <mspace width="0.167em" /><mi>sin</mi>
-        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mfrac>
-          <mrow>
-            <mi>n</mi>
-            <mi>π</mi>
-            <msub>
-              <mi>x</mi>
-              <mi>j</mi>
-            </msub>
-          </mrow>
-          <mi>L</mi>
-        </mfrac>
-        <msub>
-          <mrow data-mjx-texclass="ORD">
-            <mo minsize="1.623em" maxsize="1.623em" stretchy="true" lspace="0em" rspace="0em">)</mo>
-          </mrow>
-          <mi>j</mi>
-        </msub>
-        <mo>,</mo>
-        <mstyle scriptlevel="0">
-          <mspace width="2em" />
-        </mstyle>
-        <msub>
-          <mi>μ</mi>
-          <mi>n</mi>
-        </msub>
-        <mo>=</mo>
-        <mo form="prefix" lspace="0em" rspace="0em">−</mo>
-        <mfrac>
-          <mn>4</mn>
-          <msup>
-            <mi>h</mi>
-            <mn>2</mn>
-          </msup>
-        </mfrac>
-        <msup>
-          <mi>sin</mi>
-          <mn>2</mn>
-        </msup>
-        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mfrac>
-          <mrow>
-            <mi>n</mi>
-            <mi>π</mi>
-            <mi>h</mi>
-          </mrow>
-          <mrow>
-            <mn>2</mn>
-            <mi>L</mi>
-          </mrow>
-        </mfrac>
-        <mtext> </mtext>
-        <mover>
-          <mo data-mjx-texclass="REL" stretchy="true">→</mo>
-          <mrow>
-            <mstyle scriptlevel="0">
-              <mspace width="0.278em" />
-            </mstyle>
-            <mi>h</mi>
-            <mo accent="false" stretchy="false">→</mo>
-            <mn>0</mn>
-            <mstyle scriptlevel="0">
-              <mspace width="0.278em" />
-            </mstyle>
-            <mspace depth=".25em" />
-          </mrow>
-        </mover>
-        <mtext> </mtext>
-        <mo>−</mo>
-        <mrow data-mjx-texclass="ORD">
-          <mo minsize="1.623em" maxsize="1.623em" stretchy="true" lspace="0em" rspace="0em">(</mo>
-        </mrow>
-        <mfrac>
-          <mrow>
-            <mi>n</mi>
-            <mi>π</mi>
-          </mrow>
-          <mi>L</mi>
-        </mfrac>
-        <msup>
-          <mrow data-mjx-texclass="ORD">
-            <mo minsize="1.623em" maxsize="1.623em" stretchy="true" lspace="0em" rspace="0em">)</mo>
-          </mrow>
-          <mn>2</mn>
-        </msup>
-        <mo>.</mo>
-      </mtd>
-    </mtr>
-  </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.127">(7.127)</span></div>
-<figure id="chapter-07-fig-23" class="figure"><img src="assets/img/ch07_fig11_matrix_sines.png" class="diagram" alt="The second-difference matrix (left). Its first three eigenvectors, plotted entry by entry (N=9), lie exactly on (n x/L) (right)." loading="lazy" style="--figure-width: 90%;"><figcaption>Figure 7.23. The second-difference matrix (left). Its first three eigenvectors, plotted entry by entry (<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>N</mi>
-  <mo>=</mo>
-  <mn>9</mn>
-</math></span>), lie exactly on
-	<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>sin</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
-  <mrow>
-    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>c</mi>
     <mi>n</mi>
-    <mi>π</mi>
-    <mi>x</mi>
-    <mrow data-mjx-texclass="ORD">
-      <mo>/</mo>
-    </mrow>
-    <mi>L</mi>
-    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </msub>
+  <mo>=</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover accent="true">
+      <mi>v</mi>
+      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+    </mover>
   </mrow>
-</math></span> (right).</figcaption></figure>
-<p>As <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>N</mi>
-  <mo accent="false" stretchy="false">→</mo>
-  <mi mathvariant="normal">∞</mi>
-</math></span> the vectors become functions, the dot product <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <munder>
-    <mo data-mjx-texclass="OP" stretchy="true">∑</mo>
-    <mi>j</mi>
-  </munder>
+  <mo>⋅</mo>
   <msub>
-    <mi>u</mi>
-    <mi>j</mi>
-  </msub>
-  <msub>
-    <mi>v</mi>
-    <mi>j</mi>
-  </msub>
-  <mstyle scriptlevel="0">
-    <mspace width="0.167em" />
-  </mstyle>
-  <mi>h</mi>
-</math></span> becomes <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msubsup>
-    <mo data-mjx-texclass="OP">∫</mo>
-    <mn>0</mn>
-    <mi>L</mi>
-  </msubsup>
-  <mi>u</mi>
-  <mstyle scriptlevel="0">
-    <mspace width="0.167em" />
-  </mstyle>
-  <mi>v</mi>
-  <mstyle scriptlevel="0">
-    <mspace width="0.167em" />
-  </mstyle>
-  <mi>d</mi>
-  <mi>x</mi>
-</math></span>, and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>D</mi>
-</math></span> becomes the operator <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mfrac>
-    <msup>
-      <mi>d</mi>
-      <mn>2</mn>
-    </msup>
-    <mrow>
-      <mi>d</mi>
-      <msup>
-        <mi>x</mi>
-        <mn>2</mn>
-      </msup>
+    <mrow data-mjx-texclass="ORD">
+      <mover accent="true">
+        <mi>e</mi>
+        <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+      </mover>
     </mrow>
-  </mfrac>
-</math></span>. Write <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mi>n</mi>
+  </msub>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover accent="true">
+        <mi>e</mi>
+        <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+      </mover>
+    </mrow>
+    <mi>n</mi>
+  </msub>
+  <mo>⋅</mo>
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover accent="true">
+        <mi>e</mi>
+        <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
+      </mover>
+    </mrow>
+    <mi>n</mi>
+  </msub>
+  <mo stretchy="false">)</mo>
+</math></span>.</p>
+<p>Now take a string of length <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>L</mi>
+</math></span> fixed at both ends, and the operator <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mi data-mjx-variant="-tex-calligraphic" mathvariant="normal">ℒ</mi>
   </mrow>
@@ -14380,13 +14005,13 @@
       </msup>
     </mrow>
   </mfrac>
-</math></span> (the minus sign makes the eigenvalues positive; <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> (we write <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mi data-mjx-variant="-tex-calligraphic" mathvariant="normal">ℒ</mi>
   </mrow>
-</math></span> is the operator, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> for the operator and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>L</mi>
-</math></span> the length). The eigenvalue problem of the matrix becomes a differential equation with a condition at each end, the string fixed at both ends:</p>
+</math></span> for the length; the minus sign makes the eigenvalues positive). Its eigenvalue problem is a differential equation with a condition at each end:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -14514,8 +14139,13 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.128">(7.128)</span></div>
-<p>The operator acting on an eigenfunction gives back the same function times a number, exactly as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math><span class="eqn-number" id="mjx-eqn:7.125">(7.125)</span></div>
+<p>The operator acting on <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>u</mi>
+    <mi>n</mi>
+  </msub>
+</math></span> gives back the same function times a number, exactly as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>A</mi>
   <msub>
     <mrow data-mjx-texclass="ORD">
@@ -14540,7 +14170,7 @@
     </mrow>
     <mi>n</mi>
   </msub>
-</math></span>: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>. So <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>u</mi>
     <mi>n</mi>
@@ -14554,7 +14184,7 @@
     <mi>λ</mi>
     <mi>n</mi>
   </msub>
-</math></span> its <strong>eigenvalue</strong>.</p>
+</math></span> its <strong>eigenvalue</strong>. The two fields match term by term:</p>
 <div class="centered"><div class="table-wrap"><table><tr><td><strong>Linear algebra (Chapter 3)</strong></td><td><strong>Functions (this chapter)</strong></td></tr><tr><td>vector <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mover accent="true">
@@ -14562,14 +14192,17 @@
       <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
     </mover>
   </mrow>
-</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>N</mi>
-</math></span> components</td><td>function <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>, with components <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>v</mi>
+    <mi>j</mi>
+  </msub>
+</math></span></td><td>function <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>f</mi>
   <mo stretchy="false">(</mo>
   <mi>x</mi>
   <mo stretchy="false">)</mo>
-</math></span>, one value at each <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>, with a value at each <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>x</mi>
 </math></span></td></tr><tr><td>dot product <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
@@ -14620,7 +14253,7 @@
   </mstyle>
   <mi>d</mi>
   <mi>x</mi>
-</math></span></td></tr><tr><td>matrix <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span></td></tr><tr><td>symmetric matrix <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>A</mi>
 </math></span></td><td>operator <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
@@ -14641,75 +14274,7 @@
       </msup>
     </mrow>
   </mfrac>
-</math></span> with end conditions</td></tr><tr><td>symmetric: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow data-mjx-texclass="ORD">
-    <mover accent="true">
-      <mi>u</mi>
-      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
-    </mover>
-  </mrow>
-  <mo>⋅</mo>
-  <mo stretchy="false">(</mo>
-  <mi>A</mi>
-  <mrow data-mjx-texclass="ORD">
-    <mover accent="true">
-      <mi>v</mi>
-      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
-    </mover>
-  </mrow>
-  <mo stretchy="false">)</mo>
-  <mo>=</mo>
-  <mo stretchy="false">(</mo>
-  <mi>A</mi>
-  <mrow data-mjx-texclass="ORD">
-    <mover accent="true">
-      <mi>u</mi>
-      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
-    </mover>
-  </mrow>
-  <mo stretchy="false">)</mo>
-  <mo>⋅</mo>
-  <mrow data-mjx-texclass="ORD">
-    <mover accent="true">
-      <mi>v</mi>
-      <mo stretchy="false" style="font-size:0.5em; padding-bottom:0.13em">→</mo>
-    </mover>
-  </mrow>
-</math></span></td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo data-mjx-texclass="OP">∫</mo>
-  <mi>u</mi>
-  <mstyle scriptlevel="0">
-    <mspace width="0.167em" />
-  </mstyle>
-  <mo stretchy="false">(</mo>
-  <mrow data-mjx-texclass="ORD">
-    <mi data-mjx-variant="-tex-calligraphic" mathvariant="normal">ℒ</mi>
-  </mrow>
-  <mi>v</mi>
-  <mo stretchy="false">)</mo>
-  <mstyle scriptlevel="0">
-    <mspace width="0.167em" />
-  </mstyle>
-  <mi>d</mi>
-  <mi>x</mi>
-  <mo>=</mo>
-  <mo data-mjx-texclass="OP">∫</mo>
-  <mo stretchy="false">(</mo>
-  <mrow data-mjx-texclass="ORD">
-    <mi data-mjx-variant="-tex-calligraphic" mathvariant="normal">ℒ</mi>
-  </mrow>
-  <mi>u</mi>
-  <mo stretchy="false">)</mo>
-  <mstyle scriptlevel="0">
-    <mspace width="0.167em" />
-  </mstyle>
-  <mi>v</mi>
-  <mstyle scriptlevel="0">
-    <mspace width="0.167em" />
-  </mstyle>
-  <mi>d</mi>
-  <mi>x</mi>
-</math></span></td></tr><tr><td>eigenvector, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> with end conditions</td></tr><tr><td>eigenvector, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>A</mi>
   <msub>
     <mrow data-mjx-texclass="ORD">
@@ -14849,44 +14414,6 @@
   <mstyle scriptlevel="0">
     <mspace width="0.167em" />
   </mstyle>
-  <msup>
-    <mi>v</mi>
-    <mo data-mjx-alternate="1">″</mo>
-  </msup>
-  <mstyle scriptlevel="0">
-    <mspace width="0.167em" />
-  </mstyle>
-  <mi>d</mi>
-  <mi>x</mi>
-  <mo>=</mo>
-  <msubsup>
-    <mo data-mjx-texclass="OP">∫</mo>
-    <mn>0</mn>
-    <mi>L</mi>
-  </msubsup>
-  <msup>
-    <mi>u</mi>
-    <mo data-mjx-alternate="1">″</mo>
-  </msup>
-  <mstyle scriptlevel="0">
-    <mspace width="0.167em" />
-  </mstyle>
-  <mi>v</mi>
-  <mstyle scriptlevel="0">
-    <mspace width="0.167em" />
-  </mstyle>
-  <mi>d</mi>
-  <mi>x</mi>
-</math></span>: the operator is symmetric, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msubsup>
-    <mo data-mjx-texclass="OP">∫</mo>
-    <mn>0</mn>
-    <mi>L</mi>
-  </msubsup>
-  <mi>u</mi>
-  <mstyle scriptlevel="0">
-    <mspace width="0.167em" />
-  </mstyle>
   <mo stretchy="false">(</mo>
   <mrow data-mjx-texclass="ORD">
     <mi data-mjx-variant="-tex-calligraphic" mathvariant="normal">ℒ</mi>
@@ -14919,41 +14446,9 @@
   </mstyle>
   <mi>d</mi>
   <mi>x</mi>
-</math></span>. Apply it to two eigenfunctions, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow data-mjx-texclass="ORD">
-    <mi data-mjx-variant="-tex-calligraphic" mathvariant="normal">ℒ</mi>
-  </mrow>
-  <msub>
-    <mi>u</mi>
-    <mi>n</mi>
-  </msub>
-  <mo>=</mo>
-  <msub>
-    <mi>λ</mi>
-    <mi>n</mi>
-  </msub>
-  <msub>
-    <mi>u</mi>
-    <mi>n</mi>
-  </msub>
-</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow data-mjx-texclass="ORD">
-    <mi data-mjx-variant="-tex-calligraphic" mathvariant="normal">ℒ</mi>
-  </mrow>
-  <msub>
-    <mi>u</mi>
-    <mi>m</mi>
-  </msub>
-  <mo>=</mo>
-  <msub>
-    <mi>λ</mi>
-    <mi>m</mi>
-  </msub>
-  <msub>
-    <mi>u</mi>
-    <mi>m</mi>
-  </msub>
-</math></span>:</p>
+</math></span>: the operator is symmetric, like the matrix <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>A</mi>
+</math></span>. For two eigenfunctions this gives</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -15061,52 +14556,43 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.129">(7.129)</span></div>
-<p>hence</p>
-<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mtable displaystyle="true">
-    <mtr>
-      <mtd>
-        <mo stretchy="false">(</mo>
-        <msub>
-          <mi>λ</mi>
-          <mi>n</mi>
-        </msub>
-        <mo>−</mo>
-        <msub>
-          <mi>λ</mi>
-          <mi>m</mi>
-        </msub>
-        <mo stretchy="false">)</mo>
-        <msubsup>
-          <mo data-mjx-texclass="OP">∫</mo>
-          <mn>0</mn>
-          <mi>L</mi>
-        </msubsup>
-        <msub>
-          <mi>u</mi>
-          <mi>n</mi>
-        </msub>
-        <msub>
-          <mi>u</mi>
-          <mi>m</mi>
-        </msub>
-        <mstyle scriptlevel="0">
-          <mspace width="0.167em" />
-        </mstyle>
-        <mi>d</mi>
-        <mi>x</mi>
-        <mo>=</mo>
-        <mn>0</mn>
-        <mo>,</mo>
-      </mtd>
-    </mtr>
-  </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.130">(7.130)</span></div>
-<p>so eigenfunctions of different eigenvalues are perpendicular, exactly as for a symmetric matrix.</p></section>
-<p>There are infinitely many of them, one for each <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math><span class="eqn-number" id="mjx-eqn:7.126">(7.126)</span></div>
+<p>so <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>λ</mi>
+    <mi>n</mi>
+  </msub>
+  <mo>−</mo>
+  <msub>
+    <mi>λ</mi>
+    <mi>m</mi>
+  </msub>
+  <mo stretchy="false">)</mo>
+  <msubsup>
+    <mo data-mjx-texclass="OP">∫</mo>
+    <mn>0</mn>
+    <mi>L</mi>
+  </msubsup>
+  <msub>
+    <mi>u</mi>
+    <mi>n</mi>
+  </msub>
+  <msub>
+    <mi>u</mi>
+    <mi>m</mi>
+  </msub>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mi>d</mi>
+  <mi>x</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>: eigenfunctions of different eigenvalues are perpendicular.</p></section>
+<p>There is one eigenfunction for each <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>n</mi>
-</math></span>, and they build any reasonable <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>, infinitely many in all, and together they build any reasonable <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>f</mi>
 </math></span> on <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo stretchy="false">[</mo>
@@ -15114,7 +14600,7 @@
   <mo>,</mo>
   <mi>L</mi>
   <mo stretchy="false">]</mo>
-</math></span> with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>, with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>c</mi>
     <mi>n</mi>
@@ -15189,21 +14675,11 @@
   <mi>x</mi>
 </math></span>).</p>
 <h3 id="sec-7-sturm-liouville-problems">Sturm–Liouville problems</h3>
-<p>The argument never used the special form of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mfrac>
-    <msup>
-      <mi>d</mi>
-      <mn>2</mn>
-    </msup>
-    <mrow>
-      <mi>d</mi>
-      <msup>
-        <mi>x</mi>
-        <mn>2</mn>
-      </msup>
-    </mrow>
-  </mfrac>
-</math></span>, only its symmetry. A string whose mass per length <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<p>The argument used only one property of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mi data-mjx-variant="-tex-calligraphic" mathvariant="normal">ℒ</mi>
+  </mrow>
+</math></span>: its symmetry. Many equations of physics share it. A string whose mass per length <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>w</mi>
   <mo stretchy="false">(</mo>
   <mi>x</mi>
@@ -15344,7 +14820,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.131">(7.131)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:7.127">(7.127)</span></div>
 <p>with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>p</mi>
   <mo>&gt;</mo>
@@ -15357,59 +14833,7 @@
   <mi>u</mi>
   <mo>=</mo>
   <mn>0</mn>
-</math></span>). It is symmetric with the weight <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>w</mi>
-</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msubsup>
-    <mo data-mjx-texclass="OP">∫</mo>
-    <mi>a</mi>
-    <mi>b</mi>
-  </msubsup>
-  <mi>w</mi>
-  <mstyle scriptlevel="0">
-    <mspace width="0.167em" />
-  </mstyle>
-  <mi>u</mi>
-  <mstyle scriptlevel="0">
-    <mspace width="0.167em" />
-  </mstyle>
-  <mo stretchy="false">(</mo>
-  <mrow data-mjx-texclass="ORD">
-    <mi data-mjx-variant="-tex-calligraphic" mathvariant="normal">ℒ</mi>
-  </mrow>
-  <mi>v</mi>
-  <mo stretchy="false">)</mo>
-  <mstyle scriptlevel="0">
-    <mspace width="0.167em" />
-  </mstyle>
-  <mi>d</mi>
-  <mi>x</mi>
-  <mo>=</mo>
-  <msubsup>
-    <mo data-mjx-texclass="OP">∫</mo>
-    <mi>a</mi>
-    <mi>b</mi>
-  </msubsup>
-  <mi>w</mi>
-  <mstyle scriptlevel="0">
-    <mspace width="0.167em" />
-  </mstyle>
-  <mo stretchy="false">(</mo>
-  <mrow data-mjx-texclass="ORD">
-    <mi data-mjx-variant="-tex-calligraphic" mathvariant="normal">ℒ</mi>
-  </mrow>
-  <mi>u</mi>
-  <mo stretchy="false">)</mo>
-  <mstyle scriptlevel="0">
-    <mspace width="0.167em" />
-  </mstyle>
-  <mi>v</mi>
-  <mstyle scriptlevel="0">
-    <mspace width="0.167em" />
-  </mstyle>
-  <mi>d</mi>
-  <mi>x</mi>
-</math></span>. Then</p>
+</math></span>). Then:</p>
 <ol><li><p>the eigenvalues <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>λ</mi>
@@ -15560,28 +14984,32 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:7.132">(7.132)</span></div></li></ol>
+</math><span class="eqn-number" id="mjx-eqn:7.128">(7.128)</span></div></li></ol>
 <p>For piecewise smooth <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>f</mi>
-</math></span> the expansion converges at every point of continuity, and to the midpoint at a jump, as in the Dirichlet theorem.</p></section>
-<p>The Fourier series is the simplest case, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> the expansion converges at every point where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>f</mi>
+</math></span> is continuous, and to the midpoint at a jump, as in the Dirichlet theorem.</p></section>
+<p>The Fourier series is the simplest case: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>p</mi>
   <mo>=</mo>
   <mi>w</mi>
   <mo>=</mo>
   <mn>1</mn>
-</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>q</mi>
   <mo>=</mo>
   <mn>0</mn>
-</math></span>. The weight is the analogue of a dot product in which some components count more than others.</p>
+</math></span>. The weight <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>w</mi>
+</math></span> plays the role of a dot product in which some components count more than others.</p>
 <section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">A string heavier at one end</span></header><p>A string on <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>0</mn>
   <mo>≤</mo>
   <mi>x</mi>
   <mo>≤</mo>
   <mn>1</mn>
-</math></span>, fixed at both ends, with mass per length <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>, fixed at both ends, has mass per length <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>w</mi>
   <mo stretchy="false">(</mo>
   <mi>x</mi>
@@ -15591,7 +15019,7 @@
   <mo>+</mo>
   <mn>3</mn>
   <mi>x</mi>
-</math></span>: its modes solve <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>. Its modes solve <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mi data-mjx-variant="-tex-calligraphic" mathvariant="normal">ℒ</mi>
   </mrow>
@@ -15622,7 +15050,7 @@
     <mi>u</mi>
     <mi>n</mi>
   </msub>
-</math></span> (<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> (so <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>p</mi>
   <mo>=</mo>
   <mn>1</mn>
@@ -15630,7 +15058,7 @@
   <mi>q</mi>
   <mo>=</mo>
   <mn>0</mn>
-</math></span>). They are not sines, since they crowd towards the heavy end (Figure <a class="xref" href="../chapter-07/index.html#chapter-07-fig-24">7.24</a>), and the ordinary integral of two of them is not zero: with each mode scaled so that <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>). They are not sines: they crowd towards the heavy end (Figure <a class="xref" href="../chapter-07/index.html#chapter-07-fig-23">7.23</a>). With each mode scaled so that <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msubsup>
     <mo data-mjx-texclass="OP">∫</mo>
     <mn>0</mn>
@@ -15652,7 +15080,7 @@
   <mi>x</mi>
   <mo>=</mo>
   <mn>1</mn>
-</math></span>, numerically <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>, the ordinary integral of two of them is not zero, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msubsup>
     <mo data-mjx-texclass="OP">∫</mo>
     <mn>0</mn>
@@ -15673,7 +15101,7 @@
   <mi>x</mi>
   <mo>=</mo>
   <mn>0.081</mn>
-</math></span>. With the weight it is: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>, but the weighted one is, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msubsup>
     <mo data-mjx-texclass="OP">∫</mo>
     <mn>0</mn>
@@ -15699,7 +15127,7 @@
   <mo>=</mo>
   <mn>0</mn>
 </math></span>. The weight is not optional.</p></section>
-<figure id="chapter-07-fig-24" class="figure"><img src="assets/img/ch07_fig12_heavy_string.png" class="diagram" alt="The first three modes of a string whose mass per length grows to the right: perpendicular with the weight w, and able to build any shape." loading="lazy" style="--figure-width: 75%;"><figcaption>Figure 7.24. The first three modes of a string whose mass per length grows to the right: perpendicular with the weight <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<figure id="chapter-07-fig-23" class="figure"><img src="assets/img/ch07_fig12_heavy_string.png" class="diagram" alt="The first three modes of a string whose mass per length grows to the right: perpendicular with the weight w, and able to build any shape." loading="lazy" style="--figure-width: 75%;"><figcaption>Figure 7.23. The first three modes of a string whose mass per length grows to the right: perpendicular with the weight <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>w</mi>
 </math></span>, and able
 	to build any shape.</figcaption></figure>
@@ -15718,7 +15146,7 @@
   <mi>w</mi>
   <mo>=</mo>
   <mi>x</mi>
-</math></span>; Hermite functions for the quantum oscillator. Each comes from its own operator, and each builds any shape with the same recipe. For example <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span>; and Hermite functions for the quantum oscillator. Each comes from its own operator, and each builds any shape with the same coefficient formula; for example, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo stretchy="false">|</mo>
   <mi>x</mi>
   <mo stretchy="false">|</mo>
