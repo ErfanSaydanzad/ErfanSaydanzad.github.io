@@ -69,6 +69,7 @@
 <a class="toc-level-2" href="#sec-8-for-the-interested-reader"><span>For the Interested Reader</span></a>
 <a class="toc-level-3" href="#sec-8-the-idea-seen"><span>The idea, seen</span></a>
 <a class="toc-level-3" href="#sec-8-worked-technique-and-practice"><span>Worked technique and practice</span></a>
+<a class="toc-level-3" href="#sec-8-video-lectures"><span>Video lectures</span></a>
     </nav>
   </div>
 </aside>
@@ -79,6 +80,8 @@
       <h1>Ordinary Differential Equations</h1>
     </header>
     <h2 id="sec-8-introduction-and-general-form"><span class="sec-number">8.1</span>Introduction and General Form</h2>
+<p class="lecture-video"><a href="https://www.youtube.com/watch?v=Tml3f5Fv7dc&amp;t=0s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> <span>Lecture 22, Part 1: Why the Middle Buildings Fell (0:00)</span></a></p>
+<p class="lecture-video"><a href="https://www.youtube.com/watch?v=Tml3f5Fv7dc&amp;t=212s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> <span>Lecture 22, Part 2: What a Differential Equation Is (3:32)</span></a></p>
 <p>An <strong>ordinary differential equation (ODE)</strong> is an equation that relates a function <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>y</mi>
   <mo stretchy="false">(</mo>
@@ -346,7 +349,178 @@
     </mtr>
   </mtable>
 </math><span class="eqn-number" id="mjx-eqn:8.5">(8.5)</span></div></li></ul></section>
+<section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">Order and degree</span></header><p>The equation</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <msup>
+          <mi>x</mi>
+          <mn>2</mn>
+        </msup>
+        <msup>
+          <mrow data-mjx-texclass="INNER">
+            <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+            <mfrac>
+              <mrow>
+                <msup>
+                  <mi>d</mi>
+                  <mn>2</mn>
+                </msup>
+                <mi>y</mi>
+              </mrow>
+              <mrow>
+                <mi>d</mi>
+                <msup>
+                  <mi>x</mi>
+                  <mn>2</mn>
+                </msup>
+              </mrow>
+            </mfrac>
+            <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+          </mrow>
+          <mn>3</mn>
+        </msup>
+        <mo>+</mo>
+        <mn>3</mn>
+        <mi>x</mi>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mfrac>
+            <mrow>
+              <mi>d</mi>
+              <mi>y</mi>
+            </mrow>
+            <mrow>
+              <mi>d</mi>
+              <mi>x</mi>
+            </mrow>
+          </mfrac>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
+        <mo>+</mo>
+        <mi>y</mi>
+        <mo>=</mo>
+        <mn>0</mn>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:8.6">(8.6)</span></div>
+<p>has order 2, because its highest derivative is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>y</mi>
+    <mo data-mjx-alternate="1">″</mo>
+  </msup>
+</math></span>, and degree 3, because <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>y</mi>
+    <mo data-mjx-alternate="1">″</mo>
+  </msup>
+</math></span> appears cubed. The degree is not always defined: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>sin</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <msup>
+      <mi>y</mi>
+      <mo data-mjx-alternate="1">″</mo>
+    </msup>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+  <mo>+</mo>
+  <mi>y</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> has order 2 but no degree, because it is not a polynomial in <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>y</mi>
+    <mo data-mjx-alternate="1">″</mo>
+  </msup>
+</math></span>.</p></section>
+<p>The solution of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mi>y</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>d</mi>
+  <mi>x</mi>
+  <mo>=</mo>
+  <mn>2</mn>
+  <mi>x</mi>
+</math></span> is found by undoing the derivative: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="OP">∫</mo>
+  <mi>d</mi>
+  <mi>y</mi>
+  <mo>=</mo>
+  <mo data-mjx-texclass="OP">∫</mo>
+  <mn>2</mn>
+  <mi>x</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mi>d</mi>
+  <mi>x</mi>
+</math></span>, so <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>y</mi>
+  <mo>=</mo>
+  <mn>2</mn>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mfrac>
+    <msup>
+      <mi>x</mi>
+      <mn>2</mn>
+    </msup>
+    <mn>2</mn>
+  </mfrac>
+  <mo>+</mo>
+  <mi>C</mi>
+  <mo>=</mo>
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>+</mo>
+  <mi>C</mi>
+</math></span>. The constant <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>C</mi>
+</math></span> is not a detail. The equation fixes only the slope of the curve at every point, and every curve <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>y</mi>
+  <mo>=</mo>
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>+</mo>
+  <mi>C</mi>
+</math></span> has that slope everywhere (Figure <a class="xref" href="../chapter-08/index.html#chapter-08-fig-1">8.1</a>): one equation has a whole family of solutions. A first-order equation leaves one free constant, and one more fact, such as the value of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>y</mi>
+</math></span> at one point, picks one curve of the family.</p>
+<figure id="chapter-08-fig-1" class="figure"><img src="assets/img/ch08_fig01_slope_parabolas.png" class="diagram" alt="The equation y&amp;#x27; = 2x fixes only the slope at each point (the short grey segments: flat on the y axis, steeper further out). Every parabola y = x^2 + C follows the segments everywhere: one equation, a family of solutions." loading="lazy" style="--figure-width: 55%;"><figcaption>Figure 8.1. The equation <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>y</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+  <mo>=</mo>
+  <mn>2</mn>
+  <mi>x</mi>
+</math></span> fixes only the slope at each point (the short grey segments: flat on the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>y</mi>
+</math></span> axis, steeper
+	further out). Every parabola <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>y</mi>
+  <mo>=</mo>
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>+</mo>
+  <mi>C</mi>
+</math></span> follows the segments everywhere: one equation, a family of solutions.</figcaption></figure>
 <h2 id="sec-8-classification-of-odes"><span class="sec-number">8.2</span>Classification of ODEs</h2>
+<p class="lecture-video"><a href="https://www.youtube.com/watch?v=Tml3f5Fv7dc&amp;t=437s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> <span>Lecture 22, Part 3: Linear or Nonlinear (7:17)</span></a></p>
 <p>Ordinary differential equations (ODEs) can be classified according to several characteristics. The most fundamental distinction is between <strong>linear</strong> and <strong>nonlinear</strong> equations.</p>
 <h3 id="sec-8-linear-vs-nonlinear-odes">Linear vs. Nonlinear ODEs</h3>
 <p>An ODE is called <strong>linear</strong> if the dependent variable <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -444,7 +618,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.6">(8.6)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.7">(8.7)</span></div>
 <p>where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>a</mi>
@@ -461,6 +635,175 @@
 </math></span> are known functions of the independent variable <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>x</mi>
 </math></span>.</p>
+<section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Linear ODE, by its operator</span></header><p>Collect the left side into one operator, which takes in a function <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>y</mi>
+</math></span> and gives out a new function,</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>L</mi>
+        <mo stretchy="false">[</mo>
+        <mi>y</mi>
+        <mo stretchy="false">]</mo>
+        <mo>=</mo>
+        <msub>
+          <mi>a</mi>
+          <mi>n</mi>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <msup>
+          <mi>y</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mo stretchy="false">(</mo>
+            <mi>n</mi>
+            <mo stretchy="false">)</mo>
+          </mrow>
+        </msup>
+        <mo>+</mo>
+        <mo>⋯</mo>
+        <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+        <msub>
+          <mi>a</mi>
+          <mn>1</mn>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <msup>
+          <mi>y</mi>
+          <mo data-mjx-alternate="1">′</mo>
+        </msup>
+        <mo>+</mo>
+        <msub>
+          <mi>a</mi>
+          <mn>0</mn>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <mi>y</mi>
+        <mo>,</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:8.8">(8.8)</span></div>
+<p>so that the equation reads <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>L</mi>
+  <mo stretchy="false">[</mo>
+  <mi>y</mi>
+  <mo stretchy="false">]</mo>
+  <mo>=</mo>
+  <mi>f</mi>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+</math></span>. The equation is <strong>linear</strong> when <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>L</mi>
+</math></span> is a linear operator in the sense of Chapter 3,</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>L</mi>
+        <mo stretchy="false">[</mo>
+        <mi>a</mi>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <msub>
+          <mi>y</mi>
+          <mn>1</mn>
+        </msub>
+        <mo>+</mo>
+        <mi>b</mi>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <msub>
+          <mi>y</mi>
+          <mn>2</mn>
+        </msub>
+        <mo stretchy="false">]</mo>
+        <mo>=</mo>
+        <mi>a</mi>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <mi>L</mi>
+        <mo stretchy="false">[</mo>
+        <msub>
+          <mi>y</mi>
+          <mn>1</mn>
+        </msub>
+        <mo stretchy="false">]</mo>
+        <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+        <mi>b</mi>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <mi>L</mi>
+        <mo stretchy="false">[</mo>
+        <msub>
+          <mi>y</mi>
+          <mn>2</mn>
+        </msub>
+        <mo stretchy="false">]</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:8.9">(8.9)</span></div>
+<p>for all constants <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mo>,</mo>
+  <mi>b</mi>
+</math></span> and functions <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>y</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>,</mo>
+  <msub>
+    <mi>y</mi>
+    <mn>2</mn>
+  </msub>
+</math></span>. This <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>L</mi>
+</math></span> is linear: each derivative <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>d</mi>
+    <mi>k</mi>
+  </msup>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>d</mi>
+  <msup>
+    <mi>x</mi>
+    <mi>k</mi>
+  </msup>
+</math></span> is a linear operator (Chapter 3), and multiplying by a fixed function <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>a</mi>
+    <mi>k</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+</math></span> keeps the property. The rule “first power only, no products, no nonlinear functions of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>y</mi>
+</math></span>” below is the quick test for it.</p></section>
 <p>If any term involves products or nonlinear functions of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>y</mi>
 </math></span> or its derivatives (such as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -479,8 +822,12 @@
   </msup>
 </math></span>, or <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>sin</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mi>y</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>y</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
 </math></span>), the equation is said to be <strong>nonlinear</strong>.</p>
 <section class="callout example"><header>Example</header><div class="math-block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true" columnalign="right left" columnspacing="0em" rowspacing="0.7em 0.3em">
@@ -507,8 +854,12 @@
         <mi>y</mi>
         <mo>=</mo>
         <mi>sin</mi>
-        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mi>x</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+          <mi>x</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+        </mrow>
         <mo>,</mo>
       </mtd>
     </mtr>
@@ -538,7 +889,272 @@
       </mtd>
     </mtr>
   </mtable>
-</math></div></section>
+</math></div>
+<p>For the second, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>N</mi>
+  <mo stretchy="false">[</mo>
+  <mi>y</mi>
+  <mo stretchy="false">]</mo>
+  <mo>=</mo>
+  <msup>
+    <mi>y</mi>
+    <mo data-mjx-alternate="1">″</mo>
+  </msup>
+  <mo>+</mo>
+  <mi>y</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msup>
+    <mi>y</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+</math></span>, the product term of a combination gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi>a</mi>
+  <msub>
+    <mi>y</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>+</mo>
+  <mi>b</mi>
+  <msub>
+    <mi>y</mi>
+    <mn>2</mn>
+  </msub>
+  <mo stretchy="false">)</mo>
+  <mo stretchy="false">(</mo>
+  <mi>a</mi>
+  <msubsup>
+    <mi>y</mi>
+    <mn>1</mn>
+    <mo data-mjx-alternate="1">′</mo>
+  </msubsup>
+  <mo>+</mo>
+  <mi>b</mi>
+  <msubsup>
+    <mi>y</mi>
+    <mn>2</mn>
+    <mo data-mjx-alternate="1">′</mo>
+  </msubsup>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <msup>
+    <mi>a</mi>
+    <mn>2</mn>
+  </msup>
+  <msub>
+    <mi>y</mi>
+    <mn>1</mn>
+  </msub>
+  <msubsup>
+    <mi>y</mi>
+    <mn>1</mn>
+    <mo data-mjx-alternate="1">′</mo>
+  </msubsup>
+  <mo>+</mo>
+  <mi>a</mi>
+  <mi>b</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>y</mi>
+    <mn>1</mn>
+  </msub>
+  <msubsup>
+    <mi>y</mi>
+    <mn>2</mn>
+    <mo data-mjx-alternate="1">′</mo>
+  </msubsup>
+  <mo>+</mo>
+  <msub>
+    <mi>y</mi>
+    <mn>2</mn>
+  </msub>
+  <msubsup>
+    <mi>y</mi>
+    <mn>1</mn>
+    <mo data-mjx-alternate="1">′</mo>
+  </msubsup>
+  <mo stretchy="false">)</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+  <msup>
+    <mi>b</mi>
+    <mn>2</mn>
+  </msup>
+  <msub>
+    <mi>y</mi>
+    <mn>2</mn>
+  </msub>
+  <msubsup>
+    <mi>y</mi>
+    <mn>2</mn>
+    <mo data-mjx-alternate="1">′</mo>
+  </msubsup>
+</math></span>, not <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msub>
+    <mi>y</mi>
+    <mn>1</mn>
+  </msub>
+  <msubsup>
+    <mi>y</mi>
+    <mn>1</mn>
+    <mo data-mjx-alternate="1">′</mo>
+  </msubsup>
+  <mo>+</mo>
+  <mi>b</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msub>
+    <mi>y</mi>
+    <mn>2</mn>
+  </msub>
+  <msubsup>
+    <mi>y</mi>
+    <mn>2</mn>
+    <mo data-mjx-alternate="1">′</mo>
+  </msubsup>
+</math></span>: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>N</mi>
+</math></span> is not a linear operator. Concretely, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>y</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>=</mo>
+  <mn>2</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>x</mi>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>y</mi>
+    <mn>2</mn>
+  </msub>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span> both solve <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>y</mi>
+    <mo data-mjx-alternate="1">″</mo>
+  </msup>
+  <mo>+</mo>
+  <mi>y</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msup>
+    <mi>y</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>, but their sum leaves <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>N</mi>
+  <mo stretchy="false">[</mo>
+  <mn>2</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>x</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo stretchy="false">]</mo>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>2</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>≠</mo>
+  <mn>0</mn>
+</math></span>. For the first, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>cos</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>sin</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+</math></span> solve <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>y</mi>
+    <mo data-mjx-alternate="1">″</mo>
+  </msup>
+  <mo>+</mo>
+  <mi>y</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>, and so does their sum.</p></section>
+<section class="callout remark"><header><span class="callout-kind">Remark</span><span class="callout-title">A common mistake</span></header><p>Only <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>y</mi>
+</math></span> and its derivatives decide whether an equation is linear. Functions of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> may multiply them freely: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <msup>
+    <mi>y</mi>
+    <mo data-mjx-alternate="1">″</mo>
+  </msup>
+  <mo>+</mo>
+  <mi>sin</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mi>y</mi>
+  <mo>=</mo>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>x</mi>
+    </mrow>
+  </msup>
+</math></span> is linear, while <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>y</mi>
+    <mo data-mjx-alternate="1">″</mo>
+  </msup>
+  <mo>+</mo>
+  <mi>y</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msup>
+    <mi>y</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> is not.</p></section>
 <section class="callout remark"><header>Remark</header><p>Linear ODEs are generally easier to solve because they obey the <strong>principle of superposition</strong>, if <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>y</mi>
@@ -549,7 +1165,14 @@
     <mi>y</mi>
     <mn>2</mn>
   </msub>
-</math></span> are solutions, then any linear combination <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> are solutions of a <em>homogeneous</em> linear equation <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>L</mi>
+  <mo stretchy="false">[</mo>
+  <mi>y</mi>
+  <mo stretchy="false">]</mo>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>, then any linear combination <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>C</mi>
     <mn>1</mn>
@@ -567,7 +1190,78 @@
     <mi>y</mi>
     <mn>2</mn>
   </msub>
-</math></span> is also a solution. Nonlinear ODEs, on the other hand, can exhibit far richer behavior, such as limited analytic solvability, sensitivity to initial conditions, or even chaotic motion. However, certain first-order nonlinear equations, such as <strong>separable</strong> or <strong>Bernoulli</strong> equations, can still be solved analytically.</p></section>
+</math></span> is also a solution, since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>L</mi>
+  <mo stretchy="false">[</mo>
+  <msub>
+    <mi>C</mi>
+    <mn>1</mn>
+  </msub>
+  <msub>
+    <mi>y</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>+</mo>
+  <msub>
+    <mi>C</mi>
+    <mn>2</mn>
+  </msub>
+  <msub>
+    <mi>y</mi>
+    <mn>2</mn>
+  </msub>
+  <mo stretchy="false">]</mo>
+  <mo>=</mo>
+  <msub>
+    <mi>C</mi>
+    <mn>1</mn>
+  </msub>
+  <mi>L</mi>
+  <mo stretchy="false">[</mo>
+  <msub>
+    <mi>y</mi>
+    <mn>1</mn>
+  </msub>
+  <mo stretchy="false">]</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+  <msub>
+    <mi>C</mi>
+    <mn>2</mn>
+  </msub>
+  <mi>L</mi>
+  <mo stretchy="false">[</mo>
+  <msub>
+    <mi>y</mi>
+    <mn>2</mn>
+  </msub>
+  <mo stretchy="false">]</mo>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>. (For <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>L</mi>
+  <mo stretchy="false">[</mo>
+  <mi>y</mi>
+  <mo stretchy="false">]</mo>
+  <mo>=</mo>
+  <mi>f</mi>
+  <mo>≠</mo>
+  <mn>0</mn>
+</math></span> the sum of two solutions gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mi>f</mi>
+</math></span>; there the rule is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>y</mi>
+  <mo>=</mo>
+  <msub>
+    <mi>y</mi>
+    <mi>h</mi>
+  </msub>
+  <mo>+</mo>
+  <msub>
+    <mi>y</mi>
+    <mi>p</mi>
+  </msub>
+</math></span> below.) Nonlinear ODEs, on the other hand, can exhibit far richer behavior, such as limited analytic solvability, sensitivity to initial conditions, or even chaotic motion. However, certain first-order nonlinear equations, such as <strong>separable</strong> or <strong>Bernoulli</strong> equations, can still be solved analytically.</p></section>
 <h3 id="sec-8-classification-of-linear-odes">Classification of Linear ODEs</h3>
 <p>Once an equation is identified as linear, we can further classify it based on its right-hand side and coefficients.</p>
 <ul><li><p><strong>Homogeneous Linear ODE:</strong> The right-hand side equals zero,</p>
@@ -637,7 +1331,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.7">(8.7)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.10">(8.10)</span></div>
 <p>In this case, every term involves <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>y</mi>
 </math></span> or its derivatives, and the trivial solution <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -722,7 +1416,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.8">(8.8)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.11">(8.11)</span></div>
 <p>The general solution is the sum of two parts:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -760,7 +1454,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.9">(8.9)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.12">(8.12)</span></div>
 <p>where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>y</mi>
@@ -771,7 +1465,52 @@
     <mi>y</mi>
     <mi>p</mi>
   </msub>
-</math></span> is a particular solution to the full nonhomogeneous equation.</p></li><li><p><strong>Linear ODEs with Constant Coefficients:</strong> When the coefficients <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math></span> is a particular solution to the full nonhomogeneous equation. The reason is linearity: write the left side of the equation as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>L</mi>
+  <mo stretchy="false">[</mo>
+  <mi>y</mi>
+  <mo stretchy="false">]</mo>
+</math></span>; then <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>L</mi>
+  <mo stretchy="false">[</mo>
+  <msub>
+    <mi>y</mi>
+    <mi>h</mi>
+  </msub>
+  <mo>+</mo>
+  <msub>
+    <mi>y</mi>
+    <mi>p</mi>
+  </msub>
+  <mo stretchy="false">]</mo>
+  <mo>=</mo>
+  <mi>L</mi>
+  <mo stretchy="false">[</mo>
+  <msub>
+    <mi>y</mi>
+    <mi>h</mi>
+  </msub>
+  <mo stretchy="false">]</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+  <mi>L</mi>
+  <mo stretchy="false">[</mo>
+  <msub>
+    <mi>y</mi>
+    <mi>p</mi>
+  </msub>
+  <mo stretchy="false">]</mo>
+  <mo>=</mo>
+  <mn>0</mn>
+  <mo>+</mo>
+  <mi>f</mi>
+  <mo>=</mo>
+  <mi>f</mi>
+</math></span>. Conversely, any two solutions of the full equation differ by a solution of the homogeneous one, so <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>y</mi>
+    <mi>h</mi>
+  </msub>
+</math></span>, with all its free constants, catches every solution.</p></li><li><p><strong>Linear ODEs with Constant Coefficients:</strong> When the coefficients <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>a</mi>
     <mi>i</mi>
@@ -852,7 +1591,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.10">(8.10)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.13">(8.13)</span></div>
 <p>the equation becomes especially important in physics and engineering. Such forms describe systems like simple harmonic oscillators, RC and RL circuits, and exponential decay processes.</p></li></ul>
 <h2 id="sec-8-first-order-odes"><span class="sec-number">8.3</span>First-Order ODEs</h2>
 <p>A <strong>first-order ODE</strong> involves only the first derivative of the unknown function:</p>
@@ -881,7 +1620,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.11">(8.11)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.14">(8.14)</span></div>
 <p>This general form can represent both linear and nonlinear cases, depending on how <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>f</mi>
   <mo stretchy="false">(</mo>
@@ -893,6 +1632,7 @@
   <mi>y</mi>
 </math></span>. Such equations appear widely in physics—for example, in modeling exponential decay, population growth, or motion with velocity-dependent forces.</p>
 <h3 id="sec-8-separable-equations"><span class="sec-number">8.3.1</span>Separable Equations</h3>
+<p class="lecture-video"><a href="https://www.youtube.com/watch?v=Tml3f5Fv7dc&amp;t=807s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> <span>Lecture 22, Part 4: Separable Equations (13:27)</span></a></p>
 <p>A first-order ODE is called <strong>separable</strong> if it can be expressed as</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -924,7 +1664,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.12">(8.12)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.15">(8.15)</span></div>
 <p>where the function on the right-hand side is the product of a function of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>x</mi>
 </math></span> and a function of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -961,7 +1701,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.13">(8.13)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.16">(8.16)</span></div>
 <p>and integrating both sides yields</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -995,7 +1735,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.14">(8.14)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.17">(8.17)</span></div>
 <section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">Solve the differential equation</span></header><div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -1020,7 +1760,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.15">(8.15)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.18">(8.18)</span></div>
 <p class="solution-head">Solution.</p>
 <p><strong>Step 1. Recognize the type of equation.</strong> This is a <strong>first-order separable</strong> (and also linear) differential equation.</p>
 <p><strong>Step 2. Separate the variables.</strong></p>
@@ -1046,7 +1786,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.16">(8.16)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.19">(8.19)</span></div>
 <p><strong>Step 3. Integrate both sides.</strong></p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -1098,7 +1838,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.17">(8.17)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.20">(8.20)</span></div>
 <p><strong>Step 4. Simplify the result.</strong> Exponentiate both sides:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -1134,7 +1874,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.18">(8.18)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.21">(8.21)</span></div>
 <p>Let <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>C</mi>
@@ -1188,7 +1928,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.19">(8.19)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.22">(8.22)</span></div>
 <p><strong>Step 5. Verification.</strong> Differentiate <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>y</mi>
   <mo>=</mo>
@@ -1263,9 +2003,9 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.20">(8.20)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.23">(8.23)</span></div>
 <p>confirming that the solution satisfies the ODE.</p></section>
-<section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">Solve the differential equation</span></header><div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<section class="callout example" id="example-fig-ch08-family-of-lines"><header><span class="callout-kind">Example</span><span class="callout-title">Solve the differential equation</span></header><div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -1290,7 +2030,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.21">(8.21)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.24">(8.24)</span></div>
 <p class="solution-head">Solution.</p>
 <p><strong>Step 1. Separate the variables.</strong> Divide both sides by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>x</mi>
@@ -1357,7 +2097,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.22">(8.22)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.25">(8.25)</span></div>
 <p><strong>Step 2. Integrate both sides.</strong></p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -1410,13 +2150,17 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.23">(8.23)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.26">(8.26)</span></div>
 <p><strong>Step 3. Simplify the constant.</strong> Let <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>C</mi>
   <mo>=</mo>
   <mi>ln</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mi>a</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>a</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
 </math></span> (for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>a</mi>
   <mo>&gt;</mo>
@@ -1444,7 +2188,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.24">(8.24)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.27">(8.27)</span></div>
 <p><strong>Step 4. Remove the logarithms.</strong></p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -1464,7 +2208,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.25">(8.25)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.28">(8.28)</span></div>
 <p>Because <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>a</mi>
 </math></span> can absorb the sign, we write simply</p>
@@ -1502,7 +2246,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.26">(8.26)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.29">(8.29)</span></div>
 <p><strong>Step 5. Interpretation.</strong> The general solution</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -1517,7 +2261,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.27">(8.27)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.30">(8.30)</span></div>
 <p>represents a <strong>family of straight lines</strong> in the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo stretchy="false">(</mo>
   <mi>x</mi>
@@ -1528,8 +2272,267 @@
   <mi>a</mi>
 </math></span>. Selecting a particular value of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>a</mi>
-</math></span> determines a single specific curve from this family.</p></section>
-<section class="callout example" id="example-fig-ch08-slope-field"><header><span class="callout-kind">Example</span><span class="callout-title">Solve the differential equation</span></header><div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+</math></span> determines a single specific curve from this family. Every line of the family passes through the point <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mn>0</mn>
+  <mo>,</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>, because <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>y</mi>
+  <mo>=</mo>
+  <mi>a</mi>
+  <mo>⋅</mo>
+  <mn>0</mn>
+  <mo>−</mo>
+  <mn>1</mn>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>1</mn>
+</math></span> whatever <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+</math></span> is. They may all cross there because at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> the equation reads <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+  <mo>=</mo>
+  <mi>y</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+</math></span>: it allows only that point and sets no slope. Everywhere else exactly one line passes through each point.</p>
+<p><strong>A solution lost in Step 1.</strong> Dividing by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>y</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+</math></span> assumed <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>y</mi>
+  <mo>≠</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>1</mn>
+</math></span>, and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">±</mo>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>C</mi>
+    </mrow>
+  </msup>
+</math></span> is never zero. The flat line <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>y</mi>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>1</mn>
+</math></span> (<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>) also solves the equation, since both sides are zero: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>⋅</mo>
+  <mn>0</mn>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>. So <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+</math></span> may be any constant, zero included. Whenever we divide by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>h</mi>
+  <mo stretchy="false">(</mo>
+  <mi>y</mi>
+  <mo stretchy="false">)</mo>
+</math></span> to separate, the constant solutions with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>h</mi>
+  <mo stretchy="false">(</mo>
+  <mi>y</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> must be checked separately.</p>
+<p><strong>Step 6. A condition picks one line.</strong> Suppose, in addition, that <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>y</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span> at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>. Then</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mn>1</mn>
+        <mo>=</mo>
+        <mi>a</mi>
+        <mo>⋅</mo>
+        <mn>1</mn>
+        <mo>−</mo>
+        <mn>1</mn>
+        <mstyle scriptlevel="0">
+          <mspace width="1em" />
+        </mstyle>
+        <mo stretchy="false">⟹</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="1em" />
+        </mstyle>
+        <mi>a</mi>
+        <mo>=</mo>
+        <mn>2</mn>
+        <mstyle scriptlevel="0">
+          <mspace width="1em" />
+        </mstyle>
+        <mo stretchy="false">⟹</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="1em" />
+        </mstyle>
+        <mrow class="mml-boxed">
+          <mrow data-mjx-texclass="ORD">
+            <mstyle displaystyle="true" scriptlevel="0">
+              <mrow data-mjx-texclass="ORD">
+                <mstyle scriptlevel="0">
+                  <mspace width="0.167em" />
+                </mstyle>
+                <mi>y</mi>
+                <mo>=</mo>
+                <mn>2</mn>
+                <mi>x</mi>
+                <mo>−</mo>
+                <mn>1</mn>
+                <mstyle scriptlevel="0">
+                  <mspace width="0.167em" />
+                </mstyle>
+              </mrow>
+            </mstyle>
+          </mrow>
+        </mrow>
+        <mo>,</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:8.31">(8.31)</span></div>
+<p>the unique solution through <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>. Check: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msup>
+    <mi>y</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+  <mo>=</mo>
+  <mn>2</mn>
+  <mi>x</mi>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>y</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo>=</mo>
+  <mn>2</mn>
+  <mi>x</mi>
+</math></span>.</p>
+<div class="centered"><figure id="chapter-08-fig-2" class="figure"><img src="assets/img/ch08_fig02_family_of_lines.png" class="diagram" alt="The solutions y = ax - 1 of x\,y&amp;#x27; = y + 1 (grey) all pass through (0,-1). The condition y(1) = 1 picks the one line through (1,1): y = 2x - 1." loading="lazy" style="--figure-width: 50%;"><figcaption>Figure 8.2. The solutions <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>y</mi>
+  <mo>=</mo>
+  <mi>a</mi>
+  <mi>x</mi>
+  <mo>−</mo>
+  <mn>1</mn>
+</math></span> of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msup>
+    <mi>y</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+  <mo>=</mo>
+  <mi>y</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+</math></span> (grey) all pass through <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mn>0</mn>
+  <mo>,</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>. The condition <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>y</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>
+		picks the one line through <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>y</mi>
+  <mo>=</mo>
+  <mn>2</mn>
+  <mi>x</mi>
+  <mo>−</mo>
+  <mn>1</mn>
+</math></span>.</figcaption></figure></div>
+<p><strong>A common mistake.</strong> From <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ln</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mo stretchy="false">|</mo>
+  <mi>y</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo stretchy="false">|</mo>
+  <mo>=</mo>
+  <mi>ln</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
+  <mo stretchy="false">|</mo>
+  <mi>x</mi>
+  <mo stretchy="false">|</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+  <mi>C</mi>
+</math></span> it does not follow that <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>y</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo>=</mo>
+  <mi>x</mi>
+  <mo>+</mo>
+  <mi>C</mi>
+</math></span>. Exponentiating both whole sides gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">|</mo>
+  <mi>y</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo stretchy="false">|</mo>
+  <mo>=</mo>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>C</mi>
+    </mrow>
+  </msup>
+  <mo stretchy="false">|</mo>
+  <mi>x</mi>
+  <mo stretchy="false">|</mo>
+</math></span>: the constant multiplies <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span>.</p></section>
+<section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">Solve the differential equation</span></header><div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
@@ -1562,7 +2565,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.28">(8.28)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.32">(8.32)</span></div>
 <p>Find the particular solutions satisfying <strong>(a)</strong> <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>x</mi>
   <mo>=</mo>
@@ -1613,7 +2616,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.29">(8.29)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.33">(8.33)</span></div>
 <p>Integrating both sides gives</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -1634,7 +2637,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.30">(8.30)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.34">(8.34)</span></div>
 <p>so the general solution (valid where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo stretchy="false">|</mo>
   <mi>y</mi>
@@ -1672,7 +2675,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.31">(8.31)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.35">(8.35)</span></div>
 <p><strong>Step 2. Monotonicity and physical interpretation.</strong> Since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>y</mi>
@@ -1708,9 +2711,9 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.32">(8.32)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.36">(8.36)</span></div>
 <p>The figure below shows the slope field and the increasing sine segments that satisfy this condition.</p>
-<div class="centered"><figure id="chapter-08-fig-1" class="figure"><img src="assets/img/Fig8_1.jpeg" alt="The slope field with the increasing segments of the sine curve, which are the parts that satisfy (x+) 0." loading="lazy" style="--figure-width: 80%;"><figcaption>Figure 8.1. The slope field with the increasing segments of the sine curve, which are the parts that satisfy <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="centered"><figure id="chapter-08-fig-3" class="figure"><img src="assets/img/Fig8_1.jpeg" alt="The slope field with the increasing segments of the sine curve, which are the parts that satisfy (x+) 0." loading="lazy" style="--figure-width: 80%;"><figcaption>Figure 8.3. The slope field with the increasing segments of the sine curve, which are the parts that satisfy <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>cos</mi>
   <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
   <mrow>
@@ -1757,7 +2760,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.33">(8.33)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.37">(8.37)</span></div>
 <p>are valid constant solutions since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>y</mi>
@@ -1830,8 +2833,12 @@
                 <mo stretchy="false">)</mo>
                 <mo>=</mo>
                 <mi>sin</mi>
-                <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                <mi>x</mi>
+                <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+                <mrow>
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+                  <mi>x</mi>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+                </mrow>
                 <mo>,</mo>
                 <mstyle scriptlevel="0">
                   <mspace width="2em" />
@@ -1856,7 +2863,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.34">(8.34)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.38">(8.38)</span></div>
 <p>To extend this continuously for all <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>x</mi>
 </math></span>, attach the constant segments <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -1899,8 +2906,12 @@
             <mtr>
               <mtd style="text-align: left">
                 <mi>sin</mi>
-                <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                <mi>x</mi>
+                <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+                <mrow>
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+                  <mi>x</mi>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+                </mrow>
                 <mo>,</mo>
               </mtd>
               <mtd style="text-align: left">
@@ -1946,7 +2957,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.35">(8.35)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.39">(8.39)</span></div>
 <p>This gives a single continuous nondecreasing solution over the entire real line.</p>
 <p><span class="underline">(b) <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>y</mi>
@@ -2027,8 +3038,12 @@
                 </mrow>
                 <mo>=</mo>
                 <mi>cos</mi>
-                <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                <mi>x</mi>
+                <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+                <mrow>
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+                  <mi>x</mi>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+                </mrow>
                 <mo>,</mo>
                 <mstyle scriptlevel="0">
                   <mspace width="2em" />
@@ -2046,7 +3061,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.36">(8.36)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.40">(8.40)</span></div>
 <p>To extend for all <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>x</mi>
 </math></span>:</p>
@@ -2079,8 +3094,12 @@
             <mtr>
               <mtd style="text-align: left">
                 <mi>cos</mi>
-                <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                <mi>x</mi>
+                <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+                <mrow>
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+                  <mi>x</mi>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+                </mrow>
                 <mo>,</mo>
               </mtd>
               <mtd style="text-align: left">
@@ -2110,7 +3129,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.37">(8.37)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.41">(8.41)</span></div>
 <p>There exist infinitely many such piecewise continuous solutions, obtained by shifting these arcs horizontally.</p>
 <p><strong>Step 5. Interpretation and summary.</strong></p>
 <ul><li><p>The general solution <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -2198,7 +3217,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.38">(8.38)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.42">(8.42)</span></div>
 <h3 id="sec-8-integrating-factor-method">Integrating Factor Method:</h3>
 <ol><li><p>Compute the integrating factor:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
@@ -2229,7 +3248,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.39">(8.39)</span></div></li><li><p>Multiply through by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math><span class="eqn-number" id="mjx-eqn:8.43">(8.43)</span></div></li><li><p>Multiply through by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>μ</mi>
   <mo stretchy="false">(</mo>
   <mi>x</mi>
@@ -2271,7 +3290,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.40">(8.40)</span></div></li><li><p>Integrate:</p>
+</math><span class="eqn-number" id="mjx-eqn:8.44">(8.44)</span></div></li><li><p>Integrate:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -2300,7 +3319,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.41">(8.41)</span></div></li><li><p>Solve for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math><span class="eqn-number" id="mjx-eqn:8.45">(8.45)</span></div></li><li><p>Solve for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>y</mi>
   <mo stretchy="false">(</mo>
   <mi>x</mi>
@@ -2350,7 +3369,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.42">(8.42)</span></div></li></ol>
+</math><span class="eqn-number" id="mjx-eqn:8.46">(8.46)</span></div></li></ol>
 <section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">Solve the first-order linear ODE</span></header><div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -2374,7 +3393,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.43">(8.43)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.47">(8.47)</span></div>
 <p class="solution-head">Solution.</p>
 <p><strong>Step 1. Identify <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>P</mi>
@@ -2410,7 +3429,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.44">(8.44)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.48">(8.48)</span></div>
 <p>where</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -2442,7 +3461,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.45">(8.45)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.49">(8.49)</span></div>
 <p><strong>Step 2. Compute the integrating factor.</strong> The integrating factor is</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -2493,7 +3512,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.46">(8.46)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.50">(8.50)</span></div>
 <p><strong>Step 3. Apply the general solution formula.</strong></p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -2539,7 +3558,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.47">(8.47)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.51">(8.51)</span></div>
 <p>Substitute <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>μ</mi>
   <mo stretchy="false">(</mo>
@@ -2626,7 +3645,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.48">(8.48)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.52">(8.52)</span></div>
 <p><strong>Step 4. Evaluate the integral.</strong></p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -2674,7 +3693,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.49">(8.49)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.53">(8.53)</span></div>
 <p><strong>Final Answer:</strong></p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -2711,7 +3730,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.50">(8.50)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.54">(8.54)</span></div>
 <p><strong>Verification.</strong> Substitute <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>y</mi>
   <mo>=</mo>
@@ -2831,7 +3850,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.51">(8.51)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.55">(8.55)</span></div>
 <p>which satisfies the ODE.</p></section>
 <p>Separable equations and linear equations are the two types of first-order equations most commonly encountered in basic applications. However, there exist several other important forms of first-order equations that can be transformed into solvable types. In this section, we briefly introduce two such forms: the <strong>Bernoulli equation</strong> and <strong>exact equations</strong>. More details and applications are found in advanced differential equations texts.</p>
 <h3 id="sec-8-the-bernoulli-equation"><span class="sec-number">8.3.4</span>The Bernoulli Equation</h3>
@@ -2863,7 +3882,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.52">(8.52)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.56">(8.56)</span></div>
 <p>where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>P</mi>
   <mo stretchy="false">(</mo>
@@ -2929,7 +3948,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.53">(8.53)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.57">(8.57)</span></div>
 <p><strong>Step 2. Simplify using the substitution <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>z</mi>
   <mo>=</mo>
@@ -2977,7 +3996,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.54">(8.54)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.58">(8.58)</span></div>
 <p>Hence, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>y</mi>
@@ -3042,7 +4061,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.55">(8.55)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.59">(8.59)</span></div>
 <p><strong>Step 3. Multiply through by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo stretchy="false">(</mo>
   <mn>1</mn>
@@ -3083,7 +4102,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.56">(8.56)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.60">(8.60)</span></div>
 <p>This is now a <strong>first-order linear ODE</strong> in <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>z</mi>
   <mo stretchy="false">(</mo>
@@ -3120,7 +4139,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.57">(8.57)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.61">(8.61)</span></div>
 <section class="callout remark"><header>Remark</header><p>The Bernoulli equation provides an important link between nonlinear and linear first-order ODEs. By multiplying through by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>y</mi>
@@ -3170,7 +4189,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.58">(8.58)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.62">(8.62)</span></div>
 <p class="solution-head">Solution.</p>
 <p><strong>Step 1. Multiply by </strong> <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
@@ -3226,7 +4245,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.59">(8.59)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.63">(8.63)</span></div>
 <p><strong>Step 2. Let </strong> <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>z</mi>
   <mo>=</mo>
@@ -3343,7 +4362,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.60">(8.60)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.64">(8.64)</span></div>
 <p><strong>Step 3. Solve the linear equation using the integrating-factor <em>formula</em>.</strong> For</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -3399,7 +4418,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.61">(8.61)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.65">(8.65)</span></div>
 <p>the integrating factor is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>μ</mi>
   <mo stretchy="false">(</mo>
@@ -3486,7 +4505,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.62">(8.62)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.66">(8.66)</span></div>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -3590,7 +4609,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.63">(8.63)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.67">(8.67)</span></div>
 <p><strong>Step 4. Back–substitute to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>y</mi>
 </math></span>.</strong> Since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -3661,7 +4680,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.64">(8.64)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.68">(8.68)</span></div>
 <p><strong>Step 5. Singular solution.</strong> Because <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>y</mi>
@@ -3705,7 +4724,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.65">(8.65)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.69">(8.69)</span></div>
 <p>also satisfies the original ODE. Thus the complete set consists of the one-parameter family above together with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>y</mi>
   <mo>≡</mo>
@@ -3746,7 +4765,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.66">(8.66)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.70">(8.70)</span></div>
 <p>where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>M</mi>
 </math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -3789,7 +4808,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.67">(8.67)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.71">(8.71)</span></div>
 <p>is called <strong>exact</strong> if there exists a scalar function <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>U</mi>
   <mo stretchy="false">(</mo>
@@ -3870,7 +4889,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.68">(8.68)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.72">(8.72)</span></div>
 <p>In this case, the general solution can be written implicitly as</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -3888,7 +4907,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.69">(8.69)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.73">(8.73)</span></div>
 <p>A necessary and sufficient condition for exactness (assuming continuous partial derivatives) is</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -3927,7 +4946,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.70">(8.70)</span></div></section>
+</math><span class="eqn-number" id="mjx-eqn:8.74">(8.74)</span></div></section>
 <section class="callout remark"><header>Remark</header><p>The condition above ensures that the mixed second derivatives of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>U</mi>
   <mo stretchy="false">(</mo>
@@ -3975,7 +4994,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.71">(8.71)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.75">(8.75)</span></div>
 <p>This is guaranteed by Clairaut’s theorem when <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>M</mi>
 </math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -4052,7 +5071,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.72">(8.72)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.76">(8.76)</span></div>
 <p>where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>F</mi>
   <mo stretchy="false">(</mo>
@@ -4107,7 +5126,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.73">(8.73)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.77">(8.77)</span></div>
 <p>we differentiate the above expression for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>U</mi>
   <mo stretchy="false">(</mo>
@@ -4171,7 +5190,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.74">(8.74)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.78">(8.78)</span></div>
 <p>Now substitute the known expression for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>N</mi>
   <mo stretchy="false">(</mo>
@@ -4229,7 +5248,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.75">(8.75)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.79">(8.79)</span></div>
 <p>From this, we can solve for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>F</mi>
@@ -4288,7 +5307,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.76">(8.76)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.80">(8.80)</span></div>
 <p>Integrate with respect to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>y</mi>
 </math></span> to find <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -4333,7 +5352,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.77">(8.77)</span></div></li><li><p>Integrate <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math><span class="eqn-number" id="mjx-eqn:8.81">(8.81)</span></div></li><li><p>Integrate <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>F</mi>
     <mo data-mjx-alternate="1">′</mo>
@@ -4400,7 +5419,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.78">(8.78)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.82">(8.82)</span></div>
 <p class="solution-head">Solution.</p>
 <p><strong>Step 1.</strong> Identify</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
@@ -4448,7 +5467,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.79">(8.79)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.83">(8.83)</span></div>
 <p><strong>Step 2.</strong> Check the exactness condition:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -4500,7 +5519,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.80">(8.80)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.84">(8.84)</span></div>
 <p>They are equal, so the equation is <em>exact</em>.</p>
 <p><strong>Step 3.</strong> Integrate <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>M</mi>
@@ -4560,7 +5579,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.81">(8.81)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.85">(8.85)</span></div>
 <p><strong>Step 4.</strong> Differentiate with respect to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>y</mi>
 </math></span>:</p>
@@ -4602,7 +5621,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.82">(8.82)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.86">(8.86)</span></div>
 <p>Compare with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>N</mi>
   <mo stretchy="false">(</mo>
@@ -4667,7 +5686,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.83">(8.83)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.87">(8.87)</span></div>
 <p><strong>Step 6.</strong> The general solution is</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -4698,7 +5717,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.84">(8.84)</span></div></section>
+</math><span class="eqn-number" id="mjx-eqn:8.88">(8.88)</span></div></section>
 <h3 id="sec-8-integrating-factors"><span class="sec-number">8.3.6</span>Integrating Factors</h3>
 <p>If the equation <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>M</mi>
@@ -4784,7 +5803,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.85">(8.85)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.89">(8.89)</span></div>
 <p>The new equation is exact if</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -4821,7 +5840,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.86">(8.86)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.90">(8.90)</span></div>
 <p>Unfortunately, there is no universal method for finding <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>μ</mi>
   <mo stretchy="false">(</mo>
@@ -4890,7 +5909,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.87">(8.87)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.91">(8.91)</span></div>
 <p>Hence,</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -4950,7 +5969,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.88">(8.88)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.92">(8.92)</span></div>
 <p><strong>Case 2: Integrating factor depends on <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>y</mi>
 </math></span> only.</strong></p>
@@ -5011,7 +6030,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.89">(8.89)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.93">(8.93)</span></div>
 <p>Hence,</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -5071,7 +6090,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.90">(8.90)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.94">(8.94)</span></div>
 <section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">Integrating factor <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>μ</mi>
   <mo>=</mo>
@@ -5118,7 +6137,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.91">(8.91)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.95">(8.95)</span></div>
 <p class="solution-head">Solution.</p>
 <p><strong>Step 1. Identify <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>M</mi>
@@ -5163,7 +6182,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.92">(8.92)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.96">(8.96)</span></div>
 <p>Compute</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -5190,7 +6209,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.93">(8.93)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.97">(8.97)</span></div>
 <p>Since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>M</mi>
@@ -5266,18 +6285,22 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.94">(8.94)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.98">(8.98)</span></div>
 <p>Hence</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
         <mi>ln</mi>
-        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mi>μ</mi>
-        <mo stretchy="false">(</mo>
-        <mi>x</mi>
-        <mo stretchy="false">)</mo>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+          <mi>μ</mi>
+          <mo stretchy="false">(</mo>
+          <mi>x</mi>
+          <mo stretchy="false">)</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+        </mrow>
         <mo>=</mo>
         <mo data-mjx-texclass="OP">∫</mo>
         <mn>1</mn>
@@ -5318,7 +6341,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.95">(8.95)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.99">(8.99)</span></div>
 <p><strong>Step 3. Multiply the equation by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>μ</mi>
   <mo stretchy="false">(</mo>
@@ -5376,7 +6399,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.96">(8.96)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.100">(8.100)</span></div>
 <p>Define</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -5430,7 +6453,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.97">(8.97)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.101">(8.101)</span></div>
 <p><strong>Step 4. Check exactness &amp; find a potential <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>U</mi>
   <mo stretchy="false">(</mo>
@@ -5509,7 +6532,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.98">(8.98)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.102">(8.102)</span></div>
 <p>Integrate <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mover accent="true">
@@ -5596,7 +6619,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.99">(8.99)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.103">(8.103)</span></div>
 <p>Using <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo data-mjx-texclass="OP">∫</mo>
   <msup>
@@ -5681,7 +6704,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.100">(8.100)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.104">(8.104)</span></div>
 <p>Now</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -5754,7 +6777,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.101">(8.101)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.105">(8.105)</span></div>
 <p><strong>Step 5. Implicit solution.</strong></p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -5796,7 +6819,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.102">(8.102)</span></div></section>
+</math><span class="eqn-number" id="mjx-eqn:8.106">(8.106)</span></div></section>
 <section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">Integrating factor <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>μ</mi>
   <mo>=</mo>
@@ -5832,7 +6855,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.103">(8.103)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.107">(8.107)</span></div>
 <p class="solution-head">Solution.</p>
 <p><strong>Step 1. Identify <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>M</mi>
@@ -5870,7 +6893,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.104">(8.104)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.108">(8.108)</span></div>
 <p>Compute</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -5895,7 +6918,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.105">(8.105)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.109">(8.109)</span></div>
 <p>Since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>M</mi>
@@ -5966,18 +6989,22 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.106">(8.106)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.110">(8.110)</span></div>
 <p>Hence</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
       <mtd>
         <mi>ln</mi>
-        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mi>μ</mi>
-        <mo stretchy="false">(</mo>
-        <mi>y</mi>
-        <mo stretchy="false">)</mo>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+          <mi>μ</mi>
+          <mo stretchy="false">(</mo>
+          <mi>y</mi>
+          <mo stretchy="false">)</mo>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+        </mrow>
         <mo>=</mo>
         <mo data-mjx-texclass="OP">∫</mo>
         <mfrac>
@@ -6034,7 +7061,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.107">(8.107)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.111">(8.111)</span></div>
 <p><strong>Step 3. Multiply the equation by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>μ</mi>
   <mo stretchy="false">(</mo>
@@ -6087,7 +7114,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.108">(8.108)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.112">(8.112)</span></div>
 <p>Define</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -6130,7 +7157,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.109">(8.109)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.113">(8.113)</span></div>
 <p><strong>Step 4. Check exactness &amp; find a potential <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>U</mi>
   <mo stretchy="false">(</mo>
@@ -6201,7 +7228,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.110">(8.110)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.114">(8.114)</span></div>
 <p>Integrate <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow data-mjx-texclass="ORD">
     <mover accent="true">
@@ -6250,7 +7277,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.111">(8.111)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.115">(8.115)</span></div>
 <p>Now</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -6339,7 +7366,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.112">(8.112)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.116">(8.116)</span></div>
 <p><strong>Step 5. Implicit solution.</strong></p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -6385,7 +7412,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.113">(8.113)</span></div></section>
+</math><span class="eqn-number" id="mjx-eqn:8.117">(8.117)</span></div></section>
 <section class="callout remark"><header>Remark</header><p>Many physical systems—such as thermodynamics, potential flow, and electrostatics—lead to exact differential equations, where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>U</mi>
   <mo stretchy="false">(</mo>
@@ -6450,7 +7477,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.114">(8.114)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.118">(8.118)</span></div>
 <p>where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>a</mi>
@@ -6557,7 +7584,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.115">(8.115)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.119">(8.119)</span></div>
 <p>We will first study the <strong>homogeneous case</strong> (<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>f</mi>
   <mo stretchy="false">(</mo>
@@ -6574,6 +7601,7 @@
   <mn>0</mn>
 </math></span>).</p>
 <h3 id="sec-8-homogeneous-equations-with-constant-coefficients"><span class="sec-number">8.4.1</span>Homogeneous Equations with Constant Coefficients</h3>
+<p class="lecture-video"><a href="https://www.youtube.com/watch?v=Tml3f5Fv7dc&amp;t=1096s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> <span>Lecture 22, Part 5: The Exponential Guess (18:16)</span></a></p>
 <section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Homogeneous Linear ODE (Second Order)</span></header><p>A second–order <strong>homogeneous linear differential equation with constant coefficients</strong> has the form</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -6625,7 +7653,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.116">(8.116)</span></div></section>
+</math><span class="eqn-number" id="mjx-eqn:8.120">(8.120)</span></div></section>
 <section class="callout theorem"><header><span class="callout-kind">Theorem</span><span class="callout-title">General Solution of a Constant–Coefficient ODE</span></header><p>Consider the homogeneous linear differential equation</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -6666,7 +7694,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.117">(8.117)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.121">(8.121)</span></div>
 <p>Its solutions are determined by the <strong>characteristic (auxiliary) equation</strong></p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -6689,7 +7717,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.118">(8.118)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.122">(8.122)</span></div>
 <p>If <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>r</mi>
@@ -6885,7 +7913,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.119">(8.119)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.123">(8.123)</span></div>
 <p>where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>C</mi>
@@ -6896,7 +7924,136 @@
     <mi>C</mi>
     <mn>2</mn>
   </msub>
-</math></span> are arbitrary constants.</p></section>
+</math></span> are arbitrary constants. The sign of the discriminant <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Δ</mi>
+  <mo>=</mo>
+  <msup>
+    <mi>b</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>−</mo>
+  <mn>4</mn>
+  <mi>a</mi>
+  <mi>c</mi>
+</math></span> decides the case: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Δ</mi>
+  <mo>&gt;</mo>
+  <mn>0</mn>
+</math></span> gives (i), <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Δ</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> gives (ii) with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mi>b</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mo stretchy="false">(</mo>
+  <mn>2</mn>
+  <mi>a</mi>
+  <mo stretchy="false">)</mo>
+</math></span>, and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Δ</mi>
+  <mo>&lt;</mo>
+  <mn>0</mn>
+</math></span> gives (iii) with</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>α</mi>
+        <mo>=</mo>
+        <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+        <mfrac>
+          <mi>b</mi>
+          <mrow>
+            <mn>2</mn>
+            <mi>a</mi>
+          </mrow>
+        </mfrac>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <mi>β</mi>
+        <mo>=</mo>
+        <mfrac>
+          <msqrt>
+            <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+            <mi mathvariant="normal">Δ</mi>
+          </msqrt>
+          <mrow>
+            <mn>2</mn>
+            <mi>a</mi>
+          </mrow>
+        </mfrac>
+        <mo>=</mo>
+        <mfrac>
+          <msqrt>
+            <mn>4</mn>
+            <mi>a</mi>
+            <mi>c</mi>
+            <mo>−</mo>
+            <msup>
+              <mi>b</mi>
+              <mn>2</mn>
+            </msup>
+          </msqrt>
+          <mrow>
+            <mn>2</mn>
+            <mi>a</mi>
+          </mrow>
+        </mfrac>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:8.124">(8.124)</span></div></section>
+<section class="callout remark"><header><span class="callout-kind">Remark</span><span class="callout-title">Why two solutions</span></header><p>A second-order law, such as Newton's, needs two starting facts: the starting position and the starting velocity. The general solution must therefore carry two free constants, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>y</mi>
+  <mo>=</mo>
+  <msub>
+    <mi>C</mi>
+    <mn>1</mn>
+  </msub>
+  <msub>
+    <mi>y</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>+</mo>
+  <msub>
+    <mi>C</mi>
+    <mn>2</mn>
+  </msub>
+  <msub>
+    <mi>y</mi>
+    <mn>2</mn>
+  </msub>
+</math></span>, with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>y</mi>
+    <mn>1</mn>
+  </msub>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>y</mi>
+    <mn>2</mn>
+  </msub>
+</math></span> linearly independent; if <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>y</mi>
+    <mn>2</mn>
+  </msub>
+</math></span> were a multiple of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>y</mi>
+    <mn>1</mn>
+  </msub>
+</math></span>, the two constants would merge into one. The Wronskians in the proof below check the independence in each case.</p></section>
+<p class="lecture-video"><a href="https://www.youtube.com/watch?v=Tml3f5Fv7dc&amp;t=1473s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> <span>Lecture 22, Part 6: Three Kinds of Roots (24:33)</span></a></p>
 <div class="proof" data-lead="Proof."><p>Consider the homogeneous constant–coefficient ODE</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -6937,7 +8094,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.120">(8.120)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.125">(8.125)</span></div>
 <p><strong>Step 1: Exponential trial and substitution.</strong> Assume a trial solution <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>y</mi>
   <mo>=</mo>
@@ -6992,7 +8149,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.121">(8.121)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.126">(8.126)</span></div>
 <p>Substituting into the ODE gives</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -7076,7 +8233,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.122">(8.122)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.127">(8.127)</span></div>
 <p>Since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>e</mi>
@@ -7123,7 +8280,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.123">(8.123)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.128">(8.128)</span></div>
 <p><strong>Step 2: Distinct real roots <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>r</mi>
@@ -7186,7 +8343,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.124">(8.124)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.129">(8.129)</span></div>
 <p>are both solutions. Their Wronskian is</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -7312,7 +8469,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.125">(8.125)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.130">(8.130)</span></div>
 <p>so <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>y</mi>
@@ -7366,7 +8523,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.126">(8.126)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.131">(8.131)</span></div>
 <p><strong>Step 3: Repeated real root <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>r</mi>
@@ -7434,7 +8591,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.127">(8.127)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.132">(8.132)</span></div>
 <p>where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>v</mi>
 </math></span> is to be determined. Compute derivatives:</p>
@@ -7521,7 +8678,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.128">(8.128)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.133">(8.133)</span></div>
 <p>Substitute <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>y</mi>
@@ -7618,7 +8775,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.129">(8.129)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.134">(8.134)</span></div>
 <p>Divide by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>e</mi>
@@ -7685,7 +8842,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.130">(8.130)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.135">(8.135)</span></div>
 <p>Because <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>r</mi>
 </math></span> is a <em>root</em> of the characteristic polynomial, we have</p>
@@ -7708,7 +8865,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.131">(8.131)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.136">(8.136)</span></div>
 <p>Moreover, because the root is <em>repeated</em>, the derivative of the characteristic polynomial also vanishes at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>r</mi>
 </math></span>:</p>
@@ -7754,7 +8911,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.132">(8.132)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.137">(8.137)</span></div>
 <p>Hence the equation for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>v</mi>
 </math></span> reduces to</p>
@@ -7805,7 +8962,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.133">(8.133)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.138">(8.138)</span></div>
 <p>Discarding the multiple of the first solution (the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>B</mi>
   <msup>
@@ -7861,7 +9018,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.134">(8.134)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.139">(8.139)</span></div>
 <p>Therefore, the general solution in the repeated-root case is</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -7895,7 +9052,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.135">(8.135)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.140">(8.140)</span></div>
 <p><strong>Step 4: Complex conjugate roots <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>r</mi>
   <mo>=</mo>
@@ -7969,7 +9126,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.136">(8.136)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.141">(8.141)</span></div>
 <p>are real solutions. Their Wronskian is</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -7987,9 +9144,13 @@
           </mrow>
         </msup>
         <mspace width="0.167em" /><mi>cos</mi>
-        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mi>β</mi>
-        <mi>x</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+          <mi>β</mi>
+          <mi>x</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+        </mrow>
         <mo>,</mo>
         <mstyle scriptlevel="0">
           <mspace width="0.167em" />
@@ -8002,9 +9163,13 @@
           </mrow>
         </msup>
         <mspace width="0.167em" /><mi>sin</mi>
-        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mi>β</mi>
-        <mi>x</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+          <mi>β</mi>
+          <mi>x</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+        </mrow>
         <mrow data-mjx-texclass="ORD">
           <mo minsize="1.2em" maxsize="1.2em" stretchy="true" lspace="0em" rspace="0em">]</mo>
         </mrow>
@@ -8027,7 +9192,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.137">(8.137)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.142">(8.142)</span></div>
 <p>so they are linearly independent. Thus the general real solution is</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -8053,18 +9218,26 @@
           <mn>1</mn>
         </msub>
         <mspace width="0.167em" /><mi>cos</mi>
-        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mi>β</mi>
-        <mi>x</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+          <mi>β</mi>
+          <mi>x</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+        </mrow>
         <mo>+</mo>
         <msub>
           <mi>C</mi>
           <mn>2</mn>
         </msub>
         <mspace width="0.167em" /><mi>sin</mi>
-        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-        <mi>β</mi>
-        <mi>x</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+          <mi>β</mi>
+          <mi>x</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+        </mrow>
         <mrow data-mjx-texclass="ORD">
           <mo minsize="1.2em" maxsize="1.2em" stretchy="true" lspace="0em" rspace="0em">)</mo>
         </mrow>
@@ -8072,7 +9245,179 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.138">(8.138)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.143">(8.143)</span></div>
+<p>The same result comes from the two complex solutions directly: by Euler's formula, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>α</mi>
+      <mi>x</mi>
+    </mrow>
+  </msup>
+  <mrow data-mjx-texclass="ORD">
+    <mo minsize="1.2em" maxsize="1.2em" stretchy="true" lspace="0em" rspace="0em">(</mo>
+  </mrow>
+  <msub>
+    <mi>c</mi>
+    <mn>1</mn>
+  </msub>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>i</mi>
+      <mi>β</mi>
+      <mi>x</mi>
+    </mrow>
+  </msup>
+  <mo>+</mo>
+  <msub>
+    <mi>c</mi>
+    <mn>2</mn>
+  </msub>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi>i</mi>
+      <mi>β</mi>
+      <mi>x</mi>
+    </mrow>
+  </msup>
+  <mrow data-mjx-texclass="ORD">
+    <mo minsize="1.2em" maxsize="1.2em" stretchy="true" lspace="0em" rspace="0em">)</mo>
+  </mrow>
+  <mo>=</mo>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>α</mi>
+      <mi>x</mi>
+    </mrow>
+  </msup>
+  <mrow data-mjx-texclass="ORD">
+    <mo minsize="1.2em" maxsize="1.2em" stretchy="true" lspace="0em" rspace="0em">(</mo>
+  </mrow>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>c</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>+</mo>
+  <msub>
+    <mi>c</mi>
+    <mn>2</mn>
+  </msub>
+  <mo stretchy="false">)</mo>
+  <mi>cos</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>β</mi>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+  <mo>+</mo>
+  <mi>i</mi>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>c</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>−</mo>
+  <msub>
+    <mi>c</mi>
+    <mn>2</mn>
+  </msub>
+  <mo stretchy="false">)</mo>
+  <mi>sin</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>β</mi>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+  <mrow data-mjx-texclass="ORD">
+    <mo minsize="1.2em" maxsize="1.2em" stretchy="true" lspace="0em" rspace="0em">)</mo>
+  </mrow>
+</math></span>, and the choice <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>c</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>=</mo>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>C</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>−</mo>
+  <mi>i</mi>
+  <msub>
+    <mi>C</mi>
+    <mn>2</mn>
+  </msub>
+  <mo stretchy="false">)</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>c</mi>
+    <mn>2</mn>
+  </msub>
+  <mo>=</mo>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>C</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>+</mo>
+  <mi>i</mi>
+  <msub>
+    <mi>C</mi>
+    <mn>2</mn>
+  </msub>
+  <mo stretchy="false">)</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+</math></span> gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>c</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>+</mo>
+  <msub>
+    <mi>c</mi>
+    <mn>2</mn>
+  </msub>
+  <mo>=</mo>
+  <msub>
+    <mi>C</mi>
+    <mn>1</mn>
+  </msub>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>c</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>−</mo>
+  <msub>
+    <mi>c</mi>
+    <mn>2</mn>
+  </msub>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <msub>
+    <mi>C</mi>
+    <mn>2</mn>
+  </msub>
+</math></span>, real.</p>
 <p>Combining the three cases completes the proof.</p></div>
 <section class="callout remark"><header>Remark</header><ul><li><p>The step <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>2</mn>
@@ -8146,8 +9491,432 @@
   </msup>
 </math></span>: derivatives only pull down factors of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>r</mi>
-</math></span>, converting the differential equation to an algebraic one.</p></li></ul></section>
+</math></span>, converting the differential equation to an algebraic one.</p></li><li><p>A common mistake is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>β</mi>
+  <mo>=</mo>
+  <msqrt>
+    <mi mathvariant="normal">Δ</mi>
+  </msqrt>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mo stretchy="false">(</mo>
+  <mn>2</mn>
+  <mi>a</mi>
+  <mo stretchy="false">)</mo>
+</math></span> in case (iii). That is the square root of a negative number; the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> has already been taken out into <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mo>=</mo>
+  <mi>α</mi>
+  <mo>±</mo>
+  <mi>i</mi>
+  <mi>β</mi>
+</math></span>, so <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>β</mi>
+  <mo>=</mo>
+  <msqrt>
+    <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+    <mi mathvariant="normal">Δ</mi>
+  </msqrt>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mo stretchy="false">(</mo>
+  <mn>2</mn>
+  <mi>a</mi>
+  <mo stretchy="false">)</mo>
+</math></span>. For example, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>y</mi>
+    <mo data-mjx-alternate="1">″</mo>
+  </msup>
+  <mo>+</mo>
+  <mn>2</mn>
+  <msup>
+    <mi>y</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+  <mo>+</mo>
+  <mn>5</mn>
+  <mi>y</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> has <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Δ</mi>
+  <mo>=</mo>
+  <mn>4</mn>
+  <mo>−</mo>
+  <mn>20</mn>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>16</mn>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>α</mi>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>1</mn>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>β</mi>
+  <mo>=</mo>
+  <msqrt>
+    <mn>16</mn>
+  </msqrt>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+  <mo>=</mo>
+  <mn>2</mn>
+</math></span>, and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>y</mi>
+  <mo>=</mo>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi>x</mi>
+    </mrow>
+  </msup>
+  <mrow data-mjx-texclass="ORD">
+    <mo minsize="1.2em" maxsize="1.2em" stretchy="true" lspace="0em" rspace="0em">(</mo>
+  </mrow>
+  <msub>
+    <mi>C</mi>
+    <mn>1</mn>
+  </msub>
+  <mspace width="0.167em" /><mi>cos</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mn>2</mn>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+  <mo>+</mo>
+  <msub>
+    <mi>C</mi>
+    <mn>2</mn>
+  </msub>
+  <mspace width="0.167em" /><mi>sin</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mn>2</mn>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+  <mrow data-mjx-texclass="ORD">
+    <mo minsize="1.2em" maxsize="1.2em" stretchy="true" lspace="0em" rspace="0em">)</mo>
+  </mrow>
+</math></span>.</p></li></ul></section>
+<p>For a block on a spring with a damper, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <msup>
+    <mi>y</mi>
+    <mo data-mjx-alternate="1">″</mo>
+  </msup>
+  <mo>+</mo>
+  <mi>b</mi>
+  <msup>
+    <mi>y</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+  <mo>+</mo>
+  <mi>c</mi>
+  <mi>y</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mi>x</mi>
+      <mo>¨</mo>
+    </mover>
+  </mrow>
+  <mo>+</mo>
+  <mi>b</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mi>x</mi>
+      <mo>˙</mo>
+    </mover>
+  </mrow>
+  <mo>+</mo>
+  <mi>k</mi>
+  <mi>x</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>, and the three cases are three motions after the block is let go (Figure <a class="xref" href="../chapter-08/index.html#chapter-08-fig-4">8.4</a>): with heavy damping (<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Δ</mi>
+  <mo>&gt;</mo>
+  <mn>0</mn>
+</math></span>) both roots are negative (their product <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>a</mi>
+</math></span> is positive and their sum <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mi>b</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>a</mi>
+</math></span> negative, since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>b</mi>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> are positive) and the block creeps back without crossing equilibrium; at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Δ</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> (critical damping) it returns as fast as it can without crossing; with light damping (<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Δ</mi>
+  <mo>&lt;</mo>
+  <mn>0</mn>
+</math></span>) it bounces, its swings shrinking inside the envelope <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo form="prefix" lspace="0em" rspace="0em">±</mo>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>α</mi>
+      <mi>t</mi>
+    </mrow>
+  </msup>
+</math></span>. A car's shock absorbers are tuned close to critical damping.</p>
+<section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">Two starting facts fix the two constants</span></header><p>Solve <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>y</mi>
+    <mo data-mjx-alternate="1">″</mo>
+  </msup>
+  <mo>−</mo>
+  <mn>3</mn>
+  <msup>
+    <mi>y</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+  <mo>+</mo>
+  <mn>2</mn>
+  <mi>y</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>y</mi>
+  <mo stretchy="false">(</mo>
+  <mn>0</mn>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>y</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+  <mo stretchy="false">(</mo>
+  <mn>0</mn>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>.</p>
+<p class="solution-head">Solution.</p>
+<p>The characteristic equation <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>r</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>−</mo>
+  <mn>3</mn>
+  <mi>r</mi>
+  <mo>+</mo>
+  <mn>2</mn>
+  <mo>=</mo>
+  <mo stretchy="false">(</mo>
+  <mi>r</mi>
+  <mo>−</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+  <mo stretchy="false">(</mo>
+  <mi>r</mi>
+  <mo>−</mo>
+  <mn>2</mn>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> has the roots <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+</math></span>, so <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>y</mi>
+  <mo>=</mo>
+  <msub>
+    <mi>c</mi>
+    <mn>1</mn>
+  </msub>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>x</mi>
+    </mrow>
+  </msup>
+  <mo>+</mo>
+  <msub>
+    <mi>c</mi>
+    <mn>2</mn>
+  </msub>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+      <mi>x</mi>
+    </mrow>
+  </msup>
+</math></span>. At <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> both exponentials equal one:</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>y</mi>
+        <mo stretchy="false">(</mo>
+        <mn>0</mn>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <msub>
+          <mi>c</mi>
+          <mn>1</mn>
+        </msub>
+        <mo>+</mo>
+        <msub>
+          <mi>c</mi>
+          <mn>2</mn>
+        </msub>
+        <mo>=</mo>
+        <mn>0</mn>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <msup>
+          <mi>y</mi>
+          <mo data-mjx-alternate="1">′</mo>
+        </msup>
+        <mo stretchy="false">(</mo>
+        <mn>0</mn>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <msub>
+          <mi>c</mi>
+          <mn>1</mn>
+        </msub>
+        <mo>+</mo>
+        <mn>2</mn>
+        <msub>
+          <mi>c</mi>
+          <mn>2</mn>
+        </msub>
+        <mo>=</mo>
+        <mn>1</mn>
+        <mstyle scriptlevel="0">
+          <mspace width="1em" />
+        </mstyle>
+        <mo stretchy="false">⟹</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="1em" />
+        </mstyle>
+        <msub>
+          <mi>c</mi>
+          <mn>2</mn>
+        </msub>
+        <mo>=</mo>
+        <mn>1</mn>
+        <mo>,</mo>
+        <mtext> </mtext>
+        <msub>
+          <mi>c</mi>
+          <mn>1</mn>
+        </msub>
+        <mo>=</mo>
+        <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+        <mn>1</mn>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <mrow class="mml-boxed">
+          <mrow data-mjx-texclass="ORD">
+            <mstyle displaystyle="true" scriptlevel="0">
+              <mrow data-mjx-texclass="ORD">
+                <mstyle scriptlevel="0">
+                  <mspace width="0.167em" />
+                </mstyle>
+                <mi>y</mi>
+                <mo>=</mo>
+                <msup>
+                  <mi>e</mi>
+                  <mrow data-mjx-texclass="ORD">
+                    <mn>2</mn>
+                    <mi>x</mi>
+                  </mrow>
+                </msup>
+                <mo>−</mo>
+                <msup>
+                  <mi>e</mi>
+                  <mrow data-mjx-texclass="ORD">
+                    <mi>x</mi>
+                  </mrow>
+                </msup>
+                <mstyle scriptlevel="0">
+                  <mspace width="0.167em" />
+                </mstyle>
+              </mrow>
+            </mstyle>
+          </mrow>
+        </mrow>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:8.144">(8.144)</span></div>
+<p>Check: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>y</mi>
+  <mo stretchy="false">(</mo>
+  <mn>0</mn>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mn>1</mn>
+  <mo>−</mo>
+  <mn>1</mn>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>y</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+  <mo stretchy="false">(</mo>
+  <mn>0</mn>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mn>2</mn>
+  <mo>−</mo>
+  <mn>1</mn>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>.</p></section>
+<figure id="chapter-08-fig-4" class="figure"><img src="assets/img/ch08_fig03_three_roots.png" class="diagram" alt="The same block and spring, let go at rest from the same place, with three dampers: the three kinds of roots of the characteristic equation are the three motions." loading="lazy" style="--figure-width: 85%;"><figcaption>Figure 8.4. The same block and spring, let go at rest from the same place, with three dampers: the three kinds of roots of the
+	characteristic equation are the three motions.</figcaption></figure>
 <h3 id="sec-8-nonhomogeneous-equations"><span class="sec-number">8.4.2</span>Nonhomogeneous Equations</h3>
+<p class="lecture-video"><a href="https://www.youtube.com/watch?v=Tml3f5Fv7dc&amp;t=1825s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> <span>Lecture 22, Part 7: The Push and the Oscillator (30:25)</span></a></p>
 <section class="callout definition"><header>Definition</header><p>A <strong>nonhomogeneous</strong> second-order linear ODE is</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -8185,7 +9954,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.139">(8.139)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.145">(8.145)</span></div>
 <p>where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>f</mi>
   <mo stretchy="false">(</mo>
@@ -8229,7 +9998,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.140">(8.140)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.146">(8.146)</span></div>
 <p>where</p>
 <ul><li><p><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
@@ -8308,8 +10077,517 @@
 </math></span>, multiply by the smallest power of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>x</mi>
 </math></span> necessary to ensure linear independence.</p></section>
+<p>The particular solution has the same form as the forcing, because the derivatives of these functions keep their form:</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>f</mi>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">{</mo>
+          <mtable columnalign="left left" columnspacing="1em" rowspacing=".2em">
+            <mtr>
+              <mtd style="text-align: left">
+                <mn>2</mn>
+                <msup>
+                  <mi>e</mi>
+                  <mrow data-mjx-texclass="ORD">
+                    <mi>α</mi>
+                    <mi>x</mi>
+                  </mrow>
+                </msup>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd style="text-align: left">
+                <mn>5</mn>
+                <msup>
+                  <mi>e</mi>
+                  <mrow data-mjx-texclass="ORD">
+                    <mi>i</mi>
+                    <mi>α</mi>
+                    <mi>x</mi>
+                  </mrow>
+                </msup>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd style="text-align: left">
+                <mn>3</mn>
+                <mspace width="0.167em" /><mi>sin</mi>
+                <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+                <mrow>
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+                  <mi>α</mi>
+                  <mi>x</mi>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+                </mrow>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd style="text-align: left">
+                <mn>10</mn>
+                <mspace width="0.167em" /><mi>cos</mi>
+                <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+                <mrow>
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+                  <mi>α</mi>
+                  <mi>x</mi>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+                </mrow>
+              </mtd>
+            </mtr>
+          </mtable>
+          <mo data-mjx-texclass="CLOSE" fence="true" stretchy="true" symmetric="true" form="postfix" lspace="0em" rspace="0em" />
+        </mrow>
+        <mstyle scriptlevel="0">
+          <mspace width="1em" />
+        </mstyle>
+        <mo stretchy="false">⟹</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="1em" />
+        </mstyle>
+        <msub>
+          <mi>y</mi>
+          <mi>p</mi>
+        </msub>
+        <mo>=</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">{</mo>
+          <mtable columnalign="left left" columnspacing="1em" rowspacing=".2em">
+            <mtr>
+              <mtd style="text-align: left">
+                <mi>A</mi>
+                <mstyle scriptlevel="0">
+                  <mspace width="0.167em" />
+                </mstyle>
+                <msup>
+                  <mi>e</mi>
+                  <mrow data-mjx-texclass="ORD">
+                    <mi>α</mi>
+                    <mi>x</mi>
+                  </mrow>
+                </msup>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd style="text-align: left">
+                <mi>A</mi>
+                <mstyle scriptlevel="0">
+                  <mspace width="0.167em" />
+                </mstyle>
+                <msup>
+                  <mi>e</mi>
+                  <mrow data-mjx-texclass="ORD">
+                    <mi>i</mi>
+                    <mi>θ</mi>
+                  </mrow>
+                </msup>
+                <msup>
+                  <mi>e</mi>
+                  <mrow data-mjx-texclass="ORD">
+                    <mi>i</mi>
+                    <mi>α</mi>
+                    <mi>x</mi>
+                  </mrow>
+                </msup>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd style="text-align: left">
+                <mi>A</mi>
+                <mspace width="0.167em" /><mi>sin</mi>
+                <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+                <mrow>
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+                  <mi>α</mi>
+                  <mi>x</mi>
+                  <mo>+</mo>
+                  <mi>θ</mi>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+                </mrow>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd style="text-align: left">
+                <mi>A</mi>
+                <mspace width="0.167em" /><mi>cos</mi>
+                <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+                <mrow>
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+                  <mi>α</mi>
+                  <mi>x</mi>
+                  <mo>+</mo>
+                  <mi>θ</mi>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+                </mrow>
+              </mtd>
+            </mtr>
+          </mtable>
+          <mo data-mjx-texclass="CLOSE" fence="true" stretchy="true" symmetric="true" form="postfix" lspace="0em" rspace="0em" />
+        </mrow>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:8.147">(8.147)</span></div>
+<p>Here <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>α</mi>
+</math></span> is the rate in the forcing (not the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>α</mi>
+</math></span> of the roots), and substituting <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>y</mi>
+    <mi>p</mi>
+  </msub>
+</math></span> gives equations for the constants <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>A</mi>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>θ</mi>
+</math></span>.</p>
+<section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">The rule, and the warning</span></header><p>Take <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>y</mi>
+    <mo data-mjx-alternate="1">″</mo>
+  </msup>
+  <mo>−</mo>
+  <mn>3</mn>
+  <msup>
+    <mi>y</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+  <mo>+</mo>
+  <mn>2</mn>
+  <mi>y</mi>
+</math></span>, whose homogeneous solution is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>y</mi>
+    <mi>h</mi>
+  </msub>
+  <mo>=</mo>
+  <msub>
+    <mi>c</mi>
+    <mn>1</mn>
+  </msub>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>x</mi>
+    </mrow>
+  </msup>
+  <mo>+</mo>
+  <msub>
+    <mi>c</mi>
+    <mn>2</mn>
+  </msub>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+      <mi>x</mi>
+    </mrow>
+  </msup>
+</math></span>.</p>
+<ul><li><p><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>f</mi>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mn>2</mn>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>3</mn>
+      <mi>x</mi>
+    </mrow>
+  </msup>
+</math></span>: try <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>y</mi>
+    <mi>p</mi>
+  </msub>
+  <mo>=</mo>
+  <mi>A</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>3</mn>
+      <mi>x</mi>
+    </mrow>
+  </msup>
+</math></span>. Each derivative brings down a <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>3</mn>
+</math></span>: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mn>9</mn>
+  <mo>−</mo>
+  <mn>9</mn>
+  <mo>+</mo>
+  <mn>2</mn>
+  <mo stretchy="false">)</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mi>A</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>3</mn>
+      <mi>x</mi>
+    </mrow>
+  </msup>
+  <mo>=</mo>
+  <mn>2</mn>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>3</mn>
+      <mi>x</mi>
+    </mrow>
+  </msup>
+</math></span>, so <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>A</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>y</mi>
+  <mo>=</mo>
+  <msub>
+    <mi>c</mi>
+    <mn>1</mn>
+  </msub>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>x</mi>
+    </mrow>
+  </msup>
+  <mo>+</mo>
+  <msub>
+    <mi>c</mi>
+    <mn>2</mn>
+  </msub>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>2</mn>
+      <mi>x</mi>
+    </mrow>
+  </msup>
+  <mo>+</mo>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>3</mn>
+      <mi>x</mi>
+    </mrow>
+  </msup>
+</math></span>.</p></li><li><p><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>f</mi>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>x</mi>
+    </mrow>
+  </msup>
+</math></span>: the trial <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>A</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>x</mi>
+    </mrow>
+  </msup>
+</math></span> gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo>−</mo>
+  <mn>3</mn>
+  <mo>+</mo>
+  <mn>2</mn>
+  <mo stretchy="false">)</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mi>A</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>x</mi>
+    </mrow>
+  </msup>
+  <mo>=</mo>
+  <mn>0</mn>
+  <mo>≠</mo>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>x</mi>
+    </mrow>
+  </msup>
+</math></span>, because <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>x</mi>
+    </mrow>
+  </msup>
+</math></span> already solves the homogeneous equation. Multiply by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span>: with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>y</mi>
+    <mi>p</mi>
+  </msub>
+  <mo>=</mo>
+  <mi>A</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mi>x</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>x</mi>
+    </mrow>
+  </msup>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msubsup>
+    <mi>y</mi>
+    <mi>p</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msubsup>
+  <mo>=</mo>
+  <mi>A</mi>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>x</mi>
+    </mrow>
+  </msup>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msubsup>
+    <mi>y</mi>
+    <mi>p</mi>
+    <mo data-mjx-alternate="1">″</mo>
+  </msubsup>
+  <mo>=</mo>
+  <mi>A</mi>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo>+</mo>
+  <mn>2</mn>
+  <mo stretchy="false">)</mo>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>x</mi>
+    </mrow>
+  </msup>
+</math></span>, so <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>A</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>x</mi>
+    </mrow>
+  </msup>
+  <mrow data-mjx-texclass="ORD">
+    <mo minsize="1.2em" maxsize="1.2em" stretchy="true" lspace="0em" rspace="0em">[</mo>
+  </mrow>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo>+</mo>
+  <mn>2</mn>
+  <mo stretchy="false">)</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>3</mn>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+  <mn>2</mn>
+  <mi>x</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo minsize="1.2em" maxsize="1.2em" stretchy="true" lspace="0em" rspace="0em">]</mo>
+  </mrow>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mi>A</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>x</mi>
+    </mrow>
+  </msup>
+  <mo>=</mo>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>x</mi>
+    </mrow>
+  </msup>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>A</mi>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mn>1</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>y</mi>
+    <mi>p</mi>
+  </msub>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mi>x</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>x</mi>
+    </mrow>
+  </msup>
+</math></span>.</p></li></ul></section>
 <h3 id="sec-8-example-forced-and-damped-harmonic-oscillator"><span class="sec-number">8.4.3</span>Example: Forced and Damped Harmonic Oscillator</h3>
-<section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">Forced and Damped Harmonic Oscillator (dot notation)</span></header><p>Consider the driven, damped oscillator</p>
+<section class="callout example" id="example-fig-ch08-oscillator"><header><span class="callout-kind">Example</span><span class="callout-title">Forced and Damped Harmonic Oscillator (dot notation)</span></header><p>Consider the driven, damped oscillator</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -8358,7 +10636,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.141">(8.141)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.148">(8.148)</span></div>
 <p>where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>m</mi>
 </math></span> is the mass, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -8380,6 +10658,113 @@
   </mrow>
 </math></span> the external driving force.</p>
 <p class="solution-head">Solution.</p>
+<p><strong>Step 1. Newton's second law.</strong> The block moves along <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span>, measured from equilibrium (Figure <a class="xref" href="../chapter-08/index.html#chapter-08-fig-5">8.5</a>). Along <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> three forces act: the spring pulls back toward equilibrium with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+  <mi>x</mi>
+</math></span>, the drag <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>f</mi>
+  <mo>=</mo>
+  <mi>b</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mi>x</mi>
+      <mo>˙</mo>
+    </mover>
+  </mrow>
+</math></span> points against the velocity, and the push <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>F</mi>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+</math></span> comes from outside; along <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>y</mi>
+</math></span>, the weight <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>g</mi>
+</math></span> and the normal force <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>N</mi>
+</math></span> balance, since the block does not move up or down:</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>m</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mover>
+            <mi>x</mi>
+            <mo>¨</mo>
+          </mover>
+        </mrow>
+        <mo>=</mo>
+        <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+        <mi>b</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mover>
+            <mi>x</mi>
+            <mo>˙</mo>
+          </mover>
+        </mrow>
+        <mo>−</mo>
+        <mi>k</mi>
+        <mi>x</mi>
+        <mo>+</mo>
+        <mi>F</mi>
+        <mo stretchy="false">(</mo>
+        <mi>t</mi>
+        <mo stretchy="false">)</mo>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <mi>N</mi>
+        <mo>=</mo>
+        <mi>m</mi>
+        <mi>g</mi>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:8.149">(8.149)</span></div>
+<p>Moving the drag and the spring to the left gives the equation above. (With the drag's sign wrong, the motion would grow by itself.)</p>
+<div class="centered"><figure id="chapter-08-fig-5" class="figure"><img src="assets/img/ch08_fig04_oscillator.png" class="diagram" alt="The driven damped oscillator: a block of mass m on a spring of stiffness k, displaced x(t) from equilibrium (dashed), with the spring force kx, the drag f = bx, the push F(t), its weight mg and the normal force N." loading="lazy" style="--figure-width: 75%;"><figcaption>Figure 8.5. The driven damped oscillator: a block of mass <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span> on a spring of stiffness <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span>, displaced <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+</math></span> from
+		equilibrium (dashed), with the spring force <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+  <mi>x</mi>
+</math></span>, the drag <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>f</mi>
+  <mo>=</mo>
+  <mi>b</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mi>x</mi>
+      <mo>˙</mo>
+    </mover>
+  </mrow>
+</math></span>, the push <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>F</mi>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+</math></span>, its weight <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>g</mi>
+</math></span> and the normal
+		force <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>N</mi>
+</math></span>.</figcaption></figure></div>
 <p>Divide through by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>m</mi>
 </math></span>:</p>
@@ -8432,7 +10817,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.142">(8.142)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.150">(8.150)</span></div>
 <p>where</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -8464,7 +10849,8 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.143">(8.143)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.151">(8.151)</span></div>
+<p class="lecture-video"><a href="https://www.youtube.com/watch?v=Tml3f5Fv7dc&amp;t=2208s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> <span>Lecture 22, Part 8: The Oscillator Left Alone (36:48)</span></a></p>
 <p><strong>Step 2. Homogeneous solution.</strong></p>
 <p>For the unforced system,</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
@@ -8511,7 +10897,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.144">(8.144)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.152">(8.152)</span></div>
 <p>the characteristic equation is</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -8551,7 +10937,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.145">(8.145)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.153">(8.153)</span></div>
 <p>where</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -8585,7 +10971,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.146">(8.146)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.154">(8.154)</span></div>
 <p>is the <strong>damped natural frequency</strong>. Hence,</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -8622,24 +11008,32 @@
                   <mn>1</mn>
                 </msub>
                 <mspace width="0.167em" /><mi>cos</mi>
-                <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                <msub>
-                  <mi>ω</mi>
-                  <mi>d</mi>
-                </msub>
-                <mi>t</mi>
+                <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+                <mrow>
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+                  <msub>
+                    <mi>ω</mi>
+                    <mi>d</mi>
+                  </msub>
+                  <mi>t</mi>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+                </mrow>
                 <mo>+</mo>
                 <msub>
                   <mi>C</mi>
                   <mn>2</mn>
                 </msub>
                 <mspace width="0.167em" /><mi>sin</mi>
-                <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                <msub>
-                  <mi>ω</mi>
-                  <mi>d</mi>
-                </msub>
-                <mi>t</mi>
+                <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+                <mrow>
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+                  <msub>
+                    <mi>ω</mi>
+                    <mi>d</mi>
+                  </msub>
+                  <mi>t</mi>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+                </mrow>
                 <mrow data-mjx-texclass="ORD">
                   <mo minsize="1.2em" maxsize="1.2em" stretchy="true" lspace="0em" rspace="0em">)</mo>
                 </mrow>
@@ -8651,7 +11045,161 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.147">(8.147)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.155">(8.155)</span></div>
+<p>(With <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>γ</mi>
+  <mo>≥</mo>
+  <msub>
+    <mi>ω</mi>
+    <mn>0</mn>
+  </msub>
+</math></span> the roots are real instead: the creeping and critical motions, which never swing.) The two constants come from the start. For a block pulled to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>x</mi>
+    <mn>0</mn>
+  </msub>
+</math></span> and let go at rest, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>x</mi>
+    <mi>h</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mn>0</mn>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <msub>
+    <mi>C</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>=</mo>
+  <msub>
+    <mi>x</mi>
+    <mn>0</mn>
+  </msub>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover>
+        <mi>x</mi>
+        <mo>˙</mo>
+      </mover>
+    </mrow>
+    <mi>h</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mn>0</mn>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <msub>
+    <mi>ω</mi>
+    <mi>d</mi>
+  </msub>
+  <msub>
+    <mi>C</mi>
+    <mn>2</mn>
+  </msub>
+  <mo>−</mo>
+  <mi>γ</mi>
+  <msub>
+    <mi>C</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>, so <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>C</mi>
+    <mn>2</mn>
+  </msub>
+  <mo>=</mo>
+  <mo stretchy="false">(</mo>
+  <mi>γ</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msub>
+    <mi>ω</mi>
+    <mi>d</mi>
+  </msub>
+  <mo stretchy="false">)</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msub>
+    <mi>x</mi>
+    <mn>0</mn>
+  </msub>
+</math></span> and</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <msub>
+          <mi>x</mi>
+          <mi>h</mi>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>t</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <msub>
+          <mi>x</mi>
+          <mn>0</mn>
+        </msub>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <msup>
+          <mi>e</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+            <mi>γ</mi>
+            <mi>t</mi>
+          </mrow>
+        </msup>
+        <mrow data-mjx-texclass="ORD">
+          <mo minsize="1.623em" maxsize="1.623em" stretchy="true" lspace="0em" rspace="0em">(</mo>
+        </mrow>
+        <mspace width="0.167em" /><mi>cos</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+          <msub>
+            <mi>ω</mi>
+            <mi>d</mi>
+          </msub>
+          <mi>t</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+        </mrow>
+        <mo>+</mo>
+        <mfrac>
+          <mi>γ</mi>
+          <msub>
+            <mi>ω</mi>
+            <mi>d</mi>
+          </msub>
+        </mfrac>
+        <mspace width="0.167em" /><mi>sin</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+          <msub>
+            <mi>ω</mi>
+            <mi>d</mi>
+          </msub>
+          <mi>t</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+        </mrow>
+        <mrow data-mjx-texclass="ORD">
+          <mo minsize="1.623em" maxsize="1.623em" stretchy="true" lspace="0em" rspace="0em">)</mo>
+        </mrow>
+        <mo>,</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:8.156">(8.156)</span></div>
+<p>nearly a cosine starting at its peak when the damping is weak.</p>
+<p class="lecture-video"><a href="https://www.youtube.com/watch?v=Tml3f5Fv7dc&amp;t=2489s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> <span>Lecture 22, Part 9: The Driven Response (41:29)</span></a></p>
 <p><strong>Step 3. Particular (steady–state) solution using complex amplitude.</strong></p>
 <p>We look for a steady–state oscillation at the same frequency as the driving force. To simplify the algebra, we use a complex trial solution.</p>
 <p> <strong>Step 3(a). Choose a complex trial solution.</strong></p>
@@ -8690,7 +11238,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.148">(8.148)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.157">(8.157)</span></div>
 <p>where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>z</mi>
@@ -8718,7 +11266,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.149">(8.149)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.158">(8.158)</span></div>
 <p>so that</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -8764,7 +11312,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.150">(8.150)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.159">(8.159)</span></div>
 <p> <strong>Step 3(b). Substitute into the differential equation.</strong></p>
 <p>The driven damped oscillator equation (after dividing by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>m</mi>
@@ -8853,7 +11401,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.151">(8.151)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.160">(8.160)</span></div>
 <p>We substitute the full complex function <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>z</mi>
@@ -8961,7 +11509,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.152">(8.152)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.161">(8.161)</span></div>
 <p>Substituting into the ODE gives</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -9030,7 +11578,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.153">(8.153)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.162">(8.162)</span></div>
 <p> <strong>Step 3(c). Cancel <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>e</mi>
@@ -9085,7 +11633,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.154">(8.154)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.163">(8.163)</span></div>
 <p> <strong>Step 3(d). Solve for the complex amplitude <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>z</mi>
@@ -9137,7 +11685,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.155">(8.155)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.164">(8.164)</span></div>
 <p>Write the denominator in polar form:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -9177,7 +11725,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.156">(8.156)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.165">(8.165)</span></div>
 <p>where</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -9220,8 +11768,12 @@
             <mstyle displaystyle="true" scriptlevel="0">
               <mrow data-mjx-texclass="ORD">
                 <mi>tan</mi>
-                <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                <mi>ϕ</mi>
+                <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+                <mrow>
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+                  <mi>ϕ</mi>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+                </mrow>
                 <mo>=</mo>
                 <mfrac>
                   <mrow>
@@ -9250,7 +11802,70 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.157">(8.157)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.166">(8.166)</span></div>
+<p>The imaginary part <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mi>γ</mi>
+  <mi>ω</mi>
+</math></span> is positive, so the point <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>R</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>i</mi>
+      <mi>ϕ</mi>
+    </mrow>
+  </msup>
+</math></span> lies above the real axis and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+  <mo>&lt;</mo>
+  <mi>ϕ</mi>
+  <mo>&lt;</mo>
+  <mi>π</mi>
+</math></span>: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ϕ</mi>
+  <mo>=</mo>
+  <mi>π</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+</math></span> exactly at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ω</mi>
+  <mo>=</mo>
+  <msub>
+    <mi>ω</mi>
+    <mn>0</mn>
+  </msub>
+</math></span>, and when <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ω</mi>
+  <mo>&gt;</mo>
+  <msub>
+    <mi>ω</mi>
+    <mn>0</mn>
+  </msub>
+</math></span> the real part is negative and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ϕ</mi>
+</math></span> lies between <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>π</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>π</mi>
+</math></span> (a calculator's <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>tan</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+</math></span> must be moved into that quadrant).</p>
 <p>Thus,</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -9289,7 +11904,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.158">(8.158)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.167">(8.167)</span></div>
 <p> <strong>Step 3(e). Take the imaginary part.</strong></p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -9387,7 +12002,89 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.159">(8.159)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.168">(8.168)</span></div>
+<p>Its velocity, which the example also asks for, is</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <msub>
+          <mrow data-mjx-texclass="ORD">
+            <mover>
+              <mi>x</mi>
+              <mo>˙</mo>
+            </mover>
+          </mrow>
+          <mi>p</mi>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>t</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <msub>
+              <mi>F</mi>
+              <mn>0</mn>
+            </msub>
+            <mrow data-mjx-texclass="ORD">
+              <mo>/</mo>
+            </mrow>
+            <mi>m</mi>
+          </mrow>
+          <mi>R</mi>
+        </mfrac>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <mi>ω</mi>
+        <mspace width="0.167em" /><mi>cos</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+          <mi>ω</mi>
+          <mi>t</mi>
+          <mo>−</mo>
+          <mi>ϕ</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+        </mrow>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:8.169">(8.169)</span></div>
+<p>Since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ϕ</mi>
+  <mo>&gt;</mo>
+  <mn>0</mn>
+</math></span>, the block reaches each peak after the push does: the response lags the force. (Writing <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>x</mi>
+    <mi>p</mi>
+  </msub>
+  <mo>=</mo>
+  <mi>A</mi>
+  <mspace width="0.167em" /><mi>sin</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>ω</mi>
+    <mi>t</mi>
+    <mo>+</mo>
+    <mi>θ</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+</math></span>, as in the lecture video, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>θ</mi>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mi>ϕ</mi>
+</math></span>; taking <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>θ</mi>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+  <mi>ϕ</mi>
+</math></span> would make the block move before it is pushed, and it does not solve the equation.)</p>
 <p> <strong>Final steady–state response:</strong></p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -9463,7 +12160,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.160">(8.160)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.170">(8.170)</span></div>
 <p>with</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -9474,8 +12171,12 @@
             <mstyle displaystyle="true" scriptlevel="0">
               <mrow data-mjx-texclass="ORD">
                 <mi>tan</mi>
-                <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                <mi>ϕ</mi>
+                <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+                <mrow>
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+                  <mi>ϕ</mi>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+                </mrow>
                 <mo>=</mo>
                 <mfrac>
                   <mrow>
@@ -9504,7 +12205,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.161">(8.161)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.171">(8.171)</span></div>
 <p><strong>Step 4. Complete solution.</strong></p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -9538,24 +12239,32 @@
                   <mn>1</mn>
                 </msub>
                 <mspace width="0.167em" /><mi>cos</mi>
-                <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                <msub>
-                  <mi>ω</mi>
-                  <mi>d</mi>
-                </msub>
-                <mi>t</mi>
+                <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+                <mrow>
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+                  <msub>
+                    <mi>ω</mi>
+                    <mi>d</mi>
+                  </msub>
+                  <mi>t</mi>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+                </mrow>
                 <mo>+</mo>
                 <msub>
                   <mi>C</mi>
                   <mn>2</mn>
                 </msub>
                 <mspace width="0.167em" /><mi>sin</mi>
-                <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-                <msub>
-                  <mi>ω</mi>
-                  <mi>d</mi>
-                </msub>
-                <mi>t</mi>
+                <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+                <mrow>
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+                  <msub>
+                    <mi>ω</mi>
+                    <mi>d</mi>
+                  </msub>
+                  <mi>t</mi>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+                </mrow>
                 <mrow data-mjx-texclass="ORD">
                   <mo minsize="1.2em" maxsize="1.2em" stretchy="true" lspace="0em" rspace="0em">)</mo>
                 </mrow>
@@ -9619,7 +12328,8 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.162">(8.162)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.172">(8.172)</span></div>
+<p class="lecture-video"><a href="https://www.youtube.com/watch?v=Tml3f5Fv7dc&amp;t=2842s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> <span>Lecture 22, Part 10: Resonance, and the Answer (47:22)</span></a></p>
 <p><strong>Step 5. Physical interpretation.</strong></p>
 <ul><li><p><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
@@ -9653,14 +12363,7 @@
   <mo stretchy="false">)</mo>
 </math></span>: <strong>Steady–state response</strong>, which oscillates at the driving frequency <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ω</mi>
-</math></span>.</p></li><li><p>For weak damping (<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>γ</mi>
-  <mo>≪</mo>
-  <msub>
-    <mi>ω</mi>
-    <mn>0</mn>
-  </msub>
-</math></span>), the steady–state amplitude is</p>
+</math></span>.</p></li><li><p>The steady–state amplitude, for any damping, is</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -9723,7 +12426,43 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.163">(8.163)</span></div></li><li><p>The amplitude reaches a maximum (resonance) when the driving frequency is close to the <em>natural frequency</em> of oscillation,</p>
+</math><span class="eqn-number" id="mjx-eqn:8.173">(8.173)</span></div>
+<p>A check: for a very slow push, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ω</mi>
+  <mo accent="false" stretchy="false">→</mo>
+  <mn>0</mn>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>A</mi>
+  <mo accent="false" stretchy="false">→</mo>
+  <msub>
+    <mi>F</mi>
+    <mn>0</mn>
+  </msub>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mo stretchy="false">(</mo>
+  <mi>m</mi>
+  <msubsup>
+    <mi>ω</mi>
+    <mn>0</mn>
+    <mn>2</mn>
+  </msubsup>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <msub>
+    <mi>F</mi>
+    <mn>0</mn>
+  </msub>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>k</mi>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>θ</mi>
+  <mo accent="false" stretchy="false">→</mo>
+  <mn>0</mn>
+</math></span>: the spring stretches as under a steady force (Hooke's law), in step with the push.</p></li><li><p>The amplitude reaches a maximum (resonance) when the driving frequency is close to the <em>natural frequency</em> of oscillation,</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -9738,7 +12477,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.164">(8.164)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.174">(8.174)</span></div>
 <p>More precisely, minimising the denominator <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo stretchy="false">(</mo>
   <msubsup>
@@ -9857,7 +12596,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:8.165">(8.165)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:8.175">(8.175)</span></div>
 <p>which is large when <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>γ</mi>
 </math></span> is small — the amplitude at resonance is limited only by the damping, and would diverge if <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -9886,6 +12625,36 @@
   <mi>t</mi>
   <mo stretchy="false">)</mo>
 </math></span> remains.</p></section>
+<figure id="chapter-08-fig-6" class="figure"><img src="assets/img/ch08_fig05_resonance.png" class="diagram" alt="Left: the steady amplitude A() for three dampings. The peak sits near the natural frequency 0, and the weaker the damping, the taller and sharper it is: resonance. Right: the phase = - goes from 0 (a slow push is followed in step) through -/2 at resonance to - (a fast push finds the block moving the other way)." loading="lazy" style="--figure-width: 95%;"><figcaption>Figure 8.6. Left: the steady amplitude <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>A</mi>
+  <mo stretchy="false">(</mo>
+  <mi>ω</mi>
+  <mo stretchy="false">)</mo>
+</math></span> for three dampings. The peak sits near the natural frequency <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ω</mi>
+    <mn>0</mn>
+  </msub>
+</math></span>, and the
+	weaker the damping, the taller and sharper it is: resonance. Right: the phase <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>θ</mi>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mi>ϕ</mi>
+</math></span> goes from <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span> (a slow push is
+	followed in step) through <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mi>π</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+</math></span> at resonance to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mi>π</mi>
+</math></span> (a fast push finds the block moving the other way).</figcaption></figure>
 <h2 id="sec-8-where-differential-equations-are-used"><span class="sec-number">8.5</span>Where Differential Equations Are Used</h2>
 <p>A differential equation is a statement about how a quantity changes, and change is what physics is about. The forced damped oscillator worked at the end of this chapter is not one example among many — it is the template. The <em>same</em> equation <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>m</mi>
@@ -9997,6 +12766,316 @@
   <mi>k</mi>
   <mi>y</mi>
 </math></span> describes radioactive decay, population growth, cooling, and the charging of a capacitor — the separable equations of this chapter.</p></li><li><p><strong>Chemical kinetics and mixing.</strong> Reaction rates and concentration in a stirred tank are first-order linear ODEs solved by the integrating factor.</p></li><li><p><strong>The starting point for everything later.</strong> Series solutions (Chapter 9) handle ODEs with variable coefficients that these elementary methods cannot; partial differential equations (Chapter 10) are solved by separating them into ordinary ones.</p></li></ul>
+<section class="callout example" id="example-fig-ch08-buildings"><header><span class="callout-kind">Example</span><span class="callout-title">Why the middle-height buildings fell in Mexico City, 1985</span></header><p>In the earthquake of 19 September 1985, the buildings of Mexico City that collapsed were mostly between six and fifteen floors, while many lower and taller buildings beside them stood. The soft clay of the old lake bed under the city shook back and forth with a period of about <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mtext>s</mtext>
+</math></span>.</p>
+<p>Model a building by its simplest way of swaying, one block on a spring: the floors are the mass, the bending columns the spring, the internal friction the damping. When the ground moves as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>X</mi>
+    <mi>g</mi>
+  </msub>
+  <mspace width="0.167em" /><mi>sin</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>ω</mi>
+    <mi>t</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+</math></span>, the sway <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> of the floors relative to the ground obeys</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>m</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mover>
+            <mi>x</mi>
+            <mo>¨</mo>
+          </mover>
+        </mrow>
+        <mo>+</mo>
+        <mi>b</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mover>
+            <mi>x</mi>
+            <mo>˙</mo>
+          </mover>
+        </mrow>
+        <mo>+</mo>
+        <mi>k</mi>
+        <mi>x</mi>
+        <mo>=</mo>
+        <mi>m</mi>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <msup>
+          <mi>ω</mi>
+          <mn>2</mn>
+        </msup>
+        <msub>
+          <mi>X</mi>
+          <mi>g</mi>
+        </msub>
+        <mspace width="0.167em" /><mi>sin</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+          <mi>ω</mi>
+          <mi>t</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+        </mrow>
+        <mo>,</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:8.176">(8.176)</span></div>
+<p>the forced oscillator with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>F</mi>
+    <mn>0</mn>
+  </msub>
+  <mo>=</mo>
+  <mi>m</mi>
+  <msup>
+    <mi>ω</mi>
+    <mn>2</mn>
+  </msup>
+  <msub>
+    <mi>X</mi>
+    <mi>g</mi>
+  </msub>
+</math></span> (seen from the moving ground, the floors feel the force that keeps them up with its acceleration). The derivation: with the ground at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>x</mi>
+    <mi>g</mi>
+  </msub>
+  <mo>=</mo>
+  <msub>
+    <mi>X</mi>
+    <mi>g</mi>
+  </msub>
+  <mspace width="0.167em" /><mi>sin</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>ω</mi>
+    <mi>t</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+</math></span>, the floors' own acceleration is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mi>x</mi>
+      <mo>¨</mo>
+    </mover>
+  </mrow>
+  <mo>+</mo>
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover>
+        <mi>x</mi>
+        <mo>¨</mo>
+      </mover>
+    </mrow>
+    <mi>g</mi>
+  </msub>
+</math></span>, while the columns and the friction act only on the bending <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span>, so Newton's law reads <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mo stretchy="false">(</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mi>x</mi>
+      <mo>¨</mo>
+    </mover>
+  </mrow>
+  <mo>+</mo>
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover>
+        <mi>x</mi>
+        <mo>¨</mo>
+      </mover>
+    </mrow>
+    <mi>g</mi>
+  </msub>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mi>k</mi>
+  <mi>x</mi>
+  <mo>−</mo>
+  <mi>b</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mi>x</mi>
+      <mo>˙</mo>
+    </mover>
+  </mrow>
+</math></span>; with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mrow data-mjx-texclass="ORD">
+      <mover>
+        <mi>x</mi>
+        <mo>¨</mo>
+      </mover>
+    </mrow>
+    <mi>g</mi>
+  </msub>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <msup>
+    <mi>ω</mi>
+    <mn>2</mn>
+  </msup>
+  <msub>
+    <mi>X</mi>
+    <mi>g</mi>
+  </msub>
+  <mspace width="0.167em" /><mi>sin</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>ω</mi>
+    <mi>t</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+</math></span> the ground's term moves to the right side as the push. Write the damping as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>γ</mi>
+  <mo>=</mo>
+  <mi>ζ</mi>
+  <msub>
+    <mi>ω</mi>
+    <mn>0</mn>
+  </msub>
+</math></span>; buildings have <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ζ</mi>
+  <mo>≈</mo>
+  <mn>5</mn>
+  <mi mathvariant="normal">%</mi>
+</math></span>. At <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ω</mi>
+    <mn>0</mn>
+  </msub>
+  <mo>=</mo>
+  <mi>ω</mi>
+</math></span> the steady amplitude is</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>A</mi>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <msup>
+              <mi>ω</mi>
+              <mn>2</mn>
+            </msup>
+            <msub>
+              <mi>X</mi>
+              <mi>g</mi>
+            </msub>
+          </mrow>
+          <mrow>
+            <mn>2</mn>
+            <mi>γ</mi>
+            <mi>ω</mi>
+          </mrow>
+        </mfrac>
+        <mo>=</mo>
+        <mfrac>
+          <msub>
+            <mi>X</mi>
+            <mi>g</mi>
+          </msub>
+          <mrow>
+            <mn>2</mn>
+            <mi>ζ</mi>
+          </mrow>
+        </mfrac>
+        <mo>≈</mo>
+        <mn>10</mn>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <msub>
+          <mi>X</mi>
+          <mi>g</mi>
+        </msub>
+        <mo>:</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:8.177">(8.177)</span></div>
+<p>a building whose natural period matches the ground's sways ten times as far as the ground moves. A low, stiff building (natural period <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0.4</mn>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mtext>s</mtext>
+</math></span>, say) moves with the ground, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>A</mi>
+  <mo>≈</mo>
+  <mn>0.04</mn>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msub>
+    <mi>X</mi>
+    <mi>g</mi>
+  </msub>
+</math></span>; a much taller one (<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>4.5</mn>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mtext>s</mtext>
+</math></span>) cannot follow the fast ground and bends little, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>A</mi>
+  <mo>≈</mo>
+  <mn>1.2</mn>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msub>
+    <mi>X</mi>
+    <mi>g</mi>
+  </msub>
+</math></span> spread over many floors (Figure <a class="xref" href="../chapter-08/index.html#chapter-08-fig-7">8.7</a>). Many buildings of the middle height had natural periods near <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mtext>s</mtext>
+</math></span>: they were driven at resonance.</p>
+<div class="centered"><figure id="chapter-08-fig-7" class="figure"><img src="assets/img/ch08_fig06_buildings.png" class="diagram" alt="The steady sway of a building, divided by the ground&#x27;s motion, against the building&#x27;s natural period, for ground shaking with period 2\,s and 5\% damping. The peak sits at 2\,s." loading="lazy" style="--figure-width: 70%;"><figcaption>Figure 8.7. The steady sway of a building, divided by the ground's motion, against the building's natural period,
+		for ground shaking with period <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mtext>s</mtext>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>5</mn>
+  <mi mathvariant="normal">%</mi>
+</math></span> damping. The peak sits at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mtext>s</mtext>
+</math></span>.</figcaption></figure></div></section>
 <section class="callout remark"><header>Remark</header><p>Two ideas from this chapter carry the most weight later. First, for a <em>linear</em> equation the general solution is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>y</mi>
@@ -10328,18 +13407,26 @@
     <mn>1</mn>
   </msub>
   <mspace width="0.167em" /><mi>cos</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mi>β</mi>
-  <mi>x</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>β</mi>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
   <mo>+</mo>
   <msub>
     <mi>C</mi>
     <mn>2</mn>
   </msub>
   <mspace width="0.167em" /><mi>sin</mi>
-  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0.167em">⁡</mo>
-  <mi>β</mi>
-  <mi>x</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>β</mi>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
   <mo stretchy="false">)</mo>
 </math></span>.</td></tr><tr><td>Nonhomogeneous (2nd)</td><td><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>a</mi>
@@ -10397,6 +13484,9 @@
     </mrow>
   </msup>
 </math></span> and with the complex amplitude in the oscillator example — replace calculus by algebra by moving to a transform.</p></section>
+<h3 id="sec-8-video-lectures">Video lectures</h3>
+<p>Each section of this chapter links to the part of a lecture that teaches it. The full lectures are below, and all of them are in the <a href="https://www.youtube.com/playlist?list=PLMf1SoafIGr0">course playlist</a>.</p>
+<p class="lecture-video"><a href="https://www.youtube.com/watch?v=Tml3f5Fv7dc&amp;t=0s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> <span>Lecture 22: Why Mexico City's Buildings Fell - Ordinary Differential Equations (full lecture)</span></a></p>
     <nav class="chapter-nav" aria-label="Chapter navigation">
       <a href="../chapter-07/index.html">Previous: Fourier Series and Transforms</a>
       <a href="../../toc.html">Contents</a>
