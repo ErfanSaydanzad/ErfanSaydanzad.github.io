@@ -64,11 +64,12 @@
 </math></span>-equation</span></a>
 <a class="toc-level-3" href="#sec-10-5-superposition-and-the-base-condition"><span>5. Superposition and the base condition</span></a>
 <a class="toc-level-3" href="#sec-10-6-final-temperature-distribution"><span>6. Final temperature distribution</span></a>
-<a class="toc-level-2" href="#sec-10-helmholtz-equation-and-the-infinite-spherical-well"><span>10.4 Helmholtz Equation and the Infinite Spherical Well</span></a>
-<a class="toc-level-3" href="#sec-10-from-schr-dinger-to-helmholtz"><span>10.4.1 From Schrödinger to Helmholtz</span></a>
-<a class="toc-level-3" href="#sec-10-infinite-spherical-well"><span>10.4.2 Infinite Spherical Well</span></a>
-<a class="toc-level-3" href="#sec-10-separation-in-spherical-coordinates-three-odes"><span>10.4.3 Separation in Spherical Coordinates: Three ODEs</span></a>
-<a class="toc-level-3" href="#sec-10-angular-equations-and"><span>10.4.4 Angular Equations: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<a class="toc-level-2" href="#sec-10-the-wave-equation-on-a-circle-the-drum"><span>10.4 The Wave Equation on a Circle: the Drum</span></a>
+<a class="toc-level-2" href="#sec-10-helmholtz-equation-and-the-infinite-spherical-well"><span>10.5 Helmholtz Equation and the Infinite Spherical Well</span></a>
+<a class="toc-level-3" href="#sec-10-from-schr-dinger-to-helmholtz"><span>10.5.1 From Schrödinger to Helmholtz</span></a>
+<a class="toc-level-3" href="#sec-10-infinite-spherical-well"><span>10.5.2 Infinite Spherical Well</span></a>
+<a class="toc-level-3" href="#sec-10-separation-in-spherical-coordinates-three-odes"><span>10.5.3 Separation in Spherical Coordinates: Three ODEs</span></a>
+<a class="toc-level-3" href="#sec-10-angular-equations-and"><span>10.5.4 Angular Equations: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi mathvariant="normal">Φ</mi>
   <mo stretchy="false">(</mo>
   <mi>ϕ</mi>
@@ -79,14 +80,15 @@
   <mi>θ</mi>
   <mo stretchy="false">)</mo>
 </math></span></span></a>
-<a class="toc-level-3" href="#sec-10-radial-equation-and-bessel-functions"><span>10.4.5 Radial Equation and Bessel Functions</span></a>
-<a class="toc-level-3" href="#sec-10-boundary-condition-and-energy-quantization"><span>10.4.6 Boundary Condition and Energy Quantization</span></a>
+<a class="toc-level-3" href="#sec-10-radial-equation-and-bessel-functions"><span>10.5.5 Radial Equation and Bessel Functions</span></a>
+<a class="toc-level-3" href="#sec-10-boundary-condition-and-energy-quantization"><span>10.5.6 Boundary Condition and Energy Quantization</span></a>
 <a class="toc-level-3" href="#sec-10-summary-of-the-separation"><span>Summary of the separation:</span></a>
-<a class="toc-level-2" href="#sec-10-where-partial-differential-equations-lead"><span>10.5 Where Partial Differential Equations Lead</span></a>
+<a class="toc-level-2" href="#sec-10-where-partial-differential-equations-lead"><span>10.6 Where Partial Differential Equations Lead</span></a>
 <a class="toc-level-2" href="#sec-10-summary-table"><span>Summary Table</span></a>
 <a class="toc-level-2" href="#sec-10-for-the-interested-reader"><span>For the Interested Reader</span></a>
 <a class="toc-level-3" href="#sec-10-videos"><span>Videos</span></a>
 <a class="toc-level-3" href="#sec-10-websites"><span>Websites</span></a>
+<a class="toc-level-3" href="#sec-10-video-lectures"><span>Video lectures</span></a>
     </nav>
   </div>
 </aside>
@@ -234,6 +236,7 @@
 </math></span>, whose form depends on the coordinate system used.</p>
 <section class="callout remark"><header><span class="callout-kind">Remark</span><span class="callout-title">Key idea</span></header><p>Separation of variables works only when the coordinate system reflects the symmetry of the physical system.</p></section>
 <h3 id="sec-10-separating-time-and-space">Separating Time and Space</h3>
+<p class="lecture-video"><a href="https://www.youtube.com/watch?v=-ftSHSaWo3k&amp;t=0s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> <span>Lecture 25, Part 1: An Electron Trapped in a Sphere (0:00)</span></a></p>
 <p>For many linear PDEs, the first and most important step is to separate the <strong>time dependence</strong> from the <strong>spatial dependence</strong>. We assume a product form</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -2906,7 +2909,832 @@
   <mo>=</mo>
   <mn>1</mn>
 </math></span>.</p></section>
-<h2 id="sec-10-helmholtz-equation-and-the-infinite-spherical-well"><span class="sec-number">10.4</span>Helmholtz Equation and the Infinite Spherical Well</h2>
+<section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">How warm is the middle of the plate?</span></header><p>With <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mo>=</mo>
+  <mn>10</mn>
+</math></span> cm and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>T</mi>
+    <mn>0</mn>
+  </msub>
+  <mo>=</mo>
+  <msup>
+    <mn>100</mn>
+    <mo>∘</mo>
+  </msup>
+</math></span>C, up the centre line <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>=</mo>
+  <mn>5</mn>
+</math></span> cm the series gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>T</mi>
+  <mo>≈</mo>
+  <msup>
+    <mn>62</mn>
+    <mo>∘</mo>
+  </msup>
+</math></span>C at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>y</mi>
+  <mo>=</mo>
+  <mn>2</mn>
+</math></span> cm, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>26</mn>
+    <mo>∘</mo>
+  </msup>
+</math></span>C at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>y</mi>
+  <mo>=</mo>
+  <mn>5</mn>
+</math></span> cm and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>5.5</mn>
+    <mo>∘</mo>
+  </msup>
+</math></span>C at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>y</mi>
+  <mo>=</mo>
+  <mn>10</mn>
+</math></span> cm. At <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>y</mi>
+  <mo>=</mo>
+  <mn>5</mn>
+</math></span> cm the first mode alone gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mfrac>
+    <mrow>
+      <mn>4</mn>
+      <msub>
+        <mi>T</mi>
+        <mn>0</mn>
+      </msub>
+    </mrow>
+    <mi>π</mi>
+  </mfrac>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi>π</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mo>≈</mo>
+  <msup>
+    <mn>26.5</mn>
+    <mo>∘</mo>
+  </msup>
+</math></span>C: the higher modes, which die like <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi>n</mi>
+      <mi>π</mi>
+      <mi>y</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mi>a</mi>
+    </mrow>
+  </msup>
+</math></span>, have already vanished. At the hot edge itself many terms are needed, and the partial sums overshoot near the corners, where the edge temperature jumps from <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>T</mi>
+    <mn>0</mn>
+  </msub>
+</math></span> to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span> (the Gibbs phenomenon of Chapter 7).</p></section>
+<h2 id="sec-10-the-wave-equation-on-a-circle-the-drum"><span class="sec-number">10.4</span>The Wave Equation on a Circle: the Drum</h2>
+<p>The same method on the wave equation, with a circular boundary: a drumhead of radius <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>R</mi>
+</math></span> clamped at its rim (the course's Drum project, <code>projects/examples/Drum</code>, works it through to the sound). Its height <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>u</mi>
+  <mo stretchy="false">(</mo>
+  <mi>r</mi>
+  <mo>,</mo>
+  <mi>θ</mi>
+  <mo>,</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+</math></span> obeys</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mfrac>
+          <mrow>
+            <msup>
+              <mi>∂</mi>
+              <mn>2</mn>
+            </msup>
+            <mi>u</mi>
+          </mrow>
+          <mrow>
+            <mi>∂</mi>
+            <msup>
+              <mi>t</mi>
+              <mn>2</mn>
+            </msup>
+          </mrow>
+        </mfrac>
+        <mo>=</mo>
+        <msup>
+          <mi>c</mi>
+          <mn>2</mn>
+        </msup>
+        <msup>
+          <mi mathvariant="normal">∇</mi>
+          <mn>2</mn>
+        </msup>
+        <mi>u</mi>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <msup>
+          <mi mathvariant="normal">∇</mi>
+          <mn>2</mn>
+        </msup>
+        <mi>u</mi>
+        <mo>=</mo>
+        <mfrac>
+          <mn>1</mn>
+          <mi>r</mi>
+        </mfrac>
+        <mfrac>
+          <mi>∂</mi>
+          <mrow>
+            <mi>∂</mi>
+            <mi>r</mi>
+          </mrow>
+        </mfrac>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mi>r</mi>
+          <mfrac>
+            <mrow>
+              <mi>∂</mi>
+              <mi>u</mi>
+            </mrow>
+            <mrow>
+              <mi>∂</mi>
+              <mi>r</mi>
+            </mrow>
+          </mfrac>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
+        <mo>+</mo>
+        <mfrac>
+          <mn>1</mn>
+          <msup>
+            <mi>r</mi>
+            <mn>2</mn>
+          </msup>
+        </mfrac>
+        <mfrac>
+          <mrow>
+            <msup>
+              <mi>∂</mi>
+              <mn>2</mn>
+            </msup>
+            <mi>u</mi>
+          </mrow>
+          <mrow>
+            <mi>∂</mi>
+            <msup>
+              <mi>θ</mi>
+              <mn>2</mn>
+            </msup>
+          </mrow>
+        </mfrac>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <mi>c</mi>
+        <mo>=</mo>
+        <msqrt>
+          <mi>τ</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mo>/</mo>
+          </mrow>
+          <mi>σ</mi>
+        </msqrt>
+        <mo>,</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:10.47">(10.47)</span></div>
+<p>with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>u</mi>
+  <mo stretchy="false">(</mo>
+  <mi>R</mi>
+  <mo>,</mo>
+  <mi>θ</mi>
+  <mo>,</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>u</mi>
+</math></span> finite at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>. Put <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>u</mi>
+  <mo>=</mo>
+  <mi>P</mi>
+  <mo stretchy="false">(</mo>
+  <mi>r</mi>
+  <mo stretchy="false">)</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mi mathvariant="normal">Θ</mi>
+  <mo stretchy="false">(</mo>
+  <mi>θ</mi>
+  <mo stretchy="false">)</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mi>T</mi>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+</math></span> (the letter <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>P</mi>
+</math></span> keeps <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>R</mi>
+</math></span> for the radius) and divide by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>P</mi>
+  <mi mathvariant="normal">Θ</mi>
+  <mi>T</mi>
+</math></span>:</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mfrac>
+          <mn>1</mn>
+          <msup>
+            <mi>c</mi>
+            <mn>2</mn>
+          </msup>
+        </mfrac>
+        <mfrac>
+          <msup>
+            <mi>T</mi>
+            <mo data-mjx-alternate="1">″</mo>
+          </msup>
+          <mi>T</mi>
+        </mfrac>
+        <mo>=</mo>
+        <mfrac>
+          <mn>1</mn>
+          <mi>P</mi>
+        </mfrac>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <msup>
+            <mi>P</mi>
+            <mo data-mjx-alternate="1">″</mo>
+          </msup>
+          <mo>+</mo>
+          <mfrac>
+            <mn>1</mn>
+            <mi>r</mi>
+          </mfrac>
+          <msup>
+            <mi>P</mi>
+            <mo data-mjx-alternate="1">′</mo>
+          </msup>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
+        <mo>+</mo>
+        <mfrac>
+          <mn>1</mn>
+          <msup>
+            <mi>r</mi>
+            <mn>2</mn>
+          </msup>
+        </mfrac>
+        <mfrac>
+          <msup>
+            <mi mathvariant="normal">Θ</mi>
+            <mo data-mjx-alternate="1">″</mo>
+          </msup>
+          <mi mathvariant="normal">Θ</mi>
+        </mfrac>
+        <mo>=</mo>
+        <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+        <msup>
+          <mi>k</mi>
+          <mn>2</mn>
+        </msup>
+        <mo>,</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:10.48">(10.48)</span></div>
+<p>negative because the membrane swings instead of growing. Then <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>T</mi>
+    <mo data-mjx-alternate="1">″</mo>
+  </msup>
+  <mo>+</mo>
+  <msup>
+    <mi>ω</mi>
+    <mn>2</mn>
+  </msup>
+  <mi>T</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ω</mi>
+  <mo>=</mo>
+  <mi>c</mi>
+  <mi>k</mi>
+</math></span>; multiplying the space part by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>r</mi>
+    <mn>2</mn>
+  </msup>
+</math></span> separates <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi mathvariant="normal">Θ</mi>
+    <mo data-mjx-alternate="1">″</mo>
+  </msup>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi mathvariant="normal">Θ</mi>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <msup>
+    <mi>n</mi>
+    <mn>2</mn>
+  </msup>
+</math></span>, and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Θ</mi>
+  <mo stretchy="false">(</mo>
+  <mi>θ</mi>
+  <mo>+</mo>
+  <mn>2</mn>
+  <mi>π</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mi mathvariant="normal">Θ</mi>
+  <mo stretchy="false">(</mo>
+  <mi>θ</mi>
+  <mo stretchy="false">)</mo>
+</math></span> makes <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+  <mo>,</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mn>2</mn>
+  <mo>,</mo>
+  <mo>…</mo>
+</math></span>; what is left is</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mrow class="mml-boxed">
+          <mrow data-mjx-texclass="ORD">
+            <mstyle displaystyle="true" scriptlevel="0">
+              <mrow data-mjx-texclass="ORD">
+                <msup>
+                  <mi>r</mi>
+                  <mn>2</mn>
+                </msup>
+                <msup>
+                  <mi>P</mi>
+                  <mo data-mjx-alternate="1">″</mo>
+                </msup>
+                <mo>+</mo>
+                <mi>r</mi>
+                <msup>
+                  <mi>P</mi>
+                  <mo data-mjx-alternate="1">′</mo>
+                </msup>
+                <mo>+</mo>
+                <mrow data-mjx-texclass="INNER">
+                  <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+                  <msup>
+                    <mi>k</mi>
+                    <mn>2</mn>
+                  </msup>
+                  <msup>
+                    <mi>r</mi>
+                    <mn>2</mn>
+                  </msup>
+                  <mo>−</mo>
+                  <msup>
+                    <mi>n</mi>
+                    <mn>2</mn>
+                  </msup>
+                  <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+                </mrow>
+                <mi>P</mi>
+                <mo>=</mo>
+                <mn>0</mn>
+              </mrow>
+            </mstyle>
+          </mrow>
+        </mrow>
+        <mo>,</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:10.49">(10.49)</span></div>
+<p>Bessel's equation of order <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> in <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>=</mo>
+  <mi>k</mi>
+  <mi>r</mi>
+</math></span> (Chapter 9). So <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>P</mi>
+  <mo>=</mo>
+  <msub>
+    <mi>J</mi>
+    <mi>n</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>k</mi>
+  <mi>r</mi>
+  <mo stretchy="false">)</mo>
+</math></span> (<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>Y</mi>
+    <mi>n</mi>
+  </msub>
+</math></span> blows up at the centre), the clamped rim gives <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>J</mi>
+    <mi>n</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>k</mi>
+  <mi>R</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+  <mi>R</mi>
+  <mo>=</mo>
+  <msub>
+    <mi>α</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+      <mi>m</mi>
+    </mrow>
+  </msub>
+</math></span>, and</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <msub>
+          <mi>ω</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mi>n</mi>
+            <mi>m</mi>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mi>c</mi>
+            <mstyle scriptlevel="0">
+              <mspace width="0.167em" />
+            </mstyle>
+            <msub>
+              <mi>α</mi>
+              <mrow data-mjx-texclass="ORD">
+                <mi>n</mi>
+                <mi>m</mi>
+              </mrow>
+            </msub>
+          </mrow>
+          <mi>R</mi>
+        </mfrac>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <msub>
+          <mi>u</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mi>n</mi>
+            <mi>m</mi>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <msub>
+          <mi>J</mi>
+          <mi>n</mi>
+        </msub>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <msub>
+            <mi>α</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mi>n</mi>
+              <mi>m</mi>
+            </mrow>
+          </msub>
+          <mfrac>
+            <mi>r</mi>
+            <mi>R</mi>
+          </mfrac>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
+        <mspace width="0.167em" /><mi>cos</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+          <mi>n</mi>
+          <mi>θ</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+        </mrow>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">[</mo>
+          <msub>
+            <mi>a</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mi>n</mi>
+              <mi>m</mi>
+            </mrow>
+          </msub>
+          <mspace width="0.167em" /><mi>cos</mi>
+          <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+          <mrow>
+            <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+            <msub>
+              <mi>ω</mi>
+              <mrow data-mjx-texclass="ORD">
+                <mi>n</mi>
+                <mi>m</mi>
+              </mrow>
+            </msub>
+            <mi>t</mi>
+            <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+          </mrow>
+          <mo>+</mo>
+          <msub>
+            <mi>b</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mi>n</mi>
+              <mi>m</mi>
+            </mrow>
+          </msub>
+          <mspace width="0.167em" /><mi>sin</mi>
+          <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+          <mrow>
+            <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+            <msub>
+              <mi>ω</mi>
+              <mrow data-mjx-texclass="ORD">
+                <mi>n</mi>
+                <mi>m</mi>
+              </mrow>
+            </msub>
+            <mi>t</mi>
+            <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+          </mrow>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">]</mo>
+        </mrow>
+        <mo>,</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:10.50">(10.50)</span></div>
+<p>the modes drawn in Chapter 9 (“Why a drum cannot play a tune”). A mallet leaves the skin flat but moving, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>u</mi>
+  <mo stretchy="false">(</mo>
+  <mi>r</mi>
+  <mo>,</mo>
+  <mi>θ</mi>
+  <mo>,</mo>
+  <mn>0</mn>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>∂</mi>
+    <mi>t</mi>
+  </msub>
+  <mi>u</mi>
+  <mo stretchy="false">(</mo>
+  <mi>r</mi>
+  <mo>,</mo>
+  <mi>θ</mi>
+  <mo>,</mo>
+  <mn>0</mn>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mi>v</mi>
+  <mo stretchy="false">(</mo>
+  <mi>r</mi>
+  <mo>,</mo>
+  <mi>θ</mi>
+  <mo stretchy="false">)</mo>
+</math></span>, so every <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>a</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+      <mi>m</mi>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> and</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <mi>u</mi>
+        <mo>=</mo>
+        <munder>
+          <mo data-mjx-texclass="OP" stretchy="true">∑</mo>
+          <mrow data-mjx-texclass="ORD">
+            <mi>n</mi>
+            <mo>,</mo>
+            <mi>m</mi>
+          </mrow>
+        </munder>
+        <mfrac>
+          <msub>
+            <mi>B</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mi>n</mi>
+              <mi>m</mi>
+            </mrow>
+          </msub>
+          <msub>
+            <mi>ω</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mi>n</mi>
+              <mi>m</mi>
+            </mrow>
+          </msub>
+        </mfrac>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <msub>
+          <mi>J</mi>
+          <mi>n</mi>
+        </msub>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <msub>
+            <mi>α</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mi>n</mi>
+              <mi>m</mi>
+            </mrow>
+          </msub>
+          <mfrac>
+            <mi>r</mi>
+            <mi>R</mi>
+          </mfrac>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
+        <mspace width="0.167em" /><mi>cos</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+          <mi>n</mi>
+          <mi>θ</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+        </mrow>
+        <mspace width="0.167em" /><mi>sin</mi>
+        <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+        <mrow>
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+          <msub>
+            <mi>ω</mi>
+            <mrow data-mjx-texclass="ORD">
+              <mi>n</mi>
+              <mi>m</mi>
+            </mrow>
+          </msub>
+          <mi>t</mi>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+        </mrow>
+        <mo>,</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:10.51">(10.51)</span></div>
+<p>where the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>B</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+      <mi>m</mi>
+    </mrow>
+  </msub>
+</math></span> are found exactly as the plate's <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>D</mi>
+    <mi>n</mi>
+  </msub>
+</math></span>, by orthogonality, now with the weight <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+</math></span> of the polar area element: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msubsup>
+    <mo data-mjx-texclass="OP">∫</mo>
+    <mn>0</mn>
+    <mi>R</mi>
+  </msubsup>
+  <msub>
+    <mi>J</mi>
+    <mi>n</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>α</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+      <mi>m</mi>
+    </mrow>
+  </msub>
+  <mi>r</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>R</mi>
+  <mo stretchy="false">)</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msub>
+    <mi>J</mi>
+    <mi>n</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>α</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+      <msup>
+        <mi>m</mi>
+        <mo data-mjx-alternate="1">′</mo>
+      </msup>
+    </mrow>
+  </msub>
+  <mi>r</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>R</mi>
+  <mo stretchy="false">)</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mi>r</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mi>d</mi>
+  <mi>r</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mo>≠</mo>
+  <msup>
+    <mi>m</mi>
+    <mo data-mjx-alternate="1">′</mo>
+  </msup>
+</math></span>. This is the Fourier–Bessel series, the circle's counterpart of the Fourier sine series. Each mode swings at its own <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ω</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+      <mi>m</mi>
+    </mrow>
+  </msub>
+</math></span>, and since these are not whole multiples of one frequency, the motion of a struck drum never repeats.</p>
+<h2 id="sec-10-helmholtz-equation-and-the-infinite-spherical-well"><span class="sec-number">10.5</span>Helmholtz Equation and the Infinite Spherical Well</h2>
+<p class="lecture-video"><a href="https://www.youtube.com/watch?v=-ftSHSaWo3k&amp;t=286s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> <span>Lecture 25, Part 2: Helmholtz and Three Ordinary Equations (4:46)</span></a></p>
 <p>Using the time dependence</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -2947,7 +3775,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.47">(10.47)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.52">(10.52)</span></div>
 <p>the spatial wave function <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ψ</mi>
   <mo stretchy="false">(</mo>
@@ -2956,7 +3784,7 @@
   </mrow>
   <mo stretchy="false">)</mo>
 </math></span> satisfies the time-independent Schrödinger equation.</p>
-<h3 id="sec-10-from-schr-dinger-to-helmholtz"><span class="sec-number">10.4.1</span>From Schrödinger to Helmholtz</h3>
+<h3 id="sec-10-from-schr-dinger-to-helmholtz"><span class="sec-number">10.5.1</span>From Schrödinger to Helmholtz</h3>
 <p>The equation</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -2996,7 +3824,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.48">(10.48)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.53">(10.53)</span></div>
 <p>simplifies to the <strong>Helmholtz equation</strong></p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -3030,7 +3858,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.49">(10.49)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.54">(10.54)</span></div>
 <p>whenever <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>V</mi>
   <mo stretchy="false">(</mo>
@@ -3083,8 +3911,8 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.50">(10.50)</span></div>
-<h3 id="sec-10-infinite-spherical-well"><span class="sec-number">10.4.2</span>Infinite Spherical Well</h3>
+</math><span class="eqn-number" id="mjx-eqn:10.55">(10.55)</span></div>
+<h3 id="sec-10-infinite-spherical-well"><span class="sec-number">10.5.2</span>Infinite Spherical Well</h3>
 <p>The potential for a 3D infinite spherical well is</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -3130,7 +3958,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.51">(10.51)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.56">(10.56)</span></div>
 <p>Inside the well, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>V</mi>
   <mo>=</mo>
@@ -3185,7 +4013,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.52">(10.52)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.57">(10.57)</span></div>
 <p>Boundary conditions:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -3219,9 +4047,30 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.53">(10.53)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.58">(10.58)</span></div>
 <p>This leads naturally to separation in spherical coordinates, producing Bessel functions in the radial equation and Legendre functions in the angular part.</p>
-<h3 id="sec-10-separation-in-spherical-coordinates-three-odes"><span class="sec-number">10.4.3</span>Separation in Spherical Coordinates: Three ODEs</h3>
+<p class="paragraph-title">What the potential means.</p>
+<p>Drawn against the distance <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+</math></span>, the potential is flat at zero inside the crystal and rises without limit at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mo>=</mo>
+  <mi>a</mi>
+</math></span>. Inside, no force acts on the electron; at the wall it is pushed back, however much energy it has, so the wave cannot enter <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mo>&gt;</mo>
+  <mi>a</mi>
+</math></span> and must vanish on the wall. A real crystal has a high wall, but not an infinite one: the infinite wall is the simplest model of it.</p>
+<div class="centered"><figure id="chapter-10-fig-3" class="figure"><img src="assets/img/ch10_fig01_well.png" class="diagram" alt="The infinite spherical well: V = 0 inside the dot, a wall without limit at r = a." loading="lazy" style="--figure-width: 55%;"><figcaption>Figure 10.3. The infinite spherical well: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>V</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> inside the dot, a wall without limit at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mo>=</mo>
+  <mi>a</mi>
+</math></span>.</figcaption></figure></div>
+<h3 id="sec-10-separation-in-spherical-coordinates-three-odes"><span class="sec-number">10.5.3</span>Separation in Spherical Coordinates: Three ODEs</h3>
 <p>In spherical coordinates <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo stretchy="false">(</mo>
   <mi>r</mi>
@@ -3352,7 +4201,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.54">(10.54)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.59">(10.59)</span></div>
 <p>We look for a fully separated solution of the form</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -3389,7 +4238,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.55">(10.55)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.60">(10.60)</span></div>
 <p>Substituting into <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi mathvariant="normal">∇</mi>
@@ -3404,6 +4253,11 @@
   <mi>ψ</mi>
   <mo>=</mo>
   <mn>0</mn>
+</math></span>, multiplying by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>r</mi>
+    <mn>2</mn>
+  </msup>
 </math></span> and dividing by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>R</mi>
   <mstyle scriptlevel="0">
@@ -3528,7 +4382,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.56">(10.56)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.61">(10.61)</span></div>
 <p>Group the radial and angular parts:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -3673,7 +4527,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.57">(10.57)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.62">(10.62)</span></div>
 <p>Since the first term depends only on <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>r</mi>
 </math></span> and the second only on <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -3770,7 +4624,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.58">(10.58)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.63">(10.63)</span></div>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -3829,9 +4683,9 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.59">(10.59)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.64">(10.64)</span></div>
 <p>We now separate the angular equation further.</p>
-<h3 id="sec-10-angular-equations-and"><span class="sec-number">10.4.4</span>Angular Equations: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<h3 id="sec-10-angular-equations-and"><span class="sec-number">10.5.4</span>Angular Equations: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi mathvariant="normal">Φ</mi>
   <mo stretchy="false">(</mo>
   <mi>ϕ</mi>
@@ -3924,7 +4778,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.60">(10.60)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.65">(10.65)</span></div>
 <p>Multiply by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>sin</mi>
@@ -4011,7 +4865,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.61">(10.61)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.66">(10.66)</span></div>
 <p>The first term depends only on <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>θ</mi>
 </math></span>, the second only on <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -4114,7 +4968,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.62">(10.62)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.67">(10.67)</span></div>
 <p>Thus we obtain two ODEs:</p>
 <ol><li><p><strong><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ϕ</mi>
@@ -4158,7 +5012,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.63">(10.63)</span></div></li><li><p><strong><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math><span class="eqn-number" id="mjx-eqn:10.68">(10.68)</span></div></li><li><p><strong><span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>θ</mi>
 </math></span>-equation</strong></p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
@@ -4240,7 +5094,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.64">(10.64)</span></div></li></ol>
+</math><span class="eqn-number" id="mjx-eqn:10.69">(10.69)</span></div></li></ol>
 <p class="paragraph-title">Solution of the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ϕ</mi>
 </math></span>-equation.</p>
@@ -4284,7 +5138,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.65">(10.65)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.70">(10.70)</span></div>
 <p>Single-valuedness of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ψ</mi>
 </math></span> requires <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -4319,7 +5173,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.66">(10.66)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.71">(10.71)</span></div>
 <p>We usually choose the basis <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>e</mi>
@@ -4351,7 +5205,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.67">(10.67)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.72">(10.72)</span></div>
 <p class="paragraph-title">Solution of the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>θ</mi>
 </math></span>-equation.</p>
@@ -4390,7 +5244,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.68">(10.68)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.73">(10.73)</span></div>
 <p>with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ℓ</mi>
   <mo>=</mo>
@@ -4475,7 +5329,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.69">(10.69)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.74">(10.74)</span></div>
 <p>where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>N</mi>
@@ -4535,8 +5389,9 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.70">(10.70)</span></div>
-<h3 id="sec-10-radial-equation-and-bessel-functions"><span class="sec-number">10.4.5</span>Radial Equation and Bessel Functions</h3>
+</math><span class="eqn-number" id="mjx-eqn:10.75">(10.75)</span></div>
+<h3 id="sec-10-radial-equation-and-bessel-functions"><span class="sec-number">10.5.5</span>Radial Equation and Bessel Functions</h3>
+<p class="lecture-video"><a href="https://www.youtube.com/watch?v=-ftSHSaWo3k&amp;t=620s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> <span>Lecture 25, Part 3: Spherical Bessel Functions (10:20)</span></a></p>
 <p>The radial part of the separated solution satisfies</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -4613,7 +5468,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.71">(10.71)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.76">(10.76)</span></div>
 <p>We now show how this can be solved in terms of ordinary Bessel functions of half–integer order.</p>
 <p class="paragraph-title">Step 1. Non-dimensionalize the equation.</p>
 <p>Introduce the dimensionless variable</p>
@@ -4629,7 +5484,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.72">(10.72)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.77">(10.77)</span></div>
 <p>so that</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -4706,7 +5561,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.73">(10.73)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.78">(10.78)</span></div>
 <p>First expand the derivative in the radial equation:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -4786,7 +5641,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.74">(10.74)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.79">(10.79)</span></div>
 <p>Thus the equation becomes</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -4864,7 +5719,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.75">(10.75)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.80">(10.80)</span></div>
 <p>Now rewrite everything in terms of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>x</mi>
   <mo>=</mo>
@@ -4982,7 +5837,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.76">(10.76)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.81">(10.81)</span></div>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -5034,7 +5889,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.77">(10.77)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.82">(10.82)</span></div>
 <p>and</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -5063,7 +5918,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.78">(10.78)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.83">(10.83)</span></div>
 <p>Hence the radial equation becomes</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -5145,7 +6000,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.79">(10.79)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.84">(10.84)</span></div>
 <p class="paragraph-title">Step 2. Reduce to the standard Bessel form.</p>
 <p>The standard Bessel equation of order <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>p</mi>
@@ -5192,7 +6047,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.80">(10.80)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.85">(10.85)</span></div>
 <p>Our equation has a <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>2</mn>
   <mi>x</mi>
@@ -5247,7 +6102,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.81">(10.81)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.86">(10.86)</span></div>
 <p>and compute the derivatives:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -5304,7 +6159,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.82">(10.82)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.87">(10.87)</span></div>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -5378,7 +6233,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.83">(10.83)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.88">(10.88)</span></div>
 <p>Now substitute these into</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -5427,7 +6282,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.84">(10.84)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.89">(10.89)</span></div>
 <p>Compute each term:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -5556,7 +6411,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.85">(10.85)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.90">(10.90)</span></div>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -5644,7 +6499,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.86">(10.86)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.91">(10.91)</span></div>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
     <mtr>
@@ -5739,7 +6594,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.87">(10.87)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.92">(10.92)</span></div>
 <p>Add them together:</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -5940,7 +6795,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.88">(10.88)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.93">(10.93)</span></div>
 <p>Group terms by powers of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>x</mi>
 </math></span>:</p>
@@ -6152,7 +7007,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.89">(10.89)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.94">(10.94)</span></div>
 <p>Since <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
     <mi>x</mi>
@@ -6229,7 +7084,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.90">(10.90)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.95">(10.95)</span></div>
 <p>Note that</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -6270,7 +7125,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.91">(10.91)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.96">(10.96)</span></div>
 <p>so the equation becomes</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -6336,7 +7191,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.92">(10.92)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.97">(10.97)</span></div>
 <p>which is precisely the Bessel equation of order</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -6356,7 +7211,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.93">(10.93)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.98">(10.98)</span></div>
 <p class="paragraph-title">Step 3. General solution and return to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>R</mi>
@@ -6409,7 +7264,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.94">(10.94)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.99">(10.99)</span></div>
 <p>so here</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -6463,7 +7318,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.95">(10.95)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.100">(10.100)</span></div>
 <p>Recall that <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>R</mi>
   <mo stretchy="false">(</mo>
@@ -6553,7 +7408,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.96">(10.96)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.101">(10.101)</span></div>
 <p>Returning to the original variable <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>r</mi>
 </math></span> with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -6630,7 +7485,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.97">(10.97)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.102">(10.102)</span></div>
 <p>Absorbing the overall factor <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>1</mn>
   <mrow data-mjx-texclass="ORD">
@@ -6731,9 +7586,8 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.98">(10.98)</span></div>
-<p>Thus the radial equation for the infinite spherical well is solved in terms of ordinary Bessel functions of half–integer order.</p>
-<p>where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+</math><span class="eqn-number" id="mjx-eqn:10.103">(10.103)</span></div>
+<p>Thus the radial equation for the infinite spherical well is solved in terms of ordinary Bessel functions of half–integer order, where <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>J</mi>
     <mrow data-mjx-texclass="ORD">
@@ -6748,6 +7602,324 @@
     </mrow>
   </msub>
 </math></span> are the Bessel functions of the first and second kind.</p>
+<section class="callout definition"><header><span class="callout-kind">Definition</span><span class="callout-title">Spherical Bessel functions</span></header><p>The two combinations in this solution have their own names: the <strong>spherical Bessel function</strong> and the <strong>spherical Neumann function</strong> (written <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>n</mi>
+    <mi>ℓ</mi>
+  </msub>
+</math></span> in the videos),</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <msub>
+          <mi>j</mi>
+          <mi>ℓ</mi>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <msqrt>
+          <mfrac>
+            <mi>π</mi>
+            <mrow>
+              <mn>2</mn>
+              <mi>x</mi>
+            </mrow>
+          </mfrac>
+        </msqrt>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <msub>
+          <mi>J</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mi>ℓ</mi>
+            <mo>+</mo>
+            <mn>1</mn>
+            <mrow data-mjx-texclass="ORD">
+              <mo>/</mo>
+            </mrow>
+            <mn>2</mn>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <msub>
+          <mi>y</mi>
+          <mi>ℓ</mi>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <msqrt>
+          <mfrac>
+            <mi>π</mi>
+            <mrow>
+              <mn>2</mn>
+              <mi>x</mi>
+            </mrow>
+          </mfrac>
+        </msqrt>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em" />
+        </mstyle>
+        <msub>
+          <mi>Y</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mi>ℓ</mi>
+            <mo>+</mo>
+            <mn>1</mn>
+            <mrow data-mjx-texclass="ORD">
+              <mo>/</mo>
+            </mrow>
+            <mn>2</mn>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:10.104">(10.104)</span></div>
+<p>In words: a spherical Bessel function is a Bessel function of half-integer order, divided by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msqrt>
+    <mi>x</mi>
+  </msqrt>
+</math></span> (the factor <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msqrt>
+    <mi>π</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo>/</mo>
+    </mrow>
+    <mn>2</mn>
+  </msqrt>
+</math></span> only sets the scale). A round region in the plane gives the Bessel functions of Chapter 9; a ball gives these. From <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>J</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>1</mn>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mn>2</mn>
+    </mrow>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <msqrt>
+    <mn>2</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mo>/</mo>
+    </mrow>
+    <mo stretchy="false">(</mo>
+    <mi>π</mi>
+    <mi>x</mi>
+    <mo stretchy="false">)</mo>
+  </msqrt>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mspace width="0.167em" /><mi>sin</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>Y</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>1</mn>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mn>2</mn>
+    </mrow>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <msub>
+    <mi>J</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mn>1</mn>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mn>2</mn>
+    </mrow>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <msqrt>
+    <mn>2</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mo>/</mo>
+    </mrow>
+    <mo stretchy="false">(</mo>
+    <mi>π</mi>
+    <mi>x</mi>
+    <mo stretchy="false">)</mo>
+  </msqrt>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <mspace width="0.167em" /><mi>cos</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+</math></span> (Chapter 9), the simplest are</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <msub>
+          <mi>j</mi>
+          <mn>0</mn>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mi>sin</mi>
+            <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+            <mrow>
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+              <mi>x</mi>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+            </mrow>
+          </mrow>
+          <mi>x</mi>
+        </mfrac>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <msub>
+          <mi>y</mi>
+          <mn>0</mn>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+        <mfrac>
+          <mrow>
+            <mi>cos</mi>
+            <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+            <mrow>
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+              <mi>x</mi>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+            </mrow>
+          </mrow>
+          <mi>x</mi>
+        </mfrac>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <msub>
+          <mi>j</mi>
+          <mn>1</mn>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mi>sin</mi>
+            <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+            <mrow>
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+              <mi>x</mi>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+            </mrow>
+          </mrow>
+          <msup>
+            <mi>x</mi>
+            <mn>2</mn>
+          </msup>
+        </mfrac>
+        <mo>−</mo>
+        <mfrac>
+          <mrow>
+            <mi>cos</mi>
+            <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+            <mrow>
+              <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+              <mi>x</mi>
+              <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+            </mrow>
+          </mrow>
+          <mi>x</mi>
+        </mfrac>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:10.105">(10.105)</span></div>
+<p>So the radial solution is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>R</mi>
+    <mi>ℓ</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>r</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mi>A</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msub>
+    <mi>j</mi>
+    <mi>ℓ</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>k</mi>
+  <mi>r</mi>
+  <mo stretchy="false">)</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+  <mi>B</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msub>
+    <mi>y</mi>
+    <mi>ℓ</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>k</mi>
+  <mi>r</mi>
+  <mo stretchy="false">)</mo>
+</math></span>.</p></section>
 <p>  <strong>Behavior near the origin.</strong> For small argument <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>x</mi>
   <mo accent="false" stretchy="false">→</mo>
@@ -6841,7 +8013,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.99">(10.99)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.106">(10.106)</span></div>
 <p>Thus for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>p</mi>
   <mo>=</mo>
@@ -6932,7 +8104,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.100">(10.100)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.107">(10.107)</span></div>
 <p>so the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>Y</mi>
@@ -6966,7 +8138,113 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.101">(10.101)</span></div></section>
+</math><span class="eqn-number" id="mjx-eqn:10.108">(10.108)</span></div></section>
+<p class="paragraph-title">Seeing it.</p>
+<p>Take <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ℓ</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> and mix in a little of the spherical Neumann function, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>R</mi>
+  <mo>=</mo>
+  <msub>
+    <mi>j</mi>
+    <mn>0</mn>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+  <mi>B</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msub>
+    <mi>y</mi>
+    <mn>0</mn>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+</math></span>. However small the share, a half, a quarter or a tenth, the wave still plunges to minus infinity at the centre, because <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>y</mi>
+    <mn>0</mn>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+  <mi>cos</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>x</mi>
+</math></span> does. The centre of the dot is an ordinary place inside the crystal, with nothing there that could make the wave blow up, so no amount of the Neumann part is allowed: only <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>B</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>, the spherical Bessel function <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>j</mi>
+    <mn>0</mn>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mi>sin</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>x</mi>
+</math></span>, stays finite (it tends to <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>).</p>
+<div class="centered"><figure id="chapter-10-fig-4" class="figure"><img src="assets/img/ch10_fig02_finite.png" class="diagram" alt="The radial wave j0(x) + B y0(x): with B = 0.5, 0.25, 0.1 (red) it falls to minus infinity at the centre; only B = 0 (blue) is finite there." loading="lazy" style="--figure-width: 75%;"><figcaption>Figure 10.4. The radial wave <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>j</mi>
+    <mn>0</mn>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+  <mo form="prefix" lspace="0em" rspace="0em">+</mo>
+  <mi>B</mi>
+  <msub>
+    <mi>y</mi>
+    <mn>0</mn>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+</math></span>: with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>B</mi>
+  <mo>=</mo>
+  <mn>0.5</mn>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0.25</mn>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0.1</mn>
+</math></span> (red) it falls to minus infinity at
+	the centre; only <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>B</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> (blue) is finite there.</figcaption></figure></div>
 <p>Absorbing constants into a single coefficient, the physical radial solution inside the well is</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -7020,6 +8298,22 @@
                 <mi>k</mi>
                 <mi>r</mi>
                 <mo stretchy="false">)</mo>
+                <mo>=</mo>
+                <msub>
+                  <mi>A</mi>
+                  <mi>ℓ</mi>
+                </msub>
+                <mstyle scriptlevel="0">
+                  <mspace width="0.167em" />
+                </mstyle>
+                <msub>
+                  <mi>j</mi>
+                  <mi>ℓ</mi>
+                </msub>
+                <mo stretchy="false">(</mo>
+                <mi>k</mi>
+                <mi>r</mi>
+                <mo stretchy="false">)</mo>
                 <mo>.</mo>
               </mrow>
             </mstyle>
@@ -7028,8 +8322,9 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.102">(10.102)</span></div>
-<h3 id="sec-10-boundary-condition-and-energy-quantization"><span class="sec-number">10.4.6</span>Boundary Condition and Energy Quantization</h3>
+</math><span class="eqn-number" id="mjx-eqn:10.109">(10.109)</span></div>
+<h3 id="sec-10-boundary-condition-and-energy-quantization"><span class="sec-number">10.5.6</span>Boundary Condition and Energy Quantization</h3>
+<p class="lecture-video"><a href="https://www.youtube.com/watch?v=-ftSHSaWo3k&amp;t=887s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> <span>Lecture 25, Part 4: The Answer (14:47)</span></a></p>
 <p>The infinite potential at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>r</mi>
   <mo>=</mo>
@@ -7054,7 +8349,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.103">(10.103)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.110">(10.110)</span></div>
 <p>Since the spherical harmonic <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>Y</mi>
@@ -7085,7 +8380,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.104">(10.104)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.111">(10.111)</span></div>
 <p>Using the expression for <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>R</mi>
@@ -7133,7 +8428,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.105">(10.105)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.112">(10.112)</span></div>
 <p>The prefactor is nonzero, so the boundary condition requires</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -7156,11 +8451,30 @@
         <mi>a</mi>
         <mo stretchy="false">)</mo>
         <mo>=</mo>
-        <mn>0.</mn>
+        <mn>0</mn>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <mtext>that is,</mtext>
+        <mstyle scriptlevel="0">
+          <mspace width="2em" />
+        </mstyle>
+        <msub>
+          <mi>j</mi>
+          <mi>ℓ</mi>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>k</mi>
+        <mi>a</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mn>0</mn>
+        <mo>.</mo>
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.106">(10.106)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.113">(10.113)</span></div>
 <p>Let <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
     <mi>β</mi>
@@ -7231,7 +8545,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.107">(10.107)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.114">(10.114)</span></div>
 <p>Then</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -7259,7 +8573,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.108">(10.108)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.115">(10.115)</span></div>
 <p>and the allowed energies are</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -7341,7 +8655,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.109">(10.109)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.116">(10.116)</span></div>
 <p>The corresponding (unnormalized) stationary states are</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -7441,7 +8755,7 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.110">(10.110)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.117">(10.117)</span></div>
 <p>with</p>
 <div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mtable displaystyle="true">
@@ -7484,7 +8798,290 @@
       </mtd>
     </mtr>
   </mtable>
-</math><span class="eqn-number" id="mjx-eqn:10.111">(10.111)</span></div>
+</math><span class="eqn-number" id="mjx-eqn:10.118">(10.118)</span></div>
+<p class="paragraph-title">The levels and their waves.</p>
+<p>The figure below draws the well with its four lowest levels, each radial wave <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>j</mi>
+    <mi>ℓ</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>k</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>ℓ</mi>
+      <mi>n</mi>
+    </mrow>
+  </msub>
+  <mi>r</mi>
+  <mo stretchy="false">)</mo>
+</math></span> drawn on its own energy. The lowest state, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>j</mi>
+    <mn>0</mn>
+  </msub>
+  <mo>=</mo>
+  <mi>sin</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>x</mi>
+</math></span>, is largest at the centre and zero on the wall. The waves with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ℓ</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ℓ</mi>
+  <mo>=</mo>
+  <mn>2</mn>
+</math></span> start at zero at the centre: an electron that turns around the centre is kept away from it. At four times the lowest energy is the second state with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ℓ</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>; its wave crosses zero once inside the dot, at <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mo>=</mo>
+  <mi>a</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+</math></span>. A wave that bends more has more kinetic energy, so every extra crossing, or more turning, costs energy. Every wave is finite at the centre and zero on the wall, as the trap demands, and the levels are not evenly spaced, because the zeros of the spherical Bessel functions are not.</p>
+<div class="centered"><figure id="chapter-10-fig-5" class="figure"><img src="assets/img/ch10_fig03_levels.png" class="diagram" alt="The four lowest levels of the infinite spherical well, at 1, 2.05, 3.37 and 4 times the lowest energy, each with its radial wave drawn on its energy." loading="lazy" style="--figure-width: 75%;"><figcaption>Figure 10.5. The four lowest levels of the infinite spherical well, at 1, 2.05, 3.37 and 4 times the lowest energy,
+	each with its radial wave drawn on its energy.</figcaption></figure></div>
+<p class="paragraph-title">Inside the dot.</p>
+<p>Where is the electron likely to be found? The chance is set by <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">|</mo>
+  <msub>
+    <mi>ψ</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>ℓ</mi>
+      <mi>m</mi>
+      <mi>n</mi>
+    </mrow>
+  </msub>
+  <msup>
+    <mo stretchy="false">|</mo>
+    <mn>2</mn>
+  </msup>
+</math></span>, shown in the figure below inside a ball cut open (a quarter removed). In the lowest state the electron gathers at the centre and fades to nothing at the wall, the same in every direction because <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ℓ</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>. With <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ℓ</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>, the angle part is <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>Y</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>10</mn>
+    </mrow>
+  </msub>
+  <mo>∝</mo>
+  <mi>cos</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>θ</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+</math></span>: the electron sits in two lobes above and below the centre, and is never found at the centre or on the plane across the middle. The state at four times the lowest energy has a dark shell halfway out, where its wave crosses zero: the electron can be inside that shell or outside it, but never on it. Energy and shape go together, more crossings or more turning packed into the same small ball; shrink the ball and everything is squeezed further, which is why the energies grow as the dot gets smaller.</p>
+<div class="centered"><figure id="chapter-10-fig-6" class="figure"><img src="assets/img/ch10_fig04_dot_states.jpg" alt="Where the electron is likely to be found, in three states inside the dot, a quarter of each ball cut away (bright: likely; the brightness grows with the probability density as its square root, so the faint outer shell of the n = 2 state shows)." loading="lazy" style="--figure-width: 95%;"><figcaption>Figure 10.6. Where the electron is likely to be found, in three states inside the dot, a quarter of each ball cut
+	away (bright: likely; the brightness grows with the probability density as its square root, so the faint outer shell
+	of the <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>=</mo>
+  <mn>2</mn>
+</math></span> state shows).</figcaption></figure></div>
+<section class="callout example"><header><span class="callout-kind">Example</span><span class="callout-title">Why a quantum dot's colour is its size</span></header><p>The ground state has <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ℓ</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>β</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>01</mn>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mi>π</mi>
+</math></span> (the first zero of <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>j</mi>
+    <mn>0</mn>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mi>sin</mi>
+  <mo data-mjx-texclass="NONE" lspace="0em" rspace="0em">⁡</mo>
+  <mrow>
+    <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em" stretchy="false">(</mo>
+    <mi>x</mi>
+    <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em" stretchy="false">)</mo>
+  </mrow>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>x</mi>
+</math></span>), so <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>E</mi>
+  <mo>=</mo>
+  <msup>
+    <mi data-mjx-alternate="1">ℏ</mi>
+    <mn>2</mn>
+  </msup>
+  <msup>
+    <mi>π</mi>
+    <mn>2</mn>
+  </msup>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mo stretchy="false">(</mo>
+  <mn>2</mn>
+  <mi>m</mi>
+  <msup>
+    <mi>a</mi>
+    <mn>2</mn>
+  </msup>
+  <mo stretchy="false">)</mo>
+</math></span>: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0.376</mn>
+</math></span> eV for an electron in a sphere of radius <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> nm, and every energy scales as <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msup>
+    <mi>a</mi>
+    <mn>2</mn>
+  </msup>
+</math></span> (half the size, four times the energy). The levels, in units of the lowest, are <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+  <mo>,</mo>
+  <mn>2.05</mn>
+  <mo>,</mo>
+  <mn>3.37</mn>
+  <mo>,</mo>
+  <mn>4</mn>
+  <mo>,</mo>
+  <mn>4.95</mn>
+  <mo>,</mo>
+  <mo>…</mo>
+</math></span> (<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>β</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>ℓ</mi>
+      <mi>n</mi>
+    </mrow>
+  </msub>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>π</mi>
+  <msup>
+    <mo stretchy="false">)</mo>
+    <mn>2</mn>
+  </msup>
+</math></span>). Quantum dots are nanocrystals in which this confinement sets the colour of the emitted light. A simple model of a CdSe dot (band gap <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1.74</mn>
+</math></span> eV, effective masses <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0.13</mn>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0.45</mn>
+</math></span> of the electron mass for the electron and the hole, no Coulomb term) gives a photon energy</p>
+<div class="math-block math-block--numbered"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mtr>
+      <mtd>
+        <msub>
+          <mi>E</mi>
+          <mi>γ</mi>
+        </msub>
+        <mo>=</mo>
+        <mn>1.74</mn>
+        <mtext> </mtext>
+        <mtext>eV</mtext>
+        <mo>+</mo>
+        <mfrac>
+          <mrow>
+            <msup>
+              <mi data-mjx-alternate="1">ℏ</mi>
+              <mn>2</mn>
+            </msup>
+            <msup>
+              <mi>π</mi>
+              <mn>2</mn>
+            </msup>
+          </mrow>
+          <mrow>
+            <mn>2</mn>
+            <msup>
+              <mi>a</mi>
+              <mn>2</mn>
+            </msup>
+          </mrow>
+        </mfrac>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN" form="prefix" lspace="0em" rspace="0em">(</mo>
+          <mfrac>
+            <mn>1</mn>
+            <msub>
+              <mi>m</mi>
+              <mi>e</mi>
+            </msub>
+          </mfrac>
+          <mo>+</mo>
+          <mfrac>
+            <mn>1</mn>
+            <msub>
+              <mi>m</mi>
+              <mi>h</mi>
+            </msub>
+          </mfrac>
+          <mo data-mjx-texclass="CLOSE" form="postfix" lspace="0em" rspace="0em">)</mo>
+        </mrow>
+        <mo>:</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math><span class="eqn-number" id="mjx-eqn:10.119">(10.119)</span></div>
+<p>radius <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+</math></span> nm, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>464</mn>
+</math></span> nm (blue); <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2.5</mn>
+</math></span> nm, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>531</mn>
+</math></span> nm (green); <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>3</mn>
+</math></span> nm, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>576</mn>
+</math></span> nm (yellow); <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>4</mn>
+</math></span> nm, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>628</mn>
+</math></span> nm (red). Smaller dots glow bluer, as in the photograph of Lecture 25.</p></section>
 <h3 id="sec-10-summary-of-the-separation">Summary of the separation:</h3>
 <ul><li><p>The <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>ϕ</mi>
@@ -7537,6 +9134,127 @@
   <mi>k</mi>
   <mi>r</mi>
   <mo stretchy="false">)</mo>
+</math></span>.</p></li><li><p>In one picture: separating time from space gives the time factor <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi>i</mi>
+      <mi>E</mi>
+      <mi>t</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mi data-mjx-alternate="1">ℏ</mi>
+    </mrow>
+  </msup>
+</math></span> (a separable equation, Lecture 22); separating <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+</math></span>, <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>θ</mi>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ϕ</mi>
+</math></span> gives one ordinary equation each. The <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>θ</mi>
+</math></span> and <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ϕ</mi>
+</math></span> parts together are the spherical harmonics <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>Y</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>ℓ</mi>
+      <mi>m</mi>
+    </mrow>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>θ</mi>
+  <mo>,</mo>
+  <mi>ϕ</mi>
+  <mo stretchy="false">)</mo>
+</math></span> (Lecture 23), the radial part is the spherical Bessel function <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>j</mi>
+    <mi>ℓ</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>k</mi>
+  <mi>r</mi>
+  <mo stretchy="false">)</mo>
+</math></span> (Lecture 24), and the wall keeps only its zeros: <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">Ψ</mi>
+  <mo>=</mo>
+  <mi>A</mi>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msub>
+    <mi>j</mi>
+    <mi>ℓ</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>k</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>ℓ</mi>
+      <mi>n</mi>
+    </mrow>
+  </msub>
+  <mi>r</mi>
+  <mo stretchy="false">)</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msub>
+    <mi>Y</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>ℓ</mi>
+      <mi>m</mi>
+    </mrow>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <mi>θ</mi>
+  <mo>,</mo>
+  <mi>ϕ</mi>
+  <mo stretchy="false">)</mo>
+  <mstyle scriptlevel="0">
+    <mspace width="0.167em" />
+  </mstyle>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo form="prefix" lspace="0em" rspace="0em">−</mo>
+      <mi>i</mi>
+      <msub>
+        <mi>E</mi>
+        <mrow data-mjx-texclass="ORD">
+          <mi>ℓ</mi>
+          <mi>n</mi>
+        </mrow>
+      </msub>
+      <mi>t</mi>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mi data-mjx-alternate="1">ℏ</mi>
+    </mrow>
+  </msup>
+</math></span>, with <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>E</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>ℓ</mi>
+      <mi>n</mi>
+    </mrow>
+  </msub>
+  <mo>∝</mo>
+  <mn>1</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msup>
+    <mi>a</mi>
+    <mn>2</mn>
+  </msup>
 </math></span>.</p></li></ul>
 <p>Together these yield the full set of eigenfunctions <span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msub>
@@ -7556,7 +9274,7 @@
     </mrow>
   </msub>
 </math></span>.</p>
-<h2 id="sec-10-where-partial-differential-equations-lead"><span class="sec-number">10.5</span>Where Partial Differential Equations Lead</h2>
+<h2 id="sec-10-where-partial-differential-equations-lead"><span class="sec-number">10.6</span>Where Partial Differential Equations Lead</h2>
 <p>This chapter is the destination the whole course has been heading toward. The two worked problems — the steady-state plate and the infinite spherical well — show the pattern: a partial differential equation is split by separation of variables into ordinary differential equations, each of which is one of the equations solved in the preceding chapters. Every tool built earlier reappears here doing its job.</p>
 <ul><li><p><strong>Every earlier chapter feeds in.</strong> Separation turns a PDE into ODEs (Chapter 8); at a regular singular point those ODEs are solved by series (Chapter 9), producing Legendre and Bessel functions; the boundary conditions are met by expanding in those orthogonal functions (Chapters 7 and 9); and in quantum problems the solutions are complex (Chapter 2) and the coordinate changes use the vector calculus of Chapters 5 and 6.</p></li><li><p><strong>The three classic equations.</strong> Laplace's equation (<span class="math-inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
   <msup>
@@ -7933,6 +9651,9 @@
 <h3 id="sec-10-websites">Websites</h3>
 <ul><li><p><strong>Paul's Online Math Notes.</strong> <a href="https://tutorial.math.lamar.edu/Classes/DE/IntroPDE.aspx">Partial Differential Equations</a> and <a href="https://tutorial.math.lamar.edu/Classes/DE/SeparationofVariables.aspx">Separation of Variables</a> — worked heat- and wave-equation problems on an interval, with the Fourier-series step spelled out in full.</p></li></ul>
 <section class="callout remark"><header>Remark</header><p>Separation of variables is powerful but not universal: it requires both the equation and the boundary to respect a coordinate system's symmetry. A PDE on an irregular region, or a nonlinear one, generally needs other tools — Green's functions, transform methods, or numerical solution on a grid. Those are the natural next subjects. What this chapter provides is the foundation they all build on: the idea that a linear problem can be broken into independent modes and reassembled by superposition.</p></section>
+<h3 id="sec-10-video-lectures">Video lectures</h3>
+<p>Each section of this chapter links to the part of a lecture that teaches it. The full lectures are below, and all of them are in the <a href="https://www.youtube.com/playlist?list=PLMf1SoafIGr0">course playlist</a>.</p>
+<p class="lecture-video"><a href="https://www.youtube.com/watch?v=-ftSHSaWo3k&amp;t=0s" target="_blank" rel="noopener"><span class="lecture-video-play" aria-hidden="true"></span><span class="lecture-video-tag">Video</span> <span>Lecture 25: Why a Quantum Dot's Colour Is Its Size - Partial Differential Equations (full lecture)</span></a></p>
     <nav class="chapter-nav" aria-label="Chapter navigation">
       <a href="../chapter-09/index.html">Previous: Series Solutions of Ordinary Differential Equations (Chapter 12)</a>
       <a href="../../toc.html">Contents</a>
